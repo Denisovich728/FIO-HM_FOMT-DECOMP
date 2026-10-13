@@ -1,0 +1,31 @@
+// Script 942
+#include "Fomt_Lib.src"
+
+script 942 Event_0942 {
+    const MESSAGE_0 = "Today Mary and I are \r\ntying the knot! \BRK\WAIT_CLICKYou already know, huh? \r\nYou're invited! \BRK";
+    const MESSAGE_1 = "If you have the time, come \r\nand watch! \BRK";
+    
+    if ((Check_If_Single(7) == 0)) {
+        Free_Event_Entity(7);
+    }
+    if ((Has_NPC_Talked_Today(7) == 0)) {
+        SetEntityFacing(7, GetOppositeFacing(GetEntityFacing(0)));
+        TalkOpen();
+        Set_Portrait(0xA7);
+        Set_Name_Window(7);
+        TalkMessage(0);
+        TalkClose();
+        SetEntityFacing(7, "Down");
+        Free_Event_Entity(7);
+    } else {
+        SetEntityFacing(7, GetOppositeFacing(GetEntityFacing(0)));
+        TalkOpen();
+        Set_Portrait(0xA7);
+        Set_Name_Window(7);
+        TalkMessage(1);
+        TalkClose();
+        SetEntityFacing(7, "Down");
+        Free_Event_Entity(7);
+    }
+    exit;
+}

@@ -1,0 +1,20 @@
+// Script 780
+#include "Fomt_Lib.src"
+
+script 780 Event_0780 {
+    const MESSAGE_0 = "Carter's sleeping, so I'll \r\njust sneak out now...\BRK";
+    
+    TalkOpen();
+    TalkMessage(0);
+    TalkClose();
+    Warp_Player(5, 0x4D0, 0xA8);
+    SetEntityPosition(0, 0x4D0, 0xA8, "Down");
+    if ((Inventory_Check() == 1)) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    Fade_In(2, 1);
+    Set_Flag(0x122, 2);
+    exit;
+}

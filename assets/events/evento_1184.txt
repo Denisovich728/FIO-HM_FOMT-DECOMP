@@ -1,0 +1,37 @@
+// Script 1184
+#include "Fomt_Lib.src"
+
+script 1184 Event_1184 {
+    const MESSAGE_0 = "Stu causes trouble \r\nno matter where I bring \r\nhim!\BRK";
+    const MESSAGE_1 = "Congratulations. It's \r\nbecause you treat your \r\nanimals so well! \BRK";
+    const MESSAGE_2 = "If you give your animals \r\nmore affection, you could \r\nwin next year. \BRK";
+    
+    if ((Check_If_Single(0x15) == 0)) {
+        Free_Event_Entity(0x15);
+    }
+    SetEntityFacing(0x15, GetOppositeFacing(GetEntityFacing(0)));
+    TalkOpen();
+    Set_Name_Window(0x15);
+    if (!(((((((Check_Flag(0x4C) == 2) || (Check_Flag(0x55) == 2)) || (Check_Flag(0x5F) == 2)) || (Check_Flag(0x67) == 2)) || (Check_Flag(0x173) == 2)) || (Check_Flag(0x96) == 2)) || (Check_Flag(0x97) == 2))) {
+        Set_Hearth_Anim(0x15);
+    }
+    if ((Check_Flag(0x19B) == 0)) {
+        Set_Portrait(0x7B);
+        TalkMessage(0);
+    } else {
+        if ((Check_Flag(0x19D) == 1)) {
+            Set_Portrait(0x7A);
+            TalkMessage(1);
+            goto LBL_0015;
+        }
+        Set_Portrait(0x79);
+        TalkMessage(2);
+    }
+    TalkClose();
+    if ((Has_Spoken_To_NPC_Today(0x15) == 0)) {
+        Give_Friendship_Points(0x15, 5);
+    }
+    Free_Event_Entity(0x15);
+    SetEntityFacing(0x15, "Down");
+    exit;
+}

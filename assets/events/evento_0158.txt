@@ -1,0 +1,11 @@
+// Script 158
+#include "Fomt_Lib.src"
+
+script 158 Event_0158 {
+    const MESSAGE_0 = "Fish food storage sign\BRK";
+    
+    TalkOpen();
+    Print_Message(0);
+    TalkClose();
+    exit;
+}

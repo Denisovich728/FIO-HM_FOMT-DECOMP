@@ -1,0 +1,688 @@
+// Script 1041
+#include "Fomt_Lib.src"
+
+script 1041 Event_1041 {
+    const MESSAGE_0 = "That's it for today.\r\nBye now.\BRK";
+    const MESSAGE_1 = "This is a New Year's \r\ngame show. \r\nFirst I'll show you a \r\nnumber, then you guess \r\nwhether the next number \r\nwill be higher or lower.\r\nGot it?\BRK";
+    const MESSAGE_2 = "\xFF&\xFF&\xFF&\xFF&\xFF&\xFF&\xFF&\xFF&\xFF&\xFF&\xFF&\xFF&\xFF&\xFF&\r\n\xFF&\xFF&\xFF&\xFF&\xFF&\xFF&\xFF&\xFF&\xFF&\xFF&\xFF&\xFF&\xFF&\xFF&\r\n\xFF&\xFF&\xFF&\xFF&\xFF&\xFF&\xFF&\xFF&\xFF&\xFF&\xFF&\xFF&\xFF&\xFF&\BRK";
+    const MESSAGE_3 = "Compared to \xFF&, it's";
+    const MESSAGE_4 = "Larger";
+    const MESSAGE_5 = "Smaller";
+    const MESSAGE_6 = "\xFF%\xFF%\xFF%\xFF%\xFF%\xFF%\xFF%\xFF%\xFF%\xFF%\xFF%\xFF%\xFF%\xFF%\r\n\xFF%\xFF%\xFF%\xFF%\xFF%\xFF%\xFF%\xFF%\xFF%\xFF%\xFF%\xFF%\xFF%\xFF%\r\n\xFF%\xFF%\xFF%\xFF%\xFF%\xFF%\xFF%\xFF%\xFF%\xFF%\xFF%\xFF%\xFF%\xFF%\BRK";
+    const MESSAGE_7 = "The first number was \xFF&,\r\nand the second was \xFF%.\r\nYou chose \"Larger,\" so...\BRK";
+    const MESSAGE_8 = "The first number was \xFF&,\r\nand the second was \xFF%.\r\nYou chose \"Smaller,\" so...\BRK";
+    const MESSAGE_9 = "Correct! \BRK\WAIT_CLICKOnce more, now.\BRK";
+    const MESSAGE_10 = "Same number! \BRK\WAIT_CLICKOnce more, now. \BRK";
+    const MESSAGE_11 = "Incorrect! \BRK\WAIT_CLICKSorry, game over... \BRK";
+    const MESSAGE_12 = "Bye now.\r\n\BRK";
+    const MESSAGE_13 = "You only won once.\r\nBye now. \BRK";
+    const MESSAGE_14 = "Wow!\r\nI can't believe you've \r\nwon over 100\BRK\r\ntimes in a row!\BRK";
+    const MESSAGE_15 = "I'm impressed!\r\nYou've won \xFF%\r\ntimes in a row!\BRK";
+    const MESSAGE_16 = "I'll give you this \r\nas a reward. \BRK";
+    const MESSAGE_17 = "I was going to give you \r\nsomething as a reward, but \r\nyour hands are full. \BRK\WAIT_CLICKToo bad, but you'll have to \r\nwait until next time....\BRK\WAIT_CLICK";
+    
+    var var_0;
+    var var_1;
+    var var_2;
+    var var_3;
+    var var_4;
+    var var_5;
+    var var_6;
+    var var_7;
+    
+    var_6 = 0;
+    var_2 = 0;
+    var_3 = 0;
+    TalkOpen();
+    Set_Name_Window(0x1F);
+    if ((Check_Flag(0x1EE) >= 5)) {
+        Set_Portrait(0x38);
+        var_7 = Print_TV_Message(0);
+        Close_TV_Interface();
+        TalkClose();
+        switch (var_7) {
+            case 0:
+            case 1:
+            case 2:
+            case 3:
+                Set_Flag(0x244, var_7);
+                Execute_Script(356);
+                break;
+            case 5:
+                break;
+        }
+    } else {
+        Set_Portrait(0x39);
+        var_7 = Print_TV_Message(1);
+        TalkClose();
+        switch (var_7) {
+            case 0:
+            case 1:
+            case 2:
+            case 3:
+                Set_Flag(0x244, var_7);
+                Execute_Script(356);
+                break;
+            case 5:
+                break;
+        }
+        do {
+            if ((var_6 == 0)) {
+                TalkOpen();
+                var_4 = RNG_Generator(0, 9);
+                Set_Text_Buffer_Int(1, var_4);
+                Print_Message(2);
+                var_0 = Show_Tre_Option_Menu(3, 4, 5);
+                var_6 = 1;
+                goto LBL_0011;
+            }
+            TalkOpen();
+            Set_Name_Window(0x1F);
+            Set_Portrait(0x39);
+            var_4 = var_1;
+            Set_Text_Buffer_Int(1, var_4);
+            var_0 = Show_Tre_Option_Menu(3, 4, 5);
+            switch (var_0) {
+                case 1:
+                    var_5 = 1;
+                    break;
+                case 2:
+                    var_5 = 0;
+                    break;
+            }
+            TalkOpen();
+            var_1 = RNG_Generator(0, 9);
+            Set_Text_Buffer_Int(0, var_1);
+            Set_Text_Buffer_Int(1, var_4);
+            Print_Message(6);
+            if ((var_5 == 1)) {
+                TalkOpen();
+                Set_Name_Window(0x1F);
+                Set_Portrait(0x39);
+                TalkMessage(7);
+                switch (var_1) {
+                    case 0:
+                        switch (var_4) {
+                            case 0:
+                                var_2 = 1;
+                                break;
+                            case 1:
+                            case 2:
+                            case 3:
+                            case 4:
+                            case 5:
+                            case 6:
+                            case 7:
+                            case 8:
+                            case 9:
+                                var_2 = 2;
+                                break;
+                        }
+                        break;
+                    case 1:
+                        switch (var_4) {
+                            case 0:
+                                var_2 = 0;
+                                break;
+                            case 1:
+                                var_2 = 1;
+                                break;
+                            case 2:
+                            case 3:
+                            case 4:
+                            case 5:
+                            case 6:
+                            case 7:
+                            case 8:
+                            case 9:
+                                var_2 = 2;
+                                break;
+                        }
+                        break;
+                    case 2:
+                        switch (var_4) {
+                            case 0:
+                            case 1:
+                                var_2 = 0;
+                                break;
+                            case 2:
+                                var_2 = 1;
+                                break;
+                            case 3:
+                            case 4:
+                            case 5:
+                            case 6:
+                            case 7:
+                            case 8:
+                            case 9:
+                                var_2 = 2;
+                                break;
+                        }
+                        break;
+                    case 3:
+                        switch (var_4) {
+                            case 0:
+                            case 1:
+                            case 2:
+                                var_2 = 0;
+                                break;
+                            case 3:
+                                var_2 = 1;
+                                break;
+                            case 4:
+                            case 5:
+                            case 6:
+                            case 7:
+                            case 8:
+                            case 9:
+                                var_2 = 2;
+                                break;
+                        }
+                        break;
+                    case 4:
+                        switch (var_4) {
+                            case 0:
+                            case 1:
+                            case 2:
+                            case 3:
+                                var_2 = 0;
+                                break;
+                            case 4:
+                                var_2 = 1;
+                                break;
+                            case 5:
+                            case 6:
+                            case 7:
+                            case 8:
+                            case 9:
+                                var_2 = 2;
+                                break;
+                        }
+                        break;
+                    case 5:
+                        switch (var_4) {
+                            case 0:
+                            case 1:
+                            case 2:
+                            case 3:
+                            case 4:
+                                var_2 = 0;
+                                break;
+                            case 5:
+                                var_2 = 1;
+                                break;
+                            case 6:
+                            case 7:
+                            case 8:
+                            case 9:
+                                var_2 = 2;
+                                break;
+                        }
+                        break;
+                    case 6:
+                        switch (var_4) {
+                            case 0:
+                            case 1:
+                            case 2:
+                            case 3:
+                            case 4:
+                            case 5:
+                                var_2 = 0;
+                                break;
+                            case 6:
+                                var_2 = 1;
+                                break;
+                            case 7:
+                            case 8:
+                            case 9:
+                                var_2 = 2;
+                                break;
+                        }
+                        break;
+                    case 7:
+                        switch (var_4) {
+                            case 0:
+                            case 1:
+                            case 2:
+                            case 3:
+                            case 4:
+                            case 5:
+                            case 6:
+                                var_2 = 0;
+                                break;
+                            case 7:
+                                var_2 = 1;
+                                break;
+                            case 8:
+                            case 9:
+                                var_2 = 2;
+                                break;
+                        }
+                        break;
+                    case 8:
+                        switch (var_4) {
+                            case 0:
+                            case 1:
+                            case 2:
+                            case 3:
+                            case 4:
+                            case 5:
+                            case 6:
+                            case 7:
+                                var_2 = 0;
+                                break;
+                            case 8:
+                                var_2 = 1;
+                                break;
+                            case 9:
+                                var_2 = 2;
+                                break;
+                        }
+                        break;
+                    case 9:
+                        switch (var_4) {
+                            case 0:
+                            case 1:
+                            case 2:
+                            case 3:
+                            case 4:
+                            case 5:
+                            case 6:
+                            case 7:
+                            case 8:
+                                var_2 = 0;
+                                break;
+                            case 9:
+                                var_2 = 1;
+                                break;
+                        }
+                        break;
+                }
+    LBL_0054:
+    LBL_0053:
+    LBL_004E:
+    LBL_0048:
+    LBL_0042:
+    LBL_003C:
+    LBL_0036:
+    LBL_0030:
+    LBL_002A:
+    LBL_0024:
+    LBL_001E:
+                goto LBL_0055;
+            }
+            TalkOpen();
+            Set_Name_Window(0x1F);
+            Set_Portrait(0x39);
+            TalkMessage(8);
+            switch (var_1) {
+                case 0:
+                    switch (var_4) {
+                        case 0:
+                            var_2 = 1;
+                            break;
+                        case 1:
+                        case 2:
+                        case 3:
+                        case 4:
+                        case 5:
+                        case 6:
+                        case 7:
+                        case 8:
+                        case 9:
+                            var_2 = 0;
+                            break;
+                    }
+                    break;
+                case 1:
+                    switch (var_4) {
+                        case 0:
+                            var_2 = 2;
+                            break;
+                        case 1:
+                            var_2 = 1;
+                            break;
+                        case 2:
+                        case 3:
+                        case 4:
+                        case 5:
+                        case 6:
+                        case 7:
+                        case 8:
+                        case 9:
+                            var_2 = 0;
+                            break;
+                    }
+                    break;
+                case 2:
+                    switch (var_4) {
+                        case 0:
+                        case 1:
+                            var_2 = 2;
+                            break;
+                        case 2:
+                            var_2 = 1;
+                            break;
+                        case 3:
+                        case 4:
+                        case 5:
+                        case 6:
+                        case 7:
+                        case 8:
+                        case 9:
+                            var_2 = 0;
+                            break;
+                    }
+                    break;
+                case 3:
+                    switch (var_4) {
+                        case 0:
+                        case 1:
+                        case 2:
+                            var_2 = 2;
+                            break;
+                        case 3:
+                            var_2 = 1;
+                            break;
+                        case 4:
+                        case 5:
+                        case 6:
+                        case 7:
+                        case 8:
+                        case 9:
+                            var_2 = 0;
+                            break;
+                    }
+                    break;
+                case 4:
+                    switch (var_4) {
+                        case 0:
+                        case 1:
+                        case 2:
+                        case 3:
+                            var_2 = 2;
+                            break;
+                        case 4:
+                            var_2 = 1;
+                            break;
+                        case 5:
+                        case 6:
+                        case 7:
+                        case 8:
+                        case 9:
+                            var_2 = 0;
+                            break;
+                    }
+                    break;
+                case 5:
+                    switch (var_4) {
+                        case 0:
+                        case 1:
+                        case 2:
+                        case 3:
+                        case 4:
+                            var_2 = 2;
+                            break;
+                        case 5:
+                            var_2 = 1;
+                            break;
+                        case 6:
+                        case 7:
+                        case 8:
+                        case 9:
+                            var_2 = 0;
+                            break;
+                    }
+                    break;
+                case 6:
+                    switch (var_4) {
+                        case 0:
+                        case 1:
+                        case 2:
+                        case 3:
+                        case 4:
+                        case 5:
+                            var_2 = 2;
+                            break;
+                        case 6:
+                            var_2 = 1;
+                            break;
+                        case 7:
+                        case 8:
+                        case 9:
+                            var_2 = 0;
+                            break;
+                    }
+                    break;
+                case 7:
+                    switch (var_4) {
+                        case 0:
+                        case 1:
+                        case 2:
+                        case 3:
+                        case 4:
+                        case 5:
+                        case 6:
+                            var_2 = 2;
+                            break;
+                        case 7:
+                            var_2 = 1;
+                            break;
+                        case 8:
+                        case 9:
+                            var_2 = 0;
+                            break;
+                    }
+                    break;
+                case 8:
+                    switch (var_4) {
+                        case 0:
+                        case 1:
+                        case 2:
+                        case 3:
+                        case 4:
+                        case 5:
+                        case 6:
+                        case 7:
+                            var_2 = 2;
+                            break;
+                        case 8:
+                            var_2 = 1;
+                            break;
+                        case 9:
+                            var_2 = 0;
+                            break;
+                    }
+                    break;
+                case 9:
+                    switch (var_4) {
+                        case 0:
+                        case 1:
+                        case 2:
+                        case 3:
+                        case 4:
+                        case 5:
+                        case 6:
+                        case 7:
+                        case 8:
+                            var_2 = 2;
+                            break;
+                        case 9:
+                            var_2 = 1;
+                            break;
+                    }
+                    break;
+            }
+            switch (var_2) {
+                case 0:
+                    PlaySong(0, 0xB8);
+                    Set_Portrait(0x39);
+                    TalkMessage(9);
+                    if ((var_3 != 0x64)) {
+                        var_3 = (var_3 + 1);
+                    }
+                    break;
+                case 1:
+                    Set_Portrait(0x38);
+                    TalkMessage(10);
+                    break;
+                case 2:
+                    PlaySong(0, 0xC7);
+                    Set_Portrait(0x3A);
+                    TalkMessage(11);
+                    break;
+            }
+        } while (((var_2 == 0) || (var_2 == 1)));
+        if ((var_3 == 0)) {
+            TalkMessage(12);
+        } else {
+            if ((var_3 == 1)) {
+                Set_Portrait(0x38);
+                TalkMessage(13);
+                goto LBL_00A2;
+            }
+            if ((var_3 == 0x64)) {
+                Set_Portrait(0x39);
+                TalkMessage(14);
+            } else {
+                Set_Portrait(0x39);
+                Set_Text_Buffer_Int(0, var_3);
+                TalkMessage(15);
+            }
+            if ((Inventory_Check() == 1)) {
+                Set_Portrait(0x39);
+                TalkMessage(16);
+                TalkClose();
+                if ((var_3 == 0x64)) {
+                    PlaySong(0, 0xB3);
+                    Give_Item(0x50);
+                    Make_Delay(0x14A);
+                } else {
+                    if ((var_3 >= 0x5A)) {
+                        PlaySong(0, 0xB0);
+                        Give_Item(0x33);
+                        Make_Delay(0xF0);
+                    } else {
+                        if ((var_3 >= 0x50)) {
+                            PlaySong(0, 0xB0);
+                            Give_Item(0x34);
+                            Make_Delay(0xF0);
+                        } else {
+                            if ((var_3 >= 0x46)) {
+                                PlaySong(0, 0xB6);
+                                Give_Item(0x36);
+                                Make_Delay(0x78);
+                            } else {
+                                if ((var_3 >= 0x3C)) {
+                                    PlaySong(0, 0xB6);
+                                    Give_Item(0x37);
+                                    Make_Delay(0x78);
+                                } else {
+                                    if ((var_3 >= 0x32)) {
+                                        PlaySong(0, 0xB6);
+                                        Give_Item(0x5A);
+                                        Make_Delay(0x78);
+                                    } else {
+                                        if ((var_3 >= 0x28)) {
+                                            PlaySong(0, 0xB6);
+                                            Give_Item(0x55);
+                                            Make_Delay(0x78);
+                                        } else {
+                                            if ((var_3 >= 0x1E)) {
+                                                PlaySong(0, 0xB6);
+                                                Give_Item(0x51);
+                                                Make_Delay(0x78);
+                                            } else {
+                                                if ((var_3 >= 0x19)) {
+                                                    PlaySong(0, 0xB6);
+                                                    Give_Item(0x56);
+                                                    Make_Delay(0x78);
+                                                } else {
+                                                    if ((var_3 >= 0x14)) {
+                                                        PlaySong(0, 0xB6);
+                                                        Give_Item(0x57);
+                                                        Make_Delay(0x78);
+                                                    } else {
+                                                        if ((var_3 >= 0xF)) {
+                                                            PlaySong(0, 0xB6);
+                                                            Give_Item(0x58);
+                                                            Make_Delay(0x78);
+                                                        } else {
+                                                            if ((var_3 >= 0xA)) {
+                                                                PlaySong(0, 0xB6);
+                                                                Give_Food(0x46);
+                                                                Make_Delay(0x78);
+                                                            } else {
+                                                                if ((var_3 >= 3)) {
+                                                                    PlaySong(0, 0xBC);
+                                                                    var_1 = RNG_Generator(0, 1);
+                                                                    switch (var_1) {
+                                                                        case 0:
+                                                                            Give_Food(0x97);
+                                                                            break;
+                                                                        case 1:
+                                                                            Give_Food(0x4A);
+                                                                            break;
+                                                                    }
+                                                                    Make_Delay(0x3C);
+                                                                } else {
+                                                                    PlaySong(0, 0xBC);
+                                                                    var_1 = RNG_Generator(0, 8);
+                                                                    switch (var_1) {
+                                                                        case 0:
+                                                                            Give_Food(0x2F);
+                                                                            break;
+                                                                        case 1:
+                                                                            Give_Food(0x30);
+                                                                            break;
+                                                                        case 2:
+                                                                            Give_Food(0x31);
+                                                                            break;
+                                                                        case 3:
+                                                                            Give_Food(0x32);
+                                                                            break;
+                                                                        case 4:
+                                                                            Give_Food(0x33);
+                                                                            break;
+                                                                        case 5:
+                                                                            Give_Food(0x34);
+                                                                            break;
+                                                                        case 6:
+                                                                            Give_Food(0x35);
+                                                                            break;
+                                                                        case 7:
+                                                                            Give_Food(0x36);
+                                                                            break;
+                                                                        case 8:
+                                                                            Give_Food(0x37);
+                                                                            break;
+                                                                    }
+                                                                    Make_Delay(0x3C);
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            } else {
+                Set_Portrait(0x38);
+                TalkMessage(17);
+            }
+            TalkOpen();
+            Set_Name_Window(0x1F);
+            Set_Portrait(0x39);
+            TalkMessage(12);
+        }
+        Set_Flag(0x1EE, (Check_Flag(0x1EE) + 1));
+    }
+    Close_TV_Interface();
+    TalkClose();
+    exit;
+}

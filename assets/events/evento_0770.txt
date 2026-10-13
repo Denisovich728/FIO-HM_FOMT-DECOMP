@@ -1,0 +1,18 @@
+// Script 770
+#include "Fomt_Lib.src"
+
+script 770 Event_0770 {
+    const MESSAGE_0 = "This kind of error \r\nis very disturbing...\BRK";
+    
+    if ((Check_Flag(0x11D) == 1)) {
+        SetEntityFacing(0x14, GetOppositeFacing(GetEntityFacing(0)));
+        TalkOpen();
+        Set_Portrait(0x27);
+        Set_Name_Window(0x14);
+        TalkMessage(0);
+        TalkClose();
+        Free_Event_Entity(0x14);
+        SetEntityFacing(0x14, "Down");
+    }
+    exit;
+}

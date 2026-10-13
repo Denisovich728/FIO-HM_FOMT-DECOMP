@@ -1,0 +1,11 @@
+// Script 283
+#include "Fomt_Lib.src"
+
+script 283 Event_0283 {
+    const MESSAGE_0 = "Vase\BRK";
+    
+    TalkOpen();
+    Print_Message(0);
+    TalkClose();
+    exit;
+}

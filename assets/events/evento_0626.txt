@@ -1,0 +1,22 @@
+// Script 626
+#include "Fomt_Lib.src"
+
+script 626 Event_0626 {
+    const MESSAGE_0 = "Goo-goo.\BRK";
+    
+    if ((Check_Flag(0xC8) == 2)) {
+        if ((Check_Flag(0x2E) >= 0x3C)) {
+            SetEntityFacing(0x23, GetOppositeFacing(GetEntityFacing(0)));
+            TalkOpen();
+            Set_Name_Window(0x23);
+            Set_Portrait(0x12);
+            TalkMessage(0);
+            TalkClose();
+            Free_Event_Entity(0x23);
+            SetEntityFacing(0x23, "Down");
+        } else {
+            exit;
+        }
+    }
+    exit;
+}

@@ -1,0 +1,157 @@
+// Script 985
+#include "Fomt_Lib.src"
+
+script 985 Event_0985 {
+    const MESSAGE_0 = "I thought you could\r\ndo a better job than this!\r\nI believed in you...\BRK\WAIT_CLICKJust try harder from\r\nnow on, OK!?\BRK";
+    const MESSAGE_1 = "The animals' lives\r\ndepend on you!\BRK\WAIT_CLICKYou've got to take better\r\ncare of them than this!\BRK";
+    const MESSAGE_2 = "I know they have to\r\ndie sometime...\r\nStill...sob...sniffle...\BRK\WAIT_CLICKI hate when it happens!\BRK";
+    const MESSAGE_3 = "Don't get too upset, now.\r\nYou did a good job of\r\ntaking care of of it.\BRK";
+    
+    var var_0;
+    var var_1;
+    var var_2;
+    var var_3;
+    var var_4;
+    var var_5;
+    var var_6;
+    var var_7;
+    var var_8;
+    
+    var_0 = Func10F(1, 1);
+    var_1 = Func10F(2, 1);
+    var_2 = Func10F(3, 1);
+    var_3 = ((var_0 + var_1) + var_2);
+    var_4 = Func10F(1, 2);
+    var_5 = Func10F(2, 2);
+    var_6 = Func10F(3, 2);
+    var_7 = ((var_4 + var_5) + var_6);
+    var_8 = (var_3 + var_7);
+    if ((var_8 != 0)) {
+        Warp_Player(5, 0x447, 0xA3);
+        PlayBGM(1, 5);
+        SetEntityPosition(0, 0x447, 0xA3, "Up");
+        Lock_Player_Input();
+        SetEntityAnim(0, 0x192);
+        SetEntityPosition(0x16, 0x447, 0x8C, "Down");
+        SetEntityAnim(0x16, 0x8EC);
+        if ((var_2 || var_6)) {
+            SetEntityPosition(2, 0x435, 0xA3, "Up");
+            SetEntityAnim(2, 0x213);
+        }
+        if ((((var_0 || var_4) || var_1) || var_5)) {
+            SetEntityPosition(4, 0x45B, 0xA3, "Up");
+            SetEntityAnim(4, 0x9EF);
+        }
+        Fade_In(2, 1);
+        Make_Delay(0x1E);
+        if (var_7) {
+            TalkOpen();
+            Set_Portrait(0x98);
+            Set_Name_Window(0x16);
+            Proc110();
+            TalkClose();
+            if (var_6) {
+                SetEntityFacing(2, "Right");
+                SetEntityFacing(0, "Left");
+                TalkOpen();
+                Set_Portrait(2);
+                Set_Name_Window(2);
+                TalkMessage(0);
+                TalkClose();
+                SetEntityFacing(2, "Up");
+                SetEntityFacing(0, "Up");
+            }
+            Make_Delay(0x1E);
+            if ((var_4 || var_5)) {
+                SetEntityFacing(4, "Left");
+                SetEntityFacing(0, "Right");
+                TalkOpen();
+                Set_Portrait(0xB7);
+                Set_Name_Window(4);
+                TalkMessage(1);
+                TalkClose();
+                SetEntityFacing(4, "Up");
+                SetEntityFacing(0, "Up");
+            }
+            Proc111();
+            Give_Friendship_Points(1, (-3 * var_7));
+            Give_Friendship_Points(2, (-3 * var_7));
+            Give_Friendship_Points(3, (-3 * var_7));
+            Give_Friendship_Points(4, (-3 * var_7));
+            Give_Friendship_Points(5, (-3 * var_7));
+            Give_Friendship_Points(6, (-3 * var_7));
+            Give_Friendship_Points(7, (-3 * var_7));
+            Give_Friendship_Points(8, (-3 * var_7));
+            Give_Friendship_Points(9, (-3 * var_7));
+            Give_Friendship_Points(0xA, (-3 * var_7));
+            Give_Friendship_Points(0xB, (-3 * var_7));
+            Give_Friendship_Points(0xC, (-3 * var_7));
+            Give_Friendship_Points(0xD, (-3 * var_7));
+            Give_Friendship_Points(0xE, (-3 * var_7));
+            Give_Friendship_Points(0xF, (-3 * var_7));
+            Give_Friendship_Points(0x10, (-3 * var_7));
+            Give_Friendship_Points(0x11, (-3 * var_7));
+            Give_Friendship_Points(0x12, (-3 * var_7));
+            Give_Friendship_Points(0x13, (-3 * var_7));
+            Give_Friendship_Points(0x14, (-3 * var_7));
+            Give_Friendship_Points(0x15, (-3 * var_7));
+            Give_Friendship_Points(0x16, (-3 * var_7));
+            Give_Friendship_Points(0x17, (-3 * var_7));
+            Give_Friendship_Points(0x18, (-3 * var_7));
+            Give_Friendship_Points(0x19, (-3 * var_7));
+            Give_Friendship_Points(0x1A, (-3 * var_7));
+            Give_Friendship_Points(0x1B, (-3 * var_7));
+            Give_Friendship_Points(0x1C, (-3 * var_7));
+            Give_Friendship_Points(0x1D, (-3 * var_7));
+            Give_Friendship_Points(0x1E, (-3 * var_7));
+            Give_Friendship_Points(0x1F, (-3 * var_7));
+            if ((Check_Flag(0x13B) == 2)) {
+                Give_Friendship_Points(0x21, (-3 * var_7));
+            }
+            if ((Check_Flag(0x13E) == 2)) {
+                Give_Friendship_Points(0x22, (-3 * var_7));
+            }
+            Give_Friendship_Points(0x23, (-3 * var_7));
+            Give_Friendship_Points(0x24, (-3 * var_7));
+            Give_Friendship_Points(0x25, (-3 * var_7));
+            Give_Friendship_Points(0x26, (-3 * var_7));
+            Give_Friendship_Points(0x27, (-3 * var_7));
+            Give_Friendship_Points(0x28, (-3 * var_7));
+            Give_Friendship_Points(0x29, (-3 * var_7));
+            Give_Friendship_Points(0x2A, (-3 * var_7));
+            Give_Love_Points(3, (-0x12C * var_7));
+            Give_Love_Points(0xC, (-0x12C * var_7));
+            Give_Love_Points(0x13, (-0x12C * var_7));
+            Give_Love_Points(0x15, (-0x12C * var_7));
+            Give_Love_Points(0x19, (-0x12C * var_7));
+            Give_Love_Points(0x1F, (-0x12C * var_7));
+        }
+        if (var_3) {
+            TalkOpen();
+            Set_Portrait(0x98);
+            Set_Name_Window(0x16);
+            Proc112();
+            TalkClose();
+            if (var_2) {
+                TalkOpen();
+                Set_Portrait(3);
+                Set_Name_Window(2);
+                TalkMessage(2);
+                TalkClose();
+            }
+            Make_Delay(0x1E);
+            if ((var_0 || var_1)) {
+                TalkOpen();
+                Set_Portrait(0xB7);
+                Set_Name_Window(4);
+                TalkMessage(3);
+                TalkClose();
+            }
+            Proc113();
+        }
+        Make_Delay(0x1E);
+        Fade_Out(2, 1);
+    }
+    Execute_Script(986);
+    exit;
+}

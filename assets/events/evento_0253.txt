@@ -1,0 +1,11 @@
+// Script 253
+#include "Fomt_Lib.src"
+
+script 253 Event_0253 {
+    const MESSAGE_0 = "Liquor Shelf\BRK";
+    
+    TalkOpen();
+    Print_Message(0);
+    TalkClose();
+    exit;
+}

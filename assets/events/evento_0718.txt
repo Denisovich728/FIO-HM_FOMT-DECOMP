@@ -1,0 +1,106 @@
+// Script 718
+#include "Fomt_Lib.src"
+
+script 718 Event_0718 {
+    const MESSAGE_0 = "You've been drinking \r\nour juice and wine\r\nagain, haven't you!?!\BRK";
+    const MESSAGE_1 = "I have not!\BRK";
+    const MESSAGE_2 = "Don't lie to me!\BRK\WAIT_CLICKWhat about those bottles \r\nunder the bed!\BRK";
+    const MESSAGE_3 = "Err.......\"\BRK";
+    const MESSAGE_4 = "I just wanted to research\r\nif I could make them \r\nbetter, that's all...\BRK";
+    const MESSAGE_5 = "Research, huh?\BRK\WAIT_CLICKThen why do you drink\r\nfrom it every time \r\nI go to bed? \BRK";
+    const MESSAGE_6 = "You don't have to check up\r\non me so much, you know!\r\nIt's OK to drink a little, \r\nisn't it!?\BRK";
+    const MESSAGE_7 = "You were the one who said\r\nyou'd stop drinking\r\nour sales!\BRK\WAIT_CLICKYou should keep your own\r\npromises!\BRK\WAIT_CLICKAfter all, Aja left because\r\nyou can\x81ft keep your\r\npromises!\BRK\WAIT_CLICKWhat if Cliff left for the\r\nsame reason? \BRK\WAIT_CLICKI'd never forgive you!\BRK";
+    const MESSAGE_8 = "............\r\n\BRK";
+    const MESSAGE_9 = "I never said I wanted you \r\nnot to drink at all, Duke. \BRK\WAIT_CLICKI just wanted you to cut \r\nback a little, that's all. \BRK\WAIT_CLICKI'm just because I worry \r\nabout you, that's all...\BRK";
+    const MESSAGE_10 = "...OK.\BRK";
+    const MESSAGE_11 = "Good. I'll forgive you \r\nthis time.\BRK";
+    
+    End_Cinematic_State();
+    if ((Inventory_Check() == 1)) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    SetEntityPosition(9, 0x58, 0x50, "Right");
+    SetEntityAnim(9, 0x8D0);
+    SetEntityPosition(8, 0x6C, 0x50, "Left");
+    SetEntityAnim(8, 0x8C0);
+    Fade_In(2, 1);
+    Pan_Camera_To(0x78, 0x50, 2);
+    Wait_Camera_Stop();
+    Show_Emote(9, 0, 0);
+    Make_Delay(0x3C);
+    TalkOpen();
+    Set_Portrait(0x8B);
+    Set_Name_Window(9);
+    TalkMessage(0);
+    TalkClose();
+    TalkOpen();
+    Set_Portrait(0x85);
+    Set_Name_Window(8);
+    TalkMessage(1);
+    TalkClose();
+    TalkOpen();
+    Set_Portrait(0x8B);
+    Set_Name_Window(9);
+    TalkMessage(2);
+    TalkClose();
+    Show_Emote(8, 4, 0);
+    Make_Delay(0x3C);
+    TalkOpen();
+    Set_Portrait(0x88);
+    Set_Name_Window(8);
+    TalkMessage(3);
+    Set_Portrait(0x86);
+    TalkMessage(4);
+    TalkClose();
+    TalkOpen();
+    Set_Portrait(0x8B);
+    Set_Name_Window(9);
+    TalkMessage(5);
+    TalkClose();
+    Show_Emote(8, 6, 0);
+    Make_Delay(0x3C);
+    TalkOpen();
+    Set_Portrait(0x87);
+    Set_Name_Window(8);
+    TalkMessage(6);
+    TalkClose();
+    Show_Emote(9, 0, 0);
+    Make_Delay(0x3C);
+    TalkOpen();
+    Set_Portrait(0x8B);
+    Set_Name_Window(9);
+    TalkMessage(7);
+    TalkClose();
+    TalkOpen();
+    Set_Portrait(0x87);
+    Set_Name_Window(8);
+    TalkMessage(8);
+    TalkClose();
+    TalkOpen();
+    Set_Portrait(0x8C);
+    Set_Name_Window(9);
+    TalkMessage(9);
+    TalkClose();
+    Show_Emote(8, 6, 0);
+    Make_Delay(0x3C);
+    TalkOpen();
+    Set_Portrait(0x88);
+    Set_Name_Window(8);
+    TalkMessage(10);
+    TalkClose();
+    TalkOpen();
+    Set_Portrait(0x8A);
+    Set_Name_Window(9);
+    TalkMessage(11);
+    TalkClose();
+    Pan_Camera_To(0x78, 0xD0, 2);
+    Wait_Camera_Stop();
+    End_Cinematic_State();
+    Set_Flag(0xFB, 1);
+    Routine_State_Override(9, 0x2D0);
+    Routine_State_Override(8, 0x2CF);
+    exit;
+    exit;
+}

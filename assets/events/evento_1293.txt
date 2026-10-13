@@ -1,0 +1,344 @@
+// Script 1293
+#include "Fomt_Lib.src"
+
+script 1293 Event_1293 {
+    const MESSAGE_0 = "Today is the Pumpkin \r\nFestival, so I made some \r\ntreats for \xFF*\r\nand you. \BRK";
+    const MESSAGE_1 = "Today is the Pumpkin \r\nFestival. \BRK\WAIT_CLICKI made lots of treats for\r\n\xFF* and \r\nyou. \BRK";
+    const MESSAGE_2 = "Today is the Pumpkin \r\nFestival. \BRK\WAIT_CLICKI made lots of treats for\r\nyou two!\BRK";
+    const MESSAGE_3 = "Today is the Pumpkin\r\nFestival, so I tried making\r\nsome treats. \BRK";
+    const MESSAGE_4 = "Today is the Pumpkin \r\nFestival, so Grandma and I\r\nmade a whole lot of treats\BRK\r\nfor you and \r\n\xFF*. \BRK";
+    const MESSAGE_5 = "Goo-goo!\BRK";
+    const MESSAGE_6 = "Try them!\BRK";
+    const MESSAGE_7 = "Let's eat!\BRK";
+    const MESSAGE_8 = "Let's eat. \BRK";
+    const MESSAGE_9 = "Eat up now!\BRK";
+    const MESSAGE_10 = "I feel sick from eating \r\ntoo many sweets...I can \r\nalready feel the cavities.\BRK";
+    const MESSAGE_11 = "Today is the Pumpkin \r\nFestival, so I made some \r\ntreats for \xFF*\BRK\r\nand you. I just hope \r\nthey taste OK...\BRK";
+    const MESSAGE_12 = "Today is the Pumpkin \r\nFestival. \BRK\WAIT_CLICKI made lots of treats for\r\n\xFF* and \r\nyou. Eat away!\BRK";
+    const MESSAGE_13 = "Today is the Pumpkin \r\nFestival. \BRK\WAIT_CLICKI made lots of treats for\r\nyou two! Let's all eat up!\BRK";
+    const MESSAGE_14 = "Today is the Pumpkin\r\nFestival.\BRK\WAIT_CLICKI baked some pasties.\r\nWould you like some?\BRK";
+    const MESSAGE_15 = "Today is the Pumpkin \r\nFestival, so Grandma and I\r\nmade a whole lot of treats.\BRK\WAIT_CLICKDon't worry, she already \r\ntested them. Eat up!\BRK";
+    const MESSAGE_16 = "Today is the Pumpkin\r\nFestival, so I tried making\r\nsome treats. Give them \BRK\r\na try. \BRK";
+    
+    Warp_Player(0x1D, 0x120, 0x94);
+    SetEntityPosition(0, 0x130, 0xD0, "Up");
+    if (Inventory_Check()) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    if ((Check_Flag(0x4C) == 2)) {
+        SetEntityPosition(0x13, 0x120, 0x63, "Down");
+        SetEntityAnim(0x13, 0x691);
+    } else {
+        if ((Check_Flag(0x55) == 2)) {
+            SetEntityPosition(3, 0x120, 0x63, "Down");
+            SetEntityAnim(3, 0x22F);
+            goto LBL_0005;
+        }
+        if ((Check_Flag(0x5F) == 2)) {
+            SetEntityPosition(0x19, 0x120, 0x63, "Down");
+            SetEntityAnim(0x19, 0x7BE);
+            goto LBL_0005;
+        }
+        if ((Check_Flag(0x67) == 2)) {
+            SetEntityPosition(0xC, 0x120, 0x63, "Down");
+            SetEntityAnim(0xC, 0x813);
+            goto LBL_0005;
+        }
+        if ((Check_Flag(0x6F) == 2)) {
+            SetEntityPosition(0x15, 0x120, 0x63, "Down");
+            SetEntityAnim(0x15, 0x884);
+        }
+    }
+    if ((((((Check_Flag(0xC8) == 2) || (Check_Flag(0xC9) == 2)) || (Check_Flag(0xCA) == 2)) || (Check_Flag(0xCB) == 2)) || (Check_Flag(0xCC) == 2))) {
+        if ((Check_Flag(0x2E) >= 0x3C)) {
+            SetEntityPosition(0x23, 0x130, 0x60, "Down");
+            if ((Check_Flag(0x2F) == 1)) {
+                SetEntityAnim(0x23, 0x267);
+            } else {
+                SetEntityAnim(0x23, 0x26B);
+            }
+        }
+    }
+    Spawn_Item_On_Grid(0, 0x120, 0x78, 2, Get_Item_Sprite_ID(0x8F));
+    Spawn_Item_On_Grid(1, 0x130, 0x79, 2, Get_Item_Sprite_ID(0x8B));
+    Fade_In(2, 1);
+    Set_Flag(0x1B5, 1);
+    if (Inventory_Check()) {
+        SetEntityAnim(0, 0x1C6);
+    } else {
+        SetEntityAnim(0, 0x156);
+    }
+    Set_Vector_Y(0, 0x94, 1);
+    Execute_Movement(0);
+    if (Inventory_Check()) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    SetEntityFacing(0, "Left");
+    if (Inventory_Check()) {
+        SetEntityAnim(0, 0x1C6);
+    } else {
+        SetEntityAnim(0, 0x156);
+    }
+    Set_Vector_X(0, 0x127, 1);
+    Execute_Movement(0);
+    if (Inventory_Check()) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    SetEntityFacing(0, "Up");
+    Make_Delay(0x3C);
+    TalkOpen();
+    if ((((((Check_Flag(0xC8) == 2) || (Check_Flag(0xC9) == 2)) || (Check_Flag(0xCA) == 2)) || (Check_Flag(0xCB) == 2)) || (Check_Flag(0xCC) == 2))) {
+        Give_Friendship_Points(0x23, 0x14);
+        if ((Check_Flag(0x2E) >= 0x3C)) {
+            if ((Check_Flag(0x4C) == 2)) {
+                Set_Name_Window(0x13);
+                Set_Portrait(0x48);
+                Set_Hearth_Anim(0x13);
+                TalkMessage(0);
+                TalkClose();
+            } else {
+                if ((Check_Flag(0x55) == 2)) {
+                    Set_Name_Window(3);
+                    Set_Portrait(8);
+                    Set_Hearth_Anim(3);
+                    TalkMessage(1);
+                    TalkClose();
+                } else {
+                    if ((Check_Flag(0x5F) == 2)) {
+                        Set_Name_Window(0x19);
+                        Set_Portrait(0x58);
+                        Set_Hearth_Anim(0x19);
+                        TalkMessage(2);
+                        TalkClose();
+                    } else {
+                        if ((Check_Flag(0x67) == 2)) {
+                            Set_Name_Window(0xC);
+                            Set_Portrait(0x68);
+                            Set_Hearth_Anim(0xC);
+                            TalkMessage(3);
+                            TalkClose();
+                        } else {
+                            if ((Check_Flag(0x6F) == 2)) {
+                                Set_Name_Window(0x15);
+                                Set_Portrait(0x7A);
+                                Set_Hearth_Anim(0x15);
+                                TalkMessage(4);
+                                TalkClose();
+                            }
+                        }
+                    }
+                }
+            }
+            TalkOpen();
+            Set_Name_Window(0x23);
+            Set_Portrait(0x12);
+            TalkMessage(5);
+            TalkClose();
+            Free_Event_Entity(0x23);
+            if ((Check_Flag(0x4C) == 2)) {
+                Set_Name_Window(0x13);
+                Set_Portrait(0x49);
+                Set_Hearth_Anim(0x13);
+                TalkMessage(6);
+                TalkClose();
+                Free_Event_Entity(0x13);
+                Give_Love_Points(0x13, 0x3E8);
+            } else {
+                if ((Check_Flag(0x55) == 2)) {
+                    Set_Name_Window(3);
+                    Set_Portrait(8);
+                    Set_Hearth_Anim(3);
+                    TalkMessage(7);
+                    TalkClose();
+                    Free_Event_Entity(3);
+                    Give_Love_Points(3, 0x3E8);
+                } else {
+                    if ((Check_Flag(0x5F) == 2)) {
+                        Set_Name_Window(0x19);
+                        Set_Portrait(0x58);
+                        Set_Hearth_Anim(0x19);
+                        TalkMessage(7);
+                        TalkClose();
+                        Free_Event_Entity(0x19);
+                        Give_Love_Points(0x19, 0x3E8);
+                    } else {
+                        if ((Check_Flag(0x67) == 2)) {
+                            Set_Name_Window(0xC);
+                            Set_Portrait(0x68);
+                            Set_Hearth_Anim(0xC);
+                            TalkMessage(8);
+                            TalkClose();
+                            Free_Event_Entity(0xC);
+                            Give_Love_Points(0xC, 0x3E8);
+                        } else {
+                            if ((Check_Flag(0x6F) == 2)) {
+                                Set_Name_Window(0x15);
+                                Set_Portrait(0x7A);
+                                Set_Hearth_Anim(0x15);
+                                TalkMessage(9);
+                                TalkClose();
+                                Free_Event_Entity(0x15);
+                                Give_Love_Points(0x15, 0x3E8);
+                            }
+                        }
+                    }
+                }
+            }
+            SetEntityAnim(0, 0x1FE);
+            Make_Delay(0x3C);
+            if (Inventory_Check()) {
+                SetEntityAnim(0, 0x192);
+            } else {
+                SetEntityAnim(0, 0x152);
+            }
+            Make_Delay(0x3C);
+            Fade_Out(2, 1);
+            Despawn_Map_Item(0);
+            Despawn_Map_Item(1);
+            TalkOpen();
+            TalkMessage(10);
+            TalkClose();
+            Set_Flag(0x1B5, 2);
+            Execute_Script(988);
+        } else {
+            if ((Check_Flag(0x4C) == 2)) {
+                Set_Name_Window(0x13);
+                Set_Portrait(0x48);
+                Set_Hearth_Anim(0x13);
+                TalkMessage(11);
+                TalkClose();
+                Free_Event_Entity(0x13);
+                Give_Love_Points(0x13, 0x3E8);
+            } else {
+                if ((Check_Flag(0x55) == 2)) {
+                    Set_Name_Window(3);
+                    Set_Portrait(8);
+                    Set_Hearth_Anim(3);
+                    TalkMessage(12);
+                    TalkClose();
+                    Free_Event_Entity(3);
+                    Give_Love_Points(3, 0x3E8);
+                } else {
+                    if ((Check_Flag(0x5F) == 2)) {
+                        Set_Name_Window(0x19);
+                        Set_Portrait(0x58);
+                        Set_Hearth_Anim(0x19);
+                        TalkMessage(13);
+                        TalkClose();
+                        Free_Event_Entity(0x19);
+                        Give_Love_Points(0x19, 0x3E8);
+                    } else {
+                        if ((Check_Flag(0x67) == 2)) {
+                            Set_Name_Window(0xC);
+                            Set_Portrait(0x68);
+                            Set_Hearth_Anim(0xC);
+                            TalkMessage(14);
+                            TalkClose();
+                            Free_Event_Entity(0xC);
+                            Give_Love_Points(0xC, 0x3E8);
+                        } else {
+                            if ((Check_Flag(0x6F) == 2)) {
+                                Set_Name_Window(0x15);
+                                Set_Portrait(0x7A);
+                                Set_Hearth_Anim(0x15);
+                                TalkMessage(15);
+                                TalkClose();
+                                Free_Event_Entity(0x15);
+                                Give_Love_Points(0x15, 0x3E8);
+                            }
+                        }
+                    }
+                }
+            }
+            SetEntityAnim(0, 0x1FE);
+            Make_Delay(0x3C);
+            if (Inventory_Check()) {
+                SetEntityAnim(0, 0x192);
+            } else {
+                SetEntityAnim(0, 0x152);
+            }
+            Make_Delay(0x3C);
+            Fade_Out(2, 1);
+            Despawn_Map_Item(0);
+            Despawn_Map_Item(1);
+            TalkOpen();
+            TalkMessage(10);
+            TalkClose();
+            Set_Flag(0x1B5, 2);
+            Execute_Script(988);
+        }
+    } else {
+        if ((Check_Flag(0x4C) == 2)) {
+            Set_Name_Window(0x13);
+            Set_Portrait(0x48);
+            Set_Hearth_Anim(0x13);
+            TalkMessage(11);
+            TalkClose();
+            Free_Event_Entity(0x13);
+            Give_Love_Points(0x13, 0x3E8);
+        } else {
+            if ((Check_Flag(0x55) == 2)) {
+                Set_Name_Window(3);
+                Set_Portrait(8);
+                Set_Hearth_Anim(3);
+                TalkMessage(12);
+                TalkClose();
+                Free_Event_Entity(3);
+                Give_Love_Points(3, 0x3E8);
+                goto LBL_007F;
+            }
+            if ((Check_Flag(0x5F) == 2)) {
+                Set_Name_Window(0x19);
+                Set_Portrait(0x58);
+                Set_Hearth_Anim(0x19);
+                TalkMessage(13);
+                TalkClose();
+                Free_Event_Entity(0x19);
+                Give_Love_Points(0x19, 0x3E8);
+                goto LBL_007F;
+            }
+            if ((Check_Flag(0x67) == 2)) {
+                Set_Name_Window(0xC);
+                Set_Portrait(0x68);
+                Set_Hearth_Anim(0xC);
+                TalkMessage(16);
+                TalkClose();
+                Free_Event_Entity(0xC);
+                Give_Love_Points(0xC, 0x3E8);
+                goto LBL_007F;
+            }
+            if ((Check_Flag(0x6F) == 2)) {
+                Set_Name_Window(0x15);
+                Set_Portrait(0x7A);
+                Set_Hearth_Anim(0x15);
+                TalkMessage(15);
+                TalkClose();
+                Free_Event_Entity(0x15);
+                Give_Love_Points(0x15, 0x3E8);
+            }
+        }
+        SetEntityAnim(0, 0x1FE);
+        Make_Delay(0x3C);
+        if (Inventory_Check()) {
+            SetEntityAnim(0, 0x192);
+        } else {
+            SetEntityAnim(0, 0x152);
+        }
+        Make_Delay(0x3C);
+        Fade_Out(2, 1);
+        Despawn_Map_Item(0);
+        Despawn_Map_Item(1);
+        TalkOpen();
+        TalkMessage(10);
+        TalkClose();
+        Set_Flag(0x1B5, 2);
+        Execute_Script(988);
+    }
+    exit;
+}

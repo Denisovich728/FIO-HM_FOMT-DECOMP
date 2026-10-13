@@ -1,0 +1,21 @@
+// Script 458
+#include "Fomt_Lib.src"
+
+script 458 Event_0458 {
+    const MESSAGE_0 = "There is no Chicken Feed\r\nin the Feed Bin.\BRK";
+    
+    if ((((!Inventory_Check() && (Compare_Gift() == 1)) && !Is_Item_Wrapped()) && (Search_Item_Gift_Address() == 0x5B))) {
+        Drop_Held_Item();
+        Set_Flag(0x29, (Check_Flag(0x29) + 1));
+    } else {
+        if ((Check_Flag(0x29) == 0)) {
+            TalkOpen();
+            Print_Message(0);
+            TalkClose();
+            goto LBL_0005;
+        }
+        Give_Item(0x5B);
+        Set_Flag(0x29, (Check_Flag(0x29) - 1));
+    }
+    exit;
+}

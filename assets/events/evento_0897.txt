@@ -1,0 +1,16 @@
+// Script 897
+#include "Fomt_Lib.src"
+
+script 897 Event_0897 {
+    const MESSAGE_0 = "Things are going to get \r\nbusy around here! \r\nI only wish my darling\BRK\r\nwould come back...\BRK";
+    
+    SetEntityFacing(1, GetOppositeFacing(GetEntityFacing(0)));
+    TalkOpen();
+    Set_Portrait(0xF);
+    Set_Name_Window(1);
+    TalkMessage(0);
+    TalkClose();
+    SetEntityFacing(1, "Down");
+    Free_Event_Entity(1);
+    exit;
+}

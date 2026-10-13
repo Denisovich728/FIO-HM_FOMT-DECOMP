@@ -1,0 +1,75 @@
+// Script 852
+#include "Fomt_Lib.src"
+
+script 852 Event_0852 {
+    const MESSAGE_0 = "Good morning, \xFF!. \r\nToday is very special. It's\r\nour 50th wedding \BRK\r\nanniversary. \BRK\WAIT_CLICKI even bought you a cottage\r\nin the mountains as a gift.\BRK\WAIT_CLICKHow did I pay for it?\r\nNever mind that!\BRK";
+    const MESSAGE_1 = "Go and take a look at it \r\nlater on. \BRK";
+    
+    Warp_Player(0x1D, 0x109, 0x8A);
+    PlayBGM(1, 0x11);
+    SetEntityPosition(0, 0x109, 0x8A, "Up");
+    if (Inventory_Check()) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    if ((Check_Flag(0x17A) == 2)) {
+        if ((Check_Flag(0x2E) >= 0x3C)) {
+            SetEntityPosition(0x23, 0x124, 0x54, "Down");
+            if ((Check_Flag(0x2F) == 1)) {
+                SetEntityAnim(0x23, 0x267);
+            } else {
+                SetEntityAnim(0x23, 0x26B);
+            }
+        } else {
+            SetEntityPosition(0x23, 0x1A0, -0x30, "Down");
+            SetEntityAnim(0x23, 0xC);
+        }
+    }
+    Fade_In(2, 1);
+    Set_Flag(0x175, 1);
+    Make_Delay(0x3C);
+    PlaySong(0, 0xBE);
+    SetEntityPosition(0x46, GetEntityX(0), (GetEntityY(0) - 0x18), "Down");
+    Spawn_Event_Entity(0x46, 3);
+    SetEntityAnim(0x46, 0x42C);
+    Tick_Overnight_Engine(1, 0);
+    Tick_Overnight_Engine(1, 0);
+    Fade_Out(1, 1);
+    Hide_Entity(0x46);
+    SetEntityPosition(0x1F, 0x109, 0x72, "Down");
+    SetEntityAnim(0x1F, 0x669);
+    Fade_In(1, 1);
+    Make_Delay(0x3C);
+    Show_Emote(0, 2, 0);
+    Make_Delay(0x3C);
+    TalkOpen();
+    Set_Name_Window(0x1F);
+    Set_Portrait(0x39);
+    TalkMessage(0);
+    Set_Name_Window(0x1F);
+    Set_Portrait(0x38);
+    TalkMessage(1);
+    TalkClose();
+    Free_Event_Entity(0x1F);
+    Make_Delay(0x3C);
+    PlaySong(0, 0xBE);
+    SetEntityPosition(0x46, GetEntityX(0x1F), (GetEntityY(0x1F) + 4), "Down");
+    Spawn_Event_Entity(0x46, 3);
+    SetEntityAnim(0x46, 0x42C);
+    Tick_Overnight_Engine(1, 0);
+    Tick_Overnight_Engine(1, 0);
+    Fade_Out(1, 1);
+    Hide_Entity(0x46);
+    Hide_Entity(0x1F);
+    Make_Delay(0x1E);
+    Fade_In(1, 1);
+    Set_Flag(0x175, 2);
+    Unlock_Mountain_Cottage();
+    Make_Delay(0x3C);
+    Fade_Out(2, 1);
+    Warp_Player(0x1D, 0x147, 0x70);
+    SetEntityPosition(0, 0x147, 0x70, "Left");
+    Fade_In(2, 1);
+    exit;
+}

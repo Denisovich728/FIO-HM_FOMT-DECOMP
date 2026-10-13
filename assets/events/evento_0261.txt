@@ -1,0 +1,11 @@
+// Script 261
+#include "Fomt_Lib.src"
+
+script 261 Event_0261 {
+    const MESSAGE_0 = "Big Kitchen\BRK";
+    
+    TalkOpen();
+    Print_Message(0);
+    TalkClose();
+    exit;
+}

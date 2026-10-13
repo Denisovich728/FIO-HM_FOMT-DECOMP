@@ -1,0 +1,40 @@
+// Script 322
+#include "Fomt_Lib.src"
+
+script 322 Event_0322 {
+    const MESSAGE_0 = "A Jewel of Truth is\r\nfallen in the bookshelf.\BRK";
+    const MESSAGE_1 = "A Jewel of Truth is\r\nfallen in the bookshelf.\BRK\WAIT_CLICK...But your hands are\r\nalready full, so you \r\ncan't hold it.\BRK";
+    const MESSAGE_2 = "Bookshelf\r\n\BRK";
+    
+    if ((GetEntityFacing(0) == 1)) {
+        if ((Check_Flag(0x212) == 1)) {
+            Fade_Out(3, 1);
+            Show_Document_UI(0xE);
+            Fade_In(3, 1);
+        } else {
+            if ((Check_Flag(0x16) == 1)) {
+                if ((Inventory_Check() == 1)) {
+                    Give_Item(0x27);
+                    TalkOpen();
+                    TalkMessage(0);
+                    TalkClose();
+                    Set_Flag(0x212, 1);
+                    Set_Flag(0x154, (Check_Flag(0x154) + 1));
+                } else {
+                    TalkOpen();
+                    TalkMessage(1);
+                    TalkClose();
+                }
+            } else {
+                Fade_Out(3, 1);
+                Show_Document_UI(0xE);
+                Fade_In(3, 1);
+            }
+        }
+    } else {
+        TalkOpen();
+        TalkMessage(2);
+        TalkClose();
+    }
+    exit;
+}

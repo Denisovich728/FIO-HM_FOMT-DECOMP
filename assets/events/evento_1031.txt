@@ -1,0 +1,1619 @@
+// Script 1031
+#include "Fomt_Lib.src"
+
+script 1031 Event_1031 {
+    const MESSAGE_0 = "Pick one.";
+    const MESSAGE_1 = "Love up";
+    const MESSAGE_2 = "Affection up";
+    const MESSAGE_3 = "Surprise 1";
+    const MESSAGE_4 = "Surprise 2";
+    const MESSAGE_5 = "Quit";
+    const MESSAGE_6 = "Popuri";
+    const MESSAGE_7 = "Ann";
+    const MESSAGE_8 = "Elli";
+    const MESSAGE_9 = "Mary";
+    const MESSAGE_10 = "Karen";
+    const MESSAGE_11 = "H. Goddess";
+    const MESSAGE_12 = "Popuri's love\xFF%";
+    const MESSAGE_13 = "RA+1,000";
+    const MESSAGE_14 = "RA-1,000";
+    const MESSAGE_15 = "Return";
+    const MESSAGE_16 = "Return more";
+    const MESSAGE_17 = "Ann's love\xFF%";
+    const MESSAGE_18 = "Elli's love\xFF%";
+    const MESSAGE_19 = "RA+1000";
+    const MESSAGE_20 = "RA-1000";
+    const MESSAGE_21 = "Mary's love\xFF%";
+    const MESSAGE_22 = "Karen's love\xFF%";
+    const MESSAGE_23 = "Goddess's love\xFF%";
+    const MESSAGE_24 = "\x81@\x82P\x81^\x82P\x82P";
+    const MESSAGE_25 = "Prev. page";
+    const MESSAGE_26 = "Lillia";
+    const MESSAGE_27 = "Rick";
+    const MESSAGE_28 = "Next page";
+    const MESSAGE_29 = "Kai";
+    const MESSAGE_30 = "Lillia's affection\xFF%";
+    const MESSAGE_31 = "Affection+10";
+    const MESSAGE_32 = "Affection-10";
+    const MESSAGE_33 = "Rick's affection\xFF%";
+    const MESSAGE_34 = "Popuri's affection\xFF%";
+    const MESSAGE_35 = "Kai's affection\xFF%";
+    const MESSAGE_36 = "\x81@\x82Q\x81^\x82P\x82P";
+    const MESSAGE_37 = "Doctor";
+    const MESSAGE_38 = "Stu";
+    const MESSAGE_39 = "Ellen";
+    const MESSAGE_40 = "Doctor's affection\xFF%";
+    const MESSAGE_41 = "Elli's affection\xFF%";
+    const MESSAGE_42 = "Stu's affection\xFF%";
+    const MESSAGE_43 = "Ellen's affection\xFF%";
+    const MESSAGE_44 = "\x81@\x82R\x81^\x82P\x82P";
+    const MESSAGE_45 = "Jeff";
+    const MESSAGE_46 = "Sasha";
+    const MESSAGE_47 = "Karen's affection\xFF%";
+    const MESSAGE_48 = "Jeff's affection\xFF%";
+    const MESSAGE_49 = "Sasha's affection\xFF%";
+    const MESSAGE_50 = "\x81@\x82S\x81^\x82P\x82P";
+    const MESSAGE_51 = "Barley";
+    const MESSAGE_52 = "May";
+    const MESSAGE_53 = "Saibara";
+    const MESSAGE_54 = "Gray";
+    const MESSAGE_55 = "Barley's affection\xFF%";
+    const MESSAGE_56 = "May's affection\xFF%";
+    const MESSAGE_57 = "Saibara's affection\xFF%";
+    const MESSAGE_58 = "Gray's affection\xFF%";
+    const MESSAGE_59 = "\x81@\x82T\x81^\x82P\x82P";
+    const MESSAGE_60 = "Duke";
+    const MESSAGE_61 = "Manna";
+    const MESSAGE_62 = "Thomas";
+    const MESSAGE_63 = "Harris";
+    const MESSAGE_64 = "Duke's affection\xFF%";
+    const MESSAGE_65 = "Manna's affection\xFF%";
+    const MESSAGE_66 = "Thomas's affection\xFF%";
+    const MESSAGE_67 = "Harris's affection\xFF%";
+    const MESSAGE_68 = "\x81@\x82U\x81^\x82P\x82P";
+    const MESSAGE_69 = "Basil";
+    const MESSAGE_70 = "Anna";
+    const MESSAGE_71 = "Carter";
+    const MESSAGE_72 = "Basil's affection\xFF%";
+    const MESSAGE_73 = "Anna's affection\xFF%";
+    const MESSAGE_74 = "Mary's affection\xFF%";
+    const MESSAGE_75 = "Carter's affection\xFF%";
+    const MESSAGE_76 = "\x81@\x82V\x81^\x82P\x82P";
+    const MESSAGE_77 = "Doug";
+    const MESSAGE_78 = "Cliff";
+    const MESSAGE_79 = "Doug's affection\xFF%";
+    const MESSAGE_80 = "Ann's affection\xFF%";
+    const MESSAGE_81 = "Cliff's affection\xFF%";
+    const MESSAGE_82 = "\x81@\x82W\x81^\x82P\x82P";
+    const MESSAGE_83 = "Won";
+    const MESSAGE_84 = "Gourmet";
+    const MESSAGE_85 = "Gotz";
+    const MESSAGE_86 = "Zack";
+    const MESSAGE_87 = "Won's affection\xFF%";
+    const MESSAGE_88 = "Gourmet's affection\xFF%";
+    const MESSAGE_89 = "Gotz's affection\xFF%";
+    const MESSAGE_90 = "Zack's affection\xFF%";
+    const MESSAGE_91 = "\x81@\x82X\x81^\x82P\x82P";
+    const MESSAGE_92 = "Staid";
+    const MESSAGE_93 = "Nappy";
+    const MESSAGE_94 = "Bold";
+    const MESSAGE_95 = "Goddess's affection\xFF%";
+    const MESSAGE_96 = "Staid's affection\xFF%";
+    const MESSAGE_97 = "Nappy's affection\xFF%";
+    const MESSAGE_98 = "Bold's affection\xFF%";
+    const MESSAGE_99 = "\x82P\x82O\x81^\x82P\x82P";
+    const MESSAGE_100 = "Chef";
+    const MESSAGE_101 = "Aqua";
+    const MESSAGE_102 = "Hoggy";
+    const MESSAGE_103 = "Timid";
+    const MESSAGE_104 = "Chef's affection\xFF%";
+    const MESSAGE_105 = "Aqua's affection\xFF%";
+    const MESSAGE_106 = "Hoggy's affection\xFF%";
+    const MESSAGE_107 = "Timid's affection\xFF%";
+    const MESSAGE_108 = "\x82P\x82P\x81^\x82P\x82P";
+    const MESSAGE_109 = "Van";
+    const MESSAGE_110 = "Ruby";
+    const MESSAGE_111 = "Child";
+    const MESSAGE_112 = "Van's affection\xFF%";
+    const MESSAGE_113 = "Ruby's affection\xFF%";
+    const MESSAGE_114 = "Child's affection\xFF%";
+    
+    var var_0;
+    var var_1;
+    var var_2;
+    
+    var_1 = 0;
+    TalkOpen();
+    do {
+        Create_Select_List(0);
+        var_0 = TalkChoice5(1, 2, 3, 4, 5);
+        switch (var_0) {
+            case 1:
+                Create_Select_List(1);
+                var_0 = TalkChoice6(6, 7, 8, 9, 0xA, 0xB);
+                switch (var_0) {
+                    case 1:
+                        Set_Portrait(7);
+                        Set_Name_Window(3);
+                        do {
+                            Set_Text_Buffer_Int(0, Chek_Love_Points(3));
+                            Draw_Menu_With_Header(0, 0xC, 0xD, 0xE, 0xF, 0x10);
+                            switch (var_0) {
+                                case 1:
+                                    Give_Love_Points(3, 0x3E8);
+                                    var_2 = 0;
+                                    break;
+                                case 2:
+                                    Give_Love_Points(3, -0x3E8);
+                                    var_2 = 0;
+                                    break;
+                                case 3:
+                                    Talk_Mini_Close();
+                                    var_2 = 0xA;
+                                    break;
+                                case 4:
+                                    Talk_Mini_Close();
+                                    var_2 = 1;
+                                    break;
+                            }
+                        } while ((var_2 == 0));
+                        if ((var_2 == 1)) {
+                            var_2 = 1;
+                            goto LBL_000E;
+                        }
+                        var_2 = 0;
+                        break;
+                    case 2:
+                        Set_Portrait(0x57);
+                        Set_Name_Window(0x19);
+                        do {
+                            Set_Text_Buffer_Int(0, Chek_Love_Points(0x19));
+                            Draw_Menu_With_Header(0, 0x11, 0xD, 0xE, 0xF, 0x10);
+                            switch (var_0) {
+                                case 1:
+                                    Give_Love_Points(0x19, 0x3E8);
+                                    var_2 = 0;
+                                    break;
+                                case 2:
+                                    Give_Love_Points(0x19, -0x3E8);
+                                    var_2 = 0;
+                                    break;
+                                case 3:
+                                    Talk_Mini_Close();
+                                    var_2 = 0xA;
+                                    break;
+                                case 4:
+                                    Talk_Mini_Close();
+                                    var_2 = 1;
+                                    break;
+                            }
+                        } while ((var_2 == 0));
+                        if ((var_2 == 1)) {
+                            var_2 = 1;
+                            goto LBL_001C;
+                        }
+                        var_2 = 0;
+                        break;
+                    case 3:
+                        Set_Portrait(0x79);
+                        Set_Name_Window(0x15);
+                        do {
+                            Set_Text_Buffer_Int(0, Chek_Love_Points(0x15));
+                            Draw_Menu_With_Header(0, 0x12, 0x13, 0x14, 0xF, 0x10);
+                            switch (var_0) {
+                                case 1:
+                                    Give_Love_Points(0x15, 0x3E8);
+                                    var_2 = 0;
+                                    break;
+                                case 2:
+                                    Give_Love_Points(0x15, -0x3E8);
+                                    var_2 = 0;
+                                    break;
+                                case 3:
+                                    Talk_Mini_Close();
+                                    var_2 = 0xA;
+                                    break;
+                                case 4:
+                                    Talk_Mini_Close();
+                                    var_2 = 1;
+                                    break;
+                            }
+                        } while ((var_2 == 0));
+                        if ((var_2 == 1)) {
+                            var_2 = 1;
+                            goto LBL_002A;
+                        }
+                        var_2 = 0;
+                        break;
+                    case 4:
+                        Set_Portrait(0x67);
+                        Set_Name_Window(0xC);
+                        do {
+                            Set_Text_Buffer_Int(0, Chek_Love_Points(0xC));
+                            Draw_Menu_With_Header(0, 0x15, 0x13, 0x14, 0xF, 0x10);
+                            switch (var_0) {
+                                case 1:
+                                    Give_Love_Points(0xC, 0x3E8);
+                                    var_2 = 0;
+                                    break;
+                                case 2:
+                                    Give_Love_Points(0xC, -0x3E8);
+                                    var_2 = 0;
+                                    break;
+                                case 3:
+                                    Talk_Mini_Close();
+                                    var_2 = 0xA;
+                                    break;
+                                case 4:
+                                    Talk_Mini_Close();
+                                    var_2 = 1;
+                                    break;
+                            }
+                        } while ((var_2 == 0));
+                        if ((var_2 == 1)) {
+                            var_2 = 1;
+                            goto LBL_0038;
+                        }
+                        var_2 = 0;
+                        break;
+                    case 5:
+                        Set_Portrait(0x48);
+                        Set_Name_Window(0x13);
+                        do {
+                            Set_Text_Buffer_Int(0, Chek_Love_Points(0x13));
+                            Draw_Menu_With_Header(0, 0x16, 0x13, 0x14, 0xF, 0x10);
+                            switch (var_0) {
+                                case 1:
+                                    Give_Love_Points(0x13, 0x3E8);
+                                    var_2 = 0;
+                                    break;
+                                case 2:
+                                    Give_Love_Points(0x13, -0x3E8);
+                                    var_2 = 0;
+                                    break;
+                                case 3:
+                                    Talk_Mini_Close();
+                                    var_2 = 0xA;
+                                    break;
+                                case 4:
+                                    Talk_Mini_Close();
+                                    var_2 = 1;
+                                    break;
+                            }
+                        } while ((var_2 == 0));
+                        if ((var_2 == 1)) {
+                            var_2 = 1;
+                            goto LBL_0046;
+                        }
+                        var_2 = 0;
+                        break;
+                    case 6:
+                        Set_Portrait(0x38);
+                        Set_Name_Window(0x1F);
+                        do {
+                            Set_Text_Buffer_Int(0, Chek_Love_Points(0x1F));
+                            Draw_Menu_With_Header(0, 0x17, 0x13, 0x14, 0xF, 0x10);
+                            switch (var_0) {
+                                case 1:
+                                    Give_Love_Points(0x1F, 0x3E8);
+                                    var_2 = 0;
+                                    break;
+                                case 2:
+                                    Give_Love_Points(0x1F, -0x3E8);
+                                    var_2 = 0;
+                                    break;
+                                case 3:
+                                    Talk_Mini_Close();
+                                    var_2 = 0xA;
+                                    break;
+                                case 4:
+                                    Talk_Mini_Close();
+                                    var_2 = 1;
+                                    break;
+                            }
+                        } while ((var_2 == 0));
+                        if ((var_2 == 1)) {
+                            var_2 = 1;
+                            goto LBL_0054;
+                        }
+                        var_2 = 0;
+                        break;
+                }
+                (var_2 == 0);
+                var_2 = 0;
+                break;
+            case 2:
+                switch (var_1) {
+                    case 0:
+                        Create_Select_List(0x18);
+                        var_0 = TalkChoice6(0x19, 0x1A, 0x1B, 0x1C, 6, 0x1D);
+                        switch (var_0) {
+                            case 1:
+                                var_1 = 0xA;
+                                var_2 = 0;
+                                break;
+                            case 2:
+                                Set_Portrait(0xE);
+                                Set_Name_Window(1);
+                                do {
+                                    Set_Text_Buffer_Int(0, Chek_Friendship_Points(1));
+                                    Draw_Menu_With_Header(0, 0x1E, 0x1F, 0x20, 0xF, 0xF);
+                                    switch (var_0) {
+                                        case 1:
+                                            Give_Friendship_Points(1, 0xA);
+                                            var_2 = 0;
+                                            break;
+                                        case 2:
+                                            Give_Friendship_Points(1, -0xA);
+                                            var_2 = 0;
+                                            break;
+                                        case 3:
+                                            Talk_Mini_Close();
+                                            var_2 = 0xA;
+                                            break;
+                                        case 4:
+                                            Talk_Mini_Close();
+                                            var_2 = 0xA;
+                                            break;
+                                    }
+                                } while ((var_2 == 0));
+                                var_2 = 0;
+                                break;
+                            case 3:
+                                Set_Portrait(0);
+                                Set_Name_Window(2);
+                                do {
+                                    Set_Text_Buffer_Int(0, Chek_Friendship_Points(2));
+                                    Draw_Menu_With_Header(0, 0x21, 0x1F, 0x20, 0xF, 0xF);
+                                    switch (var_0) {
+                                        case 1:
+                                            Give_Friendship_Points(2, 0xA);
+                                            var_2 = 0;
+                                            break;
+                                        case 2:
+                                            Give_Friendship_Points(2, -0xA);
+                                            var_2 = 0;
+                                            break;
+                                        case 3:
+                                            Talk_Mini_Close();
+                                            var_2 = 0xA;
+                                            break;
+                                        case 4:
+                                            Talk_Mini_Close();
+                                            var_2 = 0xA;
+                                            break;
+                                    }
+                                } while ((var_2 == 0));
+                                var_2 = 0;
+                                break;
+                            case 4:
+                                var_1 = 1;
+                                var_2 = 0;
+                                break;
+                            case 5:
+                                Set_Portrait(7);
+                                Set_Name_Window(3);
+                                do {
+                                    Set_Text_Buffer_Int(0, Chek_Friendship_Points(3));
+                                    Draw_Menu_With_Header(0, 0x22, 0x1F, 0x20, 0xF, 0xF);
+                                    switch (var_0) {
+                                        case 1:
+                                            Give_Friendship_Points(3, 0xA);
+                                            var_2 = 0;
+                                            break;
+                                        case 2:
+                                            Give_Friendship_Points(3, -0xA);
+                                            var_2 = 0;
+                                            break;
+                                        case 3:
+                                            Talk_Mini_Close();
+                                            var_2 = 0xA;
+                                            break;
+                                        case 4:
+                                            Talk_Mini_Close();
+                                            var_2 = 0xA;
+                                            break;
+                                    }
+                                } while ((var_2 == 0));
+                                var_2 = 0;
+                                break;
+                            case 6:
+                                Set_Portrait(0x99);
+                                Set_Name_Window(0x1A);
+                                do {
+                                    Set_Text_Buffer_Int(0, Chek_Friendship_Points(0x1A));
+                                    Draw_Menu_With_Header(0, 0x23, 0x1F, 0x20, 0xF, 0xF);
+                                    switch (var_0) {
+                                        case 1:
+                                            Give_Friendship_Points(0x1A, 0xA);
+                                            var_2 = 0;
+                                            break;
+                                        case 2:
+                                            Give_Friendship_Points(0x1A, -0xA);
+                                            var_2 = 0;
+                                            break;
+                                        case 3:
+                                            Talk_Mini_Close();
+                                            var_2 = 0xA;
+                                            break;
+                                        case 4:
+                                            Talk_Mini_Close();
+                                            var_2 = 0xA;
+                                            break;
+                                    }
+                                } while ((var_2 == 0));
+                                var_2 = 0;
+                                break;
+                        }
+                        break;
+                    case 1:
+                        Create_Select_List(0x24);
+                        var_0 = TalkChoice6(0x19, 0x25, 8, 0x1C, 0x26, 0x27);
+                        switch (var_0) {
+                            case 1:
+                                var_1 = 0;
+                                var_2 = 0;
+                                break;
+                            case 2:
+                                Set_Portrait(0x23);
+                                Set_Name_Window(0x14);
+                                do {
+                                    Set_Text_Buffer_Int(0, Chek_Friendship_Points(0x14));
+                                    Draw_Menu_With_Header(0, 0x28, 0x1F, 0x20, 0xF, 0xF);
+                                    switch (var_0) {
+                                        case 1:
+                                            Give_Friendship_Points(0x14, 0xA);
+                                            var_2 = 0;
+                                            break;
+                                        case 2:
+                                            Give_Friendship_Points(0x14, -0xA);
+                                            var_2 = 0;
+                                            break;
+                                        case 3:
+                                            Talk_Mini_Close();
+                                            var_2 = 0xA;
+                                            break;
+                                        case 4:
+                                            Talk_Mini_Close();
+                                            var_2 = 0xA;
+                                            break;
+                                    }
+                                } while ((var_2 == 0));
+                                var_2 = 0;
+                                break;
+                            case 3:
+                                Set_Portrait(0x79);
+                                Set_Name_Window(0x15);
+                                do {
+                                    Set_Text_Buffer_Int(0, Chek_Friendship_Points(0x15));
+                                    Draw_Menu_With_Header(0, 0x29, 0x1F, 0x20, 0xF, 0xF);
+                                    switch (var_0) {
+                                        case 1:
+                                            Give_Friendship_Points(0x15, 0xA);
+                                            var_2 = 0;
+                                            break;
+                                        case 2:
+                                            Give_Friendship_Points(0x15, -0xA);
+                                            var_2 = 0;
+                                            break;
+                                        case 3:
+                                            Talk_Mini_Close();
+                                            var_2 = 0xA;
+                                            break;
+                                        case 4:
+                                            Talk_Mini_Close();
+                                            var_2 = 0xA;
+                                            break;
+                                    }
+                                } while ((var_2 == 0));
+                                var_2 = 0;
+                                break;
+                            case 4:
+                                var_1 = 2;
+                                var_2 = 0;
+                                break;
+                            case 5:
+                                Set_Portrait(0x80);
+                                Set_Name_Window(0x10);
+                                do {
+                                    Set_Text_Buffer_Int(0, Chek_Friendship_Points(0x10));
+                                    Draw_Menu_With_Header(0, 0x2A, 0x1F, 0x20, 0xF, 0xF);
+                                    switch (var_0) {
+                                        case 1:
+                                            Give_Friendship_Points(0x10, 0xA);
+                                            var_2 = 0;
+                                            break;
+                                        case 2:
+                                            Give_Friendship_Points(0x10, -0xA);
+                                            var_2 = 0;
+                                            break;
+                                        case 3:
+                                            Talk_Mini_Close();
+                                            var_2 = 0xA;
+                                            break;
+                                        case 4:
+                                            Talk_Mini_Close();
+                                            var_2 = 0xA;
+                                            break;
+                                    }
+                                } while ((var_2 == 0));
+                                var_2 = 0;
+                                break;
+                            case 6:
+                                Set_Portrait(0x3F);
+                                Set_Name_Window(0xF);
+                                do {
+                                    Set_Text_Buffer_Int(0, Chek_Friendship_Points(0xF));
+                                    Draw_Menu_With_Header(0, 0x2B, 0x1F, 0x20, 0xF, 0xF);
+                                    switch (var_0) {
+                                        case 1:
+                                            Give_Friendship_Points(0xF, 0xA);
+                                            var_2 = 0;
+                                            break;
+                                        case 2:
+                                            Give_Friendship_Points(0xF, -0xA);
+                                            var_2 = 0;
+                                            break;
+                                        case 3:
+                                            Talk_Mini_Close();
+                                            var_2 = 0xA;
+                                            break;
+                                        case 4:
+                                            Talk_Mini_Close();
+                                            var_2 = 0xA;
+                                            break;
+                                    }
+                                } while ((var_2 == 0));
+                                var_2 = 0;
+                                break;
+                        }
+                        break;
+                    case 2:
+                        Create_Select_List(0x2C);
+                        var_0 = TalkChoice6(0x19, 0xA, 0x2D, 0x1C, 0x2E, 0xF);
+                        switch (var_0) {
+                            case 1:
+                                var_1 = 1;
+                                var_2 = 0;
+                                break;
+                            case 2:
+                                Set_Portrait(0x48);
+                                Set_Name_Window(0x13);
+                                do {
+                                    Set_Text_Buffer_Int(0, Chek_Friendship_Points(0x13));
+                                    Draw_Menu_With_Header(0, 0x2F, 0x1F, 0x20, 0xF, 0xF);
+                                    switch (var_0) {
+                                        case 1:
+                                            Give_Friendship_Points(0x13, 0xA);
+                                            var_2 = 0;
+                                            break;
+                                        case 2:
+                                            Give_Friendship_Points(0x13, -0xA);
+                                            var_2 = 0;
+                                            break;
+                                        case 3:
+                                            Talk_Mini_Close();
+                                            var_2 = 0xA;
+                                            break;
+                                        case 4:
+                                            Talk_Mini_Close();
+                                            var_2 = 0xA;
+                                            break;
+                                    }
+                                } while ((var_2 == 0));
+                                var_2 = 0;
+                                break;
+                            case 3:
+                                Set_Portrait(0x43);
+                                Set_Name_Window(0x11);
+                                do {
+                                    Set_Text_Buffer_Int(0, Chek_Friendship_Points(0x11));
+                                    Draw_Menu_With_Header(0, 0x30, 0x1F, 0x20, 0xF, 0xF);
+                                    switch (var_0) {
+                                        case 1:
+                                            Give_Friendship_Points(0x11, 0xA);
+                                            var_2 = 0;
+                                            break;
+                                        case 2:
+                                            Give_Friendship_Points(0x11, -0xA);
+                                            var_2 = 0;
+                                            break;
+                                        case 3:
+                                            Talk_Mini_Close();
+                                            var_2 = 0xA;
+                                            break;
+                                        case 4:
+                                            Talk_Mini_Close();
+                                            var_2 = 0xA;
+                                            break;
+                                    }
+                                } while ((var_2 == 0));
+                                var_2 = 0;
+                                break;
+                            case 4:
+                                var_1 = 3;
+                                var_2 = 0;
+                                break;
+                            case 5:
+                                Set_Portrait(0x4F);
+                                Set_Name_Window(0x12);
+                                do {
+                                    Set_Text_Buffer_Int(0, Chek_Friendship_Points(0x12));
+                                    Draw_Menu_With_Header(0, 0x31, 0x1F, 0x20, 0xF, 0xF);
+                                    switch (var_0) {
+                                        case 1:
+                                            Give_Friendship_Points(0x12, 0xA);
+                                            var_2 = 0;
+                                            break;
+                                        case 2:
+                                            Give_Friendship_Points(0x12, -0xA);
+                                            var_2 = 0;
+                                            break;
+                                        case 3:
+                                            Talk_Mini_Close();
+                                            var_2 = 0xA;
+                                            break;
+                                        case 4:
+                                            Talk_Mini_Close();
+                                            var_2 = 0xA;
+                                            break;
+                                    }
+                                } while ((var_2 == 0));
+                                var_2 = 0;
+                                break;
+                            case 6:
+                                Talk_Mini_Close();
+                                var_2 = 1;
+                                break;
+                        }
+                        break;
+                    case 3:
+                        Create_Select_List(0x32);
+                        var_0 = TalkChoice6(0x19, 0x33, 0x34, 0x1C, 0x35, 0x36);
+                        switch (var_0) {
+                            case 1:
+                                var_1 = 2;
+                                var_2 = 0;
+                                break;
+                            case 2:
+                                Set_Portrait(0xB4);
+                                Set_Name_Window(4);
+                                do {
+                                    Set_Text_Buffer_Int(0, Chek_Friendship_Points(4));
+                                    Draw_Menu_With_Header(0, 0x37, 0x1F, 0x20, 0xF, 0xF);
+                                    switch (var_0) {
+                                        case 1:
+                                            Give_Friendship_Points(4, 0xA);
+                                            var_2 = 0;
+                                            break;
+                                        case 2:
+                                            Give_Friendship_Points(4, -0xA);
+                                            var_2 = 0;
+                                            break;
+                                        case 3:
+                                            Talk_Mini_Close();
+                                            var_2 = 0xA;
+                                            break;
+                                        case 4:
+                                            Talk_Mini_Close();
+                                            var_2 = 0xA;
+                                            break;
+                                    }
+                                } while ((var_2 == 0));
+                                var_2 = 0;
+                                break;
+                            case 3:
+                                Set_Portrait(0xB0);
+                                Set_Name_Window(5);
+                                do {
+                                    Set_Text_Buffer_Int(0, Chek_Friendship_Points(5));
+                                    Draw_Menu_With_Header(0, 0x38, 0x1F, 0x20, 0xF, 0xF);
+                                    switch (var_0) {
+                                        case 1:
+                                            Give_Friendship_Points(5, 0xA);
+                                            var_2 = 0;
+                                            break;
+                                        case 2:
+                                            Give_Friendship_Points(5, -0xA);
+                                            var_2 = 0;
+                                            break;
+                                        case 3:
+                                            Talk_Mini_Close();
+                                            var_2 = 0xA;
+                                            break;
+                                        case 4:
+                                            Talk_Mini_Close();
+                                            var_2 = 0xA;
+                                            break;
+                                    }
+                                } while ((var_2 == 0));
+                                var_2 = 0;
+                                break;
+                            case 4:
+                                var_1 = 4;
+                                var_2 = 0;
+                                break;
+                            case 5:
+                                Set_Portrait(0xA8);
+                                Set_Name_Window(6);
+                                do {
+                                    Set_Text_Buffer_Int(0, Chek_Friendship_Points(6));
+                                    Draw_Menu_With_Header(0, 0x39, 0x1F, 0x20, 0xF, 0xF);
+                                    switch (var_0) {
+                                        case 1:
+                                            Give_Friendship_Points(6, 0xA);
+                                            var_2 = 0;
+                                            break;
+                                        case 2:
+                                            Give_Friendship_Points(6, -0xA);
+                                            var_2 = 0;
+                                            break;
+                                        case 3:
+                                            Talk_Mini_Close();
+                                            var_2 = 0xA;
+                                            break;
+                                        case 4:
+                                            Talk_Mini_Close();
+                                            var_2 = 0xA;
+                                            break;
+                                    }
+                                } while ((var_2 == 0));
+                                var_2 = 0;
+                                break;
+                            case 6:
+                                Set_Portrait(0xA0);
+                                Set_Name_Window(7);
+                                do {
+                                    Set_Text_Buffer_Int(0, Chek_Friendship_Points(7));
+                                    Draw_Menu_With_Header(0, 0x3A, 0x1F, 0x20, 0xF, 0xF);
+                                    switch (var_0) {
+                                        case 1:
+                                            Give_Friendship_Points(7, 0xA);
+                                            var_2 = 0;
+                                            break;
+                                        case 2:
+                                            Give_Friendship_Points(7, -0xA);
+                                            var_2 = 0;
+                                            break;
+                                        case 3:
+                                            Talk_Mini_Close();
+                                            var_2 = 0xA;
+                                            break;
+                                        case 4:
+                                            Talk_Mini_Close();
+                                            var_2 = 0xA;
+                                            break;
+                                    }
+                                } while ((var_2 == 0));
+                                var_2 = 0;
+                                break;
+                        }
+                        break;
+                    case 4:
+                        Create_Select_List(0x3B);
+                        var_0 = TalkChoice6(0x19, 0x3C, 0x3D, 0x1C, 0x3E, 0x3F);
+                        switch (var_0) {
+                            case 1:
+                                var_1 = 3;
+                                var_2 = 0;
+                                break;
+                            case 2:
+                                Set_Portrait(0x85);
+                                Set_Name_Window(8);
+                                do {
+                                    Set_Text_Buffer_Int(0, Chek_Friendship_Points(8));
+                                    Draw_Menu_With_Header(0, 0x40, 0x1F, 0x20, 0xF, 0xF);
+                                    switch (var_0) {
+                                        case 1:
+                                            Give_Friendship_Points(8, 0xA);
+                                            var_2 = 0;
+                                            break;
+                                        case 2:
+                                            Give_Friendship_Points(8, -0xA);
+                                            var_2 = 0;
+                                            break;
+                                        case 3:
+                                            Talk_Mini_Close();
+                                            var_2 = 0xA;
+                                            break;
+                                        case 4:
+                                            Talk_Mini_Close();
+                                            var_2 = 0xA;
+                                            break;
+                                    }
+                                } while ((var_2 == 0));
+                                var_2 = 0;
+                                break;
+                            case 3:
+                                Set_Portrait(0x89);
+                                Set_Name_Window(9);
+                                do {
+                                    Set_Text_Buffer_Int(0, Chek_Friendship_Points(9));
+                                    Draw_Menu_With_Header(0, 0x41, 0x1F, 0x20, 0xF, 0xF);
+                                    switch (var_0) {
+                                        case 1:
+                                            Give_Friendship_Points(9, 0xA);
+                                            var_2 = 0;
+                                            break;
+                                        case 2:
+                                            Give_Friendship_Points(9, -0xA);
+                                            var_2 = 0;
+                                            break;
+                                        case 3:
+                                            Talk_Mini_Close();
+                                            var_2 = 0xA;
+                                            break;
+                                        case 4:
+                                            Talk_Mini_Close();
+                                            var_2 = 0xA;
+                                            break;
+                                    }
+                                } while ((var_2 == 0));
+                                var_2 = 0;
+                                break;
+                            case 4:
+                                var_1 = 5;
+                                var_2 = 0;
+                                break;
+                            case 5:
+                                Set_Portrait(0x75);
+                                Set_Name_Window(0xD);
+                                do {
+                                    Set_Text_Buffer_Int(0, Chek_Friendship_Points(0xD));
+                                    Draw_Menu_With_Header(0, 0x42, 0x1F, 0x20, 0xF, 0xF);
+                                    switch (var_0) {
+                                        case 1:
+                                            Give_Friendship_Points(0xD, 0xA);
+                                            var_2 = 0;
+                                            break;
+                                        case 2:
+                                            Give_Friendship_Points(0xD, -0xA);
+                                            var_2 = 0;
+                                            break;
+                                        case 3:
+                                            Talk_Mini_Close();
+                                            var_2 = 0xA;
+                                            break;
+                                        case 4:
+                                            Talk_Mini_Close();
+                                            var_2 = 0xA;
+                                            break;
+                                    }
+                                } while ((var_2 == 0));
+                                var_2 = 0;
+                                break;
+                            case 6:
+                                Set_Portrait(0x91);
+                                Set_Name_Window(0xE);
+                                do {
+                                    Set_Text_Buffer_Int(0, Chek_Friendship_Points(0xE));
+                                    Draw_Menu_With_Header(0, 0x43, 0x1F, 0x20, 0xF, 0xF);
+                                    switch (var_0) {
+                                        case 1:
+                                            Give_Friendship_Points(0xE, 0xA);
+                                            var_2 = 0;
+                                            break;
+                                        case 2:
+                                            Give_Friendship_Points(0xE, -0xA);
+                                            var_2 = 0;
+                                            break;
+                                        case 3:
+                                            Talk_Mini_Close();
+                                            var_2 = 0xA;
+                                            break;
+                                        case 4:
+                                            Talk_Mini_Close();
+                                            var_2 = 0xA;
+                                            break;
+                                    }
+                                } while ((var_2 == 0));
+                                var_2 = 0;
+                                break;
+                        }
+                        break;
+                    case 5:
+                        Create_Select_List(0x44);
+                        var_0 = TalkChoice6(0x19, 0x45, 0x46, 0x1C, 9, 0x47);
+                        switch (var_0) {
+                            case 1:
+                                var_1 = 4;
+                                var_2 = 0;
+                                break;
+                            case 2:
+                                Set_Portrait(0x63);
+                                Set_Name_Window(0xA);
+                                do {
+                                    Set_Text_Buffer_Int(0, Chek_Friendship_Points(0xA));
+                                    Draw_Menu_With_Header(0, 0x48, 0x1F, 0x20, 0xF, 0xF);
+                                    switch (var_0) {
+                                        case 1:
+                                            Give_Friendship_Points(0xA, 0xA);
+                                            var_2 = 0;
+                                            break;
+                                        case 2:
+                                            Give_Friendship_Points(0xA, -0xA);
+                                            var_2 = 0;
+                                            break;
+                                        case 3:
+                                            Talk_Mini_Close();
+                                            var_2 = 0xA;
+                                            break;
+                                        case 4:
+                                            Talk_Mini_Close();
+                                            var_2 = 0xA;
+                                            break;
+                                    }
+                                } while ((var_2 == 0));
+                                var_2 = 0;
+                                break;
+                            case 3:
+                                Set_Portrait(0x6E);
+                                Set_Name_Window(0xB);
+                                do {
+                                    Set_Text_Buffer_Int(0, Chek_Friendship_Points(0xB));
+                                    Draw_Menu_With_Header(0, 0x49, 0x1F, 0x20, 0xF, 0xF);
+                                    switch (var_0) {
+                                        case 1:
+                                            Give_Friendship_Points(0xB, 0xA);
+                                            var_2 = 0;
+                                            break;
+                                        case 2:
+                                            Give_Friendship_Points(0xB, -0xA);
+                                            var_2 = 0;
+                                            break;
+                                        case 3:
+                                            Talk_Mini_Close();
+                                            var_2 = 0xA;
+                                            break;
+                                        case 4:
+                                            Talk_Mini_Close();
+                                            var_2 = 0xA;
+                                            break;
+                                    }
+                                } while ((var_2 == 0));
+                                var_2 = 0;
+                                break;
+                            case 4:
+                                var_1 = 6;
+                                var_2 = 0;
+                                break;
+                            case 5:
+                                Set_Portrait(0x67);
+                                Set_Name_Window(0xC);
+                                do {
+                                    Set_Text_Buffer_Int(0, Chek_Friendship_Points(0xC));
+                                    Draw_Menu_With_Header(0, 0x4A, 0x1F, 0x20, 0xF, 0xF);
+                                    switch (var_0) {
+                                        case 1:
+                                            Give_Friendship_Points(0xC, 0xA);
+                                            var_2 = 0;
+                                            break;
+                                        case 2:
+                                            Give_Friendship_Points(0xC, -0xA);
+                                            var_2 = 0;
+                                            break;
+                                        case 3:
+                                            Talk_Mini_Close();
+                                            var_2 = 0xA;
+                                            break;
+                                        case 4:
+                                            Talk_Mini_Close();
+                                            var_2 = 0xA;
+                                            break;
+                                    }
+                                } while ((var_2 == 0));
+                                var_2 = 0;
+                                break;
+                            case 6:
+                                Set_Portrait(0x95);
+                                Set_Name_Window(0x16);
+                                do {
+                                    Set_Text_Buffer_Int(0, Chek_Friendship_Points(0x16));
+                                    Draw_Menu_With_Header(0, 0x4B, 0x1F, 0x20, 0xF, 0xF);
+                                    switch (var_0) {
+                                        case 1:
+                                            Give_Friendship_Points(0x16, 0xA);
+                                            var_2 = 0;
+                                            break;
+                                        case 2:
+                                            Give_Friendship_Points(0x16, -0xA);
+                                            var_2 = 0;
+                                            break;
+                                        case 3:
+                                            Talk_Mini_Close();
+                                            var_2 = 0xA;
+                                            break;
+                                        case 4:
+                                            Talk_Mini_Close();
+                                            var_2 = 0xA;
+                                            break;
+                                    }
+                                } while ((var_2 == 0));
+                                var_2 = 0;
+                                break;
+                        }
+                        break;
+                    case 6:
+                        Create_Select_List(0x4C);
+                        var_0 = TalkChoice6(0x19, 0x4D, 7, 0x1C, 0x4E, 0xF);
+                        switch (var_0) {
+                            case 1:
+                                var_1 = 5;
+                                var_2 = 0;
+                                break;
+                            case 2:
+                                Set_Portrait(0x53);
+                                Set_Name_Window(0x18);
+                                do {
+                                    Set_Text_Buffer_Int(0, Chek_Friendship_Points(0x18));
+                                    Draw_Menu_With_Header(0, 0x4F, 0x1F, 0x20, 0xF, 0xF);
+                                    switch (var_0) {
+                                        case 1:
+                                            Give_Friendship_Points(0x18, 0xA);
+                                            var_2 = 0;
+                                            break;
+                                        case 2:
+                                            Give_Friendship_Points(0x18, -0xA);
+                                            var_2 = 0;
+                                            break;
+                                        case 3:
+                                            Talk_Mini_Close();
+                                            var_2 = 0xA;
+                                            break;
+                                        case 4:
+                                            Talk_Mini_Close();
+                                            var_2 = 0xA;
+                                            break;
+                                    }
+                                } while ((var_2 == 0));
+                                var_2 = 0;
+                                break;
+                            case 3:
+                                Set_Portrait(0x57);
+                                Set_Name_Window(0x19);
+                                do {
+                                    Set_Text_Buffer_Int(0, Chek_Friendship_Points(0x19));
+                                    Draw_Menu_With_Header(0, 0x50, 0x1F, 0x20, 0xF, 0xF);
+                                    switch (var_0) {
+                                        case 1:
+                                            Give_Friendship_Points(0x19, 0xA);
+                                            var_2 = 0;
+                                            break;
+                                        case 2:
+                                            Give_Friendship_Points(0x19, -0xA);
+                                            var_2 = 0;
+                                            break;
+                                        case 3:
+                                            Talk_Mini_Close();
+                                            var_2 = 0xA;
+                                            break;
+                                        case 4:
+                                            Talk_Mini_Close();
+                                            var_2 = 0xA;
+                                            break;
+                                    }
+                                } while ((var_2 == 0));
+                                var_2 = 0;
+                                break;
+                            case 4:
+                                var_1 = 7;
+                                var_2 = 0;
+                                break;
+                            case 5:
+                                Set_Portrait(0x17);
+                                Set_Name_Window(0x17);
+                                do {
+                                    Set_Text_Buffer_Int(0, Chek_Friendship_Points(0x17));
+                                    Draw_Menu_With_Header(0, 0x51, 0x1F, 0x20, 0xF, 0xF);
+                                    switch (var_0) {
+                                        case 1:
+                                            Give_Friendship_Points(0x17, 0xA);
+                                            var_2 = 0;
+                                            break;
+                                        case 2:
+                                            Give_Friendship_Points(0x17, -0xA);
+                                            var_2 = 0;
+                                            break;
+                                        case 3:
+                                            Talk_Mini_Close();
+                                            var_2 = 0xA;
+                                            break;
+                                        case 4:
+                                            Talk_Mini_Close();
+                                            var_2 = 0xA;
+                                            break;
+                                    }
+                                } while ((var_2 == 0));
+                                var_2 = 0;
+                                break;
+                            case 6:
+                                Talk_Mini_Close();
+                                var_2 = 1;
+                                break;
+                        }
+                        break;
+                    case 7:
+                        Create_Select_List(0x52);
+                        var_0 = TalkChoice6(0x19, 0x53, 0x54, 0x1C, 0x55, 0x56);
+                        switch (var_0) {
+                            case 1:
+                                var_1 = 6;
+                                var_2 = 0;
+                                break;
+                            case 2:
+                                Set_Portrait(0x72);
+                                Set_Name_Window(0x1D);
+                                do {
+                                    Set_Text_Buffer_Int(0, Chek_Friendship_Points(0x1D));
+                                    Draw_Menu_With_Header(0, 0x57, 0x1F, 0x20, 0xF, 0xF);
+                                    switch (var_0) {
+                                        case 1:
+                                            Give_Friendship_Points(0x1D, 0xA);
+                                            var_2 = 0;
+                                            break;
+                                        case 2:
+                                            Give_Friendship_Points(0x1D, -0xA);
+                                            var_2 = 0;
+                                            break;
+                                        case 3:
+                                            Talk_Mini_Close();
+                                            var_2 = 0xA;
+                                            break;
+                                        case 4:
+                                            Talk_Mini_Close();
+                                            var_2 = 0xA;
+                                            break;
+                                    }
+                                } while ((var_2 == 0));
+                                var_2 = 0;
+                                break;
+                            case 3:
+                                Set_Portrait(0x3B);
+                                Set_Name_Window(0x1E);
+                                do {
+                                    Set_Text_Buffer_Int(0, Chek_Friendship_Points(0x1E));
+                                    Draw_Menu_With_Header(0, 0x58, 0x1F, 0x20, 0xF, 0xF);
+                                    switch (var_0) {
+                                        case 1:
+                                            Give_Friendship_Points(0x1E, 0xA);
+                                            var_2 = 0;
+                                            break;
+                                        case 2:
+                                            Give_Friendship_Points(0x1E, -0xA);
+                                            var_2 = 0;
+                                            break;
+                                        case 3:
+                                            Talk_Mini_Close();
+                                            var_2 = 0xA;
+                                            break;
+                                        case 4:
+                                            Talk_Mini_Close();
+                                            var_2 = 0xA;
+                                            break;
+                                    }
+                                } while ((var_2 == 0));
+                                var_2 = 0;
+                                break;
+                            case 4:
+                                var_1 = 8;
+                                var_2 = 0;
+                                break;
+                            case 5:
+                                Set_Portrait(0xAC);
+                                Set_Name_Window(0x1B);
+                                do {
+                                    Set_Text_Buffer_Int(0, Chek_Friendship_Points(0x1B));
+                                    Draw_Menu_With_Header(0, 0x59, 0x1F, 0x20, 0xF, 0xF);
+                                    switch (var_0) {
+                                        case 1:
+                                            Give_Friendship_Points(0x1B, 0xA);
+                                            var_2 = 0;
+                                            break;
+                                        case 2:
+                                            Give_Friendship_Points(0x1B, -0xA);
+                                            var_2 = 0;
+                                            break;
+                                        case 3:
+                                            Talk_Mini_Close();
+                                            var_2 = 0xA;
+                                            break;
+                                        case 4:
+                                            Talk_Mini_Close();
+                                            var_2 = 0xA;
+                                            break;
+                                    }
+                                } while ((var_2 == 0));
+                                var_2 = 0;
+                                break;
+                            case 6:
+                                Set_Portrait(0x1F);
+                                Set_Name_Window(0x1C);
+                                do {
+                                    Set_Text_Buffer_Int(0, Chek_Friendship_Points(0x1C));
+                                    Draw_Menu_With_Header(0, 0x5A, 0x1F, 0x20, 0xF, 0xF);
+                                    switch (var_0) {
+                                        case 1:
+                                            Give_Friendship_Points(0x1C, 0xA);
+                                            var_2 = 0;
+                                            break;
+                                        case 2:
+                                            Give_Friendship_Points(0x1C, -0xA);
+                                            var_2 = 0;
+                                            break;
+                                        case 3:
+                                            Talk_Mini_Close();
+                                            var_2 = 0xA;
+                                            break;
+                                        case 4:
+                                            Talk_Mini_Close();
+                                            var_2 = 0xA;
+                                            break;
+                                    }
+                                } while ((var_2 == 0));
+                                var_2 = 0;
+                                break;
+                        }
+                        break;
+                    case 8:
+                        Create_Select_List(0x5B);
+                        var_0 = TalkChoice6(0x19, 0xB, 0x5C, 0x1C, 0x5D, 0x5E);
+                        switch (var_0) {
+                            case 1:
+                                var_1 = 7;
+                                var_2 = 0;
+                                break;
+                            case 2:
+                                Set_Portrait(0x38);
+                                Set_Name_Window(0x1F);
+                                do {
+                                    Set_Text_Buffer_Int(0, Chek_Friendship_Points(0x1F));
+                                    Draw_Menu_With_Header(0, 0x5F, 0x1F, 0x20, 0xF, 0xF);
+                                    switch (var_0) {
+                                        case 1:
+                                            Give_Friendship_Points(0x1F, 0xA);
+                                            var_2 = 0;
+                                            break;
+                                        case 2:
+                                            Give_Friendship_Points(0x1F, -0xA);
+                                            var_2 = 0;
+                                            break;
+                                        case 3:
+                                            Talk_Mini_Close();
+                                            var_2 = 0xA;
+                                            break;
+                                        case 4:
+                                            Talk_Mini_Close();
+                                            var_2 = 0xA;
+                                            break;
+                                    }
+                                } while ((var_2 == 0));
+                                var_2 = 0;
+                                break;
+                            case 3:
+                                Set_Portrait(0x2A);
+                                Set_Name_Window(0x24);
+                                do {
+                                    Set_Text_Buffer_Int(0, Chek_Friendship_Points(0x24));
+                                    Draw_Menu_With_Header(0, 0x60, 0x1F, 0x20, 0xF, 0xF);
+                                    switch (var_0) {
+                                        case 1:
+                                            Give_Friendship_Points(0x24, 0xA);
+                                            var_2 = 0;
+                                            break;
+                                        case 2:
+                                            Give_Friendship_Points(0x24, -0xA);
+                                            var_2 = 0;
+                                            break;
+                                        case 3:
+                                            Talk_Mini_Close();
+                                            var_2 = 0xA;
+                                            break;
+                                        case 4:
+                                            Talk_Mini_Close();
+                                            var_2 = 0xA;
+                                            break;
+                                    }
+                                } while ((var_2 == 0));
+                                var_2 = 0;
+                                break;
+                            case 4:
+                                var_1 = 9;
+                                var_2 = 0;
+                                break;
+                            case 5:
+                                Set_Portrait(0x2C);
+                                Set_Name_Window(0x25);
+                                do {
+                                    Set_Text_Buffer_Int(0, Chek_Friendship_Points(0x25));
+                                    Draw_Menu_With_Header(0, 0x61, 0x1F, 0x20, 0xF, 0xF);
+                                    switch (var_0) {
+                                        case 1:
+                                            Give_Friendship_Points(0x25, 0xA);
+                                            var_2 = 0;
+                                            break;
+                                        case 2:
+                                            Give_Friendship_Points(0x25, -0xA);
+                                            var_2 = 0;
+                                            break;
+                                        case 3:
+                                            Talk_Mini_Close();
+                                            var_2 = 0xA;
+                                            break;
+                                        case 4:
+                                            Talk_Mini_Close();
+                                            var_2 = 0xA;
+                                            break;
+                                    }
+                                } while ((var_2 == 0));
+                                var_2 = 0;
+                                break;
+                            case 6:
+                                Set_Portrait(0x2E);
+                                Set_Name_Window(0x26);
+                                do {
+                                    Set_Text_Buffer_Int(0, Chek_Friendship_Points(0x26));
+                                    Draw_Menu_With_Header(0, 0x62, 0x1F, 0x20, 0xF, 0xF);
+                                    switch (var_0) {
+                                        case 1:
+                                            Give_Friendship_Points(0x26, 0xA);
+                                            var_2 = 0;
+                                            break;
+                                        case 2:
+                                            Give_Friendship_Points(0x26, -0xA);
+                                            var_2 = 0;
+                                            break;
+                                        case 3:
+                                            Talk_Mini_Close();
+                                            var_2 = 0xA;
+                                            break;
+                                        case 4:
+                                            Talk_Mini_Close();
+                                            var_2 = 0xA;
+                                            break;
+                                    }
+                                } while ((var_2 == 0));
+                                var_2 = 0;
+                                break;
+                        }
+                        break;
+                    case 9:
+                        Create_Select_List(0x63);
+                        var_0 = TalkChoice6(0x19, 0x64, 0x65, 0x1C, 0x66, 0x67);
+                        switch (var_0) {
+                            case 1:
+                                var_1 = 8;
+                                var_2 = 0;
+                                break;
+                            case 2:
+                                Set_Portrait(0x30);
+                                Set_Name_Window(0x27);
+                                do {
+                                    Set_Text_Buffer_Int(0, Chek_Friendship_Points(0x27));
+                                    Draw_Menu_With_Header(0, 0x68, 0x1F, 0x20, 0xF, 0xF);
+                                    switch (var_0) {
+                                        case 1:
+                                            Give_Friendship_Points(0x27, 0xA);
+                                            var_2 = 0;
+                                            break;
+                                        case 2:
+                                            Give_Friendship_Points(0x27, -0xA);
+                                            var_2 = 0;
+                                            break;
+                                        case 3:
+                                            Talk_Mini_Close();
+                                            var_2 = 0xA;
+                                            break;
+                                        case 4:
+                                            Talk_Mini_Close();
+                                            var_2 = 0xA;
+                                            break;
+                                    }
+                                } while ((var_2 == 0));
+                                var_2 = 0;
+                                break;
+                            case 3:
+                                Set_Portrait(0x32);
+                                Set_Name_Window(0x28);
+                                do {
+                                    Set_Text_Buffer_Int(0, Chek_Friendship_Points(0x28));
+                                    Draw_Menu_With_Header(0, 0x69, 0x1F, 0x20, 0xF, 0xF);
+                                    switch (var_0) {
+                                        case 1:
+                                            Give_Friendship_Points(0x28, 0xA);
+                                            var_2 = 0;
+                                            break;
+                                        case 2:
+                                            Give_Friendship_Points(0x28, -0xA);
+                                            var_2 = 0;
+                                            break;
+                                        case 3:
+                                            Talk_Mini_Close();
+                                            var_2 = 0xA;
+                                            break;
+                                        case 4:
+                                            Talk_Mini_Close();
+                                            var_2 = 0xA;
+                                            break;
+                                    }
+                                } while ((var_2 == 0));
+                                var_2 = 0;
+                                break;
+                            case 4:
+                                var_1 = 0xA;
+                                var_2 = 0;
+                                break;
+                            case 5:
+                                Set_Portrait(0x34);
+                                Set_Name_Window(0x29);
+                                do {
+                                    Set_Text_Buffer_Int(0, Chek_Friendship_Points(0x29));
+                                    Draw_Menu_With_Header(0, 0x6A, 0x1F, 0x20, 0xF, 0xF);
+                                    switch (var_0) {
+                                        case 1:
+                                            Give_Friendship_Points(0x29, 0xA);
+                                            var_2 = 0;
+                                            break;
+                                        case 2:
+                                            Give_Friendship_Points(0x29, -0xA);
+                                            var_2 = 0;
+                                            break;
+                                        case 3:
+                                            Talk_Mini_Close();
+                                            var_2 = 0xA;
+                                            break;
+                                        case 4:
+                                            Talk_Mini_Close();
+                                            var_2 = 0xA;
+                                            break;
+                                    }
+                                } while ((var_2 == 0));
+                                var_2 = 0;
+                                break;
+                            case 6:
+                                Set_Portrait(0x36);
+                                Set_Name_Window(0x2A);
+                                do {
+                                    Set_Text_Buffer_Int(0, Chek_Friendship_Points(0x2A));
+                                    Draw_Menu_With_Header(0, 0x6B, 0x1F, 0x20, 0xF, 0xF);
+                                    switch (var_0) {
+                                        case 1:
+                                            Give_Friendship_Points(0x2A, 0xA);
+                                            var_2 = 0;
+                                            break;
+                                        case 2:
+                                            Give_Friendship_Points(0x2A, -0xA);
+                                            var_2 = 0;
+                                            break;
+                                        case 3:
+                                            Talk_Mini_Close();
+                                            var_2 = 0xA;
+                                            break;
+                                        case 4:
+                                            Talk_Mini_Close();
+                                            var_2 = 0xA;
+                                            break;
+                                    }
+                                } while ((var_2 == 0));
+                                var_2 = 0;
+                                break;
+                        }
+                        break;
+                    case 0xA:
+                        Create_Select_List(0x6C);
+                        var_0 = TalkChoice6(0x19, 0x6D, 0x6E, 0x1C, 0x6F, 0xF);
+                        switch (var_0) {
+                            case 1:
+                                var_1 = 9;
+                                var_2 = 0;
+                                break;
+                            case 2:
+                                Set_Portrait(0x8D);
+                                Set_Name_Window(0x21);
+                                do {
+                                    Set_Text_Buffer_Int(0, Chek_Friendship_Points(0x21));
+                                    Draw_Menu_With_Header(0, 0x70, 0x1F, 0x20, 0xF, 0xF);
+                                    switch (var_0) {
+                                        case 1:
+                                            Give_Friendship_Points(0x21, 0xA);
+                                            var_2 = 0;
+                                            break;
+                                        case 2:
+                                            Give_Friendship_Points(0x21, -0xA);
+                                            var_2 = 0;
+                                            break;
+                                        case 3:
+                                            Talk_Mini_Close();
+                                            var_2 = 0xA;
+                                            break;
+                                        case 4:
+                                            Talk_Mini_Close();
+                                            var_2 = 0xA;
+                                            break;
+                                    }
+                                } while ((var_2 == 0));
+                                var_2 = 0;
+                                break;
+                            case 3:
+                                Set_Portrait(0x5E);
+                                Set_Name_Window(0x22);
+                                do {
+                                    Set_Text_Buffer_Int(0, Chek_Friendship_Points(0x22));
+                                    Draw_Menu_With_Header(0, 0x71, 0x1F, 0x20, 0xF, 0xF);
+                                    switch (var_0) {
+                                        case 1:
+                                            Give_Friendship_Points(0x22, 0xA);
+                                            var_2 = 0;
+                                            break;
+                                        case 2:
+                                            Give_Friendship_Points(0x22, -0xA);
+                                            var_2 = 0;
+                                            break;
+                                        case 3:
+                                            Talk_Mini_Close();
+                                            var_2 = 0xA;
+                                            break;
+                                        case 4:
+                                            Talk_Mini_Close();
+                                            var_2 = 0xA;
+                                            break;
+                                    }
+                                } while ((var_2 == 0));
+                                var_2 = 0;
+                                break;
+                            case 4:
+                                var_1 = 0;
+                                var_2 = 0;
+                                break;
+                            case 5:
+                                Set_Portrait(0x12);
+                                Set_Name_Window(0x23);
+                                do {
+                                    Set_Text_Buffer_Int(0, Chek_Friendship_Points(0x23));
+                                    Draw_Menu_With_Header(0, 0x72, 0x1F, 0x20, 0xF, 0xF);
+                                    switch (var_0) {
+                                        case 1:
+                                            Give_Friendship_Points(0x23, 0xA);
+                                            var_2 = 0;
+                                            break;
+                                        case 2:
+                                            Give_Friendship_Points(0x23, -0xA);
+                                            var_2 = 0;
+                                            break;
+                                        case 3:
+                                            Talk_Mini_Close();
+                                            var_2 = 0xA;
+                                            break;
+                                        case 4:
+                                            Talk_Mini_Close();
+                                            var_2 = 0xA;
+                                            break;
+                                    }
+                                } while ((var_2 == 0));
+                                var_2 = 0;
+                                break;
+                            case 6:
+                                Talk_Mini_Close();
+                                var_2 = 1;
+                                break;
+                        }
+                        break;
+                }
+                (var_2 == 0);
+                var_2 = 0;
+                break;
+            case 3:
+                TalkClose();
+                Execute_Script(424);
+                break;
+            case 4:
+                TalkClose();
+                Execute_Script(423);
+                break;
+            case 5:
+                var_2 = 0xA;
+                break;
+        }
+    } while ((var_2 == 0));
+    TalkClose();
+    exit;
+}

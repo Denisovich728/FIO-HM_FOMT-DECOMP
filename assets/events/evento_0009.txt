@@ -1,0 +1,20 @@
+// Script 9
+#include "Fomt_Lib.src"
+
+script 9 Event_0009 {
+    const MESSAGE_0 = "Here here...\r\nGet big and strong now.\BRK";
+    
+    var var_0;
+    
+    var_0 = HasAnimalBeenTalkedTo(0, 0);
+    TalkOpen();
+    TalkMessage(0);
+    TalkClose();
+    PlaySong(0, 0xA7);
+    if (!var_0) {
+        Show_Emote(0x2C, 1, 0);
+        SetAnimalTalkedTo(0, 0);
+        Add_Animal_Affection(0, 0, 1);
+    }
+    exit;
+}

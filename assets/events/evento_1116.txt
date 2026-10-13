@@ -1,0 +1,22 @@
+// Script 1116
+#include "Fomt_Lib.src"
+
+script 1116 Event_1116 {
+    const MESSAGE_0 = "I hope lots of \r\npeople come!\BRK";
+    
+    if ((Check_If_Single(1) == 0)) {
+        Free_Event_Entity(1);
+    }
+    SetEntityFacing(1, GetOppositeFacing(GetEntityFacing(0)));
+    TalkOpen();
+    Set_Portrait(0xF);
+    Set_Name_Window(1);
+    TalkMessage(0);
+    TalkClose();
+    if ((Has_Spoken_To_NPC_Today(1) == 0)) {
+        Give_Friendship_Points(1, 5);
+    }
+    SetEntityFacing(1, "Left");
+    Free_Event_Entity(1);
+    exit;
+}

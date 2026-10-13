@@ -1,0 +1,93 @@
+// Script 847
+#include "Fomt_Lib.src"
+
+script 847 Event_0847 {
+    const MESSAGE_0 = "I'll marry you if you want,\r\n\xFF!. \BRK";
+    const MESSAGE_1 = "Nope.\BRK";
+    
+    if ((GetEntityLocation(0) == 0)) {
+        Set_Flag(0x172, 1);
+        switch (GetEntityFacing(0)) {
+            case 1:
+                PlaySong(0, 0xBE);
+                SetEntityPosition(0x46, GetEntityX(0), (GetEntityY(0) - 0x10), "Down");
+                Spawn_Event_Entity(0x46, 3);
+                SetEntityAnim(0x46, 0x42C);
+                Tick_Overnight_Engine(1, 0);
+                Tick_Overnight_Engine(1, 0);
+                Fade_Out(1, 1);
+                Hide_Entity(0x46);
+                SetEntityPosition(0x1F, GetEntityX(0), (GetEntityY(0) - 0x10), "Down");
+                Fade_In(1, 1);
+                break;
+            case 0:
+                PlaySong(0, 0xBE);
+                SetEntityPosition(0x46, GetEntityX(0), (GetEntityY(0) + 0x10), "Down");
+                Spawn_Event_Entity(0x46, 3);
+                SetEntityAnim(0x46, 0x42C);
+                Tick_Overnight_Engine(1, 0);
+                Tick_Overnight_Engine(1, 0);
+                Fade_Out(1, 1);
+                Hide_Entity(0x46);
+                SetEntityPosition(0x1F, GetEntityX(0), (GetEntityY(0) + 0x10), "Up");
+                Fade_In(1, 1);
+                break;
+            case 2:
+                PlaySong(0, 0xBE);
+                SetEntityPosition(0x46, (GetEntityX(0) - 0x10), GetEntityY(0), "Down");
+                Spawn_Event_Entity(0x46, 3);
+                SetEntityAnim(0x46, 0x42C);
+                Tick_Overnight_Engine(1, 0);
+                Tick_Overnight_Engine(1, 0);
+                Fade_Out(1, 1);
+                Hide_Entity(0x46);
+                SetEntityPosition(0x1F, (GetEntityX(0) - 0x10), GetEntityY(0), "Right");
+                Fade_In(1, 1);
+                break;
+            case 3:
+                PlaySong(0, 0xBE);
+                SetEntityPosition(0x46, (GetEntityX(0) + 0x10), GetEntityY(0), "Down");
+                Spawn_Event_Entity(0x46, 3);
+                SetEntityAnim(0x46, 0x42C);
+                Tick_Overnight_Engine(1, 0);
+                Tick_Overnight_Engine(1, 0);
+                Fade_Out(1, 1);
+                Hide_Entity(0x46);
+                SetEntityPosition(0x1F, (GetEntityX(0) + 0x10), GetEntityY(0), "Left");
+                Fade_In(1, 1);
+                break;
+        }
+        SetEntityAnim(0x1F, 0x669);
+        Make_Delay(0x3C);
+        TalkOpen();
+        Set_Name_Window(0x1F);
+        if (((((((((((Check_Flag(0) >= 5) && (Chek_Love_Points(0x1F) >= 0xEA60)) && (Check_Flag(0x243) == 1)) && (Check_Flag(0x144) == 5)) && (Check_Flag(0x146) == 2)) && (Check_Flag(0x165) == 2)) && (Check_Flag(0x16C) == 2)) && (Check_Flag(0x170) == 2)) && (Check_Flag(0x171) == 2)) && (Check_Flag(0x9E) == 2))) {
+            Set_Portrait(0x39);
+            TalkMessage(0);
+            TalkClose();
+            Free_Event_Entity(0x1F);
+            Give_Love_Points(0x1F, 0xBB8);
+            Remove_Equipped_Item();
+            Set_Flag(0x172, 2);
+        } else {
+            Set_Portrait(0x3A);
+            TalkMessage(1);
+            TalkClose();
+            Free_Event_Entity(0x1F);
+            Set_Flag(0x172, 0);
+        }
+        Make_Delay(0x3C);
+        PlaySong(0, 0xBE);
+        SetEntityPosition(0x46, GetEntityX(0x1F), (GetEntityY(0x1F) + 2), "Down");
+        Spawn_Event_Entity(0x46, 3);
+        SetEntityAnim(0x46, 0x42C);
+        Tick_Overnight_Engine(1, 0);
+        Tick_Overnight_Engine(1, 0);
+        Fade_Out(1, 1);
+        Hide_Entity(0x46);
+        Hide_Entity(0x1F);
+        Make_Delay(0x1E);
+        Fade_In(1, 1);
+    }
+    exit;
+}

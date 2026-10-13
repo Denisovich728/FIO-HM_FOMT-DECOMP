@@ -1,0 +1,21 @@
+// Script 808
+#include "Fomt_Lib.src"
+
+script 808 Event_0808 {
+    const MESSAGE_0 = "You've gotten a nice \r\nfishing rod. \BRK";
+    
+    if ((Check_If_Single(0x1D) == 0)) {
+        Free_Event_Entity(0x1D);
+    }
+    if ((Check_Flag(0x135) == 1)) {
+        SetEntityFacing(0x1D, GetOppositeFacing(GetEntityFacing(0)));
+        TalkOpen();
+        Set_Portrait(0x72);
+        Set_Name_Window(0x1D);
+        TalkMessage(0);
+        TalkClose();
+        SetEntityFacing(0x1D, "Left");
+        Free_Event_Entity(0x1D);
+    }
+    exit;
+}

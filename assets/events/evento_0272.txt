@@ -1,0 +1,58 @@
+// Script 272
+#include "Fomt_Lib.src"
+
+script 272 Event_0272 {
+    const MESSAGE_0 = "I haven't cleaned upstairs\r\nyet, so please don't \r\ngo up there.\BRK";
+    
+    var var_0;
+    var var_1;
+    var var_2;
+    var var_3;
+    var var_4;
+    
+    if ((GetEntityFacing(0) == 1)) {
+        if ((((Check_Flag(0x57) == 1) || (Check_Flag(0x84) == 1)) || (Check_Flag(0x128) == 1))) {
+            TalkOpen();
+            Set_Portrait(0x57);
+            Set_Name_Window(0x19);
+            Set_Hearth_Anim(0x19);
+            TalkMessage(0);
+            TalkClose();
+            Set_Vector_Y(0, (GetEntityY(0) + 2), 1);
+            Pan_Camera_To(GetEntityX(0), (GetEntityY(0) + 2), 1);
+            Execute_Movement(0);
+            exit;
+        } else {
+            if ((Check_Flag(0x5C) == 1)) {
+                TalkOpen();
+                Set_Portrait(0x53);
+                Set_Name_Window(0x18);
+                TalkMessage(0);
+                TalkClose();
+                Set_Vector_Y(0, (GetEntityY(0) + 2), 1);
+                Pan_Camera_To(GetEntityX(0), (GetEntityY(0) + 2), 1);
+                Execute_Movement(0);
+                exit;
+            }
+        }
+        var_0 = Check_Flag(1);
+        var_1 = Check_Flag(2);
+        var_3 = Check_Flag(3);
+        var_2 = Check_Flag(5);
+        var_4 = Check_Flag(6);
+        Fade_Out(2, 1);
+        Warp_Player(0x17, 0x28, 0xF8);
+        SetEntityPosition(0, 0x28, 0xF8, "Up");
+        if (((((((((((((((((((((((Check_Flag(0x57) == 2) && (Check_Flag(0x58) == 0)) && !(((var_2 == 1) || (var_2 == 3)) || (var_2 == 5))) && ((var_3 >= 0xA) && (var_3 < 0xD))) && (Check_Flag(0x4C) == 0)) && (Check_Flag(0x55) == 0)) && (Check_Flag(0x5F) == 0)) && (Check_Flag(0x67) == 0)) && (Check_Flag(0x6F) == 0)) && (Check_Flag(0x173) == 0)) && (Check_Flag(0x86) == 0)) && (Check_Flag(0x87) == 0)) && (Check_Flag(0x4B) == 0)) && (Check_Flag(0x54) == 0)) && (Check_Flag(0x5E) == 0)) && (Check_Flag(0x66) == 0)) && (Check_Flag(0x6E) == 0)) && (Check_Flag(0x172) == 0)) && (Check_Flag(0x85) == 0)) && (Chek_Love_Points(0x19) >= 0x2710)) && (GetEntityLocation(0x19) == 0x17)) && (Inventory_Check() == 1))) {
+            Set_Flag(0x58, 1);
+            Execute_Script(49);
+        } else {
+            if (((((((((((((((Check_Flag(0x82) == 0) && !(var_0 == 1)) && ((var_1 >= 6) && (var_1 <= 0x1E))) && !(var_2 == 6)) && ((var_3 >= 0x13) && (var_3 < 0x15))) && (Check_Flag(0x5F) == 0)) && (Check_Flag(0x86) == 0)) && (Check_Flag(0x87) == 0)) && (Check_Flag(0x5E) == 0)) && (Chek_Love_Points(0x19) < 0x2710)) && (Check_If_Single(0x19) == 1)) && (Check_If_Single(0x17) == 1)) && (GetEntityLocation(0x19) == 0x15)) && ((GetEntityLocation(0x17) == 0x15) || (GetEntityLocation(0x17) == 0x17)))) {
+                Set_Flag(0x82, 1);
+                Execute_Script(906);
+            }
+        }
+        Fade_In(2, 1);
+    }
+    exit;
+}

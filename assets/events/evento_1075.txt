@@ -1,0 +1,23 @@
+// Script 1075
+#include "Fomt_Lib.src"
+
+script 1075 Event_1075 {
+    const MESSAGE_0 = "I've loved Rice Cakes \r\nsince I was a child...\BRK";
+    
+    if ((Check_If_Single(0x16) == 0)) {
+        Free_Event_Entity(0x16);
+    }
+    SetEntityFacing(0x16, GetOppositeFacing(GetEntityFacing(0)));
+    TalkOpen();
+    Set_Portrait(0x95);
+    Set_Name_Window(0x16);
+    TalkMessage(0);
+    Talk_Mini_Close();
+    TalkClose();
+    if ((Has_Spoken_To_NPC_Today(0x16) == 0)) {
+        Give_Friendship_Points(0x16, 5);
+    }
+    Free_Event_Entity(0x16);
+    SetEntityFacing(0x16, "Down");
+    exit;
+}

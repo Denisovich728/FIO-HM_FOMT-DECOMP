@@ -1,0 +1,6 @@
+// Script 84
+#include "Fomt_Lib.src"
+
+script 84 Event_0084 {
+    exit;
+}

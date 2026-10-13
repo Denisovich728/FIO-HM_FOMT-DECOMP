@@ -1,0 +1,52 @@
+// Script 1065
+#include "Fomt_Lib.src"
+
+script 1065 Event_1065 {
+    PlayBGM(1, 7);
+    if ((GetEntityLocation(0x4A) == 6)) {
+        SetEntityPosition(0x4A, (0x1A0 + 0x10), 0x85, 0);
+    }
+    if ((GetEntityLocation(0x4B) == 6)) {
+        SetEntityPosition(0x4B, (0x1A0 + 0x20), 0x85, 0);
+    }
+    SetEntityPosition(0xD, 0xDC, 0x80, 0);
+    SetEntityAnim(0xD, 0x85F);
+    SetEntityPosition(0x19, 0x9C, 0x168, 3);
+    SetEntityAnim(0x19, 0x7BE);
+    SetEntityPosition(6, 0xFC, 0x58, 0);
+    SetEntityAnim(6, 0x9A1);
+    SetEntityPosition(0x15, 0x50, 0x188, 1);
+    SetEntityAnim(0x15, 0x884);
+    SetEntityPosition(5, 0x140, 0x170, 0);
+    SetEntityAnim(5, 0x9E7);
+    SetEntityPosition(0x10, 0x130, 0x180, 3);
+    SetEntityAnim(0x10, 0x8B8);
+    SetEntityPosition(0x18, 0xA4, 0x148, 0);
+    SetEntityAnim(0x18, 0x7B2);
+    SetEntityPosition(8, 0x50, 0xB8, 0);
+    SetEntityAnim(8, 0x8C0);
+    SetEntityPosition(9, 0x70, 0xC0, 2);
+    SetEntityAnim(9, 0x8D0);
+    SetEntityPosition(0x1B, 0x178, 0xF8, 2);
+    SetEntityAnim(0x1B, 0x9D3);
+    SetEntityPosition(0x1C, 0x178, 0x168, 2);
+    SetEntityAnim(0x1C, 0x318);
+    SetEntityPosition(0x16, 0x174, 0x68, 0);
+    SetEntityAnim(0x16, 0x8EC);
+    End_Cinematic_State();
+    Fade_In(2, 1);
+    Set_Flag(0x180, 1);
+    Routine_State_Override(0xD, 0x42E);
+    Routine_State_Override(0x19, 0x42D);
+    Routine_State_Override(6, 0x434);
+    Routine_State_Override(0x15, 0x42F);
+    Routine_State_Override(5, 0x436);
+    Routine_State_Override(0x10, 0x430);
+    Routine_State_Override(0x18, 0x42C);
+    Routine_State_Override(8, 0x431);
+    Routine_State_Override(9, 0x432);
+    Routine_State_Override(0x1B, 0x435);
+    Routine_State_Override(0x1C, 0x42B);
+    Routine_State_Override(0x16, 0x433);
+    exit;
+}

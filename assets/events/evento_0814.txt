@@ -1,0 +1,32 @@
+// Script 814
+#include "Fomt_Lib.src"
+
+script 814 Event_0814 {
+    const MESSAGE_0 = "Hi there. \BRK\WAIT_CLICKMy name's Lou. I come to \r\nMineral Town every week \r\nto buy food. \BRK\WAIT_CLICKThe food from Mineral Town \r\nis so delicious, I've \r\ndecided to use it at my \BRK\r\nown Inn! \BRK\WAIT_CLICKI'm at the Inn here every \r\nMonday, so come by if you\r\nwant to sell something! \BRK";
+    
+    if ((Inventory_Check() == 1)) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    SetEntityPosition(0x22, 0xE4, 0x91, "Up");
+    SetEntityAnim(0x22, 0x7F2);
+    Fade_In(2, 1);
+    TalkOpen();
+    Set_Portrait(0x5F);
+    Set_Name_Window(0x22);
+    TalkMessage(0);
+    TalkClose();
+    SetEntityFacing(0x22, "Right");
+    SetEntityAnim(0x22, 0x7F6);
+    Set_Vector_X(0x22, 0x13F, 1);
+    Execute_Movement(0x22);
+    SetEntityFacing(0x22, "Up");
+    Set_Vector_Y(0x22, 0, 1);
+    Execute_Movement(0x22);
+    Hide_Entity(0x22);
+    Free_Event_Entity(0x22);
+    Set_Flag(0x13E, 2);
+    exit;
+    exit;
+}

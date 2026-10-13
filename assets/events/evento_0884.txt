@@ -1,0 +1,31 @@
+// Script 884
+#include "Fomt_Lib.src"
+
+script 884 Event_0884 {
+    const MESSAGE_0 = "How long is Jeff going to\r\nkeep crying like this?\BRK\WAIT_CLICKHe's been this way since\r\nyesterday!\BRK";
+    const MESSAGE_1 = "Jeff cried when Karen said \r\nshe was going to marry Rick\r\nas a child, too!...\BRK\WAIT_CLICKYou'd think he'd be used \r\nto the idea by now...\BRK";
+    
+    if ((Check_If_Single(0x12) == 0)) {
+        Free_Event_Entity(0x12);
+    }
+    if ((Has_NPC_Talked_Today(0x12) == 0)) {
+        SetEntityFacing(0x12, GetOppositeFacing(GetEntityFacing(0)));
+        TalkOpen();
+        Set_Portrait(0x4F);
+        Set_Name_Window(0x12);
+        TalkMessage(0);
+        TalkClose();
+        SetEntityFacing(0x12, "Left");
+        Free_Event_Entity(0x12);
+    } else {
+        SetEntityFacing(0x12, GetOppositeFacing(GetEntityFacing(0)));
+        TalkOpen();
+        Set_Portrait(0x50);
+        Set_Name_Window(0x12);
+        TalkMessage(1);
+        TalkClose();
+        SetEntityFacing(0x12, "Left");
+        Free_Event_Entity(0x12);
+    }
+    exit;
+}

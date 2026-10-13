@@ -1,0 +1,20 @@
+// Script 696
+#include "Fomt_Lib.src"
+
+script 696 Event_0696 {
+    const MESSAGE_0 = "Mom's health has always been\r\nshakey...That's why I have \r\nso much responsibility!\BRK";
+    const MESSAGE_1 = "If only she would get \r\nbetter once and for all...\BRK";
+    
+    SetEntityFacing(2, GetOppositeFacing(GetEntityFacing(0)));
+    TalkOpen();
+    Set_Name_Window(2);
+    Set_Portrait(0);
+    TalkMessage(0);
+    Set_Portrait(3);
+    TalkMessage(1);
+    TalkClose();
+    Free_Event_Entity(2);
+    SetEntityFacing(2, "Left");
+    exit;
+    exit;
+}

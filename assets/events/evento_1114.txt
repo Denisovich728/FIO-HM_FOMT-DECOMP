@@ -1,0 +1,58 @@
+// Script 1114
+#include "Fomt_Lib.src"
+
+script 1114 Event_1114 {
+    PlayBGM(1, 7);
+    SetEntityPosition(0xD, 0xB4, 0x66, 0);
+    SetEntityAnim(0xD, 0x85F);
+    SetEntityPosition(0x1E, 0xDC, 0x76, 0);
+    SetEntityAnim(0x1E, 0x679);
+    SetEntityPosition(0x12, 0x13C, 0x126, 1);
+    SetEntityAnim(0x12, 0x6C5);
+    SetEntityPosition(0x13, 0x11C, 0x146, 0);
+    SetEntityAnim(0x13, 0x691);
+    SetEntityPosition(9, 0x13C, 0x15E, 2);
+    SetEntityAnim(9, 0x8D0);
+    SetEntityPosition(0x1B, 0x74, 0xC4, 1);
+    SetEntityAnim(0x1B, 0x9D3);
+    SetEntityPosition(0x16, 0x134, 0x62, 0);
+    SetEntityAnim(0x16, 0x8EC);
+    SetEntityPosition(0x1C, 0x44, 0xAC, 3);
+    SetEntityAnim(0x1C, 0x318);
+    SetEntityPosition(1, 0x64, 0xF4, 2);
+    SetEntityAnim(1, 0x25F);
+    SetEntityPosition(0x18, 0x15C, 0xAE, 2);
+    SetEntityAnim(0x18, 0x7B2);
+    SetEntityPosition(0x19, 0x140, 0xC6, 2);
+    SetEntityAnim(0x19, 0x7BE);
+    SetEntityPosition(2, 0x44, 0xF4, 3);
+    SetEntityAnim(2, 0x213);
+    SetEntityPosition(0x14, 0x94, 0x15E, 1);
+    SetEntityAnim(0x14, 0x320);
+    if ((GetEntityLocation(0x4A) == 6)) {
+        SetEntityPosition(0x4A, (0x1A0 + 0x10), 0x85, 0);
+    }
+    if ((GetEntityLocation(0x4B) == 6)) {
+        SetEntityPosition(0x4B, (0x1A0 + 0x20), 0x85, 0);
+    }
+    if ((GetEntityLocation(0x2B) == 6)) {
+        SetEntityPosition(0x2B, 0x1A0, 0x85, 0);
+    }
+    Fade_In(2, 1);
+    End_Cinematic_State();
+    Routine_State_Override(0xD, 0x464);
+    Routine_State_Override(0x14, 0x45E);
+    Routine_State_Override(0x16, 0x466);
+    Routine_State_Override(0x1E, 0x45F);
+    Routine_State_Override(0x1C, 0x45D);
+    Routine_State_Override(0x19, 0x463);
+    Routine_State_Override(0x1B, 0x467);
+    Routine_State_Override(0x13, 0x460);
+    Routine_State_Override(0x18, 0x462);
+    Routine_State_Override(0x12, 0x461);
+    Routine_State_Override(9, 0x465);
+    Routine_State_Override(2, 0x45B);
+    Routine_State_Override(1, 0x45C);
+    Set_Flag(0x18E, 1);
+    exit;
+}

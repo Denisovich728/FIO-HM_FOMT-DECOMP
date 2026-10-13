@@ -1,0 +1,18 @@
+// Script 766
+#include "Fomt_Lib.src"
+
+script 766 Event_0766 {
+    const MESSAGE_0 = "Not everything is for \r\nfree, you know! Pay up!\BRK";
+    
+    if ((Check_Flag(0x11B) == 1)) {
+        SetEntityFacing(0x1D, GetOppositeFacing(GetEntityFacing(0)));
+        TalkOpen();
+        Set_Portrait(0x72);
+        Set_Name_Window(0x1D);
+        TalkMessage(0);
+        TalkClose();
+        Free_Event_Entity(0x1D);
+        SetEntityFacing(0x1D, "Left");
+    }
+    exit;
+}

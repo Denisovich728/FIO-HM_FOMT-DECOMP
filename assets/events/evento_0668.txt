@@ -1,0 +1,16 @@
+// Script 668
+#include "Fomt_Lib.src"
+
+script 668 Event_0668 {
+    const MESSAGE_0 = "Da-da.\BRK";
+    
+    SetEntityFacing(0x23, GetOppositeFacing(GetEntityFacing(0)));
+    TalkOpen();
+    Set_Name_Window(0x23);
+    Set_Portrait(0x13);
+    TalkMessage(0);
+    TalkClose();
+    Free_Event_Entity(0x23);
+    SetEntityFacing(0x23, "Right");
+    exit;
+}

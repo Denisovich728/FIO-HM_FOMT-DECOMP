@@ -1,0 +1,11 @@
+// Script 969
+#include "Fomt_Lib.src"
+
+script 969 Event_0969 {
+    const MESSAGE_0 = "Huge Stone\r\nYour Hammer is LV5,\r\nbut it can't crush\BRK\r\nthis Sone.\BRK";
+    
+    TalkOpen();
+    Print_Message(0);
+    TalkClose();
+    exit;
+}

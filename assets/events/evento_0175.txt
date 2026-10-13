@@ -1,0 +1,10 @@
+// Script 175
+#include "Fomt_Lib.src"
+
+script 175 Event_0175 {
+    Fade_Out(2, 1);
+    Warp_Player(0, 0x498, 0x1FE);
+    SetEntityPosition(0, 0x498, 0x1FE, 2);
+    Fade_In(2, 1);
+    exit;
+}

@@ -1,0 +1,45 @@
+// Script 1161
+#include "Fomt_Lib.src"
+
+script 1161 Event_1161 {
+    PlayBGM(1, 7);
+    if ((Inventory_Check() == 1)) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    SetEntityPosition(2, 0xAA, 0xE9, 2);
+    SetEntityAnim(2, 0x213);
+    SetEntityPosition(4, 0x8C, 0x10F, 3);
+    SetEntityAnim(4, 0x9EF);
+    SetEntityPosition(6, 0xC1, 0x9B, 0);
+    SetEntityAnim(6, 0x9A1);
+    SetEntityPosition(8, 0x121, 0xE0, 2);
+    SetEntityAnim(8, 0x8C0);
+    SetEntityPosition(0xD, 0x58, 0x56, 0);
+    SetEntityAnim(0xD, 0x85F);
+    SetEntityPosition(3, 0xC4, 0x128, 1);
+    SetEntityAnim(3, 0x22F);
+    SetEntityPosition(0x18, 0x113, 0xA2, 2);
+    SetEntityAnim(0x18, 0x7B2);
+    if ((GetEntityLocation(0x2B) == 6)) {
+        SetEntityPosition(0x2B, 0x1A0, 0x85, 0);
+    }
+    if ((GetEntityLocation(0x4A) == 6)) {
+        SetEntityPosition(0x4A, (0x1A0 + 0x10), 0x85, 0);
+    }
+    if ((GetEntityLocation(0x4B) == 6)) {
+        SetEntityPosition(0x4B, (0x1A0 + 0x20), 0x85, 0);
+    }
+    End_Cinematic_State();
+    Fade_In(2, 1);
+    Set_Flag(0x198, 1);
+    Routine_State_Override(2, 0x47B);
+    Routine_State_Override(4, 0x481);
+    Routine_State_Override(6, 0x480);
+    Routine_State_Override(8, 0x47F);
+    Routine_State_Override(0xD, 0x47E);
+    Routine_State_Override(3, 0x47C);
+    Routine_State_Override(0x18, 0x47D);
+    exit;
+}

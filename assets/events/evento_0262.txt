@@ -1,0 +1,11 @@
+// Script 262
+#include "Fomt_Lib.src"
+
+script 262 Event_0262 {
+    const MESSAGE_0 = "Cooking Utensils\BRK";
+    
+    TalkOpen();
+    Print_Message(0);
+    TalkClose();
+    exit;
+}

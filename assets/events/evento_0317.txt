@@ -1,0 +1,116 @@
+// Script 317
+#include "Fomt_Lib.src"
+
+script 317 Event_0317 {
+    const MESSAGE_0 = "Blacksmith";
+    const MESSAGE_1 = "Supermarket";
+    const MESSAGE_2 = "Woodcutter";
+    const MESSAGE_3 = "Clinic";
+    const MESSAGE_4 = "Orchard";
+    const MESSAGE_5 = "Other";
+    const MESSAGE_6 = "Inn";
+    const MESSAGE_7 = "Beach House";
+    const MESSAGE_8 = "Poultry Farm";
+    const MESSAGE_9 = "Yodel Farm";
+    const MESSAGE_10 = "Merchant";
+    
+    var var_0;
+    var var_1;
+    var var_2;
+    
+    var_1 = 0;
+    TalkOpen();
+    do {
+        switch (var_1) {
+            case 0:
+                var_0 = TalkChoice6(0, 1, 2, 3, 4, 5);
+                switch (var_0) {
+                    case 1:
+                        TalkClose();
+                        Fade_Out(3, 1);
+                        Show_Document_UI(0x3D);
+                        Fade_In(3, 1);
+                        var_2 = 1;
+                        break;
+                    case 2:
+                        TalkClose();
+                        Fade_Out(3, 1);
+                        Show_Document_UI(0x3E);
+                        Fade_In(3, 1);
+                        var_2 = 1;
+                        break;
+                    case 3:
+                        TalkClose();
+                        Fade_Out(3, 1);
+                        Show_Document_UI(0x3F);
+                        Fade_In(3, 1);
+                        var_2 = 1;
+                        break;
+                    case 4:
+                        TalkClose();
+                        Fade_Out(3, 1);
+                        Show_Document_UI(0x40);
+                        Fade_In(3, 1);
+                        var_2 = 1;
+                        break;
+                    case 5:
+                        TalkClose();
+                        Fade_Out(3, 1);
+                        Show_Document_UI(0x41);
+                        Fade_In(3, 1);
+                        var_2 = 1;
+                        break;
+                    case 6:
+                        var_1 = 1;
+                        var_2 = 0;
+                        break;
+                }
+                break;
+            case 1:
+                var_0 = TalkChoice6(6, 7, 8, 9, 0xA, 5);
+                switch (var_0) {
+                    case 1:
+                        TalkClose();
+                        Fade_Out(3, 1);
+                        Show_Document_UI(0x42);
+                        Fade_In(3, 1);
+                        var_2 = 1;
+                        break;
+                    case 2:
+                        TalkClose();
+                        Fade_Out(3, 1);
+                        Show_Document_UI(0x43);
+                        Fade_In(3, 1);
+                        var_2 = 1;
+                        break;
+                    case 3:
+                        TalkClose();
+                        Fade_Out(3, 1);
+                        Show_Document_UI(0x44);
+                        Fade_In(3, 1);
+                        var_2 = 1;
+                        break;
+                    case 4:
+                        TalkClose();
+                        Fade_Out(3, 1);
+                        Show_Document_UI(0x45);
+                        Fade_In(3, 1);
+                        var_2 = 1;
+                        break;
+                    case 5:
+                        TalkClose();
+                        Fade_Out(3, 1);
+                        Show_Document_UI(0x46);
+                        Fade_In(3, 1);
+                        var_2 = 1;
+                        break;
+                    case 6:
+                        var_1 = 0;
+                        var_2 = 0;
+                        break;
+                }
+                break;
+        }
+    } while ((var_2 == 0));
+    exit;
+}

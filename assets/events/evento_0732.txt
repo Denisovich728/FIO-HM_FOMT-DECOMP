@@ -1,0 +1,218 @@
+// Script 732
+#include "Fomt_Lib.src"
+
+script 732 Event_0732 {
+    const MESSAGE_0 = "Hi, \xFF!. \r\nCome on in. \BRK";
+    const MESSAGE_1 = "Hello, \xFF!. \BRK";
+    const MESSAGE_2 = "Are we ready to \r\nbegin the class? \BRK";
+    const MESSAGE_3 = "Yes, Teacher. \r\nPlease begin!\BRK";
+    const MESSAGE_4 = "Listen up, now...\BRK";
+    const MESSAGE_5 = "Today's class will be on \r\nCookies. All of you who \r\nlike sweets will love this.\BRK\WAIT_CLICKThe Ingredients are Egg, \r\nFlour, Butter, and Sugar.\BRK\WAIT_CLICKYou also need a Rolling Pin\r\nand an Oven. \BRK\WAIT_CLICKIt will also taste better \r\nif you add Honey. \BRK\WAIT_CLICKAlso, if you add Chocolate,\r\nyou can make Chocolate\r\nCookies that are perfect\BRK\r\nfor the Spring \r\nThanksgiving Festival. \BRK";
+    const MESSAGE_6 = "Thank you, Teacher!\BRK";
+    const MESSAGE_7 = "Don't mention it. \r\nUntil next time. \BRK";
+    const MESSAGE_8 = "I think Pudding is a good \r\nsubject for today's class. \BRK\WAIT_CLICKAll you need is Egg, Milk, \r\nSugar, and an Oven to \r\ncook it all in. \BRK\WAIT_CLICKThey taste even better with\r\nFruit or Corn Flakes. \r\nTry it out!\BRK";
+    const MESSAGE_9 = "Today's lesson will be on \r\nCheese Cake. \r\nQuite a sophisticated \BRK\r\ndessert, don't you think?\BRK\WAIT_CLICKIt's made with Cheese, \r\nEggs, and Milk, along with \r\nSugar to sweeten it. \BRK\WAIT_CLICKYou'll need a Pot, a Whisk,\r\nand an Oven. \BRK\WAIT_CLICKYou can also add Honey \r\non special occasions. \BRK";
+    const MESSAGE_10 = "Today's lesson will be on \r\nApple Pie. \BRK\WAIT_CLICKI know that Ellen likes \r\nthis recipe very well. \BRK\WAIT_CLICKShe'll love it if you \r\nbring her some. \BRK\WAIT_CLICKIngredients are Egg, Flour,\r\nand Butter. \r\nYou'll need a Knife, a Pot,\BRK\r\na Rolling Pin, and an Oven.\BRK\WAIT_CLICKIt's not easy, but it's \r\nvery delicious. \BRK";
+    const MESSAGE_11 = "I'm afraid next time will be\r\nour final lesson. \BRK";
+    const MESSAGE_12 = "Really? Why?\BRK";
+    const MESSAGE_13 = "Yes, Basil is starting \r\nanother book, so I don't\r\nwant to disturb him.\BRK";
+    const MESSAGE_14 = "That's too bad...\r\n\BRK";
+    const MESSAGE_15 = "Sorry, \xFF!, \r\nbut that's all I can teach\r\nyou. \BRK";
+    const MESSAGE_16 = "Our final lesson will be on \r\nIce Cream. \r\nEverybody loves Ice Cream. \BRK\WAIT_CLICKYou'll need Milk, Egg, \r\nand of course Sugar. \BRK\WAIT_CLICKYou'll also need a Pot \r\nand a Whisk. \BRK\WAIT_CLICKAll children love this!\BRK";
+    const MESSAGE_17 = "That's it for my Dessert \r\nClassroom. \BRK";
+    const MESSAGE_18 = "Don't mention it. I'm \r\nglad to be able to share\r\nthese recipes. \BRK";
+    
+    End_Cinematic_State();
+    Warp_Player(0x1A, 0x78, 0xD0);
+    SetEntityPosition(0, 0x78, 0xD0, "Up");
+    if ((Inventory_Check() == 1)) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    SetEntityPosition(0xB, 0x70, 0x60, "Down");
+    SetEntityAnim(0xB, 0x84B);
+    SetEntityPosition(9, 0x58, 0x78, "Right");
+    SetEntityAnim(9, 0x8D0);
+    Fade_In(2, 1);
+    Pan_Camera_To(0x78, 0x78, 2);
+    Wait_Camera_Stop();
+    TalkOpen();
+    Set_Portrait(0x6E);
+    Set_Name_Window(0xB);
+    TalkMessage(0);
+    TalkClose();
+    SetEntityFacing(9, "Down");
+    TalkOpen();
+    Set_Portrait(0x89);
+    Set_Name_Window(9);
+    TalkMessage(1);
+    TalkClose();
+    if ((Inventory_Check() == 1)) {
+        SetEntityAnim(0, 0x1C6);
+    } else {
+        SetEntityAnim(0, 0x156);
+    }
+    Set_Vector_Y(0, 0x98, 1);
+    Execute_Movement(0);
+    if ((Inventory_Check() == 1)) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    SetEntityAnim(0, 0x1FE);
+    Make_Delay(0x1E);
+    if ((Inventory_Check() == 1)) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    TalkOpen();
+    Set_Portrait(0x6E);
+    Set_Name_Window(0xB);
+    TalkMessage(2);
+    TalkClose();
+    SetEntityFacing(9, "Up");
+    TalkOpen();
+    Set_Portrait(0x8A);
+    Set_Name_Window(9);
+    TalkMessage(3);
+    TalkClose();
+    TalkOpen();
+    Set_Portrait(0x6F);
+    Set_Name_Window(0xB);
+    TalkMessage(4);
+    TalkClose();
+    switch (Check_Flag(0x103)) {
+        case 0:
+            TalkOpen();
+            Set_Portrait(0x6E);
+            Set_Name_Window(0xB);
+            TalkMessage(5);
+            TalkClose();
+            TalkOpen();
+            Set_Portrait(0x8A);
+            Set_Name_Window(9);
+            TalkMessage(6);
+            TalkClose();
+            TalkOpen();
+            Set_Portrait(0x6F);
+            Set_Name_Window(0xB);
+            TalkMessage(7);
+            TalkClose();
+            break;
+        case 1:
+            TalkOpen();
+            Set_Portrait(0x6E);
+            Set_Name_Window(0xB);
+            TalkMessage(8);
+            TalkClose();
+            TalkOpen();
+            Set_Portrait(0x8A);
+            Set_Name_Window(9);
+            TalkMessage(6);
+            TalkClose();
+            TalkOpen();
+            Set_Portrait(0x6F);
+            Set_Name_Window(0xB);
+            TalkMessage(7);
+            TalkClose();
+            break;
+        case 2:
+            TalkOpen();
+            Set_Portrait(0x6E);
+            Set_Name_Window(0xB);
+            TalkMessage(9);
+            TalkClose();
+            TalkOpen();
+            Set_Portrait(0x8A);
+            Set_Name_Window(9);
+            TalkMessage(6);
+            TalkClose();
+            TalkOpen();
+            Set_Portrait(0x6F);
+            Set_Name_Window(0xB);
+            TalkMessage(7);
+            TalkClose();
+            break;
+        case 3:
+            TalkOpen();
+            Set_Portrait(0x6E);
+            Set_Name_Window(0xB);
+            TalkMessage(10);
+            TalkClose();
+            TalkOpen();
+            Set_Portrait(0x8A);
+            Set_Name_Window(9);
+            TalkMessage(6);
+            TalkClose();
+            TalkOpen();
+            Set_Portrait(0x6F);
+            Set_Name_Window(0xB);
+            TalkMessage(11);
+            TalkClose();
+            TalkOpen();
+            Set_Portrait(0x8B);
+            Set_Name_Window(9);
+            TalkMessage(12);
+            TalkClose();
+            TalkOpen();
+            Set_Portrait(0x6E);
+            Set_Name_Window(0xB);
+            TalkMessage(13);
+            TalkClose();
+            TalkOpen();
+            Set_Portrait(0x8C);
+            Set_Name_Window(9);
+            TalkMessage(14);
+            TalkClose();
+            TalkOpen();
+            Set_Portrait(0x6E);
+            Set_Name_Window(0xB);
+            TalkMessage(15);
+            TalkClose();
+            break;
+        case 4:
+            TalkOpen();
+            Set_Portrait(0x6E);
+            Set_Name_Window(0xB);
+            TalkMessage(16);
+            Set_Portrait(0x6F);
+            TalkMessage(17);
+            TalkClose();
+            TalkOpen();
+            Set_Portrait(0x8A);
+            Set_Name_Window(9);
+            TalkMessage(6);
+            TalkClose();
+            TalkOpen();
+            Set_Portrait(0x6F);
+            Set_Name_Window(0xB);
+            TalkMessage(18);
+            TalkClose();
+            Give_Friendship_Points(0xB, 0x14);
+            Give_Friendship_Points(9, 0x14);
+            break;
+    }
+    SetEntityAnim(0, 0x1FE);
+    Make_Delay(0x1E);
+    if ((Inventory_Check() == 1)) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    Free_Event_Entity(0xB);
+    Free_Event_Entity(9);
+    Refresh_Map_Entities();
+    Set_Flag(0x102, 2);
+    Set_Flag(0x103, (Check_Flag(0x103) + 1));
+    Fade_Out(2, 1);
+    Warp_Player(5, 0xC8, 0xA8);
+    SetEntityPosition(0, 0xC8, 0xA8, "Down");
+    PlaySong(0, 0xCD);
+    Set_Time(0xD, 0);
+    Fade_In(2, 1);
+    Refresh_Map_Entities();
+    exit;
+    exit;
+}

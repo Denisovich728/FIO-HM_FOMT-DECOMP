@@ -1,0 +1,11 @@
+// Script 515
+#include "Fomt_Lib.src"
+
+script 515 Event_0515 {
+    const MESSAGE_0 = "Hammer\BRK";
+    
+    TalkOpen();
+    Print_Message(0);
+    TalkClose();
+    exit;
+}

@@ -1,0 +1,11 @@
+// Script 164
+#include "Fomt_Lib.src"
+
+script 164 Event_0164 {
+    const MESSAGE_0 = "\x81\xAAWater Mill\r\nPut Corn in here to get\r\n30 bushels of Chicken Feed.\BRK";
+    
+    TalkOpen();
+    Print_Message(0);
+    TalkClose();
+    exit;
+}

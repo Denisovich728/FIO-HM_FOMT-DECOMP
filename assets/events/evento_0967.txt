@@ -1,0 +1,6 @@
+// Script 967
+#include "Fomt_Lib.src"
+
+script 967 Event_0967 {
+    exit;
+}

@@ -1,0 +1,22 @@
+// Script 449
+#include "Fomt_Lib.src"
+
+script 449 Event_0449 {
+    const MESSAGE_0 = "Feed Box\BRK";
+    
+    var var_0;
+    
+    var_0 = 0;
+    if ((((!Inventory_Check() && (Compare_Gift() == 1)) && !Is_Item_Wrapped()) && (Search_Item_Gift_Address() == 0x5B))) {
+        var_0 = 1;
+    }
+    if ((var_0 && !Func0BE(0xF))) {
+        Drop_Held_Item();
+        Add_Fodder_to_Box(0xF);
+    } else {
+        TalkOpen();
+        Print_Message(0);
+        TalkClose();
+    }
+    exit;
+}

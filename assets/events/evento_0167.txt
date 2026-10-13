@@ -1,0 +1,21 @@
+// Script 167
+#include "Fomt_Lib.src"
+
+script 167 Event_0167 {
+    const MESSAGE_0 = "You can't go inside\r\nwhile riding a horse!\BRK";
+    
+    if ((GetEntityFacing(0) == 1)) {
+        if ((Func063() == 1)) {
+            TalkOpen();
+            Print_Message(0);
+            TalkClose();
+            exit;
+        }
+        PlaySong(0, 0x9C);
+        Fade_Out(2, 1);
+        Warp_Player(0x11, 0x78, 0xD0);
+        SetEntityPosition(0, 0x78, 0xD0, "Up");
+        Fade_In(2, 1);
+    }
+    exit;
+}

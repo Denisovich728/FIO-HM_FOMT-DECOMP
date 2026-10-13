@@ -1,0 +1,31 @@
+// Script 882
+#include "Fomt_Lib.src"
+
+script 882 Event_0882 {
+    const MESSAGE_0 = "Karen...\BRK";
+    const MESSAGE_1 = "Karen's so pretty...\BRK";
+    
+    if ((Check_If_Single(0x11) == 0)) {
+        Free_Event_Entity(0x11);
+    }
+    if ((Has_NPC_Talked_Today(0x11) == 0)) {
+        SetEntityFacing(0x11, GetOppositeFacing(GetEntityFacing(0)));
+        TalkOpen();
+        Set_Portrait(0x46);
+        Set_Name_Window(0x11);
+        TalkMessage(0);
+        TalkClose();
+        SetEntityFacing(0x11, "Left");
+        Free_Event_Entity(0x11);
+    } else {
+        SetEntityFacing(0x11, GetOppositeFacing(GetEntityFacing(0)));
+        TalkOpen();
+        Set_Portrait(0x43);
+        Set_Name_Window(0x11);
+        TalkMessage(1);
+        TalkClose();
+        SetEntityFacing(0x11, "Left");
+        Free_Event_Entity(0x11);
+    }
+    exit;
+}

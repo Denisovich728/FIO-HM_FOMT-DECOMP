@@ -1,0 +1,22 @@
+// Script 1117
+#include "Fomt_Lib.src"
+
+script 1117 Event_1117 {
+    const MESSAGE_0 = "Lillia's cooking is always \r\nincredible, you know. \BRK";
+    
+    if ((Check_If_Single(0x1C) == 0)) {
+        Free_Event_Entity(0x1C);
+    }
+    SetEntityFacing(0x1C, GetOppositeFacing(GetEntityFacing(0)));
+    TalkOpen();
+    Set_Portrait(0x21);
+    Set_Name_Window(0x1C);
+    TalkMessage(0);
+    TalkClose();
+    if ((Has_Spoken_To_NPC_Today(0x1C) == 0)) {
+        Give_Friendship_Points(0x1C, 5);
+    }
+    SetEntityFacing(0x1C, "Right");
+    Free_Event_Entity(0x1C);
+    exit;
+}

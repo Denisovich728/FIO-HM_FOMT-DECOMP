@@ -1,0 +1,74 @@
+// Script 1303
+#include "Fomt_Lib.src"
+
+script 1303 Event_1303 {
+    const MESSAGE_0 = "Hi there. \r\nGood timing. We were \r\njust about to start. \BRK";
+    const MESSAGE_1 = "I'm so glad we have \r\ncompany! It's usually just\r\nthe 3 of us...\BRK";
+    const MESSAGE_2 = "The Doctor always eats at \r\nthe Church with Carter. \BRK\WAIT_CLICKElli tried inviting him \r\nbefore!\BRK";
+    const MESSAGE_3 = "Stu, will you shut\r\nyour big mouth!\BRK";
+    const MESSAGE_4 = "Spending the Starry Night\r\nFestival with Elli's family\r\nsure was fun. \BRK";
+    
+    Warp_Player(0xE, 0x78, 0xA0);
+    PlayBGM(1, 7);
+    Spawn_Item_On_Grid(0, 0x40, 0x78, 1, Get_Item_Sprite_ID(0x73));
+    Spawn_Item_On_Grid(1, 0x50, 0x78, 1, Get_Item_Sprite_ID(0x1E));
+    SetEntityPosition(0, 0x78, 0xD0, "Up");
+    SetEntityPosition(0x15, 0x68, 0x78, "Left");
+    SetEntityAnim(0x15, 0x884);
+    SetEntityPosition(0xF, 0x50, 0x64, "Down");
+    SetEntityAnim(0xF, 0x685);
+    SetEntityPosition(0x10, 0x40, 0x64, "Down");
+    SetEntityAnim(0x10, 0x8B8);
+    Fade_In(2, 1);
+    if ((Inventory_Check() == 1)) {
+        SetEntityAnim(0, 0x1C6);
+    } else {
+        SetEntityAnim(0, 0x156);
+    }
+    Set_Vector_Y(0, 0xA0, 1);
+    Execute_Movement(0);
+    if ((Inventory_Check() == 1)) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    SetEntityFacing(0x15, "Down");
+    Make_Delay(0xA);
+    TalkOpen();
+    Set_Name_Window(0x15);
+    Set_Portrait(0x7A);
+    Set_Hearth_Anim(0x15);
+    TalkMessage(0);
+    TalkClose();
+    TalkOpen();
+    Set_Name_Window(0xF);
+    Set_Portrait(0x40);
+    TalkMessage(1);
+    TalkClose();
+    TalkOpen();
+    Set_Name_Window(0x10);
+    Set_Portrait(0x81);
+    TalkMessage(2);
+    TalkClose();
+    SetEntityFacing(0x15, "Left");
+    TalkOpen();
+    Set_Name_Window(0x15);
+    Set_Portrait(0x7D);
+    Set_Hearth_Anim(0x15);
+    TalkMessage(3);
+    TalkClose();
+    Give_Love_Points(0x15, 0x7D0);
+    Give_Friendship_Points(0x15, 0x1E);
+    Give_Friendship_Points(0x10, 0x1E);
+    Give_Friendship_Points(0xF, 0x1E);
+    Fade_Out(2, 1);
+    TalkOpen();
+    TalkMessage(4);
+    TalkClose();
+    Despawn_Map_Item(0);
+    Despawn_Map_Item(1);
+    Set_Flag(0x1CA, 2);
+    Set_Flag(0x1C2, 0);
+    Execute_Script(988);
+    exit;
+}

@@ -1,0 +1,16 @@
+// Script 890
+#include "Fomt_Lib.src"
+
+script 890 Event_0890 {
+    const MESSAGE_0 = "Did you hear that?!\r\nRick is such a pain! \BRK\WAIT_CLICKHe's always like that when \r\nI talk to Popuri!\BRK";
+    
+    SetEntityFacing(0x1A, GetOppositeFacing(GetEntityFacing(0)));
+    TalkOpen();
+    Set_Portrait(0x99);
+    Set_Name_Window(0x1A);
+    TalkMessage(0);
+    TalkClose();
+    SetEntityFacing(0x1A, "Left");
+    Free_Event_Entity(0x1A);
+    exit;
+}

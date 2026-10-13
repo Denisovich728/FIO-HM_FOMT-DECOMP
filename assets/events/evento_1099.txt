@@ -1,0 +1,39 @@
+// Script 1099
+#include "Fomt_Lib.src"
+
+script 1099 Event_1099 {
+    const MESSAGE_0 = "The Cooking Festival is \r\ntomorrow at 10AM in Rose \r\nSquare, you know.\BRK\WAIT_CLICKIf you bring a dish, you\r\ncan enter it. \BRK";
+    
+    Warp_Player(2, 0xE4, 0x78);
+    SetEntityPosition(0, 0xE4, 0x78, "Down");
+    if (Inventory_Check()) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    SetEntityPosition(0xD, 0xE4, 0x91, "Up");
+    SetEntityAnim(0xD, 0x85F);
+    Fade_In(2, 1);
+    Set_Flag(0x18B, 1);
+    TalkOpen();
+    Set_Portrait(0x75);
+    Set_Name_Window(0xD);
+    TalkMessage(0);
+    TalkClose();
+    SetEntityFacing(0xD, "Right");
+    SetEntityAnim(0xD, 0x863);
+    Set_Vector_X(0xD, 0x13F, 1);
+    Execute_Movement(0xD);
+    SetEntityAnim(0xD, 0x85F);
+    SetEntityFacing(0xD, "Up");
+    SetEntityAnim(0xD, 0x863);
+    SetEntityFacing(0, "Right");
+    Set_Vector_Y(0xD, 0, 1);
+    Execute_Movement(0xD);
+    SetEntityAnim(0xD, 0x85F);
+    Hide_Entity(0xD);
+    Free_Event_Entity(0xD);
+    Set_Flag(0x18B, 2);
+    exit;
+    exit;
+}

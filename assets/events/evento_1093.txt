@@ -1,0 +1,30 @@
+// Script 1093
+#include "Fomt_Lib.src"
+
+script 1093 Event_1093 {
+    const MESSAGE_0 = "I always lose at \r\nthese races! I can never \r\npick the winners, it seems.\BRK\WAIT_CLICKOh well, it's just for \r\nfun, so who cares!\BRK";
+    const MESSAGE_1 = "I'm going to bet on you, \r\n\xFF!! \r\nI'm counting on you to \BRK\r\nbring me good luck. \BRK\WAIT_CLICKI never know who to bet \r\non, so I just bet on people\r\nknow. \BRK";
+    
+    if ((Check_If_Single(9) == 0)) {
+        Free_Event_Entity(9);
+    }
+    SetEntityFacing(9, GetOppositeFacing(GetEntityFacing(0)));
+    if ((Check_Flag(0x188) == 0)) {
+        TalkOpen();
+        Set_Portrait(0x89);
+        Set_Name_Window(9);
+        TalkMessageSlow(0);
+    } else {
+        TalkOpen();
+        Set_Portrait(0x8A);
+        Set_Name_Window(9);
+        TalkMessage(1);
+    }
+    TalkClose();
+    if ((Has_Spoken_To_NPC_Today(9) == 0)) {
+        Give_Friendship_Points(9, 5);
+    }
+    Free_Event_Entity(9);
+    SetEntityFacing(9, "Right");
+    exit;
+}

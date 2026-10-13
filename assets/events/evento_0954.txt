@@ -1,0 +1,16 @@
+// Script 954
+#include "Fomt_Lib.src"
+
+script 954 Event_0954 {
+    const MESSAGE_0 = "Hi...\BRK";
+    
+    SetEntityFacing(0x14, GetOppositeFacing(GetEntityFacing(0)));
+    TalkOpen();
+    Set_Portrait(0x27);
+    Set_Name_Window(0x14);
+    TalkMessage(0);
+    TalkClose();
+    SetEntityFacing(0x14, "Down");
+    Free_Event_Entity(0x14);
+    exit;
+}

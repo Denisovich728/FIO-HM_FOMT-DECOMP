@@ -1,0 +1,30 @@
+// Script 53
+#include "Fomt_Lib.src"
+
+script 53 Event_0053 {
+    const MESSAGE_0 = "Take care of Ann for me. \BRK";
+    const MESSAGE_1 = "What's up?\r\nDo you want to eat?\BRK";
+    
+    if ((Check_Flag(0x5C) == 1)) {
+    }
+    if ((Check_Flag(0x5D) == 0)) {
+        SetEntityFacing(0x18, GetOppositeFacing(GetEntityFacing(0)));
+        TalkOpen();
+        Set_Portrait(0x54);
+        Set_Name_Window(0x18);
+        TalkMessage(0);
+        TalkClose();
+        SetEntityFacing(0x18, "Down");
+        Free_Event_Entity(0x18);
+    } else {
+        SetEntityFacing(0x18, GetOppositeFacing(GetEntityFacing(0)));
+        TalkOpen();
+        Set_Portrait(0x53);
+        Set_Name_Window(0x18);
+        TalkMessage(1);
+        TalkClose();
+        SetEntityFacing(0x18, "Down");
+        Free_Event_Entity(0x18);
+    }
+    exit;
+}

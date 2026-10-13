@@ -1,0 +1,30 @@
+// Script 1153
+#include "Fomt_Lib.src"
+
+script 1153 Event_1153 {
+    const MESSAGE_0 = "I love the Chicken Festival. \BRK";
+    const MESSAGE_1 = "Is your Chicken strong,\r\n\xFF!? \BRK";
+    
+    if ((Check_If_Single(4) == 0)) {
+        Free_Event_Entity(4);
+    }
+    SetEntityFacing(4, GetOppositeFacing(GetEntityFacing(0)));
+    if ((Check_Flag(0x197) == 0)) {
+        TalkOpen();
+        Set_Portrait(0xB4);
+        Set_Name_Window(4);
+        TalkMessage(0);
+    } else {
+        TalkOpen();
+        Set_Portrait(0xB5);
+        Set_Name_Window(4);
+        TalkMessage(1);
+    }
+    TalkClose();
+    if ((Has_Spoken_To_NPC_Today(4) == 0)) {
+        Give_Friendship_Points(4, 5);
+    }
+    Free_Event_Entity(4);
+    SetEntityFacing(4, "Right");
+    exit;
+}

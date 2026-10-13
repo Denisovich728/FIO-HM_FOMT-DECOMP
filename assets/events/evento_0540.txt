@@ -1,0 +1,88 @@
+// Script 540
+#include "Fomt_Lib.src"
+
+script 540 Event_0540 {
+    const MESSAGE_0 = "............................\r\n............................\r\n............................\BRK";
+    const MESSAGE_1 = "------------------------------\r\n------------------------------\r\n------------------------------\BRK";
+    
+    var var_1;
+    
+    TalkOpen();
+    if ((((Check_Flag(3) == 4) || (Check_Flag(3) == 0x10)) && (Check_Flag(4) == 0x2C))) {
+        Set_TV_Screen_Graphic(0x10);
+    } else {
+        if (((Check_Flag(6) == 3) || (Check_Flag(6) == 4))) {
+            Set_TV_Screen_Graphic(0x10);
+            var_1 = Print_TV_Message(0);
+            goto LBL_0007;
+        }
+        if ((Check_Flag(3) < 6)) {
+            Set_TV_Screen_Graphic(1);
+            var_1 = Print_TV_Message(1);
+            goto LBL_0007;
+        }
+        switch (Check_Flag(0x244)) {
+            case 0:
+                Execute_Script(1058);
+                break;
+            case 3:
+                Execute_Script(1042);
+                break;
+            case 1:
+                Set_TV_Screen_Graphic(6);
+                Execute_Script(1039);
+                break;
+            case 2:
+                if ((((Check_Flag(1) == 0) && (((((Check_Flag(2) == 1) || (Check_Flag(2) == 2)) || (Check_Flag(2) == 3)) || (Check_Flag(2) == 4)) || (Check_Flag(2) == 5))) || ((Check_Flag(1) == 3) && ((Check_Flag(2) == 0x1D) || (Check_Flag(2) == 0x1E))))) {
+                    Execute_Script(1053);
+                    goto LBL_0029;
+                }
+                switch (Check_Flag(5)) {
+                    case 0:
+                        Set_TV_Screen_Graphic(0x13);
+                        Execute_Script(1056);
+                        break;
+                    case 1:
+                        Set_TV_Screen_Graphic(4);
+                        Execute_Script(1036);
+                        break;
+                    case 2:
+                        Set_TV_Screen_Graphic(4);
+                        Execute_Script(1037);
+                        break;
+                    case 3:
+                        Set_TV_Screen_Graphic(0xD);
+                        Execute_Script(1048);
+                        break;
+                    case 4:
+                        Set_TV_Screen_Graphic(0);
+                        Execute_Script(1033);
+                        break;
+                    case 5:
+                        Set_TV_Screen_Graphic(0xC);
+                        Execute_Script(1047);
+                        break;
+                    case 6:
+                        Set_TV_Screen_Graphic(7);
+                        Execute_Script(1040);
+                        break;
+                }
+                break;
+        }
+    }
+    Close_TV_Interface();
+    TalkClose();
+    switch (var_1) {
+        case 0:
+        case 1:
+        case 2:
+        case 3:
+            Set_Flag(0x244, var_1);
+            Execute_Script(540);
+            break;
+        case 4:
+        case 5:
+            break;
+    }
+    exit;
+}

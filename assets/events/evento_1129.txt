@@ -1,0 +1,205 @@
+// Script 1129
+#include "Fomt_Lib.src"
+
+script 1129 Event_1129 {
+    const MESSAGE_0 = "We will now announce the \r\nwinner! Please come up\r\nclose, now. \BRK\WAIT_CLICKThe winner is......\BRK";
+    const MESSAGE_1 = "\xFF!!\BRK";
+    const MESSAGE_2 = "Doug!\BRK";
+    const MESSAGE_3 = "Ann! \BRK";
+    const MESSAGE_4 = "Lillia!\BRK";
+    const MESSAGE_5 = "Manna!\BRK";
+    const MESSAGE_6 = "Your cooking was truly \r\ndelicious! Let me \r\ncongratulate you myself!\BRK";
+    const MESSAGE_7 = "That was fun! \r\nNow, back to work...\BRK";
+    
+    Warp_Player(6, 0xE7, 0x8E);
+    PlayBGM(1, 7);
+    SetEntityPosition(0xD, 0xB4, 0x66, "Down");
+    SetEntityAnim(0xD, 0x85F);
+    SetEntityPosition(0x1E, 0xE7, 0x82, "Down");
+    SetEntityAnim(0x1E, 0x679);
+    SetEntityPosition(1, 0xA7, 0xC6, "Up");
+    SetEntityAnim(1, 0x25F);
+    SetEntityPosition(0x18, 0xBF, 0xC6, "Up");
+    SetEntityAnim(0x18, 0x7B2);
+    SetEntityPosition(0x19, 0xD7, 0xC6, "Up");
+    SetEntityAnim(0x19, 0x7BE);
+    SetEntityPosition(0x13, 0xEF, 0xC6, "Up");
+    SetEntityAnim(0x13, 0x691);
+    SetEntityPosition(9, 0x107, 0xC6, "Up");
+    SetEntityAnim(9, 0x8D0);
+    if ((Check_Flag(0x18F) == 1)) {
+        SetEntityPosition(0, 0x11F, 0xC6, "Up");
+        SetEntityAnim(0, 0x192);
+    }
+    Fade_In(2, 1);
+    TalkOpen();
+    Set_Portrait(0x75);
+    Set_Name_Window(0xD);
+    TalkMessage(0);
+    TalkClose();
+    StopBGM();
+    PlaySong(0, 0xB0);
+    Make_Delay((0x3C * 4));
+    TalkOpen();
+    Set_Portrait(0x75);
+    Set_Name_Window(0xD);
+    if (((Check_Flag(0x18F) == 1) && (Check_Flag(0x190) == 0))) {
+        TalkMessage(1);
+        TalkClose();
+        Make_Delay(0x1E);
+        PlayBGM(1, 7);
+        Give_Friendship_Points(0xD, 0x14);
+        Give_Friendship_Points(0x14, 0x14);
+        Give_Friendship_Points(0x16, 0x14);
+        Give_Friendship_Points(0x1E, 0x14);
+        Give_Friendship_Points(0x1C, 0x14);
+        Give_Friendship_Points(0x19, 0x14);
+        Give_Friendship_Points(0x1B, 0x14);
+        Give_Friendship_Points(0x13, 0x14);
+        Give_Friendship_Points(0x18, 0x14);
+        Give_Friendship_Points(0x12, 0x14);
+        Give_Friendship_Points(9, 0x14);
+        Give_Friendship_Points(2, 0x14);
+        Give_Friendship_Points(1, 0x14);
+        SetEntityAnim(0, 0x1C6);
+        Set_Vector_Y(0, 0xAA, 1);
+        Execute_Movement(0);
+        SetEntityAnim(0, 0x192);
+        SetEntityFacing(0, "Left");
+        SetEntityAnim(0, 0x1C6);
+        Set_Vector_X(0, 0xE7, 1);
+        Execute_Movement(0);
+        SetEntityAnim(0, 0x192);
+        SetEntityFacing(0, "Up");
+    } else {
+        if (((Check_Flag(0x18F) == 1) && (Check_Flag(0x190) == 1))) {
+            TalkMessage(1);
+            TalkClose();
+            Make_Delay(0x1E);
+            PlayBGM(1, 7);
+            Give_Friendship_Points(0xD, 0x14);
+            Give_Friendship_Points(0x14, 0x14);
+            Give_Friendship_Points(0x16, 0x14);
+            Give_Friendship_Points(0x1E, 0x14);
+            Give_Friendship_Points(0x1C, 0x14);
+            Give_Friendship_Points(0x19, 0x14);
+            Give_Friendship_Points(0x1B, 0x14);
+            Give_Friendship_Points(0x13, 0x14);
+            Give_Friendship_Points(0x18, 0x14);
+            Give_Friendship_Points(0x12, 0x14);
+            Give_Friendship_Points(9, 0x14);
+            Give_Friendship_Points(2, 0x14);
+            Give_Friendship_Points(1, 0x14);
+            SetEntityAnim(0, 0x1C6);
+            Set_Vector_Y(0, 0xAA, 1);
+            Execute_Movement(0);
+            SetEntityAnim(0, 0x192);
+            SetEntityFacing(0, "Left");
+            SetEntityAnim(0, 0x1C6);
+            Set_Vector_X(0, 0xE7, 1);
+            Execute_Movement(0);
+            SetEntityAnim(0, 0x192);
+            SetEntityFacing(0, "Up");
+            goto LBL_0008;
+        }
+        switch (RNG_Generator(0, 3)) {
+            case 0:
+                TalkMessage(2);
+                TalkClose();
+                Make_Delay(0x1E);
+                PlayBGM(1, 7);
+                SetEntityAnim(0x18, 0x7B6);
+                Set_Vector_Y(0x18, 0xAA, 1);
+                Execute_Movement(0x18);
+                SetEntityAnim(0x18, 0x7B2);
+                SetEntityFacing(0x18, "Right");
+                SetEntityAnim(0x18, 0x7B6);
+                Set_Vector_X(0x18, 0xE7, 1);
+                Execute_Movement(0x18);
+                SetEntityAnim(0x18, 0x7B2);
+                SetEntityFacing(0x18, "Up");
+                break;
+            case 1:
+                TalkMessage(3);
+                TalkClose();
+                Make_Delay(0x1E);
+                PlayBGM(1, 7);
+                SetEntityAnim(0x19, 0x7C2);
+                Set_Vector_Y(0x19, 0xAA, 1);
+                Execute_Movement(0x19);
+                SetEntityAnim(0x19, 0x7BE);
+                SetEntityFacing(0x19, "Right");
+                SetEntityAnim(0x19, 0x7C2);
+                Set_Vector_X(0x19, 0xE7, 1);
+                Execute_Movement(0x19);
+                SetEntityAnim(0x19, 0x7BE);
+                SetEntityFacing(0x19, "Up");
+                break;
+            case 2:
+                TalkMessage(4);
+                TalkClose();
+                Make_Delay(0x1E);
+                PlayBGM(1, 7);
+                SetEntityAnim(1, 0x263);
+                Set_Vector_Y(1, 0xAA, 1);
+                Execute_Movement(1);
+                SetEntityAnim(1, 0x25F);
+                SetEntityFacing(1, "Right");
+                SetEntityAnim(1, 0x263);
+                Set_Vector_X(1, 0xE7, 1);
+                Execute_Movement(1);
+                SetEntityAnim(1, 0x25F);
+                SetEntityFacing(1, "Up");
+                break;
+            case 3:
+                TalkMessage(5);
+                TalkClose();
+                Make_Delay(0x1E);
+                PlayBGM(1, 7);
+                SetEntityAnim(9, 0x8D4);
+                Set_Vector_Y(9, 0xAA, 1);
+                Execute_Movement(9);
+                SetEntityAnim(9, 0x8D0);
+                SetEntityFacing(9, "Left");
+                SetEntityAnim(9, 0x8D4);
+                Set_Vector_X(9, 0xE7, 1);
+                Execute_Movement(9);
+                SetEntityAnim(9, 0x8D0);
+                SetEntityFacing(9, "Up");
+                break;
+        }
+    }
+    TalkOpen();
+    Set_Name_Window(0x1E);
+    Set_Portrait(0x3C);
+    TalkMessage(6);
+    TalkClose();
+    PlaySong(0, 0xB5);
+    Make_Delay((0x3C * 3));
+    Fade_Out(2, 1);
+    TalkOpen();
+    TalkMessage(7);
+    TalkClose();
+    Refresh_Map_Entities();
+    Free_Event_Entity(0xD);
+    Free_Event_Entity(0x1E);
+    Add_Festival_Friendship_Bonus(0xD);
+    Add_Festival_Friendship_Bonus(0x14);
+    Add_Festival_Friendship_Bonus(0x16);
+    Add_Festival_Friendship_Bonus(0x1E);
+    Add_Festival_Friendship_Bonus(0x1C);
+    Add_Festival_Friendship_Bonus(0x19);
+    Add_Festival_Friendship_Bonus(0x1B);
+    Add_Festival_Friendship_Bonus(0x13);
+    Add_Festival_Friendship_Bonus(0x18);
+    Add_Festival_Friendship_Bonus(0x12);
+    Add_Festival_Friendship_Bonus(9);
+    Add_Festival_Friendship_Bonus(2);
+    Add_Festival_Friendship_Bonus(1);
+    Set_Flag(0x18E, 2);
+    Set_Flag(0x18F, 0);
+    Reset_Player_After_Festival_Activity();
+    Fade_In(2, 1);
+    exit;
+    exit;
+}

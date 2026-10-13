@@ -1,0 +1,11 @@
+// Script 517
+#include "Fomt_Lib.src"
+
+script 517 Event_0517 {
+    const MESSAGE_0 = "Stove\BRK";
+    
+    TalkOpen();
+    Print_Message(0);
+    TalkClose();
+    exit;
+}

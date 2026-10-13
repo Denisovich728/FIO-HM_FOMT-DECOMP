@@ -1,0 +1,11 @@
+// Script 2
+#include "Fomt_Lib.src"
+
+script 2 Event_0002 {
+    const MESSAGE_0 = "The sickness is gone!\BRK";
+    
+    TalkOpen();
+    TalkMessage(0);
+    TalkClose();
+    exit;
+}

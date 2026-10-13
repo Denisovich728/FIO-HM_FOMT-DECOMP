@@ -1,0 +1,83 @@
+// Script 874
+#include "Fomt_Lib.src"
+
+script 874 Event_0874 {
+    const MESSAGE_0 = "We used to play here \r\nall the time. \BRK";
+    const MESSAGE_1 = "We played games like tag,\r\nkick the can, hide and \r\nseek...everything.\BRK";
+    const MESSAGE_2 = "We also wrestled...\r\nAlthough...I never could \r\nbeat you.\BRK";
+    const MESSAGE_3 = "What do you mean?!\r\nI don\x81ft remember any\r\nof it!\BRK";
+    const MESSAGE_4 = "Don't you remember how I \r\nused to cry when you threw\r\nme to the ground?\BRK";
+    const MESSAGE_5 = "I told you I don't remember,\r\nso I don't remember!\r\nI'm going home now!\BRK";
+    const MESSAGE_6 = "What are you mad for?\r\nWait up!\BRK";
+    
+    Warp_Player(3, 0x19C, 0x9C);
+    PlayBGM(1, 0x10);
+    Set_Flag(0x72, 1);
+    SetEntityPosition(0, 0x264, 0xF8, "Down");
+    if (Inventory_Check()) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    SetEntityPosition(0x13, 0x190, 0x9C, "Right");
+    SetEntityAnim(0x13, 0x691);
+    SetEntityPosition(2, 0x1A8, 0x9C, "Left");
+    SetEntityAnim(2, 0x213);
+    Fade_In(2, 1);
+    Show_Emote(2, 5, 0);
+    Make_Delay(0x3C);
+    TalkOpen();
+    Set_Portrait(0);
+    Set_Name_Window(2);
+    TalkMessage(0);
+    TalkClose();
+    TalkOpen();
+    Set_Portrait(0x48);
+    Set_Name_Window(0x13);
+    TalkMessage(1);
+    TalkClose();
+    TalkOpen();
+    Set_Portrait(1);
+    Set_Name_Window(2);
+    TalkMessage(2);
+    TalkClose();
+    Show_Emote(0x13, 0, 0);
+    Make_Delay(0x3C);
+    TalkOpen();
+    Set_Portrait(0x4A);
+    Set_Name_Window(0x13);
+    TalkMessage(3);
+    TalkClose();
+    TalkOpen();
+    Set_Portrait(0);
+    Set_Name_Window(2);
+    TalkMessage(4);
+    TalkClose();
+    TalkOpen();
+    Set_Portrait(0x4A);
+    Set_Name_Window(0x13);
+    TalkMessage(5);
+    TalkClose();
+    Show_Emote(0x13, 0, 1);
+    SetEntityFacing(0x13, "Down");
+    SetEntityAnim(0x13, 0x695);
+    SetEntityFacing(2, "Down");
+    Set_Vector_Y(0x13, 0x122, 1);
+    Execute_Movement(0x13);
+    Wait_For_Animation(0x13);
+    TalkOpen();
+    Set_Portrait(4);
+    Set_Name_Window(2);
+    TalkMessage(6);
+    TalkClose();
+    SetEntityAnim(2, 0x217);
+    Set_Vector_Y(2, 0x10C, 1);
+    Execute_Movement(2);
+    Hide_Entity(0x13);
+    Hide_Entity(2);
+    Pan_Camera_To(0x264, 0xF8, 2);
+    Wait_Camera_Stop();
+    Set_Flag(0x72, 2);
+    exit;
+    exit;
+}

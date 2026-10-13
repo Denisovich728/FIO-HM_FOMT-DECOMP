@@ -1,0 +1,32 @@
+// Script 813
+#include "Fomt_Lib.src"
+
+script 813 Event_0813 {
+    const MESSAGE_0 = "It is a pleasure to make\r\nyour acquaintaince. \BRK\WAIT_CLICKMy name is Van, and I am a \r\ntravelling merchant with\r\nmany rare and valuable \BRK\r\nitems. \BRK\WAIT_CLICKI'm open for business every\r\nWednesday at second \r\nfloor of the Inn. \BRK\WAIT_CLICKI look forward to doing \r\nbusiness with you. \BRK";
+    
+    if ((Inventory_Check() == 1)) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    SetEntityPosition(0x21, 0xE4, 0x91, "Up");
+    SetEntityAnim(0x21, 0x8D8);
+    Fade_In(2, 1);
+    TalkOpen();
+    Set_Portrait(0x8E);
+    Set_Name_Window(0x21);
+    TalkMessage(0);
+    TalkClose();
+    SetEntityFacing(0x21, "Right");
+    SetEntityAnim(0x21, 0x8DC);
+    Set_Vector_X(0x21, 0x13F, 1);
+    Execute_Movement(0x21);
+    SetEntityFacing(0x21, "Up");
+    Set_Vector_Y(0x21, 0, 1);
+    Execute_Movement(0x21);
+    Hide_Entity(0x21);
+    Free_Event_Entity(0x21);
+    Set_Flag(0x13B, 2);
+    exit;
+    exit;
+}

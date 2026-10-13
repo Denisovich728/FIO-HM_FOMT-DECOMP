@@ -1,0 +1,17 @@
+// Script 720
+#include "Fomt_Lib.src"
+
+script 720 Event_0720 {
+    const MESSAGE_0 = "I have to apologize for \r\nfighting in front of you, \r\n\xFF!. \BRK\WAIT_CLICKIt's inexcusable...\BRK";
+    
+    SetEntityFacing(9, GetOppositeFacing(GetEntityFacing(0)));
+    TalkOpen();
+    Set_Name_Window(9);
+    Set_Portrait(0x89);
+    TalkMessage(0);
+    TalkClose();
+    Free_Event_Entity(9);
+    SetEntityFacing(9, "Right");
+    exit;
+    exit;
+}

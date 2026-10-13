@@ -1,0 +1,61 @@
+// Script 108
+#include "Fomt_Lib.src"
+
+script 108 Event_0108 {
+    const MESSAGE_0 = "It's locked...\BRK";
+    
+    var var_0;
+    var var_1;
+    var var_2;
+    var var_3;
+    var var_4;
+    var var_5;
+    
+    if ((GetEntityFacing(0) == 1)) {
+        var_0 = 0;
+        var_1 = Check_Flag(1);
+        var_2 = Check_Flag(2);
+        var_3 = Check_Flag(3);
+        var_4 = Check_Flag(5);
+        var_5 = Check_Flag(6);
+        if ((((((((((((((((var_1 == 0) && (var_2 == 1)) || ((var_1 == 0) && (var_2 == 0x12))) || ((var_1 == 0) && (var_2 == 0x16))) || ((var_1 == 1) && (var_2 == 1))) || ((var_1 == 1) && (var_2 == 7))) || ((var_1 == 1) && (var_2 == 0x18))) || ((var_1 == 1) && (var_2 == 0x14))) || ((var_1 == 2) && (var_2 == 3))) || ((var_1 == 2) && (var_2 == 9))) || ((var_1 == 2) && (var_2 == 0xD))) || ((var_1 == 2) && (var_2 == 0x12))) || ((var_1 == 2) && (var_2 == 0x15))) || ((var_1 == 3) && (var_2 == 0x18))) || ((var_1 == 3) && (var_2 == 0x1E)))) {
+            var_0 = 0;
+        } else {
+            if (((((Check_Flag(0x7A) == 1) || (Check_Flag(0x7B) == 1)) || (Check_Flag(0x7C) == 1)) || (Check_Flag(0x95) == 1))) {
+                var_0 = 0;
+            } else {
+                if ((GetEntityLocation(0x1A) == 0x24)) {
+                    if ((((var_3 >= 0xB) && (var_3 < 0xD)) || ((var_3 >= 0x11) && (var_3 < 0x13)))) {
+                        var_0 = 1;
+                    }
+                }
+            }
+        }
+        if ((var_0 == 1)) {
+            PlaySong(0, 0x9C);
+            Fade_Out(2, 1);
+            Warp_Player(0x24, 0x78, 0xD0);
+            SetEntityPosition(0, 0x78, 0xD0, "Up");
+            if ((((((Check_Flag(0xE9) == 0) && (var_1 == 1)) && (var_5 == 0)) && ((var_3 >= 0x11) && (var_3 < 0x13))) && ((Check_Flag(0x7E) == 2) || (Check_Flag(0x7F) == 2)))) {
+                Set_Flag(0xE9, 1);
+                Execute_Script(707);
+            } else {
+                if ((((((((Check_Flag(0xF1) == 0) && (var_1 == 1)) && ((var_3 >= 0xB) && (var_3 < 0xD))) && (Chek_Friendship_Points(7) >= 0x64)) && (Chek_Friendship_Points(0x1A) >= 0x64)) && (Check_If_Single(7) == 1)) && (Check_If_Single(0x1A) == 1))) {
+                    Set_Flag(0xF1, 1);
+                    Execute_Script(714);
+                } else {
+                    if (((((((((Check_Flag(0x12C) == 0) && (var_1 == 1)) && (var_5 == 0)) && ((var_3 >= 0x11) && (var_3 < 0x13))) && (Chek_Friendship_Points(0x1A) >= 0x64)) && (((Check_Flag(0x55) == 0) && (Check_Flag(0x7E) == 0)) && (Check_Flag(0x7F) == 0))) && (Check_If_Single(3) == 1)) && (Check_If_Single(0x1A) == 1))) {
+                        Set_Flag(0x12C, 1);
+                        Execute_Script(795);
+                    }
+                }
+            }
+            Fade_In(2, 1);
+        } else {
+            TalkOpen();
+            TalkMessage(0);
+            TalkClose();
+        }
+    }
+    exit;
+}

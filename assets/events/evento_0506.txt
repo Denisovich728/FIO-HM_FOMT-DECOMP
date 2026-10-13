@@ -1,0 +1,11 @@
+// Script 506
+#include "Fomt_Lib.src"
+
+script 506 Event_0506 {
+    const MESSAGE_0 = "\x81\xA9Poultry Farm\r\n\x81@\x81@\x81@\x81@\x81@\x81@\x81@Yodel Farm\x81\xA8\r\n\x81\xABForest\BRK";
+    
+    TalkOpen();
+    Print_Message(0);
+    TalkClose();
+    exit;
+}

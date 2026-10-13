@@ -1,0 +1,31 @@
+// Script 959
+#include "Fomt_Lib.src"
+
+script 959 Event_0959 {
+    const MESSAGE_0 = "Elli, you are such a \r\nbeautiful bride...!\BRK\WAIT_CLICKYou've only thought about \r\nme and Stu, but now you \r\nhave to concentrate on your\BRK\r\nnew family. \BRK";
+    const MESSAGE_1 = "Watching Elli get married\r\nhas made me determined to\r\nlive to see Stu married! \BRK";
+    
+    if ((Check_If_Single(0xF) == 0)) {
+        Free_Event_Entity(0xF);
+    }
+    if ((Has_NPC_Talked_Today(0xF) == 0)) {
+        SetEntityFacing(0xF, GetOppositeFacing(GetEntityFacing(0)));
+        TalkOpen();
+        Set_Portrait(0x3F);
+        Set_Name_Window(0xF);
+        TalkMessage(0);
+        TalkClose();
+        SetEntityFacing(0xF, "Down");
+        Free_Event_Entity(0xF);
+    } else {
+        SetEntityFacing(0xF, GetOppositeFacing(GetEntityFacing(0)));
+        TalkOpen();
+        Set_Portrait(0x40);
+        Set_Name_Window(0xF);
+        TalkMessage(1);
+        TalkClose();
+        SetEntityFacing(0xF, "Down");
+        Free_Event_Entity(0xF);
+    }
+    exit;
+}

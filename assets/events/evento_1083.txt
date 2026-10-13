@@ -1,0 +1,30 @@
+// Script 1083
+#include "Fomt_Lib.src"
+
+script 1083 Event_1083 {
+    const MESSAGE_0 = "I always get so excited \r\nabout the races! \BRK";
+    const MESSAGE_1 = "I'll be rooting \r\nfor you! \BRK";
+    
+    if ((Check_If_Single(2) == 0)) {
+        Free_Event_Entity(2);
+    }
+    SetEntityFacing(2, GetOppositeFacing(GetEntityFacing(0)));
+    if ((Check_Flag(0x188) == 0)) {
+        TalkOpen();
+        Set_Portrait(1);
+        Set_Name_Window(2);
+        TalkMessage(0);
+    } else {
+        TalkOpen();
+        Set_Portrait(0);
+        Set_Name_Window(2);
+        TalkMessage(1);
+    }
+    TalkClose();
+    if ((Has_Spoken_To_NPC_Today(2) == 0)) {
+        Give_Friendship_Points(2, 5);
+    }
+    Free_Event_Entity(2);
+    SetEntityFacing(2, "Left");
+    exit;
+}

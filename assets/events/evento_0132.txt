@@ -1,0 +1,11 @@
+// Script 132
+#include "Fomt_Lib.src"
+
+script 132 Event_0132 {
+    const MESSAGE_0 = "Photograph\BRK";
+    
+    TalkOpen();
+    Print_Message(0);
+    TalkClose();
+    exit;
+}

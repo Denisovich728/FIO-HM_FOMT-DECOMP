@@ -1,0 +1,26 @@
+// Script 788
+#include "Fomt_Lib.src"
+
+script 788 Event_0788 {
+    const MESSAGE_0 = "Huh, can you believe this?\BRK";
+    const MESSAGE_1 = "Dad!...\r\nStop arguing already!!\BRK";
+    
+    SetEntityFacing(0x19, GetOppositeFacing(GetEntityFacing(0)));
+    TalkOpen();
+    Set_Name_Window(0x19);
+    if (!(((((((Check_Flag(0x4C) == 2) || (Check_Flag(0x5F) == 2)) || (Check_Flag(0x67) == 2)) || (Check_Flag(0x6F) == 2)) || (Check_Flag(0x173) == 2)) || (Check_Flag(0x7E) == 2)) || (Check_Flag(0x7F) == 2))) {
+        Set_Hearth_Anim(3);
+    }
+    if ((Check_Flag(0x129) == 0)) {
+        Set_Portrait(0x59);
+        TalkMessage(0);
+    } else {
+        Set_Portrait(0x59);
+        TalkMessage(1);
+    }
+    TalkClose();
+    Free_Event_Entity(0x19);
+    SetEntityFacing(0x19, "Down");
+    exit;
+    exit;
+}

@@ -1,0 +1,8 @@
+// Script 275
+#include "Fomt_Lib.src"
+
+script 275 Event_0275 {
+    PlaySong(0, 0x9C);
+    Anim_Door_Close(4);
+    exit;
+}

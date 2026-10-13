@@ -1,0 +1,19 @@
+// Script 18
+#include "Fomt_Lib.src"
+
+script 18 Event_0018 {
+    const MESSAGE_0 = "Just ask my dad if you need \r\nto know anything about \r\nSeeds or Items. \BRK";
+    
+    if ((Check_Flag(0x46) == 1)) {
+    }
+    SetEntityFacing(0x13, GetOppositeFacing(GetEntityFacing(0)));
+    TalkOpen();
+    Set_Portrait(0x48);
+    Set_Name_Window(0x13);
+    Set_Hearth_Anim(0x13);
+    TalkMessage(0);
+    TalkClose();
+    SetEntityFacing(0x13, "Down");
+    Free_Event_Entity(0x13);
+    exit;
+}

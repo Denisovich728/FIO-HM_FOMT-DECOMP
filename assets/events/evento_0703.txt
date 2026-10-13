@@ -1,0 +1,103 @@
+// Script 703
+#include "Fomt_Lib.src"
+
+script 703 Event_0703 {
+    const MESSAGE_0 = "Do you have a problem with\r\nme?\BRK";
+    const MESSAGE_1 = "Yeah! Don't mess around \r\nwith my sister!\BRK";
+    const MESSAGE_2 = "What! Just who do \r\nyou think you are!?\BRK";
+    const MESSAGE_3 = "I'm Popuri's brother, and \r\nI don't like her seeing \r\nyou, Kai! \BRK";
+    const MESSAGE_4 = "What makes you think you\r\ncan run her life?\BRK\WAIT_CLICKShe can do as she wants!\BRK";
+    const MESSAGE_5 = "I'm her brother, so \r\nsometimes I know what's \r\nbest for her! \BRK";
+    const MESSAGE_6 = "I feel sorry for Popuri,\r\nthat she has a brother like\r\nyou! \BRK";
+    const MESSAGE_7 = "Take that back!! \BRK\WAIT_CLICK...............\BRK";
+    const MESSAGE_8 = "From now on, I forbid you\r\nto see my sister!\BRK";
+    const MESSAGE_9 = "Oh yeah, what if she \r\ncomes and visits me anyway? \BRK";
+    const MESSAGE_10 = "Grrr...\BRK";
+    
+    if ((Inventory_Check() == 1)) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    SetEntityPosition(0x1A, 0x68, 0x80, "Down");
+    SetEntityAnim(0x1A, 0x902);
+    Pan_Camera_To(0x5C, 0x80, 2);
+    Fade_In(2, 1);
+    Wait_Camera_Stop();
+    Make_Delay(0x1E);
+    SetEntityPosition(2, 0x50, 0x108, "Up");
+    SetEntityAnim(2, 0x217);
+    Set_Vector_Y(2, 0x80, 1);
+    Execute_Movement(2);
+    SetEntityFacing(0x1A, "Left");
+    SetEntityFacing(2, "Right");
+    SetEntityAnim(2, 0x213);
+    Show_Emote(2, 0, 0);
+    Show_Emote(0x1A, 4, 0);
+    Make_Delay(0x3C);
+    TalkOpen();
+    Set_Portrait(0x9D);
+    Set_Name_Window(0x1A);
+    TalkMessage(0);
+    TalkClose();
+    TalkOpen();
+    Set_Portrait(2);
+    Set_Name_Window(2);
+    TalkMessage(1);
+    TalkClose();
+    TalkOpen();
+    Set_Portrait(0x9D);
+    Set_Name_Window(0x1A);
+    TalkMessage(2);
+    TalkClose();
+    TalkOpen();
+    Set_Portrait(2);
+    Set_Name_Window(2);
+    TalkMessage(3);
+    TalkClose();
+    TalkOpen();
+    Set_Portrait(0x9C);
+    Set_Name_Window(0x1A);
+    TalkMessage(4);
+    TalkClose();
+    TalkOpen();
+    Set_Portrait(2);
+    Set_Name_Window(2);
+    TalkMessage(5);
+    TalkClose();
+    TalkOpen();
+    Set_Portrait(0x9C);
+    Set_Name_Window(0x1A);
+    TalkMessage(6);
+    TalkClose();
+    Show_Emote(2, 0, 0);
+    Make_Delay(0x3C);
+    TalkOpen();
+    Set_Portrait(5);
+    Set_Name_Window(2);
+    TalkMessage(7);
+    Set_Portrait(2);
+    TalkMessage(8);
+    TalkClose();
+    TalkOpen();
+    Set_Portrait(0x99);
+    Set_Name_Window(0x1A);
+    TalkMessage(9);
+    TalkClose();
+    TalkOpen();
+    Set_Portrait(2);
+    Set_Name_Window(2);
+    TalkMessage(10);
+    TalkClose();
+    Show_Emote(2, 0, 1);
+    SetEntityPosition(2, 0x50, 0x80, "Down");
+    SetEntityAnim(2, 0x217);
+    Set_Vector_Y(2, 0x108, 1);
+    Execute_Movement(2);
+    Hide_Entity(2);
+    Pan_Camera_To(0x18, 0x118, 2);
+    Wait_Camera_Stop();
+    Set_Flag(0xE7, 2);
+    exit;
+    exit;
+}

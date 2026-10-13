@@ -1,0 +1,23 @@
+// Script 1076
+#include "Fomt_Lib.src"
+
+script 1076 Event_1076 {
+    const MESSAGE_0 = "I love making Rice Cakes\r\nevery New Year. I never \r\nmiss it. \BRK";
+    
+    if ((Check_If_Single(6) == 0)) {
+        Free_Event_Entity(6);
+    }
+    SetEntityFacing(6, GetOppositeFacing(GetEntityFacing(0)));
+    TalkOpen();
+    Set_Portrait(0xA9);
+    Set_Name_Window(6);
+    TalkMessage(0);
+    Talk_Mini_Close();
+    TalkClose();
+    if ((Has_Spoken_To_NPC_Today(6) == 0)) {
+        Give_Friendship_Points(6, 5);
+    }
+    Free_Event_Entity(6);
+    SetEntityFacing(6, "Down");
+    exit;
+}

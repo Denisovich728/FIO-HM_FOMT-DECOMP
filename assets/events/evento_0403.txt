@@ -1,0 +1,195 @@
+// Script 403
+#include "Fomt_Lib.src"
+
+script 403 Event_0403 {
+    const MESSAGE_0 = "Hey, \xFF!!\r\nDon't use Golden Lumber\r\nat your farm!\BRK";
+    const MESSAGE_1 = "\x81\x99New Year Festival\r\n1st day of Spring, 6PM\r\nAt Rose Square\BRK\WAIT_CLICKCome one, come all!\r\n                    Mayor\r\n\BRK";
+    const MESSAGE_2 = "\x81\x99Spring Horse Races\r\n18th day of Spring, 10AM\r\nAt Rose Square\BRK\WAIT_CLICKCome one, come all!\r\n                    Mayor\r\n\BRK";
+    const MESSAGE_3 = "\x81\x99Cooking Festival\r\n22nd day of Spring, 10AM\r\nAt Rose Square\BRK\WAIT_CLICKSpice things up!\r\n                    Mayor\r\n\BRK";
+    const MESSAGE_4 = "Swimming Festival\r\n1st day of Summer, 10AM\r\nAt Mineral Beach\BRK\WAIT_CLICKBring Dogs to Frisbee\r\nTournament!          Mayor\r\n\BRK";
+    const MESSAGE_5 = "\x81\x99Chicken Festival\r\n7th day of Summer, 10AM\r\nAt Rose Square\BRK\WAIT_CLICKBring your strongest\r\nChicken!           Mayor\r\n\BRK";
+    const MESSAGE_6 = "\x81\x99Cow Festival\r\n20th day of Summer, 10AM\r\nAt Rose Square\BRK\WAIT_CLICKBring your best Cow!\r\n                    Mayor\r\n\BRK";
+    const MESSAGE_7 = "\x81\x99Fireworks Festival\r\n24th day of Summer, 6PM\r\nMineral Beach\BRK\WAIT_CLICKCome celebrate the end of\r\nSummer!              Mayor\r\n\BRK";
+    const MESSAGE_8 = "\x81\x99Music Festival\r\n3rd day of Fall, 6PM\r\nAt the Church\BRK\WAIT_CLICKCome celebrate the Fall\r\nEquinox!             Mayor\r\n\BRK";
+    const MESSAGE_9 = "\x81\x99Harvest Festival\r\n9th day of Fall, 10AM\r\nAt Rose Square\BRK\WAIT_CLICKCome to partake together!\r\n                     Mayor\r\n\BRK";
+    const MESSAGE_10 = "\x81\x99Fall Horse Races\r\n18th day of Fall, 10AM\r\nAt Rose Square\BRK\WAIT_CLICKCome one, come all!\r\n                    Mayor\r\n\BRK";
+    const MESSAGE_11 = "\x81\x99Sheep Festival\r\n21st day of Fall, 10AM\r\nAt Yodel Farm\BRK\WAIT_CLICKBring Dyed in the Wool\r\nSheep!               Mayor\r\n\BRK";
+    const MESSAGE_12 = "\x81\x99Year End Festival and\r\nYear End Noodles\BRK\WAIT_CLICKCome celebrate the end of\r\nthe old year and the \r\nbeginning of the new!\BRK\WAIT_CLICK\x81\x99Year End Festival\r\n30th day of Winter,\r\nMidnight, at Mother's Hill\r\nPeak.\BRK\WAIT_CLICK\x81\x99Year End Noodles\r\n30th day of Winter, 6PM\r\nAt Rose Square\BRK\WAIT_CLICKEveryone come celebrate!\r\n                     Mayor\r\n\BRK";
+    const MESSAGE_13 = "\x81\x99Year End Festival,\r\nYear End Noodles, and \r\nNew Year Festival\BRK\WAIT_CLICKCome celebrate the end of\r\nthe old year and the \r\nbeginning of the new!\BRK\WAIT_CLICK\x81\x99Year End Festival\r\n30th day of Winter,\r\nMidnight, at Mother's Hill\r\nPeak.\BRK\WAIT_CLICK\x81\x99Year End Noodles\r\n30th day of Winter, 6PM\r\nAt Rose Square\BRK\WAIT_CLICK\x81\x99New Year Festival\r\n1st day of Spring, 6PM\r\nAt Rose Square\BRK\WAIT_CLICKEveryone come celebrate!\r\n                     Mayor\r\n\BRK";
+    
+    TalkOpen();
+    if (Init_Notice_Board_UI()) {
+        Print_Message(0);
+    } else {
+        switch (Check_Flag(1)) {
+            case 0:
+                switch (Check_Flag(2)) {
+                    case 1:
+                        Print_Message(1);
+                        break;
+                    case 2:
+                    case 3:
+                    case 4:
+                    case 5:
+                    case 6:
+                    case 7:
+                    case 8:
+                    case 9:
+                    case 0xA:
+                    case 0xB:
+                    case 0xC:
+                    case 0xD:
+                    case 0xE:
+                    case 0xF:
+                    case 0x10:
+                    case 0x11:
+                    case 0x12:
+                        Print_Message(2);
+                        break;
+                    case 0x13:
+                    case 0x14:
+                    case 0x15:
+                    case 0x16:
+                        Print_Message(3);
+                        break;
+                    case 0x17:
+                    case 0x18:
+                    case 0x19:
+                    case 0x1A:
+                    case 0x1B:
+                    case 0x1C:
+                    case 0x1D:
+                    case 0x1E:
+                        Print_Message(4);
+                        break;
+                }
+                break;
+            case 1:
+                switch (Check_Flag(2)) {
+                    case 1:
+                    case 2:
+                    case 3:
+                    case 4:
+                    case 5:
+                    case 6:
+                    case 7:
+                        Print_Message(5);
+                        break;
+                    case 8:
+                    case 9:
+                    case 0xA:
+                    case 0xB:
+                    case 0xC:
+                    case 0xD:
+                    case 0xE:
+                    case 0xF:
+                    case 0x10:
+                    case 0x11:
+                    case 0x12:
+                    case 0x13:
+                    case 0x14:
+                        Print_Message(6);
+                        break;
+                    case 0x15:
+                    case 0x16:
+                    case 0x17:
+                    case 0x18:
+                        Print_Message(7);
+                        break;
+                    case 0x19:
+                    case 0x1A:
+                    case 0x1B:
+                    case 0x1C:
+                    case 0x1D:
+                    case 0x1E:
+                        Print_Message(8);
+                        break;
+                }
+                break;
+            case 2:
+                switch (Check_Flag(2)) {
+                    case 1:
+                    case 2:
+                    case 3:
+                        Print_Message(8);
+                        break;
+                    case 4:
+                    case 5:
+                    case 6:
+                    case 7:
+                    case 8:
+                    case 9:
+                        Print_Message(9);
+                        break;
+                    case 0xA:
+                    case 0xB:
+                    case 0xC:
+                    case 0xD:
+                    case 0xE:
+                    case 0xF:
+                    case 0x10:
+                    case 0x11:
+                    case 0x12:
+                        Print_Message(10);
+                        break;
+                    case 0x13:
+                    case 0x14:
+                    case 0x15:
+                        Print_Message(11);
+                        break;
+                    case 0x16:
+                    case 0x17:
+                    case 0x18:
+                    case 0x19:
+                    case 0x1A:
+                    case 0x1B:
+                    case 0x1C:
+                    case 0x1D:
+                    case 0x1E:
+                        Print_Message(12);
+                        break;
+                }
+                break;
+            case 3:
+                switch (Check_Flag(2)) {
+                    case 1:
+                    case 2:
+                    case 3:
+                    case 4:
+                    case 5:
+                    case 6:
+                    case 7:
+                    case 8:
+                    case 9:
+                    case 0xA:
+                    case 0xB:
+                    case 0xC:
+                    case 0xD:
+                    case 0xE:
+                    case 0xF:
+                    case 0x10:
+                    case 0x11:
+                    case 0x12:
+                    case 0x13:
+                    case 0x14:
+                    case 0x15:
+                    case 0x16:
+                    case 0x17:
+                    case 0x18:
+                    case 0x19:
+                        Print_Message(12);
+                        break;
+                    case 0x1A:
+                    case 0x1B:
+                    case 0x1C:
+                    case 0x1D:
+                    case 0x1E:
+                        Print_Message(13);
+                        break;
+                }
+                break;
+        }
+    }
+    TalkClose();
+    exit;
+}

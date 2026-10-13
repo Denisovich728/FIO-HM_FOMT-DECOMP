@@ -1,0 +1,18 @@
+// Script 67
+#include "Fomt_Lib.src"
+
+script 67 Event_0067 {
+    const MESSAGE_0 = "I understand how Stu\r\nfeels, though. \BRK\WAIT_CLICKAll children want lots of \r\nattention, so they bother \r\npeople they like. \BRK";
+    
+    if ((Check_Flag(0x69) == 1)) {
+    }
+    SetEntityFacing(0x14, GetOppositeFacing(GetEntityFacing(0)));
+    TalkOpen();
+    Set_Portrait(0x23);
+    Set_Name_Window(0x14);
+    TalkMessage(0);
+    TalkClose();
+    SetEntityFacing(0x14, "Down");
+    Free_Event_Entity(0x14);
+    exit;
+}

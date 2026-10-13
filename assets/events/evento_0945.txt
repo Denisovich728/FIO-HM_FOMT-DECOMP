@@ -1,0 +1,16 @@
+// Script 945
+#include "Fomt_Lib.src"
+
+script 945 Event_0945 {
+    const MESSAGE_0 = "I wonder if Elli is OK?\r\nShe seems even worse now...\BRK";
+    
+    SetEntityFacing(0x14, GetOppositeFacing(GetEntityFacing(0)));
+    TalkOpen();
+    Set_Portrait(0x26);
+    Set_Name_Window(0x14);
+    TalkMessage(0);
+    TalkClose();
+    SetEntityFacing(0x14, "Left");
+    Free_Event_Entity(0x14);
+    exit;
+}

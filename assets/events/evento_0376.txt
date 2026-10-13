@@ -1,0 +1,64 @@
+// Script 376
+#include "Fomt_Lib.src"
+
+script 376 Event_0376 {
+    const MESSAGE_0 = "It's locked...\BRK";
+    
+    var var_0;
+    var var_1;
+    var var_2;
+    var var_3;
+    var var_4;
+    var var_5;
+    var var_6;
+    
+    if ((GetEntityFacing(0) == 1)) {
+        var_0 = 0;
+        var_1 = Check_Flag(1);
+        var_2 = Check_Flag(2);
+        var_4 = Check_Flag(3);
+        var_3 = Check_Flag(5);
+        var_5 = Check_Flag(6);
+        var_6 = Check_Flag(0);
+        if ((((((((((((((((var_1 == 0) && (var_2 == 1)) || ((var_1 == 0) && (var_2 == 0x12))) || ((var_1 == 0) && (var_2 == 0x16))) || ((var_1 == 1) && (var_2 == 1))) || ((var_1 == 1) && (var_2 == 7))) || ((var_1 == 1) && (var_2 == 0x18))) || ((var_1 == 1) && (var_2 == 0x14))) || ((var_1 == 2) && (var_2 == 3))) || ((var_1 == 2) && (var_2 == 9))) || ((var_1 == 2) && (var_2 == 0xD))) || ((var_1 == 2) && (var_2 == 0x12))) || ((var_1 == 2) && (var_2 == 0x15))) || ((var_1 == 3) && (var_2 == 0x18))) || ((var_1 == 3) && (var_2 == 0x1E)))) {
+            var_0 = 0;
+        } else {
+            if ((GetEntityLocation(0xC) == 0x18)) {
+                if (((var_4 >= 9) && (var_4 < 0x10))) {
+                    var_0 = 1;
+                }
+            }
+        }
+        if ((var_0 == 1)) {
+            PlaySong(0, 0x9C);
+            Fade_Out(2, 1);
+            Warp_Player(0x18, 0x78, 0xD0);
+            SetEntityPosition(0, 0x78, 0xD0, "Up");
+            if (((((((((((((((((((((Check_Flag(0x61) == 0) && !(var_3 == 1)) && ((var_4 >= 0xA) && (var_4 < 0x10))) && (Check_Flag(0x4C) == 0)) && (Check_Flag(0x55) == 0)) && (Check_Flag(0x5F) == 0)) && (Check_Flag(0x67) == 0)) && (Check_Flag(0x6F) == 0)) && (Check_Flag(0x173) == 0)) && (Check_Flag(0x8E) == 0)) && (Check_Flag(0x8F) == 0)) && (Check_Flag(0x4B) == 0)) && (Check_Flag(0x54) == 0)) && (Check_Flag(0x5E) == 0)) && (Check_Flag(0x66) == 0)) && (Check_Flag(0x6E) == 0)) && (Check_Flag(0x172) == 0)) && (Check_Flag(0x8D) == 0)) && (GetEntityLocation(0xC) == 0x18)) && (Inventory_Check() == 1))) {
+                Set_Flag(0x61, 1);
+                Execute_Script(57);
+            } else {
+                if (((((((((((((((((((((((Check_Flag(0x61) == 2) && (Check_Flag(0x62) == 0)) && !(((var_3 == 1) || (var_3 == 3)) || (var_3 == 5))) && ((var_4 >= 0xA) && (var_4 < 0x10))) && (Check_Flag(0x4C) == 0)) && (Check_Flag(0x55) == 0)) && (Check_Flag(0x5F) == 0)) && (Check_Flag(0x67) == 0)) && (Check_Flag(0x6F) == 0)) && (Check_Flag(0x173) == 0)) && (Check_Flag(0x8E) == 0)) && (Check_Flag(0x8F) == 0)) && (Check_Flag(0x4B) == 0)) && (Check_Flag(0x54) == 0)) && (Check_Flag(0x5E) == 0)) && (Check_Flag(0x66) == 0)) && (Check_Flag(0x6E) == 0)) && (Check_Flag(0x172) == 0)) && (Check_Flag(0x8D) == 0)) && (Chek_Love_Points(0xC) >= 0x2710)) && (GetEntityLocation(0xC) == 0x18)) && (Inventory_Check() == 1))) {
+                    Set_Flag(0x62, 1);
+                    Execute_Script(59);
+                } else {
+                    if ((((((((((((Check_Flag(0x8A) == 2) && (Check_Flag(0x8B) == 0)) && !(var_3 == 1)) && ((var_4 >= 0xD) && (var_4 < 0x10))) && (Check_Flag(0x67) == 0)) && (Check_Flag(0x8E) == 0)) && (Check_Flag(0x8F) == 0)) && (Check_Flag(0x66) == 0)) && (Chek_Love_Points(0xC) < 0x7530)) && (GetEntityLocation(7) == 0x18)) && (GetEntityLocation(0xC) == 0x18))) {
+                        Set_Flag(0x8B, 1);
+                        Execute_Script(929);
+                    } else {
+                        if (((((((((((((Check_Flag(0x8C) == 2) && (Check_Flag(0x8D) == 0)) && (var_6 >= 4)) && ((var_3 == 4) || (var_3 == 6))) && ((var_4 >= 0xD) && (var_4 < 0x10))) && (Check_Flag(0x67) == 0)) && (Check_Flag(0x8E) == 0)) && (Check_Flag(0x8F) == 0)) && (Check_Flag(0x66) == 0)) && (Chek_Love_Points(0xC) < 0xEA60)) && (GetEntityLocation(7) == 0x18)) && (GetEntityLocation(0xC) == 0x18))) {
+                            Set_Flag(0x8D, 1);
+                            Execute_Script(933);
+                        }
+                    }
+                }
+            }
+            Fade_In(2, 1);
+        } else {
+            TalkOpen();
+            TalkMessage(0);
+            TalkClose();
+        }
+    }
+    exit;
+}

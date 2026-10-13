@@ -1,0 +1,160 @@
+// Script 691
+#include "Fomt_Lib.src"
+
+script 691 Event_0691 {
+    const MESSAGE_0 = "New Year's Festival is today\r\nhere from 6 PM on. \BRK\WAIT_CLICKRight now I'm getting ready\r\nfor it.\BRK\WAIT_CLICKYou should come, too. \BRK";
+    const MESSAGE_1 = "Spring Horse Races are today\r\nhere from 10 AM on. \BRK\WAIT_CLICKRight now I'm getting ready\r\nfor it.\BRK\WAIT_CLICKYou should come, too. \BRK";
+    const MESSAGE_2 = "Announcement of the \r\nCooking Contest theme is \r\nhere at 10 AM. \BRK\WAIT_CLICKRight now I'm getting ready\r\nfor it.\BRK\WAIT_CLICKYou should come, too. \BRK";
+    const MESSAGE_3 = "The Chicken Festival is\r\ntoday here from 10 AM on.\BRK\WAIT_CLICKRight now I'm getting ready\r\nfor it.\BRK\WAIT_CLICKYou should come, too. \BRK";
+    const MESSAGE_4 = "The Cow Festival is today\r\nhere from 10 AM on. \BRK\WAIT_CLICKRight now I'm getting ready\r\nfor it.\BRK\WAIT_CLICKYou should come, too. \BRK";
+    const MESSAGE_5 = "The Harvest Festival is \r\ntoday here from 10 AM on. \BRK\WAIT_CLICKRight now I'm getting ready\r\nfor it.\BRK\WAIT_CLICKYou should come, too. \BRK";
+    const MESSAGE_6 = "Fall Horse Races are today\r\nhere from 10 AM on. \BRK\WAIT_CLICKRight now I'm getting ready\r\nfor it.\BRK\WAIT_CLICKYou should come, too. \BRK";
+    const MESSAGE_7 = "The Sheep Festival is today\r\nhere from 10 AM on. \BRK\WAIT_CLICKRight now I'm getting ready\r\nfor it.\BRK\WAIT_CLICKYou should come, too. \BRK";
+    const MESSAGE_8 = "The Year End Festival is \r\nhere today from 6 PM on.  \BRK\WAIT_CLICKRight now I'm getting ready\r\nfor it.\BRK\WAIT_CLICKYou should come, too. \BRK";
+    
+    var var_0;
+    var var_1;
+    var var_2;
+    
+    Warp_Player(6, 0x1C8, 0x80);
+    PlayBGM(1, 0xD);
+    SetEntityPosition(0, 0x1C8, 0x80, "Left");
+    if (Inventory_Check()) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    SetEntityPosition(0xD, 0x1B0, 0x80, "Right");
+    SetEntityAnim(0xD, 0x85F);
+    Fade_In(2, 1);
+    var_0 = Check_Flag(1);
+    var_1 = Check_Flag(2);
+    var_2 = Check_Flag(3);
+    Set_Flag(0xE2, 1);
+    if ((((Check_Flag(0x180) == 0) && (var_0 == 0)) && (var_1 == 1))) {
+        TalkOpen();
+        Set_Name_Window(0xD);
+        Set_Portrait(0x75);
+        TalkMessage(0);
+        TalkClose();
+        Set_Flag(0xE2, 2);
+        Fade_Out(2, 1);
+        Warp_Player(1, 0x18, 0x118);
+        SetEntityPosition(0, 0x18, 0x118, "Right");
+        Fade_In(2, 1);
+        exit;
+    } else {
+        if ((((Check_Flag(0x189) == 0) && (var_0 == 0)) && (var_1 == 0x12))) {
+            TalkOpen();
+            Set_Name_Window(0xD);
+            Set_Portrait(0x75);
+            TalkMessage(1);
+            TalkClose();
+            Set_Flag(0xE2, 2);
+            Fade_Out(2, 1);
+            Warp_Player(1, 0x18, 0x118);
+            SetEntityPosition(0, 0x18, 0x118, "Right");
+            Fade_In(2, 1);
+            exit;
+            goto LBL_0009;
+        }
+        if ((((Check_Flag(0x18C) == 0) && (var_0 == 0)) && (var_1 == 0x16))) {
+            TalkOpen();
+            Set_Name_Window(0xD);
+            Set_Portrait(0x75);
+            TalkMessage(2);
+            TalkClose();
+            Set_Flag(0xE2, 2);
+            Fade_Out(2, 1);
+            Warp_Player(1, 0x18, 0x118);
+            SetEntityPosition(0, 0x18, 0x118, "Right");
+            Fade_In(2, 1);
+            exit;
+            goto LBL_0009;
+        }
+        if ((((Check_Flag(0x198) == 0) && (var_0 == 1)) && (var_1 == 7))) {
+            TalkOpen();
+            Set_Name_Window(0xD);
+            Set_Portrait(0x75);
+            TalkMessage(3);
+            TalkClose();
+            Set_Flag(0xE2, 2);
+            Fade_Out(2, 1);
+            Warp_Player(1, 0x18, 0x118);
+            SetEntityPosition(0, 0x18, 0x118, "Right");
+            Fade_In(2, 1);
+            exit;
+            goto LBL_0009;
+        }
+        if ((((Check_Flag(0x19C) == 0) && (var_0 == 1)) && (var_1 == 0x14))) {
+            TalkOpen();
+            Set_Name_Window(0xD);
+            Set_Portrait(0x75);
+            TalkMessage(4);
+            TalkClose();
+            Set_Flag(0xE2, 2);
+            Fade_Out(2, 1);
+            Warp_Player(1, 0x18, 0x118);
+            SetEntityPosition(0, 0x18, 0x118, "Right");
+            Fade_In(2, 1);
+            exit;
+            goto LBL_0009;
+        }
+        if ((((Check_Flag(0x1A4) == 0) && (var_0 == 2)) && (var_1 == 9))) {
+            TalkOpen();
+            Set_Name_Window(0xD);
+            Set_Portrait(0x75);
+            TalkMessage(5);
+            TalkClose();
+            Set_Flag(0xE2, 2);
+            Fade_Out(2, 1);
+            Warp_Player(1, 0x18, 0x118);
+            SetEntityPosition(0, 0x18, 0x118, "Right");
+            Fade_In(2, 1);
+            exit;
+            goto LBL_0009;
+        }
+        if ((((Check_Flag(0x1AC) == 0) && (var_0 == 2)) && (var_1 == 0x12))) {
+            TalkOpen();
+            Set_Name_Window(0xD);
+            Set_Portrait(0x75);
+            TalkMessage(6);
+            TalkClose();
+            Set_Flag(0xE2, 2);
+            Fade_Out(2, 1);
+            Warp_Player(1, 0x18, 0x118);
+            SetEntityPosition(0, 0x18, 0x118, "Right");
+            Fade_In(2, 1);
+            exit;
+            goto LBL_0009;
+        }
+        if ((((Check_Flag(0x1B0) == 0) && (var_0 == 2)) && (var_1 == 0x15))) {
+            TalkOpen();
+            Set_Name_Window(0xD);
+            Set_Portrait(0x75);
+            TalkMessage(7);
+            TalkClose();
+            Set_Flag(0xE2, 2);
+            Fade_Out(2, 1);
+            Warp_Player(1, 0x18, 0x118);
+            SetEntityPosition(0, 0x18, 0x118, "Right");
+            Fade_In(2, 1);
+            exit;
+            goto LBL_0009;
+        }
+        if ((((Check_Flag(0x1D0) == 0) && (var_0 == 3)) && (var_1 == 0x1E))) {
+            TalkOpen();
+            Set_Name_Window(0xD);
+            Set_Portrait(0x75);
+            TalkMessage(8);
+            TalkClose();
+            Set_Flag(0xE2, 2);
+            Fade_Out(2, 1);
+            Warp_Player(1, 0x18, 0x118);
+            SetEntityPosition(0, 0x18, 0x118, "Right");
+            Fade_In(2, 1);
+            exit;
+        }
+    }
+    exit;
+}

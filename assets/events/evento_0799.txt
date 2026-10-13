@@ -1,0 +1,72 @@
+// Script 799
+#include "Fomt_Lib.src"
+
+script 799 Event_0799 {
+    const MESSAGE_0 = "Aaahh...I just don't feel \r\nlike working any more...\BRK";
+    const MESSAGE_1 = "Oh, \xFF!, \r\nsorry I didn't notice you. \BRK";
+    const MESSAGE_2 = "Did you come to ask about an\r\nexpansion? Sorry, but I \r\ncan't do it right now. \BRK";
+    const MESSAGE_3 = "I just can't get excited \r\nabout it now. I'm in a \r\nslump, I guess. \BRK";
+    const MESSAGE_4 = "I'll snap out of it  \r\neventually, but not now. \BRK\WAIT_CLICKSorry. \BRK";
+    
+    if ((Inventory_Check() == 1)) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    SetEntityPosition(0x1B, 0x78, 0x50, "Up");
+    SetEntityAnim(0x1B, 0x9D3);
+    Fade_In(2, 1);
+    Pan_Camera_To(0x78, 0x64, 2);
+    if ((Inventory_Check() == 1)) {
+        SetEntityAnim(0, 0x1C6);
+    } else {
+        SetEntityAnim(0, 0x156);
+    }
+    Set_Vector_Y(0, 0x60, 1);
+    Execute_Movement(0);
+    if ((Inventory_Check() == 1)) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    TalkOpen();
+    Set_Portrait(0xAE);
+    Set_Name_Window(0x1B);
+    TalkMessage(0);
+    TalkClose();
+    Set_Vector_Y(0, 0x64, 1);
+    Show_Emote(0, 2, 0);
+    Make_Delay(0x3C);
+    SetEntityFacing(0x1B, "Down");
+    TalkOpen();
+    Set_Portrait(0xAF);
+    Set_Name_Window(0x1B);
+    TalkMessage(1);
+    TalkClose();
+    SetEntityAnim(0, 0x126);
+    Make_Delay(0x3C);
+    if ((Inventory_Check() == 1)) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    TalkOpen();
+    Set_Portrait(0xAC);
+    Set_Name_Window(0x1B);
+    TalkMessage(2);
+    TalkClose();
+    Show_Emote(0, 3, 0);
+    Make_Delay(0x3C);
+    TalkOpen();
+    Set_Portrait(0xAF);
+    Set_Name_Window(0x1B);
+    TalkMessage(3);
+    Set_Portrait(0xAC);
+    TalkMessage(4);
+    TalkClose();
+    Free_Event_Entity(0x1B);
+    Set_Flag(0x130, 2);
+    Set_Flag(0x131, 1);
+    exit;
+    exit;
+}

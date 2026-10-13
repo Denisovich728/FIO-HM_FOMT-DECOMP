@@ -1,0 +1,16 @@
+// Script 698
+#include "Fomt_Lib.src"
+
+script 698 Event_0698 {
+    const MESSAGE_0 = "I can't believe how luck I \r\nam to have such fine \r\nchildren! \BRK\WAIT_CLICKI'll have to stay healthy \r\nfor them...!\BRK";
+    
+    SetEntityFacing(1, GetOppositeFacing(GetEntityFacing(0)));
+    TalkOpen();
+    Set_Name_Window(1);
+    Set_Portrait(0xF);
+    TalkMessage(0);
+    TalkClose();
+    SetEntityFacing(1, "Down");
+    exit;
+    exit;
+}

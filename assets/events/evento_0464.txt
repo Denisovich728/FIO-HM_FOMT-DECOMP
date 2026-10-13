@@ -1,0 +1,18 @@
+// Script 464
+#include "Fomt_Lib.src"
+
+script 464 Event_0464 {
+    const MESSAGE_0 = "Shipment Box\r\nPut things here to ship,\r\nand by evening you'll\BRK\r\nrecieve payment.\BRK";
+    
+    if (Inventory_Check()) {
+        TalkOpen();
+        Print_Message(0);
+        TalkClose();
+    } else {
+        if (Func04C()) {
+            PlaySong(0, 0x6E);
+            Ship_Item_From_Ground();
+        }
+    }
+    exit;
+}

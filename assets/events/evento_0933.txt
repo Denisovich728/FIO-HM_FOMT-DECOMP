@@ -1,0 +1,135 @@
+// Script 933
+#include "Fomt_Lib.src"
+
+script 933 Event_0933 {
+    const MESSAGE_0 = "Lately Gramps is finally\r\nletting me do some \r\nreal work. \BRK";
+    const MESSAGE_1 = "That's great! \BRK";
+    const MESSAGE_2 = "Well, just small things...\BRK";
+    const MESSAGE_3 = "That's still good, right?\BRK";
+    const MESSAGE_4 = "I guess...\BRK";
+    const MESSAGE_5 = "...?\r\nWhat's wrong?\BRK";
+    const MESSAGE_6 = "I was just thinking that \r\nI owe everything to you. \BRK";
+    const MESSAGE_7 = "Me? But I haven't \r\ndone anything! \BRK";
+    const MESSAGE_8 = "Talking to you on the peak\r\nof the mountain made me\r\nrealize what's wrong \BRK\r\nwith me.\BRK";
+    const MESSAGE_9 = "Oh yeah...\r\nI'm glad anything I said \r\nwas useful...\BRK";
+    const MESSAGE_10 = "If you hadn't said that,\r\nthen I might have given up!\BRK";
+    const MESSAGE_11 = "Saibara said he would give \r\nme a test on my skills. \BRK\WAIT_CLICKIf I pass it, there's some-\r\nthing I want to ask you. \BRK";
+    const MESSAGE_12 = "What is it!?\BRK";
+    const MESSAGE_13 = "I have to pass the test \r\nfirst! Forget I said it...\BRK";
+    const MESSAGE_14 = "If you say so...\BRK";
+    
+    Warp_Player(0x18, 0x78, 0x50);
+    PlayBGM(1, 0x10);
+    SetEntityPosition(0, 0x78, 0xD0, "Up");
+    if (Inventory_Check()) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    SetEntityPosition(7, 0x68, 0x44, "Right");
+    SetEntityAnim(7, 0x989);
+    SetEntityPosition(0xC, 0x88, 0x44, "Left");
+    SetEntityAnim(0xC, 0x813);
+    Fade_In(2, 1);
+    Show_Emote(7, 5, 0);
+    Make_Delay(0x3C);
+    TalkOpen();
+    Set_Portrait(0xA0);
+    Set_Name_Window(7);
+    TalkMessage(0);
+    TalkClose();
+    TalkOpen();
+    Set_Portrait(0x68);
+    Set_Name_Window(0xC);
+    TalkMessage(1);
+    TalkClose();
+    TalkOpen();
+    Set_Portrait(0xA1);
+    Set_Name_Window(7);
+    TalkMessage(2);
+    TalkClose();
+    TalkOpen();
+    Set_Portrait(0x68);
+    Set_Name_Window(0xC);
+    TalkMessage(3);
+    TalkClose();
+    TalkOpen();
+    Set_Portrait(0xA0);
+    Set_Name_Window(7);
+    TalkMessage(4);
+    TalkClose();
+    TalkOpen();
+    Set_Portrait(0x67);
+    Set_Name_Window(0xC);
+    TalkMessage(5);
+    TalkClose();
+    Show_Emote(0xC, 3, 0);
+    Make_Delay(0x3C);
+    TalkOpen();
+    Set_Portrait(0xA0);
+    Set_Name_Window(7);
+    TalkMessage(6);
+    TalkClose();
+    TalkOpen();
+    Set_Portrait(0x67);
+    Set_Name_Window(0xC);
+    TalkMessage(7);
+    TalkClose();
+    TalkOpen();
+    Set_Portrait(0xA0);
+    Set_Name_Window(7);
+    TalkMessage(8);
+    TalkClose();
+    TalkOpen();
+    Set_Portrait(0x6C);
+    Set_Name_Window(0xC);
+    TalkMessage(9);
+    TalkClose();
+    TalkOpen();
+    Set_Portrait(0xA0);
+    Set_Name_Window(7);
+    TalkMessage(10);
+    Set_Portrait(0xA1);
+    Set_Name_Window(7);
+    TalkMessage(11);
+    TalkClose();
+    TalkOpen();
+    Set_Portrait(0x67);
+    Set_Name_Window(0xC);
+    TalkMessage(12);
+    TalkClose();
+    Show_Emote(0xC, 3, 0);
+    Make_Delay(0x3C);
+    Show_Emote(7, 4, 0);
+    Make_Delay(0x3C);
+    TalkOpen();
+    Set_Portrait(0xA5);
+    Set_Name_Window(7);
+    TalkMessage(13);
+    TalkClose();
+    TalkOpen();
+    Set_Portrait(0x67);
+    Set_Name_Window(0xC);
+    TalkMessage(14);
+    TalkClose();
+    Pan_Camera_To(0x78, 0x90, 1);
+    Wait_Camera_Stop();
+    if (Inventory_Check()) {
+        SetEntityAnim(0, 0x1C6);
+    } else {
+        SetEntityAnim(0, 0x156);
+    }
+    Set_Vector_Y(0, 0xA0, 1);
+    Execute_Movement(0);
+    if (Inventory_Check()) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    End_Cinematic_State();
+    Routine_State_Override(0xC, 0x3A6);
+    Routine_State_Override(7, 0x3A7);
+    Set_Flag(0x8D, 1);
+    exit;
+    exit;
+}

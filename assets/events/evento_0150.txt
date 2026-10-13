@@ -1,0 +1,16 @@
+// Script 150
+#include "Fomt_Lib.src"
+
+script 150 Event_0150 {
+    const MESSAGE_0 = "Who is this photo of...?\BRK";
+    const MESSAGE_1 = "It's a photo of Lillia.\BRK";
+    
+    TalkOpen();
+    if ((Check_If_Single(1) == 0)) {
+        Print_Message(0);
+    } else {
+        Print_Message(1);
+    }
+    TalkClose();
+    exit;
+}

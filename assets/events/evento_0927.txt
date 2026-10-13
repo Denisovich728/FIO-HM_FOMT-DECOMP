@@ -1,0 +1,16 @@
+// Script 927
+#include "Fomt_Lib.src"
+
+script 927 Event_0927 {
+    const MESSAGE_0 = "Mary\x81fs nice...\BRK";
+    
+    SetEntityFacing(7, GetOppositeFacing(GetEntityFacing(0)));
+    TalkOpen();
+    Set_Portrait(0xA1);
+    Set_Name_Window(7);
+    TalkMessage(0);
+    TalkClose();
+    SetEntityFacing(7, "Down");
+    Free_Event_Entity(7);
+    exit;
+}

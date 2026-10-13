@@ -1,0 +1,61 @@
+// Script 1177
+#include "Fomt_Lib.src"
+
+script 1177 Event_1177 {
+    const MESSAGE_0 = "The Cow Festival is now \r\nover. We will bring your Cow\r\nto your house for you,\BRK\r\nso you may go home now. \BRK";
+    
+    PlayBGM(1, 9);
+    Set_Time(0x12, 1);
+    if ((Inventory_Check() == 1)) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    SetEntityPosition(4, 0x55, 0x5B, "Down");
+    SetEntityAnim(4, 0x9EF);
+    SetEntityPosition(2, 0x82, 0x136, "Down");
+    SetEntityAnim(2, 0x213);
+    SetEntityPosition(3, 0x5A, 0x13F, "Down");
+    SetEntityAnim(3, 0x22F);
+    SetEntityPosition(0xD, 0x4C, 0x159, "Right");
+    SetEntityAnim(0xD, 0x85F);
+    SetEntityPosition(5, 0x100, 0x73, "Left");
+    SetEntityAnim(5, 0x9E7);
+    SetEntityPosition(0x10, 0xDC, 0x85, "Up");
+    SetEntityAnim(0x10, 0x8B8);
+    SetEntityPosition(0x14, 0xC4, 0x5C, "Down");
+    SetEntityAnim(0x14, 0x320);
+    SetEntityPosition(0x15, 0xEB, 0x57, "Down");
+    SetEntityAnim(0x15, 0x884);
+    SetEntityPosition(0xC, 0x17C, 0x13C, "Left");
+    SetEntityAnim(0xC, 0x813);
+    SetEntityPosition(0xA, 0x160, 0x14E, "Up");
+    SetEntityAnim(0xA, 0x80B);
+    SetEntityPosition(0x16, 0x162, 0x121, "Down");
+    SetEntityAnim(0x16, 0x8EC);
+    SetEntityPosition(0x47, 0x63, 0x14F, "Right");
+    Spawn_Event_Entity(0x47, 2);
+    SetEntityAnim(0x47, 0x2AC);
+    SetEntityPosition(0x48, 0x15E, 0x132, "Right");
+    Spawn_Event_Entity(0x48, 2);
+    SetEntityAnim(0x48, 0x2AC);
+    SetEntityPosition(0x49, 0xDE, 0x6D, "Left");
+    Spawn_Event_Entity(0x49, 2);
+    SetEntityAnim(0x49, 0x2AC);
+    Fade_In(2, 1);
+    TalkOpen();
+    TalkMessage(0);
+    TalkClose();
+    Routine_State_Override(2, 0x49A);
+    Routine_State_Override(3, 0x49B);
+    Routine_State_Override(4, 0x4A4);
+    Routine_State_Override(5, 0x4A3);
+    Routine_State_Override(0xA, 0x49D);
+    Routine_State_Override(0xC, 0x49E);
+    Routine_State_Override(0xD, 0x49F);
+    Routine_State_Override(0x10, 0x4A1);
+    Routine_State_Override(0x14, 0x49C);
+    Routine_State_Override(0x15, 0x4A0);
+    Routine_State_Override(0x16, 0x4A2);
+    exit;
+}

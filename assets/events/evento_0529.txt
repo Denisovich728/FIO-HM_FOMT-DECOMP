@@ -1,0 +1,29 @@
+// Script 529
+#include "Fomt_Lib.src"
+
+script 529 Event_0529 {
+    if ((GetEntityFacing(0) == 1)) {
+        PlaySong(0, 0x9C);
+        Fade_Out(2, 1);
+        Warp_Player(0x27, 0x78, 0xD0);
+        SetEntityPosition(0, 0x78, 0xD0, 1);
+        if (Func0B4(0x27)) {
+            switch (Check_Flag(1)) {
+                case 0:
+                    Set_Global_RNG_Modifier(0, 1);
+                    break;
+                case 1:
+                    Set_Global_RNG_Modifier(0, 2);
+                    break;
+                case 2:
+                    Set_Global_RNG_Modifier(0, 1);
+                    break;
+                case 3:
+                    Set_Global_RNG_Modifier(0, -1);
+                    break;
+            }
+        }
+        Fade_In(2, 1);
+    }
+    exit;
+}

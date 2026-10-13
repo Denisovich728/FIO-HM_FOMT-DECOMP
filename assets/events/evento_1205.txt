@@ -1,0 +1,39 @@
+// Script 1205
+#include "Fomt_Lib.src"
+
+script 1205 Event_1205 {
+    Warp_Player(0xC, 0xB8, 0x102);
+    PlayBGM(1, 8);
+    SetEntityPosition(0, 0xB8, 0x140, 1);
+    SetEntityPosition(5, 0x108, 0xC3, 1);
+    SetEntityAnim(5, 0x9E7);
+    SetEntityPosition(0xC, 0x48, 0x9B, 1);
+    SetEntityAnim(0xC, 0x813);
+    SetEntityPosition(0x10, 0x128, 0xC3, 1);
+    SetEntityAnim(0x10, 0x8B8);
+    SetEntityPosition(0x11, 0x68, 0xC3, 1);
+    SetEntityAnim(0x11, 0x689);
+    SetEntityPosition(0x12, 0x48, 0xC3, 1);
+    SetEntityAnim(0x12, 0x6C5);
+    SetEntityPosition(0x13, 0x68, 0x9B, 1);
+    SetEntityAnim(0x13, 0x691);
+    SetEntityPosition(0x15, 0x108, 0x9B, 1);
+    SetEntityAnim(0x15, 0x884);
+    SetEntityPosition(0x16, 0xB8, 0x43, 0);
+    SetEntityAnim(0x16, 0x8EC);
+    SetEntityPosition(0x19, 0x128, 0x9B, 1);
+    SetEntityAnim(0x19, 0x7BE);
+    Fade_In(2, 1);
+    End_Cinematic_State();
+    Routine_State_Override(0x15, 0x4BB);
+    Routine_State_Override(0x16, 0x4BD);
+    Routine_State_Override(5, 0x4BE);
+    Routine_State_Override(0x19, 0x4B9);
+    Routine_State_Override(0x13, 0x4B7);
+    Routine_State_Override(0xC, 0x4BA);
+    Routine_State_Override(0x11, 0x4B6);
+    Routine_State_Override(0x12, 0x4B8);
+    Routine_State_Override(0x10, 0x4BC);
+    Set_Flag(0x1A2, 1);
+    exit;
+}

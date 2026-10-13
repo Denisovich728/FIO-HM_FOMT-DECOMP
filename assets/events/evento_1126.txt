@@ -1,0 +1,22 @@
+// Script 1126
+#include "Fomt_Lib.src"
+
+script 1126 Event_1126 {
+    const MESSAGE_0 = "I always eat everybody's\r\ncooking anyway, so it's \r\neasy to tell who made what.\BRK";
+    
+    if ((Check_If_Single(0x16) == 0)) {
+        Free_Event_Entity(0x16);
+    }
+    SetEntityFacing(0x16, GetOppositeFacing(GetEntityFacing(0)));
+    TalkOpen();
+    Set_Portrait(0x95);
+    Set_Name_Window(0x16);
+    TalkMessage(0);
+    TalkClose();
+    if ((Has_Spoken_To_NPC_Today(0x16) == 0)) {
+        Give_Friendship_Points(0x16, 5);
+    }
+    SetEntityFacing(0x16, "Down");
+    Free_Event_Entity(0x16);
+    exit;
+}

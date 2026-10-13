@@ -1,0 +1,11 @@
+// Script 420
+#include "Fomt_Lib.src"
+
+script 420 Event_0420 {
+    const MESSAGE_0 = "Wine Rack\BRK";
+    
+    TalkOpen();
+    Print_Message(0);
+    TalkClose();
+    exit;
+}

@@ -1,0 +1,23 @@
+// Script 284
+#include "Fomt_Lib.src"
+
+script 284 Event_0284 {
+    if ((GetEntityFacing(0) == 0)) {
+        if ((Check_Flag(0x58) == 1)) {
+            Set_Flag(0x58, 2);
+            Add_Festival_Friendship_Bonus(0x19);
+            Refresh_Map_Entities();
+        } else {
+            if ((Check_Flag(0x82) == 1)) {
+                Set_Flag(0x82, 2);
+                Add_Festival_Friendship_Bonus(0x17);
+                Refresh_Map_Entities();
+            }
+        }
+        Fade_Out(2, 1);
+        Warp_Player(0x15, 0x28, 0x60);
+        SetEntityPosition(0, 0x28, 0x60, 0);
+        Fade_In(2, 1);
+    }
+    exit;
+}

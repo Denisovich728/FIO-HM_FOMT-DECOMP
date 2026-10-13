@@ -1,0 +1,62 @@
+// Script 1319
+#include "Fomt_Lib.src"
+
+script 1319 Event_1319 {
+    const MESSAGE_0 = "I think it's almost time!\BRK";
+    const MESSAGE_1 = "I hope the new year is \r\na good one for everybody.\BRK";
+    
+    Warp_Player(8, 0xEC, 0x109);
+    SetEntityPosition(0, 0xF9, 0x11D, "Up");
+    if (Inventory_Check()) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    if ((Check_Flag(0xF4) == 1)) {
+        SetEntityPosition(0x17, 0xA1, 0x192, "Up");
+        SetEntityAnim(0x17, 0x27B);
+    }
+    SetEntityPosition(0x18, 0x111, 0x11D, "Up");
+    SetEntityAnim(0x18, 0x7B2);
+    SetEntityPosition(0xB, 0x12A, 0x184, "Up");
+    SetEntityAnim(0xB, 0x84B);
+    SetEntityPosition(0xA, 0x102, 0x19A, "Up");
+    SetEntityAnim(0xA, 0x80B);
+    SetEntityPosition(0xC, 0x11A, 0x1AC, "Up");
+    SetEntityAnim(0xC, 0x813);
+    SetEntityPosition(6, 0xBF, 0x12F, "Up");
+    SetEntityAnim(6, 0x9A1);
+    SetEntityPosition(7, 0x119, 0x13F, "Up");
+    SetEntityAnim(7, 0x989);
+    Fade_In(2, 1);
+    Make_Delay(0x3C);
+    TalkOpen();
+    Set_Portrait(0x53);
+    Set_Name_Window(0x18);
+    TalkMessage(0);
+    TalkClose();
+    Make_Delay(0x3C);
+    Pan_Camera_To(0xEC, 0xAA, 1);
+    Wait_Camera_Stop();
+    Set_Flag(0x1D2, 1);
+    Make_Delay((0x3C * 3));
+    Proc12F();
+    Proc130(0, 0);
+    Make_Delay((0x3C * 2));
+    Fade_Out(1, 1);
+    Proc131();
+    TalkOpen();
+    TalkMessage(1);
+    TalkClose();
+    Refresh_Map_Entities();
+    Add_Festival_Friendship_Bonus(0x17);
+    Add_Festival_Friendship_Bonus(0x18);
+    Add_Festival_Friendship_Bonus(0xA);
+    Add_Festival_Friendship_Bonus(0xC);
+    Add_Festival_Friendship_Bonus(0xB);
+    Add_Festival_Friendship_Bonus(7);
+    Add_Festival_Friendship_Bonus(6);
+    Set_Flag(0x1D1, 2);
+    Execute_Script(988);
+    exit;
+}

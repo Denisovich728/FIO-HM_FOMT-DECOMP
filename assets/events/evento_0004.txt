@@ -1,0 +1,6 @@
+// Script 4
+#include "Fomt_Lib.src"
+
+script 4 Event_0004 {
+    exit;
+}

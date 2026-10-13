@@ -1,0 +1,18 @@
+// Script 28
+#include "Fomt_Lib.src"
+
+script 28 Event_0028 {
+    const MESSAGE_0 = "Jeff will probably come \r\npick them up, but I doubt \r\nhe'll be able to carry them.\BRK\WAIT_CLICKHe asked me to make 3 \r\ncrates, then forgot about \r\nall about 'em!\BRK";
+    
+    if ((Check_Flag(0x49) == 1)) {
+    }
+    SetEntityFacing(8, GetOppositeFacing(GetEntityFacing(0)));
+    TalkOpen();
+    Set_Portrait(0x85);
+    Set_Name_Window(8);
+    TalkMessage(0);
+    TalkClose();
+    SetEntityFacing(8, "Left");
+    Free_Event_Entity(8);
+    exit;
+}

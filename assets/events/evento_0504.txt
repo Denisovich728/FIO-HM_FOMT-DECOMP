@@ -1,0 +1,11 @@
+// Script 504
+#include "Fomt_Lib.src"
+
+script 504 Event_0504 {
+    const MESSAGE_0 = "Poultry Farm\r\nOpen 11AM-4PM\r\nClosed every Sunday\BRK";
+    
+    TalkOpen();
+    Print_Message(0);
+    TalkClose();
+    exit;
+}

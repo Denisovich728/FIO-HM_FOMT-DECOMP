@@ -1,0 +1,23 @@
+// Script 1311
+#include "Fomt_Lib.src"
+
+script 1311 Event_1311 {
+    const MESSAGE_0 = "I just came with Jeff. \r\nI do love New Year Noodles\r\ntoo, though. \BRK";
+    
+    if ((Check_If_Single(0x12) == 0)) {
+        Free_Event_Entity(0x12);
+    }
+    SetEntityFacing(0x12, GetOppositeFacing(GetEntityFacing(0)));
+    TalkOpen();
+    Set_Portrait(0x4F);
+    Set_Name_Window(0x12);
+    TalkMessage(0);
+    Talk_Mini_Close();
+    TalkClose();
+    if ((Has_Spoken_To_NPC_Today(0x12) == 0)) {
+        Give_Friendship_Points(0x12, 5);
+    }
+    Free_Event_Entity(0x12);
+    SetEntityFacing(0x12, "Right");
+    exit;
+}

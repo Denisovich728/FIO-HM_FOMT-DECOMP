@@ -1,0 +1,59 @@
+// Script 1242
+#include "Fomt_Lib.src"
+
+script 1242 Event_1242 {
+    var var_0;
+    var var_1;
+    
+    Set_Flag(0x1A8, 1);
+    switch (Check_Flag(0x1A9)) {
+        case 0:
+            var_0 = 0x13;
+            break;
+        case 1:
+            var_0 = 0x19;
+            break;
+        case 2:
+            var_0 = 3;
+            break;
+        case 3:
+            var_0 = 0xC;
+            break;
+        case 4:
+            var_0 = 0x15;
+            break;
+    }
+    switch (var_0) {
+        case 0x13:
+            var_1 = 0x691;
+            break;
+        case 3:
+            var_1 = 0x22F;
+            break;
+        case 0xC:
+            var_1 = 0x813;
+            break;
+        case 0x19:
+            var_1 = 0x7BE;
+            break;
+        case 0x15:
+            var_1 = 0x884;
+            break;
+    }
+    Warp_Player(8, 0xEC, 0xFF);
+    PlayBGM(1, 0xE);
+    SetEntityPosition(0, 0xEC, 0x1AC, 1);
+    if (Inventory_Check()) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    SetEntityPosition(var_0, 0xFE, 0xF4, 1);
+    SetEntityAnim(var_0, var_1);
+    Fade_In(2, 1);
+    Pan_Camera_To(0xEC, 0x1AC, 1);
+    Wait_Camera_Stop();
+    End_Cinematic_State();
+    Routine_State_Override(var_0, 0x4DC);
+    exit;
+}

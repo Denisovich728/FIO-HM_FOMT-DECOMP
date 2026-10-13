@@ -1,0 +1,25 @@
+// Script 1204
+#include "Fomt_Lib.src"
+
+script 1204 Event_1204 {
+    const MESSAGE_0 = "I've been waiting for you.\r\nEverybody else is already\r\ninside waiting.\BRK";
+    const MESSAGE_1 = "I'm sorry, but you can't \r\nbring any items into the\r\nChurch today. \BRK\WAIT_CLICKWould you please put that\r\nin your Rucksack?\BRK";
+    
+    TalkOpen();
+    Set_Name_Window(0x16);
+    if (Inventory_Check()) {
+        Set_Portrait(0x96);
+        TalkMessage(0);
+        TalkClose();
+        Free_Event_Entity(0x16);
+        Fade_Out(2, 1);
+        Set_Flag(0x1A2, 1);
+        Execute_Script(1205);
+    } else {
+        Set_Portrait(0x95);
+        TalkMessage(1);
+        TalkClose();
+        Free_Event_Entity(0x16);
+    }
+    exit;
+}

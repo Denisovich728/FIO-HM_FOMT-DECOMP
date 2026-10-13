@@ -1,0 +1,18 @@
+// Script 755
+#include "Fomt_Lib.src"
+
+script 755 Event_0755 {
+    const MESSAGE_0 = "I hope this makes her \r\nbetter...\BRK";
+    
+    if ((Check_Flag(0x117) == 1)) {
+        SetEntityFacing(0x12, GetOppositeFacing(GetEntityFacing(0)));
+        TalkOpen();
+        Set_Portrait(0x4F);
+        Set_Name_Window(0x12);
+        TalkMessage(0);
+        TalkClose();
+        Free_Event_Entity(0x12);
+        SetEntityFacing(0x12, "Right");
+    }
+    exit;
+}

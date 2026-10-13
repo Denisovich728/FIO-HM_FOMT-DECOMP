@@ -1,0 +1,135 @@
+// Script 738
+#include "Fomt_Lib.src"
+
+script 738 Event_0738 {
+    const MESSAGE_0 = "\xFF!, I hope \r\nyou can help me out.\BRK";
+    const MESSAGE_1 = "You see...\r\nI got into a boasting match\r\nwith the Mayor of the next \BRK\r\ntown over, and...\BRK";
+    const MESSAGE_2 = "I have to bring a Diamond\r\nto him today.  \BRK";
+    const MESSAGE_3 = "I have to bring a Bracelet\r\nto him today.  \BRK";
+    const MESSAGE_4 = "I have to bring a Green\r\nPepper to him today.  \BRK";
+    const MESSAGE_5 = "I have to bring a Golden\r\nEgg to him today.  \BRK";
+    const MESSAGE_6 = "I have to bring Black Grass\r\nto him today.  \BRK";
+    const MESSAGE_7 = "I have to bring White\r\nGrass to him today.  \BRK";
+    const MESSAGE_8 = "I have to bring a Truffle\r\nto him today.  \BRK";
+    const MESSAGE_9 = "I have to bring a Moon\r\nStone to him today.  \BRK";
+    const MESSAGE_10 = "I have to bring an AEPFE\r\nApple to him today.  \BRK";
+    const MESSAGE_11 = "I have to bring a Rice\r\nCake to him today.  \BRK";
+    const MESSAGE_12 = "I'm sorry to ask this of you\r\nall the sudden, but you're\r\nthe only person I can \BRK\r\nturn to!\BRK\WAIT_CLICKI'm counting on you!\r\nI don't want to lose face!\BRK";
+    const MESSAGE_13 = "Can I count on you\r\nfor this? \BRK";
+    const MESSAGE_14 = "Sure!";
+    const MESSAGE_15 = "Sorry...";
+    const MESSAGE_16 = "I knew you were the kind of \r\nman I could depend on! \BRK\WAIT_CLICKI'll come by around 7PM to \r\npick it up, OK? \r\nI'm very grateful!\BRK";
+    const MESSAGE_17 = "Really...? \r\nI overestimated you, it \r\nseems...\BRK\WAIT_CLICKI'll have to do it myself, \r\nI guess...\BRK";
+    
+    var var_0;
+    var var_1;
+    
+    if ((Inventory_Check() == 1)) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    SetEntityPosition(0xD, 0xE4, 0x91, "Up");
+    SetEntityAnim(0xD, 0x85F);
+    Fade_In(2, 1);
+    TalkOpen();
+    Set_Portrait(0x78);
+    Set_Name_Window(0xD);
+    TalkMessage(0);
+    TalkClose();
+    Show_Emote(0, 3, 0);
+    Make_Delay(0x3C);
+    TalkOpen();
+    Set_Portrait(0x78);
+    Set_Name_Window(0xD);
+    TalkMessage(1);
+    var_1 = RNG_Generator(0, 9);
+    switch (var_1) {
+        case 0:
+            TalkMessage(2);
+            Set_Flag(0x108, 0);
+            break;
+        case 1:
+            TalkMessage(3);
+            Set_Flag(0x108, 1);
+            break;
+        case 2:
+            TalkMessage(4);
+            Set_Flag(0x108, 2);
+            break;
+        case 3:
+            TalkMessage(5);
+            Set_Flag(0x108, 3);
+            break;
+        case 4:
+            TalkMessage(6);
+            Set_Flag(0x108, 4);
+            break;
+        case 5:
+            TalkMessage(7);
+            Set_Flag(0x108, 5);
+            break;
+        case 6:
+            TalkMessage(8);
+            Set_Flag(0x108, 6);
+            break;
+        case 7:
+            TalkMessage(9);
+            Set_Flag(0x108, 7);
+            break;
+        case 8:
+            TalkMessage(10);
+            Set_Flag(0x108, 8);
+            break;
+        case 9:
+            TalkMessage(11);
+            Set_Flag(0x108, 9);
+            break;
+    }
+    TalkMessage(12);
+    Set_Portrait(0x75);
+    TalkMessage(13);
+    TalkClose();
+    TalkOpen();
+    var_0 = TalkChoice2(0xE, 0xF);
+    switch (var_0) {
+        case 1:
+            TalkOpen();
+            Set_Portrait(0x76);
+            Set_Name_Window(0xD);
+            TalkMessage(16);
+            TalkClose();
+            SetEntityAnim(0, 0x1FE);
+            Make_Delay(0x1E);
+            if ((Inventory_Check() == 1)) {
+                SetEntityAnim(0, 0x192);
+                goto LBL_0014;
+            }
+            SetEntityAnim(0, 0x152);
+            Give_Friendship_Points(0xD, -0xA);
+            Set_Flag(0x109, 0);
+            break;
+        case 2:
+            TalkOpen();
+            Set_Portrait(0x78);
+            Set_Name_Window(0xD);
+            TalkMessage(17);
+            TalkClose();
+            Give_Friendship_Points(0xD, -0xA);
+            Set_Flag(0x109, 1);
+            break;
+    }
+    SetEntityFacing(0xD, "Right");
+    SetEntityAnim(0xD, 0x863);
+    Set_Vector_X(0xD, 0x13F, 1);
+    Execute_Movement(0xD);
+    SetEntityFacing(0xD, "Up");
+    Set_Vector_Y(0xD, 0, 1);
+    Execute_Movement(0xD);
+    Hide_Entity(0xD);
+    Free_Event_Entity(0xD);
+    Set_Flag(0x107, 2);
+    Finalize_Event();
+    exit;
+    exit;
+}

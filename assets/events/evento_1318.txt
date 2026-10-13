@@ -1,0 +1,35 @@
+// Script 1318
+#include "Fomt_Lib.src"
+
+script 1318 Event_1318 {
+    Set_Flag(0x1D1, 1);
+    Warp_Player(8, 0xEC, 0x18E);
+    PlayBGM(1, 0xE);
+    SetEntityPosition(0, 0xEC, 0x1D0, 1);
+    if ((Check_Flag(0xF4) == 1)) {
+        SetEntityPosition(0x17, 0xA1, 0x192, 1);
+        SetEntityAnim(0x17, 0x27B);
+    }
+    SetEntityPosition(0x18, 0x111, 0x10C, 1);
+    SetEntityAnim(0x18, 0x7B2);
+    SetEntityPosition(0xB, 0x12A, 0x184, 1);
+    SetEntityAnim(0xB, 0x84B);
+    SetEntityPosition(0xA, 0x102, 0x19A, 1);
+    SetEntityAnim(0xA, 0x80B);
+    SetEntityPosition(0xC, 0x11A, 0x1AC, 1);
+    SetEntityAnim(0xC, 0x813);
+    SetEntityPosition(6, 0xBF, 0x12F, 1);
+    SetEntityAnim(6, 0x9A1);
+    SetEntityPosition(7, 0x119, 0x13F, 1);
+    SetEntityAnim(7, 0x989);
+    Fade_In(2, 1);
+    End_Cinematic_State();
+    Routine_State_Override(0x17, 0x528);
+    Routine_State_Override(0x18, 0x529);
+    Routine_State_Override(0xA, 0x52A);
+    Routine_State_Override(0xC, 0x52B);
+    Routine_State_Override(0xB, 0x52C);
+    Routine_State_Override(7, 0x52D);
+    Routine_State_Override(6, 0x52E);
+    exit;
+}

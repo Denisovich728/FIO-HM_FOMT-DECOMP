@@ -1,0 +1,61 @@
+// Script 812
+#include "Fomt_Lib.src"
+
+script 812 Event_0812 {
+    const MESSAGE_0 = "This is a very beautiful \r\nhouse! It deserves \r\nsomething special...\BRK";
+    const MESSAGE_1 = "What this house lacks is a \r\nVase! Believe me, I know \r\nabout such things! \BRK\WAIT_CLICKI happen to have one here \r\nI can sell for just 5000G.\BRK";
+    const MESSAGE_2 = "Buy Vase.";
+    const MESSAGE_3 = "Don't Buy.";
+    const MESSAGE_4 = "It\x81fs a very rare vase from\r\nthe Ming Dynasty!\BRK";
+    const MESSAGE_5 = "Of course, you'll have to \r\nfind some flowers for it \r\nyourself. \BRK";
+    const MESSAGE_6 = "It's good for your soul to\r\nsurround yourself with \r\nbeauty!\BRK";
+    
+    var var_0;
+    
+    if ((Inventory_Check() == 1)) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    SetEntityPosition(0x1D, 0xE4, 0x91, "Up");
+    SetEntityAnim(0x1D, 0x857);
+    Fade_In(2, 1);
+    TalkOpen();
+    Set_Portrait(0x73);
+    Set_Name_Window(0x1D);
+    TalkMessage(0);
+    Set_Portrait(0x73);
+    TalkMessage(1);
+    var_0 = TalkChoice2(2, 3);
+    switch (var_0) {
+        case 1:
+            TalkOpen();
+            Set_Portrait(0x73);
+            Set_Name_Window(0x1D);
+            TalkMessage(4);
+            Set_Portrait(0x74);
+            TalkMessage(5);
+            Set_Flag(0x1C, 1);
+            Take_Money(0x1388);
+            break;
+        case 2:
+            TalkOpen();
+            Set_Portrait(0x74);
+            Set_Name_Window(0x1D);
+            TalkMessage(6);
+            break;
+    }
+    TalkClose();
+    SetEntityFacing(0x1D, "Right");
+    SetEntityAnim(0x1D, 0x85B);
+    Set_Vector_X(0x1D, 0x13F, 1);
+    Execute_Movement(0x1D);
+    SetEntityFacing(0x1D, "Up");
+    Set_Vector_Y(0x1D, 0, 1);
+    Execute_Movement(0x1D);
+    Hide_Entity(0x1D);
+    Free_Event_Entity(0x1D);
+    Set_Flag(0x139, 2);
+    exit;
+    exit;
+}

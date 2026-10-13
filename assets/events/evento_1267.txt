@@ -1,0 +1,30 @@
+// Script 1267
+#include "Fomt_Lib.src"
+
+script 1267 Event_1267 {
+    const MESSAGE_0 = "Is it just me, or are\r\nSheep eyes scary...?\BRK";
+    const MESSAGE_1 = "Are you going to enter\r\na Sheep? Good luck!\BRK";
+    
+    if ((Check_If_Single(2) == 0)) {
+        Free_Event_Entity(2);
+    }
+    SetEntityFacing(2, GetOppositeFacing(GetEntityFacing(0)));
+    if ((Check_Flag(0x1AF) == 0)) {
+        TalkOpen();
+        Set_Portrait(3);
+        Set_Name_Window(2);
+        TalkMessage(0);
+    } else {
+        TalkOpen();
+        Set_Portrait(1);
+        Set_Name_Window(2);
+        TalkMessage(1);
+    }
+    TalkClose();
+    if ((Has_Spoken_To_NPC_Today(2) == 0)) {
+        Give_Friendship_Points(2, 5);
+    }
+    Free_Event_Entity(2);
+    SetEntityFacing(2, "Down");
+    exit;
+}

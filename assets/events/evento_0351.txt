@@ -1,0 +1,67 @@
+// Script 351
+#include "Fomt_Lib.src"
+
+script 351 Event_0351 {
+    const MESSAGE_0 = "Record Player\BRK";
+    const MESSAGE_1 = "Table\BRK";
+    
+    var var_0;
+    var var_1;
+    
+    if ((Check_Flag(0x1D) == 1)) {
+        var_0 = 0;
+        if ((!Inventory_Check() && (Compare_Gift() == 1))) {
+            var_1 = Search_Item_Gift_Address();
+            switch (var_1) {
+                case 0x40:
+                case 0x41:
+                case 0x42:
+                case 0x43:
+                case 0x44:
+                case 0x45:
+                case 0x46:
+                case 0x47:
+                case 0x48:
+                case 0x49:
+                case 0x4A:
+                case 0x4B:
+                case 0x4C:
+                case 0x4D:
+                case 0x4E:
+                    var_0 = 1;
+                    break;
+            }
+        }
+        if (var_0) {
+            if ((Is_Item_Wrapped() == 1)) {
+                TalkOpen();
+                TalkMessage(0);
+                TalkClose();
+                exit;
+            } else {
+                if (Func0B0()) {
+                    Drop_Held_Item();
+                    var_1 = Func0B1(var_1);
+                    Give_Item(var_1);
+                } else {
+                    Drop_Held_Item();
+                    Func0B1(var_1);
+                }
+            }
+        } else {
+            if ((Inventory_Check() && Func0B0())) {
+                var_1 = Func0B2();
+                Give_Item(var_1);
+            } else {
+                TalkOpen();
+                TalkMessage(0);
+                TalkClose();
+            }
+        }
+    } else {
+        TalkOpen();
+        TalkMessage(1);
+        TalkClose();
+    }
+    exit;
+}

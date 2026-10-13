@@ -1,0 +1,45 @@
+// Script 1139
+#include "Fomt_Lib.src"
+
+script 1139 Event_1139 {
+    const MESSAGE_0 = "You almost made it, \r\ndidn't you? I bet you can\r\ntake first place next year!\BRK";
+    const MESSAGE_1 = "Wow! That was \r\nawesome!\BRK";
+    const MESSAGE_2 = "The Dogs were all so cute!\BRK";
+    
+    if ((Check_If_Single(3) == 0)) {
+        Free_Event_Entity(3);
+    }
+    SetEntityFacing(3, GetOppositeFacing(GetEntityFacing(0)));
+    TalkOpen();
+    if ((Check_Flag(0x193) == 1)) {
+        if ((Check_Flag(0x195) == 0)) {
+            Set_Portrait(7);
+            Set_Name_Window(3);
+            if (!(((((((Check_Flag(0x4C) == 2) || (Check_Flag(0x5F) == 2)) || (Check_Flag(0x67) == 2)) || (Check_Flag(0x6F) == 2)) || (Check_Flag(0x173) == 2)) || (Check_Flag(0x7E) == 2)) || (Check_Flag(0x7F) == 2))) {
+                Set_Hearth_Anim(3);
+            }
+            TalkMessage(0);
+        } else {
+            Set_Portrait(8);
+            Set_Name_Window(3);
+            if (!(((((((Check_Flag(0x4C) == 2) || (Check_Flag(0x5F) == 2)) || (Check_Flag(0x67) == 2)) || (Check_Flag(0x6F) == 2)) || (Check_Flag(0x173) == 2)) || (Check_Flag(0x7E) == 2)) || (Check_Flag(0x7F) == 2))) {
+                Set_Hearth_Anim(3);
+            }
+            TalkMessage(1);
+        }
+    } else {
+        Set_Portrait(8);
+        Set_Name_Window(3);
+        if (!(((((((Check_Flag(0x4C) == 2) || (Check_Flag(0x5F) == 2)) || (Check_Flag(0x67) == 2)) || (Check_Flag(0x6F) == 2)) || (Check_Flag(0x173) == 2)) || (Check_Flag(0x7E) == 2)) || (Check_Flag(0x7F) == 2))) {
+            Set_Hearth_Anim(3);
+        }
+        TalkMessage(2);
+    }
+    TalkClose();
+    if ((Has_Spoken_To_NPC_Today(3) == 0)) {
+        Give_Friendship_Points(3, 5);
+    }
+    Free_Event_Entity(3);
+    SetEntityFacing(3, "Right");
+    exit;
+}

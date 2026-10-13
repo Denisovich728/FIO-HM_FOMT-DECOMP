@@ -1,0 +1,21 @@
+// Script 1081
+#include "Fomt_Lib.src"
+
+script 1081 Event_1081 {
+    PlayBGM(1, 7);
+    Set_Time(0x12, 1);
+    SetEntityPosition(0xD, 0x55, 0x5B, 0);
+    SetEntityAnim(0xD, 0x85F);
+    if ((Inventory_Check() == 1)) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    if ((Check_Flag(0x18A) == 1)) {
+        Fade_In(2, 1);
+    } else {
+        Fade_In(3, 1);
+    }
+    Routine_State_Override(0xD, 0x43A);
+    exit;
+}

@@ -1,0 +1,135 @@
+// Script 769
+#include "Fomt_Lib.src"
+
+script 769 Event_0769 {
+    const MESSAGE_0 = "What!\r\nThis must be a mistake...!\BRK";
+    const MESSAGE_1 = "It's no mistake this time.\BRK";
+    const MESSAGE_2 = "I can't believe that\r\nfor all these years...\BRK";
+    const MESSAGE_3 = "Things are the way they are.\r\nYou might as well \r\naccept it...\BRK";
+    const MESSAGE_4 = ".......\BRK";
+    const MESSAGE_5 = "What's wrong, \r\n\xFF!? \BRK";
+    const MESSAGE_6 = "You heard us from \r\nthe waiting room? \r\nSorry...\BRK";
+    const MESSAGE_7 = "You see, today we found\r\nout something very \r\nimportant about Jeff. \BRK";
+    const MESSAGE_8 = "A long time ago I had the \r\nDoctor check my blood \r\ntype, but now he tells me\BRK\r\nit's wrong!\BRK";
+    const MESSAGE_9 = "I'm terribly sorry. \r\nIt must have been some \r\nkind of clerical error. \BRK";
+    const MESSAGE_10 = "And I used to think that \r\nmy blood type fit my \r\npersonality so well...\BRK";
+    
+    Warp_Player(0x13, 0xB8, 0x140);
+    SetEntityPosition(0, 0xB8, 0x140, "Up");
+    if ((Inventory_Check() == 1)) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    Fade_In(2, 1);
+    if ((Inventory_Check() == 1)) {
+        SetEntityAnim(0, 0x1C6);
+    } else {
+        SetEntityAnim(0, 0x156);
+    }
+    Set_Vector_Y(0, 0xFA, 1);
+    Execute_Movement(0);
+    if ((Inventory_Check() == 1)) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    Make_Delay(0x1E);
+    TalkOpen();
+    Set_Portrait(0x45);
+    Set_Name_Window(0x11);
+    TalkMessage(0);
+    TalkClose();
+    Show_Emote(0, 2, 0);
+    Make_Delay(0x3C);
+    Fade_Out(2, 1);
+    Warp_Player(0x13, 0x108, 0x89);
+    SetEntityPosition(0x11, 0xE9, 0x7C, "Right");
+    SetEntityAnim(0x11, 0x689);
+    SetEntityPosition(0x14, 0x104, 0x7C, "Left");
+    SetEntityAnim(0x14, 0x320);
+    SetEntityPosition(0, 0xDC, 0x104, "Up");
+    if ((Inventory_Check() == 1)) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    Fade_In(2, 1);
+    TalkOpen();
+    Set_Portrait(0x23);
+    Set_Name_Window(0x14);
+    TalkMessage(1);
+    TalkClose();
+    TalkOpen();
+    Set_Portrait(0x46);
+    Set_Name_Window(0x11);
+    TalkMessage(2);
+    TalkClose();
+    TalkOpen();
+    Set_Portrait(0x26);
+    Set_Name_Window(0x14);
+    TalkMessage(3);
+    TalkClose();
+    TalkOpen();
+    Set_Portrait(0x47);
+    Set_Name_Window(0x11);
+    TalkMessage(4);
+    TalkClose();
+    if ((Inventory_Check() == 1)) {
+        SetEntityAnim(0, 0x1C6);
+    } else {
+        SetEntityAnim(0, 0x156);
+    }
+    Set_Vector_Y(0, 0x97, 1);
+    Execute_Movement(0);
+    if ((Inventory_Check() == 1)) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    Make_Delay(0x1E);
+    SetEntityFacing(0x11, "Down");
+    SetEntityFacing(0x14, "Down");
+    Make_Delay(0x1E);
+    TalkOpen();
+    Set_Portrait(0x23);
+    Set_Name_Window(0x14);
+    TalkMessage(5);
+    TalkClose();
+    Show_Emote(0, 3, 0);
+    Make_Delay(0x3C);
+    TalkOpen();
+    Set_Portrait(0x27);
+    Set_Name_Window(0x14);
+    TalkMessage(6);
+    Set_Portrait(0x23);
+    TalkMessage(7);
+    TalkClose();
+    Show_Emote(0, 3, 0);
+    Make_Delay(0x3C);
+    TalkOpen();
+    Set_Portrait(0x46);
+    Set_Name_Window(0x11);
+    TalkMessage(8);
+    TalkClose();
+    TalkOpen();
+    Set_Portrait(0x26);
+    Set_Name_Window(0x14);
+    TalkMessage(9);
+    TalkClose();
+    TalkOpen();
+    Set_Portrait(0x46);
+    Set_Name_Window(0x11);
+    TalkMessage(10);
+    TalkClose();
+    Free_Event_Entity(0x11);
+    Free_Event_Entity(0x14);
+    End_Cinematic_State();
+    Pan_Camera_To(0xDC, 0x97, 2);
+    Wait_Camera_Stop();
+    Set_Flag(0x11D, 1);
+    Routine_State_Override(0x14, 0x302);
+    Routine_State_Override(0x11, 0x303);
+    Routine_State_Override(0x15, 0x304);
+    exit;
+}

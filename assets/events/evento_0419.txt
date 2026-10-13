@@ -1,0 +1,11 @@
+// Script 419
+#include "Fomt_Lib.src"
+
+script 419 Event_0419 {
+    const MESSAGE_0 = "Barrel Shelf\BRK";
+    
+    TalkOpen();
+    Print_Message(0);
+    TalkClose();
+    exit;
+}

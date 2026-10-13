@@ -1,0 +1,11 @@
+// Script 496
+#include "Fomt_Lib.src"
+
+script 496 Event_0496 {
+    const MESSAGE_0 = "Supermarket\r\nOpen 9AM-5PM\r\nClosed Tuesdays and Sundays\BRK";
+    
+    TalkOpen();
+    Print_Message(0);
+    TalkClose();
+    exit;
+}

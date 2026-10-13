@@ -1,0 +1,10 @@
+{
+    "name": "Doctor_Stop_Base",
+    "anim_id": "0x31f",
+    "anim_id_dec": 799,
+    "graphic_id": 4,
+    "script_addr": "0x8664948",
+    "script_rom_offset": "0x664948",
+    "frame_count": 0,
+    "frames": []
+}

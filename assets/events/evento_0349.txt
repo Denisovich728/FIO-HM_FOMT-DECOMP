@@ -1,0 +1,41 @@
+// Script 349
+#include "Fomt_Lib.src"
+
+script 349 Event_0349 {
+    const MESSAGE_0 = "Cook";
+    const MESSAGE_1 = "View recipies";
+    const MESSAGE_2 = "Exit";
+    const MESSAGE_3 = "You haven't made anything.\BRK";
+    const MESSAGE_4 = "Cook here.\r\nYou can't cook while \r\nholding something.\BRK";
+    
+    var var_0;
+    
+    TalkOpen();
+    if ((Inventory_Check() == 1)) {
+        var_0 = TalkChoice3(0, 1, 2);
+        switch (var_0) {
+            case 1:
+                TalkClose();
+                Fade_Out(3, 1);
+                Proc0A0();
+                Fade_In(3, 1);
+                break;
+            case 2:
+                if (Func133(0)) {
+                    TalkClose();
+                    Fade_Out(3, 1);
+                    Proc0A1();
+                    Fade_In(3, 1);
+                    goto LBL_0006;
+                }
+                TalkMessage(3);
+                break;
+            case 3:
+                break;
+        }
+    } else {
+        TalkMessage(4);
+    }
+    TalkClose();
+    exit;
+}

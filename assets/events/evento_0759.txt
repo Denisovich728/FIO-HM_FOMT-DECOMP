@@ -1,0 +1,28 @@
+// Script 759
+#include "Fomt_Lib.src"
+
+script 759 Event_0759 {
+    const MESSAGE_0 = "Friends really are \r\nall we have sometimes...\BRK";
+    const MESSAGE_1 = "I just hope Aja \r\ncomes home now...\BRK";
+    
+    if ((Check_If_Single(9) == 0)) {
+        Free_Event_Entity(9);
+    }
+    if ((Check_Flag(0x118) == 1)) {
+        SetEntityFacing(9, GetOppositeFacing(GetEntityFacing(0)));
+        TalkOpen();
+        if ((Has_NPC_Talked_Today(9) == 0)) {
+            Set_Portrait(0x8A);
+            Set_Name_Window(9);
+            TalkMessageSlow(0);
+        } else {
+            Set_Portrait(0x8C);
+            Set_Name_Window(9);
+            TalkMessageSlow(1);
+        }
+        TalkClose();
+        Free_Event_Entity(9);
+        SetEntityFacing(9, "Up");
+    }
+    exit;
+}

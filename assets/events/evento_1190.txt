@@ -1,0 +1,57 @@
+// Script 1190
+#include "Fomt_Lib.src"
+
+script 1190 Event_1190 {
+    const MESSAGE_0 = "And the winner is...\r\n\xFF% from \r\n\xFF$!\BRK\WAIT_CLICKIts fur is excellent, and \r\nits health is perfect!\BRK";
+    
+    var var_1;
+    
+    var_1 = Func11A(1);
+    GetAnimalName(0, 1, var_1);
+    Warp_Player(6, 0xDC, 0x5E);
+    StopBGM();
+    SetEntityPosition(4, 0xDC, 0x4C, "Down");
+    SetEntityAnim(4, 0x9EF);
+    SetEntityPosition(0, 0xDC, 0x5E, "Up");
+    if ((Inventory_Check() == 1)) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    Hide_Entity(0x47);
+    Hide_Entity(0x48);
+    Hide_Entity(0x49);
+    SetEntityPosition(0x46, 0xC8, 0x62, "Up");
+    Spawn_Event_Entity(0x46, 2);
+    SetEntityAnim(0x46, 0x2AC);
+    if ((GetEntityLocation(0x2B) == 6)) {
+        SetEntityPosition(0x2B, 0x1A0, 0x85, "Down");
+    }
+    Fade_In(2, 1);
+    Make_Delay(0x3C);
+    PlaySong(0, 0xB0);
+    Make_Delay((0x3C * 4));
+    PlayBGM(1, 9);
+    TalkOpen();
+    Set_Portrait(0xB4);
+    Set_Name_Window(4);
+    TalkMessage(0);
+    TalkClose();
+    PlaySong(0, 0xB5);
+    Make_Delay((0x3C * 4));
+    Fade_Out(2, 1);
+    Give_Friendship_Points(2, 0x14);
+    Give_Friendship_Points(3, 0x14);
+    Give_Friendship_Points(4, 0x14);
+    Give_Friendship_Points(5, 0x14);
+    Give_Friendship_Points(0xA, 0x14);
+    Give_Friendship_Points(0xC, 0x14);
+    Give_Friendship_Points(0xD, 0x14);
+    Give_Friendship_Points(0x10, 0x14);
+    Give_Friendship_Points(0x14, 0x14);
+    Give_Friendship_Points(0x15, 0x14);
+    Give_Friendship_Points(0x16, 0x14);
+    Hide_Entity(0x46);
+    Execute_Script(1177);
+    exit;
+}

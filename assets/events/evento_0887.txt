@@ -1,0 +1,19 @@
+// Script 887
+#include "Fomt_Lib.src"
+
+script 887 Event_0887 {
+    const MESSAGE_0 = "Well, come join us if you \r\nhave the time. \BRK";
+    
+    SetEntityFacing(3, GetOppositeFacing(GetEntityFacing(0)));
+    TalkOpen();
+    Set_Portrait(7);
+    Set_Name_Window(3);
+    if (!(((((((Check_Flag(0x4C) == 2) || (Check_Flag(0x5F) == 2)) || (Check_Flag(0x67) == 2)) || (Check_Flag(0x6F) == 2)) || (Check_Flag(0x173) == 2)) || (Check_Flag(0x7E) == 2)) || (Check_Flag(0x7F) == 2))) {
+        Set_Hearth_Anim(3);
+    }
+    TalkMessage(0);
+    TalkClose();
+    SetEntityFacing(3, "Right");
+    Free_Event_Entity(3);
+    exit;
+}

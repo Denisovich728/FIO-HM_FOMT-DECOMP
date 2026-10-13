@@ -1,0 +1,34 @@
+// Script 550
+#include "Fomt_Lib.src"
+
+script 550 Event_0550 {
+    var var_0;
+    var var_1;
+    var var_2;
+    var var_3;
+    var var_4;
+    
+    if ((GetEntityFacing(0) == 0)) {
+        if ((Check_Flag(0x133) == 1)) {
+            Set_Flag(0x133, 2);
+            Add_Festival_Friendship_Bonus(0x1B);
+            Add_Festival_Friendship_Bonus(0xE);
+            Refresh_Map_Entities();
+        }
+        var_0 = Check_Flag(1);
+        var_1 = Check_Flag(2);
+        var_3 = Check_Flag(3);
+        var_2 = Check_Flag(5);
+        var_4 = Check_Flag(6);
+        Fade_Out(2, 1);
+        Warp_Player(3, 0x264, 0xF8);
+        SetEntityPosition(0, 0x264, 0xF8, 0);
+        PlaySong(0, 0xCD);
+        if (((((((((((((Check_Flag(0x71) == 2) && (Check_Flag(0x72) == 0)) && !(var_0 == 0)) && (var_4 == 0)) && ((var_2 == 0) || (var_2 == 1))) && ((var_3 >= 0xB) && (var_3 < 0x12))) && (Check_Flag(0x4C) == 0)) && (Check_Flag(0x75) == 0)) && (Check_Flag(0x76) == 0)) && (Check_Flag(0x77) == 0)) && (Check_Flag(0x4B) == 0)) && (Chek_Love_Points(0x13) < 0x7530))) {
+            Set_Flag(0x72, 1);
+            Execute_Script(0x36A);
+        }
+        Fade_In(2, 1);
+    }
+    exit;
+}

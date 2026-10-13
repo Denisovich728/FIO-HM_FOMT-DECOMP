@@ -1,0 +1,26 @@
+// Script 1326
+#include "Fomt_Lib.src"
+
+script 1326 Event_1326 {
+    const MESSAGE_0 = "The new year is almost here!\BRK";
+    
+    if ((Check_If_Single(6) == 0)) {
+        Free_Event_Entity(6);
+    }
+    SetEntityFacing(6, GetOppositeFacing(GetEntityFacing(0)));
+    TalkOpen();
+    Set_Portrait(0xA8);
+    Set_Name_Window(6);
+    TalkMessage(0);
+    TalkClose();
+    if ((Has_NPC_Talked_Today(6) == 0)) {
+        Give_Friendship_Points(6, 5);
+    }
+    Free_Event_Entity(6);
+    if (((((((((Check_Flag(0xF4) == 0) || Has_NPC_Talked_Today(0x17)) && Has_NPC_Talked_Today(0x18)) && Has_NPC_Talked_Today(0xB)) && Has_NPC_Talked_Today(0xA)) && Has_NPC_Talked_Today(0xC)) && Has_NPC_Talked_Today(6)) && Has_NPC_Talked_Today(7))) {
+        Fade_Out(2, 1);
+        Execute_Script(1319);
+    }
+    SetEntityFacing(6, "Up");
+    exit;
+}

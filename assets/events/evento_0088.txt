@@ -1,0 +1,10 @@
+// Script 88
+#include "Fomt_Lib.src"
+
+script 88 Event_0088 {
+    Fade_Out(2, 1);
+    Warp_Player(3, 0x18, 0x108);
+    SetEntityPosition(0, 0x18, 0x108, 3);
+    Fade_In(2, 1);
+    exit;
+}

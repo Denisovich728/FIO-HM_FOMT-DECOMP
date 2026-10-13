@@ -1,0 +1,12 @@
+// Script 221
+#include "Fomt_Lib.src"
+
+script 221 Event_0221 {
+    const MESSAGE_0 = "Amount of Chicken Feed\r\n\x81@\r\n\x81@\x81@\x81@\x81@\x81@\x81@\x81@\xFF%bushels\BRK";
+    
+    TalkOpen();
+    Set_Text_Buffer_Int_Formatted(0, Check_Flag(0x2A), 3);
+    Print_Message(0);
+    TalkClose();
+    exit;
+}

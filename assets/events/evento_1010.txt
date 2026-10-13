@@ -1,0 +1,634 @@
+// Script 1010
+#include "Fomt_Lib.src"
+
+script 1010 Event_1010 {
+    const MESSAGE_0 = "Well I haven't seen you \r\naround these parts before!\BRK\WAIT_CLICKOh, you're the new lad up\r\nat the farm, eh? \r\nMy name's Doug, and I\BRK\r\nrun this here Inn.\BRK";
+    const MESSAGE_1 = "Wow, it's been years since \r\nanybody but Ann gave me\r\na birthday present!\BRK";
+    const MESSAGE_2 = "Thanks a lot.\r\nI mean it!\BRK";
+    const MESSAGE_3 = "You're a good, guy, \r\nyou know that?\BRK";
+    const MESSAGE_4 = "Thanks.\BRK";
+    const MESSAGE_5 = "What a surprise!...\r\nThanks, now.\BRK";
+    const MESSAGE_6 = "Just what do you expect me\r\nto do with this!?...\BRK";
+    const MESSAGE_7 = "Ha ha ha...It's so cute!\BRK";
+    const MESSAGE_8 = "There are some animals\r\nI just can't stand..\r\nThis is one of them!\BRK";
+    const MESSAGE_9 = "This is for me?\BRK\WAIT_CLICKIf you want to give it to\r\nAnn, give it to her \r\nyourself!\BRK\WAIT_CLICKI'll take it, though...\BRK";
+    const MESSAGE_10 = "I think I gave something\r\nlike this to Ann's mother \r\nages ago...\BRK\WAIT_CLICKI'll give this to Ann.\BRK";
+    const MESSAGE_11 = "Perfume, huh?\r\nDidn't I give the same one\r\nto Ann years ago...?\BRK\WAIT_CLICKWell, I'll give this \r\nto her. Thanks.\BRK";
+    const MESSAGE_12 = "As a thanks, I'll tell\r\nyou the recipe to my famous\r\nCheese Fondue. Have you\BRK\r\nheard of it?\BRK\WAIT_CLICKDon't forget this now.\BRK\WAIT_CLICKThe only ingredient is \r\nCheese. Use a Knife to \r\ncut it into bite-size bits.\BRK\WAIT_CLICKAll you need is a Pot!\r\nIf you want to make it\r\neven better, try adding\BRK\r\nSalt or Wine. \BRK\WAIT_CLICKYou'll love it!\BRK";
+    const MESSAGE_13 = "You'll need this Blue \r\nFeather to propose, so take\r\ngood care of it. \BRK\r\nGood luck!\BRK";
+    const MESSAGE_14 = "Do you know that Gourmet who\r\njudges the Cooking Festival?\r\nHe's a real big-shot in\BRK\r\nthe cooking world. \BRK\WAIT_CLICKHe's eaten cuisine the \r\nworld over, you know!\BRK";
+    const MESSAGE_15 = "Welcome! Oh, it's you,\r\n\xFF!.\BRK";
+    const MESSAGE_16 = "How is \xFF*?\r\nI'll give him lots of \r\ngifts for his next \BRK\r\nbirthday!\BRK";
+    const MESSAGE_17 = "How is Ann doing?\BRK";
+    const MESSAGE_18 = "I hope Ann isn't causing\r\nto much trouble for you!\BRK";
+    const MESSAGE_19 = "Cliff is a really good guy.\r\nHe says he might stay \r\nhere permanently!\BRK";
+    const MESSAGE_20 = "Ann is happy, and he seems \r\nto be in heaven too!\BRK";
+    const MESSAGE_21 = "Hi, \xFF!. \r\nHow are things at the farm?\BRK";
+    const MESSAGE_22 = "As you can see, \r\nwe're closed for the day!\r\nI'm dead tired, too!\BRK";
+    const MESSAGE_23 = "Hey, how's it going?\BRK";
+    const MESSAGE_24 = "Take your time.\BRK";
+    const MESSAGE_25 = "So you've finally decided \r\nto pay a visit!\BRK";
+    const MESSAGE_26 = "Eat up,you need the energy!\BRK";
+    const MESSAGE_27 = "Did you come for a \r\nbreak, \xFF!?\BRK";
+    const MESSAGE_28 = "I never get a chance for\r\na vacation! \r\nComes with the job,\BRK\r\nI guess...\BRK";
+    const MESSAGE_29 = "This is a strange hour...\BRK";
+    const MESSAGE_30 = "Come when we're open!\r\nI'd headed for bed.\BRK";
+    const MESSAGE_31 = "Right now I'm cooking.\r\nWatch out for the flame!\BRK";
+    const MESSAGE_32 = "Right now I'm busy.\r\nWait for me outside, \r\nwill ya?\BRK";
+    const MESSAGE_33 = "Hi.\BRK";
+    const MESSAGE_34 = "Ann's watching the store \r\nfor me, but I'm worried \r\nabout her alone...\BRK";
+    const MESSAGE_35 = "A year passes pretty\r\nquick around here, doesn't\r\nit, \xFF!....?\BRK";
+    const MESSAGE_36 = "Don't you ever miss \r\nanybody, \xFF!?\BRK";
+    
+    var var_0;
+    var var_1;
+    var var_2;
+    var var_3;
+    
+    SetEntityAnim(0x18, 0x7B2);
+    var_3 = GetEntityFacing(0x18);
+    SetEntityFacing(0x18, GetOppositeFacing(GetEntityFacing(0)));
+    TalkOpen();
+    Set_Name_Window(0x18);
+    if ((Check_If_Single(0x18) == 0)) {
+        Set_Portrait(0x53);
+        TalkMessage(0);
+        Free_Event_Entity(0x18);
+    } else {
+        if ((Inventory_Check() || ((((Check_Flag(0x57) == 1) || (Check_Flag(0x5C) == 1)) || (Check_Flag(0x84) == 1)) || (Check_Flag(0x128) == 1)))) {
+            var_0 = 6;
+        } else {
+            switch (Compare_Gift()) {
+                case 0:
+                    switch (Search_Food_Gift_Address()) {
+                        case 2:
+                        case 4:
+                        case 5:
+                        case 7:
+                        case 9:
+                        case 0xB:
+                        case 0xF:
+                        case 0x10:
+                        case 0x11:
+                        case 0x12:
+                        case 0x13:
+                        case 0x14:
+                        case 0x16:
+                        case 0x17:
+                        case 0x18:
+                        case 0x19:
+                        case 0x1A:
+                        case 0x1B:
+                        case 0x1C:
+                        case 0x1D:
+                        case 0x1E:
+                        case 0x1F:
+                        case 0x20:
+                        case 0x21:
+                        case 0x22:
+                        case 0x23:
+                        case 0x24:
+                        case 0x25:
+                        case 0x26:
+                        case 0x27:
+                        case 0x28:
+                        case 0x29:
+                        case 0x2B:
+                        case 0x30:
+                        case 0x35:
+                        case 0x37:
+                        case 0x39:
+                        case 0x3A:
+                        case 0x3B:
+                        case 0x3C:
+                        case 0x3D:
+                        case 0x3F:
+                        case 0x40:
+                        case 0x41:
+                        case 0x42:
+                        case 0x43:
+                        case 0x44:
+                        case 0x45:
+                        case 0x47:
+                        case 0x48:
+                        case 0x49:
+                        case 0x4B:
+                        case 0x60:
+                        case 0x64:
+                        case 0x70:
+                        case 0x75:
+                        case 0x88:
+                        case 0x92:
+                        case 0xA0:
+                        case 0xA1:
+                        case 0xA2:
+                        case 0xA3:
+                        case 0xA5:
+                        case 0xA6:
+                        case 0xA8:
+                            var_0 = 1;
+                            break;
+                        case 3:
+                        case 6:
+                        case 0x15:
+                        case 0x2A:
+                        case 0x2C:
+                        case 0x2E:
+                        case 0x34:
+                        case 0x36:
+                        case 0x46:
+                        case 0x4A:
+                        case 0x5B:
+                        case 0x5C:
+                        case 0x5D:
+                        case 0x5F:
+                        case 0x65:
+                        case 0x67:
+                        case 0x6A:
+                        case 0x76:
+                        case 0x77:
+                        case 0x78:
+                        case 0x79:
+                        case 0x7F:
+                        case 0x80:
+                        case 0x81:
+                        case 0x82:
+                        case 0x83:
+                        case 0x87:
+                        case 0x8A:
+                        case 0x8D:
+                        case 0x8E:
+                        case 0x90:
+                        case 0x91:
+                        case 0x94:
+                        case 0x95:
+                        case 0x96:
+                        case 0x97:
+                        case 0x98:
+                        case 0x99:
+                        case 0xA4:
+                            var_0 = 2;
+                            break;
+                        case 0x72:
+                            var_2 = 1;
+                            var_0 = 2;
+                            break;
+                        case 0:
+                        case 1:
+                        case 8:
+                        case 0xA:
+                        case 0xC:
+                        case 0xD:
+                        case 0xE:
+                        case 0x2F:
+                        case 0x33:
+                        case 0x3E:
+                        case 0x4C:
+                        case 0x4D:
+                        case 0x4E:
+                        case 0x4F:
+                        case 0x50:
+                        case 0x51:
+                        case 0x52:
+                        case 0x53:
+                        case 0x54:
+                        case 0x55:
+                        case 0x56:
+                        case 0x57:
+                        case 0x58:
+                        case 0x59:
+                        case 0x5A:
+                        case 0x5E:
+                        case 0x61:
+                        case 0x62:
+                        case 0x63:
+                        case 0x66:
+                        case 0x68:
+                        case 0x69:
+                        case 0x6B:
+                        case 0x6C:
+                        case 0x6D:
+                        case 0x6E:
+                        case 0x6F:
+                        case 0x71:
+                        case 0x73:
+                        case 0x74:
+                        case 0x7A:
+                        case 0x7B:
+                        case 0x7C:
+                        case 0x7D:
+                        case 0x7E:
+                        case 0x84:
+                        case 0x85:
+                        case 0x86:
+                        case 0x89:
+                        case 0x8B:
+                        case 0x8C:
+                        case 0x8F:
+                        case 0x93:
+                        case 0xA7:
+                        case 0xA9:
+                        case 0xAA:
+                            var_0 = 3;
+                            break;
+                        case 0x31:
+                        case 0x32:
+                            var_0 = 4;
+                            break;
+                        case 0x2D:
+                        case 0x9A:
+                        case 0x9B:
+                        case 0x9C:
+                        case 0x9D:
+                        case 0x9E:
+                        case 0x9F:
+                            var_0 = 5;
+                            break;
+                    }
+                    break;
+                case 1:
+                    switch (Search_Item_Gift_Address()) {
+                        case 0x28:
+                        case 0x29:
+                        case 0x2A:
+                        case 0x2B:
+                        case 0x33:
+                        case 0x34:
+                        case 0x35:
+                            var_0 = 3;
+                            break;
+                        case 0:
+                        case 1:
+                        case 2:
+                        case 3:
+                        case 4:
+                        case 5:
+                        case 6:
+                        case 7:
+                        case 8:
+                        case 9:
+                        case 0xA:
+                        case 0xB:
+                        case 0xC:
+                        case 0xD:
+                        case 0xE:
+                        case 0xF:
+                        case 0x10:
+                        case 0x11:
+                        case 0x12:
+                        case 0x13:
+                        case 0x14:
+                        case 0x15:
+                        case 0x16:
+                        case 0x17:
+                        case 0x18:
+                        case 0x19:
+                        case 0x1A:
+                        case 0x1B:
+                        case 0x1C:
+                        case 0x1D:
+                        case 0x1E:
+                        case 0x1F:
+                        case 0x20:
+                        case 0x21:
+                        case 0x22:
+                        case 0x23:
+                        case 0x24:
+                        case 0x32:
+                        case 0x59:
+                        case 0x5B:
+                        case 0x5C:
+                            var_0 = 4;
+                            break;
+                        case 0x30:
+                        case 0x31:
+                        case 0x36:
+                        case 0x37:
+                        case 0x38:
+                        case 0x39:
+                        case 0x3A:
+                        case 0x5A:
+                            var_0 = 5;
+                            break;
+                        case 0x25:
+                        case 0x26:
+                        case 0x27:
+                        case 0x3B:
+                        case 0x3C:
+                        case 0x3D:
+                        case 0x3E:
+                        case 0x3F:
+                        case 0x40:
+                        case 0x41:
+                        case 0x42:
+                        case 0x43:
+                        case 0x44:
+                        case 0x45:
+                        case 0x46:
+                        case 0x47:
+                        case 0x48:
+                        case 0x49:
+                        case 0x4A:
+                        case 0x4B:
+                        case 0x4C:
+                        case 0x4D:
+                        case 0x4E:
+                        case 0x50:
+                        case 0x52:
+                        case 0x54:
+                        case 0x5D:
+                        case 0x5E:
+                            var_0 = 6;
+                            break;
+                        case 0x2C:
+                        case 0x2D:
+                        case 0x2E:
+                        case 0x2F:
+                            var_0 = 9;
+                            break;
+                        case 0x55:
+                        case 0x56:
+                        case 0x57:
+                        case 0x58:
+                            var_0 = 0xA;
+                            break;
+                        case 0x51:
+                            var_0 = 0xB;
+                            break;
+                    }
+                    break;
+                case 4:
+                    var_0 = 6;
+                    break;
+                case 2:
+                    var_0 = 7;
+                    break;
+                case 3:
+                    var_0 = 7;
+                    break;
+            }
+        }
+        if ((var_0 != 6)) {
+            if (((((var_0 == 1) || (var_0 == 2)) || (var_0 == 3)) && Is_NPC_Birthday(0x18))) {
+                Set_Portrait(0x54);
+                TalkMessage(1);
+            } else {
+                switch (var_0) {
+                    case 1:
+                        Set_Portrait(0x54);
+                        TalkMessage(2);
+                        break;
+                    case 2:
+                        Set_Portrait(0x54);
+                        TalkMessage(3);
+                        break;
+                    case 3:
+                        Set_Portrait(0x53);
+                        TalkMessage(4);
+                        break;
+                    case 4:
+                        Set_Portrait(0x53);
+                        TalkMessage(5);
+                        break;
+                    case 5:
+                        Set_Portrait(0x55);
+                        TalkMessage(6);
+                        break;
+                    case 7:
+                        Set_Portrait(0x54);
+                        TalkMessage(7);
+                        break;
+                    case 8:
+                        Set_Portrait(0x53);
+                        TalkMessage(8);
+                        break;
+                    case 9:
+                        Set_Portrait(0x53);
+                        TalkMessage(9);
+                        break;
+                    case 0xA:
+                        Set_Portrait(0x56);
+                        TalkMessage(10);
+                        break;
+                    case 0xB:
+                        Set_Portrait(0x54);
+                        TalkMessage(11);
+                        break;
+                }
+            }
+            if ((Has_NPC_Talked_Today_2(0x18) == 0)) {
+                switch (var_0) {
+                    case 1:
+                        var_1 = 9;
+                        break;
+                    case 2:
+                        var_1 = 3;
+                        break;
+                    case 3:
+                        var_1 = 1;
+                        break;
+                    case 4:
+                        var_1 = -3;
+                        break;
+                    case 5:
+                        var_1 = -9;
+                        break;
+                    case 7:
+                        var_1 = 1;
+                        break;
+                    case 8:
+                        var_1 = -3;
+                        break;
+                    case 9:
+                        var_1 = -3;
+                        break;
+                    case 0xA:
+                        var_1 = -3;
+                        break;
+                    case 0xB:
+                        var_1 = 1;
+                        break;
+                }
+            } else {
+                switch (var_0) {
+                    case 1:
+                        var_1 = 3;
+                        break;
+                    case 2:
+                        var_1 = 1;
+                        break;
+                    case 3:
+                        var_1 = 0;
+                        break;
+                    case 4:
+                        var_1 = -3;
+                        break;
+                    case 5:
+                        var_1 = -9;
+                        break;
+                    case 7:
+                        var_1 = 0;
+                        break;
+                    case 8:
+                        var_1 = -3;
+                        break;
+                    case 9:
+                        var_1 = -3;
+                        break;
+                    case 0xA:
+                        var_1 = -3;
+                        break;
+                    case 0xB:
+                        var_1 = 0;
+                        break;
+                }
+            }
+            if (Is_NPC_Birthday(0x18)) {
+                var_1 *= 5;
+            }
+            if (Is_Item_Wrapped()) {
+                var_1 = (var_1 + (var_1 / 4));
+            }
+            Give_Friendship_Points(0x18, var_1);
+            if (((((Check_Flag(0x1DD) == 0) && (var_2 == 0)) && (Chek_Friendship_Points(0x18) > 0x64)) && (((var_0 == 1) || (var_0 == 2)) || (var_0 == 3)))) {
+                Set_Portrait(0x54);
+                TalkMessage(12);
+                Set_Flag(0x1DD, 1);
+            }
+            TalkClose();
+            if (((((((((var_0 == 1) || (var_0 == 2)) || (var_0 == 3)) || (var_0 == 4)) || (var_0 == 5)) || (var_0 == 9)) || (var_0 == 0xA)) || (var_0 == 0xB))) {
+                Drop_Held_Item();
+            }
+            Warp_Entity_To_Map(0x18);
+            goto LBL_0003;
+        }
+        if (Func05C(0)) {
+            switch (Check_Equped_Tool()) {
+                case 0x4B:
+                    Set_Portrait(0x54);
+                    TalkMessage(13);
+                    break;
+            }
+            goto LBL_0003;
+        }
+        if (((Chek_Friendship_Points(0x18) > 0xFA) && (Func077(9) == 0))) {
+            Set_Portrait(0x53);
+            TalkMessage(14);
+            GameCube_Link_Command(9);
+            goto LBL_0003;
+        }
+        switch (GetEntityLocation(0x18)) {
+            case 0x15:
+                if ((Check_Flag(0x5F) == 2)) {
+                    if ((Check_Flag(0xC9) == 2)) {
+                        if ((Has_NPC_Talked_Today(0x18) == 0)) {
+                            Set_Portrait(0x53);
+                            TalkMessage(15);
+                        } else {
+                            Set_Portrait(0x54);
+                            TalkMessage(16);
+                        }
+                    } else {
+                        if ((Has_NPC_Talked_Today(0x18) == 0)) {
+                            Set_Portrait(0x53);
+                            TalkMessage(17);
+                        } else {
+                            Set_Portrait(0x53);
+                            TalkMessage(18);
+                        }
+                    }
+                    goto LBL_0095;
+                }
+                if (((Check_Flag(0x86) == 2) || (Check_Flag(0x87) == 2))) {
+                    if ((Has_NPC_Talked_Today(0x18) == 0)) {
+                        Set_Portrait(0x54);
+                        TalkMessage(19);
+                    } else {
+                        Set_Portrait(0x56);
+                        TalkMessage(20);
+                    }
+                    goto LBL_009F;
+                }
+                if ((Check_Flag(3) >= 0x16)) {
+                    if ((Has_NPC_Talked_Today(0x18) == 0)) {
+                        Set_Portrait(0x53);
+                        TalkMessage(21);
+                    } else {
+                        Set_Portrait(0x53);
+                        TalkMessage(22);
+                    }
+                    goto LBL_00A7;
+                }
+                if ((Chek_Friendship_Points(0x18) <= 0x64)) {
+                    if ((Has_NPC_Talked_Today(0x18) == 0)) {
+                        Set_Portrait(0x53);
+                        TalkMessage(23);
+                    } else {
+                        Set_Portrait(0x53);
+                        TalkMessage(24);
+                    }
+                    goto LBL_00AF;
+                }
+                if (((Chek_Friendship_Points(0x18) > 0x64) && (Chek_Friendship_Points(0x18) <= 0xC8))) {
+                    if ((Has_NPC_Talked_Today(0x18) == 0)) {
+                        Set_Portrait(0x53);
+                        TalkMessage(25);
+                    } else {
+                        Set_Portrait(0x54);
+                        TalkMessage(26);
+                    }
+                    goto LBL_00B9;
+                }
+                if ((Has_NPC_Talked_Today(0x18) == 0)) {
+                    Set_Portrait(0x54);
+                    TalkMessage(27);
+                    goto LBL_00BD;
+                }
+                Set_Portrait(0x53);
+                TalkMessage(28);
+                break;
+            case 0x16:
+                if (((Check_Flag(3) >= 6) && (Check_Flag(3) < 8))) {
+                    if ((Has_NPC_Talked_Today(0x18) == 0)) {
+                        Set_Portrait(0x53);
+                        TalkMessage(29);
+                    } else {
+                        Set_Portrait(0x56);
+                        TalkMessage(30);
+                    }
+                    goto LBL_00C8;
+                }
+                if ((Has_NPC_Talked_Today(0x18) == 0)) {
+                    Set_Portrait(0x53);
+                    TalkMessage(31);
+                    goto LBL_00CC;
+                }
+                Set_Portrait(0x53);
+                TalkMessage(32);
+                break;
+            case 8:
+                if ((Chek_Friendship_Points(0x18) <= 0x64)) {
+                    if ((Has_NPC_Talked_Today(0x18) == 0)) {
+                        Set_Portrait(0x56);
+                        TalkMessage(33);
+                    } else {
+                        Set_Portrait(0x56);
+                        TalkMessage(34);
+                    }
+                    goto LBL_00D5;
+                }
+                if ((Has_NPC_Talked_Today(0x18) == 0)) {
+                    Set_Portrait(0x56);
+                    TalkMessage(35);
+                    goto LBL_00D9;
+                }
+                Set_Portrait(0x53);
+                TalkMessage(36);
+                break;
+        }
+        Free_Event_Entity(0x18);
+    }
+    TalkClose();
+    SetEntityFacing(0x18, var_3);
+    exit;
+}

@@ -1,0 +1,33 @@
+// Script 362
+#include "Fomt_Lib.src"
+
+script 362 Event_0362 {
+    const MESSAGE_0 = "It's locked...\BRK";
+    
+    var var_0;
+    var var_1;
+    
+    if ((GetEntityFacing(0) == 1)) {
+        var_0 = 0;
+        var_1 = Check_Flag(3);
+        if ((((((((GetEntityLocation(0x24) != 0x1C) && (GetEntityLocation(0x25) != 0x1C)) && (GetEntityLocation(0x26) != 0x1C)) && (GetEntityLocation(0x27) != 0x1C)) && (GetEntityLocation(0x28) != 0x1C)) && (GetEntityLocation(0x29) != 0x1C)) && (GetEntityLocation(0x2A) != 0x1C))) {
+            var_0 = 0;
+        } else {
+            if (((var_1 >= 9) && (var_1 < 0x12))) {
+                var_0 = 1;
+            }
+        }
+        if ((var_0 == 1)) {
+            PlaySong(0, 0x9C);
+            Fade_Out(2, 1);
+            Warp_Player(0x1C, 0x78, 0xD0);
+            SetEntityPosition(0, 0x78, 0xD0, "Up");
+            Fade_In(2, 1);
+        } else {
+            TalkOpen();
+            TalkMessage(0);
+            TalkClose();
+        }
+    }
+    exit;
+}

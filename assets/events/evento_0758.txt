@@ -1,0 +1,28 @@
+// Script 758
+#include "Fomt_Lib.src"
+
+script 758 Event_0758 {
+    const MESSAGE_0 = "Your daughter is at a \r\ndifficult age too, right?\BRK";
+    const MESSAGE_1 = "With a daughter myself, \r\nI know how much you long\r\nfor her to come back. \BRK";
+    
+    if ((Check_If_Single(0xB) == 0)) {
+        Free_Event_Entity(0xB);
+    }
+    if ((Check_Flag(0x118) == 1)) {
+        SetEntityFacing(0xB, GetOppositeFacing(GetEntityFacing(0)));
+        TalkOpen();
+        if ((Has_NPC_Talked_Today(0xB) == 0)) {
+            Set_Portrait(0x6E);
+            Set_Name_Window(0xB);
+            TalkMessage(0);
+        } else {
+            Set_Portrait(0x71);
+            Set_Name_Window(0xB);
+            TalkMessage(1);
+        }
+        TalkClose();
+        Free_Event_Entity(0xB);
+        SetEntityFacing(0xB, "Left");
+    }
+    exit;
+}

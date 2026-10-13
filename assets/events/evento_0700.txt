@@ -1,0 +1,17 @@
+// Script 700
+#include "Fomt_Lib.src"
+
+script 700 Event_0700 {
+    const MESSAGE_0 = "Letters are nice...\r\nBut I want him to come\r\nhome now!...\BRK";
+    
+    SetEntityFacing(2, GetOppositeFacing(GetEntityFacing(0)));
+    TalkOpen();
+    Set_Name_Window(2);
+    Set_Portrait(4);
+    TalkMessage(0);
+    TalkClose();
+    Free_Event_Entity(2);
+    SetEntityFacing(2, "Down");
+    exit;
+    exit;
+}

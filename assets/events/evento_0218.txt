@@ -1,0 +1,64 @@
+// Script 218
+#include "Fomt_Lib.src"
+
+script 218 Event_0218 {
+    const MESSAGE_0 = "There are already eggs here.\r\nHope they hatch soon...\BRK";
+    const MESSAGE_1 = "Incubator\r\nIf you place eggs in here,\r\nthey'll hatch in a few days.\BRK";
+    const MESSAGE_2 = "It's already full, so you \r\ncan't incubate any more.\BRK";
+    
+    var var_0;
+    var var_1;
+    var var_2;
+    var var_3;
+    var var_4;
+    var var_5;
+    
+    var_0 = 0;
+    if (((!Inventory_Check() && (Compare_Gift() == 0)) && !Is_Item_Wrapped())) {
+        var_1 = Search_Food_Gift_Address();
+        switch (var_1) {
+            case 0xF:
+            case 0x10:
+            case 0x11:
+            case 0x12:
+            case 0x13:
+            case 0x14:
+                var_0 = 1;
+                break;
+        }
+    }
+    if (Func0BA(0)) {
+        TalkOpen();
+        Print_Message(0);
+        TalkClose();
+    } else {
+        if (!var_0) {
+            TalkOpen();
+            Print_Message(1);
+            TalkClose();
+            goto LBL_0007;
+        }
+        var_2 = Check_Flag(0xF);
+        if ((var_2 == 0)) {
+            var_3 = 4;
+        } else {
+            var_3 = 8;
+        }
+        var_4 = Func117();
+        var_5 = 0;
+        if ((var_2 == 1)) {
+            if (Func0BA(1)) {
+                var_5 = 1;
+            }
+        }
+        if (((var_4 + var_5) == var_3)) {
+            TalkOpen();
+            TalkMessage(2);
+            TalkClose();
+            goto LBL_0007;
+        }
+        Drop_Held_Item();
+        Proc0B9(0);
+    }
+    exit;
+}

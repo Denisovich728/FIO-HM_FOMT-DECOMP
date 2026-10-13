@@ -1,0 +1,189 @@
+// Script 350
+#include "Fomt_Lib.src"
+
+script 350 Event_0350 {
+    const MESSAGE_0 = "I don't look so good...\r\nI shouldn't work today.\r\nGet some rest instead.\BRK";
+    const MESSAGE_1 = "I don't look so good...\r\nBetter eat something to\r\nhelp me recuperate\BRK\r\nfrom Fatigue.\BRK";
+    const MESSAGE_2 = "It's already late.\r\nI should get to bed.\BRK";
+    const MESSAGE_3 = "It will be morning soon...\r\nI should get at least\r\na little sleep.\BRK";
+    const MESSAGE_4 = "It's getting late.\r\nI\x81fd better go to bed.\BRK";
+    const MESSAGE_5 = "Night\r\n\BRK";
+    const MESSAGE_6 = "Midnight\r\n\BRK";
+    const MESSAGE_7 = "Another day to enjoy!\BRK";
+    const MESSAGE_8 = "Morning\r\n\BRK";
+    const MESSAGE_9 = "It's still noon. I should\r\nget back to work.\BRK";
+    const MESSAGE_10 = "Noon\r\n\BRK";
+    const MESSAGE_11 = "It's still evening. I\r\nshould get back to work.\BRK";
+    const MESSAGE_12 = "Evening\r\n\BRK";
+    const MESSAGE_13 = "It's getting dark, so I\r\nshould finish up my work.\BRK";
+    const MESSAGE_14 = "Almost nighttime.\r\n\BRK";
+    const MESSAGE_15 = "It's dark already, so I\r\nshould quit working.\BRK";
+    const MESSAGE_16 = "My Fatigue builds up more\r\neasily in bad weather, but\r\nworking this late will tire\BRK\r\nme out even faster!\BRK";
+    const MESSAGE_17 = "When I use your Tools\r\nin bad weather, I build up\r\nFatigue faster, so \BRK\r\nbe careful.\BRK";
+    const MESSAGE_18 = "I can't go outside in a\r\nTyphoon. Get some \r\nextra sleep.\BRK";
+    const MESSAGE_19 = "The winds outside are\r\npractically a gale. I hope\r\nthe House can take this.\BRK";
+    const MESSAGE_20 = "I can't go outside in \r\nso much snow. Get some \r\nextra sleep.\BRK";
+    
+    if (!((Check_Flag(3) == 0) && (Check_Flag(4) == 0))) {
+        TalkOpen();
+    }
+    if ((Check_Flag(0xC) >= 0x50)) {
+        switch (RNG_Generator(0, 1)) {
+            case 0:
+                TalkMessage(0);
+                break;
+            case 1:
+                TalkMessage(1);
+                break;
+        }
+    } else {
+        switch (Check_Flag(6)) {
+            case 0:
+                if (((Check_Flag(3) < 6) || (Check_Flag(3) >= 0x16))) {
+                    if (((Check_Flag(3) == 0) && (Check_Flag(4) == 0))) {
+                        switch (RNG_Generator(0, 7)) {
+                            case 0:
+                                SetEntityPosition(0x20, GetEntityX(0), (GetEntityY(0) - 0x10), "Left");
+                                Make_Delay(1);
+                                Hide_Entity(0x20);
+                                PlaySong(0, 0xC8);
+                                Make_Delay(5);
+                                Show_Emote(0, 2, 0);
+                                Set_Vector_Y(0, (GetEntityY(0) + 4), 1);
+                                Make_Delay(0x3C);
+                                break;
+                            case 1:
+                                PlaySong(0, 0xCD);
+                                Make_Delay(5);
+                                Show_Emote(0, 2, 0);
+                                Set_Vector_Y(0, (GetEntityY(0) + 4), 1);
+                                Make_Delay(0x14);
+                                SetEntityFacing(0, "Left");
+                                Make_Delay(0x1E);
+                                SetEntityFacing(0, "Right");
+                                Make_Delay(0x1E);
+                                SetEntityFacing(0, "Down");
+                                Make_Delay(0x1E);
+                                SetEntityFacing(0, "Up");
+                                Make_Delay(0xA);
+                                break;
+                            case 2:
+                            case 3:
+                            case 4:
+                            case 5:
+                            case 6:
+                            case 7:
+                                TalkOpen();
+                                TalkMessage(2);
+                                break;
+                        }
+                    } else {
+                        switch (RNG_Generator(0, 1)) {
+                            case 0:
+                                if (((Check_Flag(3) >= 4) && (Check_Flag(3) <= 6))) {
+                                    TalkMessage(3);
+                                    goto LBL_0024;
+                                }
+                                TalkMessage(4);
+                                break;
+                            case 1:
+                                if ((Check_Flag(3) >= 0x16)) {
+                                    TalkMessage(5);
+                                    goto LBL_0029;
+                                }
+                                if ((Check_Flag(3) <= 3)) {
+                                    TalkMessage(6);
+                                    goto LBL_002D;
+                                }
+                                TalkMessage(3);
+                                break;
+                        }
+                    }
+                    goto LBL_0030;
+                }
+                if ((Check_Flag(3) <= 0xA)) {
+                    switch (RNG_Generator(0, 1)) {
+                        case 0:
+                            TalkMessage(7);
+                            break;
+                        case 1:
+                            TalkMessage(8);
+                            break;
+                    }
+                    goto LBL_0038;
+                }
+                if ((Check_Flag(3) <= 0xF)) {
+                    switch (RNG_Generator(0, 1)) {
+                        case 0:
+                            TalkMessage(9);
+                            break;
+                        case 1:
+                            TalkMessage(10);
+                            break;
+                    }
+                    goto LBL_0040;
+                }
+                if ((Check_Flag(3) <= 0x11)) {
+                    switch (RNG_Generator(0, 1)) {
+                        case 0:
+                            TalkMessage(11);
+                            break;
+                        case 1:
+                            TalkMessage(12);
+                            break;
+                    }
+                    goto LBL_0048;
+                }
+                if ((Check_Flag(3) <= 0x13)) {
+                    switch (RNG_Generator(0, 1)) {
+                        case 0:
+                            TalkMessage(13);
+                            break;
+                        case 1:
+                            TalkMessage(14);
+                            break;
+                    }
+                    goto LBL_0050;
+                }
+                switch (RNG_Generator(0, 1)) {
+                    case 0:
+                        TalkMessage(15);
+                        break;
+                    case 1:
+                        TalkMessage(5);
+                        break;
+                }
+                break;
+            case 1:
+            case 2:
+                if (((Check_Flag(3) < 6) || (Check_Flag(3) >= 0x16))) {
+                    TalkMessage(16);
+                    goto LBL_005B;
+                }
+                TalkMessage(17);
+                break;
+            case 3:
+                switch (RNG_Generator(0, 1)) {
+                    case 0:
+                        TalkMessage(18);
+                        break;
+                    case 1:
+                        TalkMessage(19);
+                        break;
+                }
+                break;
+            case 4:
+                switch (RNG_Generator(0, 1)) {
+                    case 0:
+                        TalkMessage(20);
+                        break;
+                    case 1:
+                        TalkMessage(19);
+                        break;
+                }
+                break;
+        }
+    }
+    TalkClose();
+    exit;
+}

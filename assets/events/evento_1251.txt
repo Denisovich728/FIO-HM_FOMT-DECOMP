@@ -1,0 +1,30 @@
+// Script 1251
+#include "Fomt_Lib.src"
+
+script 1251 Event_1251 {
+    const MESSAGE_0 = "It looks like Saibara let \r\nGray come today. \BRK";
+    const MESSAGE_1 = "Good luck in the race!\BRK";
+    
+    if ((Check_If_Single(0x1C) == 0)) {
+        Free_Event_Entity(0x1C);
+    }
+    SetEntityFacing(0x1C, GetOppositeFacing(GetEntityFacing(0)));
+    if ((Check_Flag(0x1AB) == 0)) {
+        TalkOpen();
+        Set_Portrait(0x1F);
+        Set_Name_Window(0x1C);
+        TalkMessage(0);
+    } else {
+        TalkOpen();
+        Set_Portrait(0x20);
+        Set_Name_Window(0x1C);
+        TalkMessage(1);
+    }
+    TalkClose();
+    if ((Has_Spoken_To_NPC_Today(0x1C) == 0)) {
+        Give_Friendship_Points(0x1C, 5);
+    }
+    Free_Event_Entity(0x1C);
+    SetEntityFacing(0x1C, "Down");
+    exit;
+}

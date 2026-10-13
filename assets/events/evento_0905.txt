@@ -1,0 +1,31 @@
+// Script 905
+#include "Fomt_Lib.src"
+
+script 905 Event_0905 {
+    const MESSAGE_0 = "Sorry for not inviting you\r\ntoday. I didn't want to \r\nmake the wedding such a big\BRK\WAIT_CLICKdeal. Thanks, though.\r\nLet's celebrate, tonight! \BRK";
+    const MESSAGE_1 = "Rick... ah...\r\nmy future brother-in-law has\BRK\WAIT_CLICKapproved of me and Popuri.\r\nWe'll be happy.\BRK";
+    
+    if ((Check_If_Single(0x1A) == 0)) {
+        Free_Event_Entity(0x1A);
+    }
+    if ((Has_NPC_Talked_Today(0x1A) == 0)) {
+        SetEntityFacing(0x1A, GetOppositeFacing(GetEntityFacing(0)));
+        TalkOpen();
+        Set_Portrait(0x9F);
+        Set_Name_Window(0x1A);
+        TalkMessage(0);
+        TalkClose();
+        SetEntityFacing(0x1A, "Down");
+        Free_Event_Entity(0x1A);
+    } else {
+        SetEntityFacing(0x1A, GetOppositeFacing(GetEntityFacing(0)));
+        TalkOpen();
+        Set_Portrait(0x9F);
+        Set_Name_Window(0x1A);
+        TalkMessage(1);
+        TalkClose();
+        SetEntityFacing(0x1A, "Down");
+        Free_Event_Entity(0x1A);
+    }
+    exit;
+}

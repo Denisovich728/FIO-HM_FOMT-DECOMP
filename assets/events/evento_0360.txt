@@ -1,0 +1,20 @@
+// Script 360
+#include "Fomt_Lib.src"
+
+script 360 Event_0360 {
+    var var_0;
+    
+    if ((GetEntityFacing(0) == 0)) {
+        var_0 = Check_Flag(3);
+        Fade_Out(2, 1);
+        Warp_Player(0xC, 0x134, 0x40);
+        SetEntityPosition(0, 0x134, 0x40, 0);
+        PlaySong(0, 0xCD);
+        if ((((var_0 >= 0x16) && (var_0 <= 0x17)) || ((var_0 >= 0) && (var_0 < 6)))) {
+            Set_Flag(0x122, 1);
+            Execute_Script(0x30C);
+        }
+        Fade_In(2, 1);
+    }
+    exit;
+}

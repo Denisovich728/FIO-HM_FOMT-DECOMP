@@ -1,0 +1,11 @@
+// Script 503
+#include "Fomt_Lib.src"
+
+script 503 Event_0503 {
+    const MESSAGE_0 = "Aja Winery\r\nOpen 10AM to noon\r\neveryday except Sunday\BRK\r\nWe sell wine and juice.\BRK";
+    
+    TalkOpen();
+    Print_Message(0);
+    TalkClose();
+    exit;
+}

@@ -1,0 +1,22 @@
+// Script 1235
+#include "Fomt_Lib.src"
+
+script 1235 Event_1235 {
+    const MESSAGE_0 = "Tonight I can use the \r\nleftovers for dinner, so I\r\nwon't have to fix anything!\BRK";
+    
+    if ((Check_If_Single(0xB) == 0)) {
+        Free_Event_Entity(0xB);
+    }
+    SetEntityFacing(0xB, GetOppositeFacing(GetEntityFacing(0)));
+    TalkOpen();
+    Set_Portrait(0x6F);
+    Set_Name_Window(0xB);
+    TalkMessage(0);
+    TalkClose();
+    if ((Has_Spoken_To_NPC_Today(0xB) == 0)) {
+        Give_Friendship_Points(0xB, 5);
+    }
+    SetEntityFacing(0xB, "Down");
+    Free_Event_Entity(0xB);
+    exit;
+}

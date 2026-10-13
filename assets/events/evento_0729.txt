@@ -1,0 +1,17 @@
+// Script 729
+#include "Fomt_Lib.src"
+
+script 729 Event_0729 {
+    const MESSAGE_0 = "I'm so proud to have \r\nsuch a smart husband!\BRK";
+    
+    SetEntityFacing(0xB, GetOppositeFacing(GetEntityFacing(0)));
+    TalkOpen();
+    Set_Portrait(0x6E);
+    Set_Name_Window(0xB);
+    TalkMessage(0);
+    TalkClose();
+    Free_Event_Entity(0xB);
+    SetEntityFacing(0xB, "Up");
+    exit;
+    exit;
+}

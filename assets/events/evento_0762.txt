@@ -1,0 +1,25 @@
+// Script 762
+#include "Fomt_Lib.src"
+
+script 762 Event_0762 {
+    const MESSAGE_0 = "Were you listening? \r\nHow embarrassing!\BRK";
+    const MESSAGE_1 = "I never could leave Jeff\r\nalone. \BRK";
+    
+    if ((Check_Flag(0x119) == 1)) {
+        SetEntityFacing(0x12, GetOppositeFacing(GetEntityFacing(0)));
+        TalkOpen();
+        if ((Has_NPC_Talked_Today(0x12) == 0)) {
+            Set_Portrait(0x4F);
+            Set_Name_Window(0x12);
+            TalkMessage(0);
+        } else {
+            Set_Portrait(0x50);
+            Set_Name_Window(0x12);
+            TalkMessage(1);
+        }
+        TalkClose();
+        Free_Event_Entity(0x12);
+        SetEntityFacing(0x12, "Right");
+    }
+    exit;
+}

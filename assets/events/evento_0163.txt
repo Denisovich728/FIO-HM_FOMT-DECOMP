@@ -1,0 +1,12 @@
+// Script 163
+#include "Fomt_Lib.src"
+
+script 163 Event_0163 {
+    const MESSAGE_0 = "Amount of Animal Fodder\r\n\x81@\r\n\x81@\x81@\x81@\x81@\x81@\x81@\x81@\xFF%bushels\BRK";
+    
+    TalkOpen();
+    Set_Text_Buffer_Int_Formatted(0, Check_Flag(0x29), 3);
+    Print_Message(0);
+    TalkClose();
+    exit;
+}

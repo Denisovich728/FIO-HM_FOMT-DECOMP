@@ -1,0 +1,77 @@
+// Script 1056
+#include "Fomt_Lib.src"
+
+script 1056 Event_1056 {
+    const MESSAGE_0 = "Mine Research Group\r\n\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\r\n\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\r\n\"Good day. My name is \r\nKarin, and I am a mine \r\nresearcher.\r\nToday, I will tell you some\r\nof the facts and rumors that\r\nI have learned regarding\r\nmines.\r\n\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\r\nUp to now, it had been\r\nassumed that digging up the\r\nground at the Mine by the\r\nSpring would only unearth\r\nGold or Black Grass.\r\nRecently, however, the idea\r\nthat other things may be\r\nfound there has found favor\r\nwith many. One such find is\r\nis the \"Power Berry\"about\r\nwhich the presence of I may\r\nclaim with 100% certainty,\r\nbased on my own\r\ninvestigations. It may be\r\nfound 100 levels \r\nunderground.\r\n\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\r\nAnother is the \"Mystery\r\nSlab.\" While it is true,\r\nhowever, that it is there to\r\nbe found, we do not know\r\nexactly where it is located,\r\nperhaps due to it being\r\nburied very deep indeed. We\r\nwill inform you as soon as\r\nwe have more information\r\nregarding this object.\r\nThat's all for this week.\"\BRK";
+    const MESSAGE_1 = "Mine Research Group\r\n\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\r\n\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\r\n\"Good day. My name is \r\nKarin, and I am a mine \r\nresearcher. Today, I will \r\ntell you some of the facts\r\nand rumors that I have \r\nlearned regarding mines.\r\n\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\r\nIt is known that the\r\nfollowing things are\r\ncomparatively common finds\r\nwhen one breaks rocks at the\r\nMine of the Spring:\r\nJunk Ore, Copper,\r\nSilver, Gold, MYstrile,\r\nOrichalch, and Adamantite.\r\nTwo more unusual objects\r\nknown to be found there,\r\nhowever, are the \"Teleport\r\nStone\" and the \"Goddess\r\nJewel.\" As to where\r\nin the mine they can be\r\nfound, however, well... It\r\nappears that our time is up\r\nfor today, so I will talk\r\nmore on this subject next\r\ntime. That's all for this\r\nweek.\"\BRK";
+    const MESSAGE_2 = "Mine Research Group\r\n\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\r\n\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\r\n\"Good day. My name is \r\nKarin, and I am a mine \r\nresearcher. Today, I will \r\ntell you some of the facts\r\nand rumors that I have \r\nlearned regarding mines.\r\n\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\r\nWe have learned that among\r\nthe things to be found by\r\nbreaking rocks at the Mine\r\nof the Spring are the \r\nTeleport Stone and the \r\nGoddess Jewel. We believe\r\nthat the former is probably\r\nfound on the lowest level of\r\nthe mine, while the latter\r\nis scattered here and there,\r\nand thus, we do not know all\r\nthe places where it may be\r\nfound. We only know of two\r\nsuch places at this time,\r\nthe 102nd and 202nd levels\r\nof the mine. I will inform\r\nyou of any more information\r\non this subject. That's all\r\nfor this week.\"\BRK";
+    const MESSAGE_3 = "Mine Research Group\r\n\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\r\n\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\r\n\"Good day. My name is Karin\r\nand I am a mine researcher.\r\nToday, I will tell you some\r\nof the facts and rumors that\r\nI have learned regarding\r\nmines.\r\n\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\r\nAs with the Mine of the\r\nSpring, we have found that\r\nPower Berries can also be\r\nfound in digging at the Mine\r\nof the Lake. My\r\ninvestigations show that\r\nthey can be found on the\r\n19th level of the Mine.\r\n\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\r\nAlso, there have been rumors\r\nin some quarters about\r\n\"Cursed Tools.\" Word now\r\nreaches us that such tools\r\nhave been found at the Mine\r\nof the Lake, specifically,\r\nthe Cursed Hoe, which, we\r\nare told, was found on the\r\n39th level of the mine. More\r\non this story as we get\r\nmore information. That's all\r\nfor this week.\"\BRK";
+    const MESSAGE_4 = "Mine Research Group\r\n\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\r\n\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\r\n\"Good day. My name is Karin\r\nand I am a mine researcher.\r\nToday, I will tell you some\r\nof the facts and rumors that\r\nI have learned regarding\r\nmines.\r\n\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\r\nThe following ores are known\r\nto be found by breaking\r\nrocks at the Mine of the\r\nLake: Amethyst, Agate,\r\nFluorite, Peridot, Topaz,\r\nRuby, Sand Rose,\r\nMoonstone, Emerald, and\r\nDiamond. Of these, the last\r\ntwo are comparatively\r\nunusual, while the others\r\ncan be found more easily.\r\nThere are, however, other\r\nunusual things being found\r\nin this mine... It seems,\r\nhowever, that we have run\r\nout of time, so we will\r\ncontinue this discussion on\r\nour next show, at our\r\nleisure. Until then, that's\r\nall for this week.\"\BRK";
+    const MESSAGE_5 = "Mine Research Group\r\n\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\r\n\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\r\n\"Good day. My name is Karin\r\nand I am a mine researcher.\r\nToday, I will tell you some\r\nof the facts and rumors that\r\nI have learned regarding\r\nmines.\r\n\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\r\nUnusual ores that can be\r\nfound by breaking rocks at\r\nthe Mine by the Lake are\r\nAlexandrite and Pink\r\nDiamond. We have reports\r\nthat Alexandrite has been\r\nfound on the 50th, 100th,\r\n150th levels of the mine,\r\nthough it may also be found\r\non other levels as well.\r\nAs for Pink Diamonds, we\r\nhave reports that they have\r\nbeen found on the 30th,\r\n110th, and 190th levels of\r\nthe mine, though they may\r\nalso be found on other\r\nlevels as well. We will\r\nreport further on this\r\nsubject as information\r\nbecomes available. That's\r\nall for this week.\"\BRK";
+    const MESSAGE_6 = "Mine Research Group\r\n\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\r\n\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\r\n\"Good day. My name is \r\nKarin, and I am a mine \r\nresearcher. Today, I will \r\ntell you some of the facts\r\nand rumors that I have \r\nlearned regarding mines.\r\n\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\r\nThere have been rumors in\r\nsome quarters of Cursed\r\nTools. We have received word\r\nthat another such item has\r\nbeen discovered at the Mine\r\nby the Lake. The item in\r\nquestion is a Cursed\r\nWatering Can, and it was\r\nfound on the 69th level of\r\nthe mine. We also have\r\nfurther information on\r\nunusual things that can be\r\nfound by breaking rocks at\r\nthe Mine by the Lake. This\r\ntime, it is the Kappa Jewel,\r\nand it appears to have been\r\nfound on the 120th level of\r\nthe mine. We do not have any\r\nmore details at this time,\r\nthough we will let you know\r\njust as soon as we do. And\r\nthat's all for this week.\"\BRK";
+    const MESSAGE_7 = "Mine Research Group\r\n\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\r\n\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\r\n\"Good day. My name is \r\nKarin, and I am a mine \r\nresearcher. Today, I will \r\ntell you some of the facts\r\nand rumors that I have \r\nlearned regarding mines.\r\n\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\r\nLately, the rumor has been\r\ncirculating that if you \r\ncharge when using your\r\nhoe or hammer at\r\nthe mines, you will find\r\nmore items. This is an\r\nabsolute lie, however, so do\r\nnot waste your energies in\r\nthis futile undertaking.\r\n\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\r\nNext, we have a report of\r\nAlexandrite having been\r\nfound on the 210th level of\r\nthe Mine of the Lake. If\r\nanyone else out there has\r\nnews in this regard, please\r\nlet us know. And that is all\r\nfor this week.\"\BRK";
+    const MESSAGE_8 = "Mine Research Group\r\n\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\r\n\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\r\n\"Good day. My name is \r\nKarin, and I am a mine \r\nresearcher. Today, I will \r\ntell you some of the facts\r\nand rumors that I have \r\nlearned regarding mines.\r\n\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\r\nLately, a rumor has been\r\nspreading about the mines\r\nextending as far as 255\r\nlevels. While we are doing\r\nour best to find an answer\r\nto this claim, we have only\r\nbeen down as far as the\r\n255th level a very few\r\ntimes, and while we cannot\r\nsay for certain, we have not\r\nfound a stairway down to the\r\n255th level. It would not\r\nsurprise us to learn that\r\nthat was the lowest level\r\nafter all.\r\n\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\r\nWe also have additional\r\ninformation about the\r\nfinding of the Kappa Jewel\r\nin the Mine by the Lake,\r\nthis time on the 60th level.\r\nIf you have any other such\r\ninformation, please let us\r\nknow. And that's all for\r\nthis week.\"\BRK";
+    const MESSAGE_9 = "Mine Research Group\r\n\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\r\n\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\r\n\"Good day. My name is \r\nKarin, and I am a mine \r\nresearcher. Today, I will \r\ntell you some of the facts\r\nand rumors that I have \r\nlearned regarding mines.\r\n\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\r\nLately, we have heard rumors\r\nthat it is possible to go to\r\nthe Mine by the Lake in\r\nseasons other than Winter.\r\nThe short answer is that it\r\nis indeed possible, and easy\r\nto do. All you have to do is\r\nready a Teleport, and\r\nset the Mine by the Lake as\r\nyour destination. While this\r\nmay sound simple, actually\r\nacquiring a Teleport\r\nis considered quite\r\ndifficult. I have used it\r\nmyself to go to the Mine by\r\nthe Lake in seasons other\r\nthan Winter, and did not see\r\nany particular difference. I\r\nwill report again on this\r\nsubject as further\r\ninformation becomes\r\navailable. That's all for\r\nthis week.\"\BRK";
+    const MESSAGE_10 = "Mine Research Group\r\n\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\r\n\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\r\n\"Good day. My name is \r\nKarin, and I am a mine \r\nresearcher. Today, I will \r\ntell you some of the facts\r\nand rumors that I have \r\nlearned regarding mines.\r\n\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\r\nFirst of all, word comes to\r\nus today of the discovery of\r\nthe Goddess Jewel,\r\non the 152nd level of the\r\nMine of the Spring.\r\n\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\r\nWe have another report of\r\nthe Goddess Jewel\r\nbeing found in that Mine,\r\nthis time on the 190th\r\nlevel.\r\n\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\r\nNext, we have word of a\r\nCursed Sickle being found in\r\nthe Mine by the Lake, on the\r\n79th level. And that\r\nconcludes today's report.\r\nPlease let us know if you\r\nhave any other information\r\nin this regard. And that's\r\nall for this week.\"\BRK";
+    const MESSAGE_11 = "Mine Research Group\r\n\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\r\n\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\r\n\"Good day. My name is \r\nKarin, and I am a mine \r\nresearcher. Today, I will \r\ntell you some of the facts\r\nand rumors that I have \r\nlearned regarding mines.\r\n\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\r\nLately, we have been hearing\r\nrumors that sowing seeds in\r\nmine land after it has been\r\ndug up will cause even\r\nseasonal plants to grow.\r\nThis is completely untrue,\r\nhowever, so do not waste\r\nyour seeds in this fruitless\r\npursuit.\r\n\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\r\nNext, we have news of Pink\r\nDiamond being found, on the\r\n90th level of the Mine of\r\nthe Lake. And that concludes\r\ntoday's report. If you have\r\nany other information,\r\nplease let us know. And\r\nthat's all for this week.\"\BRK";
+    const MESSAGE_12 = "Mine Research Group\r\n\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\r\n\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\r\n\"Good day. My name is \r\nKarin, and I am a mine \r\nresearcher. Today, I will \r\ntell you some of the facts\r\nand rumors that I have \r\nlearned regarding mines.\r\n\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\r\nThe other day, I apparently\r\ndiscovered something\r\namazing. On the 222nd level\r\nof the Mine by the Spring, I\r\nfound a Mythic Stone, an ore\r\nthat I had never before\r\nfound, when I was breaking\r\nrocks. As this was my first\r\nsuch discovery, I am not\r\nsure just how I found it. If\r\nany of you have any\r\ninformation about the Mythic\r\nStone, or anything else, for\r\nthat matter, please let us\r\nknow. Thank you. And that's\r\nall for this week.\"\BRK";
+    
+    var var_0;
+    
+    switch (Check_Flag(0x1EC)) {
+        case 0:
+            var_0 = Print_TV_Message(0);
+            break;
+        case 1:
+            var_0 = Print_TV_Message(1);
+            break;
+        case 2:
+            var_0 = Print_TV_Message(2);
+            break;
+        case 3:
+            var_0 = Print_TV_Message(3);
+            break;
+        case 4:
+            var_0 = Print_TV_Message(4);
+            break;
+        case 5:
+            var_0 = Print_TV_Message(5);
+            break;
+        case 6:
+            var_0 = Print_TV_Message(6);
+            break;
+        case 7:
+            var_0 = Print_TV_Message(7);
+            break;
+        case 8:
+            var_0 = Print_TV_Message(8);
+            break;
+        case 9:
+            var_0 = Print_TV_Message(9);
+            break;
+        case 0xA:
+            var_0 = Print_TV_Message(10);
+            break;
+        case 0xB:
+            var_0 = Print_TV_Message(11);
+            break;
+        case 0xC:
+            var_0 = Print_TV_Message(12);
+            break;
+    }
+    Close_TV_Interface();
+    TalkClose();
+    switch (var_0) {
+        case 0:
+        case 1:
+        case 2:
+        case 3:
+            Set_Flag(0x244, var_0);
+            Execute_Script(540);
+            break;
+        case 4:
+        case 5:
+            break;
+    }
+    exit;
+}

@@ -1,0 +1,125 @@
+// Script 1052
+#include "Fomt_Lib.src"
+
+script 1052 Event_1052 {
+    const MESSAGE_0 = "Special New Year Show\r\n\r\n\r\n\"Happy New Year, everybody!\r\n As we do every 1st of \r\n Spring, we'll have each of \r\n our guests write a piece of\r\n calligraphy for the new \r\n year.\"\r\n\"Everybody seems to have \r\n completed their work, which\r\n symbolizes their hopes for\r\n the coming year. Let's see\r\n what they've chosen to \r\n write!\r\n First we have Mr. W, with\"\r\n ...\"Sunrise\"!\r\n A fine choice for the new \r\n year!\r\n \r\n Next, we have Ms. X, who\r\n has written...\r\n\"Happiness\".\r\n An uplifting piece of \r\n calligraphy indeed!\r\n \r\n Next we have Mr. Y, with\r\n ...\"Hope\"!\r\n We can see that Mr. Y has\r\n high hopes for the coming\r\n year!\r\n \r\n Finally, we have Mr. Z, who\r\n wrote...\"Dreams\"!\r\n This is wonderful, too!\r\n\r\n Thank you everyone for \r\n participating. It's great \r\n to see how optimistic you\r\n all are about the coming \r\n new year.\r\n\"Until next year, then...\BRK";
+    const MESSAGE_1 = "Special New Year Show\r\n\r\n\r\n\"Now that it's the 2nd of\r\n Spring, it's time to pound \r\n the Rice Cakes for the new\r\n year. Let's go, everyone!\"\r\n\r\n\r\nThump...pound...whack...\r\nThump...pound...whack...\r\nThump...pound...whack...\r\nThump...pound...whack...\r\nThump...pound...whack...\r\nThump...pound...whack...\r\nThump...pound...whack...\r\nThump...pound...whack...\r\nThump...pound...whack...\r\nThump...pound...whack...\r\nThump...pound...whack...\r\nThump...pound...whack...\r\nThump...pound...whack...\r\nThump...pound...whack...\r\nThump...pound...whack...\r\nThump...pound...whack...\r\n\r\n\r\n\"We're all done, now. Let's\r\n try our fresh Rice Cakes,\r\n the traditional New Year's\r\n treat.\r\n\r\n Mmm....Gooey and \r\n delicious! All that \r\n pounding by everybody\r\n sure did the trick!\r\n Until next year, then...\BRK";
+    const MESSAGE_2 = "Special New Year Show\r\n\r\n\r\n\"For the 3rd of Spring, we \r\n have a special treat\r\n planned for you. Each of \r\n our guests will show us \r\n their special talents!\r\n\r\n First is Mr. W, who can \r\n touch his tongue to his\r\n nose! \r\n\r\n Now Ms. X who is double-\r\n jointed. Oh my! Look at \r\n that!\r\n\r\n Now here is Mr. Y, who is \r\n going to make his special\r\n Grilled Fish for us:\r\n Medium Fish,\r\n Frying Pan, \r\n Salt,\r\n Soy Sauce\r\n\r\n Mmm...It's delicious! \r\n I think I'll try this at \r\n home myself.\r\n\r\n Finally, we have Mr. Z, who\r\n is going to walk up stairs\r\n while standing on his \r\n hands. Oh my! That is \r\n truly unbelievable! \r\n\r\n Until next year, then...\BRK";
+    const MESSAGE_3 = "Special New Year Show\r\n\r\n\r\n\"For the 4th of Spring, \r\n we're going to have all of\r\n our guests go swimming in\r\n an ice-cold lake!\r\n\r\n At least, it was our plan,\r\n but all of the guests seem \r\n to have run away at the \r\n last minute. \r\n Until next year...\"\BRK";
+    const MESSAGE_4 = "Special New Year Show\r\n\r\n\r\n\"For the 5th of Spring, \r\n we're going to show you \r\n a couple dishes for you to\r\n try out in the coming year.\r\n\r\n The first is my personal \r\n favorite, Strawberry Jam:\r\n\r\n \x81\x99Ingredients: Strawberry\r\n \x81\x99Utensils:     Pot\r\n \x81\x99Seasoning: Sugar\r\n\r\n The next recipe is Jam Bun,\r\n which uses the Jam we \r\n just taught you. \r\n \x81\x99Ingredients: Strawberry \r\n                Jam\r\n                Bread\r\n \r\n That's it! \r\n Give these recipes a try \r\n yourself at home!\r\n\r\n Until next year, then...\BRK";
+    const MESSAGE_5 = "That's impossible...\r\n\BRK";
+    const MESSAGE_6 = "New Year Snbowball Fight\r\n\r\n\r\n\"This is a snowball fight \r\n between the two teams.\r\n\r\n Oh! Mr. Z lands a big one \r\n on Mr. X...\r\n\r\n There goes Ms. X, \r\n aiming right for Mr. \r\n Y's nose!\r\n\r\n Mr. X is back for revenge!\r\n Hey...was there a rock \r\n inside that one!?\r\n\r\n Let's play fair now, \r\n everybody!...\r\n\r\n\r\n Until next year, then...\BRK";
+    const MESSAGE_7 = "Ringing in the New Year:\r\nGong...gong...gong...\r\nGong...gong...gong...\r\nGong...gong...gong...\r\nGong...gong...gong...\r\nGong...gong...gong...\r\nGong...gong...gong...\r\nGong...gong...gong...\r\nGong...gong...gong...\r\nGong...gong...gong...\r\nGong...gong...gong...\r\nGong...gong...gong...\r\nGong...gong...gong...\r\nGong...gong...gong...\BRK";
+    
+    var var_0;
+    
+    switch (Check_Flag(1)) {
+        case 0:
+            Set_TV_Screen_Graphic(0xF);
+            switch (Check_Flag(2)) {
+                case 1:
+                    var_0 = Print_TV_Message(0);
+                    break;
+                case 2:
+                    var_0 = Print_TV_Message(1);
+                    break;
+                case 3:
+                    var_0 = Print_TV_Message(2);
+                    break;
+                case 4:
+                    var_0 = Print_TV_Message(3);
+                    break;
+                case 5:
+                    var_0 = Print_TV_Message(4);
+                    break;
+                case 6:
+                case 7:
+                case 8:
+                case 9:
+                case 0xA:
+                case 0xB:
+                case 0xC:
+                case 0xD:
+                case 0xE:
+                case 0xF:
+                case 0x10:
+                case 0x11:
+                case 0x12:
+                case 0x13:
+                case 0x14:
+                case 0x15:
+                case 0x16:
+                case 0x17:
+                case 0x18:
+                case 0x19:
+                case 0x1A:
+                case 0x1B:
+                case 0x1C:
+                case 0x1D:
+                case 0x1E:
+                    var_0 = Print_TV_Message(5);
+                    break;
+            }
+            break;
+        case 1:
+        case 2:
+            var_0 = Print_TV_Message(5);
+            break;
+        case 3:
+            Set_TV_Screen_Graphic(0x1A);
+            switch (Check_Flag(2)) {
+                case 1:
+                case 2:
+                case 3:
+                case 4:
+                case 5:
+                case 6:
+                case 7:
+                case 8:
+                case 9:
+                case 0xA:
+                case 0xB:
+                case 0xC:
+                case 0xD:
+                case 0xE:
+                case 0xF:
+                case 0x10:
+                case 0x11:
+                case 0x12:
+                case 0x13:
+                case 0x14:
+                case 0x15:
+                case 0x16:
+                case 0x17:
+                case 0x18:
+                case 0x19:
+                case 0x1A:
+                case 0x1B:
+                case 0x1C:
+                    var_0 = Print_TV_Message(5);
+                    break;
+                case 0x1D:
+                    var_0 = Print_TV_Message(6);
+                    break;
+                case 0x1E:
+                    var_0 = Print_TV_Message(7);
+                    break;
+            }
+            break;
+    }
+    Close_TV_Interface();
+    TalkClose();
+    switch (var_0) {
+        case 0:
+        case 1:
+        case 2:
+        case 3:
+            Set_Flag(0x244, var_0);
+            Execute_Script(356);
+            break;
+        case 4:
+        case 5:
+            break;
+    }
+    exit;
+}

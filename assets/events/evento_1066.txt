@@ -1,0 +1,93 @@
+// Script 1066
+#include "Fomt_Lib.src"
+
+script 1066 Event_1066 {
+    const MESSAGE_0 = "Let's eat! \BRK";
+    const MESSAGE_1 = "It looks like we made too \r\nmuch this year again! \BRK\WAIT_CLICKLet's each take some home. \r\nHelp yourself, \r\n\xFF!. \BRK";
+    const MESSAGE_2 = "Looks like your Rucksack is\r\nfull, \xFF!. \r\nToo bad! \BRK";
+    const MESSAGE_3 = "Now those were good! \r\nI just wish I could have\r\ntaken some home!...\BRK";
+    const MESSAGE_4 = "Now those were good! \r\nI can't wait to eat some\r\nmore at home! \BRK";
+    
+    Spawn_Item_On_Grid(0, ((0x14 * 8) + 8), ((0x12 * 8) + 8), 2, Get_Item_Sprite_ID(0x97));
+    Spawn_Item_On_Grid(1, ((0x17 * 8) + 8), ((0x12 * 8) + 8), 2, Get_Item_Sprite_ID(0x97));
+    Spawn_Item_On_Grid(2, ((0x1A * 8) + 8), ((0x12 * 8) + 8), 2, Get_Item_Sprite_ID(0x97));
+    Spawn_Item_On_Grid(3, ((0x1D * 8) + 8), ((0x12 * 8) + 8), 2, Get_Item_Sprite_ID(0x97));
+    Spawn_Item_On_Grid(4, ((0x20 * 8) + 8), ((0x12 * 8) + 8), 2, Get_Item_Sprite_ID(0x97));
+    Spawn_Item_On_Grid(5, ((0x23 * 8) + 8), ((0x12 * 8) + 8), 2, Get_Item_Sprite_ID(0x97));
+    Fade_In(2, 1);
+    if ((Inventory_Check() == 1)) {
+        PlaySong(0, 0x6A);
+        Give_Food(0x97);
+        TalkOpen();
+        Set_Portrait(0x75);
+        Set_Name_Window(0xD);
+        TalkMessage(0);
+        TalkClose();
+        Remove_Held_Item();
+        PlaySong(0, 0x65);
+        SetEntityAnim(0, 0x4E);
+        Make_Delay(0x1E);
+        SetEntityAnim(0, 0x192);
+    } else {
+        TalkOpen();
+        Set_Portrait(0x75);
+        Set_Name_Window(0xD);
+        TalkMessage(0);
+        TalkClose();
+    }
+    Fade_Out(2, 1);
+    Fade_In(2, 1);
+    TalkOpen();
+    Set_Portrait(0x75);
+    Set_Name_Window(0xD);
+    TalkMessage(1);
+    TalkClose();
+    if (((Inventory_Check() == 0) && (Func056() == -1))) {
+        SetEntityAnim(0, 0x126);
+        Make_Delay(0x3C);
+        SetEntityAnim(0, 0x192);
+        TalkOpen();
+        Set_Portrait(0x75);
+        Set_Name_Window(0xD);
+        TalkMessage(2);
+        TalkClose();
+        Make_Delay(0x14);
+        Fade_Out(2, 1);
+        TalkOpen();
+        TalkMessage(3);
+        TalkClose();
+    } else {
+        SetEntityAnim(0, 0x1FE);
+        Make_Delay(0x14);
+        PlaySong(0, 0x6A);
+        Give_Food(0x97);
+        Add_Item_To_Bag(0x97, 8);
+        Make_Delay(0x14);
+        Fade_Out(2, 1);
+        TalkOpen();
+        TalkMessage(4);
+        TalkClose();
+    }
+    Add_Festival_Friendship_Bonus(0xD);
+    Add_Festival_Friendship_Bonus(0x19);
+    Add_Festival_Friendship_Bonus(6);
+    Add_Festival_Friendship_Bonus(0x15);
+    Add_Festival_Friendship_Bonus(5);
+    Add_Festival_Friendship_Bonus(0x10);
+    Add_Festival_Friendship_Bonus(0x18);
+    Add_Festival_Friendship_Bonus(8);
+    Add_Festival_Friendship_Bonus(9);
+    Add_Festival_Friendship_Bonus(0x1B);
+    Add_Festival_Friendship_Bonus(0x1C);
+    Add_Festival_Friendship_Bonus(0x16);
+    Despawn_Map_Item(0);
+    Despawn_Map_Item(1);
+    Despawn_Map_Item(2);
+    Despawn_Map_Item(3);
+    Despawn_Map_Item(4);
+    Despawn_Map_Item(5);
+    Refresh_Map_Entities();
+    Set_Flag(0x180, 2);
+    Execute_Script(988);
+    exit;
+}

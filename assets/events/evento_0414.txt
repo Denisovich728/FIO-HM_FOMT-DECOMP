@@ -1,0 +1,11 @@
+// Script 414
+#include "Fomt_Lib.src"
+
+script 414 Event_0414 {
+    const MESSAGE_0 = "Shelf\BRK";
+    
+    TalkOpen();
+    Print_Message(0);
+    TalkClose();
+    exit;
+}

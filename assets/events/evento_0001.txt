@@ -1,0 +1,22 @@
+// Script 1
+#include "Fomt_Lib.src"
+
+script 1 Event_0001 {
+    const MESSAGE_0 = "\xFF%is \r\nprengant!\BRK";
+    
+    var var_0;
+    var var_1;
+    
+    var_0 = Get_Targeted_Animal_Index();
+    var_1 = (0x36 + var_0);
+    if (Func114(var_0)) {
+        GetAnimalName(0, 1, var_0);
+    } else {
+        GetAnimalName(0, 2, var_0);
+    }
+    TalkOpen();
+    TalkMessage(0);
+    TalkClose();
+    Show_Emote(var_1, 1, 0);
+    exit;
+}

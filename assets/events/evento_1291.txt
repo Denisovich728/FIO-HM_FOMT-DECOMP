@@ -1,0 +1,95 @@
+// Script 1291
+#include "Fomt_Lib.src"
+
+script 1291 Event_1291 {
+    const MESSAGE_0 = "Today is the Pumpkin \r\nFestival. \BRK\WAIT_CLICKYou have to give candy to\r\nchildren. So...give some\r\nto me!\BRK";
+    const MESSAGE_1 = "Hurry up and give me some!\BRK";
+    const MESSAGE_2 = "Thanks a lot! \r\nBye now. \BRK";
+    const MESSAGE_3 = "You can't fool me! \r\nThis isn't candy!\BRK";
+    
+    var var_0;
+    var var_1;
+    
+    Set_Flag(0x1B3, 1);
+    switch (Compare_Gift()) {
+        case 0:
+            switch (Search_Food_Gift_Address()) {
+                case 0x45:
+                case 0x65:
+                case 0x68:
+                case 0x69:
+                case 0x71:
+                case 0x73:
+                case 0x75:
+                case 0x8B:
+                case 0x8C:
+                case 0x8E:
+                case 0x8F:
+                case 0x90:
+                case 0x94:
+                case 0x96:
+                case 0x97:
+                case 0x98:
+                case 0xA7:
+                case 0xA9:
+                    var_0 = 0x10;
+                    break;
+            }
+            break;
+    }
+    var_1 = GetEntityFacing(0x10);
+    SetEntityFacing(0x10, GetOppositeFacing(GetEntityFacing(0)));
+    if ((Check_If_Single(0x10) == 0)) {
+        Free_Event_Entity(0x10);
+    }
+    if ((Has_NPC_Talked_Today(0x10) == 0)) {
+        TalkOpen();
+        Set_Name_Window(0x10);
+        Set_Portrait(0x81);
+        TalkMessage(0);
+        TalkClose();
+        Set_Flag(0x1B3, 0);
+    } else {
+        TalkOpen();
+        if (Inventory_Check()) {
+            Set_Name_Window(0x10);
+            Set_Portrait(0x80);
+            TalkMessage(1);
+            TalkClose();
+            Set_Flag(0x1B3, 0);
+            goto LBL_000C;
+        }
+        if ((var_0 == 0x10)) {
+            Give_Friendship_Points(0x10, 0x14);
+            Set_Name_Window(0x10);
+            Set_Portrait(0x80);
+            TalkMessage(2);
+            TalkClose();
+            Drop_Held_Item();
+            if ((GetEntityX(0x10) != 0x154)) {
+                SetEntityFacing(0x10, "Right");
+                SetEntityAnim(0x10, 0x8BC);
+                Set_Vector_X(0x10, 0x154, 1);
+                Execute_Movement(0x10);
+                SetEntityAnim(0x10, 0x8B8);
+            }
+            SetEntityFacing(0x10, "Up");
+            SetEntityAnim(0x10, 0x8BC);
+            Set_Vector_Y(0x10, 0, 1);
+            Execute_Movement(0x10);
+            SetEntityAnim(0x10, 0x8B8);
+            Hide_Entity(0x10);
+            Set_Flag(0x1B3, 2);
+            Finalize_Event();
+            goto LBL_000C;
+        }
+        Set_Name_Window(0x10);
+        Set_Portrait(0x82);
+        TalkMessage(3);
+        TalkClose();
+        Set_Flag(0x1B3, 0);
+    }
+    SetEntityFacing(0x10, var_1);
+    Free_Event_Entity(0x10);
+    exit;
+}

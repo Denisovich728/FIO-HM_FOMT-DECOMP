@@ -1,0 +1,40 @@
+// Script 1216
+#include "Fomt_Lib.src"
+
+script 1216 Event_1216 {
+    const MESSAGE_0 = "Hi, \xFF!. \r\nTomorrow at 10AM is the\r\nHarvest Festival. \BRK\WAIT_CLICKEveryone brings something \r\nto add to the big pot. \BRK\WAIT_CLICKBring something good, now!\r\nSee you there. \BRK";
+    
+    Warp_Player(2, 0xE4, 0x78);
+    PlayBGM(1, 3);
+    SetEntityPosition(0, 0xE4, 0x78, "Down");
+    if (Inventory_Check()) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    SetEntityPosition(0xD, 0xE4, 0x91, "Up");
+    SetEntityAnim(0xD, 0x85F);
+    Fade_In(2, 1);
+    Set_Flag(0x1A3, 1);
+    TalkOpen();
+    Set_Portrait(0x75);
+    Set_Name_Window(0xD);
+    TalkMessage(0);
+    TalkClose();
+    Free_Event_Entity(0xD);
+    Set_Flag(0x1A3, 2);
+    SetEntityFacing(0xD, "Right");
+    SetEntityAnim(0xD, 0x863);
+    Set_Vector_X(0xD, 0x13F, 1);
+    Execute_Movement(0xD);
+    SetEntityAnim(0xD, 0x85F);
+    SetEntityFacing(0xD, "Up");
+    SetEntityAnim(0xD, 0x863);
+    SetEntityFacing(0, "Right");
+    Set_Vector_Y(0xD, 0, 1);
+    Execute_Movement(0xD);
+    SetEntityAnim(0xD, 0x85F);
+    Hide_Entity(0xD);
+    exit;
+    exit;
+}

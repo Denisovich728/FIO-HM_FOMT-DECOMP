@@ -1,0 +1,31 @@
+// Script 961
+#include "Fomt_Lib.src"
+
+script 961 Event_0961 {
+    const MESSAGE_0 = "Elli's so pretty! \BRK";
+    const MESSAGE_1 = "I bet he'll be surprised\r\nwhen he eats Elli's cooking!\BRK";
+    
+    if ((Check_If_Single(0x10) == 0)) {
+        Free_Event_Entity(0x10);
+    }
+    if ((Has_NPC_Talked_Today(0x10) == 0)) {
+        SetEntityFacing(0x10, GetOppositeFacing(GetEntityFacing(0)));
+        TalkOpen();
+        Set_Portrait(0x80);
+        Set_Name_Window(0x10);
+        TalkMessage(0);
+        TalkClose();
+        SetEntityFacing(0x10, "Left");
+        Free_Event_Entity(0x10);
+    } else {
+        SetEntityFacing(0x10, GetOppositeFacing(GetEntityFacing(0)));
+        TalkOpen();
+        Set_Portrait(0x81);
+        Set_Name_Window(0x10);
+        TalkMessage(1);
+        TalkClose();
+        SetEntityFacing(0x10, "Left");
+        Free_Event_Entity(0x10);
+    }
+    exit;
+}

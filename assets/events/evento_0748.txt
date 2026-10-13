@@ -1,0 +1,18 @@
+// Script 748
+#include "Fomt_Lib.src"
+
+script 748 Event_0748 {
+    const MESSAGE_0 = "I miss Grandpa...\BRK";
+    
+    if ((Check_Flag(0x111) == 1)) {
+        SetEntityFacing(0x10, GetOppositeFacing(GetEntityFacing(0)));
+        TalkOpen();
+        Set_Portrait(0x83);
+        Set_Name_Window(0x10);
+        TalkMessage(0);
+        TalkClose();
+        Free_Event_Entity(0x10);
+        SetEntityFacing(0x10, "Left");
+    }
+    exit;
+}

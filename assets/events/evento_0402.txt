@@ -1,0 +1,11 @@
+// Script 402
+#include "Fomt_Lib.src"
+
+script 402 Event_0402 {
+    const MESSAGE_0 = "Square's Bench\BRK";
+    
+    TalkOpen();
+    Print_Message(0);
+    TalkClose();
+    exit;
+}

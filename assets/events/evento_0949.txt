@@ -1,0 +1,16 @@
+// Script 949
+#include "Fomt_Lib.src"
+
+script 949 Event_0949 {
+    const MESSAGE_0 = "The Doctor is a very \r\nkind man, you know. \BRK";
+    
+    SetEntityFacing(0x10, GetOppositeFacing(GetEntityFacing(0)));
+    TalkOpen();
+    Set_Portrait(0x80);
+    Set_Name_Window(0x10);
+    TalkMessage(0);
+    TalkClose();
+    SetEntityFacing(0x10, "Left");
+    Free_Event_Entity(0x10);
+    exit;
+}

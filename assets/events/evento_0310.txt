@@ -1,0 +1,9 @@
+// Script 310
+#include "Fomt_Lib.src"
+
+script 310 Event_0310 {
+    Fade_Out(3, 1);
+    Show_Document_UI(2);
+    Fade_In(3, 1);
+    exit;
+}

@@ -1,0 +1,11 @@
+// Script 129
+#include "Fomt_Lib.src"
+
+script 129 Event_0129 {
+    const MESSAGE_0 = "Painting of a flower\BRK";
+    
+    TalkOpen();
+    Print_Message(0);
+    TalkClose();
+    exit;
+}

@@ -1,0 +1,38 @@
+// Script 1186
+#include "Fomt_Lib.src"
+
+script 1186 Event_1186 {
+    const MESSAGE_0 = "I'm sorry you lost.\r\nI bet you could win next\r\nyear, though!\BRK";
+    const MESSAGE_1 = "Congratulations on winning!\BRK";
+    const MESSAGE_2 = "Too bad. I thought\r\nyou'd win for sure. \BRK";
+    
+    if ((Check_If_Single(0x16) == 0)) {
+        Free_Event_Entity(0x16);
+    }
+    SetEntityFacing(0x16, GetOppositeFacing(GetEntityFacing(0)));
+    if ((Check_Flag(0x19B) == 0)) {
+        TalkOpen();
+        Set_Portrait(0x95);
+        Set_Name_Window(0x16);
+        TalkMessage(0);
+    } else {
+        if ((Check_Flag(0x19D) == 1)) {
+            TalkOpen();
+            Set_Portrait(0x96);
+            Set_Name_Window(0x16);
+            TalkMessage(1);
+            goto LBL_0006;
+        }
+        TalkOpen();
+        Set_Portrait(0x95);
+        Set_Name_Window(0x16);
+        TalkMessage(2);
+    }
+    TalkClose();
+    if ((Has_Spoken_To_NPC_Today(0x16) == 0)) {
+        Give_Friendship_Points(0x16, 5);
+    }
+    Free_Event_Entity(0x16);
+    SetEntityFacing(0x16, "Down");
+    exit;
+}

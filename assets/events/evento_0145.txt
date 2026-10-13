@@ -1,0 +1,11 @@
+// Script 145
+#include "Fomt_Lib.src"
+
+script 145 Event_0145 {
+    const MESSAGE_0 = "Barrel\BRK";
+    
+    TalkOpen();
+    Print_Message(0);
+    TalkClose();
+    exit;
+}

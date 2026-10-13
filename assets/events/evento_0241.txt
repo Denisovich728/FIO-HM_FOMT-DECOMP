@@ -1,0 +1,11 @@
+// Script 241
+#include "Fomt_Lib.src"
+
+script 241 Event_0241 {
+    const MESSAGE_0 = "Bed\BRK";
+    
+    TalkOpen();
+    Print_Message(0);
+    TalkClose();
+    exit;
+}

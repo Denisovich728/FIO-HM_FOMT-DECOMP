@@ -1,0 +1,155 @@
+// Script 817
+#include "Fomt_Lib.src"
+
+script 817 Event_0817 {
+    const MESSAGE_0 = ".........\BRK\WAIT_CLICK....\BRK\WAIT_CLICK...\BRK";
+    
+    var var_0;
+    
+    PlaySong(0, 0x6E);
+    Make_Delay(0xA);
+    PlaySong(0, 0xB8);
+    Show_Emote(0, 2, 0);
+    SetEntityAnim(0, 0x72);
+    Make_Delay(0x14);
+    Tick_Overnight_Engine(0, 0);
+    Tick_Overnight_Engine(0, 0);
+    Fade_Out(0, 1);
+    SetEntityAnim(0, 0x192);
+    switch (GetEntityFacing(0)) {
+        case 1:
+            SetEntityPosition(0x20, GetEntityX(0), (GetEntityY(0) - 0x34), "Down");
+            break;
+        case 0:
+            SetEntityPosition(0x20, GetEntityX(0), (GetEntityY(0) + 0x34), "Up");
+            break;
+        case 2:
+            SetEntityPosition(0x20, (GetEntityX(0) - 0x34), GetEntityY(0), "Right");
+            break;
+        case 3:
+            SetEntityPosition(0x20, (GetEntityX(0) + 0x34), GetEntityY(0), "Left");
+            break;
+    }
+    SetEntityAnim(0x20, 0x7FE);
+    Fade_In(0, 1);
+    TalkOpen();
+    Set_Name_Window(0x20);
+    Set_Portrait(0x62);
+    TalkMessage(0);
+    TalkClose();
+    var_0 = 0;
+    do {
+        switch (GetEntityFacing(0)) {
+            case 1:
+                Set_Vector_Y(0x20, (GetEntityY(0x20) - 1), 1);
+                Execute_Movement(0x20);
+                Hide_Entity(0x20);
+                SetEntityPosition(0x20, GetEntityX(0), ((GetEntityY(0) - 0x34) - var_0), "Down");
+                SetEntityAnim(0x20, 0x802);
+                switch ((var_0 % 8)) {
+                    case 0:
+                    case 1:
+                        SetEntityFacing(0x20, "Down");
+                        break;
+                    case 2:
+                    case 3:
+                        SetEntityFacing(0x20, "Left");
+                        break;
+                    case 4:
+                    case 5:
+                        SetEntityFacing(0x20, "Up");
+                        break;
+                    case 6:
+                    case 7:
+                        SetEntityFacing(0x20, "Right");
+                        break;
+                }
+                break;
+            case 0:
+                Set_Vector_Y(0x20, (GetEntityY(0x20) + 1), 1);
+                Execute_Movement(0x20);
+                Hide_Entity(0x20);
+                SetEntityPosition(0x20, GetEntityX(0), ((GetEntityY(0) + 0x34) + var_0), "Down");
+                SetEntityAnim(0x20, 0x802);
+                switch ((var_0 % 8)) {
+                    case 0:
+                    case 1:
+                        SetEntityFacing(0x20, "Down");
+                        break;
+                    case 2:
+                    case 3:
+                        SetEntityFacing(0x20, "Left");
+                        break;
+                    case 4:
+                    case 5:
+                        SetEntityFacing(0x20, "Up");
+                        break;
+                    case 6:
+                    case 7:
+                        SetEntityFacing(0x20, "Right");
+                        break;
+                }
+                break;
+            case 2:
+                Set_Vector_X(0x20, (GetEntityX(0x20) - 1), 1);
+                Execute_Movement(0x20);
+                Hide_Entity(0x20);
+                SetEntityPosition(0x20, ((GetEntityX(0) - 0x34) - var_0), GetEntityY(0), "Down");
+                SetEntityAnim(0x20, 0x802);
+                switch ((var_0 % 8)) {
+                    case 0:
+                    case 1:
+                        SetEntityFacing(0x20, "Down");
+                        break;
+                    case 2:
+                    case 3:
+                        SetEntityFacing(0x20, "Left");
+                        break;
+                    case 4:
+                    case 5:
+                        SetEntityFacing(0x20, "Up");
+                        break;
+                    case 6:
+                    case 7:
+                        SetEntityFacing(0x20, "Right");
+                        break;
+                }
+                break;
+            case 3:
+                Set_Vector_X(0x20, (GetEntityX(0x20) + 1), 1);
+                Execute_Movement(0x20);
+                Hide_Entity(0x20);
+                SetEntityPosition(0x20, ((GetEntityX(0) + 0x34) + var_0), GetEntityY(0), "Down");
+                SetEntityAnim(0x20, 0x802);
+                switch ((var_0 % 8)) {
+                    case 0:
+                    case 1:
+                        SetEntityFacing(0x20, "Down");
+                        break;
+                    case 2:
+                    case 3:
+                        SetEntityFacing(0x20, "Left");
+                        break;
+                    case 4:
+                    case 5:
+                        SetEntityFacing(0x20, "Up");
+                        break;
+                    case 6:
+                    case 7:
+                        SetEntityFacing(0x20, "Right");
+                        break;
+                }
+                break;
+        }
+        Make_Delay(3);
+        var_0 = (var_0 + 1);
+    } while ((var_0 <= 0x32));
+    Make_Delay(0x3C);
+    Hide_Entity(0x20);
+    PlaySong(0, 0x92);
+    Make_Delay(0x3C);
+    Show_Emote(0, 6, 0);
+    Make_Delay(0x64);
+    Set_Flag(0x14B, 2);
+    exit;
+}

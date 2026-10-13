@@ -1,0 +1,38 @@
+// Script 1160
+#include "Fomt_Lib.src"
+
+script 1160 Event_1160 {
+    const MESSAGE_0 = "Hmmm, that was a great\r\nmatch...\BRK";
+    const MESSAGE_1 = "Good job.\r\nIt was fun to watch.\BRK";
+    const MESSAGE_2 = "Is your chicken OK?\BRK";
+    
+    if ((Check_If_Single(4) == 0)) {
+        Free_Event_Entity(4);
+    }
+    SetEntityFacing(4, GetOppositeFacing(GetEntityFacing(0)));
+    if ((Check_Flag(0x197) == 0)) {
+        TalkOpen();
+        Set_Portrait(0xB4);
+        Set_Name_Window(4);
+        TalkMessage(0);
+    } else {
+        if ((Check_Flag(0x199) == 1)) {
+            TalkOpen();
+            Set_Portrait(0xB5);
+            Set_Name_Window(4);
+            TalkMessage(1);
+            goto LBL_0006;
+        }
+        TalkOpen();
+        Set_Portrait(0xB4);
+        Set_Name_Window(4);
+        TalkMessage(2);
+    }
+    TalkClose();
+    if ((Has_Spoken_To_NPC_Today(4) == 0)) {
+        Give_Friendship_Points(4, 5);
+    }
+    Free_Event_Entity(4);
+    SetEntityFacing(4, "Right");
+    exit;
+}

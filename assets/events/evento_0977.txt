@@ -1,0 +1,41 @@
+// Script 977
+#include "Fomt_Lib.src"
+
+script 977 Event_0977 {
+    var var_0;
+    var var_1;
+    var var_2;
+    var var_3;
+    var var_4;
+    var var_5;
+    var var_6;
+    
+    var_0 = Check_Flag(1);
+    var_1 = Check_Flag(2);
+    var_3 = Check_Flag(3);
+    var_2 = Check_Flag(5);
+    var_4 = Check_Flag(6);
+    var_5 = Check_Flag(0);
+    var_6 = GetEntityLocation(0);
+    Fade_Out(2, 1);
+    if (((0x34 <= var_6) && (var_6 < (0x34 + 0x100)))) {
+        Warp_Player(0, 0x384, 0x15E);
+        SetEntityPosition(0, 0x384, 0x15E, 0);
+        if ((((((((((((((((((Check_Flag(0x71) == 0) && !(((((((((((((((var_0 == 0) && (var_1 == 1)) || ((var_0 == 0) && (var_1 == 0x12))) || ((var_0 == 0) && (var_1 == 0x16))) || ((var_0 == 1) && (var_1 == 1))) || ((var_0 == 1) && (var_1 == 7))) || ((var_0 == 1) && (var_1 == 0x18))) || ((var_0 == 1) && (var_1 == 0x14))) || ((var_0 == 2) && (var_1 == 3))) || ((var_0 == 2) && (var_1 == 9))) || ((var_0 == 2) && (var_1 == 0xD))) || ((var_0 == 2) && (var_1 == 0x12))) || ((var_0 == 2) && (var_1 == 0x15))) || ((var_0 == 3) && (var_1 == 0x18))) || ((var_0 == 3) && (var_1 == 0x1E)))) && !(((var_2 == 0) || (var_2 == 1)) || (var_2 == 2))) && (var_4 == 0)) && ((var_3 >= 0xB) && (var_3 < 0x12))) && (Check_Flag(0x4C) == 0)) && (Check_Flag(0x75) == 0)) && (Check_Flag(0x76) == 0)) && (Check_Flag(0x77) == 0)) && (Check_Flag(0x4B) == 0)) && (GetEntityLocation(3) != 0)) && (GetEntityLocation(0x19) != 0)) && (GetEntityLocation(4) != 0)) && (GetEntityLocation(5) != 0)) && (Chek_Love_Points(0x13) < 0x2710)) && (Check_If_Single(0x13) == 1)) && (Check_If_Single(2) == 1))) {
+            Set_Flag(0x71, 1);
+            Execute_Script(0x369);
+        } else {
+            if ((((((((((((((((((Check_Flag(0x72) == 2) && (Check_Flag(0x73) == 0)) && (((((((((((!((var_0 == 0) && (var_1 == 1)) || ((var_0 == 0) && (var_1 == 0x12))) || ((var_0 == 0) && (var_1 == 0x16))) || ((var_0 == 1) && (var_1 == 1))) || ((var_0 == 1) && (var_1 == 7))) || ((var_0 == 1) && (var_1 == 0x14))) || ((var_0 == 2) && (var_1 == 3))) || ((var_0 == 2) && (var_1 == 9))) || ((var_0 == 2) && (var_1 == 0x12))) || ((var_0 == 2) && (var_1 == 0x15))) || ((var_0 == 3) && (var_1 == 0x18))) || ((var_0 == 3) && (var_1 == 0x1E)))) && (var_5 >= 2)) && (var_4 == 0)) && ((var_2 == 3) || (var_2 == 5))) && ((var_3 >= 0xB) && (var_3 < 0x12))) && (Check_Flag(0x4C) == 0)) && (Check_Flag(0x75) == 0)) && (Check_Flag(0x76) == 0)) && (Check_Flag(0x77) == 0)) && (Check_Flag(0x4B) == 0)) && (GetEntityLocation(3) != 0)) && (GetEntityLocation(0x19) != 0)) && (GetEntityLocation(4) != 0)) && (GetEntityLocation(5) != 0)) && (Chek_Love_Points(0x13) < 0x9C40))) {
+                Set_Flag(0x73, 1);
+                Execute_Script(0x36B);
+            }
+        }
+    } else {
+        if (((0x134 <= var_6) && (var_6 < (0x134 + 0x100)))) {
+            Warp_Player(0, 0x1A8, 0x1C0);
+            SetEntityPosition(0, 0x1A8, 0x1C0, 0);
+        }
+    }
+    Fade_In(2, 1);
+    exit;
+}

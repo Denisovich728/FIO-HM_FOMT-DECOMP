@@ -1,0 +1,30 @@
+// Script 1249
+#include "Fomt_Lib.src"
+
+script 1249 Event_1249 {
+    const MESSAGE_0 = "These races never fail to\r\nget me excited!\BRK";
+    const MESSAGE_1 = "Good luck. \r\nI'll be rooting for you!\BRK";
+    
+    if ((Check_If_Single(2) == 0)) {
+        Free_Event_Entity(2);
+    }
+    SetEntityFacing(2, GetOppositeFacing(GetEntityFacing(0)));
+    if ((Check_Flag(0x1AB) == 0)) {
+        TalkOpen();
+        Set_Portrait(1);
+        Set_Name_Window(2);
+        TalkMessage(0);
+    } else {
+        TalkOpen();
+        Set_Portrait(0);
+        Set_Name_Window(2);
+        TalkMessage(1);
+    }
+    TalkClose();
+    if ((Has_Spoken_To_NPC_Today(2) == 0)) {
+        Give_Friendship_Points(2, 5);
+    }
+    Free_Event_Entity(2);
+    SetEntityFacing(2, "Left");
+    exit;
+}

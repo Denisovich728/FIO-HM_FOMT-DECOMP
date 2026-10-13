@@ -1,0 +1,76 @@
+// Script 143
+#include "Fomt_Lib.src"
+
+script 143 Event_0143 {
+    const MESSAGE_0 = "\xFF!,\r\nYou can't go outside now.\BRK";
+    
+    var var_0;
+    
+    var_0 = 1;
+    if ((GetEntityFacing(0) == 0)) {
+        if ((Check_Flag(0x83) == 1)) {
+            Set_Flag(0x83, 2);
+            Add_Festival_Friendship_Bonus(0x17);
+            Add_Festival_Friendship_Bonus(0x16);
+            Refresh_Map_Entities();
+        } else {
+            if ((Check_Flag(0x77) == 1)) {
+                Refresh_Map_Entities();
+                Set_Flag(0x79, 1);
+                Set_Flag(0x77, 0);
+            } else {
+                if ((Check_Flag(0x7F) == 1)) {
+                    Refresh_Map_Entities();
+                    Set_Flag(0x81, 1);
+                    Set_Flag(0x7F, 0);
+                } else {
+                    if ((Check_Flag(0x87) == 1)) {
+                        Refresh_Map_Entities();
+                        Set_Flag(0x89, 1);
+                        Set_Flag(0x87, 0);
+                    } else {
+                        if ((Check_Flag(0x8F) == 1)) {
+                            Refresh_Map_Entities();
+                            Set_Flag(0x91, 1);
+                            Set_Flag(0x8F, 0);
+                        } else {
+                            if ((Check_Flag(0x97) == 1)) {
+                                Refresh_Map_Entities();
+                                Set_Flag(0x99, 1);
+                                Set_Flag(0x97, 0);
+                            } else {
+                                if ((Check_Flag(0x1A2) == 1)) {
+                                    SetEntityFacing(0x16, "Down");
+                                    TalkOpen();
+                                    Set_Portrait(0x97);
+                                    Set_Name_Window(0x16);
+                                    TalkMessage(0);
+                                    TalkClose();
+                                    var_0 = 0;
+                                } else {
+                                    if ((Check_Flag(0x120) == 1)) {
+                                        Set_Flag(0x120, 2);
+                                        Add_Festival_Friendship_Bonus(0x16);
+                                        Refresh_Map_Entities();
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        if (var_0) {
+            Fade_Out(2, 1);
+            Warp_Player(5, 0x4D0, 0xA8);
+            SetEntityPosition(0, 0x4D0, 0xA8, "Down");
+            PlaySong(0, 0xCD);
+            Fade_In(2, 1);
+        } else {
+            SetEntityFacing(0, "Up");
+            Set_Vector_Y(0, 0x124, 1);
+            Execute_Movement(0);
+        }
+    }
+    exit;
+}

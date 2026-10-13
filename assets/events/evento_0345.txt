@@ -1,0 +1,9 @@
+// Script 345
+#include "Fomt_Lib.src"
+
+script 345 Event_0345 {
+    Fade_Out(3, 1);
+    Show_Profile_UI(0);
+    Fade_In(3, 1);
+    exit;
+}

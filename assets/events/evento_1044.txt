@@ -1,0 +1,521 @@
+// Script 1044
+#include "Fomt_Lib.src"
+
+script 1044 Event_1044 {
+    const MESSAGE_0 = "Life on the Farm\r\n                   BEGINNER\r\n                           \r\n\"Hey big bro!\"\r\n\"What is it?\"\r\n\"It's about what you were \r\n telling me yesterday...\"\r\n\"You mean about the \r\n Blue Feather?\"\r\n\"What happens if a man \r\n gives it to another man?\"\r\n\"Well, there are many \r\n kinds of love...\"\r\n\"..........\"\r\n\"Who do you want to get \r\n one from, little sis?\"\r\n\"From you, of course!\"\r\n\"Aww...\"\BRK";
+    const MESSAGE_1 = "Life on the Farm\r\n                   BEGINNER\r\n                           \r\n\"Hey big bro!\"\r\n\"What is it?\"\r\n\"I planted Tomato Seeds, \r\n but nothing is happening! \r\n Why not?\"\r\n\"Did you till the soil \r\n before you planted?\"\r\n\"Umm...No.\"\r\n\"Well, that's why! You have\r\n to till the soil with your \r\n Hoe before planting. You \r\n also have to clear the \r\n field before planting if \r\n there is something on it.\r\n You can cut grass with the\r\n Sickle or pull it out.\r\n You can use a Hammer to \r\n break Stones or move them\r\n by hand. \r\n Finally, you can chop up \r\n Branches with your Axe or \r\nmove them with your hands.\"\r\n\"Now I see!\"\BRK";
+    const MESSAGE_2 = "Life on the Farm\r\n                   BEGINNER\r\n                           \r\n\"Hey big bro!\"\r\n\"What is it?\"\r\n\"I tilled the earth like \r\n you said, then planted, but\r\n the next day the Seeds\r\n were gone! Why?\"\r\n\"Did you plant the right \r\n Seeds? If you plant Fall or\r\n Summer Seeds in Spring, \r\nthey won't grow, you know.\"\r\n\"Really...Now that you  \r\n remind me, Tomatoes only\r\n grow in Summer.\"\r\n\"That's why, silly!\"\BRK";
+    const MESSAGE_3 = "Life on the Farm\r\n                   BEGINNER\r\n                           \r\n\"Hey big bro!\"\r\n\"What is it?\"\r\n\"I tilled my field, then \r\n planted the right Seeds\r\n for the season, but they \r\n still won't grow!\"\r\n\"Have you watered them with\r\n the Watering Can?\"\r\n\"You mean I have to \r\n water them, too?!\"\r\n\"Of course! Nothing will\r\n grow without water. \r\n Except farm grass, of \r\n course.\"\r\n\"So that's what the \r\n Watering Can was for...\"\BRK";
+    const MESSAGE_4 = "Life on the Farm\r\n                   BEGINNER\r\n                           \r\n\"Hey big bro!\"\r\n\"What is it?\"\r\n\"I try using the Watering \r\n Can, but no water comes \r\n out! Why?\"\r\n\"Well, first you have to \r\n fill it up, you know.\"\r\n\"How do you do that?\"\r\n\"First you equip it, then\r\n go to water - like a pond, \r\n river, or lake - and use \r\n it. That's all.\"\r\n\"No one ever told me I had\r\n to fill it up...\"\BRK";
+    const MESSAGE_5 = "Life on the Farm\r\n                   BEGINNER\r\n                           \r\n\"Hey big bro!\"\r\n\"What is it?\"\r\n\"I used to be able to walk \r\n over my Seeds, but not \r\n when they start growing.\"\r\n\"Yes, you can't walk over \r\n crops when they grow.\r\n You can if you run,\r\n though.\"\r\n\"Really?\"\r\n\"Yes, you can jump over one\r\n square of anything if you \r\n run, like Stones, Fences,\r\n or Branches.\"\r\n\"That's good to know.\"\r\n\"Just remember that you \r\n can't jump over things if\r\n there's something on \r\n the other side.\"\r\n\"Got it, brother.\" \BRK";
+    const MESSAGE_6 = "Life on the Farm\r\n                   BEGINNER\r\n                           \r\n\"Hey big bro!\"\r\n\"What is it?\"\r\n\"You were telling me I \r\n can't walk on things when\r\n they grow, but I can walk\r\n on farm grass.\"\r\n\"Oh yeah, I forgot. You can\r\n walk on grass however much\r\n it grows, of course.\"\r\n\"Grass is for walking on, \r\n I guess.\" \BRK";
+    const MESSAGE_7 = "Life on the Farm\r\n                   BEGINNER\r\n                           \r\n\"Hey big bro!\"\r\n\"What is it?\"\r\n\"I think my Turnips are \r\n ready to harvest, so what\r\n do I do now?\"\r\n\"If you face your crop and\r\n press the A Button, you \r\n can lift it up to harvest \r\n it. \r\n After you harvest the \r\n Turnip, the field will go \r\n back to its tilled state.\r\n If your crop can be \r\n harvested more than once,\r\n though, it will go back to\r\n a seedling.\"\r\n\"So you can harvest some\r\n crops lots of times?\r\n I can't wait to try.\"\BRK";
+    const MESSAGE_8 = "Life on the Farm\r\n                   BEGINNER\r\n                           \r\n\"Hey big bro!\"\r\n\"What is it?\"\r\n\"Can I turn a field back \r\n to its untilled state?\"\r\n\"Sure. Just use a Hammer on\r\n a tilled field, then it \r\n won't be tilled any more.\"\r\n\"That's great!\"\r\n\"You can also return a \r\n field to its untilled state\r\n by putting Stones, \r\nBranches, or Lumber on it.\"\r\n\"That seems like another\r\n good way. Does it work\r\n if the field is watered?\"\r\n\"Yes, it doesn't matter if\r\n the field is watered \r\n or not.\"\r\n\"Got it.\"\BRK";
+    const MESSAGE_9 = "Life on the Farm\r\n                   BEGINNER\r\n                           \r\n\"Hey big bro!\"\r\n\"What is it?\"\r\n\"I tried to return my field\r\n to its untilled state like\r\n you said yesterday, but \r\n it didn't work.\"\r\n\"I don't know why...\r\n Oh! Maybe you had already\r\n seeded it...?\"\r\n\"That's right.\"\r\n\"Well, if you seeded it, \r\n then you have to use your\r\n Hoe to remove the\r\n Seeds first. After that you\r\n can use your Hammer.\"\r\n\"Seems like an awful \r\n lot of work...\" \BRK";
+    const MESSAGE_10 = "Life on the Farm\r\n                   BEGINNER\r\n                           \r\n\"Hey big bro!\"\r\n\"What is it?\"\r\n\"Last time you told me \r\n about returning a field\r\n to its original state.\r\n But, what about farm grass?\r\n Even when I cut it, some\r\n stubble remains, and then\r\n it grows back.\"\r\n\"I forgot to say. If you \r\n use the Hoe on a field \r\n after you've cut it with a\r\n Sickle, then it will \r\n become a tilled field with\r\n nothing on it.\"\r\n\"So I should use the Hoe\r\n right after cutting the \r\n grass, right?\" \BRK";
+    const MESSAGE_11 = "Life on the Farm\r\n                   BEGINNER\r\n                           \r\n\"Hey big bro!\"\r\n\"What is it?\"\r\n\"I put a Cucumber in the \r\n Basket to ship, then \r\n changed my mind. I can't\r\n take it out, though!\"\r\n\"That's right. Once you put\r\n something in the Basket to\r\n ship, it's in there for \r\n good. You can't change\r\n your mind.\"\r\n\"And I wanted that Cucumber\r\n for lunch, too...!\"\r\n\"Now you've learned your\r\n lesson. By the way, to \r\n ship what's in the Basket,\r\n hold it up, then press the\r\n A Button while facing the \r\n Shipment Box.\"\r\n\"I never wanted to ship it\r\n to begin with...\"\BRK";
+    const MESSAGE_12 = "Life on the Farm\r\n                   BEGINNER\r\n                           \r\n\"Hey big bro!\"\r\n\"What is it?\"\r\n\"It seems that I can only \r\n put shippable things in my\r\n Basket...\"\r\n\"Of course!\"\r\n\"Why is that?\"\r\n\"Because you can't fill up\r\n the Basket with things you\r\n can't ship anyway, silly!\"\r\n\"And I wanted to use it as\r\n a garbage can, too...\"\r\n\"That's what you have a \r\n garbage can for!\"\r\n\"I guess you're right.\"\BRK";
+    const MESSAGE_13 = "Life on the Farm\r\n                   BEGINNER\r\n                           \r\n\"Hey big bro!\"\r\n\"What is it?\"\r\n\"Cough...cough...\"\r\n\"What's wrong? And why are\r\n you putting your hand out\r\n like that?\"\r\n\"Today is the Spring \r\n Thanksgiving Festival. \r\n You're supposed to give \r\n me a Cookie!...\"\r\n\"That's right! I \r\n did bring you a Cookie,\r\n I just forgot to give it \r\n to you. Here you are.\"\r\n\"I knew you wouldn't forget!\r\n I can't wait to give you\r\n something for the Winter\r\n Thanksgiving Festival.\"\r\n\"I look forward to it.\"\BRK";
+    const MESSAGE_14 = "Life on the Farm\r\n                   BEGINNER\r\n                           \r\n\"Hey big bro!\"\r\n\"What is it?\"\r\n\"I heard that if you throw\r\n away trash in town, people\r\n won't like you.\"\r\n\"Of course! Not just trash,\r\n though. If you throw any-\r\n thing away in town, \r\n people will get upset. \r\n I don't blame 'em!\"\r\n\"What should I do when I \r\n want to throw something\r\n away, then?\"\r\n\"No one will care if you \r\n throw something away on \r\n your own farm. There's also\r\n a garbage can in Rose \r\n Square. Finally, you can \r\n throw things away in the \r\n mine and no one will \r\n mind.\"\r\n\"Let me get this straight:\r\n My own farm, the garbage\r\n can in the Square, or the\r\n mine, right? \"\r\n";
+    const MESSAGE_15 = "Life on the Farm\r\n                   BEGINNER\r\n                           \r\n\"Hey big bro!\"\r\n\"What is it?\"\r\n\"I can't chop up a Stump, \r\n no matter how many times I\r\n hit it with my Axe.\"\r\n\"What kind of Axe are you\r\n using?\"\r\n\"You meant there's more \r\n than one kind?\"\r\n\"So you're using an Iron\r\n Axe, I guess. You can \r\n upgrade your Axe, as well\r\n as your Hoe, Sickle,\r\n Hammer, Watering Can, or\r\n Fishing Rod.\"\r\n\"How do I do that?\"\r\n\"First you find either \r\n Copper, Silver, Gold, or \r\n Mystrile in a mine, then\r\n you bring the Ore along\r\n with the Tool to Saibara \r\n the blacksmith.\r\n Of course, the tool also \r\n has to be of a certain \r\n experience level before \r\n you can upgrade it. Some\r\n Ores will make for better\r\n upgrades than others.\"\r\n\"What do you mean by \r\n\"experience level\"...?\"\r\n\"I'll explain tomorrow.\"\BRK";
+    const MESSAGE_16 = "Life on the Farm\r\n                   BEGINNER\r\n                           \r\n\"Hey big bro!\"\r\n\"What is it?\"\r\n\"It's about what you were \r\n telling me yesterday...\"\r\n\"Tool experience level, \r\n right? You see, any time \r\n you use a Tool, it \r\n accumulates experience.\r\n This works even if you \r\n just pretend to use it, \r\n although it will build up \r\n experience quicker if you \r\n use if for a real job.\"\r\n\"I think I get it...\"\r\n\"So, the level of your Axe\r\n was too low to use on a \r\n Stump. You need a Level 2\r\n Axe or better to chop up\r\n a Stump, you see. You \r\n can't smash a large Stone\r\n with an Iron Axe, either.\"\r\n\"So I need better Tools!\"\BRK";
+    const MESSAGE_17 = "Life on the Farm\r\n                   BEGINNER\r\n                           \r\n\"Hey big bro!\"\r\n\"What is it?\"\r\n\"I still can't chop up that\r\n Stump...\"\r\n\"Did you upgrade your \r\nAxe?\"\r\n\"Yes! I made it a Copper \r\n Axe and everything...\"\r\n\"Are you charging the Axe\r\n before you use it?\"\r\n\"I'm pressing the B Button \r\n lots of times...\"\r\n\"That won't work. To break \r\n a large Stone or a Stump, \r\n what you need to do is hold\r\n down the B Button to \r\n charge your Tool first.\"\r\n\"I didn't know that...\"\r\n\"If you want to cut up a \r\n Stump with a Copper Axe,\r\n you have to use it about 6\r\n times, even with \r\ncharging.\"\r\n\"That's a lot of work!\"\BRK";
+    const MESSAGE_18 = "Life on the Farm\r\n                   BEGINNER\r\n                           \r\n\"Hey big bro!\"\r\n\"What is it?\"\r\n\"I bought a Chicken, but it\r\n won't lay Eggs for me!\"\r\n\"Are you feeding it, sis?\"\r\n\"...........\"\r\n\"You're not, I see. \r\n Chickens need to eat, just \r\n like you. \r\nActually, they lay Eggs \r\n even if you don't feed\r\n them, as long as they don't\r\n become unhappy.\"\r\n\"How do I feed them,\r\nthen?\"\r\n\"I'll explain tomorrow.\"\r\n\"My Chicken will be\r\nhungry!\"\BRK";
+    const MESSAGE_19 = "Life on the Farm\r\n                   BEGINNER\r\n                           \r\n\"Hey big bro!\"\r\n\"What is it?\"\r\n\"It's about what you were \r\n telling me yesterday...\"\r\n\"Feeding Chickens, right?\r\n They sell Chicken Feed at \r\n the same place as you \r\n bought the Chicken.\"\r\n\"......\"\r\n\"What's wrong?\"\r\n\"They're closed today.\"\r\n\"Don't worry. There's\r\n another way. Do you have\r\n Corn?\"\r\n\"Umm...No.\"\r\n\"In that case, just let \r\n your Chickens out for a \r\n few hours, and they'll \r\n find worms and things to\r\n eat on their own.\"\r\n\"Great! I'll go do it\r\nnow!\"\BRK";
+    const MESSAGE_20 = "Life on the Farm\r\n                   BEGINNER\r\n                           \r\n\"Hey big bro!\"\r\n\"What is it?\"\r\n\"You mentioned Corn \r\n yesterday. What if I \r\n did have some...?\"\r\n\"There's a way to turn \r\n Corn into Chicken Feed.\r\n You know the Water Mill\r\n Next to the Chicken Coop?\"\r\n\"What about it?\"\r\n\"It will grind up Corn into\r\n 30 bushels of Chicken \r\n Feed for you!\"\r\n\"Where do I throw the\r\nCorn?\"\r\n\"You can throw it from \r\n anywhere, as long as it\r\n lands in the Water Wheel.\"\BRK";
+    const MESSAGE_21 = "Life on the Farm\r\n                   BEGINNER\r\n                           \r\n\"Hey big bro!\"\r\n\"What is it?\"\r\n\"I let my Chickens out to \r\n eat, but they still don't \r\n lay any Eggs!\"\r\n\"You didn't let them out\r\n whet it was raining, did \r\n you?\"\r\n\"Yeah...Why?\"\r\n\"They become very unhappy\r\n when they get rained on!\"\r\n\"Really?\"\r\n\"Of course! It has to be \r\n sunny when you let them\r\n out, little sis!\"\r\n\"I get it now.\" \BRK";
+    const MESSAGE_22 = "Life on the Farm\r\n                   BEGINNER\r\n                           \r\n\"Hey big bro!\"\r\n\"What is it?\"\r\n\"How do I feed my Chickens\r\n the regular way?\"\r\n\"Do you have Chicken Feed\r\n in the Feed Bin?\"\r\n\"Yeah, I went out and \r\n bought 825 bushels from \r\n the Poultry Farm!\"\r\n\"825 bushels! That's a\r\nlot!\"\r\n\"Well, I had 8,250G with \r\n me, so....\"\r\n\"Just was long as you don't\r\n waste it.\"\r\n\"I won't.\"\r\n\"Until tomorrow, then.\"\r\n\"OK.\"\BRK";
+    const MESSAGE_23 = "Life on the Farm\r\n                   BEGINNER\r\n                           \r\n\"Hey big bro!\"\r\n\"What is it?\"\r\n\"It's about what you were \r\n telling me yesterday...\"\r\n It was about how to feed \r\n your Chickens, right?\"\r\n\"All you do is throw \r\n Chicken Feed into the Feed\r\n Box in the Chicken Coop.\"\r\n\"I can put it in any Feed \r\n Box I want to?\"\r\n\"Yeah, as long as you put\r\n Feed in one Feed Box for\r\n each Chicken in the Coop.\"\r\n\"I see.\"\BRK";
+    const MESSAGE_24 = "Life on the Farm\r\n                   BEGINNER\r\n                           \r\n\"Hey big bro!\"\r\n\"What is it?\"\r\n\"How do I get the Chicken \r\n Feed to put in the Feed \r\n Box?\"\r\n\"Just press the A Button \r\n in front of the Feed Bin \r\n Door in the Chicken Coop. \r\n The same thing is true for\r\n the Feed Bin Door in \r\n the Barn.\"\r\n\"Now I think I finally know\r\n everything about feeding\r\n my Chickens!\"\r\n\"Don't forget to do it, \r\n now!\"\BRK";
+    const MESSAGE_25 = "Life on the Farm\r\n                   BEGINNER\r\n                           \r\n\"Hey big bro!\"\r\n\"What is it?\"\r\n\"I ran out of Chicken Feed.\r\n What do I do now?\"\r\n\"...What do you mean, \r\n exactly?\"\r\n\"I put Chicken Feed in all \r\n of the Feed Boxes in the \r\n Chicken Coop. Then, it was\r\n gone the next day, even \r\n though I only have 1 \r\n Chicken...\"\r\n\"Chicken Feed always only \r\n lasts for 1 day. So, be \r\n sure not to put more in \r\n than the number of Chickens\r\n in your Coop. If you do, \r\n it'll go to waste.\"\r\n\"I see.\"\BRK";
+    const MESSAGE_26 = "Life on the Farm\r\n                   BEGINNER\r\n                           \r\n\"Hey big bro!\"\r\n\"What is it?\"\r\n\"How can I get more\r\nFodder?\"\r\n\"You buy it at Yodel Farm\r\n for 20G a bushel.\"\r\n\"Is that it?\"\r\n\"If you plant farm grass \r\n Seeds, then harvest it\r\n with a Sickle when it's \r\n full grown, it'll wind up \r\n in the Feed Bin as Fodder.\r\n It will even grow back \r\n after a while! \r\n After that, all you have \r\n to do is pick it up at\r\n the Feed Bin Door, \r\n just like Chicken Feed.\"\r\n\"I get it now.\"\BRK";
+    const MESSAGE_27 = "Life on the Farm\r\n                   BEGINNER\r\n                           \r\n\"Hey big bro!\"\r\n\"What is it?\"\r\n\"I bought a Ball, but I'm\r\n not sure what to do\r\n with it.\"\r\n\"If you throw it, your \r\n Dog will go fetch it. This\r\n trains your dog, you see.\"\r\n\"Trains him for what?\"\r\n\"For instance, he'll be \r\n able to chase away wild \r\n dogs if they try to sneak\r\n in at night.\"\r\n\"How will I know if the \r\n wild dogs come?\"\r\n\"You won't. That's why it's\r\n important to train your \r\n Dog. You can also do one\r\n more thing.\"\r\n\"What?\"\r\n\"I'll tell you tomorrow.\"\BRK";
+    const MESSAGE_28 = "Life on the Farm\r\n                   BEGINNER\r\n                           \r\n\"Hey big bro!\"\r\n\"What is it?\"\r\n\"It's about what you were \r\n telling me yesterday...\"\r\n\"How to protect your \r\n animals from wild dogs at \r\n night, right?\r\n But first, I forgot one \r\n thing. You can only train\r\n your dog when he becomes\r\n fully grown.\"\r\n\"You can't train puppies?\r\n They don't like fetch?\"\r\n\"No. Dogs grow quickly, \r\n though, so don't worry.\"\BRK";
+    const MESSAGE_29 = "Life on the Farm\r\n                   BEGINNER\r\n                           \r\n\"Hey big bro!\"\r\n\"What is it?\"\r\n\"It's about what you were \r\n telling me yesterday...\"\r\n\"Oh yeah, protecting your \r\n animals from wild dogs.\"\r\n\"First of all, don't let \r\n them outside. Wild dogs\r\ncan't cat inside the Barn.\"\r\n\"What else?\"\r\n\"You can also build a Fence\r\n with Lumber. Wild dogs \r\n can't get through the \r\n Fence unless part of it\r\n is broken.\"\r\n\"Maybe I'll try it!\"\BRK";
+    const MESSAGE_30 = "Life on the Farm\r\n                   BEGINNER\r\n                           \r\n\"Hey big bro!\"\r\n\"What is it?\"\r\n\"Is there any way to keep \r\n wild dogs away from my \r\n animals other than building\r\n a Fence or keeping them \r\n inside?\"\r\n\"There is one more way...\"\r\n\"Like what?\"\r\n\"You can use your Sickle,\r\n Hoe, Axe, or Hammer to \r\n attack the dogs.\"\r\n\"That sounds so violent\r\n...!\"\r\n\"In that case, do what I \r\n said yesterday.\"\r\n\"I will, bro.\"\BRK";
+    const MESSAGE_31 = "Life on the Farm\r\n                   BEGINNER\r\n                           \r\n\"Hey big bro!\"\r\n\"What is it?\"\r\n\"The Turnips and Cucumbers\r\n I was growing turned a \r\n funny color suddenly.\"\r\n\"That's because the season\r\n has begun to change. If the\r\n season changes, then some\r\n things will wilt if it \r\n becomes the wrong season \r\n for them.\"\r\n\"But they were so close to \r\n being harvested!\"\r\n\"Too bad, but they're \r\n wasted now. To avoid this,\r\n make sure to harvest your\r\n crops in the correct \r\n season.\"\r\n\"And they looked so \r\n good, too...\"\BRK";
+    const MESSAGE_32 = "Life on the Farm\r\n                   BEGINNER\r\n                           \r\n\"Hey big bro!\"\r\n\"What is it?\"\r\n\"It's about what you were \r\n telling me yesterday...\"\r\n\"Can wilted crops be used\r\n for anything?\"\r\n\"Nothing at all. Just cut \r\n them up with your \r\n Sickle as soon as \r\n you can.\"\r\n\"That's it...?\"\r\n\"Yes. Cut them up with your\r\n Sickle and plant Summer\r\n vegetables as soon as \r\n you can. \"\BRK";
+    const MESSAGE_33 = "Life on the Farm\r\n                   BEGINNER\r\n                           \r\n\"Hey big bro!\"\r\n\"What is it?\"\r\n\"How do I use my Fishing \r\n Rod?\"\r\n\"Just equip it and press \r\n the B Button, right?\"\r\n\"I try that, but it doesn't\r\n work!\"\r\n\"Are you trying in a place\r\n where you can fish?\"\r\n\"Like where?\"\r\n\"Like a river, or the sea, \r\n or the lake behind the \r\n mountain. Where were you\r\n trying it?\"\r\n\"In my house, or out in \r\n the field...\"\r\n\"No, you definitely can't \r\n fish there, ha ha!\"\r\n\"OK. I'll go try again.\"\BRK";
+    const MESSAGE_34 = "Life on the Farm\r\n                   BEGINNER\r\n                           \r\n\"Hey big bro!\"\r\n\"What is it?\"\r\n\"I still can't manage to \r\n catch any fish.\"\r\n\"Are you sure to push the\r\n Button again when the \r\n lure bobs?\"\r\n\"No...I was just sort of \r\n waiting.\"\r\n\"When a fish bites the \r\n hook, the lure will bob up\r\n and down. Push the button \r\n quickly to reel in the\r\n fish.\"\r\n\"I didn't know about that \r\n part...\"\r\n\"Sometimes it turns out \r\n even then that the fish \r\n got away, or it was only\r\n garbage to begin with. \r\n Fishing requires lots of \r\n patience.\"\r\n\"I see.\"\BRK";
+    const MESSAGE_35 = "Life on the Farm\r\n                   BEGINNER\r\n                           \r\n\"Hey big bro!\"\r\n\"What is it?\"\r\n\"Typhoons are really scary,\r\n aren't they?\"\r\n\"You bet. You can't go \r\n outside at all! That means\r\n you can't take care of your\r\n animals or crops. The wind \r\n can also destroy your crops\r\n or Fences.\"\r\n\"I can't do anything about\r\n it?\"\r\n\"Nope. Not even the Harvest\r\n Sprites will go outside \r\n during a typhoon. All you \r\n can do is keep the animals\r\n safe in their barn.\"\r\n\"I'll just pray one never \r\n comes, then!\"\BRK";
+    const MESSAGE_36 = "Life on the Farm\r\n                   BEGINNER\r\n                           \r\n\"Hey big bro!\"\r\n\"What is it?\"\r\n\"It looks like my Fence \r\n broke. How do I fix it?\"\r\n\"Sorry, but you can't fix\r\n a broken Fence. You have\r\n to throw it away.\"\r\n\"What a waste! How do I\r\n do that? I tried to pick \r\n it up, but I can't.\" \r\n\"You can't pick up broken\r\n Fences. You have to smash\r\n them with your Hammer. \r\n Once you do, you can build\r\n a new Fence.\"\r\n\"I have to smash the Fence \r\n with my Hammer, huh?\"\BRK";
+    const MESSAGE_37 = "Life on the Farm\r\n                   BEGINNER\r\n                           \r\n\"Hey big bro!\"\r\n\"What is it?\"\r\n\"I heard that the Hot \r\n Spring can recuperate \r\n Stamina and Fatigue. Is the\r\n effect greater the longer\r\n you stay in?\"\r\n\"Up to a point. One hour is\r\n usually plenty. Staying in \r\n much longer won't make\r\n a difference.\"\r\n\"I see.\"\r\n\"Do you know what else you\r\n can do in the Hot Spring?\"\r\n\"No, what?\"\r\n\"I'll tell you tomorrow.\"\r\n\"I knew you'd say that!\"\BRK";
+    const MESSAGE_38 = "Life on the Farm\r\n                   BEGINNER\r\n                           \r\n\"Hey big bro!\"\r\n\"What is it?\"\r\n\"It's about what you were \r\n telling me yesterday...\"\r\n\"I was telling you about \r\n other things you can do \r\n in the Hot Spring, right?\r\n You can throw an Egg in \r\n to make a Spa-Boiled Egg.\"\r\n\"That sounds delicious!\"\r\n\"Just throw the Egg in \r\n from the hole in the Fence\r\n near the Hot-Spring.\"\r\n\"That's all?\"\r\n\"That's it. By the way,Spa-\r\n Boiled Eggs are the same \r\n no matter what kind of Egg\r\n you throw in.\"\r\n\"It would be shame to use a\r\n Golden Egg, then!\"\BRK";
+    const MESSAGE_39 = "Life on the Farm\r\n                   BEGINNER\r\n                           \r\n\"Hey big bro!\"\r\n\"What is it?\"\r\n\"I want my Eggs to hatch \r\n into baby Chicks. How do \r\n I do that?\"\r\n\"There's a place you can do\r\n it in the Chicken Coop, \r\n you know.\"\r\n\"You mean the thing on the\r\n left side of the Chicken\r\n Coop?\"\r\n\"That's it! It's the \r\n Incubator. If you put Eggs\r\n in it, they'll hatch in \r\n about 3 days. \r\n You can't use the Incubator\r\n if the Coop is already \r\n full, though.\"\r\n\"The Chicken Coop can hold\r\n 4 Chickens before \r\n expanding and 8 after,\r\n right? Got it.\"\BRK";
+    const MESSAGE_40 = "Life on the Farm\r\n                   BEGINNER\r\n                           \r\n\"Hey big bro!\"\r\n\"What is it?\"\r\n\"How do I become friends \r\n with the townspeople?\"\r\n\"That will happen naturally\r\n if you talk to them every \r\n day.\"\r\n\"I try, but they don't seem\r\n to like me much...\"\r\n\"Don't worry.  They'll warm\r\n up to you eventually. \r\n If you want them to like\r\n you even sooner, though,\r\n you should give them \r\n presents. \r\n Everybody has different\r\n likes and dislikes, \r\n though, so you should \r\n be careful.\"\r\n\"I see.\"\BRK";
+    const MESSAGE_41 = "Life on the Farm\r\n                   BEGINNER\r\n                           \r\n\"Hey big bro!\"\r\n\"What is it?\"\r\n\"I increased the size of my\r\n house, but it doesn't seem\r\nto make much difference...\"\r\n\"You can buy more things \r\n on TV Shopping, for one \r\n thing.\"\r\n\"Like what?\"\r\n\"Like a Refrigerator, \r\n Shelf, Kitchen, and other \r\n Kitchen goods.\"\r\n\"I know I can cook with a \r\n Kitchen, but I don't have\r\n much experience cooking!\"\r\n\"It's easy, sis. To start\r\n out, just follow recipes.\"\r\n\"Will you teach me?\"\r\n\"Tomorrow.\"\r\n\"I'll be waiting, bro.\"\BRK";
+    const MESSAGE_42 = "Life on the Farm\r\n                   BEGINNER\r\n                           \r\n\"Hey big bro!\"\r\n\"What is it?\"\r\n\"It's about what you were \r\n telling me yesterday...\"\r\n\"Sure, I'll teach you how\r\n to cook. What Utensils\r\n do you have? Wait, if you\r\n don't even have a Kitchen,\r\n then you won't have any \r\n Utensils either.\"\r\n\"Why do I need Utensils?\"\r\n\"You can cook many more \r\n things if you have \r\n Utensils.\"\r\n\"But they don't sell them \r\n at the Supermarket...\"\r\n\"They sell them on the\r\n TV Shopping Network.\"\r\n\"I see.\"\BRK";
+    const MESSAGE_43 = "Life on the Farm\r\n                   BEGINNER\r\n                           \r\n\"Hey big bro!\"\r\n\"What is it?\"\r\n\"It's about what you were \r\n telling me yesterday...\"\r\n\"Oh yeah...Cooking,\r\nright?\"\r\n\"But first, I don't even \r\n have a phone in my house.\r\n How do I order from the\r\n TV shopping Network?\"\r\n\"Isn't there a phone some-\r\n where close to you?\"\r\n\"There is one at the Inn, \r\n now that you mention it.\"\r\n\"Just use that one, then.\"\r\n\"OK. Thanks for your\r\nhelp.\"\BRK";
+    const MESSAGE_44 = "Life on the Farm\r\n                   BEGINNER\r\n                           \r\n\"Hey big bro!\"\r\n\"What is it?\"\r\n\"I bought a Kitchen and I \r\n tried cooking, but every-\r\n thing I make turns out \r\n a \"Failure\". Why?\"\r\n\"Do you actually follow a\r\n recipe, or just throw some\r\n things together?\"\r\n\"Umm...The second, \r\nI guess.\"\r\n\"You have to follow a \r\n recipe, silly! Otherwise \r\n you're likely to get a \r\n\"Failure\".\"\r\n\"But I don't know any \r\n recipes! Where do I \r\n learn them?\"\r\n\"I'll teach you that \r\n tomorrow.\"\r\n\"OK. I'll be waiting.\"\BRK";
+    const MESSAGE_45 = "Life on the Farm\r\n                   BEGINNER\r\n                           \r\n\"Hey big bro!\"\r\n\"What is it?\"\r\n\"It's about what you were \r\n telling me yesterday...\"\r\n\"About learning recipes, \r\n right? It's easy. You can \r\n learn from the people in \r\n town, or from the TV, \r\n or other places, too. \r\n A cooking progrm is on \r\n on Tuesdays on the \r\n left channel.\"\r\n\"Thanks, brother! I can't\r\n wait to make something\r\n good for a change!\"\BRK";
+    const MESSAGE_46 = "Life on the Farm\r\n                   BEGINNER\r\n                           \r\n\"Hey big bro!\"\r\n\"What is it?\"\r\n\"I finally succeeded!\"\r\n\"What did you make?\"\r\n\"Fried Rice.\"\r\n\"Did you see the recipe on\r\n TV?\"\r\n\"Yes.\"\r\n\"With Fried Rice, you can \r\n improvise and add lots of\r\n other ingredients, you \r\n know. Try it yourself.\"\r\n\"Once you gain some \r\n experience, you can begin\r\n to improvise and even \r\n invent your own dishes.\"\r\n\"I can't wait to try!\"\BRK";
+    const MESSAGE_47 = "Life on the Farm\r\n                   BEGINNER\r\n                           \r\n\"Hey big bro!\"\r\n\"What is it?\"\r\n\"You told me before about\r\n watering my vegetables,\r\n but do I have to even when\r\n it rains?\"\r\n\"No. That's why you welcome\r\n the rain when you grow \r\n lots of crops.\"\r\n\"But, the animals will get\r\n unhappy out in the rain,\r\n right?\"\r\n\"Right. You can't have \r\n everything your way!\"\r\n\"By the way, snow is\r\n basically like rain in \r\n these ways.\"\r\n\"I can't grow crops in \r\n Winter, though.\" \BRK";
+    const MESSAGE_48 = "Life on the Farm\r\n                   BEGINNER\r\n                           \r\n\"Hey big bro!\"\r\n\"What is it?\"\r\n\"I finally bought a Cow!\"\r\n\"Great!\"\r\n\"But...I don't know how to\r\n take care of it!\"\r\n\"First I'll tell you how\r\n to feed it.\r\n Just take Fodder made from\r\n cut farm grass to the\r\n Feed Box in the Barn and\r\n put it in.\"\r\n\"What if I don't have any\r\n farm grass?\"\r\n\"Then you'll have to buy it\r\n from Yodel Farm. It costs\r\n 20G a bushel, which is \r\n pretty expensive. So, it's\r\n better to make it\r\n yourself.\"\r\n\"Got it. What next?\"\BRK";
+    const MESSAGE_49 = "Life on the Farm\r\n                   BEGINNER\r\n                           \r\n\"Hey big bro!\"\r\n\"What is it?\"\r\n\"It's about what you were \r\n telling me yesterday...\"\r\n\"Taking care of Cows, \r\n right?\r\n Today I'll tell you about \r\n grazing your Cows outside.\r\n First of all, you can't \r\n pick Cows up, so you have \r\n to push them from behind \r\n to get them to leave the\r\n Barn.\"\r\n\"But, sometimes I can't \r\n get behind them!\"\r\n\"That's when you use a \r\n Bell to get them to move \r\n toward you. Once they move\r\n a few steps, you can move\r\n behind them and push. \r\n If the Cow's affection for \r\n you isn't very high, it \r\n might now come when it\r\n hears the Bell, though.\"\r\n\"I see.\"\BRK";
+    const MESSAGE_50 = "Life on the Farm\r\n                   BEGINNER\r\n                           \r\n\"Hey big bro!\"\r\n\"What is it?\"\r\n\"It's about what you were \r\n telling me yesterday...\"\r\n\"Today I'll tell you more  \r\n about grazing your Cows.\r\n If you have a field of \r\n farm grass ready to be \r\n harvested, your Cows will\r\n graze on that. This saves \r\n you the effort of cutting\r\n it and bringing to to their\r\n Feed Boxes. It takes a\r\n few hours for them to \r\n eat, though. \"\r\n\"OK.\"\r\n\"Also, grass grows back\r\n sooner after Cows graze\r\n on it than when you cut it\r\n with your Sickle.\"\r\n\"That's good to know!\"\BRK";
+    const MESSAGE_51 = "Life on the Farm\r\n                   BEGINNER\r\n                           \r\n\r\n\"My brother is taking the \r\nday off today, so no \r\nLife on the Farm. Sorry.\"\BRK";
+    const MESSAGE_52 = "Life on the Farm\r\n                   BEGINNER\r\n                           \r\n\"Hey big bro!\"\r\n\"What is it? But first, \r\n let me apologize for \r\n yesterday. I feel fine \r\n now.\"\r\n\"In that case, can you \r\n tell me some more?\"\r\n\"Sure. More about taking\r\n care of cows, then. Today\r\n I'll tell you about \r\n brushing them. First you \r\n equip the Brush --\"\r\n\"I don't have one!\"\r\n\"The blacksmith will sell\r\n you one. Just face the Cow\r\n and use the Brush. The\r\n Cow will love it if you\r\n brush her once each day.\r\n That's enough, though.\"\r\n\"Got it.\"\BRK";
+    const MESSAGE_53 = "Life on the Farm\r\n                   BEGINNER\r\n                           \r\n\"Hey big bro!\"\r\n\"What is it?\"\r\n\"It's about what you were \r\n telling me yesterday...\"\r\n\"Taking care of Cows, \r\n right? Today I'll tell you\r\n about milking them. \r\n First you use the \r\n Milker --\"\r\n\"I don't have one!\"\r\n\"The blacksmith will sell\r\n you one. Just equip it,\r\n then face the Cow and use\r\n it to Milk her. \r\n Cows only give Milk once\r\n each day, remember.\"\r\n\"OK. Got it.\"\BRK";
+    const MESSAGE_54 = "Life on the Farm\r\n                   BEGINNER\r\n                           \r\n\"Hey big bro!\"\r\n\"What is it?\"\r\n\"It's about what you were \r\n telling me yesterday...\"\r\n\"Taking care of Cows, \r\n right? There's something \r\n about milking them I forgot\r\n to tell you.\"\r\n\"What?\"\r\n\"You can only milk \r\n adult, non-pregnant Cows.\"\r\n\"Makes sense. I can't wait \r\n to drink some nice fresh \r\n Milk!\" \BRK";
+    const MESSAGE_55 = "Life on the Farm\r\n                   BEGINNER\r\n                           \r\n\"Hey big bro!\"\r\n\"What is it?\"\r\n\"It's about what you were \r\n telling me yesterday...\"\r\n\"Taking care of Cows, \r\nright?\r\nI tried milking my Cow, but\r\n I couldn't get any Milk.\"\r\n\"It was an adult?\"\r\n\"Of course.\"\r\n\"And she was healthy?\"\r\n\"She was, but she was \r\n unhappy.\"\r\n\"I should have mentioned\r\n that only happy Cows \r\n give Milk, not sick or \r\n unhappy Cows.\"\r\n\"I see.\"\BRK";
+    const MESSAGE_56 = "Life on the Farm\r\n                   BEGINNER\r\n                           \r\n\"Hey big bro!\"\r\n\"What is it?\"\r\n\"It's about what you were \r\n telling me yesterday...\"\r\n\"Taking care of Cows, \r\n right? Today I'll tell you\r\n about the size of Milk that\r\n Cows give.\r\n There are 3 sizes:\r\n S, M, and L.\"\r\n\"How are they different?\"\r\n\"They look different, and\r\n their size is different\r\n as well.\" \r\n\"What does that mean?\"\r\n\"I'll explain tomorrow.\"\r\n\"I knew it!\"\BRK";
+    const MESSAGE_57 = "Life on the Farm\r\n                   BEGINNER\r\n                           \r\n\"Hey big bro!\"\r\n\"What is it?\"\r\n\"It's about what you were \r\n telling me yesterday...\"\r\n\"Different sizes of Milk,\r\n right?\r\n Size determines the price\r\n of Milk when you sell it.\r\n The bigger the size, the\r\n more gold you get.\"\r\n\"How do I get bigger\r\nsizes?\"\r\n\"I'll tell you all about \r\n that tomorrow.\"\r\n\"Not again!\"\BRK";
+    const MESSAGE_58 = "Life on the Farm\r\n                   BEGINNER\r\n                           \r\n\"Hey big bro!\"\r\n\"What is it?\"\r\n\"It's about what you were \r\n\"telling me yesterday...\"\r\n About how to get bigger\r\n sizes of Milk, right?\r\n If you take good care of\r\n your Cows everyday, their\r\n Milk will get better \r\n naturally. \r\n That means talking to them,\r\n brushing them, and feeding\r\n them everyday.\"\r\n\"Sounds like a lot of\r\nwork!\"\r\n\"By the way, when the Milk\r\n reaches G size --\"\r\n\"What's that?\"\r\n\"That's Golden Milk, which\r\n only comes from Cows who\r\n come in first place in \r\n the Cow Festival. \r\nThere are other sizes too.\"\r\n\"I've only gotten S, M, and\r\n L through regular daily \r\n care.\"\BRK";
+    const MESSAGE_59 = "Life on the Farm\r\n                   BEGINNER\r\n                           \r\n\"Hey big bro!\"\r\n\"What is it?\"\r\n\"I think my Cow got sick!\"\r\n\"But I thought I told you\r\n all about how to take care\r\n of your Cows!\"\r\n\"Well, I spent so much time\r\n listening to you, this one\r\n got sick!\"\r\n\"In that case, I'll tell \r\n you how to cure sick \r\n Cows. \r\n First, buy Animal Medicine\r\n from Yodel Farm, then use\r\n it on the sick Cow.\"\r\n\"Sounds easy to me.\"\BRK";
+    const MESSAGE_60 = "Life on the Farm\r\n                   BEGINNER\r\n                          \r\n\"Hey big bro!\"\r\n\"What is it?\"\r\n\"I want more Cows. How do \r\n I do that?\"\r\n\"You can buy another Cow\r\n from Yodel Farm, or use\r\n Cow Miracle Potion.\"\r\n\"That's sold at Yodel Farm\r\n too, right?\"\r\n\"Right. If you use it on an \r\n adult Cow, it'll become \r\n pregnant. In about 20 days\r\n a baby Calf will be born.\"\r\n\"Only adult Cows can get \r\n pregnant? Makes sense \r\n to me.\" \BRK";
+    const MESSAGE_61 = "Life on the Farm\r\n                   BEGINNER\r\n                           \r\n\"Hey big bro!\"\r\n\"What is it?\"\r\n\"It's about what you were \r\n telling me yesterday...\"\r\n\"How to make new Cows, \r\n right?\"\r\n\"Right. I used Cow Miracle \r\n Potion, but it didn't\r\n work.\" \r\n\"It's an adult Cow,\r\nright?\"\r\n\"Right.\"\r\n\"Is it healthy, then?\"\r\n\"No, it's the Cow that was\r\n sick.\"\r\n\"I should have said before,\r\n but Cows must be healthy\r\n to get pregnant.\"\r\n\"OK.\" \BRK";
+    const MESSAGE_62 = "Life on the Farm\r\n                   BEGINNER\r\n                           \r\n\"You know...\"\r\n\"What's wrong? You don't \r\n seem very well.\"\r\n\"I think I got sick...\"\r\n\"Are you sure you aren't\r\n exhausted? Are you doing\r\n things like using Tools \r\n in the rain or late at\r\n night, or staying up too\r\n late, or using Tools even \r\n though you have no \r\n Stamina left...?\"\r\n\"Maybe...All of those.\"\r\n\"Some things you can do to\r\n keep from getting sick are \r\n bathing in the Hot Spring,\r\n or sleeping well, or\r\n lighting a fire in winter\r\n with Lumber or Branches,\r\n or even putting flowers in\r\n your Vase.\"\r\n\"OK. I got all that.\"\BRK";
+    const MESSAGE_63 = "Life on the Farm\r\n                   BEGINNER\r\n                           \r\n\"Hey big bro!\"\r\n\"What is it?\"\r\n\"I finally bought a\r\nSheep!\"\r\n\"Congratulations!\"\r\n\"But I'm not sure about how\r\n to take care of it.\"\r\n\"It's not so different from\r\n taking care of a Cow.\r\n Only shipping is what you\r\n can ship from it.\"\r\n\"How so?\"\r\n\"You can use Clippers to\r\n shear Wool from a Sheep.\r\n Unlike Cows, though, you \r\n can't shear Wool from \r\n Sheep everyday.\"\r\n\"If you say so.\"\r\n\"I'll tell you more about\r\n it tomorrow.\"\r\n\"I hate waiting...\"\BRK";
+    const MESSAGE_64 = "Life on the Farm\r\n                   BEGINNER\r\n                           \r\n\"Hey big bro!\"\r\n\"What is it?\"\r\n\"It's about what you were \r\n telling me yesterday...\"\r\n\"Caring for Sheep, right?\"\r\n\"After you shear a Sheep \r\n once, its coat won't grow\r\n back for a full 7 days.\r\n You can't get more Wool\r\n from it until then.\"\r\n\"I see.\"\r\n\"By the way, you can \r\n buy Clippers from the \r\n blacksmith.\"\r\n\"OK. I'll remember.\"\BRK";
+    const MESSAGE_65 = "Life on the Farm\r\n                   BEGINNER\r\n                           \r\n\"Hey big bro!\"\r\n\"What is it?\"\r\n\"Is there anything \r\n different about Sheep and\r\n Cows, other than Wool?\"\r\n\"Well...The Fodder is the\r\n same, grazing them is the\r\n same, brushing is the \r\n same, giving them Animal\r\n Medicine is the same --\"\r\n\"What about making them\r\n pregnant?\"\r\n\"For that you need Sheep \r\n Magic Potion. Cow Magic\r\n Potion won't work, of \r\n course!\"\r\n\"Makes sense to me!\"\r\n\"That's the only difference\r\n I can think of.\"\BRK";
+    const MESSAGE_66 = "Life on the Farm\r\n                   BEGINNER\r\n                           \r\n\"Hey big bro!\"\r\n\"What is it?\"\r\n\"I'm asking the Harvest \r\n Sprites to do some work\r\n for me --\" \r\n\"That's great!\"\r\n\"But, they don't do as \r\n much as I want them to!\"\r\n\"They just aren't used to\r\n it yet. They have to learn\r\ntheir jobs, too, you know.\"\r\n\"Once they get used to it,\r\n they'll work better, \r\n you mean?\"\r\n\"Of course! Also, don't \r\n forget to give them small\r\n gifts as a thank-you when\r\n they're done.\"\r\n\"I'll remember!\"\BRK";
+    const MESSAGE_67 = "Life on the Farm\r\n                   BEGINNER\r\n                           \r\n\"Hey big bro!\"\r\n\"What is it?\"\r\n\"I heard that you can train\r\n the Harvest Sprites. \r\n Is it true?\"\r\n\"Yes.\"\r\n\"How do you do it?\"\r\n\"You do it through Mini-\r\n Games. When you talk to a\r\n Harvest Sprite, you get to\r\n choose between asking them\r\n to work or playing Mini-\r\n Games. Choose the \r\n Mini-Game.\"\r\n\"So I can just play Mini-\r\n Games with them all day\r\n to train them really \r\n quickly!\"\r\n\"No, you can only play once\r\n a day. Sorry.\"\r\n\"That's too bad.\"\BRK";
+    const MESSAGE_68 = "Life on the Farm\r\n                   BEGINNER\r\n                           \r\n\"Hey big bro!\"\r\n\"What is it?\"\r\n\"It's about what you were \r\n telling me yesterday...\"\r\n About training the Harvest\r\n Sprites, right? You see,\r\n different Mini-Games train\r\n different skills.\"\r\n\"Like what?\"\r\n\"The \"Harvest\" Mini-Game\"\r\nmakes them better at \r\nharvesting, and the \"Animal\r\nHusbandry\" and \"Watering\"\r\nMini-Games help them\r\nimprove at those things, \r\ntoo.\"\r\n\"Makes sense to me.\"\r\n\"But, if you make them \r\n fail at the game, they'll\r\n actually get worse, so \r\n be careful.\"\r\n\"I will!\"\BRK";
+    const MESSAGE_69 = "Life on the Farm\r\n                   BEGINNER\r\n                           \r\n\"Hey big bro!\"\r\n\"What is it?\"\r\n\"I guess the Mailbox isn't\r\n just for decoration, huh?\"\r\n\"No, you'll get notices of \r\n new items at the store, \r\n or letters and cards. \r\n So, it's a good idea to \r\n check it every so often.\"\r\n\"You're right about that.\"\r\n\"Once you read letters, \r\n they're stored in your \r\n Bookshelf in case you want\r\n to read them again.\"\r\n\"Thanks. I'll keep that \r\n in mind.\"\BRK";
+    const MESSAGE_70 = "Life on the Farm\r\n                   BEGINNER\r\n                           \r\n\"Hey big bro!\"\r\n\"What is it?\"\r\n\"The town is so big, I \r\n still get lost sometimes!\"\r\n\"If you get lost, look at \r\n the World Map on the Menu\r\n Window after pressing \r\n START. \r\n That will show you the \r\n layout of the town, as \r\n well as where you are. \r\n Soon enough you'll have\r\n it all memorized.\"\r\n\"That's sure handy!\"\r\n\"It will also show you \r\n where your Dog is, which is\r\n useful if you can't find\r\n him.\"\r\n\"Great!\"\BRK";
+    const MESSAGE_71 = "Life on the Farm\r\n                   BEGINNER\r\n                           \r\n\"Hey big bro!\"\r\n\"What is it?\"\r\n\"Can I buy back a Cow that\r\n I've sold?\"\r\n\"Sorry, but you can't. \r\n I guess this means you\r\n sold your Cow, right...?\r\n\"Yes, because I couldn't\r\n afford Seeds for Fall \r\n planting!\"\r\n\"You still can't buy her\r\n back, whatever the \r\n reason. Sorry.\r\n\"And I had finally gotten\r\n her to give me G size\r\n Milk, too! What a waste!\"\r\n\"Now you'll have to start\r\n all over with a new Cow.\r\n Good luck!\"\r\n\"Oh, man...\"\BRK";
+    const MESSAGE_72 = "Life on the Farm\r\n                   BEGINNER\r\n                           \r\n\"Hey big bro!\"\r\n\"What is it?\"\r\n\"What does the World Map\r\n show, aside from me and\r\n my Dog?\"\r\n\"It also shows the location\r\n of your Ball and Basket.\"\r\n\"Why those two?\"\r\n\"Well, your animals always\r\n stay on the farm, and the \r\n Harvest Sprites only work\r\n on the farm. What else \r\n would you want on there?\"\r\n\"How about the location of\r\n all the townspeople?\"\r\n\"Sorry, that's just \r\n not possible.\"\r\n\"Too bad!...\"\BRK";
+    const MESSAGE_73 = "Life on the Farm\r\n                   BEGINNER\r\n                           \r\n\"Hey big bro!\"\r\n\"What is it?\"\r\n\"I heard you can have\r\n presents giftwrapped at \r\n the Supermarket. What will\r\n they wrap, exactly?\"\r\n\"Just about anything you \r\n could give to somebody.\"\r\n\"Even Stones or Weeds?\"\r\n\"If you wanted to! \r\n But, noboody wants to \r\n receive Stones or Weeds.\r\n And, if you wrap them up, \r\n they'll be even less \r\n happy with you. \r\n They'll expect something\r\n nice, you see.\"\r\n\"OK.\"\BRK";
+    const MESSAGE_74 = "Life on the Farm\r\n                   BEGINNER\r\n                           \r\n\"Hey big bro!\"\r\n\"What is it?\"\r\n\"My Dog is growing up nice\r\n and strong!\"\r\n\"That's great! So, he'll\r\n chase away wild dogs when\r\n they come?\"\r\n\"You bet! He also comes \r\n when I use my Bell to call\r\n the Sheep and Cows that\r\n I have grazing.\"\r\n\"You've been training him,\r\n I see.\"\r\n\"I have. Right now we're \r\n training everyday for the\r\n Frisbee Tournament in \r\n Summer.\"\r\n\"He must love all the \r\n attention.\"\r\n\"He does. It's fun for me, \r\n too.\"\BRK";
+    const MESSAGE_75 = "Life on the Farm\r\n                   BEGINNER\r\n                           \r\n\"Hey big bro!\"\r\n\"What is it?\"\r\n\"My Dog has grown up \r\n big and strong, but my \r\n Horse hasn't gotten very\r\n much bigger.\"\r\n\"What? You have a Horse\r\n now?\"\r\n\"I forgot to tell you, I \r\n guess. Sorry.\"\r\n\"That's OK. Anyway, Horses\r\n take longer to grow than \r\n Dogs. It takes them about \r\n a year to get become full-\r\n grown.\"\r\n\"What can I do with it\r\n then?\"\r\n\"I'll tell you tomorrow.\"\r\n\"If you say so.\"\BRK";
+    const MESSAGE_76 = "Life on the Farm\r\n                   BEGINNER\r\n                           \r\n\"Hey big bro!\"\r\n\"What is it?\"\r\n\"It's about what you were \r\n telling me yesterday...\"\r\n\"About what fully grown \r\n Horses could do, right?\"\r\n First, you can use Saddle-\r\n bags to ship things. \r\n Face the Horse and throw\r\n what you want to ship,\r\n and it will be done!\"\r\n\"That's great! That means\r\n I don't have to put every-\r\n thing in my Rucksack, \r\n go out to the Shipment box,\r\n then take it all out again.\r\n How convenient!\"\r\n\"That's right.\"\BRK";
+    const MESSAGE_77 = "Life on the Farm\r\n                   BEGINNER\r\n                           \r\n\"Hey big bro!\"\r\n\"What is it?\"\r\n\"It's about what you were \r\n telling me yesterday...\"\r\n\"About what fully grown \r\n Horses could do, right?\"\r\n\"You can also ride the \r\n Horse, of course.\"\r\n\"That sounds fun!\"\r\n\"It makes moving around \r\n much faster. You can also\r\n enter in Horse Races.\"\r\n\"That means I can bet on\r\n myself to win, and then \r\n win tons of prizes, too, \r\n right!\"\r\n\"That's right, sis.\"\BRK";
+    const MESSAGE_78 = "Life on the Farm\r\n                   BEGINNER\r\n                           \r\n\"Hey big bro!\"\r\n\"What is it?\"\r\n\"Is there anything else a \r\n fully grown Horse is good \r\n for?\"\r\n\"Not apart from shipping \r\n Items or entering the \r\n Horse Races, no.\"\r\n\"That's too bad...\"\r\n\"I should tell you how to \r\n take care of it, though.\r\n Your Horse will like it if\r\n you talk to it and ride it\r\n everyday. \r\n You should brush it every\r\n day, too.\r\n Also, put it in the Barn\r\n on rainy days, just like\r\n your other animals.\"\r\n\"All that seems easy\r\n enough.\" \BRK";
+    const MESSAGE_79 = "Life on the Farm\r\n                   BEGINNER\r\n                           \r\n\"Hey big bro!\"\r\n\"What is it?\"\r\n\"What's a \"Cottage?\"\r\n\"It's an extra house for \r\n yourself that you can ask\r\n Gotz the Woodcutter to \r\n build for you. I hear \r\n there's another way to\r\n get one, but I'm not sure\r\n what it is.\"\r\n\"How is a Cottage different\r\n from my regular house?\"\r\n\"Well, you can sleep there,\r\n but there is no Kitchen, \r\n so no Refrigerator or \r\n Shelves. It's basically \r\n just for fun.\"\r\n\"It's so expensive,\r\nthough!\"\BRK";
+    const MESSAGE_80 = "Life on the Farm\r\n                   BEGINNER\r\n                           \r\n\"Hey big bro!\"\r\n\"What is it?\"\r\n\"It's about this really big\r\n fish that I caught in \r\n the sea last Summer.\r\n It looked almost like a \r\n squid, but huge...\"\r\n\"That sounds like one of\r\n the legendary \"King \r\n Fish.\" I bet you had to \r\n have a really high level\r\n Fishing Rod to catch it.\r\n I hear they only come out\r\n in Spring or Winter.\r\n There are some other \r\n conditions for catching \r\n them, but I'm not sure\r\n what they are.\"\r\n\"How many King Fish are \r\n there?\"\r\n\"6 in all, but that's all I\r\n know about them. What \r\n did you do with the fish\r\n once you caught it?\"\r\n\"I'll tell you that \r\n tomorrow.\"\r\n\"That's my line!\"\BRK";
+    const MESSAGE_81 = "Life on the Farm\r\n                   BEGINNER\r\n                           \r\n\"Hey big bro!\"\r\n\"What is it?\"\r\n\"It's about what I was \r\n telling you yesterday...\"\r\n\"What you did with the \r\n King Fish, right?\"\r\n\"Right. It was way too \r\n heavy for me to carry home,\r\n so I just took an ink \r\n rubbing of it and then \r\n released it back into \r\n the ocean.\"\r\n\"I can't wait to see that \r\n rubbing! I'm proud of you, \r\n sis.\"\r\n\"Gee, thanks!\"\BRK";
+    const MESSAGE_82 = "Life on the Farm\r\n                   BEGINNER\r\n                           \r\n\"Hey big bro!\"\r\n\"What is it?\"\r\n\"I heard that no crops will\r\n grow during Winter.\r\n Is that true?\"\r\n\"It is. Not even farm grass\r\n will grow under all that \r\n snow.\"\r\n\"So all I can do on the \r\n farm during winter is take\r\n care of my animals?\"\r\n\"Yes. You can also do \r\n other things you don't \r\n normally have time for.\"\r\n\"I see.\"\BRK";
+    const MESSAGE_83 = "Life on the Farm\r\n                   BEGINNER\r\n                           \r\n\"Hey big bro!\"\r\n\"What is it?\"\r\n\"You said that since I \r\n can't grow crops in Winter,\r\n I ought to use the time for\r\n something I usually don't\r\n have time for.\r\n Do you have any \r\n suggestions?\"\r\n\"How about digging in one\r\n of the mines?\"\r\n\"Now that you mention it,\r\n I haven't done that \r\n at all!\"\r\n\"Or, you could spend all \r\nday fishing, for instance.\"\r\n\"That sounds like fun,\r\ntoo!\"\BRK";
+    const MESSAGE_84 = "Life on the Farm\r\n                   BEGINNER\r\n                           \r\n\"Hey big bro!\"\r\n\"What is it?\"\r\n\"It's about what you were \r\n telling me yesterday...\"\r\n\"About what to do in \r\n Winter, right?\"\r\n\"Is there anything else to\r\n do, besides fishing and \r\n mining?\"\r\n\"Let's see...You can't farm\r\n anyway, so you could \r\n upgrade your Tools. Or, \r\n you could spend the time\r\n talking with the towns-\r\n people.\"\r\n\"I guess there are lots of\r\n things to do in Winter!\"\r\n\"What do you want to\r\n do most, sis?\"\r\n\"Let's see...\"\r\n\"Think about it, and tell\r\n me tomorrow.\"\r\n\"OK.\"\BRK";
+    const MESSAGE_85 = "Life on the Farm\r\n                   BEGINNER\r\n                           \r\n\"Hey big bro!\"\r\n\"What is it?\"\r\n\"I know what I want to do\r\n most in Winter, now.\"\r\n\"What is it?\"\r\n\"I think I want to dig lots\r\n in the mines.\"\r\n\"That's a good idea. \r\n Should I tell you more\r\n about them?\"\r\n\"Yes please!\"\r\n\"OK. That'll be \r\n tomorrow's subject.\"\r\n\"I can't wait!\"\BRK";
+    const MESSAGE_86 = "Life on the Farm\r\n                   BEGINNER\r\n                           \r\n\"Hey big bro!\"\r\n\"What is it?\"\r\n\"It's about what you were \r\n telling me yesterday...\"\r\n\"About mining, right?\r\n First, there are two mines\r\n you can go to. One is past\r\n the Hot Spring behind the \r\n mountain.\"\r\n\"Next to the waterfall, \r\n right?\"\r\n\"That's it. The other one \r\n is on the island on the \r\n far side of the lake.\"\r\n\"Wait a second! \r\n How do I get to it, \r\n then?\"\r\n\"You have to wait until \r\n Winter for the lake to \r\n freeze, then walk over\r\n it then.\"\r\n\"I hope I don't slip...\"\BRK";
+    const MESSAGE_87 = "Life on the Farm\r\n                   BEGINNER\r\n                           \r\n\"Hey big bro!\"\r\n\"What is it?\"\r\n\"It's about what you were \r\n telling me yesterday...\"\r\n\"About mining, right?\r\n Today I'll tell you about \r\n stairs going down that you\r\n find when digging in the \r\n mine. \r\n Go down the stairs to get \r\n to deeper levels of the\r\n mine. \r\n The deeper you go, the \r\n more valuable things you'll\r\n find, so take these stairs\r\n whenever you find them.\"\r\n\"How do I get back to \r\n the surface, though?\"\r\n\"Don't worry. You'll see \r\n stairs going up, too.\"\r\n\"Thanks. I feel much \r\n better now!\"\BRK";
+    const MESSAGE_88 = "Life on the Farm\r\n                   BEGINNER\r\n                           \r\n\"Hey big bro!\"\r\n\"What is it?\"\r\n\"It's about what you were \r\n telling me yesterday...\"\r\n\"About mining, right?\r\n\"Today I'll tell you how to\r\n do actual digging.\r\n Use your Hoe to dig up the\r\n ground of the mine.\r\n You'll be able to tell \r\n where you've dug because\r\n it will look the same as\r\n a tilled field. \r\n You only need to dig the\r\n same piece of earth once.\r\n Digging more than that \r\n won't have an effect.\r\n\"So, if nothing comes out, \r\n go on to the next patch\r\n and try. I get it!\"\r\n\"Also, use your Hammer to\r\n smash Stones in the mine.\r\n Sometimes Ore will come\r\n out.\"\r\n\"OK.\"\BRK";
+    const MESSAGE_89 = "Life on the Farm\r\n                   BEGINNER\r\n                           \r\n\"Hey big bro!\"\r\n\"What is it?\"\r\n\"Can I wear the jewelry \r\n Saibara makes myself?\"\r\n\"Why? Do you think that\r\n doing so would increase \r\n your HP or something?\"\r\n\"I thought it might...\r\n Or, maybe just make me\r\n look prettier...\r\n\"Sorry, but you can't wear\r\n the jewelry yourself. \r\n You can ship it, though.\r\n I wouldn't want to sell it!\r\n Not after using all that\r\n Orichalc and gold to have\r\n it made in the first \r\n place!\"\r\n\"You can sell it for a lot\r\n of money, though!\"\r\n\"Hmm...Naww, I couldn't.\BRK";
+    const MESSAGE_90 = "Life on the Farm\r\n                   BEGINNER\r\n                           \r\n\"Hey big bro!\"\r\n\"What is it?\"\r\n\"I found something else in \r\n the mine, but I'm not sure\r\n whether it's rare and \r\n valuable or not.\"\r\n\"What is it?\"\r\n\"An ore called\r\nAdamantite.\"\r\n\"That's great, sis! You can\r\n give it to Saibara and \r\n ask him to make you a \r\n Maker with it.\"\r\n\"What's a Maker?\"\r\n\"There are three kinds of \r\n Makers: Cheese, Yarn, and\r\n Mayonnaise.\"\r\n\"You'll tell me more about\r\n them tomorrow, right?\"\r\n\"How'd you know, sis?\"\BRK";
+    const MESSAGE_91 = "Life on the Farm\r\n                   BEGINNER\r\n                           \r\n\"Hey big bro!\"\r\n\"What is it?\"\r\n\"It's about what you were \r\n telling me yesterday...\"\r\n\"The Makers, right?\"\r\n\"Right. Will you tell me \r\n what they do?\"\r\n\"The Mayonnaise Maker makes\r\n Mayonnaise, the Cheese \r\n Maker Cheese, and the Yarn\r\n Maker Yarn! That's all \r\n there is to it, sis!\"\r\n\"Now I feel a little \r\n foolish for asking...How do\r\n you use them, though?\"\r\n\"I'll tell you that \r\n tomorrow.\"\BRK";
+    const MESSAGE_92 = "Life on the Farm\r\n                   BEGINNER\r\n                           \r\n\"Hey big bro!\"\r\n\"What is it?\"\r\n\"It's about what you were \r\n telling me yesterday...\"\r\n\"About using the 3 kinds of\r\n Makers, right?\r\n Well, to use the Mayonnaise\r\n Maker, just toss in Eggs.\r\n To use the Cheese Maker, \r\n just throw in Milk. \r\n Finally, to use the Yarn \r\n Maker, just throw in some\r\n Wool. That's it.\r\n By the way, the size of the\r\n Mayo, Cheese, or Yarn that\r\n comes out is equivalent to\r\n the size of what you put\r\n in the Maker to begin\r\nwith.\"\r\n\"I get it now.\"\BRK";
+    const MESSAGE_93 = "Life on the Farm\r\n                   BEGINNER\r\n                           \r\n\"Hey big bro!\"\r\n\"What is it?\"\r\n\"Where do the Makers go?\"\r\n\"The Mayonnaise Maker goes\r\n in the Chicken Coop, and\r\n the Cheese and Yarn Makers\r\n in the Barn.\"\r\n\"That makes it easy to put\r\n the Eggs, Milk, or Wool in \r\n them, doesn't it?\"\r\n\"Right. That way you don't\r\n have to carry them far.\r\n Except maybe if you're\r\n grazing your animals.\"\BRK";
+    const MESSAGE_94 = "Life on the Farm\r\n                   BEGINNER\r\n                           \r\n\"Hey big bro!\"\r\n\"What is it?\"\r\n\"How much does it cost\r\n to have one of those\r\n Makers made?\"\r\n\"It requires 20,000G and\r\n a piece of Adamantite.\"\r\n\"That's very expensive!\"\r\n\"It is indeed. But, once \r\n you buy one, it never \r\n breaks, and you can use it\r\n forever to increase the \r\n sale price of your farm \r\n goods. You'll also be able\r\n to cook more things.\"\r\n\"I see. That's still a lot,\r\n though...!\"\BRK";
+    const MESSAGE_95 = "Life on the Farm\r\n                   BEGINNER\r\n                           \r\n\"Hey big bro!\"\r\n\"What is it?\"\r\n\"Snowstorms are really \r\n scary, aren't they?\"\r\n\"You bet. You can't go \r\n outside at all! That means\r\n you cant take care of your \r\n animals or crops. The wind \r\n can also destroy your crops\r\n or Fences.\"\r\n\"I can't do anything about\r\n it?\"\r\n\"Nope. Not even the Harvest\r\n Sprites will go outside \r\n during a snowstorm. All you\r\n can do is keep the animals\r\n safe in their barn.\"\r\nI'll just pray one never \r\n comes, then, just like a \r\n typhoon!\"\BRK";
+    const MESSAGE_96 = "Life on the Farm\r\n                   BEGINNER\r\n                           \r\n\"Hey big bro!\"\r\n\"What is it?\"\r\n\"Can I only find Orichalc\r\n and Adamantite Ores in \r\n the mine by the Spring?\"\r\n\"That's right.\r\n In that mine, all you'll\r\n find is Mystrile, \r\n Adamantite, and Orichalc.\"\r\n\"What about in the mine\r\n on the lake?\"\r\n\"There you can find other \r\n Ores that you can ship.\"\r\n\"So, if I want to make \r\n money, I should go to the\r\n lake, and if I want to \r\n upgrade or make things,\r\n I should go to the spring,\r\n right?\"\BRK";
+    const MESSAGE_97 = "Life on the Farm\r\n                   BEGINNER\r\n                           \r\n\"Hey big bro!\"\r\n\"What is it?\"\r\n\"I bought a Sheep and a Cow\r\n at Yodel Farm. The Sheep\r\n is full grown, but\r\n not the Cow. Why?\"\r\n\"Cows grow more slowly than\r\n Sheep. That's why the Cows\r\n that Yodel Farm sells \r\n aren't full grown yet.\"\r\n\"But Cows won't give Milk\r\n unless they're full grown, \r\n right? \r\n I guess I'll just have to\r\n wait until it gets older!\"\BRK";
+    const MESSAGE_98 = "Life on the Farm\r\n                   BEGINNER\r\n                           \r\n\"Hey big bro!\"\r\n\"What is it?\"\r\n\"You can't watch TV when \r\n there's a typhoon or a \r\n snowstorm, right?\"\r\n\"Right. Why?\"\r\n\"Will TV programs I miss \r\n because of the weather be \r\n shown the next day, or \r\n maybe the next week?\"\r\n\"No, they just skip those \r\n shows and go on with the\r\n next one.\"\r\n\"So, there's no way I can\r\n see shows I missed?\"\r\n\"Not until they \r\n re-broadcast the whole \r\n series, no.\"\r\n\"That's disappointing!\"\BRK";
+    const MESSAGE_99 = "Life on the Farm\r\n                   BEGINNER\r\n                           \r\n\"Hey big bro!\"\r\n\"What is it?\"\r\n\"I've been wondering...\r\n what is it I eat every\r\n morning?\"\r\n\"Don't you know yourself?\r\n Basically, Bread or Rice\r\n Or, anything else that \r\n you've ever made before.\"\r\n\"So, I should just make \r\n something that recuperates\r\n a lot of Stamina and \r\n Fatigue every morning \r\n then, right?\"\r\n\"That sounds about right.\"\BRK";
+    const MESSAGE_100 = "Life on the Farm\r\n                   BEGINNER\r\n                           \r\n\"Hey big bro!\"\r\n\"What is it?\"\r\n\"I was up late at night \r\n and wanted to watch TV,\r\n but nothing was on. \r\n Why not?\"\r\n\"All programs stop at \r\n midnight. That's why.\"\r\n\"Aww...And I used to like\r\n to stay up late watching\r\n TV, too.\"\BRK";
+    const MESSAGE_101 = "Life on the Farm\r\n                   BEGINNER\r\n                           \r\n\"Hey big bro!\"\r\n\"What is it?\"\r\n\"What determines how \r\n affection level changes\r\n when you give gifts?\"\r\n\"Well, whether they like \r\n the gift or not, for one \r\n thing. Also, if you give \r\n them gifts too often, \r\n they'll have less effect. \r\n And, people will be more\r\n appreciative if the gift is\r\n on their birthday (assuming\r\n they like it, of course).\"\r\n\"How do I figure out \r\n people's birthdays?\"\r\n\"You could give them \r\n gifts everyday and watch\r\n their reaction...?\"\r\n\"There's got to be a \r\n better way!\"\r\n\"Maybe there's someone \r\n you can ask, then...?\"\r\n\"I can't believe even you\r\n don't know, bro!\"\BRK";
+    const MESSAGE_102 = "Life on the Farm\r\n                   BEGINNER\r\n                           \r\n\"Hey big bro!\"\r\n\"What is it?\"\r\n\"It's about what you were \r\n telling me yesterday...\r\n Do you know what people\r\n in town like and don't \r\n like?\"\r\n\"Sorry, but I don't. \r\n But, it's also impossible\r\n to give everyone every-\r\n thing and watch their\r\n reactions...\"\r\n\"You bet it is!\"\r\n\"Still, it's a good idea to\r\n try giving people some\r\n things, and you may get\r\n the hang of it.\"\r\n\"I see.\"\BRK";
+    const MESSAGE_103 = "Life on the Farm\r\n                   BEGINNER\r\n                           \r\n\"Hey big bro!\"\r\n\"What is it?\"\r\n\"Do you know what day it is\r\n today?\"\r\n\"Sure. It's the Winter \r\n Thanksgiving Festival.\"\r\n\"Yes. That mean...\r\n Here you go, Chocolate!\"\r\n\"Gee sis, thanks! I'll try\r\n it right now...Mmm....\r\n It's delicious! \"\r\n\"I'm glad you like it!\"\r\n\"I do. Now I'll have to \r\n top it for the next Spring\r\n Thanksgiving Festival!\"\r\n\"Great!\"\BRK";
+    const MESSAGE_104 = "Life on the Farm\r\n                   BEGINNER\r\n                           \r\n\"Hey big bro!\"\r\n\"What is it?\"\r\n\"The Harvest Goddess came \r\n and told me when my \r\n Pedometer reached 10,000\r\n steps.\"\r\n\"Oh yeah, I thought I heard\r\n something like that. \r\n She might also come when\r\n you ship a certain number\r\n of things, or catch a \r\n certain number of fish.\"\r\n\"Well, she herself told me\r\n that I didn't receive \r\n anything special for it.\r\nIt's no big deal, I guess.\"\BRK";
+    const MESSAGE_105 = "Life on the Farm\r\n                   BEGINNER\r\n                           \r\n\"Hey big bro!\"\r\n\"What is it?\"\r\n\"You don't save when you\r\n sleep this time, right?\"\r\n\"Right. Instead, select \r\n Diary in the Menu Window\r\n or investigate the \r\n Diary in your house.\r\n\"So I can save anywhere \r\n and anytime, right?\"\r\n\"Well, you can't open up\r\n the Menu Window when \r\n you're on your Horse, \r\n remember.\"\r\n\"OK, so that's the only \r\n time I can't save, right?\BRK";
+    const MESSAGE_106 = "Life on the Farm\r\n                   BEGINNER\r\n                           \r\n\"Hey big bro!\"\r\n\"What is it?\"\r\n\"What's the difference \r\n between my Refrigerator\r\n and Shelves?\"\r\n\"You use them for different\r\n things. Basically, things \r\n you eat go in the \r\n Refrigerator and every-\r\n thing else goes in the \r\n Shelf.\"\r\n\"I see.\"\r\n\"Also, you can't put Dogs,\r\n Chickens, or Baskets in\r\n either one.\"\r\n\"That makes sense.\"\r\n\"Also, you can put 99 of\r\n each Item in each space,\r\n which is more than the\r\n Rucksack.\"\r\n\"That's a lot!\"\BRK";
+    const MESSAGE_107 = "Life on the Farm\r\n                   BEGINNER\r\n                           \r\n\"Hey big bro!\"\r\n\"What is it?\"\r\n\"You told me yesterday that\r\n I could fit 99 Items in \r\n each space in my Shelves\r\n or Refrigerator. I tried, \r\n but it doesn't work.\"\r\n\"That doesn't make any \r\n sense...What was it?\"\r\n\"Eggs...\"\r\n\"If they were different \r\n kinds of Eggs, then you \r\n can't put them in the \r\n same space.\"\r\n\"I should have thought\r\n of that myself!\"\BRK";
+    const MESSAGE_108 = "Life on the Farm\r\n                   BEGINNER\r\n                           \r\n\"Hey big bro!\"\r\n\"What is it?\"\r\n\"Can you use something \r\n other than food Items to\r\n cook with?\"\r\n\"Sure. Just put it in your\r\n Rucksack and then select \r\n it. But I've never heard\r\n of anything like that\r\n in a recipe!\"\r\n\"But if you can use some-\r\n thing other than food in a\r\n recipe, then maybe there's\r\n something good you can\r\n make...\"\r\n\"It's a possibility, I \r\n guess...\"\BRK";
+    const MESSAGE_109 = "Life on the Farm\r\n                   BEGINNER\r\n                           \r\n\"Hey big bro!\"\r\n\"What is it?\"\r\n\"My Chicken died...\"\r\n\"Of sickness?\"\r\n\"Yes...\"\r\n\"I forgot to put it in the\r\n Barn when it started \r\n raining...I feel awful!\"\r\n\"You know, these things\r\n cause your reputation in\r\n town to go down.\"\r\n\"Really?\"\r\n\"When it's your fault.\r\n Not when animals die of\r\n old age, of course.\"\r\n\"I'll be more careful \r\n in the future!\"\BRK";
+    const MESSAGE_110 = "Life on the Farm\r\n                   BEGINNER\r\n                           \r\n\"Hey big bro!\"\r\n\"What is it?\"\r\n\"I ate a \"Power Berry\",\r\n but I'm not sure exactly \r\n what it is.\"\r\n\"It increases your maximum\r\n Stamina.\"\r\n\"So I can eat as many as\r\n I can?\"\r\n\"There are only 10 in all,\r\n and each one increases your\r\n Stamina by 10. That makes\r\n 100 in all.\"\r\n\"How much do I start\r\n out with?\"\r\n\"100.\"\r\n\"So I can increase my\"\r\n Stamina by 100%. \r\n That's great!\"\BRK";
+    const MESSAGE_111 = "Life on the Farm\r\n                   BEGINNER\r\n                           \r\n\"Hey big bro!\"\r\n\"What is it?\"\r\n\"Is there any way to find \r\n out how many Power \r\n Berries I've eaten?\"\r\n\"If you look at the Farm\r\n Property page in your \r\n Earnings, then there's a \r\n picture of you and your \r\n name, right?\"\r\n\"Right.\"\r\n\"Under that are some red \r\n circles.\"\r\n\"Uh-huh.\"\r\n\"Each one of those means \r\n one Power Berry that \r\n you've eaten.\"\r\n\"That's easy enough,\r\n I suppose.\BRK";
+    const MESSAGE_112 = "Life on the Farm\r\n                   BEGINNER\r\n                           \r\n\"Hey big bro!\"\r\n\"What is it?\"\r\n\"If the red circles in my\r\n Earnings mean Power\r\n Berries, what do the blue\r\n circles next to them mean?\"\r\n\"Those are the number of\r\n Mysterious Berries you've\r\n eaten. You get them from \r\n the Kappa. Which, I see \r\n you've already done...\"\r\n\"What do the Mystic Berries\r\n do then?\"\r\n\"They make you slower to \r\n Fatigue, so you'll collapse\r\n from overwork less.\"\r\n\"I didn't know that! I just\r\n thought it tasted good!\"\BRK";
+    const MESSAGE_113 = "Life on the Farm\r\n                   BEGINNER\r\n                           \r\n\"Hey big bro!\"\r\n\"What is it?\"\r\n\"What are the heart-shaped\r\n symbols on different pages\r\n of my Earnings book?\"\r\n\"Those show you levels of\r\n affection people have for \r\n you. There can be as many\r\n as 10.\"\r\n\"So, if someone has 10 \r\n hearts for me, then they \r\n like me incredibly much?\"\r\n\"That's about it.\"\BRK";
+    const MESSAGE_114 = "Life on the Farm\r\n                   BEGINNER\r\n                           \r\n\"Hey big bro!\"\r\n\"What is it?\"\r\n\"I saw something strange on\r\n sale at Gotz's place.\"\r\n\"What was it?\"\r\n\"It was called \"Golden\"\r\n Lumber.\" Do you know \r\n what that is?\"\r\n\"I've heard that putting \r\n that in your field can get\r\n the townspeople really \r\n mad at you for showing\r\n off.\"\r\n\"But why is it so \r\n expensive?\"\r\n\"Think about it this way:\r\n only someone who wanted\r\n to boast about how rich \r\n they were would buy a piece\r\n of Golden Lumber, much less\r\n put it in their yard for \r\n everybody to see!\"\r\n\"I'm tempted...\"\BRK";
+    const MESSAGE_115 = "Life on the Farm\r\n                   BEGINNER\r\n                           \r\n\"Hey big bro!\"\r\n\"What is it?\"\r\n\"I bought the Golden Lumber\r\n and put it in my yard --\"\r\n\"Why would you do that!\"\r\n\"Don't get so mad at me!\r\n It wouldn't fit in the \r\n Woodbin, you see.\"\r\n\"That's because it's not \r\n like regular Lumber. You\r\n can put it in your Shelves\r\n instead, show-off...\"\r\n\"I don't like everybody \r\n calling me names like you,\r\n so I think I'm going to\r\n move it as soon as I can!\"\BRK";
+    const MESSAGE_116 = "Life on the Farm\r\n                   BEGINNER\r\n                           \r\n\"Hey big bro!\"\r\n\"What is it?\"\r\n\"I heard that I can \r\n communicate with the Game-\r\n Cube version of the game.\"\r\n\"That's true.\"\r\n\"How do I do it?\"\r\n\"First, do you know how to\r\n find the Harvest Goddess?\r\n\"No.\"\r\n\"I'll tell you that first, \r\n then. \r\n You know where the mine by\r\n the spring on Mother's Hill\r\n is, right?\"\r\n\"Behind the Hot Spring, \r\n right?\"\r\n\"Right. Well, the Harvest\r\n Goddess appears in the \r\n spring to the right of \r\n that.\"\r\n\"Got it. Be sure to tell me\r\n how to communicate \r\n tomorrow, OK?\"\BRK";
+    const MESSAGE_117 = "Life on the Farm\r\n                   BEGINNER\r\n                           \r\n\"Hey big bro!\"\r\n\"What is it?\"\r\n\"It's about what you were \r\n telling me yesterday...\"\r\n About how to communicate\r\n with the GameCube, right?\r\n First, you have to throw an\r\n offering into the Goddess's\r\n spring to make her appear.\r\n Then,select\"Communicate\".\r\n That's about all there is \r\n to it, sis. \r\n I've never done it, but\r\n that's what I hear, \r\n anyway.\"\r\n\"I can't wait to give it\r\n a try and see if She\r\n really does appear!\"\BRK";
+    const MESSAGE_118 = "Life on the Farm\r\n                   BEGINNER\r\n                           \r\n\"Hey big bro!\"\r\n\"What is it?\"\r\n\"What's the Blue Feather?\"\r\n\"What?! You mean they're \r\n already selling it at the \r\n Supermarket?\"\r\n\"Yeah, I've seen boys give\r\n it to girls a few times, \r\n now.\"\r\n\"Oh, I see. The Blue \r\n Feather is what people use\r\n when they want to propose \r\n marriage.\"\r\n\"So, when those girls \r\n accepted the Feather, they\r\n were saying \"Yes\" ?\r\n How romantic!\"\BRK";
+    const MESSAGE_119 = "Life on the Farm\r\n                   BEGINNER\r\n                           \r\n\"Hey big bro!\"\r\n\"What is it?\"\r\n\"It's about what you were \r\n telling me yesterday...\"\r\n\"Is there something about \r\n the Blue Feather you don't\r\n understand yet?\"\r\n\"I told you they were\r\n selling it at the Super-\r\n market, but they didn't \r\n have any when I went to \r\n look!\"\r\n\"They wouldn't sell one to\r\n a girl, sis!\"\r\n\"So the only way I can get\r\n one is to have someone\r\n propose to me?\"\r\n\"That's right.\"\r\n\"That's no fair!\"\BRK";
+    
+    var var_0;
+    
+    switch (Check_Flag(1)) {
+        case 0:
+            switch (Check_Flag(2)) {
+                case 1:
+                    var_0 = Print_TV_Message(0);
+                    break;
+                case 2:
+                    var_0 = Print_TV_Message(1);
+                    break;
+                case 3:
+                    var_0 = Print_TV_Message(2);
+                    break;
+                case 4:
+                    var_0 = Print_TV_Message(3);
+                    break;
+                case 5:
+                    var_0 = Print_TV_Message(4);
+                    break;
+                case 6:
+                    var_0 = Print_TV_Message(5);
+                    break;
+                case 7:
+                    var_0 = Print_TV_Message(6);
+                    break;
+                case 8:
+                    var_0 = Print_TV_Message(7);
+                    break;
+                case 9:
+                    var_0 = Print_TV_Message(8);
+                    break;
+                case 0xA:
+                    var_0 = Print_TV_Message(9);
+                    break;
+                case 0xB:
+                    var_0 = Print_TV_Message(10);
+                    break;
+                case 0xC:
+                    var_0 = Print_TV_Message(11);
+                    break;
+                case 0xD:
+                    var_0 = Print_TV_Message(12);
+                    break;
+                case 0xE:
+                    var_0 = Print_TV_Message(13);
+                    break;
+                case 0xF:
+                    var_0 = Print_TV_Message(14);
+                    break;
+                case 0x10:
+                    var_0 = Print_TV_Message(15);
+                    break;
+                case 0x11:
+                    var_0 = Print_TV_Message(16);
+                    break;
+                case 0x12:
+                    var_0 = Print_TV_Message(17);
+                    break;
+                case 0x13:
+                    var_0 = Print_TV_Message(18);
+                    break;
+                case 0x14:
+                    var_0 = Print_TV_Message(19);
+                    break;
+                case 0x15:
+                    var_0 = Print_TV_Message(20);
+                    break;
+                case 0x16:
+                    var_0 = Print_TV_Message(21);
+                    break;
+                case 0x17:
+                    var_0 = Print_TV_Message(22);
+                    break;
+                case 0x18:
+                    var_0 = Print_TV_Message(23);
+                    break;
+                case 0x19:
+                    var_0 = Print_TV_Message(24);
+                    break;
+                case 0x1A:
+                    var_0 = Print_TV_Message(25);
+                    break;
+                case 0x1B:
+                    var_0 = Print_TV_Message(26);
+                    break;
+                case 0x1C:
+                    var_0 = Print_TV_Message(27);
+                    break;
+                case 0x1D:
+                    var_0 = Print_TV_Message(28);
+                    break;
+                case 0x1E:
+                    var_0 = Print_TV_Message(29);
+                    break;
+            }
+            break;
+        case 1:
+            switch (Check_Flag(2)) {
+                case 1:
+                    var_0 = Print_TV_Message(30);
+                    break;
+                case 2:
+                    var_0 = Print_TV_Message(31);
+                    break;
+                case 3:
+                    var_0 = Print_TV_Message(32);
+                    break;
+                case 4:
+                    var_0 = Print_TV_Message(33);
+                    break;
+                case 5:
+                    var_0 = Print_TV_Message(34);
+                    break;
+                case 6:
+                    var_0 = Print_TV_Message(35);
+                    break;
+                case 7:
+                    var_0 = Print_TV_Message(36);
+                    break;
+                case 8:
+                    var_0 = Print_TV_Message(37);
+                    break;
+                case 9:
+                    var_0 = Print_TV_Message(38);
+                    break;
+                case 0xA:
+                    var_0 = Print_TV_Message(39);
+                    break;
+                case 0xB:
+                    var_0 = Print_TV_Message(40);
+                    break;
+                case 0xC:
+                    var_0 = Print_TV_Message(41);
+                    break;
+                case 0xD:
+                    var_0 = Print_TV_Message(42);
+                    break;
+                case 0xE:
+                    var_0 = Print_TV_Message(43);
+                    break;
+                case 0xF:
+                    var_0 = Print_TV_Message(44);
+                    break;
+                case 0x10:
+                    var_0 = Print_TV_Message(45);
+                    break;
+                case 0x11:
+                    var_0 = Print_TV_Message(46);
+                    break;
+                case 0x12:
+                    var_0 = Print_TV_Message(47);
+                    break;
+                case 0x13:
+                    var_0 = Print_TV_Message(48);
+                    break;
+                case 0x14:
+                    var_0 = Print_TV_Message(49);
+                    break;
+                case 0x15:
+                    var_0 = Print_TV_Message(50);
+                    break;
+                case 0x16:
+                    var_0 = Print_TV_Message(51);
+                    break;
+                case 0x17:
+                    var_0 = Print_TV_Message(52);
+                    break;
+                case 0x18:
+                    var_0 = Print_TV_Message(53);
+                    break;
+                case 0x19:
+                    var_0 = Print_TV_Message(54);
+                    break;
+                case 0x1A:
+                    var_0 = Print_TV_Message(55);
+                    break;
+                case 0x1B:
+                    var_0 = Print_TV_Message(56);
+                    break;
+                case 0x1C:
+                    var_0 = Print_TV_Message(57);
+                    break;
+                case 0x1D:
+                    var_0 = Print_TV_Message(58);
+                    break;
+                case 0x1E:
+                    var_0 = Print_TV_Message(59);
+                    break;
+            }
+            break;
+        case 2:
+            switch (Check_Flag(2)) {
+                case 1:
+                    var_0 = Print_TV_Message(60);
+                    break;
+                case 2:
+                    var_0 = Print_TV_Message(61);
+                    break;
+                case 3:
+                    var_0 = Print_TV_Message(62);
+                    break;
+                case 4:
+                    var_0 = Print_TV_Message(63);
+                    break;
+                case 5:
+                    var_0 = Print_TV_Message(64);
+                    break;
+                case 6:
+                    var_0 = Print_TV_Message(65);
+                    break;
+                case 7:
+                    var_0 = Print_TV_Message(66);
+                    break;
+                case 8:
+                    var_0 = Print_TV_Message(67);
+                    break;
+                case 9:
+                    var_0 = Print_TV_Message(68);
+                    break;
+                case 0xA:
+                    var_0 = Print_TV_Message(69);
+                    break;
+                case 0xB:
+                    var_0 = Print_TV_Message(70);
+                    break;
+                case 0xC:
+                    var_0 = Print_TV_Message(71);
+                    break;
+                case 0xD:
+                    var_0 = Print_TV_Message(72);
+                    break;
+                case 0xE:
+                    var_0 = Print_TV_Message(73);
+                    break;
+                case 0xF:
+                    var_0 = Print_TV_Message(74);
+                    break;
+                case 0x10:
+                    var_0 = Print_TV_Message(75);
+                    break;
+                case 0x11:
+                    var_0 = Print_TV_Message(76);
+                    break;
+                case 0x12:
+                    var_0 = Print_TV_Message(77);
+                    break;
+                case 0x13:
+                    var_0 = Print_TV_Message(78);
+                    break;
+                case 0x14:
+                    var_0 = Print_TV_Message(79);
+                    break;
+                case 0x15:
+                    var_0 = Print_TV_Message(80);
+                    break;
+                case 0x16:
+                    var_0 = Print_TV_Message(81);
+                    break;
+                case 0x17:
+                    var_0 = Print_TV_Message(82);
+                    break;
+                case 0x18:
+                    var_0 = Print_TV_Message(83);
+                    break;
+                case 0x19:
+                    var_0 = Print_TV_Message(84);
+                    break;
+                case 0x1A:
+                    var_0 = Print_TV_Message(85);
+                    break;
+                case 0x1B:
+                    var_0 = Print_TV_Message(86);
+                    break;
+                case 0x1C:
+                    var_0 = Print_TV_Message(87);
+                    break;
+                case 0x1D:
+                    var_0 = Print_TV_Message(88);
+                    break;
+                case 0x1E:
+                    var_0 = Print_TV_Message(89);
+                    break;
+            }
+            break;
+        case 3:
+            switch (Check_Flag(2)) {
+                case 1:
+                    var_0 = Print_TV_Message(90);
+                    break;
+                case 2:
+                    var_0 = Print_TV_Message(91);
+                    break;
+                case 3:
+                    var_0 = Print_TV_Message(92);
+                    break;
+                case 4:
+                    var_0 = Print_TV_Message(93);
+                    break;
+                case 5:
+                    var_0 = Print_TV_Message(94);
+                    break;
+                case 6:
+                    var_0 = Print_TV_Message(95);
+                    break;
+                case 7:
+                    var_0 = Print_TV_Message(96);
+                    break;
+                case 8:
+                    var_0 = Print_TV_Message(97);
+                    break;
+                case 9:
+                    var_0 = Print_TV_Message(98);
+                    break;
+                case 0xA:
+                    var_0 = Print_TV_Message(99);
+                    break;
+                case 0xB:
+                    var_0 = Print_TV_Message(100);
+                    break;
+                case 0xC:
+                    var_0 = Print_TV_Message(101);
+                    break;
+                case 0xD:
+                    var_0 = Print_TV_Message(102);
+                    break;
+                case 0xE:
+                    var_0 = Print_TV_Message(103);
+                    break;
+                case 0xF:
+                    var_0 = Print_TV_Message(104);
+                    break;
+                case 0x10:
+                    var_0 = Print_TV_Message(105);
+                    break;
+                case 0x11:
+                    var_0 = Print_TV_Message(106);
+                    break;
+                case 0x12:
+                    var_0 = Print_TV_Message(107);
+                    break;
+                case 0x13:
+                    var_0 = Print_TV_Message(108);
+                    break;
+                case 0x14:
+                    var_0 = Print_TV_Message(109);
+                    break;
+                case 0x15:
+                    var_0 = Print_TV_Message(110);
+                    break;
+                case 0x16:
+                    var_0 = Print_TV_Message(111);
+                    break;
+                case 0x17:
+                    var_0 = Print_TV_Message(112);
+                    break;
+                case 0x18:
+                    var_0 = Print_TV_Message(113);
+                    break;
+                case 0x19:
+                    var_0 = Print_TV_Message(114);
+                    break;
+                case 0x1A:
+                    var_0 = Print_TV_Message(115);
+                    break;
+                case 0x1B:
+                    var_0 = Print_TV_Message(116);
+                    break;
+                case 0x1C:
+                    var_0 = Print_TV_Message(117);
+                    break;
+                case 0x1D:
+                    var_0 = Print_TV_Message(118);
+                    break;
+                case 0x1E:
+                    var_0 = Print_TV_Message(119);
+                    break;
+            }
+            break;
+    }
+    Close_TV_Interface();
+    TalkClose();
+    switch (var_0) {
+        case 0:
+        case 1:
+        case 2:
+        case 3:
+            Set_Flag(0x244, var_0);
+            Execute_Script(356);
+            break;
+        case 4:
+        case 5:
+            break;
+    }
+    exit;
+}

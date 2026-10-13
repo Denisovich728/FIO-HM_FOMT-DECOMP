@@ -1,0 +1,11 @@
+// Script 437
+#include "Fomt_Lib.src"
+
+script 437 Event_0437 {
+    const MESSAGE_0 = "Refrigerator\BRK";
+    
+    TalkOpen();
+    Print_Message(0);
+    TalkClose();
+    exit;
+}

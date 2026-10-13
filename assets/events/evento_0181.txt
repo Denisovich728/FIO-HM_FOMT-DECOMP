@@ -1,0 +1,11 @@
+// Script 181
+#include "Fomt_Lib.src"
+
+script 181 Event_0181 {
+    const MESSAGE_0 = "Bookshelf\BRK";
+    
+    TalkOpen();
+    Print_Message(0);
+    TalkClose();
+    exit;
+}

@@ -1,0 +1,392 @@
+// Script 358
+#include "Fomt_Lib.src"
+
+script 358 Event_0358 {
+    const MESSAGE_0 = "The wind is too strong\r\nto go outside.\BRK";
+    const MESSAGE_1 = "The snow is too deep\r\nto go outside.\BRK";
+    const MESSAGE_2 = "\xFF),\r\nwhere are you going?\BRK";
+    const MESSAGE_3 = "\xFF!,\r\nwhere are you going?\BRK";
+    
+    var var_1;
+    var var_2;
+    var var_3;
+    var var_4;
+    var var_5;
+    var var_6;
+    
+    if ((GetEntityFacing(0) == 0)) {
+        if ((Check_Flag(6) == 3)) {
+            TalkOpen();
+            TalkMessage(0);
+            TalkClose();
+            SetEntityFacing(0, "Up");
+            if ((Inventory_Check() == 1)) {
+                SetEntityAnim(0, 0x1C6);
+            } else {
+                SetEntityAnim(0, 0x156);
+            }
+            Set_Vector_Y(0, 0xC8, 1);
+            Execute_Movement(0);
+            exit;
+        }
+        if ((Check_Flag(6) == 4)) {
+            TalkOpen();
+            TalkMessage(1);
+            TalkClose();
+            SetEntityFacing(0, "Up");
+            if ((Inventory_Check() == 1)) {
+                SetEntityAnim(0, 0x1C6);
+            } else {
+                SetEntityAnim(0, 0x156);
+            }
+            Set_Vector_Y(0, 0xC8, 1);
+            Execute_Movement(0);
+            exit;
+        }
+        if ((Check_Flag(0xAA) == 1)) {
+            TalkOpen();
+            Set_Portrait(7);
+            Set_Name_Window(3);
+            Set_Hearth_Anim(3);
+            TalkMessage(2);
+            TalkClose();
+            exit;
+        } else {
+            if ((Check_Flag(0xAC) == 1)) {
+                TalkOpen();
+                Set_Portrait(0x57);
+                Set_Name_Window(0x19);
+                Set_Hearth_Anim(0x19);
+                TalkMessage(2);
+                TalkClose();
+                exit;
+            } else {
+                if ((Check_Flag(0xAE) == 1)) {
+                    TalkOpen();
+                    Set_Portrait(0x79);
+                    Set_Name_Window(0x15);
+                    Set_Hearth_Anim(0x15);
+                    TalkMessage(2);
+                    TalkClose();
+                    exit;
+                } else {
+                    if ((Check_Flag(0xB0) == 1)) {
+                        TalkOpen();
+                        Set_Portrait(0x48);
+                        Set_Name_Window(0x13);
+                        Set_Hearth_Anim(0x13);
+                        TalkMessage(2);
+                        TalkClose();
+                        exit;
+                    } else {
+                        if ((Check_Flag(0xB2) == 1)) {
+                            TalkOpen();
+                            Set_Portrait(0x67);
+                            Set_Name_Window(0xC);
+                            Set_Hearth_Anim(0xC);
+                            TalkMessage(2);
+                            TalkClose();
+                            exit;
+                        } else {
+                            if ((Check_Flag(0x174) == 1)) {
+                                TalkOpen();
+                                Set_Portrait(0x38);
+                                Set_Name_Window(0x1F);
+                                TalkMessage(3);
+                                TalkClose();
+                                exit;
+                            } else {
+                                if ((((Check_Flag(0xB4) == 1) || (Check_Flag(0xB9) == 1)) || (Check_Flag(0xBE) == 1))) {
+                                    Refresh_Map_Entities();
+                                    Set_Flag(0xB4, 2);
+                                    Set_Flag(0xB9, 2);
+                                    Set_Flag(0xBE, 2);
+                                    Despawn_Map_Item(0);
+                                    Despawn_Map_Item(1);
+                                } else {
+                                    if ((((Check_Flag(0xB5) == 1) || (Check_Flag(0xBA) == 1)) || (Check_Flag(0xBF) == 1))) {
+                                        Refresh_Map_Entities();
+                                        Set_Flag(0xB5, 2);
+                                        Set_Flag(0xBA, 2);
+                                        Set_Flag(0xBF, 2);
+                                        Despawn_Map_Item(0);
+                                        Despawn_Map_Item(1);
+                                    } else {
+                                        if ((((Check_Flag(0xB6) == 1) || (Check_Flag(0xBB) == 1)) || (Check_Flag(0xC0) == 1))) {
+                                            Refresh_Map_Entities();
+                                            Set_Flag(0xB6, 2);
+                                            Set_Flag(0xBB, 2);
+                                            Set_Flag(0xC0, 2);
+                                            Despawn_Map_Item(0);
+                                            Despawn_Map_Item(1);
+                                        } else {
+                                            if ((((Check_Flag(0xB7) == 1) || (Check_Flag(0xBC) == 1)) || (Check_Flag(0xC1) == 1))) {
+                                                Refresh_Map_Entities();
+                                                Set_Flag(0xB7, 2);
+                                                Set_Flag(0xBC, 2);
+                                                Set_Flag(0xC1, 2);
+                                                Despawn_Map_Item(0);
+                                                Despawn_Map_Item(1);
+                                            } else {
+                                                if ((((Check_Flag(0xB8) == 1) || (Check_Flag(0xBD) == 1)) || (Check_Flag(0xC2) == 1))) {
+                                                    Refresh_Map_Entities();
+                                                    Set_Flag(0xB8, 2);
+                                                    Set_Flag(0xBD, 2);
+                                                    Set_Flag(0xC2, 2);
+                                                    Despawn_Map_Item(0);
+                                                    Despawn_Map_Item(1);
+                                                } else {
+                                                    if ((((Check_Flag(0x176) == 1) || (Check_Flag(0x177) == 1)) || (Check_Flag(0x178) == 1))) {
+                                                        Refresh_Map_Entities();
+                                                        Set_Flag(0x176, 2);
+                                                        Set_Flag(0x177, 2);
+                                                        Set_Flag(0x178, 2);
+                                                        Despawn_Map_Item(0);
+                                                        Despawn_Map_Item(1);
+                                                    } else {
+                                                        if ((Check_Flag(0xCD) == 1)) {
+                                                            Refresh_Map_Entities();
+                                                            Add_Festival_Friendship_Bonus(3);
+                                                            Add_Festival_Friendship_Bonus(0x23);
+                                                            Set_Flag(0xCD, 2);
+                                                        } else {
+                                                            if ((Check_Flag(0xCE) == 1)) {
+                                                                Refresh_Map_Entities();
+                                                                Add_Festival_Friendship_Bonus(0x19);
+                                                                Add_Festival_Friendship_Bonus(0x23);
+                                                                Set_Flag(0xCE, 2);
+                                                            } else {
+                                                                if ((Check_Flag(0xCF) == 1)) {
+                                                                    Refresh_Map_Entities();
+                                                                    Add_Festival_Friendship_Bonus(0x15);
+                                                                    Add_Festival_Friendship_Bonus(0x23);
+                                                                    Set_Flag(0xCF, 2);
+                                                                } else {
+                                                                    if ((Check_Flag(0xD0) == 1)) {
+                                                                        Refresh_Map_Entities();
+                                                                        Add_Festival_Friendship_Bonus(0x13);
+                                                                        Add_Festival_Friendship_Bonus(0x23);
+                                                                        Set_Flag(0xD0, 2);
+                                                                    } else {
+                                                                        if ((Check_Flag(0xD1) == 1)) {
+                                                                            Refresh_Map_Entities();
+                                                                            Add_Festival_Friendship_Bonus(0xC);
+                                                                            Add_Festival_Friendship_Bonus(0x23);
+                                                                            Set_Flag(0xD1, 2);
+                                                                        } else {
+                                                                            if ((Check_Flag(0x17B) == 1)) {
+                                                                                Refresh_Map_Entities();
+                                                                                Add_Festival_Friendship_Bonus(0x23);
+                                                                                Set_Flag(0x17B, 2);
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        Fade_Out(2, 1);
+        Warp_Player(2, 0xE4, 0x78);
+        SetEntityPosition(0, 0xE4, 0x78, "Down");
+        PlaySong(0, 0xCD);
+        var_1 = Check_Flag(1);
+        var_2 = Check_Flag(2);
+        var_4 = Check_Flag(3);
+        var_3 = Check_Flag(5);
+        var_5 = Check_Flag(6);
+        var_6 = Check_Flag(0);
+        if (((((Check_Flag(0x187) == 0) && (var_1 == 0)) && (var_2 == 0x11)) && ((var_4 >= 6) && (var_4 < 0xC)))) {
+            Set_Flag(0x187, 1);
+            Execute_Script(1079);
+        } else {
+            if (((((Check_Flag(0x18B) == 0) && (var_1 == 0)) && (var_2 == 0x15)) && ((var_4 >= 6) && (var_4 < 0xC)))) {
+                Set_Flag(0x18B, 1);
+                Execute_Script(1099);
+            } else {
+                if (((((Check_Flag(0x192) == 0) && (var_1 == 0)) && (var_2 == 0x1E)) && ((var_4 >= 6) && (var_4 < 0xC)))) {
+                    Set_Flag(0x192, 1);
+                    Execute_Script(1130);
+                } else {
+                    if (((((Check_Flag(0x196) == 0) && (var_1 == 1)) && (var_2 == 6)) && ((var_4 >= 6) && (var_4 < 0xC)))) {
+                        Set_Flag(0x196, 1);
+                        Execute_Script(1146);
+                    } else {
+                        if (((((Check_Flag(0x19A) == 0) && (var_1 == 1)) && (var_2 == 0x13)) && ((var_4 >= 6) && (var_4 < 0xC)))) {
+                            Set_Flag(0x19A, 1);
+                            Execute_Script(1164);
+                        } else {
+                            if (((((Check_Flag(0x1A0) == 0) && (var_1 == 2)) && (var_2 == 2)) && ((var_4 >= 6) && (var_4 < 0xC)))) {
+                                Set_Flag(0x1A0, 1);
+                                Execute_Script(1203);
+                            } else {
+                                if (((((Check_Flag(0x1A3) == 0) && (var_1 == 2)) && (var_2 == 8)) && ((var_4 >= 6) && (var_4 < 0xC)))) {
+                                    Set_Flag(0x1A3, 1);
+                                    Execute_Script(1216);
+                                } else {
+                                    if (((((Check_Flag(0x1AA) == 0) && (var_1 == 2)) && (var_2 == 0x11)) && ((var_4 >= 6) && (var_4 < 0xC)))) {
+                                        Set_Flag(0x1AA, 1);
+                                        Execute_Script(1245);
+                                    } else {
+                                        if (((((Check_Flag(0x1AE) == 0) && (var_1 == 2)) && (var_2 == 0x14)) && ((var_4 >= 6) && (var_4 < 0xC)))) {
+                                            Set_Flag(0x1AE, 1);
+                                            Execute_Script(1265);
+                                        } else {
+                                            if ((((((var_6 == 1) && (Check_Flag(0x106) == 0)) && (var_1 == 0)) && (var_2 == 2)) && ((var_4 >= 6) && (var_4 < 0xC)))) {
+                                                Execute_Script(737);
+                                            } else {
+                                                if ((((((var_6 == 1) && (Check_Flag(0x137) == 0)) && (var_1 == 0)) && (var_2 == 3)) && ((var_4 >= 6) && (var_4 < 0xC)))) {
+                                                    Execute_Script(810);
+                                                } else {
+                                                    if (((((((var_6 >= 2) && (Check_Flag(0x12E) == 0)) && (var_1 == 1)) && (var_2 == 1)) && (Check_If_Single(0x1A) == 1)) && ((var_4 >= 6) && (var_4 < 0xC)))) {
+                                                        Execute_Script(797);
+                                                    } else {
+                                                        if (((((((var_6 >= 2) && (Check_Flag(0x12F) == 0)) && (var_1 == 2)) && (var_2 == 1)) && (Check_If_Single(0x1A) == 1)) && ((var_4 >= 6) && (var_4 < 0xC)))) {
+                                                            Execute_Script(798);
+                                                        } else {
+                                                            if ((((((var_6 == 1) && (Check_Flag(0xF3) == 0)) && (var_1 == 2)) && (var_2 == 0xE)) && ((var_4 >= 6) && (var_4 < 0xC)))) {
+                                                                Execute_Script(716);
+                                                            } else {
+                                                                if ((((!((((((((((((((((((var_1 == 0) && (var_2 == 1)) || ((var_1 == 0) && (var_2 == 0xE))) || ((var_1 == 0) && (var_2 == 0x12))) || ((var_1 == 0) && (var_2 == 0x16))) || ((var_1 == 1) && (var_2 == 1))) || ((var_1 == 1) && (var_2 == 7))) || ((var_1 == 1) && (var_2 == 0x18))) || ((var_1 == 1) && (var_2 == 0x14))) || ((var_1 == 2) && (var_2 == 3))) || ((var_1 == 2) && (var_2 == 9))) || ((var_1 == 2) && (var_2 == 0xD))) || ((var_1 == 2) && (var_2 == 0x12))) || ((var_1 == 2) && (var_2 == 0x15))) || ((var_1 == 2) && (var_2 == 0x1E))) || ((var_1 == 3) && (var_2 == 0xE))) || ((var_1 == 3) && (var_2 == 0x18))) || ((var_1 == 3) && (var_2 == 0x1E))) && (Check_Flag(0x23C) == 1)) && Init_Notice_Board_UI()) && ((var_4 >= 6) && (var_4 < 0x10)))) {
+                                                                    if ((Check_Flag(0x152) == 0)) {
+                                                                        Execute_Script(819);
+                                                                    }
+                                                                } else {
+                                                                    if (((((((((((((((((((((((((Check_Flag(0x4E) == 2) && (Check_Flag(0x4F) == 0)) && !((((((((((((((((((var_1 == 0) && (var_2 == 1)) || ((var_1 == 0) && (var_2 == 0xE))) || ((var_1 == 0) && (var_2 == 0x12))) || ((var_1 == 0) && (var_2 == 0x16))) || ((var_1 == 1) && (var_2 == 1))) || ((var_1 == 1) && (var_2 == 7))) || ((var_1 == 1) && (var_2 == 0x18))) || ((var_1 == 1) && (var_2 == 0x14))) || ((var_1 == 2) && (var_2 == 3))) || ((var_1 == 2) && (var_2 == 9))) || ((var_1 == 2) && (var_2 == 0xD))) || ((var_1 == 2) && (var_2 == 0x12))) || ((var_1 == 2) && (var_2 == 0x15))) || ((var_1 == 2) && (var_2 == 0x1E))) || ((var_1 == 3) && (var_2 == 0xE))) || ((var_1 == 3) && (var_2 == 0x18))) || ((var_1 == 3) && (var_2 == 0x1E)))) && ((var_4 >= 6) && (var_4 < 0xC))) && (var_5 == 0)) && !(var_3 == 0)) && (Check_Flag(0x4C) == 0)) && (Check_Flag(0x55) == 0)) && (Check_Flag(0x5F) == 0)) && (Check_Flag(0x67) == 0)) && (Check_Flag(0x6F) == 0)) && (Check_Flag(0x173) == 0)) && (Check_Flag(0x7E) == 0)) && (Check_Flag(0x7F) == 0)) && (Check_Flag(0x55) == 0)) && (Check_Flag(0x4B) == 0)) && (Check_Flag(0x54) == 0)) && (Check_Flag(0x5E) == 0)) && (Check_Flag(0x66) == 0)) && (Check_Flag(0x6E) == 0)) && (Check_Flag(0x172) == 0)) && (Check_Flag(0x7D) == 0)) && (Chek_Love_Points(3) >= 0x2710)) && (Inventory_Check() == 1))) {
+                                                                        Set_Flag(0x4F, 1);
+                                                                        Execute_Script(37);
+                                                                    } else {
+                                                                        if ((Chek_Envio() != 0x10)) {
+                                                                            if ((Func0DF() == 1)) {
+                                                                                if (((Check_Flag(3) >= 6) && (Check_Flag(3) < 0xC))) {
+                                                                                    switch (Chek_Envio()) {
+                                                                                        case 0:
+                                                                                            Execute_Script(588);
+                                                                                            break;
+                                                                                        case 1:
+                                                                                            Execute_Script(587);
+                                                                                            break;
+                                                                                        case 2:
+                                                                                            Execute_Script(573);
+                                                                                            break;
+                                                                                        case 3:
+                                                                                            Execute_Script(574);
+                                                                                            break;
+                                                                                        case 4:
+                                                                                            Execute_Script(575);
+                                                                                            break;
+                                                                                        case 5:
+                                                                                            Execute_Script(576);
+                                                                                            break;
+                                                                                        case 6:
+                                                                                            Execute_Script(577);
+                                                                                            break;
+                                                                                        case 7:
+                                                                                            Execute_Script(578);
+                                                                                            break;
+                                                                                        case 8:
+                                                                                            Execute_Script(579);
+                                                                                            break;
+                                                                                        case 9:
+                                                                                            Execute_Script(580);
+                                                                                            break;
+                                                                                        case 0xA:
+                                                                                            Execute_Script(581);
+                                                                                            break;
+                                                                                        case 0xB:
+                                                                                            Execute_Script(582);
+                                                                                            break;
+                                                                                        case 0xC:
+                                                                                            Execute_Script(583);
+                                                                                            break;
+                                                                                        case 0xD:
+                                                                                            Execute_Script(584);
+                                                                                            break;
+                                                                                        case 0xE:
+                                                                                            Execute_Script(585);
+                                                                                            break;
+                                                                                        case 0xF:
+                                                                                            if ((Inventory_Check() == 1)) {
+                                                                                                Execute_Script(586);
+                                                                                            }
+                                                                                            break;
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        } else {
+                                                                            if ((((((Check_Flag(0x13B) == 0) && (Check_Flag(0x1FF) == 1)) && (var_3 == 3)) && (var_5 == 0)) && ((var_4 >= 6) && (var_4 < 0xC)))) {
+                                                                                Execute_Script(813);
+                                                                            } else {
+                                                                                if ((((((Check_Flag(0x13E) == 0) && (Check_Flag(0x200) == 1)) && (var_3 == 0)) && (var_5 == 0)) && ((var_4 >= 6) && (var_4 < 0xC)))) {
+                                                                                    Execute_Script(814);
+                                                                                } else {
+                                                                                    if (((((Check_Flag(0x107) == 0) && (var_1 == 3)) && (var_2 == 2)) && ((var_4 >= 6) && (var_4 < 0xC)))) {
+                                                                                        Execute_Script(738);
+                                                                                    } else {
+                                                                                        if ((((((((!((((((((((((((((((var_1 == 0) && (var_2 == 1)) || ((var_1 == 0) && (var_2 == 0xE))) || ((var_1 == 0) && (var_2 == 0x12))) || ((var_1 == 0) && (var_2 == 0x16))) || ((var_1 == 1) && (var_2 == 1))) || ((var_1 == 1) && (var_2 == 7))) || ((var_1 == 1) && (var_2 == 0x18))) || ((var_1 == 1) && (var_2 == 0x14))) || ((var_1 == 2) && (var_2 == 3))) || ((var_1 == 2) && (var_2 == 9))) || ((var_1 == 2) && (var_2 == 0xD))) || ((var_1 == 2) && (var_2 == 0x12))) || ((var_1 == 2) && (var_2 == 0x15))) || ((var_1 == 2) && (var_2 == 0x1E))) || ((var_1 == 3) && (var_2 == 0xE))) || ((var_1 == 3) && (var_2 == 0x18))) || ((var_1 == 3) && (var_2 == 0x1E))) && (Check_Flag(0x10B) == 0)) && ((((((Check_Flag(0x4C) == 2) || (Check_Flag(0x55) == 2)) || (Check_Flag(0x5F) == 2)) || (Check_Flag(0x67) == 2)) || (Check_Flag(0x6F) == 2)) || (Check_Flag(0x173) == 2))) && (var_5 == 0)) && (Check_If_Single(0xE) == 1)) && (GetEntityLocation(0xD) != 2)) && (Chek_Friendship_Points(0xE) >= 0xC8)) && ((var_4 >= 0x13) && (var_4 < 0x15)))) {
+                                                                                            Execute_Script(740);
+                                                                                        } else {
+                                                                                            if ((((((((!((((((((((((((((((var_1 == 0) && (var_2 == 1)) || ((var_1 == 0) && (var_2 == 0xE))) || ((var_1 == 0) && (var_2 == 0x12))) || ((var_1 == 0) && (var_2 == 0x16))) || ((var_1 == 1) && (var_2 == 1))) || ((var_1 == 1) && (var_2 == 7))) || ((var_1 == 1) && (var_2 == 0x18))) || ((var_1 == 1) && (var_2 == 0x14))) || ((var_1 == 2) && (var_2 == 3))) || ((var_1 == 2) && (var_2 == 9))) || ((var_1 == 2) && (var_2 == 0xD))) || ((var_1 == 2) && (var_2 == 0x12))) || ((var_1 == 2) && (var_2 == 0x15))) || ((var_1 == 2) && (var_2 == 0x1E))) || ((var_1 == 3) && (var_2 == 0xE))) || ((var_1 == 3) && (var_2 == 0x18))) || ((var_1 == 3) && (var_2 == 0x1E))) && (Check_Flag(0x10B) == 2)) && (Check_Flag(0x10E) == 0)) && (Check_Flag(0x10C) == 0)) && (Check_Flag(0x10D) == 0x14)) && (GetEntityLocation(0xD) != 2)) && (var_5 == 0)) && ((var_4 >= 0x13) && (var_4 < 0x15)))) {
+                                                                                                Execute_Script(741);
+                                                                                            } else {
+                                                                                                if (((((((Check_Flag(0x138) == 0) && (var_2 == 4)) && ((var_4 >= 6) && (var_4 < 0xC))) && (Has_Spoken_To_NPC_Today(0x1D) == 0)) && (Inventory_Check() == 1)) && (Check_Money() >= 0x1F4))) {
+                                                                                                    Execute_Script(811);
+                                                                                                } else {
+                                                                                                    if (((((((Check_Flag(0x139) == 0) && (var_2 == 0xB)) && ((var_4 >= 6) && (var_4 < 0xC))) && (Has_Spoken_To_NPC_Today(0x1D) == 0)) && (Check_Flag(0x1C) == 0)) && (Check_Money() >= 0x1388))) {
+                                                                                                        Execute_Script(812);
+                                                                                                    } else {
+                                                                                                        if ((Check_Flag(0x242) == 0)) {
+                                                                                                            if ((((((!((((((((((((((((((var_1 == 0) && (var_2 == 1)) || ((var_1 == 0) && (var_2 == 0xE))) || ((var_1 == 0) && (var_2 == 0x12))) || ((var_1 == 0) && (var_2 == 0x16))) || ((var_1 == 1) && (var_2 == 1))) || ((var_1 == 1) && (var_2 == 7))) || ((var_1 == 1) && (var_2 == 0x18))) || ((var_1 == 1) && (var_2 == 0x14))) || ((var_1 == 2) && (var_2 == 3))) || ((var_1 == 2) && (var_2 == 9))) || ((var_1 == 2) && (var_2 == 0xD))) || ((var_1 == 2) && (var_2 == 0x12))) || ((var_1 == 2) && (var_2 == 0x15))) || ((var_1 == 2) && (var_2 == 0x1E))) || ((var_1 == 3) && (var_2 == 0xE))) || ((var_1 == 3) && (var_2 == 0x18))) || ((var_1 == 3) && (var_2 == 0x1E))) && (Check_Flag(0xDC) == 0)) && (Check_If_Single(4) == 1)) && (var_1 == 0)) && (var_5 == 0)) && ((var_4 >= 6) && (var_4 < 0xC)))) {
+                                                                                                                Execute_Script(5);
+                                                                                                            } else {
+                                                                                                                if (((((!((((((((((((((((((var_1 == 0) && (var_2 == 1)) || ((var_1 == 0) && (var_2 == 0xE))) || ((var_1 == 0) && (var_2 == 0x12))) || ((var_1 == 0) && (var_2 == 0x16))) || ((var_1 == 1) && (var_2 == 1))) || ((var_1 == 1) && (var_2 == 7))) || ((var_1 == 1) && (var_2 == 0x18))) || ((var_1 == 1) && (var_2 == 0x14))) || ((var_1 == 2) && (var_2 == 3))) || ((var_1 == 2) && (var_2 == 9))) || ((var_1 == 2) && (var_2 == 0xD))) || ((var_1 == 2) && (var_2 == 0x12))) || ((var_1 == 2) && (var_2 == 0x15))) || ((var_1 == 2) && (var_2 == 0x1E))) || ((var_1 == 3) && (var_2 == 0xE))) || ((var_1 == 3) && (var_2 == 0x18))) || ((var_1 == 3) && (var_2 == 0x1E))) && (Check_Flag(0xDD) == 0)) && (Check_Flag(0x44) == 1)) && (var_5 == 0)) && ((var_4 >= 6) && (var_4 < 0xC)))) {
+                                                                                                                    Execute_Script(6);
+                                                                                                                } else {
+                                                                                                                    if (((((((!((((((((((((((((((var_1 == 0) && (var_2 == 1)) || ((var_1 == 0) && (var_2 == 0xE))) || ((var_1 == 0) && (var_2 == 0x12))) || ((var_1 == 0) && (var_2 == 0x16))) || ((var_1 == 1) && (var_2 == 1))) || ((var_1 == 1) && (var_2 == 7))) || ((var_1 == 1) && (var_2 == 0x18))) || ((var_1 == 1) && (var_2 == 0x14))) || ((var_1 == 2) && (var_2 == 3))) || ((var_1 == 2) && (var_2 == 9))) || ((var_1 == 2) && (var_2 == 0xD))) || ((var_1 == 2) && (var_2 == 0x12))) || ((var_1 == 2) && (var_2 == 0x15))) || ((var_1 == 2) && (var_2 == 0x1E))) || ((var_1 == 3) && (var_2 == 0xE))) || ((var_1 == 3) && (var_2 == 0x18))) || ((var_1 == 3) && (var_2 == 0x1E))) && (Check_Flag(0xDD) == 2)) && (Check_Flag(0xDF) == 0)) && (Check_Flag(0xDE) == 0x78)) && (Check_Flag(0x43) == 0)) && (var_5 == 0)) && ((var_4 >= 6) && (var_4 < 0xC)))) {
+                                                                                                                        Execute_Script(7);
+                                                                                                                    } else {
+                                                                                                                        if ((((!((((((((((((((((((var_1 == 0) && (var_2 == 1)) || ((var_1 == 0) && (var_2 == 0xE))) || ((var_1 == 0) && (var_2 == 0x12))) || ((var_1 == 0) && (var_2 == 0x16))) || ((var_1 == 1) && (var_2 == 1))) || ((var_1 == 1) && (var_2 == 7))) || ((var_1 == 1) && (var_2 == 0x18))) || ((var_1 == 1) && (var_2 == 0x14))) || ((var_1 == 2) && (var_2 == 3))) || ((var_1 == 2) && (var_2 == 9))) || ((var_1 == 2) && (var_2 == 0xD))) || ((var_1 == 2) && (var_2 == 0x12))) || ((var_1 == 2) && (var_2 == 0x15))) || ((var_1 == 2) && (var_2 == 0x1E))) || ((var_1 == 3) && (var_2 == 0xE))) || ((var_1 == 3) && (var_2 == 0x18))) || ((var_1 == 3) && (var_2 == 0x1E))) && (Check_Flag(0x16C) == 2)) && (Check_Flag(0x136) == 0)) && ((var_4 >= 6) && (var_4 < 0xC)))) {
+                                                                                                                            Execute_Script(809);
+                                                                                                                        }
+                                                                                                                    }
+                                                                                                                }
+                                                                                                            }
+                                                                                                        }
+                                                                                                    }
+                                                                                                }
+                                                                                            }
+                                                                                        }
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        Fade_In(2, 1);
+    }
+    exit;
+}

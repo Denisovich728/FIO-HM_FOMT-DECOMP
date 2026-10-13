@@ -1,0 +1,12 @@
+// Script 11
+#include "Fomt_Lib.src"
+
+script 11 Event_0011 {
+    const MESSAGE_0 = "The cows at this farm\r\nare always doing well.\BRK";
+    
+    TalkOpen();
+    TalkMessage(0);
+    TalkClose();
+    PlaySong(0, 0xA1);
+    exit;
+}

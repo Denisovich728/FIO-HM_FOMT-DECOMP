@@ -1,0 +1,11 @@
+// Script 418
+#include "Fomt_Lib.src"
+
+script 418 Event_0418 {
+    const MESSAGE_0 = "Large Barrel\BRK";
+    
+    TalkOpen();
+    Print_Message(0);
+    TalkClose();
+    exit;
+}

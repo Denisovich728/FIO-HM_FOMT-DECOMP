@@ -1,0 +1,30 @@
+// Script 1089
+#include "Fomt_Lib.src"
+
+script 1089 Event_1089 {
+    const MESSAGE_0 = "I always get excited about\r\nthe Horse Races every year!\BRK";
+    const MESSAGE_1 = "If you're going to \r\ncompete, you might as well\r\nwin! \BRK";
+    
+    if ((Check_If_Single(0x18) == 0)) {
+        Free_Event_Entity(0x18);
+    }
+    SetEntityFacing(0x18, GetOppositeFacing(GetEntityFacing(0)));
+    if ((Check_Flag(0x188) == 0)) {
+        TalkOpen();
+        Set_Portrait(0x54);
+        Set_Name_Window(0x18);
+        TalkMessage(0);
+    } else {
+        TalkOpen();
+        Set_Portrait(0x54);
+        Set_Name_Window(0x18);
+        TalkMessage(1);
+    }
+    TalkClose();
+    if ((Has_Spoken_To_NPC_Today(0x18) == 0)) {
+        Give_Friendship_Points(0x18, 5);
+    }
+    Free_Event_Entity(0x18);
+    SetEntityFacing(0x18, "Left");
+    exit;
+}

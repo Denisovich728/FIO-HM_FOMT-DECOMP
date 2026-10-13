@@ -1,0 +1,11 @@
+// Script 301
+#include "Fomt_Lib.src"
+
+script 301 Event_0301 {
+    const MESSAGE_0 = "Chair\BRK";
+    
+    TalkOpen();
+    Print_Message(0);
+    TalkClose();
+    exit;
+}

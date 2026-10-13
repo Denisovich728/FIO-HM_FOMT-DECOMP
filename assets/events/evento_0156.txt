@@ -1,0 +1,41 @@
+// Script 156
+#include "Fomt_Lib.src"
+
+script 156 Event_0156 {
+    const MESSAGE_0 = "Woodbin\BRK";
+    const MESSAGE_1 = "There's no Lumber\r\nin the Woodbin.\BRK";
+    
+    var var_0;
+    
+    var_0 = Check_Flag(0x28);
+    if (Func063()) {
+        TalkOpen();
+        Print_Message(0);
+        TalkClose();
+        exit;
+    }
+    if (Inventory_Check()) {
+        if ((var_0 == 0)) {
+            TalkOpen();
+            Print_Message(1);
+            TalkClose();
+        } else {
+            Give_Item(0x59);
+            Set_Flag(0x28, (var_0 - 1));
+        }
+    } else {
+        if (((Compare_Gift() == 1) && (Search_Item_Gift_Address() == 0x59))) {
+            if ((Is_Item_Wrapped() == 1)) {
+                exit;
+            } else {
+                Drop_Held_Item();
+                Set_Flag(0x28, (var_0 + 1));
+            }
+            goto LBL_0006;
+        }
+        TalkOpen();
+        Print_Message(0);
+        TalkClose();
+    }
+    exit;
+}

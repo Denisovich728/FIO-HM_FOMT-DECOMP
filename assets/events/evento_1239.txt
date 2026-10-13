@@ -1,0 +1,22 @@
+// Script 1239
+#include "Fomt_Lib.src"
+
+script 1239 Event_1239 {
+    const MESSAGE_0 = "This reminds me of \r\nlong ago, when I used to\r\nmake a ton of soup \BRK\r\nand give it to everybody \r\nin town. \BRK";
+    
+    if ((Check_If_Single(0x16) == 0)) {
+        Free_Event_Entity(0x16);
+    }
+    SetEntityFacing(0x16, GetOppositeFacing(GetEntityFacing(0)));
+    TalkOpen();
+    Set_Portrait(0x96);
+    Set_Name_Window(0x16);
+    TalkMessage(0);
+    TalkClose();
+    if ((Has_Spoken_To_NPC_Today(0x16) == 0)) {
+        Give_Friendship_Points(0x16, 5);
+    }
+    SetEntityFacing(0x16, "Down");
+    Free_Event_Entity(0x16);
+    exit;
+}

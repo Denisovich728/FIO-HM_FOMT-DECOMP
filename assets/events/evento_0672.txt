@@ -1,0 +1,17 @@
+// Script 672
+#include "Fomt_Lib.src"
+
+script 672 Event_0672 {
+    const MESSAGE_0 = "He's such a treasure!\BRK";
+    
+    SetEntityFacing(0x15, GetOppositeFacing(GetEntityFacing(0)));
+    TalkOpen();
+    Set_Name_Window(0x15);
+    Set_Portrait(0x79);
+    Set_Hearth_Anim(0x15);
+    TalkMessage(0);
+    TalkClose();
+    Free_Event_Entity(0x15);
+    SetEntityFacing(0x15, "Left");
+    exit;
+}

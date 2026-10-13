@@ -1,0 +1,18 @@
+// Script 19
+#include "Fomt_Lib.src"
+
+script 19 Event_0019 {
+    const MESSAGE_0 = "Good luck on the farm!\r\nJust ask me if you \r\nhave any questions.\BRK";
+    
+    if ((Check_Flag(0x46) == 1)) {
+    }
+    SetEntityFacing(0x12, GetOppositeFacing(GetEntityFacing(0)));
+    TalkOpen();
+    Set_Portrait(0x4F);
+    Set_Name_Window(0x12);
+    TalkMessage(0);
+    TalkClose();
+    SetEntityFacing(0x12, "Down");
+    Free_Event_Entity(0x12);
+    exit;
+}

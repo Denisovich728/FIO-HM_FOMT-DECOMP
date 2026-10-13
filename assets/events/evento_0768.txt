@@ -1,0 +1,21 @@
+// Script 768
+#include "Fomt_Lib.src"
+
+script 768 Event_0768 {
+    const MESSAGE_0 = ".............................\BRK";
+    
+    if ((Check_Flag(0x11C) == 1)) {
+        SetEntityFacing(0x14, GetOppositeFacing(GetEntityFacing(0)));
+        if ((Check_If_Single(0x14) == 0)) {
+            Free_Event_Entity(0x14);
+        }
+        TalkOpen();
+        Set_Portrait(0x23);
+        Set_Name_Window(0x14);
+        TalkMessage(0);
+        TalkClose();
+        Free_Event_Entity(0x14);
+        SetEntityFacing(0x14, "Up");
+    }
+    exit;
+}

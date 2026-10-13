@@ -1,0 +1,49 @@
+// Script 681
+#include "Fomt_Lib.src"
+
+script 681 Event_0681 {
+    const MESSAGE_0 = "I'm ashamed that I haven't \r\nbeen taking sufficient care\r\nof my health...!\BRK";
+    const MESSAGE_1 = "I think I'll just sleep for \r\nthe rest of the day. \r\nGood night.\BRK";
+    
+    Warp_Player(0x1D, 0x1C0, 0x64);
+    PlayBGM(1, 0x11);
+    SetEntityPosition(0, 0x1C0, 0x64, "Up");
+    if (Inventory_Check()) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    SetEntityPosition(0x15, 0x1B8, -0x30, "Down");
+    SetEntityAnim(0x15, 0x89C);
+    Fade_In(2, 1);
+    Make_Delay(0x3C);
+    SetEntityAnim(0x15, 0x8A0);
+    Make_Delay(0x3C);
+    TalkOpen();
+    Set_Name_Window(0x15);
+    Set_Portrait(0x7D);
+    Set_Hearth_Anim(0x15);
+    TalkMessage(0);
+    TalkClose();
+    SetEntityAnim(0, 0x126);
+    Make_Delay(0x3C);
+    if (Inventory_Check()) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    Make_Delay(0x3C);
+    TalkOpen();
+    Set_Name_Window(0x15);
+    Set_Portrait(0x7D);
+    Set_Hearth_Anim(0x15);
+    TalkMessage(1);
+    TalkClose();
+    SetEntityAnim(0x15, 0x8B4);
+    Make_Delay(0x3C);
+    Free_Event_Entity(0x15);
+    Give_Love_Points(0x15, -0x7D0);
+    Set_Flag(0xD4, 1);
+    Finalize_Event();
+    exit;
+}

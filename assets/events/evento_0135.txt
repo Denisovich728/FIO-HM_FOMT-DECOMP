@@ -1,0 +1,11 @@
+// Script 135
+#include "Fomt_Lib.src"
+
+script 135 Event_0135 {
+    const MESSAGE_0 = "Drawers\BRK";
+    
+    TalkOpen();
+    Print_Message(0);
+    TalkClose();
+    exit;
+}

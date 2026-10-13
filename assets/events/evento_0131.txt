@@ -1,0 +1,11 @@
+// Script 131
+#include "Fomt_Lib.src"
+
+script 131 Event_0131 {
+    const MESSAGE_0 = "Painting of a Mountain\BRK";
+    
+    TalkOpen();
+    Print_Message(0);
+    TalkClose();
+    exit;
+}

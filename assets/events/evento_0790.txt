@@ -1,0 +1,26 @@
+// Script 790
+#include "Fomt_Lib.src"
+
+script 790 Event_0790 {
+    const MESSAGE_0 = "I shouldn't have gotten \r\ndragged into that fight. \r\nSorry. \BRK";
+    const MESSAGE_1 = "I wouldn't talk to him now,\r\nif I were you. \BRK";
+    const MESSAGE_2 = "Let's settle this once and\r\nfor all!\BRK";
+    
+    SetEntityFacing(8, GetOppositeFacing(GetEntityFacing(0)));
+    TalkOpen();
+    Set_Name_Window(8);
+    if ((Check_Flag(0x129) == 0)) {
+        Set_Portrait(0x86);
+        TalkMessage(0);
+    } else {
+        Set_Portrait(0x87);
+        TalkMessage(1);
+        Set_Portrait(0x87);
+        TalkMessage(2);
+    }
+    TalkClose();
+    Free_Event_Entity(8);
+    SetEntityFacing(8, "Left");
+    exit;
+    exit;
+}

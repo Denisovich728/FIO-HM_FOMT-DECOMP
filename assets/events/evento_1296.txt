@@ -1,0 +1,99 @@
+// Script 1296
+#include "Fomt_Lib.src"
+
+script 1296 Event_1296 {
+    const MESSAGE_0 = "This is from me. \r\nI hope you like it. \BRK";
+    const MESSAGE_1 = "This is for the Cookies\r\nyou gave me in Spring. \BRK";
+    const MESSAGE_2 = "I came to give you \r\nsomething. \BRK";
+    
+    var var_0;
+    
+    Set_Flag(0x1BA, 1);
+    var_0 = GetEntityFacing(0x15);
+    SetEntityFacing(0x15, GetOppositeFacing(GetEntityFacing(0)));
+    TalkOpen();
+    Set_Name_Window(0x15);
+    if (Inventory_Check()) {
+        if ((Check_Flag(0x185) == 0)) {
+            Set_Portrait(0x7A);
+            Set_Hearth_Anim(0x15);
+            TalkMessage(0);
+            TalkClose();
+            SetEntityAnim(0x15, 0x88C);
+            Make_Delay(0x3C);
+            SetEntityAnim(0x15, 0x884);
+            SetEntityAnim(0, 0x146);
+            PlaySong(0, 0x6A);
+            if ((Chek_Love_Points(0x15) >= 0x9C40)) {
+                Give_Item_Silent(0x90);
+            } else {
+                if ((Chek_Love_Points(0x15) < 0x9C40)) {
+                    Give_Item_Silent(0x45);
+                }
+            }
+            Set_Flag(0x1BB, 1);
+            Give_Love_Points(0x15, 0x3E8);
+            SetEntityAnim(0, 0x152);
+            if ((GetEntityX(0x15) != 0x154)) {
+                SetEntityFacing(0x15, "Right");
+                SetEntityAnim(0x15, 0x888);
+                Set_Vector_X(0x15, 0x154, 1);
+                Execute_Movement(0x15);
+                SetEntityAnim(0x15, 0x884);
+            }
+            SetEntityFacing(0x15, "Up");
+            SetEntityAnim(0x15, 0x888);
+            Set_Vector_Y(0x15, 0, 1);
+            Execute_Movement(0x15);
+            SetEntityAnim(0x15, 0x884);
+            Hide_Entity(0x15);
+            Set_Flag(0x1BA, 2);
+            Finalize_Event();
+        } else {
+            Set_Portrait(0x7A);
+            Set_Hearth_Anim(0x15);
+            TalkMessage(1);
+            TalkClose();
+            SetEntityAnim(0x15, 0x88C);
+            Make_Delay(0x3C);
+            SetEntityAnim(0x15, 0x884);
+            SetEntityAnim(0, 0x146);
+            PlaySong(0, 0x6A);
+            if ((Chek_Love_Points(0x15) >= 0x9C40)) {
+                Give_Item_Silent(0x90);
+            } else {
+                if ((Chek_Love_Points(0x15) < 0x9C40)) {
+                    Give_Item_Silent(0x45);
+                }
+            }
+            Set_Flag(0x1BB, 1);
+            Set_Flag(0x185, 0);
+            Give_Love_Points(0x15, 0x3E8);
+            SetEntityAnim(0, 0x152);
+            if ((GetEntityX(0x15) != 0x154)) {
+                SetEntityFacing(0x15, "Right");
+                SetEntityAnim(0x15, 0x888);
+                Set_Vector_X(0x15, 0x154, 1);
+                Execute_Movement(0x15);
+                SetEntityAnim(0x15, 0x884);
+            }
+            SetEntityFacing(0x15, "Up");
+            SetEntityAnim(0x15, 0x888);
+            Set_Vector_Y(0x15, 0, 1);
+            Execute_Movement(0x15);
+            SetEntityAnim(0x15, 0x884);
+            Hide_Entity(0x15);
+            Set_Flag(0x1BA, 2);
+            Finalize_Event();
+        }
+    } else {
+        Set_Portrait(0x7A);
+        Set_Hearth_Anim(0x15);
+        TalkMessage(2);
+        TalkClose();
+        Set_Flag(0x1BA, 0);
+    }
+    SetEntityFacing(0x15, var_0);
+    Free_Event_Entity(0x15);
+    exit;
+}

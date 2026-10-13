@@ -1,0 +1,11 @@
+// Script 194
+#include "Fomt_Lib.src"
+
+script 194 Event_0194 {
+    const MESSAGE_0 = "Trash basket\BRK";
+    
+    TalkOpen();
+    Print_Message(0);
+    TalkClose();
+    exit;
+}

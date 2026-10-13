@@ -1,0 +1,95 @@
+// Script 712
+#include "Fomt_Lib.src"
+
+script 712 Event_0712 {
+    const MESSAGE_0 = "Sorry to come on such a \r\nrainy day.\BRK";
+    const MESSAGE_1 = "It's no bother at all!\BRK";
+    const MESSAGE_2 = "I'm just glad to have you\r\ncome visit, Saibara.\BRK";
+    const MESSAGE_3 = "Oh, don't mention it...\r\nI was just...err...\r\nyou know...\BRK";
+    const MESSAGE_4 = ".......\r\n\xFF!!\r\nHow long have you been \BRK\r\nstanding there!?\BRK";
+    const MESSAGE_5 = "He was here the\r\nwhole time.\BRK";
+    const MESSAGE_6 = "Cough...cough...\r\nWell, I'll be getting home\r\nnow. Good day, Ellen.\BRK";
+    const MESSAGE_7 = "What\x81fs wrong with Sai?\r\nYour face got all red \r\nsuddenly!\BRK";
+    
+    Warp_Player(0xE, 0x54, 0x9C);
+    SetEntityPosition(0xF, 0x80, 0x60, "Down");
+    SetEntityAnim(0xF, 0x685);
+    SetEntityPosition(6, 0x80, 0xF0, "Up");
+    SetEntityAnim(6, 0x9A1);
+    SetEntityPosition(0x10, 0xB0, 0x76, "Left");
+    SetEntityAnim(0x10, 0x8B8);
+    SetEntityPosition(0, 0x54, 0x9C, "Right");
+    if ((Inventory_Check() == 1)) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    Fade_In(2, 1);
+    PlaySong(0, 0x9C);
+    SetEntityAnim(6, 0x9A5);
+    Set_Vector_Y(6, 0x76, 1);
+    Execute_Movement(6);
+    SetEntityAnim(6, 0x9A1);
+    Make_Delay(0x1E);
+    TalkOpen();
+    Set_Portrait(0xA8);
+    Set_Name_Window(6);
+    TalkMessage(0);
+    TalkClose();
+    TalkOpen();
+    Set_Portrait(0x3F);
+    Set_Name_Window(0xF);
+    TalkMessage(1);
+    Set_Portrait(0x40);
+    TalkMessage(2);
+    TalkClose();
+    Show_Emote(6, 1, 0);
+    Make_Delay(0x3C);
+    TalkOpen();
+    Set_Portrait(0xA9);
+    Set_Name_Window(6);
+    TalkMessage(3);
+    TalkClose();
+    Make_Delay(0x3C);
+    SetEntityFacing(6, "Left");
+    Show_Emote(6, 2, 0);
+    Make_Delay(0x3C);
+    TalkOpen();
+    Set_Portrait(0xA8);
+    Set_Name_Window(6);
+    TalkMessage(4);
+    TalkClose();
+    TalkOpen();
+    Set_Portrait(0x80);
+    Set_Name_Window(0x10);
+    TalkMessage(5);
+    TalkClose();
+    Show_Emote(6, 4, 0);
+    Make_Delay(0x3C);
+    SetEntityFacing(6, "Up");
+    Make_Delay(0x1E);
+    TalkOpen();
+    Set_Portrait(0xA9);
+    Set_Name_Window(6);
+    TalkMessage(6);
+    TalkClose();
+    SetEntityAnim(6, 0x9A5);
+    SetEntityFacing(6, "Down");
+    Set_Vector_Y(6, 0xF0, 1);
+    Execute_Movement(6);
+    PlaySong(0, 0xCD);
+    Hide_Entity(6);
+    Make_Delay(0x1E);
+    TalkOpen();
+    Set_Portrait(0x3F);
+    Set_Name_Window(0xF);
+    TalkMessage(7);
+    TalkClose();
+    Make_Delay(0x1E);
+    Set_Flag(0xEF, 1);
+    Free_Event_Entity(6);
+    Give_Friendship_Points(0xF, 0x14);
+    Give_Friendship_Points(6, 0x14);
+    Give_Friendship_Points(0x10, 0x14);
+    exit;
+}

@@ -1,0 +1,19 @@
+// Script 92
+#include "Fomt_Lib.src"
+
+script 92 Event_0092 {
+    if ((GetEntityFacing(0) == 1)) {
+        Fade_Out(2, 1);
+        if ((Check_Flag(0x11C) == 1)) {
+            Refresh_Map_Entities();
+            Add_Festival_Friendship_Bonus(0x14);
+            Give_Friendship_Points(0x14, 0x14);
+            Set_Flag(0x11C, 2);
+        }
+        Proc134(1, 0);
+        Warp_Player(0x134, 0x78, 0xC0);
+        SetEntityPosition(0, 0x78, 0xC0, 1);
+        Fade_In(2, 1);
+    }
+    exit;
+}

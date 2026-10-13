@@ -1,0 +1,21 @@
+// Script 357
+#include "Fomt_Lib.src"
+
+script 357 Event_0357 {
+    const MESSAGE_0 = "Ouch!...\BRK";
+    
+    var var_0;
+    
+    Proc0AA();
+    Fade_Out(3, 1);
+    Proc09C();
+    Proc0AA();
+    Tick_Overnight_Engine(3, 1);
+    Proc0AB();
+    var_0 = RNG_Generator(0, 0xFFFF);
+    if ((var_0 == 0)) {
+        TalkOpen();
+        TalkMessage(0);
+    }
+    exit;
+}

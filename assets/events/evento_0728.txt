@@ -1,0 +1,17 @@
+// Script 728
+#include "Fomt_Lib.src"
+
+script 728 Event_0728 {
+    const MESSAGE_0 = "I'm so proud of you, Dad.\r\nNow I have to do even \r\nbetter on my novel!\BRK";
+    
+    SetEntityFacing(0xC, GetOppositeFacing(GetEntityFacing(0)));
+    TalkOpen();
+    Set_Portrait(0x67);
+    Set_Name_Window(0xC);
+    TalkMessage(0);
+    TalkClose();
+    Free_Event_Entity(0xC);
+    SetEntityFacing(0xC, "Up");
+    exit;
+    exit;
+}

@@ -1,0 +1,11 @@
+// Script 200
+#include "Fomt_Lib.src"
+
+script 200 Event_0200 {
+    const MESSAGE_0 = "Table\BRK";
+    
+    TalkOpen();
+    Print_Message(0);
+    TalkClose();
+    exit;
+}

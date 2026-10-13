@@ -1,0 +1,29 @@
+// Script 1134
+#include "Fomt_Lib.src"
+
+script 1134 Event_1134 {
+    const MESSAGE_0 = "I can't believe Dogs can \r\nlearn so many tricks \r\nif they practice. \BRK\r\nI want a Dog now, too!\BRK";
+    const MESSAGE_1 = "Good luck, \xFF!!\BRK";
+    
+    if ((Check_If_Single(0x12) == 0)) {
+        Free_Event_Entity(0x12);
+    }
+    SetEntityFacing(0x12, GetOppositeFacing(GetEntityFacing(0)));
+    TalkOpen();
+    if ((Check_Flag(0x193) == 0)) {
+        Set_Portrait(0x4F);
+        Set_Name_Window(0x12);
+        TalkMessage(0);
+    } else {
+        Set_Portrait(0x50);
+        Set_Name_Window(0x12);
+        TalkMessage(1);
+    }
+    TalkClose();
+    if ((Has_Spoken_To_NPC_Today(0x12) == 0)) {
+        Give_Friendship_Points(0x12, 5);
+    }
+    Free_Event_Entity(0x12);
+    SetEntityFacing(0x12, "Right");
+    exit;
+}

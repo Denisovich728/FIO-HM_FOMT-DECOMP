@@ -1,0 +1,11 @@
+// Script 130
+#include "Fomt_Lib.src"
+
+script 130 Event_0130 {
+    const MESSAGE_0 = "Lamp\BRK";
+    
+    TalkOpen();
+    Print_Message(0);
+    TalkClose();
+    exit;
+}

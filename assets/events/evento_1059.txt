@@ -1,0 +1,29 @@
+// Script 1059
+#include "Fomt_Lib.src"
+
+script 1059 Event_1059 {
+    const MESSAGE_0 = "Which animal?";
+    const MESSAGE_1 = "Chickens";
+    const MESSAGE_2 = "Cows";
+    const MESSAGE_3 = "Sheep";
+    const MESSAGE_4 = "Cancel";
+    
+    var var_0;
+    
+    TalkOpen();
+    Draw_Menu_With_Header(0, 0, 1, 2, 3, 4);
+    TalkClose();
+    switch (var_0) {
+        case 1:
+            Execute_Script(1061);
+            break;
+        case 2:
+            Execute_Script(1060);
+            break;
+        case 3:
+            Execute_Script(1062);
+            break;
+    }
+    exit;
+    exit;
+}

@@ -1,0 +1,11 @@
+// Script 326
+#include "Fomt_Lib.src"
+
+script 326 Event_0326 {
+    const MESSAGE_0 = "Plant\BRK";
+    
+    TalkOpen();
+    Print_Message(0);
+    TalkClose();
+    exit;
+}

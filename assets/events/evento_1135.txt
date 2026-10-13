@@ -1,0 +1,29 @@
+// Script 1135
+#include "Fomt_Lib.src"
+
+script 1135 Event_1135 {
+    const MESSAGE_0 = "I've always loved this \r\nFestival. It's so much fun\r\nwatching the dogs chase\BRK\r\nthe frisbees! \BRK";
+    const MESSAGE_1 = "You're going to compete? \r\nGood luck! \BRK";
+    
+    if ((Check_If_Single(0xD) == 0)) {
+        Free_Event_Entity(0xD);
+    }
+    SetEntityFacing(0xD, GetOppositeFacing(GetEntityFacing(0)));
+    TalkOpen();
+    if ((Check_Flag(0x193) == 0)) {
+        Set_Portrait(0x75);
+        Set_Name_Window(0xD);
+        TalkMessage(0);
+    } else {
+        Set_Portrait(0x76);
+        Set_Name_Window(0xD);
+        TalkMessage(1);
+    }
+    TalkClose();
+    if ((Has_Spoken_To_NPC_Today(0xD) == 0)) {
+        Give_Friendship_Points(0xD, 5);
+    }
+    Free_Event_Entity(0xD);
+    SetEntityFacing(0xD, "Right");
+    exit;
+}

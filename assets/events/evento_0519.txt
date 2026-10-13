@@ -1,0 +1,34 @@
+// Script 519
+#include "Fomt_Lib.src"
+
+script 519 Event_0519 {
+    var var_0;
+    var var_1;
+    var var_2;
+    var var_3;
+    var var_4;
+    
+    if ((GetEntityFacing(0) == 0)) {
+        if ((Check_Flag(0x8A) == 1)) {
+            Set_Flag(0x8A, 2);
+            Add_Festival_Friendship_Bonus(7);
+            Add_Festival_Friendship_Bonus(6);
+            Refresh_Map_Entities();
+        }
+        Fade_Out(2, 1);
+        Warp_Player(7, 0x128, 0x78);
+        SetEntityPosition(0, 0x128, 0x78, 0);
+        PlaySong(0, 0xCD);
+        var_0 = Check_Flag(1);
+        var_1 = Check_Flag(2);
+        var_3 = Check_Flag(3);
+        var_2 = Check_Flag(5);
+        var_4 = Check_Flag(6);
+        if ((((((((((((((((((((((((((((((Check_Flag(0x4E) == 0) && !((((((((((((((var_0 == 0) && (var_1 == 1)) || ((var_0 == 0) && (var_1 == 0x12))) || ((var_0 == 0) && (var_1 == 0x16))) || ((var_0 == 1) && (var_1 == 1))) || ((var_0 == 1) && (var_1 == 7))) || ((var_0 == 1) && (var_1 == 0x18))) || ((var_0 == 1) && (var_1 == 0x14))) || ((var_0 == 2) && (var_1 == 3))) || ((var_0 == 2) && (var_1 == 9))) || ((var_0 == 2) && (var_1 == 0xD))) || ((var_0 == 2) && (var_1 == 0x12))) || ((var_0 == 2) && (var_1 == 0x15))) || ((var_0 == 3) && (var_1 == 0x1E)))) && ((var_2 == 3) || (var_2 == 5))) && (var_4 == 0)) && ((var_3 >= 0xA) && (var_3 < 0x12))) && (Check_Flag(0x4C) == 0)) && (Check_Flag(0x55) == 0)) && (Check_Flag(0x5F) == 0)) && (Check_Flag(0x67) == 0)) && (Check_Flag(0x6F) == 0)) && (Check_Flag(0x173) == 0)) && (Check_Flag(0x7E) == 0)) && (Check_Flag(0x7F) == 0)) && (Check_Flag(0x55) == 0)) && (Check_Flag(0x4B) == 0)) && (Check_Flag(0x54) == 0)) && (Check_Flag(0x5E) == 0)) && (Check_Flag(0x66) == 0)) && (Check_Flag(0x6E) == 0)) && (Check_Flag(0x172) == 0)) && (Check_Flag(0x7D) == 0)) && (GetEntityLocation(3) == 0xA)) && (GetEntityLocation(1) != 7)) && (GetEntityLocation(2) != 7)) && (GetEntityLocation(4) != 7)) && (GetEntityLocation(7) != 7)) && (GetEntityLocation(0xC) != 7)) && (GetEntityLocation(0x12) != 7)) && (Inventory_Check() == 1))) {
+            Set_Flag(0x4E, 1);
+            Execute_Script(0x24);
+        }
+        Fade_In(2, 1);
+    }
+    exit;
+}

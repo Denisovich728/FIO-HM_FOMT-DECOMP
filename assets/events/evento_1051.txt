@@ -1,0 +1,496 @@
+// Script 1051
+#include "Fomt_Lib.src"
+
+script 1051 Event_1051 {
+    const MESSAGE_0 = "TV Shopping Network\r\n\r\nThis is our valued product \r\nfor today: Clock!\r\nThis classic time-piece \r\nlends elegance to any room!\r\n\r\nOur special low price is \r\nonly...2,000G!\r\n\r\nThey're going quick, so if\r\nyou want one, phone in now!\BRK";
+    const MESSAGE_1 = "TV Shopping Network\r\n\r\nThis is our valued product \r\nfor today: Mirror!\r\nThis Mirror will help you\r\nlook your best everyday!\r\n\r\nOur special low price is \r\nonly...1,000G!\r\n\r\nThey're going quick, so if\r\nyou want one, phone in now!\BRK";
+    const MESSAGE_2 = "TV Shopping Network\r\n\r\nThis is our valued product \r\nfor today: Refrigerator!\r\nFinally you'll be able to \r\nstore loads of food without\r\ncarrying it around!\r\n\r\nOur special low price is \r\nonly...2,500G!\r\n\r\nThey're going quick, so if\r\nyou want one, phone in now!\BRK";
+    const MESSAGE_3 = "TV Shopping Network\r\n\r\nThis is our valued product \r\nfor today: Shelves!\r\nFinally you'll be able to \r\nstore loads of Items without\r\ncarrying them around!\r\n\r\nOur special low price is \r\nonly...2,500G!\r\n\r\nThey're going quick, so if\r\nyou want one, phone in now!\BRK";
+    const MESSAGE_4 = "TV Shopping Network\r\n\r\nThis is our valued product \r\nfor today: Kitchen!\r\nJust buy this and some\r\nUtensils, and you're ready\r\nto cook up a storm!\r\n\r\nOur special low price is \r\nonly...4,000G!\r\n\r\nThey're going quick, so if\r\nyou want one, phone in now!\BRK";
+    const MESSAGE_5 = "TV Shopping Network\r\n\r\nThis is our valued product \r\nfor today: Carpet!\r\nThis Carpet will make any \r\nhome more homey!\r\n\r\nOur special low price is \r\nonly...5,000G!\r\n\r\nThey're going quick, so if\r\nyou want one, phone in now!\BRK";
+    const MESSAGE_6 = "TV Shopping Network\r\n\r\nThis is our valued product \r\nfor today: Large Bed!\r\nThis is absolutely necessary\r\nfor those looking to \r\nget married!\r\n\r\nOur special low price is \r\nonly...10,000G!\r\n\r\nThey're going quick, so if\r\nyou want one, phone in now!\BRK";
+    const MESSAGE_7 = "TV Shopping Network\r\n\r\nThis is our valued product \r\nfor today: Knife!\r\nIt slices and dices, and \r\nnever gets dull!\r\n\r\nOur special low price is \r\nonly...1,500G!\r\n\r\nThey're going quick, so if\r\nyou want one, phone in now!\BRK";
+    const MESSAGE_8 = "TV Shopping Network\r\n\r\nThis is our valued product \r\nfor today: Frying Pan!\r\nThis Frying Pan is perfect \r\nfor frying up just about\r\nanything!\r\n\r\nOur special low price is \r\nonly...1,200G!\r\n\r\nThey're going quick, so if\r\nyou want one, phone in now!\BRK";
+    const MESSAGE_9 = "TV Shopping Network\r\n\r\nThis is our valued product \r\nfor today: Pot!\r\nThis Pot is perfect for \r\nstews, curries, and lots of\r\nother dishes!\r\n\r\nOur special low price is \r\nonly...1,000G!\r\n\r\nThey're going quick, so if\r\nyou want one, phone in now!\BRK";
+    const MESSAGE_10 = "TV Shopping Network\r\n\r\nThis is our valued product \r\nfor today: Mixer!\r\nThis Mixer is just the thing\r\nfor making juices!\r\n\r\nOur special low price is \r\nonly...1,200G!\r\n\r\nThey're going quick, so if\r\nyou want one, phone in now!\BRK";
+    const MESSAGE_11 = "TV Shopping Network\r\n\r\nThis is our valued product \r\nfor today: Whisk!\r\nThis Whisk is perfect for \r\nmixing things like omelets!\r\n\r\nOur special low price is \r\nonly...500G!\r\n\r\nThey're going quick, so if\r\nyou want one, phone in now!\BRK";
+    const MESSAGE_12 = "TV Shopping Network\r\n\r\nThis is our valued product \r\nfor today: Rolling Pin!\r\nThis Rolling Pin is a must \r\nfor everyone who wants to\r\nmake pasta!\r\n\r\nOur special low price is \r\nonly...750G!\r\n\r\nThey're going quick, so if\r\nyou want one, phone in now!\BRK";
+    const MESSAGE_13 = "TV Shopping Network\r\n\r\nThis is our valued product \r\nfor today: Oven!\r\nThis Oven is a must for \r\nserious cooks, especially\r\nfor cookies and cakes!\r\n\r\nOur special low price is \r\nonly...2,500G!\r\n\r\nThey're going quick, so if\r\nyou want one, phone in now!\BRK";
+    const MESSAGE_14 = "TV Shopping Network\r\n\r\nThis is our valued product \r\nfor today: Seasoning Set!\r\nThis bargain contains:\r\nSalt, Sugar, Vinegar, Soy\r\nSauce, and Miso! \r\nOur special low price is \r\nonly...2,500G!\r\n\r\nThey're going quick, so if\r\nyou want one, phone in now!\BRK";
+    const MESSAGE_15 = "TV Shopping Network\r\n\r\nThis is our valued product \r\nfor today: Power Berry!\r\nThis miraculous fruit will \r\nboost your maximum SR.\r\nby a full 10 points!\r\n\r\nOur special low price is \r\nonly...10,000G!\r\n\r\nThey're going quick, so if\r\nyou want one, phone in now!\BRK";
+    
+    var var_0;
+    var var_1;
+    
+    if ((Check_Flag(0xE) == 0)) {
+        if (((Check_Flag(0x1B) == 0) || (Check_Flag(0x1A) == 0))) {
+            switch (Check_Flag(0x1EE)) {
+                case 0:
+                case 2:
+                case 4:
+                case 6:
+                    if ((Check_Flag(0x1B) == 1)) {
+                        var_1 = 1;
+                        goto LBL_000C;
+                    }
+                    var_1 = 0;
+                    break;
+                case 1:
+                case 3:
+                case 5:
+                case 7:
+                    if ((Check_Flag(0x1A) == 1)) {
+                        var_1 = 0;
+                        goto LBL_0011;
+                    }
+                    var_1 = 1;
+                    break;
+            }
+        } else {
+            var_1 = 0x10;
+        }
+    } else {
+        if (((Check_Flag(0x15) == 0) || (Check_Flag(0x16) == 0))) {
+            switch (Check_Flag(0x1EE)) {
+                case 0:
+                case 2:
+                case 4:
+                case 6:
+                    if ((Check_Flag(0x15) == 1)) {
+                        var_1 = 3;
+                        goto LBL_001F;
+                    }
+                    var_1 = 2;
+                    break;
+                case 1:
+                case 3:
+                case 5:
+                case 7:
+                    if ((Check_Flag(0x16) == 1)) {
+                        var_1 = 2;
+                        goto LBL_0024;
+                    }
+                    var_1 = 3;
+                    break;
+            }
+            goto LBL_0015;
+        }
+        if ((Check_Flag(0x17) == 0)) {
+            var_1 = 4;
+            goto LBL_0015;
+        }
+        if (((((((((Check_Flag(0x20) == 0) || (Check_Flag(0x21) == 0)) || (Check_Flag(0x22) == 0)) || (Check_Flag(0x23) == 0)) || (Check_Flag(0x24) == 0)) || (Check_Flag(0x25) == 0)) || (Check_Flag(0x26) == 0)) || (Check_Flag(0x27) == 0))) {
+            switch (Check_Flag(0x1EE)) {
+                case 0:
+                    if ((Check_Flag(0x20) == 0)) {
+                        var_1 = 7;
+                        goto LBL_0041;
+                    }
+                    if ((Check_Flag(0x21) == 0)) {
+                        var_1 = 8;
+                        goto LBL_0045;
+                    }
+                    if ((Check_Flag(0x22) == 0)) {
+                        var_1 = 9;
+                        goto LBL_0049;
+                    }
+                    if ((Check_Flag(0x23) == 0)) {
+                        var_1 = 0xA;
+                        goto LBL_004D;
+                    }
+                    if ((Check_Flag(0x24) == 0)) {
+                        var_1 = 0xB;
+                        goto LBL_0051;
+                    }
+                    if ((Check_Flag(0x25) == 0)) {
+                        var_1 = 0xC;
+                        goto LBL_0055;
+                    }
+                    if ((Check_Flag(0x26) == 0)) {
+                        var_1 = 0xD;
+                        goto LBL_0059;
+                    }
+                    var_1 = 0xE;
+                    break;
+                case 1:
+                    if ((Check_Flag(0x21) == 0)) {
+                        var_1 = 8;
+                        goto LBL_005E;
+                    }
+                    if ((Check_Flag(0x22) == 0)) {
+                        var_1 = 9;
+                        goto LBL_0062;
+                    }
+                    if ((Check_Flag(0x23) == 0)) {
+                        var_1 = 0xA;
+                        goto LBL_0066;
+                    }
+                    if ((Check_Flag(0x24) == 0)) {
+                        var_1 = 0xB;
+                        goto LBL_006A;
+                    }
+                    if ((Check_Flag(0x25) == 0)) {
+                        var_1 = 0xC;
+                        goto LBL_006E;
+                    }
+                    if ((Check_Flag(0x26) == 0)) {
+                        var_1 = 0xD;
+                        goto LBL_0072;
+                    }
+                    if ((Check_Flag(0x27) == 0)) {
+                        var_1 = 0xE;
+                        goto LBL_0076;
+                    }
+                    var_1 = 7;
+                    break;
+                case 2:
+                    if ((Check_Flag(0x22) == 0)) {
+                        var_1 = 9;
+                        goto LBL_007B;
+                    }
+                    if ((Check_Flag(0x23) == 0)) {
+                        var_1 = 0xA;
+                        goto LBL_007F;
+                    }
+                    if ((Check_Flag(0x24) == 0)) {
+                        var_1 = 0xB;
+                        goto LBL_0083;
+                    }
+                    if ((Check_Flag(0x25) == 0)) {
+                        var_1 = 0xC;
+                        goto LBL_0087;
+                    }
+                    if ((Check_Flag(0x26) == 0)) {
+                        var_1 = 0xD;
+                        goto LBL_008B;
+                    }
+                    if ((Check_Flag(0x27) == 0)) {
+                        var_1 = 0xE;
+                        goto LBL_008F;
+                    }
+                    if ((Check_Flag(0x20) == 0)) {
+                        var_1 = 7;
+                        goto LBL_0093;
+                    }
+                    var_1 = 8;
+                    break;
+                case 3:
+                    if ((Check_Flag(0x23) == 0)) {
+                        var_1 = 0xA;
+                        goto LBL_0098;
+                    }
+                    if ((Check_Flag(0x24) == 0)) {
+                        var_1 = 0xB;
+                        goto LBL_009C;
+                    }
+                    if ((Check_Flag(0x25) == 0)) {
+                        var_1 = 0xC;
+                        goto LBL_00A0;
+                    }
+                    if ((Check_Flag(0x26) == 0)) {
+                        var_1 = 0xD;
+                        goto LBL_00A4;
+                    }
+                    if ((Check_Flag(0x27) == 0)) {
+                        var_1 = 0xE;
+                        goto LBL_00A8;
+                    }
+                    if ((Check_Flag(0x20) == 0)) {
+                        var_1 = 7;
+                        goto LBL_00AC;
+                    }
+                    if ((Check_Flag(0x21) == 0)) {
+                        var_1 = 8;
+                        goto LBL_00B0;
+                    }
+                    var_1 = 9;
+                    break;
+                case 4:
+                    if ((Check_Flag(0x24) == 0)) {
+                        var_1 = 0xB;
+                        goto LBL_00B5;
+                    }
+                    if ((Check_Flag(0x25) == 0)) {
+                        var_1 = 0xC;
+                        goto LBL_00B9;
+                    }
+                    if ((Check_Flag(0x26) == 0)) {
+                        var_1 = 0xD;
+                        goto LBL_00BD;
+                    }
+                    if ((Check_Flag(0x27) == 0)) {
+                        var_1 = 0xE;
+                        goto LBL_00C1;
+                    }
+                    if ((Check_Flag(0x20) == 0)) {
+                        var_1 = 7;
+                        goto LBL_00C5;
+                    }
+                    if ((Check_Flag(0x21) == 0)) {
+                        var_1 = 8;
+                        goto LBL_00C9;
+                    }
+                    if ((Check_Flag(0x22) == 0)) {
+                        var_1 = 9;
+                        goto LBL_00CD;
+                    }
+                    var_1 = 0xA;
+                    break;
+                case 5:
+                    if ((Check_Flag(0x25) == 0)) {
+                        var_1 = 0xC;
+                        goto LBL_00D2;
+                    }
+                    if ((Check_Flag(0x26) == 0)) {
+                        var_1 = 0xD;
+                        goto LBL_00D6;
+                    }
+                    if ((Check_Flag(0x27) == 0)) {
+                        var_1 = 0xE;
+                        goto LBL_00DA;
+                    }
+                    if ((Check_Flag(0x20) == 0)) {
+                        var_1 = 7;
+                        goto LBL_00DE;
+                    }
+                    if ((Check_Flag(0x21) == 0)) {
+                        var_1 = 8;
+                        goto LBL_00E2;
+                    }
+                    if ((Check_Flag(0x22) == 0)) {
+                        var_1 = 9;
+                        goto LBL_00E6;
+                    }
+                    if ((Check_Flag(0x23) == 0)) {
+                        var_1 = 0xA;
+                        goto LBL_00EA;
+                    }
+                    var_1 = 0xB;
+                    break;
+                case 6:
+                    if ((Check_Flag(0x26) == 0)) {
+                        var_1 = 0xD;
+                        goto LBL_00EF;
+                    }
+                    if ((Check_Flag(0x27) == 0)) {
+                        var_1 = 0xE;
+                        goto LBL_00F3;
+                    }
+                    if ((Check_Flag(0x20) == 0)) {
+                        var_1 = 7;
+                        goto LBL_00F7;
+                    }
+                    if ((Check_Flag(0x21) == 0)) {
+                        var_1 = 8;
+                        goto LBL_00FB;
+                    }
+                    if ((Check_Flag(0x22) == 0)) {
+                        var_1 = 9;
+                        goto LBL_00FF;
+                    }
+                    if ((Check_Flag(0x23) == 0)) {
+                        var_1 = 0xA;
+                        goto LBL_0103;
+                    }
+                    if ((Check_Flag(0x24) == 0)) {
+                        var_1 = 0xB;
+                        goto LBL_0107;
+                    }
+                    var_1 = 0xC;
+                    break;
+                case 7:
+                    if ((Check_Flag(0x27) == 0)) {
+                        var_1 = 0xE;
+                        goto LBL_010C;
+                    }
+                    if ((Check_Flag(0x20) == 0)) {
+                        var_1 = 7;
+                        goto LBL_0110;
+                    }
+                    if ((Check_Flag(0x21) == 0)) {
+                        var_1 = 8;
+                        goto LBL_0114;
+                    }
+                    if ((Check_Flag(0x22) == 0)) {
+                        var_1 = 9;
+                        goto LBL_0118;
+                    }
+                    if ((Check_Flag(0x23) == 0)) {
+                        var_1 = 0xA;
+                        goto LBL_011C;
+                    }
+                    if ((Check_Flag(0x24) == 0)) {
+                        var_1 = 0xB;
+                        goto LBL_0120;
+                    }
+                    if ((Check_Flag(0x25) == 0)) {
+                        var_1 = 0xC;
+                        goto LBL_0124;
+                    }
+                    var_1 = 0xD;
+                    break;
+            }
+            goto LBL_0015;
+        }
+        if (((Check_Flag(0x1B) == 0) || (Check_Flag(0x1A) == 0))) {
+            switch (Check_Flag(0x1EE)) {
+                case 0:
+                case 2:
+                case 4:
+                case 6:
+                    if ((Check_Flag(0x1B) == 1)) {
+                        var_1 = 1;
+                        goto LBL_0131;
+                    }
+                    var_1 = 0;
+                    break;
+                case 1:
+                case 3:
+                case 5:
+                case 7:
+                    if ((Check_Flag(0x1A) == 1)) {
+                        var_1 = 0;
+                        goto LBL_0136;
+                    }
+                    var_1 = 1;
+                    break;
+            }
+            goto LBL_0015;
+        }
+        if ((Check_Flag(0xE) == 1)) {
+            var_1 = 0x10;
+            goto LBL_0015;
+        }
+        if (((Check_Flag(0x18) == 0) || (Check_Flag(0x19) == 0))) {
+            switch (Check_Flag(0x1EE)) {
+                case 0:
+                case 2:
+                case 4:
+                case 6:
+                    if ((Check_Flag(0x18) == 1)) {
+                        var_1 = 6;
+                        goto LBL_0147;
+                    }
+                    var_1 = 5;
+                    break;
+                case 1:
+                case 3:
+                case 5:
+                case 7:
+                    if ((Check_Flag(0x19) == 1)) {
+                        var_1 = 5;
+                        goto LBL_014C;
+                    }
+                    var_1 = 6;
+                    break;
+            }
+            goto LBL_0015;
+        }
+        if ((Check_Flag(0xA7) == 2)) {
+            var_1 = 0x10;
+            goto LBL_0015;
+        }
+        var_1 = 0xF;
+    }
+    switch (var_1) {
+        case 0:
+            Set_TV_Screen_Graphic(0x14);
+            var_0 = Print_TV_Message(0);
+            Register_TV_Shopping_Item(0);
+            break;
+        case 1:
+            Set_TV_Screen_Graphic(0x14);
+            var_0 = Print_TV_Message(1);
+            Register_TV_Shopping_Item(1);
+            break;
+        case 2:
+            Set_TV_Screen_Graphic(0x14);
+            var_0 = Print_TV_Message(2);
+            Register_TV_Shopping_Item(2);
+            break;
+        case 3:
+            Set_TV_Screen_Graphic(0x14);
+            var_0 = Print_TV_Message(3);
+            Register_TV_Shopping_Item(3);
+            break;
+        case 4:
+            Set_TV_Screen_Graphic(0x14);
+            var_0 = Print_TV_Message(4);
+            Register_TV_Shopping_Item(4);
+            break;
+        case 5:
+            Set_TV_Screen_Graphic(0x14);
+            var_0 = Print_TV_Message(5);
+            Register_TV_Shopping_Item(5);
+            break;
+        case 6:
+            Set_TV_Screen_Graphic(0x14);
+            var_0 = Print_TV_Message(6);
+            Register_TV_Shopping_Item(6);
+            break;
+        case 7:
+            Set_TV_Screen_Graphic(0x14);
+            var_0 = Print_TV_Message(7);
+            Register_TV_Shopping_Item(7);
+            break;
+        case 8:
+            Set_TV_Screen_Graphic(0x14);
+            var_0 = Print_TV_Message(8);
+            Register_TV_Shopping_Item(8);
+            break;
+        case 9:
+            Set_TV_Screen_Graphic(0x14);
+            var_0 = Print_TV_Message(9);
+            Register_TV_Shopping_Item(9);
+            break;
+        case 0xA:
+            Set_TV_Screen_Graphic(0x14);
+            var_0 = Print_TV_Message(10);
+            Register_TV_Shopping_Item(0xA);
+            break;
+        case 0xB:
+            Set_TV_Screen_Graphic(0x14);
+            var_0 = Print_TV_Message(11);
+            Register_TV_Shopping_Item(0xB);
+            break;
+        case 0xC:
+            Set_TV_Screen_Graphic(0x14);
+            var_0 = Print_TV_Message(12);
+            Register_TV_Shopping_Item(0xC);
+            break;
+        case 0xD:
+            Set_TV_Screen_Graphic(0x14);
+            var_0 = Print_TV_Message(13);
+            Register_TV_Shopping_Item(0xD);
+            break;
+        case 0xE:
+            Set_TV_Screen_Graphic(0x14);
+            var_0 = Print_TV_Message(14);
+            Register_TV_Shopping_Item(0xE);
+            break;
+        case 0xF:
+            Set_TV_Screen_Graphic(0x14);
+            var_0 = Print_TV_Message(15);
+            Register_TV_Shopping_Item(0xF);
+            break;
+        case 0x10:
+            Set_TV_Screen_Graphic(0x12);
+            Execute_Script(1055);
+            break;
+    }
+    Close_TV_Interface();
+    TalkClose();
+    switch (var_0) {
+        case 0:
+        case 1:
+        case 2:
+        case 3:
+            Set_Flag(0x244, var_0);
+            Execute_Script(356);
+            break;
+        case 4:
+        case 5:
+            break;
+    }
+    exit;
+}

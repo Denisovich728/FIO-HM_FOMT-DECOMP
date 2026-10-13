@@ -1,0 +1,912 @@
+[
+    {
+        "name": "Bug",
+        "gfx_offset": "0x64d7bc",
+        "gfx_pointer": "0x864d7bc",
+        "pal_offset": "0x663060",
+        "pal_pointer": "0x8663060",
+        "palette_file": "Bug_pal.json",
+        "estimated_tile_count": 192,
+        "sheet_grid": "16x12_tiles"
+    },
+    {
+        "name": "Cat",
+        "gfx_offset": "0x5fa13c",
+        "gfx_pointer": "0x85fa13c",
+        "pal_offset": "0x662420",
+        "pal_pointer": "0x8662420",
+        "palette_file": "Cat_pal.json",
+        "estimated_tile_count": 192,
+        "sheet_grid": "16x12_tiles"
+    },
+    {
+        "name": "Chicken1",
+        "gfx_offset": "0x62881c",
+        "gfx_pointer": "0x862881c",
+        "pal_offset": "0x662b40",
+        "pal_pointer": "0x8662b40",
+        "palette_file": "Chicken1_pal.json",
+        "estimated_tile_count": 192,
+        "sheet_grid": "16x12_tiles"
+    },
+    {
+        "name": "Chicken2",
+        "gfx_offset": "0x62881c",
+        "gfx_pointer": "0x862881c",
+        "pal_offset": "0x662b60",
+        "pal_pointer": "0x8662b60",
+        "palette_file": "Chicken2_pal.json",
+        "estimated_tile_count": 192,
+        "sheet_grid": "16x12_tiles"
+    },
+    {
+        "name": "Chicken3",
+        "gfx_offset": "0x62881c",
+        "gfx_pointer": "0x862881c",
+        "pal_offset": "0x662b80",
+        "pal_pointer": "0x8662b80",
+        "palette_file": "Chicken3_pal.json",
+        "estimated_tile_count": 192,
+        "sheet_grid": "16x12_tiles"
+    },
+    {
+        "name": "Chicken4",
+        "gfx_offset": "0x62881c",
+        "gfx_pointer": "0x862881c",
+        "pal_offset": "0x662ba0",
+        "pal_pointer": "0x8662ba0",
+        "palette_file": "Chicken4_pal.json",
+        "estimated_tile_count": 192,
+        "sheet_grid": "16x12_tiles"
+    },
+    {
+        "name": "Cow1",
+        "gfx_offset": "0x604f3c",
+        "gfx_pointer": "0x8604f3c",
+        "pal_offset": "0x6625a0",
+        "pal_pointer": "0x86625a0",
+        "palette_file": "Cow1_pal.json",
+        "estimated_tile_count": 192,
+        "sheet_grid": "16x12_tiles"
+    },
+    {
+        "name": "Cow2",
+        "gfx_offset": "0x606e3c",
+        "gfx_pointer": "0x8606e3c",
+        "pal_offset": "0x6625a0",
+        "pal_pointer": "0x86625a0",
+        "palette_file": "Cow2_pal.json",
+        "estimated_tile_count": 192,
+        "sheet_grid": "16x12_tiles"
+    },
+    {
+        "name": "Cow3",
+        "gfx_offset": "0x608d3c",
+        "gfx_pointer": "0x8608d3c",
+        "pal_offset": "0x6625a0",
+        "pal_pointer": "0x86625a0",
+        "palette_file": "Cow3_pal.json",
+        "estimated_tile_count": 192,
+        "sheet_grid": "16x12_tiles"
+    },
+    {
+        "name": "Cow4",
+        "gfx_offset": "0x60ac3c",
+        "gfx_pointer": "0x860ac3c",
+        "pal_offset": "0x6625a0",
+        "pal_pointer": "0x86625a0",
+        "palette_file": "Cow4_pal.json",
+        "estimated_tile_count": 192,
+        "sheet_grid": "16x12_tiles"
+    },
+    {
+        "name": "Cow5",
+        "gfx_offset": "0x60cb7c",
+        "gfx_pointer": "0x860cb7c",
+        "pal_offset": "0x6625a0",
+        "pal_pointer": "0x86625a0",
+        "palette_file": "Cow5_pal.json",
+        "estimated_tile_count": 192,
+        "sheet_grid": "16x12_tiles"
+    },
+    {
+        "name": "Dog1",
+        "gfx_offset": "0x61113c",
+        "gfx_pointer": "0x861113c",
+        "pal_offset": "0x662620",
+        "pal_pointer": "0x8662620",
+        "palette_file": "Dog1_pal.json",
+        "estimated_tile_count": 192,
+        "sheet_grid": "16x12_tiles"
+    },
+    {
+        "name": "Dog2",
+        "gfx_offset": "0x612d3c",
+        "gfx_pointer": "0x8612d3c",
+        "pal_offset": "0x662620",
+        "pal_pointer": "0x8662620",
+        "palette_file": "Dog2_pal.json",
+        "estimated_tile_count": 192,
+        "sheet_grid": "16x12_tiles"
+    },
+    {
+        "name": "Dragonfly",
+        "gfx_offset": "0x61413c",
+        "gfx_pointer": "0x861413c",
+        "pal_offset": "0x662660",
+        "pal_pointer": "0x8662660",
+        "palette_file": "Dragonfly_pal.json",
+        "estimated_tile_count": 192,
+        "sheet_grid": "16x12_tiles"
+    },
+    {
+        "name": "Monkey",
+        "gfx_offset": "0x6438fc",
+        "gfx_pointer": "0x86438fc",
+        "pal_offset": "0x662f00",
+        "pal_pointer": "0x8662f00",
+        "palette_file": "Monkey_pal.json",
+        "estimated_tile_count": 192,
+        "sheet_grid": "16x12_tiles"
+    },
+    {
+        "name": "Rabbit",
+        "gfx_offset": "0x64d33c",
+        "gfx_pointer": "0x864d33c",
+        "pal_offset": "0x663040",
+        "pal_pointer": "0x8663040",
+        "palette_file": "Rabbit_pal.json",
+        "estimated_tile_count": 192,
+        "sheet_grid": "16x12_tiles"
+    },
+    {
+        "name": "RedBug",
+        "gfx_offset": "0x63b29c",
+        "gfx_pointer": "0x863b29c",
+        "pal_offset": "0x662de0",
+        "pal_pointer": "0x8662de0",
+        "palette_file": "RedBug_pal.json",
+        "estimated_tile_count": 192,
+        "sheet_grid": "16x12_tiles"
+    },
+    {
+        "name": "Squirrel",
+        "gfx_offset": "0x65d3bc",
+        "gfx_pointer": "0x865d3bc",
+        "pal_offset": "0x663160",
+        "pal_pointer": "0x8663160",
+        "palette_file": "Squirrel_pal.json",
+        "estimated_tile_count": 192,
+        "sheet_grid": "16x12_tiles"
+    },
+    {
+        "name": "WildDog",
+        "gfx_offset": "0x65da3c",
+        "gfx_pointer": "0x865da3c",
+        "pal_offset": "0x663180",
+        "pal_pointer": "0x8663180",
+        "palette_file": "WildDog_pal.json",
+        "estimated_tile_count": 192,
+        "sheet_grid": "16x12_tiles"
+    },
+    {
+        "name": "Rick_Daily",
+        "gfx_offset": "0x5fa73c",
+        "gfx_pointer": "0x85fa73c",
+        "pal_offset": "0x662440",
+        "pal_pointer": "0x8662440",
+        "palette_file": "Rick_Daily_pal.json",
+        "estimated_tile_count": 192,
+        "sheet_grid": "16x12_tiles"
+    },
+    {
+        "name": "Rick-Wedding",
+        "gfx_offset": "0x5fbabc",
+        "gfx_pointer": "0x85fbabc",
+        "pal_offset": "0x662460",
+        "pal_pointer": "0x8662460",
+        "palette_file": "Rick-Wedding_pal.json",
+        "estimated_tile_count": 192,
+        "sheet_grid": "16x12_tiles"
+    },
+    {
+        "name": "Popuri-Daily",
+        "gfx_offset": "0x5fc83c",
+        "gfx_pointer": "0x85fc83c",
+        "pal_offset": "0x662480",
+        "pal_pointer": "0x8662480",
+        "palette_file": "Popuri-Daily_pal.json",
+        "estimated_tile_count": 192,
+        "sheet_grid": "16x12_tiles"
+    },
+    {
+        "name": "Popuri-Sleeping",
+        "gfx_offset": "0x5fdbbc",
+        "gfx_pointer": "0x85fdbbc",
+        "pal_offset": "0x6624a0",
+        "pal_pointer": "0x86624a0",
+        "palette_file": "Popuri-Sleeping_pal.json",
+        "estimated_tile_count": 192,
+        "sheet_grid": "16x12_tiles"
+    },
+    {
+        "name": "Popuri-Baby",
+        "gfx_offset": "0x5fe1bc",
+        "gfx_pointer": "0x85fe1bc",
+        "pal_offset": "0x662480",
+        "pal_pointer": "0x8662480",
+        "palette_file": "Popuri-Baby_pal.json",
+        "estimated_tile_count": 192,
+        "sheet_grid": "16x12_tiles"
+    },
+    {
+        "name": "Popuri-Wedding",
+        "gfx_offset": "0x5ff3bc",
+        "gfx_pointer": "0x85ff3bc",
+        "pal_offset": "0x6624c0",
+        "pal_pointer": "0x86624c0",
+        "palette_file": "Popuri-Wedding_pal.json",
+        "estimated_tile_count": 192,
+        "sheet_grid": "16x12_tiles"
+    },
+    {
+        "name": "Lillia",
+        "gfx_offset": "0x5fffbc",
+        "gfx_pointer": "0x85fffbc",
+        "pal_offset": "0x6624e0",
+        "pal_pointer": "0x86624e0",
+        "palette_file": "Lillia_pal.json",
+        "estimated_tile_count": 192,
+        "sheet_grid": "16x12_tiles"
+    },
+    {
+        "name": "Child",
+        "gfx_offset": "0x600d3c",
+        "gfx_pointer": "0x8600d3c",
+        "pal_offset": "0x662500",
+        "pal_pointer": "0x8662500",
+        "palette_file": "Child_pal.json",
+        "estimated_tile_count": 192,
+        "sheet_grid": "16x12_tiles"
+    },
+    {
+        "name": "Child",
+        "gfx_offset": "0x601f5c",
+        "gfx_pointer": "0x8601f5c",
+        "pal_offset": "0x662500",
+        "pal_pointer": "0x8662500",
+        "palette_file": "Child_pal.json",
+        "estimated_tile_count": 192,
+        "sheet_grid": "16x12_tiles"
+    },
+    {
+        "name": "Cliff-Daily",
+        "gfx_offset": "0x60201c",
+        "gfx_pointer": "0x860201c",
+        "pal_offset": "0x662520",
+        "pal_pointer": "0x8662520",
+        "palette_file": "Cliff-Daily_pal.json",
+        "estimated_tile_count": 192,
+        "sheet_grid": "16x12_tiles"
+    },
+    {
+        "name": "Cliff-Wedding",
+        "gfx_offset": "0x60321c",
+        "gfx_pointer": "0x860321c",
+        "pal_offset": "0x662540",
+        "pal_pointer": "0x8662540",
+        "palette_file": "Cliff-Wedding_pal.json",
+        "estimated_tile_count": 192,
+        "sheet_grid": "16x12_tiles"
+    },
+    {
+        "name": "Cliff-Hospital",
+        "gfx_offset": "0x603f9c",
+        "gfx_pointer": "0x8603f9c",
+        "pal_offset": "0x662560",
+        "pal_pointer": "0x8662560",
+        "palette_file": "Cliff-Hospital_pal.json",
+        "estimated_tile_count": 192,
+        "sheet_grid": "16x12_tiles"
+    },
+    {
+        "name": "Cliff-Collapse",
+        "gfx_offset": "0x6048bc",
+        "gfx_pointer": "0x86048bc",
+        "pal_offset": "0x662520",
+        "pal_pointer": "0x8662520",
+        "palette_file": "Cliff-Collapse_pal.json",
+        "estimated_tile_count": 192,
+        "sheet_grid": "16x12_tiles"
+    },
+    {
+        "name": "Zack",
+        "gfx_offset": "0x60e43c",
+        "gfx_pointer": "0x860e43c",
+        "pal_offset": "0x6625c0",
+        "pal_pointer": "0x86625c0",
+        "palette_file": "Zack_pal.json",
+        "estimated_tile_count": 192,
+        "sheet_grid": "16x12_tiles"
+    },
+    {
+        "name": "Doctor-Daily",
+        "gfx_offset": "0x60f1bc",
+        "gfx_pointer": "0x860f1bc",
+        "pal_offset": "0x6625e0",
+        "pal_pointer": "0x86625e0",
+        "palette_file": "Doctor-Daily_pal.json",
+        "estimated_tile_count": 192,
+        "sheet_grid": "16x12_tiles"
+    },
+    {
+        "name": "Doctor-Wedding",
+        "gfx_offset": "0x6103bc",
+        "gfx_pointer": "0x86103bc",
+        "pal_offset": "0x662600",
+        "pal_pointer": "0x8662600",
+        "palette_file": "Doctor-Wedding_pal.json",
+        "estimated_tile_count": 192,
+        "sheet_grid": "16x12_tiles"
+    },
+    {
+        "name": "Harvest-Goddess",
+        "gfx_offset": "0x61ec1c",
+        "gfx_pointer": "0x861ec1c",
+        "pal_offset": "0x662a40",
+        "pal_pointer": "0x8662a40",
+        "palette_file": "Harvest-Goddess_pal.json",
+        "estimated_tile_count": 192,
+        "sheet_grid": "16x12_tiles"
+    },
+    {
+        "name": "Gourmet",
+        "gfx_offset": "0x620bbc",
+        "gfx_pointer": "0x8620bbc",
+        "pal_offset": "0x662a60",
+        "pal_pointer": "0x8662a60",
+        "palette_file": "Gourmet_pal.json",
+        "estimated_tile_count": 192,
+        "sheet_grid": "16x12_tiles"
+    },
+    {
+        "name": "Ellen",
+        "gfx_offset": "0x62239c",
+        "gfx_pointer": "0x862239c",
+        "pal_offset": "0x662a80",
+        "pal_pointer": "0x8662a80",
+        "palette_file": "Ellen_pal.json",
+        "estimated_tile_count": 192,
+        "sheet_grid": "16x12_tiles"
+    },
+    {
+        "name": "Jeff",
+        "gfx_offset": "0x62251c",
+        "gfx_pointer": "0x862251c",
+        "pal_offset": "0x662aa0",
+        "pal_pointer": "0x8662aa0",
+        "palette_file": "Jeff_pal.json",
+        "estimated_tile_count": 192,
+        "sheet_grid": "16x12_tiles"
+    },
+    {
+        "name": "Karen-Daily",
+        "gfx_offset": "0x62329c",
+        "gfx_pointer": "0x862329c",
+        "pal_offset": "0x662ac0",
+        "pal_pointer": "0x8662ac0",
+        "palette_file": "Karen-Daily_pal.json",
+        "estimated_tile_count": 192,
+        "sheet_grid": "16x12_tiles"
+    },
+    {
+        "name": "Karen-Sleeping",
+        "gfx_offset": "0x62461c",
+        "gfx_pointer": "0x862461c",
+        "pal_offset": "0x662ae0",
+        "pal_pointer": "0x8662ae0",
+        "palette_file": "Karen-Sleeping_pal.json",
+        "estimated_tile_count": 192,
+        "sheet_grid": "16x12_tiles"
+    },
+    {
+        "name": "Karen-Music_and_Baby",
+        "gfx_offset": "0x624d3c",
+        "gfx_pointer": "0x8624d3c",
+        "pal_offset": "0x662ac0",
+        "pal_pointer": "0x8662ac0",
+        "palette_file": "Karen-Music_and_Baby_pal.json",
+        "estimated_tile_count": 192,
+        "sheet_grid": "16x12_tiles"
+    },
+    {
+        "name": "Karen-Baby",
+        "gfx_offset": "0x62685c",
+        "gfx_pointer": "0x862685c",
+        "pal_offset": "0x662ac0",
+        "pal_pointer": "0x8662ac0",
+        "palette_file": "Karen-Baby_pal.json",
+        "estimated_tile_count": 192,
+        "sheet_grid": "16x12_tiles"
+    },
+    {
+        "name": "Karen-BabyFull",
+        "gfx_offset": "0x6251bc",
+        "gfx_pointer": "0x86251bc",
+        "pal_offset": "0x662ac0",
+        "pal_pointer": "0x8662ac0",
+        "palette_file": "Karen-BabyFull_pal.json",
+        "estimated_tile_count": 192,
+        "sheet_grid": "16x12_tiles"
+    },
+    {
+        "name": "Karen-Wedding",
+        "gfx_offset": "0x626a1c",
+        "gfx_pointer": "0x8626a1c",
+        "pal_offset": "0x662b00",
+        "pal_pointer": "0x8662b00",
+        "palette_file": "Karen-Wedding_pal.json",
+        "estimated_tile_count": 192,
+        "sheet_grid": "16x12_tiles"
+    },
+    {
+        "name": "Sasha",
+        "gfx_offset": "0x62761c",
+        "gfx_pointer": "0x862761c",
+        "pal_offset": "0x662b20",
+        "pal_pointer": "0x8662b20",
+        "palette_file": "Sasha_pal.json",
+        "estimated_tile_count": 192,
+        "sheet_grid": "16x12_tiles"
+    },
+    {
+        "name": "Doug",
+        "gfx_offset": "0x63499c",
+        "gfx_pointer": "0x863499c",
+        "pal_offset": "0x662d20",
+        "pal_pointer": "0x8662d20",
+        "palette_file": "Doug_pal.json",
+        "estimated_tile_count": 192,
+        "sheet_grid": "16x12_tiles"
+    },
+    {
+        "name": "Ann-Daily",
+        "gfx_offset": "0x635b9c",
+        "gfx_pointer": "0x8635b9c",
+        "pal_offset": "0x662d40",
+        "pal_pointer": "0x8662d40",
+        "palette_file": "Ann-Daily_pal.json",
+        "estimated_tile_count": 192,
+        "sheet_grid": "16x12_tiles"
+    },
+    {
+        "name": "Ann-Baby",
+        "gfx_offset": "0x636d9c",
+        "gfx_pointer": "0x8636d9c",
+        "pal_offset": "0x662d40",
+        "pal_pointer": "0x8662d40",
+        "palette_file": "Ann-Baby_pal.json",
+        "estimated_tile_count": 192,
+        "sheet_grid": "16x12_tiles"
+    },
+    {
+        "name": "Ann_Sleeping",
+        "gfx_offset": "0x637f9c",
+        "gfx_pointer": "0x8637f9c",
+        "pal_offset": "0x662d60",
+        "pal_pointer": "0x8662d60",
+        "palette_file": "Ann_Sleeping_pal.json",
+        "estimated_tile_count": 192,
+        "sheet_grid": "16x12_tiles"
+    },
+    {
+        "name": "Ann-SideArms_and_Music",
+        "gfx_offset": "0x63859c",
+        "gfx_pointer": "0x863859c",
+        "pal_offset": "0x662d40",
+        "pal_pointer": "0x8662d40",
+        "palette_file": "Ann-SideArms_and_Music_pal.json",
+        "estimated_tile_count": 192,
+        "sheet_grid": "16x12_tiles"
+    },
+    {
+        "name": "Ann-Wedding",
+        "gfx_offset": "0x638b9c",
+        "gfx_pointer": "0x8638b9c",
+        "pal_offset": "0x662d80",
+        "pal_pointer": "0x8662d80",
+        "palette_file": "Ann-Wedding_pal.json",
+        "estimated_tile_count": 192,
+        "sheet_grid": "16x12_tiles"
+    },
+    {
+        "name": "Lou",
+        "gfx_offset": "0x63979c",
+        "gfx_pointer": "0x863979c",
+        "pal_offset": "0x662da0",
+        "pal_pointer": "0x8662da0",
+        "palette_file": "Lou_pal.json",
+        "estimated_tile_count": 192,
+        "sheet_grid": "16x12_tiles"
+    },
+    {
+        "name": "Kappa",
+        "gfx_offset": "0x63a99c",
+        "gfx_pointer": "0x863a99c",
+        "pal_offset": "0x662dc0",
+        "pal_pointer": "0x8662dc0",
+        "palette_file": "Kappa_pal.json",
+        "estimated_tile_count": 192,
+        "sheet_grid": "16x12_tiles"
+    },
+    {
+        "name": "Basil",
+        "gfx_offset": "0x63b59c",
+        "gfx_pointer": "0x863b59c",
+        "pal_offset": "0x662e00",
+        "pal_pointer": "0x8662e00",
+        "palette_file": "Basil_pal.json",
+        "estimated_tile_count": 192,
+        "sheet_grid": "16x12_tiles"
+    },
+    {
+        "name": "Mary-Daily",
+        "gfx_offset": "0x63c31c",
+        "gfx_pointer": "0x863c31c",
+        "pal_offset": "0x662e20",
+        "pal_pointer": "0x8662e20",
+        "palette_file": "Mary-Daily_pal.json",
+        "estimated_tile_count": 192,
+        "sheet_grid": "16x12_tiles"
+    },
+    {
+        "name": "Mary-Sleeping",
+        "gfx_offset": "0x63d81c",
+        "gfx_pointer": "0x863d81c",
+        "pal_offset": "0x662e40",
+        "pal_pointer": "0x8662e40",
+        "palette_file": "Mary-Sleeping_pal.json",
+        "estimated_tile_count": 192,
+        "sheet_grid": "16x12_tiles"
+    },
+    {
+        "name": "Mary-Baby",
+        "gfx_offset": "0x63de1c",
+        "gfx_pointer": "0x863de1c",
+        "pal_offset": "0x662e20",
+        "pal_pointer": "0x8662e20",
+        "palette_file": "Mary-Baby_pal.json",
+        "estimated_tile_count": 192,
+        "sheet_grid": "16x12_tiles"
+    },
+    {
+        "name": "MaryBaby",
+        "gfx_offset": "0x63f4bc",
+        "gfx_pointer": "0x863f4bc",
+        "pal_offset": "0x662e20",
+        "pal_pointer": "0x8662e20",
+        "palette_file": "MaryBaby_pal.json",
+        "estimated_tile_count": 192,
+        "sheet_grid": "16x12_tiles"
+    },
+    {
+        "name": "Mary-Wedding",
+        "gfx_offset": "0x63f67c",
+        "gfx_pointer": "0x863f67c",
+        "pal_offset": "0x662e60",
+        "pal_pointer": "0x8662e60",
+        "palette_file": "Mary-Wedding_pal.json",
+        "estimated_tile_count": 192,
+        "sheet_grid": "16x12_tiles"
+    },
+    {
+        "name": "Mary_Music",
+        "gfx_offset": "0x64027c",
+        "gfx_pointer": "0x864027c",
+        "pal_offset": "0x662e20",
+        "pal_pointer": "0x8662e20",
+        "palette_file": "Mary_Music_pal.json",
+        "estimated_tile_count": 192,
+        "sheet_grid": "16x12_tiles"
+    },
+    {
+        "name": "Anna",
+        "gfx_offset": "0x64057c",
+        "gfx_pointer": "0x864057c",
+        "pal_offset": "0x662e80",
+        "pal_pointer": "0x8662e80",
+        "palette_file": "Anna_pal.json",
+        "estimated_tile_count": 192,
+        "sheet_grid": "16x12_tiles"
+    },
+    {
+        "name": "Won",
+        "gfx_offset": "0x64177c",
+        "gfx_pointer": "0x864177c",
+        "pal_offset": "0x662ea0",
+        "pal_pointer": "0x8662ea0",
+        "palette_file": "Won_pal.json",
+        "estimated_tile_count": 192,
+        "sheet_grid": "16x12_tiles"
+    },
+    {
+        "name": "Thomas",
+        "gfx_offset": "0x6424fc",
+        "gfx_pointer": "0x86424fc",
+        "pal_offset": "0x662ec0",
+        "pal_pointer": "0x8662ec0",
+        "palette_file": "Thomas_pal.json",
+        "estimated_tile_count": 192,
+        "sheet_grid": "16x12_tiles"
+    },
+    {
+        "name": "Elli-Daily",
+        "gfx_offset": "0x643e7c",
+        "gfx_pointer": "0x8643e7c",
+        "pal_offset": "0x662f20",
+        "pal_pointer": "0x8662f20",
+        "palette_file": "Elli-Daily_pal.json",
+        "estimated_tile_count": 192,
+        "sheet_grid": "16x12_tiles"
+    },
+    {
+        "name": "Elli-Baby",
+        "gfx_offset": "0x6451fc",
+        "gfx_pointer": "0x86451fc",
+        "pal_offset": "0x662f20",
+        "pal_pointer": "0x8662f20",
+        "palette_file": "Elli-Baby_pal.json",
+        "estimated_tile_count": 192,
+        "sheet_grid": "16x12_tiles"
+    },
+    {
+        "name": "Elli-Sleeping",
+        "gfx_offset": "0x6463fc",
+        "gfx_pointer": "0x86463fc",
+        "pal_offset": "0x662f40",
+        "pal_pointer": "0x8662f40",
+        "palette_file": "Elli-Sleeping_pal.json",
+        "estimated_tile_count": 192,
+        "sheet_grid": "16x12_tiles"
+    },
+    {
+        "name": "Elli-Music",
+        "gfx_offset": "0x6469fc",
+        "gfx_pointer": "0x86469fc",
+        "pal_offset": "0x662f20",
+        "pal_pointer": "0x8662f20",
+        "palette_file": "Elli-Music_pal.json",
+        "estimated_tile_count": 192,
+        "sheet_grid": "16x12_tiles"
+    },
+    {
+        "name": "Elli-Wedding",
+        "gfx_offset": "0x646e7c",
+        "gfx_pointer": "0x8646e7c",
+        "pal_offset": "0x662f60",
+        "pal_pointer": "0x8662f60",
+        "palette_file": "Elli-Wedding_pal.json",
+        "estimated_tile_count": 192,
+        "sheet_grid": "16x12_tiles"
+    },
+    {
+        "name": "Stu",
+        "gfx_offset": "0x647a7c",
+        "gfx_pointer": "0x8647a7c",
+        "pal_offset": "0x662f80",
+        "pal_pointer": "0x8662f80",
+        "palette_file": "Stu_pal.json",
+        "estimated_tile_count": 192,
+        "sheet_grid": "16x12_tiles"
+    },
+    {
+        "name": "Duke",
+        "gfx_offset": "0x64813c",
+        "gfx_pointer": "0x864813c",
+        "pal_offset": "0x662fa0",
+        "pal_pointer": "0x8662fa0",
+        "palette_file": "Duke_pal.json",
+        "estimated_tile_count": 192,
+        "sheet_grid": "16x12_tiles"
+    },
+    {
+        "name": "Manna",
+        "gfx_offset": "0x6494bc",
+        "gfx_pointer": "0x86494bc",
+        "pal_offset": "0x662fc0",
+        "pal_pointer": "0x8662fc0",
+        "palette_file": "Manna_pal.json",
+        "estimated_tile_count": 192,
+        "sheet_grid": "16x12_tiles"
+    },
+    {
+        "name": "Van",
+        "gfx_offset": "0x64a23c",
+        "gfx_pointer": "0x864a23c",
+        "pal_offset": "0x662fe0",
+        "pal_pointer": "0x8662fe0",
+        "palette_file": "Van_pal.json",
+        "estimated_tile_count": 192,
+        "sheet_grid": "16x12_tiles"
+    },
+    {
+        "name": "Harris",
+        "gfx_offset": "0x64b83c",
+        "gfx_pointer": "0x864b83c",
+        "pal_offset": "0x663000",
+        "pal_pointer": "0x8663000",
+        "palette_file": "Harris_pal.json",
+        "estimated_tile_count": 192,
+        "sheet_grid": "16x12_tiles"
+    },
+    {
+        "name": "Carter",
+        "gfx_offset": "0x64c5bc",
+        "gfx_pointer": "0x864c5bc",
+        "pal_offset": "0x663020",
+        "pal_pointer": "0x8663020",
+        "palette_file": "Carter_pal.json",
+        "estimated_tile_count": 192,
+        "sheet_grid": "16x12_tiles"
+    },
+    {
+        "name": "Kai-Daily",
+        "gfx_offset": "0x64d93c",
+        "gfx_pointer": "0x864d93c",
+        "pal_offset": "0x663080",
+        "pal_pointer": "0x8663080",
+        "palette_file": "Kai-Daily_pal.json",
+        "estimated_tile_count": 192,
+        "sheet_grid": "16x12_tiles"
+    },
+    {
+        "name": "Kai-Wedding",
+        "gfx_offset": "0x64eb3c",
+        "gfx_pointer": "0x864eb3c",
+        "pal_offset": "0x6630a0",
+        "pal_pointer": "0x86630a0",
+        "palette_file": "Kai-Wedding_pal.json",
+        "estimated_tile_count": 192,
+        "sheet_grid": "16x12_tiles"
+    },
+    {
+        "name": "Gray-Daily",
+        "gfx_offset": "0x659cbc",
+        "gfx_pointer": "0x8659cbc",
+        "pal_offset": "0x6630c0",
+        "pal_pointer": "0x86630c0",
+        "palette_file": "Gray-Daily_pal.json",
+        "estimated_tile_count": 192,
+        "sheet_grid": "16x12_tiles"
+    },
+    {
+        "name": "Gray-Wedding",
+        "gfx_offset": "0x65aebc",
+        "gfx_pointer": "0x865aebc",
+        "pal_offset": "0x6630e0",
+        "pal_pointer": "0x86630e0",
+        "palette_file": "Gray-Wedding_pal.json",
+        "estimated_tile_count": 192,
+        "sheet_grid": "16x12_tiles"
+    },
+    {
+        "name": "Saibara",
+        "gfx_offset": "0x65bc3c",
+        "gfx_pointer": "0x865bc3c",
+        "pal_offset": "0x663100",
+        "pal_pointer": "0x8663100",
+        "palette_file": "Saibara_pal.json",
+        "estimated_tile_count": 192,
+        "sheet_grid": "16x12_tiles"
+    },
+    {
+        "name": "Gotz",
+        "gfx_offset": "0x65e4bc",
+        "gfx_pointer": "0x865e4bc",
+        "pal_offset": "0x6631a0",
+        "pal_pointer": "0x86631a0",
+        "palette_file": "Gotz_pal.json",
+        "estimated_tile_count": 192,
+        "sheet_grid": "16x12_tiles"
+    },
+    {
+        "name": "May",
+        "gfx_offset": "0x6602bc",
+        "gfx_pointer": "0x86602bc",
+        "pal_offset": "0x6631c0",
+        "pal_pointer": "0x86631c0",
+        "palette_file": "May_pal.json",
+        "estimated_tile_count": 192,
+        "sheet_grid": "16x12_tiles"
+    },
+    {
+        "name": "Barley",
+        "gfx_offset": "0x66103c",
+        "gfx_pointer": "0x866103c",
+        "pal_offset": "0x6631e0",
+        "pal_pointer": "0x86631e0",
+        "palette_file": "Barley_pal.json",
+        "estimated_tile_count": 192,
+        "sheet_grid": "16x12_tiles"
+    },
+    {
+        "name": "Player",
+        "gfx_offset": "0x7518cc",
+        "gfx_pointer": "0x87518cc",
+        "pal_offset": "0x75194c",
+        "pal_pointer": "0x875194c",
+        "palette_file": "Player_pal.json",
+        "estimated_tile_count": 192,
+        "sheet_grid": "16x12_tiles"
+    },
+    {
+        "name": "Popuri",
+        "gfx_offset": "0x751a0c",
+        "gfx_pointer": "0x8751a0c",
+        "pal_offset": "0x751a8c",
+        "pal_pointer": "0x8751a8c",
+        "palette_file": "Popuri_pal.json",
+        "estimated_tile_count": 192,
+        "sheet_grid": "16x12_tiles"
+    },
+    {
+        "name": "HarvestGoddess",
+        "gfx_offset": "0x75240c",
+        "gfx_pointer": "0x875240c",
+        "pal_offset": "0x75248c",
+        "pal_pointer": "0x875248c",
+        "palette_file": "HarvestGoddess_pal.json",
+        "estimated_tile_count": 192,
+        "sheet_grid": "16x12_tiles"
+    },
+    {
+        "name": "Karen",
+        "gfx_offset": "0x7524ac",
+        "gfx_pointer": "0x87524ac",
+        "pal_offset": "0x75252c",
+        "pal_pointer": "0x875252c",
+        "palette_file": "Karen_pal.json",
+        "estimated_tile_count": 192,
+        "sheet_grid": "16x12_tiles"
+    },
+    {
+        "name": "Ann",
+        "gfx_offset": "0x75286c",
+        "gfx_pointer": "0x875286c",
+        "pal_offset": "0x7528ec",
+        "pal_pointer": "0x87528ec",
+        "palette_file": "Ann_pal.json",
+        "estimated_tile_count": 192,
+        "sheet_grid": "16x12_tiles"
+    },
+    {
+        "name": "Mary",
+        "gfx_offset": "0x752e4c",
+        "gfx_pointer": "0x8752e4c",
+        "pal_offset": "0x752ecc",
+        "pal_pointer": "0x8752ecc",
+        "palette_file": "Mary_pal.json",
+        "estimated_tile_count": 192,
+        "sheet_grid": "16x12_tiles"
+    },
+    {
+        "name": "Elli",
+        "gfx_offset": "0x75302c",
+        "gfx_pointer": "0x875302c",
+        "pal_offset": "0x7530ac",
+        "pal_pointer": "0x87530ac",
+        "palette_file": "Elli_pal.json",
+        "estimated_tile_count": 192,
+        "sheet_grid": "16x12_tiles"
+    },
+    {
+        "name": "Map-Player",
+        "gfx_offset": "0x753b08",
+        "gfx_pointer": "0x8753b08",
+        "pal_offset": "0x75442c",
+        "pal_pointer": "0x875442c",
+        "palette_file": "Map-Player_pal.json",
+        "estimated_tile_count": 192,
+        "sheet_grid": "16x12_tiles"
+    }
+]

@@ -1,0 +1,10 @@
+// Script 975
+#include "Fomt_Lib.src"
+
+script 975 Event_0975 {
+    SetEntityAnim(0, 0x192);
+    Tick_Overnight_Engine(1, 0);
+    Fade_Out(1, 0);
+    Fade_In(1, 0);
+    exit;
+}

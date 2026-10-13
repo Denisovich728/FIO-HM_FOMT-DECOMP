@@ -1,0 +1,16 @@
+// Script 917
+#include "Fomt_Lib.src"
+
+script 917 Event_0917 {
+    const MESSAGE_0 = "I wonder what Cliff \r\nwill do...?\BRK";
+    
+    SetEntityFacing(8, GetOppositeFacing(GetEntityFacing(0)));
+    TalkOpen();
+    Set_Portrait(0x86);
+    Set_Name_Window(8);
+    TalkMessage(0);
+    TalkClose();
+    SetEntityFacing(8, "Up");
+    Free_Event_Entity(8);
+    exit;
+}

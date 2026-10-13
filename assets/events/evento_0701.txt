@@ -1,0 +1,20 @@
+// Script 701
+#include "Fomt_Lib.src"
+
+script 701 Event_0701 {
+    const MESSAGE_0 = "I'm so glad you are,\r\nhappy, Mom!\BRK";
+    
+    SetEntityFacing(3, GetOppositeFacing(GetEntityFacing(0)));
+    TalkOpen();
+    Set_Name_Window(3);
+    Set_Portrait(8);
+    if (!(((((((Check_Flag(0x4C) == 2) || (Check_Flag(0x5F) == 2)) || (Check_Flag(0x67) == 2)) || (Check_Flag(0x6F) == 2)) || (Check_Flag(0x173) == 2)) || (Check_Flag(0x7E) == 2)) || (Check_Flag(0x7F) == 2))) {
+        Set_Hearth_Anim(3);
+    }
+    TalkMessage(0);
+    TalkClose();
+    Free_Event_Entity(3);
+    SetEntityFacing(3, "Left");
+    exit;
+    exit;
+}

@@ -1,0 +1,102 @@
+// Script 783
+#include "Fomt_Lib.src"
+
+script 783 Event_0783 {
+    const MESSAGE_0 = "Are you really leaving...?\BRK";
+    const MESSAGE_1 = "Thanks for everything. \r\nI do have to go, though.\r\nI like it here too much...\BRK";
+    const MESSAGE_2 = "What are you talking about?\r\nWhat's wrong with liking\r\nit here...?\BRK";
+    const MESSAGE_3 = "Tell everyone thanks \r\nfor me again. \BRK";
+    const MESSAGE_4 = "Ann will be so sad. \r\nShe likes you so much...\BRK";
+    const MESSAGE_5 = "...Bye now.\r\nIt's time for me to go. \BRK";
+    const MESSAGE_6 = "Good luck!\BRK";
+    const MESSAGE_7 = "Thanks again for \r\neverything. \BRK";
+    const MESSAGE_8 = "Come back any time \r\nyou want!\BRK";
+    
+    Warp_Player(1, 0xD3, 0xA4);
+    SetEntityPosition(0x17, 0xF1, 0x8A, "Down");
+    SetEntityAnim(0x17, 0x27B);
+    SetEntityPosition(0x18, 0xF1, 0xA8, "Up");
+    SetEntityAnim(0x18, 0x7B2);
+    if ((Inventory_Check() == 1)) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    Fade_In(2, 1);
+    Make_Delay(0x1E);
+    TalkOpen();
+    Set_Portrait(0x56);
+    Set_Name_Window(0x18);
+    TalkMessage(0);
+    TalkClose();
+    TalkOpen();
+    Set_Portrait(0x17);
+    Set_Name_Window(0x17);
+    TalkMessage(1);
+    TalkClose();
+    TalkOpen();
+    Set_Portrait(0x55);
+    Set_Name_Window(0x18);
+    TalkMessage(2);
+    TalkClose();
+    TalkOpen();
+    Set_Portrait(0x17);
+    Set_Name_Window(0x17);
+    TalkMessage(3);
+    TalkClose();
+    TalkOpen();
+    Set_Portrait(0x56);
+    Set_Name_Window(0x18);
+    TalkMessage(4);
+    TalkClose();
+    TalkOpen();
+    Set_Portrait(0x1A);
+    Set_Name_Window(0x17);
+    TalkMessage(5);
+    TalkClose();
+    SetEntityFacing(0x17, "Right");
+    SetEntityFacing(0x18, "Right");
+    SetEntityAnim(0x17, 0x27F);
+    Set_Vector_X(0x17, 0x121, 1);
+    Execute_Movement(0x17);
+    SetEntityAnim(0x17, 0x27B);
+    TalkOpen();
+    Set_Portrait(0x53);
+    Set_Name_Window(0x18);
+    TalkMessage(6);
+    TalkClose();
+    SetEntityFacing(0x17, "Left");
+    Make_Delay(0x1E);
+    TalkOpen();
+    Set_Portrait(0x17);
+    Set_Name_Window(0x17);
+    TalkMessage(7);
+    TalkClose();
+    TalkOpen();
+    Set_Portrait(0x55);
+    Set_Name_Window(0x18);
+    TalkMessage(8);
+    TalkClose();
+    Make_Delay(0x1E);
+    SetEntityFacing(0x17, "Right");
+    SetEntityAnim(0x17, 0x27F);
+    Set_Vector_X(0x17, 0x181, 1);
+    Execute_Movement(0x17);
+    Hide_Entity(0x17);
+    SetEntityFacing(0x18, "Down");
+    SetEntityAnim(0x18, 0x7B6);
+    Set_Vector_Y(0x18, 0x133, 1);
+    Execute_Movement(0x18);
+    Hide_Entity(0x18);
+    Fade_Out(2, 1);
+    Warp_Player(1, 0x18, 0x118);
+    SetEntityPosition(0, 0x18, 0x118, "Right");
+    if ((Inventory_Check() == 1)) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    Set_Flag(0x126, 2);
+    Fade_In(2, 1);
+    exit;
+}

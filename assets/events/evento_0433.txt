@@ -1,0 +1,11 @@
+// Script 433
+#include "Fomt_Lib.src"
+
+script 433 Event_0433 {
+    const MESSAGE_0 = "Kitchen\BRK";
+    
+    TalkOpen();
+    Print_Message(0);
+    TalkClose();
+    exit;
+}

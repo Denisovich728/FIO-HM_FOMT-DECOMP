@@ -1,0 +1,42 @@
+// Script 40
+#include "Fomt_Lib.src"
+
+script 40 Event_0040 {
+    const MESSAGE_0 = "Yeah well...\r\nWhat do you know about it?!\BRK";
+    const MESSAGE_1 = "I'm glad you understand me. \BRK";
+    const MESSAGE_2 = "Sorry for dragging you \r\ninto this. \BRK";
+    
+    if ((Check_Flag(0x52) == 1)) {
+        if ((Check_Flag(0x53) == 0)) {
+            SetEntityFacing(2, GetOppositeFacing(GetEntityFacing(0)));
+            TalkOpen();
+            Set_Portrait(2);
+            Set_Name_Window(2);
+            TalkMessage(0);
+            TalkClose();
+            SetEntityFacing(2, "Left");
+            Free_Event_Entity(2);
+        } else {
+            if ((Check_Flag(0x53) == 1)) {
+                SetEntityFacing(2, GetOppositeFacing(GetEntityFacing(0)));
+                TalkOpen();
+                Set_Portrait(1);
+                Set_Name_Window(2);
+                TalkMessage(1);
+                TalkClose();
+                SetEntityFacing(2, "Left");
+                Free_Event_Entity(2);
+            } else {
+                SetEntityFacing(2, GetOppositeFacing(GetEntityFacing(0)));
+                TalkOpen();
+                Set_Portrait(0);
+                Set_Name_Window(2);
+                TalkMessage(2);
+                TalkClose();
+                SetEntityFacing(2, "Up");
+                Free_Event_Entity(2);
+            }
+        }
+    }
+    exit;
+}

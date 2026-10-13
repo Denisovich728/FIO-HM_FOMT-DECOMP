@@ -1,0 +1,6 @@
+// Script 1064
+#include "Fomt_Lib.src"
+
+script 1064 Event_1064 {
+    exit;
+}

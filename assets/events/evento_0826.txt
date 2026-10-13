@@ -1,0 +1,24 @@
+// Script 826
+#include "Fomt_Lib.src"
+
+script 826 Event_0826 {
+    const MESSAGE_0 = "Ta-daaaa!\BRK\WAIT_CLICKYour pedometer has just\r\ncounted 100,000,000.\BRK\WAIT_CLICKCongratulations.\BRK\WAIT_CLICKThat's all.\r\nYou get nothing.\r\nBye.\BRK";
+    
+    Set_Flag(0x15D, 1);
+    Set_Goddess_Appearance_Flash(1);
+    Tick_Overnight_Engine(1, 0);
+    Tick_Overnight_Engine(1, 0);
+    Fade_Out(1, 1);
+    PlaySong(0, 0xBE);
+    TalkOpen();
+    Set_Name_Window(0x1F);
+    Set_Portrait(0x39);
+    TalkMessage(0);
+    TalkClose();
+    Free_Event_Entity(0x1F);
+    Give_Love_Points(0x1F, 0xBB8);
+    Set_Flag(0x15D, 2);
+    Fade_In(1, 1);
+    Set_Goddess_Appearance_Flash(0);
+    exit;
+}

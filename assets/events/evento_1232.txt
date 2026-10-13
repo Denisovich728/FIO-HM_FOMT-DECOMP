@@ -1,0 +1,22 @@
+// Script 1232
+#include "Fomt_Lib.src"
+
+script 1232 Event_1232 {
+    const MESSAGE_0 = "Hey!! Everyone don't stuff \r\nin everything at once!\BRK\WAIT_CLICKYou there, get back!\r\n...What's this fish doing \r\nhere...?!?\BRK";
+    
+    if ((Check_If_Single(0x18) == 0)) {
+        Free_Event_Entity(0x18);
+    }
+    SetEntityFacing(0x18, GetOppositeFacing(GetEntityFacing(0)));
+    TalkOpen();
+    Set_Portrait(0x55);
+    Set_Name_Window(0x18);
+    TalkMessage(0);
+    TalkClose();
+    if ((Has_Spoken_To_NPC_Today(0x18) == 0)) {
+        Give_Friendship_Points(0x18, 5);
+    }
+    SetEntityFacing(0x18, "Left");
+    Free_Event_Entity(0x18);
+    exit;
+}

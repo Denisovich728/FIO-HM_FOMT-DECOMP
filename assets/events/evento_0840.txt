@@ -1,0 +1,7 @@
+// Script 840
+#include "Fomt_Lib.src"
+
+script 840 Event_0840 {
+    exit;
+    exit;
+}

@@ -1,0 +1,53 @@
+// Script 851
+#include "Fomt_Lib.src"
+
+script 851 Event_0851 {
+    const MESSAGE_0 = "Yes.\BRK";
+    const MESSAGE_1 = "I want to give you a present,\r\nso put away what you're \r\nholding. \BRK";
+    
+    SetEntityFacing(0x1F, GetOppositeFacing(GetEntityFacing(0)));
+    TalkOpen();
+    Set_Name_Window(0x1F);
+    if (Inventory_Check()) {
+        Set_Portrait(0x39);
+        TalkMessage(0);
+        TalkClose();
+        SetEntityAnim(0x1F, 0x671);
+        Make_Delay(0x3C);
+        SetEntityAnim(0x1F, 0x669);
+        PlaySong(0, 0x6A);
+        SetEntityAnim(0, 0x146);
+        Give_Item_Shelf(Func122());
+        SetEntityAnim(0, 0x152);
+        Make_Delay(0x3C);
+        PlaySong(0, 0xBE);
+        SetEntityPosition(0x46, GetEntityX(0x1F), (GetEntityY(0x1F) + 2), "Down");
+        Spawn_Event_Entity(0x46, 3);
+        SetEntityAnim(0x46, 0x42C);
+        Tick_Overnight_Engine(1, 0);
+        Tick_Overnight_Engine(1, 0);
+        Fade_Out(1, 1);
+        Hide_Entity(0x46);
+        Hide_Entity(0x1F);
+        Make_Delay(0x1E);
+        Fade_In(1, 1);
+        Make_Delay(0x3C);
+        Set_Flag(0x174, 2);
+        Refresh_Map_Entities();
+        Add_Festival_Friendship_Bonus(0x1F);
+        if ((Check_Flag(0x17A) == 2)) {
+            Add_Festival_Friendship_Bonus(0x23);
+        }
+        Fade_Out(2, 1);
+        Warp_Player(0x1D, 0x147, 0x70);
+        SetEntityPosition(0, 0x147, 0x70, "Left");
+        Fade_In(2, 1);
+    } else {
+        Set_Portrait(0x38);
+        TalkMessage(1);
+        TalkClose();
+    }
+    Free_Event_Entity(0x1F);
+    SetEntityFacing(0x1F, "Down");
+    exit;
+}

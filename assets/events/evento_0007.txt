@@ -1,0 +1,74 @@
+// Script 7
+#include "Fomt_Lib.src"
+
+script 7 Event_0007 {
+    const MESSAGE_0 = "Hi, \xFF!.\r\nHow can you call this a farm\r\nwithout a single horse?\BRK";
+    const MESSAGE_1 = "This Foal was born at our\r\nfarm, but you can keep him\r\nhere, if you like.\BRK\WAIT_CLICKYou can name him\r\nhowever you like.\BRK";
+    const MESSAGE_2 = "I'll put him in the \r\nStable for you.\BRK\WAIT_CLICKTreat him well, now.\r\nTalk to him everyday and\r\nbrush him, too. \BRK";
+    const MESSAGE_3 = "Take good care of\r\n\xFF\", now.\BRK";
+    
+    Allocate_Unique_Animal(0, 1, 2, 0xC4, 0x91);
+    SetEntityPosition(0, 0xE4, 0x78, "Down");
+    if ((Inventory_Check() == 1)) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    SetEntityPosition(4, 0xE4, 0x91, "Up");
+    SetEntityAnim(4, 0x9EF);
+    SetEntityPosition(0x2C, 0xC4, 0x91, "Up");
+    SetEntityAnim(0x2C, 0x77A);
+    Fade_In(2, 1);
+    TalkOpen();
+    Set_Portrait(0xB4);
+    Set_Name_Window(4);
+    TalkMessage(0);
+    TalkClose();
+    SetEntityFacing(4, "Left");
+    Make_Delay(0x1E);
+    SetEntityFacing(4, "Up");
+    TalkOpen();
+    Set_Portrait(0xB4);
+    Set_Name_Window(4);
+    TalkMessage(1);
+    TalkClose();
+    Fade_Out(3, 1);
+    Trigger_Naming_Sequence(0);
+    Fade_In(3, 1);
+    TalkOpen();
+    Set_Portrait(0xB4);
+    Set_Name_Window(4);
+    TalkMessage(2);
+    TalkClose();
+    SetEntityFacing(4, "Right");
+    SetEntityFacing(0, "Right");
+    SetEntityAnim(4, 0x9F3);
+    Set_Vector_X(4, 0x1F4, 1);
+    SetEntityFacing(0x2C, "Right");
+    SetEntityAnim(0x2C, 0x77E);
+    Set_Vector_X(0x2C, 0x1F4, 1);
+    Execute_Movement(4);
+    Execute_Movement(0x2C);
+    SetEntityAnim(0x2C, 0x77A);
+    Force_Entity_Move_To(0x2C, 9, 0x54, 0x7C);
+    SetEntityFacing(4, "Left");
+    SetEntityAnim(4, 0x9F3);
+    Set_Vector_X(4, 0x14F, 1);
+    Execute_Movement(4);
+    SetEntityAnim(4, 0x9EF);
+    Make_Delay(0x1E);
+    TalkOpen();
+    Set_Portrait(0xB4);
+    Set_Name_Window(4);
+    TalkMessage(3);
+    TalkClose();
+    SetEntityFacing(4, "Up");
+    SetEntityAnim(4, 0x9F3);
+    Set_Vector_Y(4, 0, 1);
+    Execute_Movement(4);
+    SetEntityAnim(4, 0x9EF);
+    Hide_Entity(4);
+    SetEntityFacing(0, "Down");
+    Set_Flag(0xDF, 2);
+    exit;
+}

@@ -1,0 +1,26 @@
+// Script 787
+#include "Fomt_Lib.src"
+
+script 787 Event_0787 {
+    const MESSAGE_0 = "I can't believe I forgot\r\nwhat we were arguing over!\r\nI must be getting old...\BRK";
+    const MESSAGE_1 = "Sorry, \xFF!. \BRK";
+    const MESSAGE_2 = "Hmmph! It was all his fault!\BRK";
+    
+    SetEntityFacing(0x18, GetOppositeFacing(GetEntityFacing(0)));
+    TalkOpen();
+    Set_Name_Window(0x18);
+    if ((Check_Flag(0x129) == 0)) {
+        Set_Portrait(0x54);
+        TalkMessage(0);
+        Set_Portrait(0x53);
+        TalkMessage(1);
+    } else {
+        Set_Portrait(0x55);
+        TalkMessage(2);
+    }
+    TalkClose();
+    Free_Event_Entity(0x18);
+    SetEntityFacing(0x18, "Right");
+    exit;
+    exit;
+}

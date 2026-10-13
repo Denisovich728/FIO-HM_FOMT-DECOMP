@@ -1,0 +1,30 @@
+// Script 1095
+#include "Fomt_Lib.src"
+
+script 1095 Event_1095 {
+    const MESSAGE_0 = "What's important is \r\nbecoming one with the Horse!\BRK";
+    const MESSAGE_1 = "Just believe in yourself \r\nand trust in the Horse. \BRK";
+    
+    if ((Check_If_Single(6) == 0)) {
+        Free_Event_Entity(6);
+    }
+    SetEntityFacing(6, GetOppositeFacing(GetEntityFacing(0)));
+    if ((Check_Flag(0x188) == 0)) {
+        TalkOpen();
+        Set_Portrait(0xA8);
+        Set_Name_Window(6);
+        TalkMessage(0);
+    } else {
+        TalkOpen();
+        Set_Portrait(0xA8);
+        Set_Name_Window(6);
+        TalkMessage(1);
+    }
+    TalkClose();
+    if ((Has_Spoken_To_NPC_Today(6) == 0)) {
+        Give_Friendship_Points(6, 5);
+    }
+    Free_Event_Entity(6);
+    SetEntityFacing(6, "Up");
+    exit;
+}

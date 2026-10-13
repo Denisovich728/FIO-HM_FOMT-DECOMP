@@ -1,0 +1,119 @@
+// Script 898
+#include "Fomt_Lib.src"
+
+script 898 Event_0898 {
+    const MESSAGE_0 = "Hey, the wedding is about\r\nto start!\BRK";
+    const MESSAGE_1 = "Whose wedding?\r\nMine and Popuri's, of \r\ncourse!\BRK\WAIT_CLICKYou didn't hear from Rick?\r\nIt starts right now. \r\nLet's go!\BRK";
+    const MESSAGE_2 = "You may now kiss the bride.\BRK";
+    const MESSAGE_3 = "To the newlyweds!\BRK";
+    
+    Set_Flag(0x7E, 1);
+    PlayBGM(1, 0x10);
+    Warp_Player(2, 0xE4, 0xA0);
+    SetEntityPosition(0, 0xE4, 0x78, "Down");
+    if (Inventory_Check()) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    SetEntityPosition(0x1A, 0xE4, 0xA0, "Up");
+    SetEntityAnim(0x1A, 0x902);
+    Fade_In(2, 1);
+    TalkOpen();
+    Set_Portrait(0x99);
+    Set_Name_Window(0x1A);
+    TalkMessage(0);
+    Set_Portrait(0x9A);
+    Set_Name_Window(0x1A);
+    TalkMessage(1);
+    TalkClose();
+    Fade_Out(2, 1);
+    StopBGM();
+    Warp_Player(0xC, 0xB8, 0xA0);
+    SetEntityPosition(3, 0xC8, 0x98, "Down");
+    SetEntityAnim(3, 0x24F);
+    SetEntityPosition(0x1A, 0xA8, 0x98, "Down");
+    SetEntityAnim(0x1A, 0x90E);
+    SetEntityPosition(0x16, 0xB8, 0x78, "Down");
+    SetEntityAnim(0x16, 0x8EC);
+    SetEntityPosition(0, 0x68, 0xC3, "Right");
+    Lock_Player_Input();
+    SetEntityPosition(1, 0x108, 0x9B, "Left");
+    SetEntityAnim(1, 0x25F);
+    SetEntityPosition(0x13, 0x128, 0xC3, "Left");
+    SetEntityAnim(0x13, 0x691);
+    SetEntityPosition(2, 0x108, 0xC3, "Left");
+    SetEntityAnim(2, 0x213);
+    if ((GetEntityLocation(0x17) == 0xC)) {
+        Hide_Entity(0x17);
+    }
+    if ((GetEntityLocation(0x11) == 0xC)) {
+        Hide_Entity(0x11);
+    }
+    if ((GetEntityLocation(0x14) == 0xC)) {
+        Hide_Entity(0x14);
+    }
+    if ((GetEntityLocation(8) == 0xC)) {
+        Hide_Entity(8);
+    }
+    if ((GetEntityLocation(9) == 0xC)) {
+        Hide_Entity(9);
+    }
+    StopAllSongs();
+    Fade_In(2, 1);
+    PlaySong(0, 0xB3);
+    Make_Delay((0x3C * 3));
+    PlaySong(0, 0xB3);
+    Make_Delay((0x3C * 3));
+    PlayBGM(1, 6);
+    TalkOpen();
+    Set_Portrait(0x95);
+    Set_Name_Window(0x16);
+    TalkMessage(2);
+    TalkClose();
+    SetEntityFacing(0x1A, "Right");
+    SetEntityFacing(3, "Left");
+    Make_Delay(0x3C);
+    SetEntityAnim(0x1A, 0x912);
+    Set_Vector_X(0x1A, 0xB8, 1);
+    Execute_Movement(0x1A);
+    SetEntityAnim(0x1A, 0x90E);
+    SetEntityAnim(0x1A, 0x916);
+    SetEntityAnim(3, 0x257);
+    Make_Delay(0x5A);
+    SetEntityAnim(0x1A, 0x90E);
+    SetEntityAnim(3, 0x24F);
+    SetEntityAnim(0x1A, 0x912);
+    Set_Vector_X(0x1A, 0xA8, 1);
+    Execute_Movement(0x1A);
+    SetEntityAnim(0x1A, 0x90E);
+    Make_Delay(0x3C);
+    SetEntityFacing(0x1A, "Down");
+    SetEntityFacing(3, "Down");
+    Make_Delay(0x3C);
+    SetEntityAnim(0x1A, 0x912);
+    SetEntityAnim(3, 0x253);
+    Set_Vector_Y(0x1A, 0xB3, 1);
+    Set_Vector_Y(3, 0xB3, 1);
+    Execute_Movement(0x1A);
+    Execute_Movement(3);
+    SetEntityFacing(1, "Down");
+    Set_Vector_Y(0x1A, 0xDB, 1);
+    Set_Vector_Y(3, 0xDB, 1);
+    Execute_Movement(0x1A);
+    Execute_Movement(3);
+    SetEntityFacing(0, "Down");
+    SetEntityFacing(0x13, "Down");
+    SetEntityFacing(2, "Down");
+    Set_Vector_Y(0x1A, 0x110, 1);
+    Set_Vector_Y(3, 0x110, 1);
+    Make_Delay((0x3C * 3));
+    Fade_Out(2, 1);
+    TalkOpen();
+    TalkMessage(3);
+    TalkClose();
+    Free_Event_Entity(0x1A);
+    Set_Flag(0x7E, 2);
+    Execute_Script(988);
+    exit;
+}

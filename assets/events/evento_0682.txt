@@ -1,0 +1,49 @@
+// Script 682
+#include "Fomt_Lib.src"
+
+script 682 Event_0682 {
+    const MESSAGE_0 = "This has never happened to \r\nme before...I'm so ashamed!\BRK";
+    const MESSAGE_1 = "I think I'm going to hit the\r\nsack early tonight, \r\n\xFF).\BRK";
+    
+    Warp_Player(0x1D, 0x1C0, 0x64);
+    PlayBGM(1, 0x11);
+    SetEntityPosition(0, 0x1C0, 0x64, "Up");
+    if (Inventory_Check()) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    SetEntityPosition(0x13, 0x1B8, -0x30, "Down");
+    SetEntityAnim(0x13, 0x6A1);
+    Fade_In(2, 1);
+    Make_Delay(0x3C);
+    SetEntityAnim(0x13, 0x6A5);
+    Make_Delay(0x3C);
+    TalkOpen();
+    Set_Name_Window(0x13);
+    Set_Portrait(0x4C);
+    Set_Hearth_Anim(0x13);
+    TalkMessage(0);
+    TalkClose();
+    SetEntityAnim(0, 0x126);
+    Make_Delay(0x3C);
+    if (Inventory_Check()) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    Make_Delay(0x3C);
+    TalkOpen();
+    Set_Name_Window(0x13);
+    Set_Portrait(0x4C);
+    Set_Hearth_Anim(0x13);
+    TalkMessage(1);
+    TalkClose();
+    SetEntityAnim(0x13, 0x6C1);
+    Make_Delay(0x3C);
+    Free_Event_Entity(0x13);
+    Give_Love_Points(0x13, -0x7D0);
+    Set_Flag(0xD5, 1);
+    Finalize_Event();
+    exit;
+}

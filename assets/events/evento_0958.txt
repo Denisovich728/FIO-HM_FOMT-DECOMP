@@ -1,0 +1,31 @@
+// Script 958
+#include "Fomt_Lib.src"
+
+script 958 Event_0958 {
+    const MESSAGE_0 = "Let\x81fs get together \r\nsometime. We can celebrate.\BRK";
+    const MESSAGE_1 = "Nothing will change here \r\nat the Clinic. \BRK";
+    
+    if ((Check_If_Single(0x14) == 0)) {
+        Free_Event_Entity(0x14);
+    }
+    if ((Has_NPC_Talked_Today(0x14) == 0)) {
+        SetEntityFacing(0x14, GetOppositeFacing(GetEntityFacing(0)));
+        TalkOpen();
+        Set_Portrait(0x29);
+        Set_Name_Window(0x14);
+        TalkMessage(0);
+        TalkClose();
+        SetEntityFacing(0x14, "Down");
+        Free_Event_Entity(0x14);
+    } else {
+        SetEntityFacing(0x14, GetOppositeFacing(GetEntityFacing(0)));
+        TalkOpen();
+        Set_Portrait(0x29);
+        Set_Name_Window(0x14);
+        TalkMessage(1);
+        TalkClose();
+        SetEntityFacing(0x14, "Down");
+        Free_Event_Entity(0x14);
+    }
+    exit;
+}

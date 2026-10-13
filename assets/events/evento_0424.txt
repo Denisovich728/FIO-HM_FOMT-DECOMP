@@ -1,0 +1,30 @@
+// Script 424
+#include "Fomt_Lib.src"
+
+script 424 Event_0424 {
+    SetEntityPosition(0x1F, (GetEntityX(0) + 0x10), GetEntityY(0), 0);
+    SetEntityFacing(0x1F, 2);
+    Set_Vector_X(0x1F, (GetEntityX(0) + 0x20), 1);
+    Entity_Action(0x29, (GetEntityX(0) + 0x10), GetEntityY(0));
+    Execute_Movement(0x1F);
+    Set_Vector_X(0x1F, (GetEntityX(0) + 0x30), 1);
+    Entity_Action(0x2A, (GetEntityX(0) + 0x20), GetEntityY(0));
+    Execute_Movement(0x1F);
+    Set_Vector_X(0x1F, (GetEntityX(0) + 0x40), 1);
+    Entity_Action(0x28, (GetEntityX(0) + 0x30), GetEntityY(0));
+    Execute_Movement(0x1F);
+    Set_Vector_X(0x1F, (GetEntityX(0) + 0x50), 1);
+    Entity_Action(0x24, (GetEntityX(0) + 0x40), GetEntityY(0));
+    Execute_Movement(0x1F);
+    Set_Vector_X(0x1F, (GetEntityX(0) + 0x60), 1);
+    Entity_Action(0x26, (GetEntityX(0) + 0x50), GetEntityY(0));
+    Execute_Movement(0x1F);
+    Set_Vector_X(0x1F, (GetEntityX(0) + 0x70), 1);
+    Entity_Action(0x25, (GetEntityX(0) + 0x60), GetEntityY(0));
+    Execute_Movement(0x1F);
+    Hide_Entity(0x1F);
+    Entity_Action(0x27, (GetEntityX(0) + 0x70), GetEntityY(0));
+    PlaySong(0, 0xBE);
+    exit;
+    exit;
+}

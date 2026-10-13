@@ -1,0 +1,26 @@
+// Script 1324
+#include "Fomt_Lib.src"
+
+script 1324 Event_1324 {
+    const MESSAGE_0 = "Good evening. \r\nThe first sunrise of the\r\nyear is beautiful here. \BRK";
+    
+    if ((Check_If_Single(0xB) == 0)) {
+        Free_Event_Entity(0xB);
+    }
+    SetEntityFacing(0xB, GetOppositeFacing(GetEntityFacing(0)));
+    TalkOpen();
+    Set_Portrait(0x6F);
+    Set_Name_Window(0xB);
+    TalkMessage(0);
+    TalkClose();
+    if ((Has_NPC_Talked_Today(0xB) == 0)) {
+        Give_Friendship_Points(0xB, 5);
+    }
+    Free_Event_Entity(0xB);
+    if (((((((((Check_Flag(0xF4) == 0) || Has_NPC_Talked_Today(0x17)) && Has_NPC_Talked_Today(0x18)) && Has_NPC_Talked_Today(0xB)) && Has_NPC_Talked_Today(0xA)) && Has_NPC_Talked_Today(0xC)) && Has_NPC_Talked_Today(6)) && Has_NPC_Talked_Today(7))) {
+        Fade_Out(2, 1);
+        Execute_Script(1319);
+    }
+    SetEntityFacing(0xB, "Up");
+    exit;
+}

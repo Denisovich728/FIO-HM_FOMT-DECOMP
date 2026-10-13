@@ -1,0 +1,57 @@
+// Script 292
+#include "Fomt_Lib.src"
+
+script 292 Event_0292 {
+    const MESSAGE_0 = "I haven't cleaned upstairs\r\nyet, so please don't \r\ngo up there.\BRK";
+    const MESSAGE_1 = "Please don't go upstairs!\BRK";
+    
+    var var_0;
+    var var_1;
+    var var_2;
+    var var_3;
+    var var_4;
+    
+    if ((GetEntityFacing(0) == 1)) {
+        var_0 = 0;
+        var_1 = Check_Flag(1);
+        var_2 = Check_Flag(2);
+        var_4 = Check_Flag(3);
+        var_3 = Check_Flag(5);
+        if ((Chek_Friendship_Points(0xA) <= 0xC8)) {
+            var_0 = 0;
+        } else {
+            var_0 = 1;
+        }
+        if ((var_0 == 1)) {
+            if ((Check_Flag(0xFF) == 1)) {
+                TalkOpen();
+                Set_Portrait(0x70);
+                Set_Name_Window(0xB);
+                TalkMessage(0);
+                TalkClose();
+                Set_Vector_Y(0, (GetEntityY(0) + 2), 1);
+                Pan_Camera_To(GetEntityX(0), (GetEntityY(0) + 2), 1);
+                Execute_Movement(0);
+                exit;
+            }
+            Fade_Out(2, 1);
+            Warp_Player(0x1B, 0xD8, 0x58);
+            SetEntityPosition(0, 0xD8, 0x58, "Up");
+            if (((((((((((Check_Flag(0xFD) == 0) && (var_3 != 1)) && ((var_4 >= 0xD) && (var_4 < 0x10))) && (var_1 == 0)) && (Chek_Friendship_Points(0xA) > 0xC8)) && (Check_Flag(0x67) == 0)) && (Check_Flag(0x8E) == 0)) && (Check_Flag(0x8F) == 0)) && (Check_If_Single(0xA) == 1)) && (GetEntityLocation(0xA) == 0x1B))) {
+                Set_Flag(0xFD, 1);
+                Execute_Script(724);
+            }
+            Fade_In(2, 1);
+        } else {
+            TalkOpen();
+            Set_Portrait(0x70);
+            Set_Name_Window(0xB);
+            TalkMessage(1);
+            TalkClose();
+            Set_Vector_Y(0, (GetEntityY(0) + 2), 1);
+            Pan_Camera_To(GetEntityX(0), (GetEntityY(0) + 2), 1);
+            Execute_Movement(0);
+        }
+    }
+    exit;
+}

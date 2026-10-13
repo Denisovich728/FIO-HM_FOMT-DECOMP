@@ -1,0 +1,38 @@
+// Script 1159
+#include "Fomt_Lib.src"
+
+script 1159 Event_1159 {
+    const MESSAGE_0 = "I wonder what happened\r\nto that chicken?\BRK";
+    const MESSAGE_1 = "Even that Chicken's face\r\nlooks fierce!\BRK";
+    const MESSAGE_2 = "That was a good effort. \BRK";
+    
+    if ((Check_If_Single(6) == 0)) {
+        Free_Event_Entity(6);
+    }
+    SetEntityFacing(6, GetOppositeFacing(GetEntityFacing(0)));
+    if ((Check_Flag(0x197) == 0)) {
+        TalkOpen();
+        Set_Portrait(0xA8);
+        Set_Name_Window(6);
+        TalkMessage(0);
+    } else {
+        if ((Check_Flag(0x199) == 1)) {
+            TalkOpen();
+            Set_Portrait(0xA9);
+            Set_Name_Window(6);
+            TalkMessage(1);
+            goto LBL_0006;
+        }
+        TalkOpen();
+        Set_Portrait(0xA8);
+        Set_Name_Window(6);
+        TalkMessage(2);
+    }
+    TalkClose();
+    if ((Has_Spoken_To_NPC_Today(6) == 0)) {
+        Give_Friendship_Points(6, 5);
+    }
+    Free_Event_Entity(6);
+    SetEntityFacing(6, "Down");
+    exit;
+}

@@ -1,0 +1,19 @@
+// Script 58
+#include "Fomt_Lib.src"
+
+script 58 Event_0058 {
+    const MESSAGE_0 = "Read any book you want. \BRK";
+    
+    if ((Check_Flag(0x61) == 1)) {
+    }
+    SetEntityFacing(0xC, GetOppositeFacing(GetEntityFacing(0)));
+    TalkOpen();
+    Set_Portrait(0x67);
+    Set_Name_Window(0xC);
+    Set_Hearth_Anim(0xC);
+    TalkMessage(0);
+    TalkClose();
+    SetEntityFacing(0xC, "Left");
+    Free_Event_Entity(0xC);
+    exit;
+}

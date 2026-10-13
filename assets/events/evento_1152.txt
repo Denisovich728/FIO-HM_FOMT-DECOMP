@@ -1,0 +1,30 @@
+// Script 1152
+#include "Fomt_Lib.src"
+
+script 1152 Event_1152 {
+    const MESSAGE_0 = "Watching the Chickens fight\r\nso fiercely fills me\r\nwith vigor!\BRK";
+    const MESSAGE_1 = "Let's see what your \r\nChicken can do!\BRK";
+    
+    if ((Check_If_Single(6) == 0)) {
+        Free_Event_Entity(6);
+    }
+    SetEntityFacing(6, GetOppositeFacing(GetEntityFacing(0)));
+    if ((Check_Flag(0x197) == 0)) {
+        TalkOpen();
+        Set_Portrait(0xA8);
+        Set_Name_Window(6);
+        TalkMessage(0);
+    } else {
+        TalkOpen();
+        Set_Portrait(0xA9);
+        Set_Name_Window(6);
+        TalkMessage(1);
+    }
+    TalkClose();
+    if ((Has_Spoken_To_NPC_Today(6) == 0)) {
+        Give_Friendship_Points(6, 5);
+    }
+    Free_Event_Entity(6);
+    SetEntityFacing(6, "Down");
+    exit;
+}

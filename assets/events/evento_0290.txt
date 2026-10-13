@@ -1,0 +1,11 @@
+// Script 290
+#include "Fomt_Lib.src"
+
+script 290 Event_0290 {
+    const MESSAGE_0 = "Kitchen Cabinet\BRK";
+    
+    TalkOpen();
+    Print_Message(0);
+    TalkClose();
+    exit;
+}

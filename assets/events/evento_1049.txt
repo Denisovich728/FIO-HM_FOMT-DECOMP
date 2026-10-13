@@ -1,0 +1,545 @@
+// Script 1049
+#include "Fomt_Lib.src"
+
+script 1049 Event_1049 {
+    const MESSAGE_0 = "1st day of Spring\r\nToday from evening at Rose\r\nSquare: \r\nNew Year Festival\BRK";
+    const MESSAGE_1 = "2nd day of Spring\r\nEvents This Season\r\n18th: Spring \r\n22nd: Cooking Festival\BRK";
+    const MESSAGE_2 = "3rd day of Spring\r\nEvents This Season\r\n18th: Spring Horse Races\r\n22nd: Cooking Festival\BRK";
+    const MESSAGE_3 = "4th day of Spring\r\nEvents This Season\r\n18th: Spring Horse Races\r\n22nd: Cooking Festival\BRK";
+    const MESSAGE_4 = "5th day of Spring\r\nEvents This Season\r\n18th: Spring Horse Races\r\n22nd: Cooking Festival\BRK";
+    const MESSAGE_5 = "6th day of Spring\r\nEvents This Season\r\n18th: Spring Horse Races\r\n22nd: Cooking Festival\BRK";
+    const MESSAGE_6 = "7th day of Spring\r\nEvents This Season\r\n18th: Spring Horse Races\r\n22nd: Cooking Festival\BRK";
+    const MESSAGE_7 = "8th day of Spring\r\nEvents This Season\r\n18th: Spring Horse Races\r\n22nd: Cooking Festival\BRK";
+    const MESSAGE_8 = "9th day of Spring\r\nEvents This Season\r\n18th: Spring Horse Races\r\n22nd: Cooking Festival\BRK";
+    const MESSAGE_9 = "10th day of Spring\r\nEvents This Season\r\n18th: Spring Horse Races\r\n22nd: Cooking Festival\BRK";
+    const MESSAGE_10 = "11th day of Spring\r\nEvents This Season\r\n18th: Spring Horse Races\r\n22nd: Cooking Festival\BRK";
+    const MESSAGE_11 = "12th day of Spring\r\nEvents This Season\r\n18th: Spring Horse Races\r\n22nd: Cooking Festival\BRK";
+    const MESSAGE_12 = "Today is Friday the 13th\r\nTomorrow is the Spring \r\nThanksgiving Festival.\r\nDo you have Cookies to \r\ngive to someone special?\BRK";
+    const MESSAGE_13 = "13th day of Spring\r\nTomorrow is the Spring \r\nThanksgiving Festival.\r\nDo you have Cookies to \r\ngive to someone special?\BRK";
+    const MESSAGE_14 = "14th day of Spring\r\nToday is the Spring \r\nThanksgiving Festival. \r\nNow is your chance to \r\nfavor a special girl with\r\nCookies. \BRK";
+    const MESSAGE_15 = "15th day of Spring\r\nThe Spring Horse Races \r\nare coming up. If you have\r\na Horse, try entering it.\r\nIf not, just betting on the\r\nraces is fun, too!\BRK";
+    const MESSAGE_16 = "16th day of Spring\r\nThe Spring Horse Races \r\nare coming up. If you have\r\na Horse, try entering it.\r\nIf not, just betting on the\r\nraces is fun, too!\BRK";
+    const MESSAGE_17 = "17th day of Spring\r\nTomorrow is the Spring\r\nHorse Race Festival. \r\nIf you are entering a \r\nHorse, let the Mayor know\r\nwhen he drops by.\BRK";
+    const MESSAGE_18 = "18th day of Spring\r\nThe Horse Races start in \r\nthe morning in Rose Square.\r\nGather for the fun!\BRK";
+    const MESSAGE_19 = "19th day of Spring\r\nThe Cooking Festival is on \r\nthe 22nd. If you think you \r\ncan win, give it a try.\r\nIf not, gather to watch!\BRK";
+    const MESSAGE_20 = "20th day of Spring\r\nThe Cooking Festival is on \r\nthe 22nd. If you think you \r\ncan win, give it a try.\r\nIf not, gather to watch!\BRK";
+    const MESSAGE_21 = "21st day of Spring\r\nThe Cooking Festival is \r\ntomorrow. If you think you \r\ncan win, give it a try.\r\nIf not, gather to watch!\BRK";
+    const MESSAGE_22 = "22nd of day of Spring\r\nToday the Cooking Festival \r\nis held in Rose Square.\r\nThe food to make is \r\nannounced in the morning, \r\nand the judging is held in\r\nthe afternoon.\BRK";
+    const MESSAGE_23 = "23rd day of Spring\r\nSpring is almost over. \r\nCan you harvest your crops\r\nbefore Summer comes?\r\nDon't let your crops wither\r\non the vine!\BRK";
+    const MESSAGE_24 = "24th day of Spring\r\nSpring is almost over. \r\nCan you harvest your crops\r\nbefore Summer comes?\r\nDon't let your crops wither\r\non the vine!\BRK";
+    const MESSAGE_25 = "25th day of Spring\r\nSpring is almost over. \r\nCan you harvest your crops\r\nbefore Summer comes?\r\nDon't let your crops wither\r\non the vine!\BRK";
+    const MESSAGE_26 = "26th day of Spring\r\nSpring is almost over. \r\nCan you harvest your crops\r\nbefore Summer comes?\r\nDon't let your crops wither\r\non the vine!\BRK";
+    const MESSAGE_27 = "27th day of Spring\r\nSpring is almost over. \r\nCan you harvest your crops\r\nbefore Summer comes?\r\nDon't let your crops wither\r\non the vine!\BRK";
+    const MESSAGE_28 = "28th day of Spring\r\nSpring is almost over. \r\nCan you harvest your crops\r\nbefore Summer comes?\r\nDon't let your crops wither\r\non the vine!\BRK";
+    const MESSAGE_29 = "29th day of Spring\r\nSummer is almost upon us!\r\nGet ready for Beach Day and\r\nthe Frisbee Tournament on \r\nthe 1st day of Summer.\BRK";
+    const MESSAGE_30 = "30th day of Spring\r\nBeach Day is tomorrow \r\nmorning at the Beach. Good\r\nluck if you're competing in\r\nthe Frisbee Tournament!\BRK";
+    const MESSAGE_31 = "1st day of Summer\r\nBeach Day is this \r\nmorning at the Beach. Good\r\nluck if you're competing in\r\nthe Frisbee Tournament!\BRK";
+    const MESSAGE_32 = "2nd day of Summer\r\nEvents This Season\r\n7th: Chicken Festival\r\n20th: Cow Festival\r\n24th: Fireworks Festival\BRK";
+    const MESSAGE_33 = "3rd day of Summer\r\nEvents This Season\r\n7th: Chicken Festival\r\n20th: Cow Festival\r\n24th: Fireworks Festival\BRK";
+    const MESSAGE_34 = "4th day of Summer\r\nEvents This Season\r\n7th: Chicken Festival\r\n20th: Cow Festival\r\n24th: Fireworks Festival\BRK";
+    const MESSAGE_35 = "5th day of Summer\r\nEvents This Season\r\n7th: Chicken Festival\r\n20th: Cow Festival\r\n24th: Fireworks Festival\BRK";
+    const MESSAGE_36 = "6th day of Summer\r\nTomorrow is the Chicken\r\nFestival at Rose Square.\r\nIf you're going to compete,\r\nregister your Chicken.\BRK";
+    const MESSAGE_37 = "7th day of Summer\r\nThe Chicken Festival is \r\nthis morning at Rose Square.\r\nIf you're going to compete,\r\ndon't be late.\BRK";
+    const MESSAGE_38 = "8th day of Summer\r\nEvents This Season\r\n20th: Cow Festival\r\n24th: Fireworks Festival\BRK";
+    const MESSAGE_39 = "9th day of Summer\r\nEvents This Season\r\n20th: Cow Festival\r\n24th: Fireworks Festival\BRK";
+    const MESSAGE_40 = "10th day of Summer\r\nEvents This Season\r\n20th: Cow Festival\r\n24th: Fireworks Festival\BRK";
+    const MESSAGE_41 = "11th day of Summer\r\nEvents This Season\r\n20th: Cow Festival\r\n24th: Fireworks Festival\BRK";
+    const MESSAGE_42 = "12th day of Summer\r\nEvents This Season\r\n20th: Cow Festival\r\n24th: Fireworks Festival\BRK";
+    const MESSAGE_43 = "Today is Friday the 13th\r\nEvents This Season\r\n20th: Cow Festival\r\n24th: Fireworks Festival\BRK";
+    const MESSAGE_44 = "13th day of Summer\r\nEvents This Season\r\n20th: Cow Festival\r\n24th: Fireworks Festival\BRK";
+    const MESSAGE_45 = "14th day of Summer\r\nEvents This Season\r\n20th: Cow Festival\r\n24th: Fireworks Festival\BRK";
+    const MESSAGE_46 = "15th day of Summer\r\nEvents This Season\r\n20th: Cow Festival\r\n24th: Fireworks Festival\BRK";
+    const MESSAGE_47 = "16th day of Summer\r\nThe Cow Festival is on the\r\n20th. If you've got a Cow,\r\nconsider entering it in the\r\ncompetition. It has to be\r\nan unpregnant adult, though.\BRK";
+    const MESSAGE_48 = "17th day of Summer\r\nThe Cow Festival is on the\r\n20th. If you've got a Cow,\r\nconsider entering it in the\r\ncompetition. It has to be\r\nan unpregnant adult, though.\BRK";
+    const MESSAGE_49 = "18th day of Summer\r\nThe Cow Festival is on the\r\n20th. If you've got a Cow,\r\nconsider entering it in the\r\ncompetition. It has to be\r\nan unpregnant adult, though.\BRK";
+    const MESSAGE_50 = "19th day of Summer\r\nThe Cow Festival is tomorrow\r\nmorning in Rose Square.\r\nIf you're going to compete,\r\nregister your Cow.\BRK";
+    const MESSAGE_51 = "20th day of Summer\r\nThe Cow Festival is \r\nthis morning at Rose Square.\r\nIf you're going to compete,\r\ndon't be late.\BRK";
+    const MESSAGE_52 = "21st day of Summer\r\nThe best part of Summer, the\r\nFireworks Festival, is \r\non the 24th.\BRK";
+    const MESSAGE_53 = "22nd day of Summer\r\nThe best part of Summer, the\r\nFireworks Festival, is \r\non the 24th.\BRK";
+    const MESSAGE_54 = "23rd day of Summer\r\nThe Fireworks Festival is \r\ntomorrow at the Beach.\r\nIt starts in the evening.\BRK";
+    const MESSAGE_55 = "24th day of Summer\r\nThe Fireworks Festival is \r\nthis evening at the Beach.\BRK";
+    const MESSAGE_56 = "25th day of Summer\r\nSummer is almost over. \r\nCan you harvest your crops\r\nbefore Fall comes?\r\nDon't let your crops wither\r\non the vine!\BRK";
+    const MESSAGE_57 = "26th day of Summer\r\nSummer is almost over. \r\nCan you harvest your crops\r\nbefore Fall comes?\r\nDon't let your crops wither\r\non the vine!\BRK";
+    const MESSAGE_58 = "27th day of Summer\r\nSummer is almost over. \r\nCan you harvest your crops\r\nbefore Fall comes?\r\nDon't let your crops wither\r\non the vine!\BRK";
+    const MESSAGE_59 = "28th day of Summer\r\nSummer is almost over. \r\nCan you harvest your crops\r\nbefore Fall comes?\r\nDon't let your crops wither\r\non the vine!\BRK";
+    const MESSAGE_60 = "29th day of Summer\r\nSummer is almost over. \r\nCan you harvest your crops\r\nbefore Fall comes?\r\nDon't let your crops wither\r\non the vine!\BRK";
+    const MESSAGE_61 = "30th day of Summer\r\nSummer is almost over. \r\nCan you harvest your crops\r\nbefore Fall comes?\r\nDon't let your crops wither\r\non the vine!\BRK";
+    const MESSAGE_62 = "1st day of Fall\r\nEvents This Season\r\n3rd: Music Festival\r\n9th: Harvest Festival\r\n18th: Fall Horse Races\r\n21st: Cow Festival\BRK";
+    const MESSAGE_63 = "2nd day of Fall\r\nThe Music Festival is \r\ntomorrow evening at the \r\nChurch. Come to hear some\r\nbeautiful music!\BRK";
+    const MESSAGE_64 = "3rd day of Fall\r\nThe Music Festival is \r\nthis evening at the \r\nChurch. Come to hear some\r\nbeautiful music!\BRK";
+    const MESSAGE_65 = "4th day of Fall\r\nEvents This Season\r\n9th: Harvest Festival\r\n18th: Fall Horse Races\r\n21st: Cow Festival\BRK";
+    const MESSAGE_66 = "5th day of Fall\r\nEvents This Season\r\n9th: Harvest Festival\r\n18th: Fall Horse Races\r\n21st: Cow Festival\BRK";
+    const MESSAGE_67 = "6th day of Fall\r\nEvents This Season\r\n9th: Harvest Festival\r\n18th: Fall Horse Races\r\n21st: Cow Festival\BRK";
+    const MESSAGE_68 = "7th day of Fall\r\nEvents This Season\r\n9th: Harvest Festival\r\n18th: Fall Horse Races\r\n21st: Cow Festival\BRK";
+    const MESSAGE_69 = "8th day of Fall\r\nThe Harvest Festival starts\r\ntomorrow morning at Rose\r\nSquare. Everybody bring \r\nsomething for the big pot!\BRK";
+    const MESSAGE_70 = "9th day of Fall\r\nThe Harvest Festival starts\r\nthis morning at Rose\r\nSquare. Everybody bring \r\nsomething for the big pot!\BRK";
+    const MESSAGE_71 = "10th day of Fall\r\nThe Moon Festival is on \r\nthe 13th. Invite your \r\nfavorite girl to this\r\nromantic event!\BRK";
+    const MESSAGE_72 = "11th day of Fall\r\nThe Moon Festival is on \r\nthe 13th. Invite your \r\nfavorite girl to this\r\nromantic event!\BRK";
+    const MESSAGE_73 = "12th day of Fall\r\nThe Moon Festival is  \r\ntomorrow night. Invite your \r\nfavorite girl to this\r\nromantic event!\BRK";
+    const MESSAGE_74 = "Today is Friday the 13th\r\nIt's clear today, so if you \r\ngo up to the peak of \r\nMother's Hill, you can see \r\na truly beautiful moon.\BRK";
+    const MESSAGE_75 = "13th of day of Fall\r\nIt's clear today, so if you \r\ngo up to the peak of \r\nMother's Hill, you can see \r\na truly beautiful moon.\BRK";
+    const MESSAGE_76 = "14th day of Fall\r\nEvents This Season\r\n18th: Fall Horse Races\r\n21st: Cow Festival\BRK";
+    const MESSAGE_77 = "15th day of Fall\r\nEvents This Season\r\n18th: Fall Horse Races\r\n21st: Cow Festival\BRK";
+    const MESSAGE_78 = "16th day of Fall\r\nThe Fall Horse Races \r\nare coming up. If you have\r\na Horse, try entering it.\r\nIf not, just betting on the\r\nraces is fun, too!\BRK";
+    const MESSAGE_79 = "17th day of Fall\r\nTomorrow is the Fall\r\nHorse Race Festival. \r\nIf you are entering a \r\nHorse, let the Mayor know\r\nwhen he drops by.\BRK";
+    const MESSAGE_80 = "18th day of Fall\r\nThe Horse Races start in \r\nthe morning in Rose Square.\r\nGather for the fun!\BRK";
+    const MESSAGE_81 = "19th day of Fall\r\nThe Sheep Festival is on the\r\n21st. If you've got a Sheep,\r\nconsider entering it in the \r\ncompetition. It has to be an\r\nunpregnant adult with \r\na full coat, though.\BRK";
+    const MESSAGE_82 = "20th day of Fall\r\nThe Sheep Festival is tomorrow\r\nmorning in Rose Square.\r\nIf you're going to compete,\r\nregister your Sheep.\BRK";
+    const MESSAGE_83 = "21st day of Fall\r\nThe Sheep Festival is \r\nthis morning at Rose Square.\r\nIf you're going to compete,\r\ndon't be late.\BRK";
+    const MESSAGE_84 = "22nd day of Fall\r\nFall is almost over. \r\nCan you harvest your crops\r\nbefore Winter comes?\r\nDon't let your crops wither\r\non the vine!\BRK";
+    const MESSAGE_85 = "23rd day of Fall\r\nFall is almost over. \r\nCan you harvest your crops\r\nbefore Winter comes?\r\nDon't let your crops wither\r\non the vine!\BRK";
+    const MESSAGE_86 = "24th day of Fall\r\nFall is almost over. \r\nCan you harvest your crops\r\nbefore Winter comes?\r\nDon't let your crops wither\r\non the vine!\BRK";
+    const MESSAGE_87 = "25th day of Fall\r\nFall is almost over. \r\nCan you harvest your crops\r\nbefore Winter comes?\r\nDon't let your crops wither\r\non the vine!\BRK";
+    const MESSAGE_88 = "26th day of Fall\r\nFall is almost over. \r\nCan you harvest your crops\r\nbefore Winter comes?\r\nDon't let your crops wither\r\non the vine!\BRK";
+    const MESSAGE_89 = "27th day of Fall\r\nFall is almost over. \r\nCan you harvest your crops\r\nbefore Winter comes?\r\nDon't let your crops wither\r\non the vine!\BRK";
+    const MESSAGE_90 = "28th day of Fall\r\nWinter is almost upon us!\r\nNothing grows in Winter, so\r\nharvest everything now.\BRK";
+    const MESSAGE_91 = "29th day of Fall\r\nWinter is almost upon us!\r\nNothing grows in Winter, so\r\nharvest everything now.\BRK";
+    const MESSAGE_92 = "30th day of Fall\r\nToday is the Pumpkin \r\nFestival. \r\nGive treats to the kids \r\nwho come. \BRK";
+    const MESSAGE_93 = "1st day of Winter\r\nEvents This Season\r\n24th: Starry Night Festival\r\n30th: Year End Festival\BRK";
+    const MESSAGE_94 = "2nd day of Winter\r\nEvents This Season\r\n24th: Starry Night Festival\r\n30th: Year End Festival\BRK";
+    const MESSAGE_95 = "3rd day of Winter\r\nEvents This Season\r\n24th: Starry Night Festival\r\n30th: Year End Festival\BRK";
+    const MESSAGE_96 = "4th day of Winter\r\nEvents This Season\r\n24th: Starry Night Festival\r\n30th: Year End Festival\BRK";
+    const MESSAGE_97 = "5th day of Winter\r\nEvents This Season\r\n24th: Starry Night Festival\r\n30th: Year End Festival\BRK";
+    const MESSAGE_98 = "6th day of Winter\r\nWhen Winter freezes the Lake\r\nice, you may be able to get\r\nto new places.\BRK";
+    const MESSAGE_99 = "7th day of Winter\r\nWhen Winter freezes the Lake\r\nice, you may be able to get\r\nto new places.\BRK";
+    const MESSAGE_100 = "8th day of Winter\r\nWhen Winter freezes the Lake\r\nice, you may be able to get\r\nto new places.\BRK";
+    const MESSAGE_101 = "9th day of Winter\r\nWhen Winter freezes the Lake\r\nice, you may be able to get\r\nto new places.\BRK";
+    const MESSAGE_102 = "10th day of Winter\r\nWhen Winter freezes the Lake\r\nice, you may be able to get\r\nto new places.\BRK";
+    const MESSAGE_103 = "11th day of Winter\r\nWhen Winter freezes the Lake\r\nice, you may be able to get\r\nto new places.\BRK";
+    const MESSAGE_104 = "12th day of Winter\r\nWhen Winter freezes the Lake\r\nice, you may be able to get\r\nto new places.\BRK";
+    const MESSAGE_105 = "Today is Friday the 13th\r\nTomorrow is the Winter\r\nThanksgiving Festival, where\r\ngirls give boys they like\r\nChocolate.\BRK";
+    const MESSAGE_106 = "13th day of Winter\r\nTomorrow is the Winter\r\nThanksgiving Festival, where\r\ngirls give boys they like\r\nChocolate.\BRK";
+    const MESSAGE_107 = "14th day of Winter\r\nToday is the Winter \r\nThanksgiving Festival. \r\nWill you be lucky enough to\r\nget a gift of Chocolate?\BRK";
+    const MESSAGE_108 = "15th day of Winter\r\nEvents This Season\r\n24th: Starry Night Festival\r\n30th: Year End Festival\BRK";
+    const MESSAGE_109 = "16th day of Winter\r\nEvents This Season\r\n24th: Starry Night Festival\r\n30th: Year End Festival\BRK";
+    const MESSAGE_110 = "17th day of Winter\r\nEvents This Season\r\n24th: Starry Night Festival\r\n30th: Year End Festival\BRK";
+    const MESSAGE_111 = "18th day of Winter\r\nEvents This Season\r\n24th: Starry Night Festival\r\n30th: Year End Festival\BRK";
+    const MESSAGE_112 = "19th day of Winter\r\nEvents This Season\r\n24th: Starry Night Festival\r\n30th: Year End Festival\BRK";
+    const MESSAGE_113 = "20th day of Winter\r\nEvents This Season\r\n24th: Starry Night Festival\r\n30th: Year End Festival\BRK";
+    const MESSAGE_114 = "21st day of Winter\r\nWhen Winter freezes the Lake\r\nice, you may be able to get\r\nto new places.\BRK";
+    const MESSAGE_115 = "22nd day of Winter\r\nWhen Winter freezes the Lake\r\nice, you may be able to get\r\nto new places.\BRK";
+    const MESSAGE_116 = "23rd day of Winter\r\nTomorrow is the Starry Night\r\nFestival. Hopefully you can \r\nspend it with a nice girl.\BRK";
+    const MESSAGE_117 = "24th day of Winter\r\nToday is the Starry Night\r\nFestival. Hopefully you can \r\nspend it with a nice girl.\BRK";
+    const MESSAGE_118 = "25th day of Winter\r\nIf you hang up your socks\r\ntonight, you may receive a\r\nStarry Night gift.\BRK";
+    const MESSAGE_119 = "26th day of Winter\r\nSpring is coming. \r\nWhen it comes, you'll be\r\nable to grow crops again.\r\nNow's your chance to\r\nmake up for lost time!\BRK";
+    const MESSAGE_120 = "27th day of Winter\r\nSpring is coming. \r\nWhen it comes, you'll be\r\nable to grow crops again.\r\nNow's your chance to\r\nmake up for lost time!\BRK";
+    const MESSAGE_121 = "28th day of Winter\r\nSpring is coming. \r\nWhen it comes, you'll be\r\nable to grow crops again.\r\nNow's your chance to\r\nmake up for lost time!\BRK";
+    const MESSAGE_122 = "29th day of Winter\r\nSpring is coming. \r\nWhen it comes, you'll be\r\nable to grow crops again.\r\nNow's your chance to\r\nmake up for lost time!\BRK";
+    const MESSAGE_123 = "30th day of Winter, \r\nthe last day of the year\r\nGather at Rose Square at \r\nnight or at the peak of \r\nMother's Hill to watch the \r\nfirst sunrise of the year.\BRK";
+    
+    var var_0;
+    
+    switch (Check_Flag(1)) {
+        case 0:
+            switch (Check_Flag(2)) {
+                case 1:
+                    var_0 = Print_TV_Message(0);
+                    break;
+                case 2:
+                    var_0 = Print_TV_Message(1);
+                    break;
+                case 3:
+                    var_0 = Print_TV_Message(2);
+                    break;
+                case 4:
+                    var_0 = Print_TV_Message(3);
+                    break;
+                case 5:
+                    var_0 = Print_TV_Message(4);
+                    break;
+                case 6:
+                    var_0 = Print_TV_Message(5);
+                    break;
+                case 7:
+                    var_0 = Print_TV_Message(6);
+                    break;
+                case 8:
+                    var_0 = Print_TV_Message(7);
+                    break;
+                case 9:
+                    var_0 = Print_TV_Message(8);
+                    break;
+                case 0xA:
+                    var_0 = Print_TV_Message(9);
+                    break;
+                case 0xB:
+                    var_0 = Print_TV_Message(10);
+                    break;
+                case 0xC:
+                    var_0 = Print_TV_Message(11);
+                    break;
+                case 0xD:
+                    if ((Check_Flag(5) == 5)) {
+                        Set_TV_Screen_Graphic(0x10);
+                        var_0 = Print_TV_Message(12);
+                        goto LBL_0011;
+                    }
+                    var_0 = Print_TV_Message(13);
+                    break;
+                case 0xE:
+                    var_0 = Print_TV_Message(14);
+                    break;
+                case 0xF:
+                    var_0 = Print_TV_Message(15);
+                    break;
+                case 0x10:
+                    var_0 = Print_TV_Message(16);
+                    break;
+                case 0x11:
+                    var_0 = Print_TV_Message(17);
+                    break;
+                case 0x12:
+                    var_0 = Print_TV_Message(18);
+                    break;
+                case 0x13:
+                    var_0 = Print_TV_Message(19);
+                    break;
+                case 0x14:
+                    var_0 = Print_TV_Message(20);
+                    break;
+                case 0x15:
+                    var_0 = Print_TV_Message(21);
+                    break;
+                case 0x16:
+                    var_0 = Print_TV_Message(22);
+                    break;
+                case 0x17:
+                    var_0 = Print_TV_Message(23);
+                    break;
+                case 0x18:
+                    var_0 = Print_TV_Message(24);
+                    break;
+                case 0x19:
+                    var_0 = Print_TV_Message(25);
+                    break;
+                case 0x1A:
+                    var_0 = Print_TV_Message(26);
+                    break;
+                case 0x1B:
+                    var_0 = Print_TV_Message(27);
+                    break;
+                case 0x1C:
+                    var_0 = Print_TV_Message(28);
+                    break;
+                case 0x1D:
+                    var_0 = Print_TV_Message(29);
+                    break;
+                case 0x1E:
+                    var_0 = Print_TV_Message(30);
+                    break;
+            }
+            break;
+        case 1:
+            switch (Check_Flag(2)) {
+                case 1:
+                    var_0 = Print_TV_Message(31);
+                    break;
+                case 2:
+                    var_0 = Print_TV_Message(32);
+                    break;
+                case 3:
+                    var_0 = Print_TV_Message(33);
+                    break;
+                case 4:
+                    var_0 = Print_TV_Message(34);
+                    break;
+                case 5:
+                    var_0 = Print_TV_Message(35);
+                    break;
+                case 6:
+                    var_0 = Print_TV_Message(36);
+                    break;
+                case 7:
+                    var_0 = Print_TV_Message(37);
+                    break;
+                case 8:
+                    var_0 = Print_TV_Message(38);
+                    break;
+                case 9:
+                    var_0 = Print_TV_Message(39);
+                    break;
+                case 0xA:
+                    var_0 = Print_TV_Message(40);
+                    break;
+                case 0xB:
+                    var_0 = Print_TV_Message(41);
+                    break;
+                case 0xC:
+                    var_0 = Print_TV_Message(42);
+                    break;
+                case 0xD:
+                    if ((Check_Flag(5) == 5)) {
+                        Set_TV_Screen_Graphic(0x10);
+                        var_0 = Print_TV_Message(43);
+                        goto LBL_0036;
+                    }
+                    var_0 = Print_TV_Message(44);
+                    break;
+                case 0xE:
+                    var_0 = Print_TV_Message(45);
+                    break;
+                case 0xF:
+                    var_0 = Print_TV_Message(46);
+                    break;
+                case 0x10:
+                    var_0 = Print_TV_Message(47);
+                    break;
+                case 0x11:
+                    var_0 = Print_TV_Message(48);
+                    break;
+                case 0x12:
+                    var_0 = Print_TV_Message(49);
+                    break;
+                case 0x13:
+                    var_0 = Print_TV_Message(50);
+                    break;
+                case 0x14:
+                    var_0 = Print_TV_Message(51);
+                    break;
+                case 0x15:
+                    var_0 = Print_TV_Message(52);
+                    break;
+                case 0x16:
+                    var_0 = Print_TV_Message(53);
+                    break;
+                case 0x17:
+                    var_0 = Print_TV_Message(54);
+                    break;
+                case 0x18:
+                    var_0 = Print_TV_Message(55);
+                    break;
+                case 0x19:
+                    var_0 = Print_TV_Message(56);
+                    break;
+                case 0x1A:
+                    var_0 = Print_TV_Message(57);
+                    break;
+                case 0x1B:
+                    var_0 = Print_TV_Message(58);
+                    break;
+                case 0x1C:
+                    var_0 = Print_TV_Message(59);
+                    break;
+                case 0x1D:
+                    var_0 = Print_TV_Message(60);
+                    break;
+                case 0x1E:
+                    var_0 = Print_TV_Message(61);
+                    break;
+            }
+            break;
+        case 2:
+            switch (Check_Flag(2)) {
+                case 1:
+                    var_0 = Print_TV_Message(62);
+                    break;
+                case 2:
+                    var_0 = Print_TV_Message(63);
+                    break;
+                case 3:
+                    var_0 = Print_TV_Message(64);
+                    break;
+                case 4:
+                    var_0 = Print_TV_Message(65);
+                    break;
+                case 5:
+                    var_0 = Print_TV_Message(66);
+                    break;
+                case 6:
+                    var_0 = Print_TV_Message(67);
+                    break;
+                case 7:
+                    var_0 = Print_TV_Message(68);
+                    break;
+                case 8:
+                    var_0 = Print_TV_Message(69);
+                    break;
+                case 9:
+                    var_0 = Print_TV_Message(70);
+                    break;
+                case 0xA:
+                    var_0 = Print_TV_Message(71);
+                    break;
+                case 0xB:
+                    var_0 = Print_TV_Message(72);
+                    break;
+                case 0xC:
+                    var_0 = Print_TV_Message(73);
+                    break;
+                case 0xD:
+                    if ((Check_Flag(5) == 5)) {
+                        Set_TV_Screen_Graphic(0x10);
+                        var_0 = Print_TV_Message(74);
+                        goto LBL_005B;
+                    }
+                    var_0 = Print_TV_Message(75);
+                    break;
+                case 0xE:
+                    var_0 = Print_TV_Message(76);
+                    break;
+                case 0xF:
+                    var_0 = Print_TV_Message(77);
+                    break;
+                case 0x10:
+                    var_0 = Print_TV_Message(78);
+                    break;
+                case 0x11:
+                    var_0 = Print_TV_Message(79);
+                    break;
+                case 0x12:
+                    var_0 = Print_TV_Message(80);
+                    break;
+                case 0x13:
+                    var_0 = Print_TV_Message(81);
+                    break;
+                case 0x14:
+                    var_0 = Print_TV_Message(82);
+                    break;
+                case 0x15:
+                    var_0 = Print_TV_Message(83);
+                    break;
+                case 0x16:
+                    var_0 = Print_TV_Message(84);
+                    break;
+                case 0x17:
+                    var_0 = Print_TV_Message(85);
+                    break;
+                case 0x18:
+                    var_0 = Print_TV_Message(86);
+                    break;
+                case 0x19:
+                    var_0 = Print_TV_Message(87);
+                    break;
+                case 0x1A:
+                    var_0 = Print_TV_Message(88);
+                    break;
+                case 0x1B:
+                    var_0 = Print_TV_Message(89);
+                    break;
+                case 0x1C:
+                    var_0 = Print_TV_Message(90);
+                    break;
+                case 0x1D:
+                    var_0 = Print_TV_Message(91);
+                    break;
+                case 0x1E:
+                    var_0 = Print_TV_Message(92);
+                    break;
+            }
+            break;
+        case 3:
+            switch (Check_Flag(2)) {
+                case 1:
+                    var_0 = Print_TV_Message(93);
+                    break;
+                case 2:
+                    var_0 = Print_TV_Message(94);
+                    break;
+                case 3:
+                    var_0 = Print_TV_Message(95);
+                    break;
+                case 4:
+                    var_0 = Print_TV_Message(96);
+                    break;
+                case 5:
+                    var_0 = Print_TV_Message(97);
+                    break;
+                case 6:
+                    var_0 = Print_TV_Message(98);
+                    break;
+                case 7:
+                    var_0 = Print_TV_Message(99);
+                    break;
+                case 8:
+                    var_0 = Print_TV_Message(100);
+                    break;
+                case 9:
+                    var_0 = Print_TV_Message(101);
+                    break;
+                case 0xA:
+                    var_0 = Print_TV_Message(102);
+                    break;
+                case 0xB:
+                    var_0 = Print_TV_Message(103);
+                    break;
+                case 0xC:
+                    var_0 = Print_TV_Message(104);
+                    break;
+                case 0xD:
+                    if ((Check_Flag(5) == 5)) {
+                        Set_TV_Screen_Graphic(0x10);
+                        var_0 = Print_TV_Message(105);
+                        goto LBL_0080;
+                    }
+                    var_0 = Print_TV_Message(106);
+                    break;
+                case 0xE:
+                    var_0 = Print_TV_Message(107);
+                    break;
+                case 0xF:
+                    var_0 = Print_TV_Message(108);
+                    break;
+                case 0x10:
+                    var_0 = Print_TV_Message(109);
+                    break;
+                case 0x11:
+                    var_0 = Print_TV_Message(110);
+                    break;
+                case 0x12:
+                    var_0 = Print_TV_Message(111);
+                    break;
+                case 0x13:
+                    var_0 = Print_TV_Message(112);
+                    break;
+                case 0x14:
+                    var_0 = Print_TV_Message(113);
+                    break;
+                case 0x15:
+                    var_0 = Print_TV_Message(114);
+                    break;
+                case 0x16:
+                    var_0 = Print_TV_Message(115);
+                    break;
+                case 0x17:
+                    var_0 = Print_TV_Message(116);
+                    break;
+                case 0x18:
+                    var_0 = Print_TV_Message(117);
+                    break;
+                case 0x19:
+                    var_0 = Print_TV_Message(118);
+                    break;
+                case 0x1A:
+                    var_0 = Print_TV_Message(119);
+                    break;
+                case 0x1B:
+                    var_0 = Print_TV_Message(120);
+                    break;
+                case 0x1C:
+                    var_0 = Print_TV_Message(121);
+                    break;
+                case 0x1D:
+                    var_0 = Print_TV_Message(122);
+                    break;
+                case 0x1E:
+                    var_0 = Print_TV_Message(123);
+                    break;
+            }
+            break;
+    }
+    Close_TV_Interface();
+    TalkClose();
+    switch (var_0) {
+        case 0:
+        case 1:
+        case 2:
+        case 3:
+            Set_Flag(0x244, var_0);
+            Execute_Script(356);
+            break;
+        case 4:
+        case 5:
+            break;
+    }
+    exit;
+}

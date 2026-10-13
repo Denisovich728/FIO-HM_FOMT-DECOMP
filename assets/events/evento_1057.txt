@@ -1,0 +1,238 @@
+// Script 1057
+#include "Fomt_Lib.src"
+
+script 1057 Event_1057 {
+    const MESSAGE_0 = "This is tomorrow's forecast!\r\nIt will be\r\nsunny and a little hot.\BRK";
+    const MESSAGE_1 = "This is tomorrow's forecast!\r\nTonight will be cloudy, \r\nwith rain falling all day \r\ntomorrow. \BRK";
+    const MESSAGE_2 = "This is tomorrow's forecast!\r\nA typhoon will be passing\r\nthrough, so lock all your\r\ndoors and windows, and put\r\nyour animals in the Barn!\BRK";
+    const MESSAGE_3 = "Snow \BRK";
+    const MESSAGE_4 = "A snowstorm!\BRK";
+    const MESSAGE_5 = "This is tomorrow's forecast!\r\nMorning will bring fair \r\nskies throughout the \r\nentire region. \BRK";
+    const MESSAGE_6 = "This is tomorrow's forecast!\r\nIt will begin raining in \r\nthe morning and not stop\r\nall day. \BRK";
+    const MESSAGE_7 = "Typhoon!\BRK";
+    const MESSAGE_8 = "This is tomorrow's forecast!\r\nIt will be a nice, crisp \r\nand clear Fall day. \BRK";
+    const MESSAGE_9 = "This is tomorrow's forecast!\r\nMorning will bring rain, and\r\nit will be a cold day.\BRK";
+    const MESSAGE_10 = "Heavy thunder and lightning!\r\nTonight will be cloudy, \r\nwith rain falling all day \r\ntomorrow. \BRK";
+    const MESSAGE_11 = "This is tomorrow's forecast!\r\nA typhoon will be passing\r\nthrough, so lock down all\r\ndoors and windows, and put\r\nyour animals in the Barn!\BRK";
+    const MESSAGE_12 = "This is tomorrow's forecast!\r\nIt will be a pleasant \r\nearly Spring day. \BRK";
+    const MESSAGE_13 = "Rain!\BRK";
+    const MESSAGE_14 = "Typhoon! \BRK";
+    const MESSAGE_15 = "This is tomorrow's forecast!\r\nIt will snow, so be careful\r\nnot to catch cold. \BRK";
+    const MESSAGE_16 = "This is tomorrow's forecast!\r\nA snowstorm will hit, so \r\nlock down all doors and \r\nwindows, and put your\r\nanimals in the Barn!\BRK";
+    
+    var var_0;
+    
+    switch (Check_Flag(1)) {
+        case 0:
+            if ((Check_Flag(2) == 0x1E)) {
+                switch (Check_Flag(7)) {
+                    case 0:
+                        Set_TV_Screen_Graphic(0x15);
+                        var_0 = Print_TV_Message(0);
+                        break;
+                    case 1:
+                        Set_TV_Screen_Graphic(0x16);
+                        var_0 = Print_TV_Message(1);
+                        break;
+                    case 3:
+                        Set_TV_Screen_Graphic(0x18);
+                        var_0 = Print_TV_Message(2);
+                        break;
+                    case 2:
+                        Set_TV_Screen_Graphic(0x10);
+                        var_0 = Print_TV_Message(3);
+                        break;
+                    case 4:
+                        Set_TV_Screen_Graphic(0x10);
+                        var_0 = Print_TV_Message(4);
+                        break;
+                }
+                goto LBL_000B;
+            }
+            switch (Check_Flag(7)) {
+                case 0:
+                    Set_TV_Screen_Graphic(0x15);
+                    var_0 = Print_TV_Message(5);
+                    break;
+                case 1:
+                    Set_TV_Screen_Graphic(0x16);
+                    var_0 = Print_TV_Message(6);
+                    break;
+                case 3:
+                    Set_TV_Screen_Graphic(0x10);
+                    var_0 = Print_TV_Message(7);
+                    break;
+                case 2:
+                    Set_TV_Screen_Graphic(0x10);
+                    var_0 = Print_TV_Message(3);
+                    break;
+                case 4:
+                    Set_TV_Screen_Graphic(0x10);
+                    var_0 = Print_TV_Message(4);
+                    break;
+            }
+            break;
+        case 1:
+            if ((Check_Flag(2) == 0x1E)) {
+                switch (Check_Flag(7)) {
+                    case 0:
+                        Set_TV_Screen_Graphic(0x15);
+                        var_0 = Print_TV_Message(8);
+                        break;
+                    case 1:
+                        Set_TV_Screen_Graphic(0x16);
+                        var_0 = Print_TV_Message(9);
+                        break;
+                    case 3:
+                        Set_TV_Screen_Graphic(0x10);
+                        var_0 = Print_TV_Message(7);
+                        break;
+                    case 2:
+                        Set_TV_Screen_Graphic(0x10);
+                        var_0 = Print_TV_Message(3);
+                        break;
+                    case 4:
+                        Set_TV_Screen_Graphic(0x10);
+                        var_0 = Print_TV_Message(4);
+                        break;
+                }
+                goto LBL_001E;
+            }
+            switch (Check_Flag(7)) {
+                case 0:
+                    Set_TV_Screen_Graphic(0x15);
+                    var_0 = Print_TV_Message(0);
+                    break;
+                case 1:
+                    Set_TV_Screen_Graphic(0x16);
+                    var_0 = Print_TV_Message(10);
+                    break;
+                case 3:
+                    Set_TV_Screen_Graphic(0x18);
+                    var_0 = Print_TV_Message(11);
+                    break;
+                case 2:
+                    Set_TV_Screen_Graphic(0x10);
+                    var_0 = Print_TV_Message(3);
+                    break;
+                case 4:
+                    Set_TV_Screen_Graphic(0x10);
+                    var_0 = Print_TV_Message(4);
+                    break;
+            }
+            break;
+        case 2:
+            if ((Check_Flag(2) == 0x1E)) {
+                switch (Check_Flag(7)) {
+                    case 0:
+                        Set_TV_Screen_Graphic(0x15);
+                        var_0 = Print_TV_Message(12);
+                        break;
+                    case 1:
+                        Set_TV_Screen_Graphic(0x10);
+                        var_0 = Print_TV_Message(13);
+                        break;
+                    case 3:
+                        Set_TV_Screen_Graphic(0x10);
+                        var_0 = Print_TV_Message(14);
+                        break;
+                    case 2:
+                        Set_TV_Screen_Graphic(0x17);
+                        var_0 = Print_TV_Message(15);
+                        break;
+                    case 4:
+                        Set_TV_Screen_Graphic(0x19);
+                        var_0 = Print_TV_Message(16);
+                        break;
+                }
+                goto LBL_0031;
+            }
+            switch (Check_Flag(7)) {
+                case 0:
+                    Set_TV_Screen_Graphic(0x15);
+                    var_0 = Print_TV_Message(8);
+                    break;
+                case 1:
+                    Set_TV_Screen_Graphic(0x16);
+                    var_0 = Print_TV_Message(9);
+                    break;
+                case 3:
+                    Set_TV_Screen_Graphic(0x10);
+                    var_0 = Print_TV_Message(14);
+                    break;
+                case 2:
+                    Set_TV_Screen_Graphic(0x10);
+                    var_0 = Print_TV_Message(3);
+                    break;
+                case 4:
+                    Set_TV_Screen_Graphic(0x10);
+                    var_0 = Print_TV_Message(4);
+                    break;
+            }
+            break;
+        case 3:
+            if ((Check_Flag(2) == 0x1E)) {
+                switch (Check_Flag(7)) {
+                    case 0:
+                        Set_TV_Screen_Graphic(0x15);
+                        var_0 = Print_TV_Message(5);
+                        break;
+                    case 1:
+                        Set_TV_Screen_Graphic(0x16);
+                        var_0 = Print_TV_Message(6);
+                        break;
+                    case 3:
+                        Set_TV_Screen_Graphic(0x10);
+                        var_0 = Print_TV_Message(14);
+                        break;
+                    case 2:
+                        Set_TV_Screen_Graphic(0x10);
+                        var_0 = Print_TV_Message(3);
+                        break;
+                    case 4:
+                        Set_TV_Screen_Graphic(0x10);
+                        var_0 = Print_TV_Message(4);
+                        break;
+                }
+                goto LBL_0044;
+            }
+            switch (Check_Flag(7)) {
+                case 0:
+                    Set_TV_Screen_Graphic(0x15);
+                    var_0 = Print_TV_Message(12);
+                    break;
+                case 1:
+                    Set_TV_Screen_Graphic(0x10);
+                    var_0 = Print_TV_Message(13);
+                    break;
+                case 3:
+                    Set_TV_Screen_Graphic(0x10);
+                    var_0 = Print_TV_Message(14);
+                    break;
+                case 2:
+                    Set_TV_Screen_Graphic(0x17);
+                    var_0 = Print_TV_Message(15);
+                    break;
+                case 4:
+                    Set_TV_Screen_Graphic(0x19);
+                    var_0 = Print_TV_Message(16);
+                    break;
+            }
+            break;
+    }
+    Close_TV_Interface();
+    TalkClose();
+    switch (var_0) {
+        case 0:
+        case 1:
+        case 2:
+        case 3:
+            Set_Flag(0x244, var_0);
+            Execute_Script(356);
+            break;
+        case 4:
+        case 5:
+            break;
+    }
+    exit;
+}

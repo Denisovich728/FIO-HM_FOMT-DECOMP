@@ -1,0 +1,38 @@
+// Script 1286
+#include "Fomt_Lib.src"
+
+script 1286 Event_1286 {
+    const MESSAGE_0 = "I wanted to enter my Sheep,\r\nbut they said it \r\nwas too young!\BRK\r\nIt's no fair! I don't think\r\nage should matter at all!\BRK";
+    const MESSAGE_1 = "I'm so glad you won, \r\n\xFF!!\BRK";
+    const MESSAGE_2 = "Don't feel bad, \r\n\xFF!.\BRK";
+    
+    if ((Check_If_Single(5) == 0)) {
+        Free_Event_Entity(5);
+    }
+    SetEntityFacing(5, GetOppositeFacing(GetEntityFacing(0)));
+    if ((Check_Flag(0x1AF) == 0)) {
+        TalkOpen();
+        Set_Portrait(0xB2);
+        Set_Name_Window(5);
+        TalkMessage(0);
+    } else {
+        if ((Check_Flag(0x1B1) == 1)) {
+            TalkOpen();
+            Set_Portrait(0xB1);
+            Set_Name_Window(5);
+            TalkMessage(1);
+            goto LBL_0006;
+        }
+        TalkOpen();
+        Set_Portrait(0xB3);
+        Set_Name_Window(5);
+        TalkMessage(2);
+    }
+    TalkClose();
+    if ((Has_Spoken_To_NPC_Today(5) == 0)) {
+        Give_Friendship_Points(5, 5);
+    }
+    Free_Event_Entity(5);
+    SetEntityFacing(5, "Left");
+    exit;
+}

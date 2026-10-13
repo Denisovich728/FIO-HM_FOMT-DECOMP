@@ -1,0 +1,31 @@
+// Script 921
+#include "Fomt_Lib.src"
+
+script 921 Event_0921 {
+    const MESSAGE_0 = "I kept pressuring Ann to get\r\nmarried...\BRK\WAIT_CLICKBut now that she did, \r\nI'm kind of sad! \BRK";
+    const MESSAGE_1 = "Still, it's not like she's \r\ngoing far away or anything! \BRK\WAIT_CLICKI'm glad to have her stay \r\naround. \BRK";
+    
+    if ((Check_If_Single(0x18) == 0)) {
+        Free_Event_Entity(0x18);
+    }
+    if ((Has_NPC_Talked_Today(0x18) == 0)) {
+        SetEntityFacing(0x18, GetOppositeFacing(GetEntityFacing(0)));
+        TalkOpen();
+        Set_Portrait(0x56);
+        Set_Name_Window(0x18);
+        TalkMessage(0);
+        TalkClose();
+        SetEntityFacing(0x18, "Left");
+        Free_Event_Entity(0x18);
+    } else {
+        SetEntityFacing(0x18, GetOppositeFacing(GetEntityFacing(0)));
+        TalkOpen();
+        Set_Portrait(0x54);
+        Set_Name_Window(0x18);
+        TalkMessage(1);
+        TalkClose();
+        SetEntityFacing(0x18, "Left");
+        Free_Event_Entity(0x18);
+    }
+    exit;
+}

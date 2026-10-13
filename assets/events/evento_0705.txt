@@ -1,0 +1,39 @@
+// Script 705
+#include "Fomt_Lib.src"
+
+script 705 Event_0705 {
+    const MESSAGE_0 = "Ahh....This is the life!\BRK";
+    const MESSAGE_1 = "Stop it...!\BRK";
+    const MESSAGE_2 = "I'm so glad I married you, \r\nKaren. \BRK";
+    const MESSAGE_3 = "Will you stop embarrasing me\r\nin front of \xFF!?\BRK";
+    
+    SetEntityFacing(2, GetOppositeFacing(GetEntityFacing(0)));
+    TalkOpen();
+    if ((Has_NPC_Talked_Today(2) == 0)) {
+        Set_Portrait(0);
+        Set_Name_Window(2);
+        TalkMessage(0);
+        TalkClose();
+        SetEntityFacing(0x13, "Right");
+        TalkOpen();
+        Set_Portrait(0x4C);
+        Set_Name_Window(0x13);
+        TalkMessage(1);
+    } else {
+        Set_Portrait(1);
+        Set_Name_Window(2);
+        TalkMessage(2);
+        SetEntityFacing(0x13, "Right");
+        TalkOpen();
+        Set_Portrait(0x4C);
+        Set_Name_Window(0x13);
+        TalkMessage(3);
+    }
+    TalkClose();
+    Free_Event_Entity(2);
+    Free_Event_Entity(0x13);
+    SetEntityFacing(2, "Left");
+    SetEntityFacing(0x13, "Right");
+    exit;
+    exit;
+}

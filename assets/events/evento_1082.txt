@@ -1,0 +1,22 @@
+// Script 1082
+#include "Fomt_Lib.src"
+
+script 1082 Event_1082 {
+    const MESSAGE_0 = "Everyone's gone home now.\r\nIf you want to exchange \r\nyour medal for a prize, \BRK\r\ncome see me. \BRK";
+    
+    if ((Check_If_Single(0xD) == 0)) {
+        Free_Event_Entity(0xD);
+    }
+    SetEntityFacing(0xD, GetOppositeFacing(GetEntityFacing(0)));
+    TalkOpen();
+    Set_Portrait(0x75);
+    Set_Name_Window(0xD);
+    TalkMessage(0);
+    TalkClose();
+    if ((Has_Spoken_To_NPC_Today(0xD) == 0)) {
+        Give_Friendship_Points(0xD, 5);
+    }
+    Free_Event_Entity(0xD);
+    SetEntityFacing(0xD, "Down");
+    exit;
+}

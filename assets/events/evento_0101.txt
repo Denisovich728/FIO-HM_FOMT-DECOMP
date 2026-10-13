@@ -1,0 +1,11 @@
+// Script 101
+#include "Fomt_Lib.src"
+
+script 101 Event_0101 {
+    const MESSAGE_0 = "Parasol\BRK";
+    
+    TalkOpen();
+    Print_Message(0);
+    TalkClose();
+    exit;
+}

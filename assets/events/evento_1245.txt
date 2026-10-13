@@ -1,0 +1,110 @@
+// Script 1245
+#include "Fomt_Lib.src"
+
+script 1245 Event_1245 {
+    const MESSAGE_0 = "Tomorrow is the Fall \r\nHorse Racing in the Square.\BRK\WAIT_CLICKIf you have a Horse that\r\ncan enter, you should \r\ngive it a try. \BRK";
+    const MESSAGE_1 = "Tomorrow is the Fall \r\nHorse Racing in the Square.\BRK\WAIT_CLICKIf you have a good Horse, \r\nyou should try entering.\BRK";
+    const MESSAGE_2 = "Hi, \xFF!. \r\nTomorrow is the Horse \r\nRaces in the Square. \BRK\WAIT_CLICKYou thinking of entering?\BRK";
+    const MESSAGE_3 = "Yes.";
+    const MESSAGE_4 = "No.";
+    const MESSAGE_5 = "In that case, I'll take \r\n\xFF\" with me now.\r\nBe there by 10AM tomorrow!\BRK";
+    const MESSAGE_6 = "That's too bad. \r\nYou should still come and \r\nbet on the races, though. \r\nIt's fun!\BRK";
+    
+    var var_0;
+    
+    if ((Inventory_Check() == 1)) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    SetEntityPosition(0xD, 0xE4, 0x91, "Up");
+    SetEntityAnim(0xD, 0x85F);
+    Fade_In(2, 1);
+    if ((Check_Flag(0x43) == 0)) {
+        TalkOpen();
+        Set_Portrait(0x75);
+        Set_Name_Window(0xD);
+        TalkMessage(0);
+        TalkClose();
+        Set_Animal_Festival_Entry_Status(0);
+    } else {
+        if ((Check_Flag(0x44) == 0)) {
+            TalkOpen();
+            Set_Portrait(0x75);
+            Set_Name_Window(0xD);
+            TalkMessage(1);
+            TalkClose();
+            Set_Animal_Festival_Entry_Status(0);
+            goto LBL_0007;
+        }
+        TalkOpen();
+        Set_Portrait(0x75);
+        Set_Name_Window(0xD);
+        TalkMessage(2);
+        TalkClose();
+        TalkOpen();
+        var_0 = TalkChoice2(3, 4);
+        switch (var_0) {
+            case 1:
+                TalkClose();
+                Set_Animal_Festival_Entry_Status(1);
+                Fade_Out(2, 1);
+                SetEntityPosition(0xD, 0xF2, 0x91, "Up");
+                SetEntityAnim(0xD, 0x85F);
+                SetEntityPosition(0x2C, 0xD4, 0x91, "Up");
+                SetEntityAnim(0x2C, 0x77A);
+                Wait_For_Animation(0x2C);
+                Fade_In(2, 1);
+                TalkOpen();
+                Set_Portrait(0x75);
+                Set_Name_Window(0xD);
+                TalkMessage(5);
+                TalkClose();
+                SetEntityAnim(0xD, 0x863);
+                SetEntityFacing(0xD, "Right");
+                Set_Vector_X(0xD, 0x14A, 1);
+                Execute_Movement(0xD);
+                SetEntityAnim(0xD, 0x85F);
+                SetEntityFacing(0xD, "Left");
+                SetEntityAnim(0x2C, 0x77E);
+                SetEntityFacing(0x2C, "Right");
+                Set_Vector_X(0x2C, 0x131, 1);
+                Execute_Movement(0x2C);
+                SetEntityAnim(0x2C, 0x77A);
+                Make_Delay(0x1E);
+                SetEntityFacing(0x2C, "Up");
+                SetEntityFacing(0xD, "Up");
+                SetEntityAnim(0xD, 0x863);
+                Set_Vector_Y(0xD, 0, 1);
+                SetEntityAnim(0x2C, 0x77E);
+                Set_Vector_Y(0x2C, 0, 1);
+                Execute_Movement(0xD);
+                Execute_Movement(0x2C);
+                Hide_Entity(0xD);
+                Hide_Entity(0x2C);
+                Set_Flag(0x1AB, 1);
+                Open_Animal_Selection_UI(0);
+                Set_Flag(0x1AA, 2);
+                exit;
+            case 2:
+                Set_Animal_Festival_Entry_Status(0);
+                TalkOpen();
+                Set_Portrait(0x75);
+                Set_Name_Window(0xD);
+                TalkMessage(6);
+                TalkClose();
+                break;
+        }
+    }
+    SetEntityAnim(0xD, 0x863);
+    SetEntityFacing(0xD, "Right");
+    Set_Vector_X(0xD, 0x13F, 1);
+    Execute_Movement(0xD);
+    SetEntityFacing(0xD, "Up");
+    Set_Vector_Y(0xD, 0, 1);
+    Execute_Movement(0xD);
+    Hide_Entity(0xD);
+    Set_Flag(0x1AB, 0);
+    Set_Flag(0x1AA, 2);
+    exit;
+}

@@ -1,0 +1,102 @@
+// Script 864
+#include "Fomt_Lib.src"
+
+script 864 Event_0864 {
+    const MESSAGE_0 = "Hm? I thought that it was\r\ntime \xFF* started\r\nstanding, but I guess \BRK\r\nI was wrong. \BRK";
+    const MESSAGE_1 = "I'll give him some\r\nhelp!\BRK";
+    const MESSAGE_2 = "Hhhrrr...\r\nWaaa!!....\BRK";
+    const MESSAGE_3 = "There you go, \r\n\xFF*. \r\nYou're standing!\BRK";
+    const MESSAGE_4 = "Goo!\BRK";
+    const MESSAGE_5 = "Well, now that \r\n\xFF* is \r\nstanding, I'll be off. \BRK";
+    
+    Warp_Player(0x1D, 0x14C, 0x7C);
+    PlayBGM(1, 0x11);
+    SetEntityPosition(0, 0x14C, 0x7C, "Right");
+    if (Inventory_Check()) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    SetEntityPosition(0x23, 0x16C, 0x7C, "Left");
+    SetEntityAnim(0x23, 0x26B);
+    Fade_In(2, 1);
+    Make_Delay(0x3C);
+    PlaySong(0, 0xBE);
+    SetEntityPosition(0x46, (GetEntityX(0) + 0x10), (GetEntityY(0) + 0x18), "Down");
+    Spawn_Event_Entity(0x46, 3);
+    SetEntityAnim(0x46, 0x42C);
+    Tick_Overnight_Engine(1, 0);
+    Tick_Overnight_Engine(1, 0);
+    Fade_Out(1, 1);
+    Hide_Entity(0x46);
+    SetEntityPosition(0x1F, 0x15C, 0x94, "Up");
+    SetEntityAnim(0x1F, 0x669);
+    Fade_In(1, 1);
+    Make_Delay(0x3C);
+    Show_Emote(0, 2, 0);
+    Make_Delay(0x3C);
+    SetEntityFacing(0, "Down");
+    Make_Delay(0x3C);
+    TalkOpen();
+    Set_Name_Window(0x1F);
+    Set_Portrait(0x3A);
+    TalkMessage(0);
+    Set_Name_Window(0x1F);
+    Set_Portrait(0x39);
+    TalkMessage(1);
+    Set_Name_Window(0x1F);
+    Set_Portrait(0x3A);
+    TalkMessage(2);
+    TalkClose();
+    PlaySong(0, 0xBE);
+    SetEntityPosition(0x46, GetEntityX(0x23), (GetEntityY(0x23) + 2), "Down");
+    Spawn_Event_Entity(0x46, 3);
+    SetEntityAnim(0x46, 0x42C);
+    Tick_Overnight_Engine(1, 0);
+    Tick_Overnight_Engine(1, 0);
+    Fade_Out(1, 1);
+    Hide_Entity(0x46);
+    SetEntityAnim(0x23, 0x267);
+    SetEntityFacing(0, "Right");
+    Make_Delay(0x3C);
+    Fade_In(1, 1);
+    TalkOpen();
+    Set_Name_Window(0x1F);
+    Set_Portrait(0x39);
+    TalkMessage(3);
+    TalkClose();
+    Make_Delay(0x1E);
+    SetEntityFacing(0x23, "Down");
+    TalkOpen();
+    Set_Name_Window(0x23);
+    Set_Portrait(0x13);
+    TalkMessage(4);
+    TalkClose();
+    TalkOpen();
+    Set_Name_Window(0x1F);
+    Set_Portrait(0x39);
+    TalkMessage(5);
+    TalkClose();
+    Make_Delay(0x3C);
+    PlaySong(0, 0xBE);
+    SetEntityPosition(0x46, GetEntityX(0x1F), (GetEntityY(0x1F) + 2), "Down");
+    Spawn_Event_Entity(0x46, 3);
+    SetEntityAnim(0x46, 0x42C);
+    Tick_Overnight_Engine(1, 0);
+    Tick_Overnight_Engine(1, 0);
+    Fade_Out(1, 1);
+    Hide_Entity(0x46);
+    Hide_Entity(0x1F);
+    Make_Delay(0x1E);
+    Fade_In(1, 1);
+    Free_Event_Entity(0x1F);
+    Free_Event_Entity(0x23);
+    Give_Love_Points(0x1F, 0xBB8);
+    Give_Friendship_Points(0x23, 0x14);
+    Set_Flag(0x2F, 1);
+    Make_Delay(0x3C);
+    End_Cinematic_State();
+    Routine_State_Override(0x23, 0x361);
+    Set_Flag(0x17B, 1);
+    exit;
+}

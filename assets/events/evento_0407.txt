@@ -1,0 +1,11 @@
+// Script 407
+#include "Fomt_Lib.src"
+
+script 407 Event_0407 {
+    const MESSAGE_0 = "Pestle and mortar\BRK";
+    
+    TalkOpen();
+    Print_Message(0);
+    TalkClose();
+    exit;
+}

@@ -1,0 +1,10 @@
+{
+    "name": "Dragon_Fly_Left",
+    "anim_id": "0x3df",
+    "anim_id_dec": 991,
+    "graphic_id": 1,
+    "script_addr": "0x8664ea8",
+    "script_rom_offset": "0x664ea8",
+    "frame_count": 0,
+    "frames": []
+}

@@ -1,0 +1,270 @@
+// Script 1124
+#include "Fomt_Lib.src"
+
+script 1124 Event_1124 {
+    const MESSAGE_0 = "Have you brought a dish, \r\n\xFF!? \BRK";
+    const MESSAGE_1 = "I have.";
+    const MESSAGE_2 = "I have not.";
+    const MESSAGE_3 = "I see you don't have \r\nanything with you. \BRK";
+    const MESSAGE_4 = "Place your dish along with \r\neverybody else's. \BRK\WAIT_CLICKThe Gourmet will try them\r\nall and declare the winner.\BRK\WAIT_CLICKCan we start now?\BRK";
+    const MESSAGE_5 = "Yes.";
+    const MESSAGE_6 = "No.";
+    const MESSAGE_7 = "Let the judging begin!\r\nGourmet, go to it!\BRK";
+    const MESSAGE_8 = "Well, when you're ready \r\njust let us know. \BRK";
+    const MESSAGE_9 = "We'd like to begin the \r\njudging now. Alright? \BRK";
+    const MESSAGE_10 = "Can we begin the judging\r\n now? \BRK";
+    const MESSAGE_11 = "We can't begin the judging \r\nif you're still holding onto\r\nyour entry, you know! \BRK";
+    
+    var var_0;
+    var var_1;
+    
+    switch (Compare_Gift()) {
+        case 0:
+            switch (Search_Food_Gift_Address()) {
+                case 0x14:
+                case 0x16:
+                case 0x17:
+                case 0x18:
+                case 0x19:
+                case 0x1A:
+                case 0x1B:
+                case 0x21:
+                case 0x27:
+                case 0x3A:
+                case 0x3C:
+                case 0x3E:
+                case 0x3F:
+                case 0x40:
+                case 0x4B:
+                case 0x4C:
+                case 0x4D:
+                case 0x4E:
+                case 0x4F:
+                case 0x50:
+                case 0x51:
+                case 0x52:
+                case 0x53:
+                case 0x54:
+                case 0x55:
+                case 0x56:
+                case 0x57:
+                case 0x58:
+                case 0x59:
+                case 0x5A:
+                case 0x5B:
+                case 0x5C:
+                case 0x5D:
+                case 0x5E:
+                case 0x5F:
+                case 0x60:
+                case 0x61:
+                case 0x62:
+                case 0x63:
+                case 0x64:
+                case 0x65:
+                case 0x66:
+                case 0x67:
+                case 0x68:
+                case 0x69:
+                case 0x6A:
+                case 0x6B:
+                case 0x6C:
+                case 0x6D:
+                case 0x6E:
+                case 0x6F:
+                case 0x70:
+                case 0x71:
+                case 0x72:
+                case 0x73:
+                case 0x74:
+                case 0x75:
+                case 0x76:
+                case 0x77:
+                case 0x78:
+                case 0x79:
+                case 0x7A:
+                case 0x7B:
+                case 0x7C:
+                case 0x7D:
+                case 0x7E:
+                case 0x7F:
+                case 0x80:
+                case 0x81:
+                case 0x82:
+                case 0x83:
+                case 0x84:
+                case 0x85:
+                case 0x86:
+                case 0x87:
+                case 0x88:
+                case 0x89:
+                case 0x8A:
+                case 0x8B:
+                case 0x8C:
+                case 0x8D:
+                case 0x8E:
+                case 0x8F:
+                case 0x90:
+                case 0x91:
+                case 0x92:
+                case 0x93:
+                case 0x94:
+                case 0x95:
+                case 0x96:
+                case 0x97:
+                case 0x98:
+                case 0x99:
+                case 0x9A:
+                case 0x9B:
+                case 0x9C:
+                case 0x9D:
+                case 0x9E:
+                case 0x9F:
+                case 0xA3:
+                case 0xA4:
+                case 0xA5:
+                case 0xA6:
+                case 0xA7:
+                case 0xA8:
+                case 0xA9:
+                case 0xAA:
+                    var_1 = 0xF;
+                    break;
+            }
+            break;
+    }
+    if ((Check_If_Single(0xD) == 0)) {
+        Free_Event_Entity(0xD);
+    }
+    SetEntityFacing(0xD, GetOppositeFacing(GetEntityFacing(0)));
+    if ((Has_Spoken_To_NPC_Today(0xD) == 0)) {
+        Give_Friendship_Points(0xD, 5);
+    }
+    Free_Event_Entity(0xD);
+    TalkOpen();
+    if ((Check_Flag(0x18F) == 0)) {
+        Set_Portrait(0x75);
+        Set_Name_Window(0xD);
+        TalkMessage(0);
+        TalkClose();
+        TalkOpen();
+        var_0 = TalkChoice2(1, 2);
+        switch (var_0) {
+            case 1:
+                TalkClose();
+                TalkOpen();
+                if (Inventory_Check()) {
+                    Set_Portrait(0x75);
+                    Set_Name_Window(0xD);
+                    TalkMessage(3);
+                    TalkClose();
+                    goto LBL_0011;
+                }
+                if ((var_1 == 0xF)) {
+                    Set_Flag(0x18F, 1);
+                    Set_Flag(0x190, Func120());
+                    Set_Portrait(0x76);
+                    Set_Name_Window(0xD);
+                    TalkMessage(4);
+                    TalkClose();
+                    Drop_Held_Item();
+                    TalkOpen();
+                    var_0 = TalkChoice2(5, 6);
+                    switch (var_0) {
+                        case 1:
+                            TalkClose();
+                            TalkOpen();
+                            Set_Portrait(0x76);
+                            Set_Name_Window(0xD);
+                            TalkMessage(7);
+                            TalkClose();
+                            Fade_Out(2, 1);
+                            Execute_Script(1128);
+                            break;
+                        case 2:
+                            TalkClose();
+                            TalkOpen();
+                            Set_Portrait(0x75);
+                            Set_Name_Window(0xD);
+                            TalkMessage(8);
+                            TalkClose();
+                            break;
+                    }
+                    goto LBL_0019;
+                }
+                Set_Portrait(0x75);
+                Set_Name_Window(0xD);
+                TalkMessage(3);
+                TalkClose();
+                break;
+            case 2:
+                TalkClose();
+                TalkOpen();
+                Set_Portrait(0x75);
+                Set_Name_Window(0xD);
+                TalkMessage(9);
+                TalkClose();
+                TalkOpen();
+                var_0 = TalkChoice2(5, 6);
+                switch (var_0) {
+                    case 1:
+                        TalkClose();
+                        TalkOpen();
+                        Set_Portrait(0x76);
+                        Set_Name_Window(0xD);
+                        TalkMessage(7);
+                        TalkClose();
+                        Fade_Out(2, 1);
+                        Execute_Script(1128);
+                        break;
+                    case 2:
+                        TalkClose();
+                        TalkOpen();
+                        Set_Portrait(0x75);
+                        Set_Name_Window(0xD);
+                        TalkMessage(8);
+                        TalkClose();
+                        break;
+                }
+                break;
+        }
+    } else {
+        Set_Portrait(0x76);
+        Set_Name_Window(0xD);
+        TalkMessage(10);
+        TalkClose();
+        TalkOpen();
+        var_0 = TalkChoice2(5, 6);
+        switch (var_0) {
+            case 1:
+                if (Inventory_Check()) {
+                    TalkClose();
+                    TalkOpen();
+                    Set_Portrait(0x76);
+                    Set_Name_Window(0xD);
+                    TalkMessage(7);
+                    TalkClose();
+                    Fade_Out(2, 1);
+                    Execute_Script(1128);
+                    goto LBL_0024;
+                }
+                TalkClose();
+                TalkOpen();
+                Set_Portrait(0x75);
+                Set_Name_Window(0xD);
+                TalkMessage(11);
+                TalkClose();
+                break;
+            case 2:
+                TalkClose();
+                TalkOpen();
+                Set_Portrait(0x75);
+                Set_Name_Window(0xD);
+                TalkMessage(8);
+                TalkClose();
+                break;
+        }
+    }
+    SetEntityFacing(0xD, "Down");
+    exit;
+}

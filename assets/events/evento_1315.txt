@@ -1,0 +1,23 @@
+// Script 1315
+#include "Fomt_Lib.src"
+
+script 1315 Event_1315 {
+    const MESSAGE_0 = "You came for the New Year\r\nNoodles, too? I just love\r\nthem! I think Buckwheat \r\nNoodles are the best. \r\nThey're nutritious, and \r\ntaste good...I'm getting\r\nhungry talking!\r\nWhere are the Noodles?\BRK";
+    
+    if ((Check_If_Single(9) == 0)) {
+        Free_Event_Entity(9);
+    }
+    SetEntityFacing(9, GetOppositeFacing(GetEntityFacing(0)));
+    TalkOpen();
+    Set_Portrait(0x8A);
+    Set_Name_Window(9);
+    TalkMessageSlow(0);
+    Talk_Mini_Close();
+    TalkClose();
+    if ((Has_Spoken_To_NPC_Today(9) == 0)) {
+        Give_Friendship_Points(9, 5);
+    }
+    Free_Event_Entity(9);
+    SetEntityFacing(9, "Right");
+    exit;
+}

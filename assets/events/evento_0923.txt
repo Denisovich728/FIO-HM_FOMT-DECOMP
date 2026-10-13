@@ -1,0 +1,31 @@
+// Script 923
+#include "Fomt_Lib.src"
+
+script 923 Event_0923 {
+    const MESSAGE_0 = "I think of Cliff just like \r\nmy own son. \BRK\WAIT_CLICKI'm so glad for him. \BRK";
+    const MESSAGE_1 = "Ann is a good girl, so I'm\r\nhappy, too. \r\nDoug is a good guy. \BRK";
+    
+    if ((Check_If_Single(8) == 0)) {
+        Free_Event_Entity(8);
+    }
+    if ((Has_NPC_Talked_Today(8) == 0)) {
+        SetEntityFacing(8, GetOppositeFacing(GetEntityFacing(0)));
+        TalkOpen();
+        Set_Portrait(0x86);
+        Set_Name_Window(8);
+        TalkMessage(0);
+        TalkClose();
+        SetEntityFacing(8, "Right");
+        Free_Event_Entity(8);
+    } else {
+        SetEntityFacing(8, GetOppositeFacing(GetEntityFacing(0)));
+        TalkOpen();
+        Set_Portrait(0x86);
+        Set_Name_Window(8);
+        TalkMessage(1);
+        TalkClose();
+        SetEntityFacing(8, "Right");
+        Free_Event_Entity(8);
+    }
+    exit;
+}

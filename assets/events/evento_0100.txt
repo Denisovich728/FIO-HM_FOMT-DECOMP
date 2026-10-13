@@ -1,0 +1,11 @@
+// Script 100
+#include "Fomt_Lib.src"
+
+script 100 Event_0100 {
+    const MESSAGE_0 = "Bench\BRK";
+    
+    TalkOpen();
+    Print_Message(0);
+    TalkClose();
+    exit;
+}

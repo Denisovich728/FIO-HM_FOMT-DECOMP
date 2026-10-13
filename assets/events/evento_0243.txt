@@ -1,0 +1,11 @@
+// Script 243
+#include "Fomt_Lib.src"
+
+script 243 Event_0243 {
+    const MESSAGE_0 = "Desk\BRK";
+    
+    TalkOpen();
+    Print_Message(0);
+    TalkClose();
+    exit;
+}

@@ -1,0 +1,503 @@
+// Script 1243
+#include "Fomt_Lib.src"
+
+script 1243 Event_1243 {
+    const MESSAGE_0 = "It's so beautiful...\BRK";
+    const MESSAGE_1 = "I love the moon. \BRK";
+    const MESSAGE_2 = "It's so beautiful!\BRK";
+    const MESSAGE_3 = "It's wonderful...\BRK";
+    const MESSAGE_4 = "The moon is so pretty...\BRK";
+    const MESSAGE_5 = "I love gazing at the moon \r\nlike this...\r\nIt makes me so calm. \BRK";
+    const MESSAGE_6 = "It looks so BIG \r\ntonight!...\BRK";
+    const MESSAGE_7 = "The full moon is so bright!\r\nIt's like a huge \r\nflashlight...\BRK";
+    const MESSAGE_8 = "The moon is so mysterious...\r\nI think we all have some \r\ndeep connection to it, but\BRK\r\nI can't put it into words. \BRK";
+    const MESSAGE_9 = "I've always loved the moon.\r\nEspecially the pale moon \r\nvisible in the morning. \BRK\r\nIsn't that lovely? \BRK";
+    const MESSAGE_10 = "Is it just me, or does the\r\nmoon look even more \r\nbeautiful tonight than \BRK\r\nusual? \BRK";
+    const MESSAGE_11 = "It's light makes everything\r\ndifferent. \BRK";
+    const MESSAGE_12 = "It looks so close...\r\nLike I could reach out \r\nand touch it. \BRK";
+    const MESSAGE_13 = "Dad said he would come with\r\nMom, but maybe they found\r\na better spot. \BRK\WAIT_CLICKOr, maybe Mom decided not\r\nto come a all. She hates \r\nthe mountain at night. \BRK";
+    const MESSAGE_14 = "The moon's so bright, I \r\ncan see everything just \r\nlike during the day! \BRK";
+    const MESSAGE_15 = "I love spending all night\r\nmoongazing like this...\BRK";
+    const MESSAGE_16 = "Wow! Look at these!\r\nThey look delicious. \r\nThank you so much for \BRK\r\nmaking them! \BRK";
+    const MESSAGE_17 = "You made these to \r\nshare with me? Thanks!\BRK\WAIT_CLICKMmmm...They're really good!\BRK";
+    const MESSAGE_18 = "You made Moon Dumplings\r\nfor me? You're so sweet!\BRK\WAIT_CLICKMmmm...They're delicious!\BRK";
+    const MESSAGE_19 = "Moon Dumplings? For me?\BRK\WAIT_CLICKThanks so much! I love\r\neating these while \r\nwatching the moon! \BRK\r\nThey're delicious! \BRK";
+    const MESSAGE_20 = "Moon Dumplings! \r\nI tried to make some myself\r\ntoday, but they didn't \BRK\r\nturn out so well...\BRK\WAIT_CLICKYou mean I can have yours?\BRK\WAIT_CLICKMmmm...They're delicious! \BRK";
+    const MESSAGE_21 = "The moon looks extra \r\nbeautiful tonight, doesn't\r\nit? \BRK";
+    const MESSAGE_22 = "The moonlight makes \r\neverything look so pale and\r\nmysterious!...\BRK";
+    const MESSAGE_23 = "Dad said he would come with\r\nMom, but maybe they found\r\na better spot. \BRK\WAIT_CLICKOr, maybe Mom decided not \r\nto come a all. She hates \r\nthe mountain at night. \BRK";
+    const MESSAGE_24 = "Moon Dumplings! \r\nI tried to make some myself\r\ntoday, but they didn't \r\nturn out so well...\BRK\WAIT_CLICKYou mean I can have yours?\BRK\WAIT_CLICKMmmm...They're delicious! \BRK";
+    const MESSAGE_25 = "Why can we see the moon\r\nso clearly tonight?\BRK\WAIT_CLICKWhy is it just\r\ntonight?\BRK";
+    const MESSAGE_26 = "I love spending all night \r\nmoongazing like this...\BRK";
+    
+    var var_1;
+    var var_2;
+    var var_3;
+    var var_4;
+    var var_5;
+    var var_6;
+    var var_7;
+    var var_8;
+    var var_9;
+    var var_10;
+    
+    switch (Check_Flag(0x1A9)) {
+        case 0:
+            var_1 = 0x13;
+            break;
+        case 1:
+            var_1 = 0x19;
+            break;
+        case 2:
+            var_1 = 3;
+            break;
+        case 3:
+            var_1 = 0xC;
+            break;
+        case 4:
+            var_1 = 0x15;
+            break;
+    }
+    switch (var_1) {
+        case 0x13:
+            var_3 = 0x49;
+            var_4 = 0x4A;
+            var_5 = 0x4B;
+            var_6 = 0x4C;
+            var_7 = 0x4D;
+            var_8 = 0x4E;
+            var_9 = 0x48;
+            break;
+        case 3:
+            var_3 = 8;
+            var_4 = 9;
+            var_5 = 0xA;
+            var_6 = 0xB;
+            var_7 = 0xC;
+            var_8 = 0xD;
+            var_9 = 7;
+            break;
+        case 0xC:
+            var_3 = 0x68;
+            var_4 = 0x69;
+            var_5 = 0x6A;
+            var_6 = 0x6B;
+            var_7 = 0x6C;
+            var_8 = 0x6D;
+            var_9 = 0x67;
+            break;
+        case 0x19:
+            var_3 = 0x58;
+            var_4 = 0x59;
+            var_5 = 0x5A;
+            var_6 = 0x5B;
+            var_7 = 0x5C;
+            var_8 = 0x5D;
+            var_9 = 0x57;
+            break;
+        case 0x15:
+            var_3 = 0x7A;
+            var_4 = 0x7B;
+            var_5 = 0x7C;
+            var_6 = 0x7D;
+            var_7 = 0x7E;
+            var_8 = 0x7F;
+            var_9 = 0x79;
+            break;
+    }
+    switch (var_1) {
+        case 0x13:
+            var_2 = 0x691;
+            break;
+        case 3:
+            var_2 = 0x22F;
+            break;
+        case 0xC:
+            var_2 = 0x813;
+            break;
+        case 0x19:
+            var_2 = 0x7BE;
+            break;
+        case 0x15:
+            var_2 = 0x884;
+            break;
+    }
+    Warp_Player(8, 0xEE, 0xF4);
+    PlayBGM(1, 0xE);
+    SetEntityPosition(0, 0xE6, 0xF4, "Up");
+    if (Inventory_Check()) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    SetEntityPosition(var_1, 0xFE, 0xF4, "Up");
+    SetEntityAnim(var_1, var_2);
+    Fade_In(2, 1);
+    Make_Delay((0x3C * 3));
+    SetEntityFacing(0, "Right");
+    SetEntityFacing(var_1, "Left");
+    Make_Delay(0x1E);
+    TalkOpen();
+    Set_Name_Window(var_1);
+    Set_Hearth_Anim(var_1);
+    Set_Portrait(var_9);
+    switch (var_1) {
+        case 0x13:
+            TalkMessage(0);
+            break;
+        case 3:
+            TalkMessage(1);
+            break;
+        case 0x19:
+            TalkMessage(2);
+            break;
+        case 0xC:
+            TalkMessage(3);
+            break;
+        case 0x15:
+            TalkMessage(4);
+            break;
+    }
+    TalkClose();
+    SetEntityAnim(0, 0x1FE);
+    Make_Delay(0x3C);
+    if (Inventory_Check()) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    Make_Delay(0x1E);
+    SetEntityFacing(var_1, "Up");
+    SetEntityFacing(0, "Up");
+    Make_Delay(0x1E);
+    Pan_Camera_To(0xF0, 0x80, 1);
+    Wait_Camera_Stop();
+    Make_Delay(0x3C);
+    TalkOpen();
+    Set_Name_Window(var_1);
+    Set_Hearth_Anim(var_1);
+    switch (var_1) {
+        case 0x13:
+            Set_Portrait(0x49);
+            TalkMessage(5);
+            break;
+        case 3:
+            Set_Portrait(7);
+            TalkMessage(6);
+            break;
+        case 0x19:
+            Set_Portrait(0x58);
+            TalkMessage(7);
+            break;
+        case 0xC:
+            Set_Portrait(0x67);
+            TalkMessage(8);
+            break;
+        case 0x15:
+            Set_Portrait(0x7A);
+            TalkMessage(9);
+            break;
+    }
+    TalkClose();
+    Make_Delay(0x3C);
+    Pan_Camera_To(0xEE, 0xF4, 1);
+    Wait_Camera_Stop();
+    if (Inventory_Check()) {
+        Make_Delay(0x1E);
+        if ((Func052(0x96) == -1)) {
+            SetEntityFacing(var_1, "Up");
+            Make_Delay(0x3C);
+            TalkOpen();
+            Set_Name_Window(var_1);
+            Set_Hearth_Anim(var_1);
+            switch (var_1) {
+                case 0x13:
+                    Set_Portrait(0x49);
+                    TalkMessage(10);
+                    break;
+                case 3:
+                    Set_Portrait(0xC);
+                    TalkMessage(11);
+                    break;
+                case 0x19:
+                    Set_Portrait(0x58);
+                    TalkMessage(12);
+                    break;
+                case 0xC:
+                    Set_Portrait(0x67);
+                    TalkMessage(13);
+                    break;
+                case 0x15:
+                    Set_Portrait(0x7A);
+                    TalkMessage(14);
+                    break;
+            }
+            TalkClose();
+            SetEntityFacing(0, "Up");
+            Make_Delay(0x3C);
+            Pan_Camera_To(0xF0, 0x80, 1);
+            Wait_Camera_Stop();
+            Make_Delay((0x3C * 3));
+            Fade_Out(2, 1);
+            TalkOpen();
+            TalkMessage(15);
+            TalkClose();
+            Refresh_Map_Entities();
+            Add_Festival_Friendship_Bonus(var_1);
+            Set_Flag(0x1A8, 2);
+            Execute_Script(988);
+        } else {
+            Give_Love_Points(var_1, 0x3E8);
+            SetEntityFacing(0, "Right");
+            SetEntityFacing(var_1, "Left");
+            Make_Delay(0x1E);
+            SetEntityAnim(0, 0x146);
+            PlaySong(0, 0x6A);
+            Give_Food(0x96);
+            SetEntityAnim(0, 0x152);
+            Make_Delay(0x3C);
+            PlaySong(0, 0x6C);
+            Drop_Held_Item();
+            SetEntityAnim(0, 0x192);
+            var_10 = Func052(0x96);
+            if ((var_10 != -1)) {
+                Proc054(var_10);
+            }
+            Make_Delay(0x1E);
+            TalkOpen();
+            Set_Name_Window(var_1);
+            Set_Hearth_Anim(var_1);
+            switch (var_1) {
+                case 0x13:
+                    Set_Portrait(0x4D);
+                    TalkMessage(16);
+                    break;
+                case 3:
+                    Set_Portrait(0xC);
+                    TalkMessage(17);
+                    break;
+                case 0x19:
+                    Set_Portrait(0x58);
+                    TalkMessage(18);
+                    break;
+                case 0xC:
+                    Set_Portrait(0x68);
+                    TalkMessage(19);
+                    break;
+                case 0x15:
+                    Set_Portrait(0x7E);
+                    TalkMessage(20);
+                    break;
+            }
+            TalkClose();
+            Make_Delay(0x3C);
+            SetEntityFacing(var_1, "Up");
+            Make_Delay(0x3C);
+            TalkOpen();
+            Set_Name_Window(var_1);
+            Set_Hearth_Anim(var_1);
+            switch (var_1) {
+                case 0x13:
+                    Set_Portrait(0x49);
+                    TalkMessage(21);
+                    break;
+                case 3:
+                    Set_Portrait(0xC);
+                    TalkMessage(22);
+                    break;
+                case 0x19:
+                    Set_Portrait(0x58);
+                    TalkMessage(12);
+                    break;
+                case 0xC:
+                    Set_Portrait(0x67);
+                    TalkMessage(23);
+                    break;
+                case 0x15:
+                    Set_Portrait(0x7A);
+                    TalkMessage(14);
+                    break;
+            }
+            TalkClose();
+            SetEntityFacing(0, "Up");
+            Make_Delay(0x3C);
+            Pan_Camera_To(0xF0, 0x80, 1);
+            Wait_Camera_Stop();
+            Make_Delay((0x3C * 3));
+            Fade_Out(2, 1);
+            TalkOpen();
+            TalkMessage(15);
+            TalkClose();
+            Refresh_Map_Entities();
+            Add_Festival_Friendship_Bonus(var_1);
+            Set_Flag(0x1A8, 2);
+            Execute_Script(988);
+        }
+    } else {
+        if ((Compare_Gift() == 0)) {
+            if ((Search_Food_Gift_Address() == 0x96)) {
+                Give_Love_Points(var_1, 0x3E8);
+                SetEntityFacing(0, "Right");
+                SetEntityFacing(var_1, "Left");
+                Make_Delay(0x3C);
+                PlaySong(0, 0x6C);
+                Drop_Held_Item();
+                SetEntityAnim(0, 0x192);
+                Make_Delay(0x1E);
+                TalkOpen();
+                Set_Name_Window(var_1);
+                Set_Hearth_Anim(var_1);
+                switch (var_1) {
+                    case 0x13:
+                        Set_Portrait(0x4D);
+                        TalkMessage(16);
+                        break;
+                    case 3:
+                        Set_Portrait(0xC);
+                        TalkMessage(17);
+                        break;
+                    case 0x19:
+                        Set_Portrait(0x58);
+                        TalkMessage(18);
+                        break;
+                    case 0xC:
+                        Set_Portrait(0x68);
+                        TalkMessage(19);
+                        break;
+                    case 0x15:
+                        Set_Portrait(0x7E);
+                        TalkMessage(24);
+                        break;
+                }
+                TalkClose();
+                Make_Delay(0x3C);
+                SetEntityFacing(var_1, "Up");
+                Make_Delay(0x3C);
+                TalkOpen();
+                Set_Name_Window(var_1);
+                Set_Hearth_Anim(var_1);
+                switch (var_1) {
+                    case 0x13:
+                        Set_Portrait(0x49);
+                        TalkMessage(25);
+                        break;
+                    case 3:
+                        Set_Portrait(0xC);
+                        TalkMessage(11);
+                        break;
+                    case 0x19:
+                        Set_Portrait(0x58);
+                        TalkMessage(12);
+                        break;
+                    case 0xC:
+                        Set_Portrait(0x67);
+                        TalkMessage(23);
+                        break;
+                    case 0x15:
+                        Set_Portrait(0x7A);
+                        TalkMessage(14);
+                        break;
+                }
+                TalkClose();
+                SetEntityFacing(0, "Up");
+                Make_Delay(0x3C);
+                Pan_Camera_To(0xF0, 0x80, 1);
+                Wait_Camera_Stop();
+                Make_Delay((0x3C * 3));
+                Fade_Out(2, 1);
+                TalkOpen();
+                TalkMessage(15);
+                TalkClose();
+                Refresh_Map_Entities();
+                Add_Festival_Friendship_Bonus(var_1);
+                Set_Flag(0x1A8, 2);
+                Execute_Script(988);
+            } else {
+                SetEntityFacing(var_1, "Up");
+                Make_Delay(0x3C);
+                TalkOpen();
+                Set_Name_Window(var_1);
+                Set_Hearth_Anim(var_1);
+                switch (var_1) {
+                    case 0x13:
+                        Set_Portrait(0x49);
+                        TalkMessage(10);
+                        break;
+                    case 3:
+                        Set_Portrait(0xC);
+                        TalkMessage(11);
+                        break;
+                    case 0x19:
+                        Set_Portrait(0x58);
+                        TalkMessage(12);
+                        break;
+                    case 0xC:
+                        Set_Portrait(0x67);
+                        TalkMessage(23);
+                        break;
+                    case 0x15:
+                        Set_Portrait(0x7A);
+                        TalkMessage(14);
+                        break;
+                }
+                TalkClose();
+                SetEntityFacing(0, "Up");
+                Make_Delay(0x3C);
+                Pan_Camera_To(0xF0, 0x80, 1);
+                Wait_Camera_Stop();
+                Make_Delay((0x3C * 3));
+                Fade_Out(2, 1);
+                TalkOpen();
+                TalkMessage(15);
+                TalkClose();
+                Refresh_Map_Entities();
+                Add_Festival_Friendship_Bonus(var_1);
+                Set_Flag(0x1A8, 2);
+                Execute_Script(988);
+            }
+            goto LBL_0044;
+        }
+        SetEntityFacing(var_1, "Up");
+        Make_Delay(0x3C);
+        TalkOpen();
+        Set_Name_Window(var_1);
+        Set_Hearth_Anim(var_1);
+        switch (var_1) {
+            case 0x13:
+                Set_Portrait(0x49);
+                TalkMessage(26);
+                break;
+            case 3:
+                Set_Portrait(0xC);
+                TalkMessage(11);
+                break;
+            case 0x19:
+                Set_Portrait(0x58);
+                TalkMessage(12);
+                break;
+            case 0xC:
+                Set_Portrait(0x67);
+                TalkMessage(23);
+                break;
+            case 0x15:
+                Set_Portrait(0x7A);
+                TalkMessage(14);
+                break;
+        }
+        TalkClose();
+        SetEntityFacing(0, "Up");
+        Make_Delay(0x3C);
+        Pan_Camera_To(0xF0, 0x80, 1);
+        Wait_Camera_Stop();
+        Make_Delay((0x3C * 3));
+        Fade_Out(2, 1);
+        TalkOpen();
+        TalkMessage(15);
+        TalkClose();
+        Refresh_Map_Entities();
+        Add_Festival_Friendship_Bonus(var_1);
+        Set_Flag(0x1A8, 2);
+        Execute_Script(988);
+    }
+    exit;
+}

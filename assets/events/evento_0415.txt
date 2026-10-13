@@ -1,0 +1,19 @@
+// Script 415
+#include "Fomt_Lib.src"
+
+script 415 Event_0415 {
+    if ((GetEntityFacing(0) == 0)) {
+        if ((Check_Flag(0x85) == 1)) {
+            Set_Flag(0x85, 2);
+            Add_Festival_Friendship_Bonus(0x17);
+            Add_Festival_Friendship_Bonus(8);
+            Refresh_Map_Entities();
+        }
+        Fade_Out(2, 1);
+        Warp_Player(5, 0x13C, 0x1D0);
+        SetEntityPosition(0, 0x13C, 0x1D0, 0);
+        PlaySong(0, 0xCD);
+        Fade_In(2, 1);
+    }
+    exit;
+}

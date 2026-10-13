@@ -1,0 +1,11 @@
+// Script 543
+#include "Fomt_Lib.src"
+
+script 543 Event_0543 {
+    const MESSAGE_0 = "Chair\BRK";
+    
+    TalkOpen();
+    Print_Message(0);
+    TalkClose();
+    exit;
+}

@@ -1,0 +1,35 @@
+// Script 789
+#include "Fomt_Lib.src"
+
+script 789 Event_0789 {
+    const MESSAGE_0 = "I'm just glad they're done \r\nfighting. Now I can \r\nenjoy my meal!\BRK";
+    const MESSAGE_1 = "Thanks for helping settle \r\nthings, \xFF!. \BRK";
+    const MESSAGE_2 = "I wonder what they were \r\nfighting about to begin \r\nwith...?\BRK";
+    const MESSAGE_3 = "Now my food doesn't taste\r\ngood any more...\r\nWhat a waste!\BRK";
+    
+    SetEntityFacing(0xD, GetOppositeFacing(GetEntityFacing(0)));
+    TalkOpen();
+    Set_Name_Window(0xD);
+    if ((Check_Flag(0x129) == 0)) {
+        if ((Has_NPC_Talked_Today(0xD) == 0)) {
+            Set_Portrait(0x78);
+            TalkMessage(0);
+        } else {
+            Set_Portrait(0x75);
+            TalkMessage(1);
+        }
+    } else {
+        if ((Has_NPC_Talked_Today(0xD) == 0)) {
+            Set_Portrait(0x78);
+            TalkMessage(2);
+            goto LBL_0007;
+        }
+        Set_Portrait(0x78);
+        TalkMessage(3);
+    }
+    TalkClose();
+    Free_Event_Entity(0xD);
+    SetEntityFacing(0xD, "Right");
+    exit;
+    exit;
+}

@@ -1,0 +1,7 @@
+// Script 835
+#include "Fomt_Lib.src"
+
+script 835 Event_0835 {
+    exit;
+    exit;
+}

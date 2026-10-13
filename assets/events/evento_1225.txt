@@ -1,0 +1,30 @@
+// Script 1225
+#include "Fomt_Lib.src"
+
+script 1225 Event_1225 {
+    const MESSAGE_0 = "Since everybody helps\r\nmake it, it tastes, well...\BRK";
+    const MESSAGE_1 = "Did you have fun? \r\nSome times it's fun to eat\r\nwith everyone, isn't it? \BRK";
+    
+    if ((Check_If_Single(0xD) == 0)) {
+        Free_Event_Entity(0xD);
+    }
+    SetEntityFacing(0xD, GetOppositeFacing(GetEntityFacing(0)));
+    if ((Has_Spoken_To_NPC_Today(0xD) == 0)) {
+        Give_Friendship_Points(0xD, 5);
+    }
+    TalkOpen();
+    Set_Name_Window(0xD);
+    if ((Check_Flag(0x1A5) == 1)) {
+        Set_Portrait(0x78);
+        TalkMessage(0);
+        TalkClose();
+        Free_Event_Entity(0xD);
+    } else {
+        Set_Portrait(0x76);
+        TalkMessage(1);
+        TalkClose();
+        Free_Event_Entity(0xD);
+    }
+    SetEntityFacing(0xD, "Down");
+    exit;
+}

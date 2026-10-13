@@ -1,0 +1,18 @@
+// Script 268
+#include "Fomt_Lib.src"
+
+script 268 Event_0268 {
+    if ((GetEntityFacing(0) == 0)) {
+        if ((Check_Flag(0x12A) == 1)) {
+            Set_Flag(0x12A, 2);
+            Add_Festival_Friendship_Bonus(0x18);
+            Refresh_Map_Entities();
+        }
+        Fade_Out(2, 1);
+        Warp_Player(0x15, 0x5C, 0x40);
+        SetEntityPosition(0, 0x5C, 0x40, 0);
+        PlaySong(0, 0xCD);
+        Fade_In(2, 1);
+    }
+    exit;
+}

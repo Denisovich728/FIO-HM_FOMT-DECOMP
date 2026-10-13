@@ -1,0 +1,17 @@
+// Script 719
+#include "Fomt_Lib.src"
+
+script 719 Event_0719 {
+    const MESSAGE_0 = "Sorry for showing you \r\nsuch an ugly scene...\BRK";
+    
+    SetEntityFacing(8, GetOppositeFacing(GetEntityFacing(0)));
+    TalkOpen();
+    Set_Name_Window(8);
+    Set_Portrait(0x85);
+    TalkMessage(0);
+    TalkClose();
+    Free_Event_Entity(8);
+    SetEntityFacing(8, "Left");
+    exit;
+    exit;
+}

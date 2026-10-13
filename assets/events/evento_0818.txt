@@ -1,0 +1,47 @@
+// Script 818
+#include "Fomt_Lib.src"
+
+script 818 Event_0818 {
+    const MESSAGE_0 = "You again? \r\nYou've already collected \r\nall the Kappa Jewels, so \BRK\r\nI'll exchange them for the \r\nKappa Gem if you promise\r\nnot to come back!\BRK";
+    
+    Tick_Overnight_Engine(0, 0);
+    Tick_Overnight_Engine(0, 0);
+    Fade_Out(0, 1);
+    if ((GetEntityX(0) > 0xA0)) {
+        SetEntityPosition(0x20, (GetEntityX(0) - 0x10), GetEntityY(0), "Down");
+    } else {
+        SetEntityPosition(0x20, (GetEntityX(0) + 0x10), GetEntityY(0), "Down");
+    }
+    SetEntityAnim(0x20, 0x7FE);
+    Fade_In(0, 1);
+    if ((GetEntityX(0) > 0xA0)) {
+        SetEntityFacing(0x20, "Right");
+        Make_Delay(0xA);
+        SetEntityFacing(0, "Left");
+    } else {
+        SetEntityFacing(0x20, "Left");
+        Make_Delay(0xA);
+        SetEntityFacing(0, "Right");
+    }
+    TalkOpen();
+    Set_Name_Window(0x20);
+    Set_Portrait(0x62);
+    TalkMessage(0);
+    TalkClose();
+    Fade_Out(0, 1);
+    Hide_Entity(0x20);
+    Drop_Held_Item();
+    Consume_Items_From_Inventory(0x26);
+    Tick_Overnight_Engine(1, 1);
+    PlaySong(0, 0xB6);
+    Animation_Tool_Give(0x4F);
+    Make_Delay(0x32);
+    SetEntityAnim(0, 0x192);
+    if ((Check_Tool_TBox_Space() == -1)) {
+        Give_Tool_In_ToolBox(0x4F, 1);
+    } else {
+        Give_Tool_In_Inventory(0x4F, 1);
+    }
+    Set_Flag(0x14C, 2);
+    exit;
+}

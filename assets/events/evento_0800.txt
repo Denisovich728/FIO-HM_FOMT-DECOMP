@@ -1,0 +1,66 @@
+// Script 800
+#include "Fomt_Lib.src"
+
+script 800 Event_0800 {
+    const MESSAGE_0 = "Yo, \xFF!!\BRK";
+    const MESSAGE_1 = "I finally feel like getting \r\ndown to work. Sorry for \r\nputting you off. \BRK";
+    const MESSAGE_2 = "Did you come to ask about \r\nan expansion? I'd love to\r\ndo it! \BRK";
+    
+    if ((Inventory_Check() == 1)) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    SetEntityPosition(0x1B, 0x78, 0x50, "Down");
+    SetEntityAnim(0x1B, 0x9D3);
+    Fade_In(2, 1);
+    Pan_Camera_To(0x78, 0x64, 2);
+    if ((Inventory_Check() == 1)) {
+        SetEntityAnim(0, 0x1C6);
+    } else {
+        SetEntityAnim(0, 0x156);
+    }
+    Set_Vector_Y(0, 0x64, 1);
+    Execute_Movement(0);
+    if ((Inventory_Check() == 1)) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    TalkOpen();
+    Set_Portrait(0xAC);
+    Set_Name_Window(0x1B);
+    TalkMessage(0);
+    Set_Portrait(0xAD);
+    TalkMessage(1);
+    TalkClose();
+    SetEntityAnim(0, 0x126);
+    Make_Delay(0x3C);
+    if ((Inventory_Check() == 1)) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    TalkOpen();
+    Set_Portrait(0xAD);
+    Set_Name_Window(0x1B);
+    TalkMessage(2);
+    TalkClose();
+    SetEntityFacing(0x1B, "Right");
+    SetEntityAnim(0x1B, 0x9D7);
+    Set_Vector_X(0x1B, 0xA8, 1);
+    Execute_Movement(0x1B);
+    SetEntityFacing(0x1B, "Down");
+    Set_Vector_Y(0x1B, 0x58, 1);
+    Execute_Movement(0x1B);
+    SetEntityFacing(0x1B, "Right");
+    Set_Vector_X(0x1B, 0xC8, 1);
+    Execute_Movement(0x1B);
+    SetEntityFacing(0x1B, "Down");
+    SetEntityAnim(0x1B, 0x9D3);
+    Free_Event_Entity(0x1B);
+    Set_Flag(0x132, 2);
+    Set_Flag(0x131, 0);
+    exit;
+    exit;
+}

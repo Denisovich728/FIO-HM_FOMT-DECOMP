@@ -1,0 +1,11 @@
+// Script 491
+#include "Fomt_Lib.src"
+
+script 491 Event_0491 {
+    const MESSAGE_0 = "If you throw an Egg in\r\nfrom here, you can make a\r\nSpa-Boiled Egg!\BRK";
+    
+    TalkOpen();
+    Print_Message(0);
+    TalkClose();
+    exit;
+}

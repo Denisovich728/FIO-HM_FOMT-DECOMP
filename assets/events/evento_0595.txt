@@ -1,0 +1,42 @@
+// Script 595
+#include "Fomt_Lib.src"
+
+script 595 Event_0595 {
+    const MESSAGE_0 = "Here you go.\BRK";
+    const MESSAGE_1 = "I'm going to give you a \r\npresent, so empty your \r\nhands, OK?\BRK";
+    
+    SetEntityFacing(0x19, GetOppositeFacing(GetEntityFacing(0)));
+    TalkOpen();
+    Set_Hearth_Anim(0x19);
+    Set_Name_Window(0x19);
+    if (Inventory_Check()) {
+        Set_Portrait(0x58);
+        TalkMessage(0);
+        TalkClose();
+        SetEntityAnim(0x19, 0x7C6);
+        Make_Delay(0x3C);
+        SetEntityAnim(0x19, 0x7BE);
+        PlaySong(0, 0x6A);
+        SetEntityAnim(0, 0x146);
+        Give_Item_Shelf(Func122());
+        SetEntityAnim(0, 0x152);
+        Make_Delay(0x3C);
+        Set_Flag(0xAC, 2);
+        Refresh_Map_Entities();
+        Add_Festival_Friendship_Bonus(0x19);
+        if ((Check_Flag(0xC9) == 2)) {
+            Add_Festival_Friendship_Bonus(0x23);
+        }
+        Fade_Out(2, 1);
+        Warp_Player(0x1D, 0x147, 0x70);
+        SetEntityPosition(0, 0x147, 0x70, "Left");
+        Fade_In(2, 1);
+    } else {
+        Set_Portrait(0x57);
+        TalkMessage(1);
+        TalkClose();
+    }
+    Free_Event_Entity(0x19);
+    SetEntityFacing(0x19, "Down");
+    exit;
+}

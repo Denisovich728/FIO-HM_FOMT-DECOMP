@@ -1,0 +1,19 @@
+// Script 934
+#include "Fomt_Lib.src"
+
+script 934 Event_0934 {
+    const MESSAGE_0 = "I wonder what Gray wants?\BRK";
+    
+    SetEntityFacing(0xC, GetOppositeFacing(GetEntityFacing(0)));
+    TalkOpen();
+    Set_Portrait(0x67);
+    Set_Name_Window(0xC);
+    if (!(((((((Check_Flag(0x4C) == 2) || (Check_Flag(0x55) == 2)) || (Check_Flag(0x5F) == 2)) || (Check_Flag(0x6F) == 2)) || (Check_Flag(0x173) == 2)) || (Check_Flag(0x8E) == 2)) || (Check_Flag(0x8F) == 2))) {
+        Set_Hearth_Anim(0xC);
+    }
+    TalkMessage(0);
+    TalkClose();
+    SetEntityFacing(0xC, "Left");
+    Free_Event_Entity(0xC);
+    exit;
+}

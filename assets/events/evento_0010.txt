@@ -1,0 +1,11 @@
+// Script 10
+#include "Fomt_Lib.src"
+
+script 10 Event_0010 {
+    const MESSAGE_0 = "You seem like you don't\r\nhave any worries.\BRK";
+    
+    TalkOpen();
+    TalkMessage(0);
+    TalkClose();
+    exit;
+}

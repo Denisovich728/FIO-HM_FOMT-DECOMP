@@ -1,0 +1,31 @@
+// Script 960
+#include "Fomt_Lib.src"
+
+script 960 Event_0960 {
+    const MESSAGE_0 = "I've always been in love \r\nwith the Doctor...But, I\r\ndidn't know how he\BRK\r\nfeels about me...! \BRK\WAIT_CLICKI\x81fm so happy now...\BRK";
+    const MESSAGE_1 = "I'm going to concentrate on\r\nmy studies with him. \BRK\WAIT_CLICKMaybe I can even cure \r\ngrandmda's legs! \BRK";
+    
+    if ((Check_If_Single(0x15) == 0)) {
+        Free_Event_Entity(0x15);
+    }
+    if ((Has_NPC_Talked_Today(0x15) == 0)) {
+        SetEntityFacing(0x15, GetOppositeFacing(GetEntityFacing(0)));
+        TalkOpen();
+        Set_Portrait(0x7F);
+        Set_Name_Window(0x15);
+        TalkMessage(0);
+        TalkClose();
+        SetEntityFacing(0x15, "Down");
+        Free_Event_Entity(0x15);
+    } else {
+        SetEntityFacing(0x15, GetOppositeFacing(GetEntityFacing(0)));
+        TalkOpen();
+        Set_Portrait(0x7F);
+        Set_Name_Window(0x15);
+        TalkMessage(1);
+        TalkClose();
+        SetEntityFacing(0x15, "Down");
+        Free_Event_Entity(0x15);
+    }
+    exit;
+}

@@ -1,0 +1,18 @@
+// Script 774
+#include "Fomt_Lib.src"
+
+script 774 Event_0774 {
+    const MESSAGE_0 = "I'm sure she can do it.\BRK";
+    
+    if ((Check_Flag(0x11E) == 1)) {
+        SetEntityFacing(0x14, GetOppositeFacing(GetEntityFacing(0)));
+        TalkOpen();
+        Set_Portrait(0x23);
+        Set_Name_Window(0x14);
+        TalkMessage(0);
+        TalkClose();
+        Free_Event_Entity(0x14);
+        SetEntityFacing(0x14, "Left");
+    }
+    exit;
+}

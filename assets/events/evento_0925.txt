@@ -1,0 +1,67 @@
+// Script 925
+#include "Fomt_Lib.src"
+
+script 925 Event_0925 {
+    const MESSAGE_0 = "Are you done working? \BRK";
+    const MESSAGE_1 = "Yes.";
+    const MESSAGE_2 = "Not yet.";
+    const MESSAGE_3 = "Let's celebrate then! \BRK";
+    const MESSAGE_4 = "To the young couple!\BRK";
+    const MESSAGE_5 = "Well, come when you can. \BRK";
+    
+    var var_0;
+    
+    SetEntityFacing(0x16, GetOppositeFacing(GetEntityFacing(0)));
+    TalkOpen();
+    Set_Portrait(0x95);
+    Set_Name_Window(0x16);
+    TalkMessage(0);
+    TalkClose();
+    TalkOpen();
+    var_0 = TalkChoice2(1, 2);
+    switch (var_0) {
+        case 1:
+            Give_Friendship_Points(0x16, 0x14);
+            Give_Friendship_Points(9, 0x14);
+            Give_Friendship_Points(8, 0x14);
+            Give_Friendship_Points(0x18, 0x14);
+            Add_Rival_Points(0x19, 0xC8);
+            Add_Rival_Points(0x17, 0xC8);
+            TalkClose();
+            TalkOpen();
+            Set_Portrait(0x96);
+            Set_Name_Window(0x16);
+            TalkMessage(3);
+            TalkClose();
+            Fade_Out(2, 1);
+            TalkOpen();
+            TalkMessage(4);
+            TalkClose();
+            Free_Event_Entity(0x16);
+            Refresh_Map_Entities();
+            Add_Festival_Friendship_Bonus(0x17);
+            Add_Festival_Friendship_Bonus(0x18);
+            Add_Festival_Friendship_Bonus(0x19);
+            Add_Festival_Friendship_Bonus(8);
+            Add_Festival_Friendship_Bonus(9);
+            Add_Festival_Friendship_Bonus(0x16);
+            Set_Flag(0x87, 2);
+            Set_Flag(0x89, 0);
+            Set_Flag(0x249, 0);
+            Execute_Script(988);
+            break;
+        case 2:
+            Set_Flag(0x88, 1);
+            TalkClose();
+            TalkOpen();
+            Set_Portrait(0x95);
+            Set_Name_Window(0x16);
+            TalkMessage(5);
+            TalkClose();
+            SetEntityFacing(0x16, "Right");
+            Free_Event_Entity(0x16);
+            Set_Flag(0x87, 1);
+            break;
+    }
+    exit;
+}

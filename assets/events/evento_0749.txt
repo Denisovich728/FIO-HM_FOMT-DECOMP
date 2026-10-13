@@ -1,0 +1,62 @@
+// Script 749
+#include "Fomt_Lib.src"
+
+script 749 Event_0749 {
+    const MESSAGE_0 = "Thanks very much! \r\nI'm going to use this yarn \r\nto knit you a sock for a \BRK\r\nStarry Night present!\r\nJust wait one moment. \BRK";
+    const MESSAGE_1 = "Ellen knits a sock \r\nwith lightning speed...\BRK";
+    const MESSAGE_2 = "It's ready!\BRK\WAIT_CLICKHa...I'm tired.\BRK";
+    const MESSAGE_3 = "I'm glad you like it.\r\nI will have Stu deliver\r\nit to you later.\BRK";
+    const MESSAGE_4 = "I will hang this sock\r\non my wall from now on...\BRK";
+    
+    if ((Inventory_Check() == 1)) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    TalkOpen();
+    Set_Portrait(0x40);
+    Set_Name_Window(0xF);
+    TalkMessage(0);
+    TalkClose();
+    Fade_Out(2, 1);
+    Drop_Held_Item();
+    TalkOpen();
+    TalkMessage(1);
+    TalkClose();
+    SetEntityPosition(0, 0x80, 0x75, "Up");
+    if ((Inventory_Check() == 1)) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    Fade_In(2, 1);
+    TalkOpen();
+    Set_Portrait(0x3F);
+    Set_Name_Window(0xF);
+    TalkMessage(2);
+    TalkClose();
+    Show_Emote(0, 5, 0);
+    Make_Delay(0x3C);
+    TalkOpen();
+    Set_Portrait(0x40);
+    Set_Name_Window(0xF);
+    TalkMessage(3);
+    TalkClose();
+    Fade_Out(2, 1);
+    TalkOpen();
+    TalkMessage(4);
+    TalkClose();
+    Reset_Player_After_Festival_Activity();
+    if ((Inventory_Check() == 1)) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    Set_Time(0x12, 0);
+    Give_Friendship_Points(0xF, 0x14);
+    Free_Event_Entity(0xF);
+    Set_Flag(0x1E, 1);
+    Set_Flag(0x112, 2);
+    Fade_In(2, 1);
+    exit;
+}

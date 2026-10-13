@@ -1,0 +1,26 @@
+// Script 1322
+#include "Fomt_Lib.src"
+
+script 1322 Event_1322 {
+    const MESSAGE_0 = "I don't know about you,\r\nbut I had a great year.\BRK";
+    
+    if ((Check_If_Single(0xA) == 0)) {
+        Free_Event_Entity(0xA);
+    }
+    SetEntityFacing(0xA, GetOppositeFacing(GetEntityFacing(0)));
+    TalkOpen();
+    Set_Portrait(0x64);
+    Set_Name_Window(0xA);
+    TalkMessage(0);
+    TalkClose();
+    if ((Has_NPC_Talked_Today(0xA) == 0)) {
+        Give_Friendship_Points(0xA, 5);
+    }
+    Free_Event_Entity(0xA);
+    if (((((((((Check_Flag(0xF4) == 0) || Has_NPC_Talked_Today(0x17)) && Has_NPC_Talked_Today(0x18)) && Has_NPC_Talked_Today(0xB)) && Has_NPC_Talked_Today(0xA)) && Has_NPC_Talked_Today(0xC)) && Has_NPC_Talked_Today(6)) && Has_NPC_Talked_Today(7))) {
+        Fade_Out(2, 1);
+        Execute_Script(1319);
+    }
+    SetEntityFacing(0xA, "Up");
+    exit;
+}

@@ -1,0 +1,28 @@
+// Script 305
+#include "Fomt_Lib.src"
+
+script 305 Event_0305 {
+    const MESSAGE_0 = "We're still arranging the\r\nbooks upstairs, so please\r\ndon't go up there.\BRK";
+    
+    if ((GetEntityFacing(0) == 1)) {
+        if (((((Check_Flag(0x61) == 1) || (Check_Flag(0x62) == 1)) || (Check_Flag(0x8B) == 1)) || (Check_Flag(0x8D) == 1))) {
+            TalkOpen();
+            Set_Portrait(0x67);
+            Set_Name_Window(0xC);
+            if (!(((((((Check_Flag(0x4C) == 2) || (Check_Flag(0x55) == 2)) || (Check_Flag(0x5F) == 2)) || (Check_Flag(0x6F) == 2)) || (Check_Flag(0x173) == 2)) || (Check_Flag(0x8E) == 2)) || (Check_Flag(0x8F) == 2))) {
+                Set_Hearth_Anim(0xC);
+            }
+            TalkMessage(0);
+            TalkClose();
+            Set_Vector_Y(0, (GetEntityY(0) + 2), 1);
+            Pan_Camera_To(GetEntityX(0), (GetEntityY(0) + 2), 1);
+            Execute_Movement(0);
+            exit;
+        }
+        Fade_Out(2, 1);
+        Warp_Player(0x19, 0xD8, 0x60);
+        SetEntityPosition(0, 0xD8, 0x60, "Up");
+        Fade_In(2, 1);
+    }
+    exit;
+}

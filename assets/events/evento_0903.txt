@@ -1,0 +1,37 @@
+// Script 903
+#include "Fomt_Lib.src"
+
+script 903 Event_0903 {
+    const MESSAGE_0 = "I wouldn't tell Rick, but \r\nPopuri and Kai really are \r\na great couple. \BRK";
+    const MESSAGE_1 = "You only live once! \r\nYou gotta follow your heart.\BRK";
+    
+    if ((Check_If_Single(0x13) == 0)) {
+        Free_Event_Entity(0x13);
+    }
+    if ((Has_NPC_Talked_Today(0x13) == 0)) {
+        SetEntityFacing(0x13, GetOppositeFacing(GetEntityFacing(0)));
+        TalkOpen();
+        Set_Portrait(0x48);
+        Set_Name_Window(0x13);
+        if (!((((((((Check_Flag(0x55) == 2) || (Check_Flag(0x5F) == 2)) || (Check_Flag(0x67) == 2)) || (Check_Flag(0x6F) == 2)) || (Check_Flag(0x173) == 2)) || (Check_Flag(0x75) == 2)) || (Check_Flag(0x76) == 2)) || (Check_Flag(0x77) == 2))) {
+            Set_Hearth_Anim(0x13);
+        }
+        TalkMessage(0);
+        TalkClose();
+        SetEntityFacing(0x13, "Left");
+        Free_Event_Entity(0x13);
+    } else {
+        SetEntityFacing(0x13, GetOppositeFacing(GetEntityFacing(0)));
+        TalkOpen();
+        Set_Portrait(0x49);
+        Set_Name_Window(0x13);
+        if (!((((((((Check_Flag(0x55) == 2) || (Check_Flag(0x5F) == 2)) || (Check_Flag(0x67) == 2)) || (Check_Flag(0x6F) == 2)) || (Check_Flag(0x173) == 2)) || (Check_Flag(0x75) == 2)) || (Check_Flag(0x76) == 2)) || (Check_Flag(0x77) == 2))) {
+            Set_Hearth_Anim(0x13);
+        }
+        TalkMessage(1);
+        TalkClose();
+        SetEntityFacing(0x13, "Left");
+        Free_Event_Entity(0x13);
+    }
+    exit;
+}

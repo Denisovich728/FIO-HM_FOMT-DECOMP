@@ -1,0 +1,433 @@
+// Script 139
+#include "Fomt_Lib.src"
+
+script 139 Event_0139 {
+    const MESSAGE_0 = "Is something the matter?\BRK";
+    const MESSAGE_1 = "Can I help you with \r\nanything else?\BRK";
+    const MESSAGE_2 = "Remove a cursed tool.";
+    const MESSAGE_3 = "I want to confess.";
+    const MESSAGE_4 = "Just saying 'hi'.";
+    const MESSAGE_5 = "That will be 1,000 G.";
+    const MESSAGE_6 = "OK.";
+    const MESSAGE_7 = "No, thanks.";
+    const MESSAGE_8 = "In that case, let us pray...\BRK\WAIT_CLICKOh Harvest Goddess, please\r\nhelp us remove this \r\nunjust curse...\BRK";
+    const MESSAGE_9 = "Sorry, but you don't seem\r\nto have enough Gold.\r\nCome back another time.\BRK";
+    const MESSAGE_10 = "Are you sure now?\BRK";
+    const MESSAGE_11 = "But nothing you have\r\nis cursed!\BRK";
+    const MESSAGE_12 = "Repent once each day.\BRK";
+    const MESSAGE_13 = "What do you wish\r\nto repent for?\BRK";
+    const MESSAGE_14 = "I hardly get any sleep.";
+    const MESSAGE_15 = "I'm overworking the HS.";
+    const MESSAGE_16 = "I want to marry the HG.";
+    const MESSAGE_17 = "Sleep is very important\r\nfor everyone, you know!\BRK\WAIT_CLICKI know you're very busy,\r\nbut you really should get\r\nsome rest once in a while.\BRKThe Harvest Goddess has\r\nnow forgiven you.\BRK";
+    const MESSAGE_18 = "Failing to sleep is to \r\nreject the nature granted\r\nyou by the Harvest Goddess!\BRK\WAIT_CLICKYou have displeased Her!\BRK\WAIT_CLICKShe has not forgiven you,\r\nand someday you will\r\npay the price.\BRK";
+    const MESSAGE_19 = "Do not fret. The Harvest\r\nSprites help you because\r\nthey wish to.\BRK\WAIT_CLICKHowever, I suggest giving\r\nthen a present for their\r\nefforts to keep them happy.\BRK\WAIT_CLICKThe Harvest Goddess has\r\nnow forgiven you.\BRK";
+    const MESSAGE_20 = "What do you mean, you make\r\nthe Harvest Sprites work too\r\nhard?! How dare you repay\BRK\r\ntheir kindness by exploiting\r\nthem! Don't you give them\r\ngifts, you scoundrel?\BRK\WAIT_CLICKThe Harvest Goddess has not\r\nforgiven you, and someday\r\nyou will pay the price!\BRK";
+    const MESSAGE_21 = "So you want to marry the\r\nHarvest goddess, do you?\r\nI'm sure she is very \BRK\r\nflattered by your attention.\BRK\WAIT_CLICKThe Harvest Goddess has\r\nnow forgiven you.\BRK";
+    const MESSAGE_22 = "Wh-what!?...You say you\r\nwant to marry the Harvest\r\nGoddess!? That's blasphemy!\BRK\r\nOf course, I do too, but...\r\nWait! Forget I said that!\BRK\WAIT_CLICKThe Harvest Goddess has not\r\nforgiven you, and someday\r\nyou will pay the price!\BRK";
+    const MESSAGE_23 = "I don't care for animals.";
+    const MESSAGE_24 = "Worked until I collapsed.";
+    const MESSAGE_25 = "Townspeople don't like me.";
+    const MESSAGE_26 = "Don't forget that your\r\nanimals give you their own\r\nmilk, eggs, and wool to use!\BRK\WAIT_CLICKExpress your gratitude \r\nby caring for them well!\BRK\WAIT_CLICKThe Harvest Goddess has\r\nnow forgiven you.\BRK";
+    const MESSAGE_27 = "What do you think the\r\nanimals were put into your\r\ncare by the Harvest Goddess\BRK\r\nfor?!\BRK\WAIT_CLICKThey give of themselves to\r\nyou, so you must repay this\r\ndebt by treating them as\BRK\r\nwell as you can! Oh those\r\npoor animals!\BRK\WAIT_CLICKThe Harvest Goddess has not\r\nforgiven you, and someday\r\nyou will pay the price!\BRK";
+    const MESSAGE_28 = "Your desire to work hard is\r\nvery admirable. However, \r\nyour body has its limits.\BRK\WAIT_CLICKIf you work until you\r\ncollapse, you are ignoring \r\nthe limits the Harvest \BRK\r\nGoddess has placed on us.\BRK\WAIT_CLICKNext time, take some \r\nsustenance or rest before \r\nworking so hard.\BRK\WAIT_CLICKThe Harvest Goddess has\r\nnow forgiven you.\BRK";
+    const MESSAGE_29 = "What do you mean, working\r\nthe body given to you by \r\nyour parents into the\BRK\r\nground? You must show more\r\nrespect and gratitude to \r\nyour body!!\BRK\WAIT_CLICKThe Harvest Goddess has not\r\nforgiven you, and someday\r\nyou will pay the price!\BRK";
+    const MESSAGE_30 = "If the townspeople do not\r\nfavor you, it's for a \BRK\WAIT_CLICKreason. Look inside your own\r\nheart first, then seek to\r\nmake amends with those \BRK\r\naround you.\BRK\WAIT_CLICKThe Harvest Goddess has\r\nnow forgiven you.\BRK";
+    const MESSAGE_31 = "Now even I don't like you\r\nvery much! Let us end this\r\nconversation now!\BRK\r\nThe Harvest Goddess has not\r\nforgiven you, and someday\r\nyou will pay the price!\BRK";
+    const MESSAGE_32 = "I was cruel to my animals.";
+    const MESSAGE_33 = "I slept in late.";
+    const MESSAGE_34 = "I littered in the road.";
+    const MESSAGE_35 = "The human heart is a weak\r\nthing, and often we seek to\r\nmake ourselves feel better\BRK\r\nby cruelty to those weaker \r\nin strength. \BRK\WAIT_CLICKRemember that true \r\nstrength lies in kindness\r\nto fellow creatures, \r\nespecially those weaker \r\nthan you.\BRK\WAIT_CLICKThe Harvest Goddess has\r\nnow forgiven you.\BRK";
+    const MESSAGE_36 = "I can't believe this!\r\nHow can you be so...so...\r\ncruel to poor, helpless\BRK\r\nanimals! Oh, the humanity!\BRK\WAIT_CLICKI think there is no saving\r\nsuch a dark soul!\BRK\WAIT_CLICKThe Harvest Goddess has not\r\nforgiven you, and someday\r\nyou will pay the price!\BRK";
+    const MESSAGE_37 = "Do not worry.\r\nSometimes the flesh is weak\r\neven when the spirit is\BRK\r\nwilling.\BRK\WAIT_CLICKThe Harvest Goddess has\r\nnow forgiven you.\BRK";
+    const MESSAGE_38 = "Sleeping in is the sign of\r\nsloth in the heart!\BRK\WAIT_CLICKWho knows how many others\r\nyou inconvenience by your\r\nlaziness! You will not gain \BRK\r\nfriends living like that!\BRK\WAIT_CLICKThe Harvest Goddess has not\r\nforgiven you, and someday\r\nyou will pay the price!\BRK";
+    const MESSAGE_39 = "Throwing away your own\r\ngarbage should be natural.\BRK\WAIT_CLICKThrowing away others'\r\ngarbage is smiled upon by\r\nthe Harvest Goddess.\BRK\WAIT_CLICKThe Harvest Goddess has\r\nnow forgiven you.\BRK";
+    const MESSAGE_40 = "...........................\r\n...........................\r\nI'm so flabbergasted, I lost\r\nthe power of speech!\BRK\WAIT_CLICKWhat would you think if \r\nsomeone threw their garbage\r\naway in your bedroom!?\BRK\r\nYou wouldn't like it, \r\nwould you?!\BRK\WAIT_CLICKThe Harvest Goddess has not\r\nforgiven you, and someday\r\nyou will pay the price!\BRK";
+    const MESSAGE_41 = "That is enough for \r\ntoday's confession.\BRK";
+    const MESSAGE_42 = "Hello. How are you?\BRK";
+    const MESSAGE_43 = "Come again any time.\BRK";
+    const MESSAGE_44 = "It's locked.\BRK";
+    const MESSAGE_45 = "The curse on the Hoe\r\nhas been lifted!\BRK";
+    const MESSAGE_46 = "The curse on the Watering\r\nCan has been lifted!\BRK";
+    
+    var var_0;
+    var var_1;
+    var var_2;
+    var var_3;
+    var var_4;
+    var var_5;
+    var var_7;
+    var var_8;
+    var var_9;
+    
+    var_7 = 0;
+    var_3 = 0;
+    var_5 = Check_Flag(5);
+    var_4 = Check_Flag(3);
+    if ((((((((Check_Flag(0x77) == 1) || (Check_Flag(0x7F) == 1)) || (Check_Flag(0x87) == 1)) || (Check_Flag(0x8F) == 1)) || (Check_Flag(0x97) == 1)) || (Check_Flag(0x83) == 1)) || (Check_Flag(0x1A2) == 1))) {
+        var_3 = 0;
+    } else {
+        if (((GetEntityLocation(0x16) != 5) && (GetEntityLocation(0x16) != 0xC))) {
+            var_3 = 1;
+            goto LBL_000F;
+        }
+        var_3 = 0;
+    }
+    if ((var_3 == 1)) {
+        var_2 = 0;
+        PlaySong(0, 0x9C);
+        Anim_Door_Close(0xB);
+        if ((Inventory_Check() == 1)) {
+            SetEntityAnim(0, 0x1C6);
+        } else {
+            SetEntityAnim(0, 0x156);
+        }
+        Set_Vector_X(0, 0x3C, 1);
+        Execute_Movement(0);
+        Set_Vector_Y(0, 0x38, 1);
+        Execute_Movement(0);
+        if ((Inventory_Check() == 1)) {
+            SetEntityAnim(0, 0x192);
+        } else {
+            SetEntityAnim(0, 0x152);
+        }
+        Fade_Out(3, 1);
+        TalkOpen();
+        do {
+            if ((var_2 != 1)) {
+                TalkMessage(0);
+                goto LBL_0024;
+            }
+            TalkMessage(1);
+            var_0 = TalkChoice3(2, 3, 4);
+            switch (var_0) {
+                case 1:
+                    if (((((((Check_Equped_Tool() == 5) || (Check_Equped_Tool() == 0xD)) || (Check_Equped_Tool() == 0x15)) || (Check_Equped_Tool() == 0x1D)) || (Check_Equped_Tool() == 0x25)) || (Check_Equped_Tool() == 0x2D))) {
+                        var_0 = Show_Tre_Option_Menu(5, 6, 7);
+                        switch (var_0) {
+                            case 1:
+                                if ((Check_Money() >= 0x3E8)) {
+                                    TalkMessage(8);
+                                    PlaySong(0, 0x9D);
+                                    Make_Delay(0x3C);
+                                    Take_Money(0x3E8);
+                                    var_2 = 0;
+                                    var_8 = Check_Equped_Tool();
+                                    var_9 = (var_8 + 1);
+                                    var_7 = Take_Tool(var_8);
+                                    if (var_7) {
+                                        Give_Tool_In_ToolBox(var_9, 1);
+                                    }
+                                    Play_SE_ID(0);
+                                    goto LBL_0038;
+                                }
+                                TalkMessage(9);
+                                var_2 = 1;
+                                break;
+                            case 2:
+                                TalkMessage(10);
+                                var_2 = 1;
+                                break;
+                        }
+    LBL_003B:
+    LBL_003A:
+    LBL_0039:
+                        goto LBL_003C;
+                    }
+                    TalkMessage(11);
+                    var_2 = 1;
+                    break;
+                case 2:
+                    if ((Check_Flag(0x241) == 1)) {
+                        TalkMessage(12);
+                        var_2 = 1;
+                        goto LBL_0041;
+                    }
+                    TalkMessage(13);
+                    if ((((((((Check_Flag(0x4C) == 2) || (Check_Flag(0x55) == 2)) || (Check_Flag(0x5F) == 2)) || (Check_Flag(0x67) == 2)) || (Check_Flag(0x6F) == 2)) || (Check_Flag(0x173) == 2)) || (Check_Flag(0x243) == 1))) {
+                        var_1 = RNG_Generator(1, 4);
+                        goto LBL_0051;
+                    }
+                    var_1 = RNG_Generator(0, 4);
+                    switch (var_1) {
+                        case 0:
+                            var_0 = TalkChoice3(0xE, 0xF, 0x10);
+                            switch (var_0) {
+                                case 1:
+                                    var_1 = RNG_Generator(0, 3);
+                                    switch (var_1) {
+                                        case 0:
+                                            TalkMessage(17);
+                                            Set_Global_RNG_Modifier(0xA, 0);
+                                            break;
+                                        case 1:
+                                        case 2:
+                                        case 3:
+                                            TalkMessage(18);
+                                            break;
+                                    }
+                                    break;
+                                case 2:
+                                    var_1 = RNG_Generator(0, 3);
+                                    switch (var_1) {
+                                        case 0:
+                                            TalkMessage(19);
+                                            Give_Friendship_Points(0x24, 2);
+                                            Give_Friendship_Points(0x25, 2);
+                                            Give_Friendship_Points(0x26, 2);
+                                            Give_Friendship_Points(0x27, 2);
+                                            Give_Friendship_Points(0x28, 2);
+                                            Give_Friendship_Points(0x29, 2);
+                                            Give_Friendship_Points(0x2A, 2);
+                                            break;
+                                        case 1:
+                                        case 2:
+                                        case 3:
+                                            TalkMessage(20);
+                                            break;
+                                    }
+                                    break;
+                                case 3:
+                                    var_1 = RNG_Generator(0, 9);
+                                    switch (var_1) {
+                                        case 0:
+                                            TalkMessage(21);
+                                            Set_Flag(0x243, 1);
+                                            break;
+                                        case 1:
+                                        case 2:
+                                        case 3:
+                                        case 4:
+                                        case 5:
+                                        case 6:
+                                        case 7:
+                                        case 8:
+                                        case 9:
+                                            TalkMessage(22);
+                                            break;
+                                    }
+                                    break;
+                            }
+                            break;
+                        case 1:
+                        case 2:
+                            var_0 = TalkChoice3(0x17, 0x18, 0x19);
+                            switch (var_0) {
+                                case 1:
+                                    var_1 = RNG_Generator(0, 3);
+                                    switch (var_1) {
+                                        case 0:
+                                            TalkMessage(26);
+                                            Proc12A(0, 0, 0, 5);
+                                            break;
+                                        case 1:
+                                        case 2:
+                                        case 3:
+                                            TalkMessage(27);
+                                            break;
+                                    }
+                                    break;
+                                case 2:
+                                    var_1 = RNG_Generator(0, 3);
+                                    switch (var_1) {
+                                        case 0:
+                                            TalkMessage(28);
+                                            Set_Global_RNG_Modifier(0xA, 0);
+                                            break;
+                                        case 1:
+                                        case 2:
+                                        case 3:
+                                            TalkMessage(29);
+                                            break;
+                                    }
+                                    break;
+                                case 3:
+                                    var_1 = RNG_Generator(0, 3);
+                                    switch (var_1) {
+                                        case 0:
+                                            TalkMessage(30);
+                                            Give_Friendship_Points(1, 2);
+                                            Give_Friendship_Points(2, 2);
+                                            Give_Friendship_Points(3, 2);
+                                            Give_Friendship_Points(4, 2);
+                                            Give_Friendship_Points(5, 2);
+                                            Give_Friendship_Points(6, 2);
+                                            Give_Friendship_Points(7, 2);
+                                            Give_Friendship_Points(8, 2);
+                                            Give_Friendship_Points(9, 2);
+                                            Give_Friendship_Points(0xA, 2);
+                                            Give_Friendship_Points(0xB, 2);
+                                            Give_Friendship_Points(0xC, 2);
+                                            Give_Friendship_Points(0xD, 2);
+                                            Give_Friendship_Points(0xE, 2);
+                                            Give_Friendship_Points(0xF, 2);
+                                            Give_Friendship_Points(0x10, 2);
+                                            Give_Friendship_Points(0x11, 2);
+                                            Give_Friendship_Points(0x12, 2);
+                                            Give_Friendship_Points(0x13, 2);
+                                            Give_Friendship_Points(0x14, 2);
+                                            Give_Friendship_Points(0x15, 2);
+                                            Give_Friendship_Points(0x16, 2);
+                                            Give_Friendship_Points(0x17, 2);
+                                            Give_Friendship_Points(0x18, 2);
+                                            Give_Friendship_Points(0x19, 2);
+                                            Give_Friendship_Points(0x1A, 2);
+                                            Give_Friendship_Points(0x1B, 2);
+                                            Give_Friendship_Points(0x1C, 2);
+                                            Give_Friendship_Points(0x1D, 2);
+                                            Give_Friendship_Points(0x1E, 2);
+                                            Give_Friendship_Points(0x1F, 2);
+                                            Give_Friendship_Points(0x21, 2);
+                                            Give_Friendship_Points(0x22, 2);
+                                            Give_Friendship_Points(0x23, 2);
+                                            break;
+                                        case 1:
+                                        case 2:
+                                        case 3:
+                                            TalkMessage(31);
+                                            break;
+                                    }
+                                    break;
+                            }
+                            break;
+                        case 3:
+                        case 4:
+                            var_0 = TalkChoice3(0x20, 0x21, 0x22);
+                            switch (var_0) {
+                                case 1:
+                                    var_1 = RNG_Generator(0, 3);
+                                    switch (var_1) {
+                                        case 0:
+                                            TalkMessage(35);
+                                            Proc12A(0, 0, 0, 5);
+                                            break;
+                                        case 1:
+                                        case 2:
+                                        case 3:
+                                            TalkMessage(36);
+                                            break;
+                                    }
+                                    break;
+                                case 2:
+                                    var_1 = RNG_Generator(0, 3);
+                                    switch (var_1) {
+                                        case 0:
+                                            TalkMessage(37);
+                                            Set_Global_RNG_Modifier(0, -2);
+                                            break;
+                                        case 1:
+                                        case 2:
+                                        case 3:
+                                            TalkMessage(38);
+                                            break;
+                                    }
+                                    break;
+                                case 3:
+                                    var_1 = RNG_Generator(0, 3);
+                                    switch (var_1) {
+                                        case 0:
+                                            TalkMessage(39);
+                                            Give_Friendship_Points(1, 2);
+                                            Give_Friendship_Points(2, 2);
+                                            Give_Friendship_Points(3, 2);
+                                            Give_Friendship_Points(4, 2);
+                                            Give_Friendship_Points(5, 2);
+                                            Give_Friendship_Points(6, 2);
+                                            Give_Friendship_Points(7, 2);
+                                            Give_Friendship_Points(8, 2);
+                                            Give_Friendship_Points(9, 2);
+                                            Give_Friendship_Points(0xA, 2);
+                                            Give_Friendship_Points(0xB, 2);
+                                            Give_Friendship_Points(0xC, 2);
+                                            Give_Friendship_Points(0xD, 2);
+                                            Give_Friendship_Points(0xE, 2);
+                                            Give_Friendship_Points(0xF, 2);
+                                            Give_Friendship_Points(0x10, 2);
+                                            Give_Friendship_Points(0x11, 2);
+                                            Give_Friendship_Points(0x12, 2);
+                                            Give_Friendship_Points(0x13, 2);
+                                            Give_Friendship_Points(0x14, 2);
+                                            Give_Friendship_Points(0x15, 2);
+                                            Give_Friendship_Points(0x16, 2);
+                                            Give_Friendship_Points(0x17, 2);
+                                            Give_Friendship_Points(0x18, 2);
+                                            Give_Friendship_Points(0x19, 2);
+                                            Give_Friendship_Points(0x1A, 2);
+                                            Give_Friendship_Points(0x1B, 2);
+                                            Give_Friendship_Points(0x1C, 2);
+                                            Give_Friendship_Points(0x1D, 2);
+                                            Give_Friendship_Points(0x1E, 2);
+                                            Give_Friendship_Points(0x1F, 2);
+                                            Give_Friendship_Points(0x21, 2);
+                                            Give_Friendship_Points(0x22, 2);
+                                            Give_Friendship_Points(0x23, 2);
+                                            break;
+                                        case 1:
+                                        case 2:
+                                        case 3:
+                                            TalkMessage(40);
+                                            break;
+                                    }
+                                    break;
+                            }
+                            break;
+                    }
+                    TalkMessage(41);
+                    Set_Flag(0x241, 1);
+                    var_2 = 0;
+                    break;
+                case 3:
+                    TalkMessage(42);
+                    var_2 = 0;
+                    break;
+            }
+        } while ((var_2 == 1));
+        TalkMessage(43);
+        TalkClose();
+        SetEntityFacing(0, "Down");
+        Fade_In(3, 1);
+        if ((Inventory_Check() == 1)) {
+            SetEntityAnim(0, 0x1C6);
+        } else {
+            SetEntityAnim(0, 0x156);
+        }
+        Set_Vector_Y(0, 0x40, 1);
+        Execute_Movement(0);
+        if ((Inventory_Check() == 1)) {
+            SetEntityAnim(0, 0x192);
+        } else {
+            SetEntityAnim(0, 0x152);
+        }
+        PlaySong(0, 0xCD);
+        Anim_Door_Exit(0xB);
+    } else {
+        TalkOpen();
+        TalkMessage(44);
+        TalkClose();
+    }
+    if (var_7) {
+        switch (var_9) {
+            case 0xE:
+                if ((Inventory_Check() == 1)) {
+                    PlaySong(0, 0xB6);
+                    Animation_Tool_Give(0xE);
+                    Make_Delay(0x5A);
+                }
+                TalkOpen();
+                TalkMessage(45);
+                TalkClose();
+                break;
+            case 0x26:
+                if ((Inventory_Check() == 1)) {
+                    PlaySong(0, 0xB6);
+                    Animation_Tool_Give(0x26);
+                    Make_Delay(0x5A);
+                }
+                TalkOpen();
+                TalkMessage(46);
+                TalkClose();
+                break;
+        }
+    }
+    exit;
+}

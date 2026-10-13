@@ -1,0 +1,16 @@
+// Script 893
+#include "Fomt_Lib.src"
+
+script 893 Event_0893 {
+    const MESSAGE_0 = "I wonder if Popuri's \r\nserious?\BRK";
+    
+    SetEntityFacing(0x1A, GetOppositeFacing(GetEntityFacing(0)));
+    TalkOpen();
+    Set_Portrait(0x9D);
+    Set_Name_Window(0x1A);
+    TalkMessage(0);
+    TalkClose();
+    SetEntityFacing(0x1A, "Up");
+    Free_Event_Entity(0x1A);
+    exit;
+}

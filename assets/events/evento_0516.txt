@@ -1,0 +1,11 @@
+// Script 516
+#include "Fomt_Lib.src"
+
+script 516 Event_0516 {
+    const MESSAGE_0 = "Shovel\BRK";
+    
+    TalkOpen();
+    Print_Message(0);
+    TalkClose();
+    exit;
+}

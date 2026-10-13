@@ -1,0 +1,11 @@
+// Script 260
+#include "Fomt_Lib.src"
+
+script 260 Event_0260 {
+    const MESSAGE_0 = "Kitchen\BRK";
+    
+    TalkOpen();
+    Print_Message(0);
+    TalkClose();
+    exit;
+}

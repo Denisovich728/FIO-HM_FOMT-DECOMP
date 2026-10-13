@@ -1,0 +1,38 @@
+// Script 1282
+#include "Fomt_Lib.src"
+
+script 1282 Event_1282 {
+    const MESSAGE_0 = "All the Sheep are always\r\nso impressive. \BRK";
+    const MESSAGE_1 = "Congratulations on winning!\r\nYour efforts paid off. \BRK";
+    const MESSAGE_2 = "It's too bad about this \r\nyear,but now you have a \r\ngoal for next year!\BRK";
+    
+    if ((Check_If_Single(0xD) == 0)) {
+        Free_Event_Entity(0xD);
+    }
+    SetEntityFacing(0xD, GetOppositeFacing(GetEntityFacing(0)));
+    if ((Check_Flag(0x1AF) == 0)) {
+        TalkOpen();
+        Set_Portrait(0x76);
+        Set_Name_Window(0xD);
+        TalkMessage(0);
+    } else {
+        if ((Check_Flag(0x1B1) == 1)) {
+            TalkOpen();
+            Set_Portrait(0x76);
+            Set_Name_Window(0xD);
+            TalkMessage(1);
+            goto LBL_0006;
+        }
+        TalkOpen();
+        Set_Portrait(0x75);
+        Set_Name_Window(0xD);
+        TalkMessage(2);
+    }
+    TalkClose();
+    if ((Has_Spoken_To_NPC_Today(0xD) == 0)) {
+        Give_Friendship_Points(0xD, 5);
+    }
+    Free_Event_Entity(0xD);
+    SetEntityFacing(0xD, "Right");
+    exit;
+}

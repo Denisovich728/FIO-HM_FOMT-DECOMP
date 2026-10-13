@@ -1,0 +1,6 @@
+// Script 83
+#include "Fomt_Lib.src"
+
+script 83 Event_0083 {
+    exit;
+}

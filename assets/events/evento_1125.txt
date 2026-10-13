@@ -1,0 +1,22 @@
+// Script 1125
+#include "Fomt_Lib.src"
+
+script 1125 Event_1125 {
+    const MESSAGE_0 = "I always try to cook like\r\nmom-made. That's what I do\r\nall the time, so I think \r\nI've got a decent chance!\BRK";
+    
+    if ((Check_If_Single(9) == 0)) {
+        Free_Event_Entity(9);
+    }
+    SetEntityFacing(9, GetOppositeFacing(GetEntityFacing(0)));
+    TalkOpen();
+    Set_Portrait(0x89);
+    Set_Name_Window(9);
+    TalkMessageSlow(0);
+    TalkClose();
+    if ((Has_Spoken_To_NPC_Today(9) == 0)) {
+        Give_Friendship_Points(9, 5);
+    }
+    SetEntityFacing(9, "Left");
+    Free_Event_Entity(9);
+    exit;
+}

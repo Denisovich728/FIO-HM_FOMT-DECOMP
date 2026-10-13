@@ -1,0 +1,1574 @@
+// Script 571
+#include "Fomt_Lib.src"
+
+script 571 Event_0571 {
+    const MESSAGE_0 = "Well, if it isn't \r\n\xFF!.\BRK\WAIT_CLICKHow do I know your name?\r\nLet's just say I know  \r\na great many things. \BRK\WAIT_CLICKThanks for making an \r\noffering on my birthday. \BRK\WAIT_CLICK";
+    const MESSAGE_1 = "Well, if it isn't \r\n\xFF!.\BRK\WAIT_CLICKHow do I know your name?\r\nLet's just say I know  \r\na great many things. \BRK\WAIT_CLICKThanks for making an \r\noffering. \BRK\WAIT_CLICK";
+    const MESSAGE_2 = "Well, if it isn't \r\n\xFF!.\BRK\WAIT_CLICKYou've come again.\r\nThanks for making an \r\noffering on my birthday! \BRK\WAIT_CLICK";
+    const MESSAGE_3 = "Well, if it isn't \r\n\xFF!.\BRK\WAIT_CLICKYou've come again.\r\nThanks for making an \r\noffering! \BRK\WAIT_CLICK";
+    const MESSAGE_4 = "Do you want to communicate \r\nwith a GameCube? \BRK";
+    const MESSAGE_5 = "Yes";
+    const MESSAGE_6 = "No";
+    const MESSAGE_7 = "Right now your link \r\nstrength is...\BRK";
+    const MESSAGE_8 = "\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\r\n\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\r\n\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\BRK";
+    const MESSAGE_9 = "\x81\x9A\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\r\n\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\r\n\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\BRK";
+    const MESSAGE_10 = "\x81\x9A\x81\x9A\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\r\n\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\r\n\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\BRK";
+    const MESSAGE_11 = "\x81\x9A\x81\x9A\x81\x9A\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\r\n\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\r\n\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\BRK";
+    const MESSAGE_12 = "\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\r\n\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\r\n\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\BRK";
+    const MESSAGE_13 = "\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\r\n\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\r\n\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\BRK";
+    const MESSAGE_14 = "\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\r\n\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\r\n\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\BRK";
+    const MESSAGE_15 = "\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\r\n\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\r\n\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\BRK";
+    const MESSAGE_16 = "\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\r\n\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\r\n\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\BRK";
+    const MESSAGE_17 = "\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\r\n\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\r\n\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\BRK";
+    const MESSAGE_18 = "\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x99\x81\x99\x81\x99\x81\x99\r\n\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\r\n\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\BRK";
+    const MESSAGE_19 = "\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x99\x81\x99\x81\x99\r\n\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\r\n\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\BRK";
+    const MESSAGE_20 = "\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x99\x81\x99\r\n\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\r\n\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\BRK";
+    const MESSAGE_21 = "\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x99\r\n\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\r\n\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\BRK";
+    const MESSAGE_22 = "\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\r\n\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\r\n\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\BRK";
+    const MESSAGE_23 = "\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\r\n\x81\x9A\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\r\n\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\BRK";
+    const MESSAGE_24 = "\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\r\n\x81\x9A\x81\x9A\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\r\n\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\BRK";
+    const MESSAGE_25 = "\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\r\n\x81\x9A\x81\x9A\x81\x9A\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\r\n\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\BRK";
+    const MESSAGE_26 = "\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\r\n\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\r\n\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\BRK";
+    const MESSAGE_27 = "\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\r\n\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\r\n\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\BRK";
+    const MESSAGE_28 = "\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\r\n\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\r\n\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\BRK";
+    const MESSAGE_29 = "\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\r\n\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\r\n\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\BRK";
+    const MESSAGE_30 = "\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\r\n\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\r\n\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\BRK";
+    const MESSAGE_31 = "\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\r\n\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\r\n\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\BRK";
+    const MESSAGE_32 = "\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\r\n\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x99\x81\x99\x81\x99\x81\x99\r\n\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\BRK";
+    const MESSAGE_33 = "\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\r\n\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x99\x81\x99\x81\x99\r\n\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\BRK";
+    const MESSAGE_34 = "\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\r\n\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x99\x81\x99\r\n\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\BRK";
+    const MESSAGE_35 = "\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\r\n\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x99\r\n\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\BRK";
+    const MESSAGE_36 = "\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\r\n\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\r\n\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\BRK";
+    const MESSAGE_37 = "\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\r\n\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\r\n\x81\x9A\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\BRK";
+    const MESSAGE_38 = "\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\r\n\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\r\n\x81\x9A\x81\x9A\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\BRK";
+    const MESSAGE_39 = "\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\r\n\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\r\n\x81\x9A\x81\x9A\x81\x9A\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\BRK";
+    const MESSAGE_40 = "\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\r\n\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\r\n\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\BRK";
+    const MESSAGE_41 = "\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\r\n\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\r\n\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\BRK";
+    const MESSAGE_42 = "\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\r\n\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\r\n\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\BRK";
+    const MESSAGE_43 = "\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\r\n\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\r\n\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\BRK";
+    const MESSAGE_44 = "\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\r\n\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\r\n\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\BRK";
+    const MESSAGE_45 = "\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\r\n\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\r\n\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x99\x81\x99\x81\x99\x81\x99\x81\x99\BRK";
+    const MESSAGE_46 = "\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\r\n\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\r\n\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x99\x81\x99\x81\x99\x81\x99\BRK";
+    const MESSAGE_47 = "\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\r\n\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\r\n\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x99\x81\x99\x81\x99\BRK";
+    const MESSAGE_48 = "\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\r\n\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\r\n\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x99\x81\x99\BRK";
+    const MESSAGE_49 = "\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\r\n\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\r\n\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x99\BRK";
+    const MESSAGE_50 = "\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\r\n\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\r\n\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\x81\x9A\BRK";
+    const MESSAGE_51 = "That's about it. \BRK";
+    const MESSAGE_52 = "There is nothing new\r\nright now...\BRK";
+    const MESSAGE_53 = "Just a few new events \r\nmay happen in the future...\BRK";
+    const MESSAGE_54 = "Some new events \r\nmay happen in the future...\BRK";
+    const MESSAGE_55 = "Many new events \r\nmay happen in the future...\BRK";
+    const MESSAGE_56 = "Very many new events \r\nmay happen in the future...\BRK";
+    const MESSAGE_57 = "Your link level has now\r\nreached maximum strength!\r\nAs a reward, I'm now \BRK\r\ngranting you a Cottage on\r\nMineral Beach. \BRK\WAIT_CLICKGo and see how nice it is!\BRK";
+    const MESSAGE_58 = "I see. \BRK\WAIT_CLICK";
+    const MESSAGE_59 = "Since you've come and \r\nvisited me so many times, \r\nI shall now grant you a \BRK\r\nPower Berry as a token\r\nof my thanks.\BRK";
+    const MESSAGE_60 = "I won't be giving you any \r\nmore, but come again anyway!\BRK";
+    const MESSAGE_61 = "Since you've come and \r\nvisited me so many times, I\r\nshall now grant you a wish.\BRK\r\nIs there a girl you like? \BRK";
+    const MESSAGE_62 = "Oh! I see you are \r\nalready married. \BRK\WAIT_CLICKSorry about the mix-up. \r\nHere's this instead. \BRK";
+    const MESSAGE_63 = "Come again any time.\BRK\WAIT_CLICK";
+    const MESSAGE_64 = "So...\r\nWho is it?\BRK";
+    const MESSAGE_65 = "Elli";
+    const MESSAGE_66 = "Mary";
+    const MESSAGE_67 = "Popuri";
+    const MESSAGE_68 = "Ann";
+    const MESSAGE_69 = "Karen";
+    const MESSAGE_70 = "H. Goddess";
+    const MESSAGE_71 = "OK, Elli it is.\BRK\WAIT_CLICK";
+    const MESSAGE_72 = "Elli's already married to \r\nthe Doctor! \BRK\WAIT_CLICKHere, I'll give you this\r\ninstead. Just don't cause\r\nany trouble!\BRK";
+    const MESSAGE_73 = "I'll make Elli feel more \r\nromantically inclined \r\ntoward you. One second...\BRK\WAIT_CLICK";
+    const MESSAGE_74 = "...All done! \BRK\WAIT_CLICKDon't be a stranger, now. \BRK";
+    const MESSAGE_75 = "OK, Mary it is. \BRK\WAIT_CLICK";
+    const MESSAGE_76 = "Mary's already married to \r\nGray! \BRK\WAIT_CLICKHere, I'll give you this\r\ninstead. Just don't cause\r\nany trouble!\BRK";
+    const MESSAGE_77 = "I'll make Mary feel more \r\nromantically inclined \r\ntoward you. One second...\BRK\WAIT_CLICK";
+    const MESSAGE_78 = "OK, Popuri it is.\BRK\WAIT_CLICK";
+    const MESSAGE_79 = "Popuri's already married to \r\nKai! \BRK\WAIT_CLICKHere, I'll give you this\r\ninstead. Just don't cause\r\nany trouble!\BRK";
+    const MESSAGE_80 = "I'll make Popuri feel more \r\nromantically inclined \r\ntoward you. One second...\BRK\WAIT_CLICK";
+    const MESSAGE_81 = "OK, Ann it is.\BRK\WAIT_CLICK";
+    const MESSAGE_82 = "Ann's already married to \r\nCliff! \BRK\WAIT_CLICKHere, I'll give you this\r\ninstead. Just don't cause\r\nany trouble!\BRK";
+    const MESSAGE_83 = "I'll make Ann feel more \r\nromantically inclined \r\ntoward you. One second...\BRK\WAIT_CLICK";
+    const MESSAGE_84 = "OK, Karen it is.\BRK\WAIT_CLICK";
+    const MESSAGE_85 = "Karen's already married to \r\nRick! \BRK\WAIT_CLICKHere, I'll give you this\r\ninstead. Just don't cause\r\nany trouble!\BRK";
+    const MESSAGE_86 = "I'll make Karen feel more \r\nromantically inclined \r\ntoward you. One second...\BRK\WAIT_CLICK";
+    const MESSAGE_87 = "This is so great!!\r\nThanks a lot! \BRK\WAIT_CLICKHere, take this as my\r\nthanks. \BRK";
+    const MESSAGE_88 = "Really? You don't like any \r\nof the girls around here?\r\nWhat a waste...\r\nCome again anyway! \BRK\WAIT_CLICK";
+    const MESSAGE_89 = "Since you've come and \r\nvisited me so many times,\r\nI shall now grant you  \BRK\r\nWhite Grass as a token\r\nof my thanks.\BRK";
+    const MESSAGE_90 = "By the way, I just  \r\nloved that last offering.\BRKBye now. \BRK";
+    const MESSAGE_91 = "By the way, I really  \r\nliked that last offering.\r\nBye now. \BRK";
+    const MESSAGE_92 = "By the way, I didn't really \r\nlike or dislike that last \r\noffering. Bye now. \BRK";
+    const MESSAGE_93 = "By the way, I really didn't \r\nlike that last offering.\r\nBye now. \BRK";
+    const MESSAGE_94 = "By the way, I really  \r\nhated that last offering.\r\nBye now. \BRK";
+    const MESSAGE_95 = "Nope, not here.\BRK";
+    const MESSAGE_96 = "By the way, that last \r\noffering really left me \r\ncold. Bye now. \BRK";
+    
+    var var_0;
+    var var_1;
+    var var_2;
+    var var_3;
+    var var_4;
+    var var_5;
+    var var_6;
+    var var_7;
+    
+    if ((GetEntityLocation(0) == 0)) {
+        var_7 = Check_Flag(0x20D);
+        var_4 = Func06C();
+        var_5 = Func06D();
+        var_6 = Func06E();
+        SetEntityAnim(0, 0x192);
+        Tick_Overnight_Engine(1, 0);
+        Tick_Overnight_Engine(1, 0);
+        Fade_Out(1, 1);
+        PlaySong(0, 0xBE);
+        if ((GetEntityFacing(0) == 1)) {
+            SetEntityPosition(0x1F, GetEntityX(0), (GetEntityY(0) - 0x10), "Down");
+        } else {
+            SetEntityPosition(0x1F, (GetEntityX(0) + 0x10), GetEntityY(0), "Down");
+        }
+        SetEntityAnim(0x1F, 0x675);
+        Fade_In(1, 1);
+        if ((GetEntityFacing(0) == 1)) {
+            Set_Vector_Y(0x1F, (GetEntityY(0) - 0x20), 1);
+            Execute_Movement(0x1F);
+        } else {
+            SetEntityFacing(0x1F, "Left");
+            Set_Vector_X(0x1F, (GetEntityX(0) + 0x20), 1);
+            Execute_Movement(0x1F);
+        }
+        TalkOpen();
+        Set_Name_Window(0x1F);
+        Set_Portrait(0x39);
+        if ((Check_Flag(0x142) != 2)) {
+            if ((Is_NPC_Birthday(0x1F) == 1)) {
+                TalkMessage(0);
+            } else {
+                TalkMessage(1);
+            }
+            Set_Flag(0x142, 2);
+        } else {
+            if ((Is_NPC_Birthday(0x1F) == 1)) {
+                TalkMessage(2);
+            } else {
+                TalkMessage(3);
+            }
+        }
+        Set_Name_Window(0x1F);
+        Set_Portrait(0x38);
+        TalkMessage(4);
+        var_0 = TalkChoice2(5, 6);
+        switch (var_0) {
+            case 1:
+                TalkClose();
+                Fade_Out(3, 1);
+                if (((Func0E3() == 1) && (Check_Flag(0x201) == 0))) {
+                    GameCube_Link_Command(0xA);
+                    Set_Flag(0x201, 1);
+                }
+                if (((Func0E4() == 1) && (Check_Flag(0x202) == 0))) {
+                    GameCube_Link_Command(0xB);
+                    Set_Flag(0x202, 1);
+                }
+                if (((Func0E5() == 1) && (Check_Flag(0x203) == 0))) {
+                    GameCube_Link_Command(0xC);
+                    Set_Flag(0x203, 1);
+                }
+                if (((Func0E6() == 1) && (Check_Flag(0x204) == 0))) {
+                    GameCube_Link_Command(0xD);
+                    Set_Flag(0x204, 1);
+                }
+                if (((Func0E7() == 1) && (Check_Flag(0x205) == 0))) {
+                    GameCube_Link_Command(0xE);
+                    Set_Flag(0x205, 1);
+                }
+                if (((Func0E8() == 1) && (Check_Flag(0x206) == 0))) {
+                    GameCube_Link_Command(0xF);
+                    Set_Flag(0x206, 1);
+                }
+                if (((Check_Flag(0x2D) >= 0xF4240) && (Check_Flag(0x207) == 0))) {
+                    GameCube_Link_Command(0x10);
+                    Set_Flag(0x207, 1);
+                }
+                if (((Check_Flag(0) >= 0x32) && (Check_Flag(0x208) == 0))) {
+                    GameCube_Link_Command(0x11);
+                    Set_Flag(0x208, 1);
+                }
+                if (((Func0E9() >= 0x2710) && (Check_Flag(0x209) == 0))) {
+                    GameCube_Link_Command(0x12);
+                    Set_Flag(0x209, 1);
+                }
+                if (((Init_Notice_Board_UI() == 1) && (Check_Flag(0x20A) == 0))) {
+                    GameCube_Link_Command(0x13);
+                    Set_Flag(0x20A, 1);
+                }
+                if (((((Check_Flag(0x11) == 1) && (Check_Flag(0x11) == 1)) && (Check_Flag(0x13) == 1)) && (Check_Flag(0x20B) == 0))) {
+                    GameCube_Link_Command(0x14);
+                    Set_Flag(0x20B, 1);
+                }
+                if (((Func0EA() == 1) && (Check_Flag(0x20C) == 0))) {
+                    GameCube_Link_Command(0x15);
+                    Set_Flag(0x20C, 1);
+                }
+                switch (Func0A2()) {
+                    case 0:
+                        if ((Func078(0) == 1)) {
+                            Set_Flag(0x1FF, 1);
+                            if (!Func124()) {
+                                Set_Flag(0x1FA, 1);
+                            }
+                            if ((Check_Flag(0x20D) < 0x8A)) {
+                                Set_Flag(0x20D, (Check_Flag(0x20D) + 1));
+                            }
+                        }
+                        if ((Func078(1) == 1)) {
+                            Set_Flag(0x200, 1);
+                            Set_Flag(0x1FB, 1);
+                            if ((Check_Flag(0x1FE) < 0xA)) {
+                                Set_Flag(0x1FE, (Check_Flag(0x1FE) + 1));
+                            }
+                            Set_Flag(0x1FB, 0);
+                            if ((Check_Flag(0x20D) < 0x8A)) {
+                                Set_Flag(0x20D, (Check_Flag(0x20D) + 1));
+                            }
+                        }
+                        if ((Func078(2) == 1)) {
+                            if ((Check_Flag(0x217) <= 2)) {
+                                Set_Flag(0x217, (Check_Flag(0x217) + 1));
+                                if ((Check_Flag(0x20D) < 0x8A)) {
+                                    Set_Flag(0x20D, (Check_Flag(0x20D) + 1));
+                                }
+                            }
+                        }
+                        if ((Func078(4) == 1)) {
+                            if ((Check_Flag(0x219) <= 2)) {
+                                Set_Flag(0x219, (Check_Flag(0x219) + 1));
+                                if ((Check_Flag(0x20D) < 0x8A)) {
+                                    Set_Flag(0x20D, (Check_Flag(0x20D) + 1));
+                                }
+                            }
+                        }
+                        if ((Func078(5) == 1)) {
+                            if ((Check_Flag(0x21A) <= 2)) {
+                                Set_Flag(0x21A, (Check_Flag(0x21A) + 1));
+                                if ((Check_Flag(0x20D) < 0x8A)) {
+                                    Set_Flag(0x20D, (Check_Flag(0x20D) + 1));
+                                }
+                            }
+                        }
+                        if ((Func078(6) == 1)) {
+                            if ((Check_Flag(0x21B) <= 2)) {
+                                Set_Flag(0x21B, (Check_Flag(0x21B) + 1));
+                                if ((Check_Flag(0x20D) < 0x8A)) {
+                                    Set_Flag(0x20D, (Check_Flag(0x20D) + 1));
+                                }
+                            }
+                        }
+                        if ((Func078(7) == 1)) {
+                            if ((Check_Flag(0x21C) <= 2)) {
+                                Set_Flag(0x21C, (Check_Flag(0x21C) + 1));
+                                if ((Check_Flag(0x20D) < 0x8A)) {
+                                    Set_Flag(0x20D, (Check_Flag(0x20D) + 1));
+                                }
+                            }
+                        }
+                        if ((Func078(8) == 1)) {
+                            if ((Check_Flag(0x21D) <= 2)) {
+                                Set_Flag(0x21D, (Check_Flag(0x21D) + 1));
+                                if ((Check_Flag(0x20D) < 0x8A)) {
+                                    Set_Flag(0x20D, (Check_Flag(0x20D) + 1));
+                                }
+                            }
+                        }
+                        if ((Func078(9) == 1)) {
+                            if ((Check_Flag(0x21E) <= 2)) {
+                                Set_Flag(0x21E, (Check_Flag(0x21E) + 1));
+                                if ((Check_Flag(0x20D) < 0x8A)) {
+                                    Set_Flag(0x20D, (Check_Flag(0x20D) + 1));
+                                }
+                            }
+                        }
+                        if ((Func078(0xA) == 1)) {
+                            if ((Check_Flag(0x21F) <= 2)) {
+                                Set_Flag(0x21F, (Check_Flag(0x21F) + 1));
+                                if ((Check_Flag(0x20D) < 0x8A)) {
+                                    Set_Flag(0x20D, (Check_Flag(0x20D) + 1));
+                                }
+                            }
+                        }
+                        if ((Func078(0xB) == 1)) {
+                            if ((Check_Flag(0x220) <= 2)) {
+                                Set_Flag(0x220, (Check_Flag(0x220) + 1));
+                                if ((Check_Flag(0x20D) < 0x8A)) {
+                                    Set_Flag(0x20D, (Check_Flag(0x20D) + 1));
+                                }
+                            }
+                        }
+                        if ((Func078(0xC) == 1)) {
+                            if ((Check_Flag(0x221) <= 2)) {
+                                Set_Flag(0x221, (Check_Flag(0x221) + 1));
+                                if ((Check_Flag(0x20D) < 0x8A)) {
+                                    Set_Flag(0x20D, (Check_Flag(0x20D) + 1));
+                                }
+                            }
+                        }
+                        if ((Func078(0xD) == 1)) {
+                            if ((Check_Flag(0x222) <= 2)) {
+                                Set_Flag(0x222, (Check_Flag(0x222) + 1));
+                                if ((Check_Flag(0x20D) < 0x8A)) {
+                                    Set_Flag(0x20D, (Check_Flag(0x20D) + 1));
+                                }
+                            }
+                        }
+                        if ((Func078(0xE) == 1)) {
+                            if ((Check_Flag(0x223) <= 2)) {
+                                Set_Flag(0x223, (Check_Flag(0x223) + 1));
+                                if ((Check_Flag(0x20D) < 0x8A)) {
+                                    Set_Flag(0x20D, (Check_Flag(0x20D) + 1));
+                                }
+                            }
+                        }
+                        if ((Func078(0xF) == 1)) {
+                            if ((Check_Flag(0x224) <= 2)) {
+                                Set_Flag(0x224, (Check_Flag(0x224) + 1));
+                                if ((Check_Flag(0x20D) < 0x8A)) {
+                                    Set_Flag(0x20D, (Check_Flag(0x20D) + 1));
+                                }
+                            }
+                        }
+                        if ((Func078(0x10) == 1)) {
+                            if ((Check_Flag(0x225) <= 2)) {
+                                Set_Flag(0x225, (Check_Flag(0x225) + 1));
+                                if ((Check_Flag(0x20D) < 0x8A)) {
+                                    Set_Flag(0x20D, (Check_Flag(0x20D) + 1));
+                                }
+                            }
+                        }
+                        if ((Func078(0x11) == 1)) {
+                            if ((Check_Flag(0x226) <= 2)) {
+                                Set_Flag(0x226, (Check_Flag(0x226) + 1));
+                                if ((Check_Flag(0x20D) < 0x8A)) {
+                                    Set_Flag(0x20D, (Check_Flag(0x20D) + 1));
+                                }
+                            }
+                        }
+                        if ((Func078(0x12) == 1)) {
+                            if ((Check_Flag(0x227) <= 2)) {
+                                Set_Flag(0x227, (Check_Flag(0x227) + 1));
+                                if ((Check_Flag(0x20D) < 0x8A)) {
+                                    Set_Flag(0x20D, (Check_Flag(0x20D) + 1));
+                                }
+                            }
+                        }
+                        if ((Func078(0x13) == 1)) {
+                            if ((Check_Flag(0x228) <= 2)) {
+                                Set_Flag(0x228, (Check_Flag(0x228) + 1));
+                                if ((Check_Flag(0x20D) < 0x8A)) {
+                                    Set_Flag(0x20D, (Check_Flag(0x20D) + 1));
+                                }
+                            }
+                        }
+                        if ((Func078(0x14) == 1)) {
+                            if ((Check_Flag(0x229) <= 2)) {
+                                Set_Flag(0x229, (Check_Flag(0x229) + 1));
+                                if ((Check_Flag(0x20D) < 0x8A)) {
+                                    Set_Flag(0x20D, (Check_Flag(0x20D) + 1));
+                                }
+                            }
+                        }
+                        if ((Func078(0x15) == 1)) {
+                            if ((Check_Flag(0x22A) <= 2)) {
+                                Set_Flag(0x22A, (Check_Flag(0x22A) + 1));
+                                if ((Check_Flag(0x20D) < 0x8A)) {
+                                    Set_Flag(0x20D, (Check_Flag(0x20D) + 1));
+                                }
+                            }
+                        }
+                        if ((Func078(0x16) == 1)) {
+                            if ((Check_Flag(0x22B) <= 2)) {
+                                Set_Flag(0x22B, (Check_Flag(0x22B) + 1));
+                                if ((Check_Flag(0x20D) < 0x8A)) {
+                                    Set_Flag(0x20D, (Check_Flag(0x20D) + 1));
+                                }
+                            }
+                        }
+                        if ((Func078(0x17) == 1)) {
+                            if ((Check_Flag(0x22C) <= 2)) {
+                                Set_Flag(0x22C, (Check_Flag(0x22C) + 1));
+                                if ((Check_Flag(0x20D) < 0x8A)) {
+                                    Set_Flag(0x20D, (Check_Flag(0x20D) + 1));
+                                }
+                            }
+                        }
+                        if ((Func078(0x18) == 1)) {
+                            if ((Check_Flag(0x22D) <= 2)) {
+                                Set_Flag(0x22D, (Check_Flag(0x22D) + 1));
+                                if ((Check_Flag(0x20D) < 0x8A)) {
+                                    Set_Flag(0x20D, (Check_Flag(0x20D) + 1));
+                                }
+                            }
+                        }
+                        if ((Func078(0x19) == 1)) {
+                            if ((Check_Flag(0x22E) <= 2)) {
+                                Set_Flag(0x22E, (Check_Flag(0x22E) + 1));
+                                if ((Check_Flag(0x20D) < 0x8A)) {
+                                    Set_Flag(0x20D, (Check_Flag(0x20D) + 1));
+                                }
+                            }
+                        }
+                        if ((Func078(0x1A) == 1)) {
+                            if ((Check_Flag(0x22F) <= 2)) {
+                                Set_Flag(0x22F, (Check_Flag(0x22F) + 1));
+                                if ((Check_Flag(0x20D) < 0x8A)) {
+                                    Set_Flag(0x20D, (Check_Flag(0x20D) + 1));
+                                }
+                            }
+                        }
+                        if ((Func078(0x1B) == 1)) {
+                            if ((Check_Flag(0x230) <= 2)) {
+                                Set_Flag(0x230, (Check_Flag(0x230) + 1));
+                                if ((Check_Flag(0x20D) < 0x8A)) {
+                                    Set_Flag(0x20D, (Check_Flag(0x20D) + 1));
+                                }
+                            }
+                        }
+                        if ((Func078(0x1C) == 1)) {
+                            if ((Check_Flag(0x231) <= 2)) {
+                                Set_Flag(0x231, (Check_Flag(0x231) + 1));
+                                if ((Check_Flag(0x20D) < 0x8A)) {
+                                    Set_Flag(0x20D, (Check_Flag(0x20D) + 1));
+                                }
+                            }
+                        }
+                        if ((Func078(0x1D) == 1)) {
+                            if ((Check_Flag(0x232) <= 2)) {
+                                Set_Flag(0x232, (Check_Flag(0x232) + 1));
+                                if ((Check_Flag(0x20D) < 0x8A)) {
+                                    Set_Flag(0x20D, (Check_Flag(0x20D) + 1));
+                                }
+                            }
+                        }
+                        if ((Func078(0x1E) == 1)) {
+                            if ((Check_Flag(0x233) <= 2)) {
+                                Set_Flag(0x233, (Check_Flag(0x233) + 1));
+                                if ((Check_Flag(0x20D) < 0x8A)) {
+                                    Set_Flag(0x20D, (Check_Flag(0x20D) + 1));
+                                }
+                            }
+                        }
+                        if ((Func078(0x1F) == 1)) {
+                            if ((Check_Flag(0x234) <= 2)) {
+                                Set_Flag(0x234, (Check_Flag(0x234) + 1));
+                                if ((Check_Flag(0x20D) < 0x8A)) {
+                                    Set_Flag(0x20D, (Check_Flag(0x20D) + 1));
+                                }
+                            }
+                        }
+                        if ((Func078(0x20) == 1)) {
+                            if ((Check_Flag(0x235) <= 2)) {
+                                Set_Flag(0x235, (Check_Flag(0x235) + 1));
+                                if ((Check_Flag(0x20D) < 0x8A)) {
+                                    Set_Flag(0x20D, (Check_Flag(0x20D) + 1));
+                                }
+                            }
+                        }
+                        if ((Func078(0x21) == 1)) {
+                            if ((Check_Flag(0x236) <= 2)) {
+                                Set_Flag(0x236, (Check_Flag(0x236) + 1));
+                                if ((Check_Flag(0x20D) < 0x8A)) {
+                                    Set_Flag(0x20D, (Check_Flag(0x20D) + 1));
+                                }
+                            }
+                        }
+                        if ((Func078(0x22) == 1)) {
+                            if ((Check_Flag(0x237) <= 2)) {
+                                Set_Flag(0x237, (Check_Flag(0x237) + 1));
+                                if ((Check_Flag(0x20D) < 0x8A)) {
+                                    Set_Flag(0x20D, (Check_Flag(0x20D) + 1));
+                                }
+                            }
+                        }
+                        if ((Func078(0x23) == 1)) {
+                            if ((Check_Flag(0x238) <= 2)) {
+                                Set_Flag(0x238, (Check_Flag(0x238) + 1));
+                                if ((Check_Flag(0x20D) < 0x8A)) {
+                                    Set_Flag(0x20D, (Check_Flag(0x20D) + 1));
+                                }
+                            }
+                        }
+                        if ((Func078(0x24) == 1)) {
+                            if ((Check_Flag(0x239) <= 2)) {
+                                Set_Flag(0x239, (Check_Flag(0x239) + 1));
+                                if ((Check_Flag(0x20D) < 0x8A)) {
+                                    Set_Flag(0x20D, (Check_Flag(0x20D) + 1));
+                                }
+                            }
+                        }
+                        if ((Func078(0x25) == 1)) {
+                            if ((Check_Flag(0x23A) <= 2)) {
+                                Set_Flag(0x23A, (Check_Flag(0x23A) + 1));
+                                if ((Check_Flag(0x20D) < 0x8A)) {
+                                    Set_Flag(0x20D, (Check_Flag(0x20D) + 1));
+                                }
+                            }
+                        }
+                        if ((Func078(0x26) == 1)) {
+                            if ((Check_Flag(0x23B) <= 2)) {
+                                Set_Flag(0x23B, (Check_Flag(0x23B) + 1));
+                                if ((Check_Flag(0x20D) < 0x8A)) {
+                                    Set_Flag(0x20D, (Check_Flag(0x20D) + 1));
+                                }
+                            }
+                        }
+                        if ((Func078(0x27) == 0)) {
+                            Set_Flag(0x1F0, 0);
+                        }
+                        if ((Func078(0x28) == 0)) {
+                            Set_Flag(0x1F1, 0);
+                        }
+                        if ((Func078(0x29) == 0)) {
+                            Set_Flag(0x1F2, 0);
+                        }
+                        if ((Func078(0x2A) == 0)) {
+                            Set_Flag(0x1F3, 0);
+                        }
+                        if ((Func078(0x2B) == 0)) {
+                            Set_Flag(0x1F4, 0);
+                        }
+                        if ((Func078(0x2C) == 0)) {
+                            Set_Flag(0x1F5, 0);
+                        }
+                        if ((Func078(0x2D) == 0)) {
+                            Set_Flag(0x1F6, 0);
+                        }
+                        if ((Func078(0x2E) == 0)) {
+                            Set_Flag(0x1F7, 0);
+                        }
+                        if ((Func078(0x2F) == 0)) {
+                            Set_Flag(0x1F8, 0);
+                        }
+                        if ((Func078(0x30) == 0)) {
+                            Set_Flag(0x1F9, 0);
+                        }
+                        if ((Func078(0x27) == 1)) {
+                            Set_Flag(0x1F0, 1);
+                            if ((Check_Flag(0x20D) < 0x8A)) {
+                                Set_Flag(0x20D, (Check_Flag(0x20D) + 1));
+                            }
+                        }
+                        if ((Func078(0x28) == 1)) {
+                            Set_Flag(0x1F1, 1);
+                            if ((Check_Flag(0x20D) < 0x8A)) {
+                                Set_Flag(0x20D, (Check_Flag(0x20D) + 1));
+                            }
+                        }
+                        if ((Func078(0x29) == 1)) {
+                            Set_Flag(0x1F2, 1);
+                            if ((Check_Flag(0x20D) < 0x8A)) {
+                                Set_Flag(0x20D, (Check_Flag(0x20D) + 1));
+                            }
+                        }
+                        if ((Func078(0x2A) == 1)) {
+                            Set_Flag(0x1F3, 1);
+                            if ((Check_Flag(0x20D) < 0x8A)) {
+                                Set_Flag(0x20D, (Check_Flag(0x20D) + 1));
+                            }
+                        }
+                        if ((Func078(0x2B) == 1)) {
+                            Set_Flag(0x1F4, 1);
+                            if ((Check_Flag(0x20D) < 0x8A)) {
+                                Set_Flag(0x20D, (Check_Flag(0x20D) + 1));
+                            }
+                        }
+                        if ((Func078(0x2C) == 1)) {
+                            Set_Flag(0x1F5, 1);
+                            if ((Check_Flag(0x20D) < 0x8A)) {
+                                Set_Flag(0x20D, (Check_Flag(0x20D) + 1));
+                            }
+                        }
+                        if ((Func078(0x2D) == 1)) {
+                            Set_Flag(0x1F6, 1);
+                            if ((Check_Flag(0x20D) < 0x8A)) {
+                                Set_Flag(0x20D, (Check_Flag(0x20D) + 1));
+                            }
+                        }
+                        if ((Func078(0x2E) == 1)) {
+                            Set_Flag(0x1F7, 1);
+                            if ((Check_Flag(0x20D) < 0x8A)) {
+                                Set_Flag(0x20D, (Check_Flag(0x20D) + 1));
+                            }
+                        }
+                        if ((Func078(0x2F) == 1)) {
+                            Set_Flag(0x1F8, 1);
+                            if ((Check_Flag(0x20D) < 0x8A)) {
+                                Set_Flag(0x20D, (Check_Flag(0x20D) + 1));
+                            }
+                        }
+                        if ((Func078(0x30) == 1)) {
+                            Set_Flag(0x1F9, 1);
+                            if ((Check_Flag(0x20D) < 0x8A)) {
+                                Set_Flag(0x20D, (Check_Flag(0x20D) + 1));
+                            }
+                        }
+                        if ((Func077(0) == 1)) {
+                            Proc07A(0);
+                        }
+                        if ((Func077(1) == 1)) {
+                            Proc07A(1);
+                        }
+                    case 1:
+                    case 2:
+                        break;
+                }
+                Fade_In(3, 1);
+                TalkOpen();
+                Set_Name_Window(0x1F);
+                Set_Portrait(0x39);
+                TalkMessage(7);
+                Make_Store_Error();
+                Talk_Mini_Close();
+                switch (Check_Flag(0x20D)) {
+                    case 0:
+                        Print_Message(8);
+                        break;
+                    case 1:
+                    case 2:
+                    case 3:
+                    case 4:
+                        Print_Message(9);
+                        break;
+                    case 5:
+                    case 6:
+                    case 7:
+                    case 8:
+                        Print_Message(10);
+                        break;
+                    case 9:
+                    case 0xA:
+                    case 0xB:
+                    case 0xC:
+                        Print_Message(11);
+                        break;
+                    case 0xD:
+                    case 0xE:
+                    case 0xF:
+                    case 0x10:
+                        Print_Message(12);
+                        break;
+                    case 0x11:
+                    case 0x12:
+                    case 0x13:
+                    case 0x14:
+                        Print_Message(13);
+                        break;
+                    case 0x15:
+                    case 0x16:
+                    case 0x17:
+                    case 0x18:
+                        Print_Message(14);
+                        break;
+                    case 0x19:
+                    case 0x1A:
+                    case 0x1B:
+                    case 0x1C:
+                        Print_Message(15);
+                        break;
+                    case 0x1D:
+                    case 0x1E:
+                    case 0x1F:
+                    case 0x20:
+                        Print_Message(16);
+                        break;
+                    case 0x21:
+                    case 0x22:
+                    case 0x23:
+                    case 0x24:
+                        Print_Message(17);
+                        break;
+                    case 0x25:
+                    case 0x26:
+                    case 0x27:
+                    case 0x28:
+                        Print_Message(18);
+                        break;
+                    case 0x29:
+                    case 0x2A:
+                    case 0x2B:
+                    case 0x2C:
+                        Print_Message(19);
+                        break;
+                    case 0x2D:
+                    case 0x2E:
+                    case 0x2F:
+                    case 0x30:
+                        Print_Message(20);
+                        break;
+                    case 0x31:
+                    case 0x32:
+                    case 0x33:
+                    case 0x34:
+                        Print_Message(21);
+                        break;
+                    case 0x35:
+                    case 0x36:
+                    case 0x37:
+                    case 0x38:
+                        Print_Message(22);
+                        break;
+                    case 0x39:
+                    case 0x3A:
+                    case 0x3B:
+                    case 0x3C:
+                        Print_Message(23);
+                        break;
+                    case 0x3D:
+                    case 0x3E:
+                    case 0x3F:
+                    case 0x40:
+                        Print_Message(24);
+                        break;
+                    case 0x41:
+                    case 0x42:
+                    case 0x43:
+                    case 0x44:
+                        Print_Message(25);
+                        break;
+                    case 0x45:
+                    case 0x46:
+                    case 0x47:
+                    case 0x48:
+                        Print_Message(26);
+                        break;
+                    case 0x49:
+                    case 0x4A:
+                    case 0x4B:
+                    case 0x4C:
+                        Print_Message(27);
+                        break;
+                    case 0x4D:
+                    case 0x4E:
+                    case 0x4F:
+                    case 0x50:
+                        Print_Message(28);
+                        break;
+                    case 0x51:
+                    case 0x52:
+                    case 0x53:
+                        Print_Message(29);
+                        break;
+                    case 0x54:
+                    case 0x55:
+                    case 0x56:
+                        Print_Message(30);
+                        break;
+                    case 0x57:
+                    case 0x58:
+                    case 0x59:
+                        Print_Message(31);
+                        break;
+                    case 0x5A:
+                    case 0x5B:
+                    case 0x5C:
+                        Print_Message(32);
+                        break;
+                    case 0x5D:
+                    case 0x5E:
+                    case 0x5F:
+                        Print_Message(33);
+                        break;
+                    case 0x60:
+                    case 0x61:
+                    case 0x62:
+                        Print_Message(34);
+                        break;
+                    case 0x63:
+                    case 0x64:
+                    case 0x65:
+                        Print_Message(35);
+                        break;
+                    case 0x66:
+                    case 0x67:
+                    case 0x68:
+                        Print_Message(36);
+                        break;
+                    case 0x69:
+                    case 0x6A:
+                    case 0x6B:
+                        Print_Message(37);
+                        break;
+                    case 0x6C:
+                    case 0x6D:
+                    case 0x6E:
+                        Print_Message(38);
+                        break;
+                    case 0x6F:
+                    case 0x70:
+                    case 0x71:
+                        Print_Message(39);
+                        break;
+                    case 0x72:
+                    case 0x73:
+                    case 0x74:
+                        Print_Message(40);
+                        break;
+                    case 0x75:
+                    case 0x76:
+                    case 0x77:
+                        Print_Message(41);
+                        break;
+                    case 0x78:
+                    case 0x79:
+                    case 0x7A:
+                        Print_Message(42);
+                        break;
+                    case 0x7B:
+                    case 0x7C:
+                    case 0x7D:
+                        Print_Message(43);
+                        break;
+                    case 0x7E:
+                    case 0x7F:
+                        Print_Message(44);
+                        break;
+                    case 0x80:
+                    case 0x81:
+                        Print_Message(45);
+                        break;
+                    case 0x82:
+                    case 0x83:
+                        Print_Message(46);
+                        break;
+                    case 0x84:
+                    case 0x85:
+                        Print_Message(47);
+                        break;
+                    case 0x86:
+                    case 0x87:
+                        Print_Message(48);
+                        break;
+                    case 0x88:
+                    case 0x89:
+                        Print_Message(49);
+                        break;
+                    case 0x8A:
+                        Print_Message(50);
+                        break;
+                }
+                Set_Name_Window(0x1F);
+                Set_Portrait(0x39);
+                TalkMessage(51);
+                if (((Check_Flag(0x20D) - var_7) <= 0)) {
+                    Set_Portrait(0x38);
+                    TalkMessage(52);
+                    goto LBL_023F;
+                }
+                if (((Check_Flag(0x20D) - var_7) < 4)) {
+                    TalkMessage(53);
+                    goto LBL_0243;
+                }
+                if (((Check_Flag(0x20D) - var_7) < 0xB)) {
+                    TalkMessage(54);
+                    goto LBL_0247;
+                }
+                if (((Check_Flag(0x20D) - var_7) < 0x15)) {
+                    TalkMessage(55);
+                    goto LBL_024B;
+                }
+                TalkMessage(56);
+                if ((Check_Flag(0x13) == 0)) {
+                    if ((Check_Flag(0x20D) == 0x8A)) {
+                        TalkOpen();
+                        Set_Name_Window(0x1F);
+                        Set_Portrait(0x39);
+                        TalkMessage(57);
+                        Proc0C5();
+                    }
+                }
+                break;
+            case 2:
+                TalkMessage(58);
+                break;
+        }
+        TalkOpen();
+        Set_Name_Window(0x1F);
+        Set_Portrait(0x39);
+        if (((Check_Flag(0x23E) == 0xA) && (Check_Flag(0x23D) != 1))) {
+            if ((Check_Flag(0x145) != 2)) {
+                TalkMessage(59);
+                TalkClose();
+                PlaySong(0, 0xB6);
+                Player_Eat_Power_Berry_Anim();
+                TalkOpen();
+                Set_Name_Window(0x1F);
+                Set_Portrait(0x39);
+                TalkMessage(60);
+                Set_Flag(0x145, 2);
+            } else {
+                if ((Check_Flag(0x143) != 2)) {
+                    TalkMessage(61);
+                    if (((((((Check_Flag(0x4C) == 2) || (Check_Flag(0x55) == 2)) || (Check_Flag(0x5F) == 2)) || (Check_Flag(0x67) == 2)) || (Check_Flag(0x6F) == 2)) || (Check_Flag(0x173) == 2))) {
+                        TalkMessage(62);
+                        PlaySong(0, 0x6A);
+                        Give_Food(0x46);
+                        Set_Name_Window(0x1F);
+                        Set_Portrait(0x39);
+                        TalkMessage(63);
+                        Set_Flag(0x143, 2);
+                    } else {
+                        var_0 = TalkChoice2(5, 6);
+                        switch (var_0) {
+                            case 1:
+                                Set_Flag(0x143, 2);
+                                TalkMessage(64);
+                                var_0 = TalkChoice6(0x41, 0x42, 0x43, 0x44, 0x45, 0x46);
+                                switch (var_0) {
+                                    case 1:
+                                        Set_Name_Window(0x1F);
+                                        Set_Portrait(0x3A);
+                                        TalkMessage(71);
+                                        if (((Check_Flag(0x96) == 2) || (Check_Flag(0x97) == 2))) {
+                                            TalkMessage(72);
+                                            PlaySong(0, 0x6A);
+                                            Give_Food(0x46);
+                                            Set_Name_Window(0x1F);
+                                            Set_Portrait(0x39);
+                                            TalkMessage(63);
+                                            goto LBL_0276;
+                                        }
+                                        Set_Portrait(0x38);
+                                        TalkMessage(73);
+                                        TalkClose();
+                                        SetEntityAnim(0x1F, 0x669);
+                                        Make_Delay(0xA);
+                                        Fade_Out(3, 2);
+                                        PlaySong(0, 0xBE);
+                                        Fade_In(3, 2);
+                                        SetEntityAnim(0x1F, 0x669);
+                                        Give_Love_Points(0x15, 0xBB8);
+                                        TalkOpen();
+                                        Set_Name_Window(0x1F);
+                                        Set_Portrait(0x38);
+                                        TalkMessage(74);
+                                        break;
+                                    case 2:
+                                        Set_Name_Window(0x1F);
+                                        Set_Portrait(0x3A);
+                                        TalkMessage(75);
+                                        if (((Check_Flag(0x8E) == 2) || (Check_Flag(0x8F) == 2))) {
+                                            TalkMessage(76);
+                                            PlaySong(0, 0x6A);
+                                            Give_Food(0x46);
+                                            Set_Name_Window(0x1F);
+                                            Set_Portrait(0x39);
+                                            TalkMessage(63);
+                                            goto LBL_027D;
+                                        }
+                                        Set_Portrait(0x38);
+                                        TalkMessage(77);
+                                        TalkClose();
+                                        SetEntityAnim(0x1F, 0x669);
+                                        Make_Delay(0xA);
+                                        Fade_Out(3, 2);
+                                        PlaySong(0, 0xBE);
+                                        Fade_In(3, 2);
+                                        SetEntityAnim(0x1F, 0x669);
+                                        Give_Love_Points(0xC, 0xBB8);
+                                        TalkOpen();
+                                        Set_Name_Window(0x1F);
+                                        Set_Portrait(0x38);
+                                        TalkMessage(74);
+                                        break;
+                                    case 3:
+                                        Set_Name_Window(0x1F);
+                                        Set_Portrait(0x3A);
+                                        TalkMessage(78);
+                                        if (((Check_Flag(0x7E) == 2) || (Check_Flag(0x7F) == 2))) {
+                                            TalkMessage(79);
+                                            PlaySong(0, 0x6A);
+                                            Give_Food(0x46);
+                                            Set_Name_Window(0x1F);
+                                            Set_Portrait(0x39);
+                                            TalkMessage(63);
+                                            goto LBL_0284;
+                                        }
+                                        Set_Portrait(0x38);
+                                        TalkMessage(80);
+                                        TalkClose();
+                                        SetEntityAnim(0x1F, 0x669);
+                                        Make_Delay(0xA);
+                                        Fade_Out(3, 2);
+                                        PlaySong(0, 0xBE);
+                                        Fade_In(3, 2);
+                                        SetEntityAnim(0x1F, 0x669);
+                                        Give_Love_Points(3, 0xBB8);
+                                        TalkOpen();
+                                        Set_Name_Window(0x1F);
+                                        Set_Portrait(0x38);
+                                        TalkMessage(74);
+                                        break;
+                                    case 4:
+                                        Set_Name_Window(0x1F);
+                                        Set_Portrait(0x3A);
+                                        TalkMessage(81);
+                                        if (((Check_Flag(0x86) == 2) || (Check_Flag(0x87) == 2))) {
+                                            TalkMessage(82);
+                                            PlaySong(0, 0x6A);
+                                            Give_Food(0x46);
+                                            Set_Name_Window(0x1F);
+                                            Set_Portrait(0x39);
+                                            TalkMessage(63);
+                                            goto LBL_028B;
+                                        }
+                                        Set_Portrait(0x38);
+                                        TalkMessage(83);
+                                        TalkClose();
+                                        SetEntityAnim(0x1F, 0x669);
+                                        Make_Delay(0xA);
+                                        Fade_Out(3, 2);
+                                        PlaySong(0, 0xBE);
+                                        Fade_In(3, 2);
+                                        SetEntityAnim(0x1F, 0x669);
+                                        Give_Love_Points(0x19, 0xBB8);
+                                        TalkOpen();
+                                        Set_Name_Window(0x1F);
+                                        Set_Portrait(0x38);
+                                        TalkMessage(74);
+                                        break;
+                                    case 5:
+                                        Set_Name_Window(0x1F);
+                                        Set_Portrait(0x3A);
+                                        TalkMessage(84);
+                                        if ((((Check_Flag(0x75) == 2) || (Check_Flag(0x76) == 2)) || (Check_Flag(0x77) == 2))) {
+                                            TalkMessage(85);
+                                            PlaySong(0, 0x6A);
+                                            Give_Food(0x46);
+                                            Set_Name_Window(0x1F);
+                                            Set_Portrait(0x39);
+                                            TalkMessage(63);
+                                            goto LBL_0294;
+                                        }
+                                        Set_Portrait(0x38);
+                                        TalkMessage(86);
+                                        TalkClose();
+                                        SetEntityAnim(0x1F, 0x669);
+                                        Make_Delay(0xA);
+                                        Fade_Out(3, 2);
+                                        PlaySong(0, 0xBE);
+                                        Fade_In(3, 2);
+                                        SetEntityAnim(0x1F, 0x669);
+                                        Give_Love_Points(0x13, 0xBB8);
+                                        TalkOpen();
+                                        Set_Name_Window(0x1F);
+                                        Set_Portrait(0x38);
+                                        TalkMessage(74);
+                                        break;
+                                    case 6:
+                                        Set_Name_Window(0x1F);
+                                        Set_Portrait(0x39);
+                                        TalkMessage(87);
+                                        PlaySong(0, 0x6A);
+                                        Give_Food(0x46);
+                                        Give_Love_Points(0x1F, 0xBB8);
+                                        Set_Name_Window(0x1F);
+                                        Set_Portrait(0x39);
+                                        TalkMessage(63);
+                                        Set_Flag(0x144, 5);
+                                        break;
+                                }
+                                break;
+                            case 2:
+                                Set_Name_Window(0x1F);
+                                Set_Portrait(0x38);
+                                TalkMessage(88);
+                                break;
+                        }
+                    }
+                } else {
+                    TalkMessage(89);
+                    PlaySong(0, 0x6A);
+                    Give_Food(0x37);
+                    Set_Name_Window(0x1F);
+                    Set_Portrait(0x39);
+                    TalkMessage(63);
+                }
+            }
+        }
+        switch (var_4) {
+            case 0:
+                switch (var_5) {
+                    case 3:
+                    case 9:
+                        var_1 = 1;
+                        break;
+                    case 0:
+                    case 1:
+                    case 2:
+                    case 4:
+                    case 5:
+                    case 6:
+                    case 7:
+                    case 8:
+                    case 0xA:
+                    case 0xB:
+                    case 0xC:
+                    case 0xD:
+                    case 0xE:
+                    case 0xF:
+                    case 0x10:
+                    case 0x11:
+                    case 0x12:
+                    case 0x13:
+                    case 0x14:
+                    case 0x1C:
+                    case 0x1D:
+                    case 0x1E:
+                    case 0x1F:
+                    case 0x20:
+                    case 0x21:
+                    case 0x46:
+                        var_1 = 2;
+                        break;
+                    case 0x15:
+                    case 0x16:
+                    case 0x17:
+                    case 0x18:
+                    case 0x19:
+                    case 0x1A:
+                    case 0x1B:
+                    case 0x22:
+                    case 0x23:
+                    case 0x24:
+                    case 0x25:
+                    case 0x26:
+                    case 0x27:
+                    case 0x28:
+                    case 0x29:
+                    case 0x2A:
+                    case 0x2B:
+                    case 0x2C:
+                    case 0x2E:
+                    case 0x2F:
+                    case 0x30:
+                    case 0x31:
+                    case 0x32:
+                    case 0x33:
+                    case 0x34:
+                    case 0x35:
+                    case 0x36:
+                    case 0x37:
+                    case 0x47:
+                    case 0x48:
+                    case 0x49:
+                    case 0xA0:
+                    case 0xA1:
+                    case 0xA2:
+                        var_1 = 3;
+                        break;
+                    case 0x2D:
+                    case 0x39:
+                    case 0x3A:
+                    case 0x3B:
+                    case 0x3C:
+                    case 0x3D:
+                    case 0x3E:
+                    case 0x3F:
+                    case 0x40:
+                    case 0x41:
+                    case 0x42:
+                    case 0x43:
+                    case 0x44:
+                    case 0x45:
+                    case 0x4A:
+                    case 0x4B:
+                    case 0x4C:
+                    case 0x4D:
+                    case 0x4E:
+                    case 0x4F:
+                    case 0x50:
+                    case 0x51:
+                    case 0x52:
+                    case 0x53:
+                    case 0x54:
+                    case 0x55:
+                    case 0x56:
+                    case 0x57:
+                    case 0x58:
+                    case 0x59:
+                    case 0x5A:
+                    case 0x5B:
+                    case 0x5C:
+                    case 0x5D:
+                    case 0x5E:
+                    case 0x5F:
+                    case 0x60:
+                    case 0x61:
+                    case 0x62:
+                    case 0x63:
+                    case 0x64:
+                    case 0x65:
+                    case 0x66:
+                    case 0x67:
+                    case 0x68:
+                    case 0x69:
+                    case 0x6A:
+                    case 0x6B:
+                    case 0x6C:
+                    case 0x6D:
+                    case 0x6E:
+                    case 0x6F:
+                    case 0x70:
+                    case 0x71:
+                    case 0x72:
+                    case 0x73:
+                    case 0x74:
+                    case 0x75:
+                    case 0x76:
+                    case 0x77:
+                    case 0x78:
+                    case 0x79:
+                    case 0x7A:
+                    case 0x7B:
+                    case 0x7C:
+                    case 0x7D:
+                    case 0x7E:
+                    case 0x7F:
+                    case 0x80:
+                    case 0x81:
+                    case 0x82:
+                    case 0x83:
+                    case 0x84:
+                    case 0x85:
+                    case 0x86:
+                    case 0x87:
+                    case 0x88:
+                    case 0x89:
+                    case 0x8A:
+                    case 0x8B:
+                    case 0x8C:
+                    case 0x8D:
+                    case 0x8E:
+                    case 0x8F:
+                    case 0x90:
+                    case 0x91:
+                    case 0x92:
+                    case 0x93:
+                    case 0x94:
+                    case 0x95:
+                    case 0x96:
+                    case 0x97:
+                    case 0x98:
+                    case 0x99:
+                    case 0x9A:
+                    case 0x9B:
+                    case 0x9C:
+                    case 0x9D:
+                    case 0x9E:
+                    case 0x9F:
+                    case 0xA3:
+                    case 0xA4:
+                    case 0xA5:
+                    case 0xA6:
+                    case 0xA7:
+                    case 0xA8:
+                    case 0xA9:
+                    case 0xAA:
+                        var_1 = 4;
+                        break;
+                }
+                break;
+            case 1:
+                switch (var_5) {
+                    case 0:
+                    case 1:
+                    case 2:
+                    case 3:
+                    case 4:
+                        var_1 = 2;
+                        break;
+                    case 5:
+                    case 6:
+                    case 7:
+                    case 8:
+                    case 9:
+                    case 0xA:
+                    case 0xB:
+                    case 0xC:
+                    case 0xD:
+                    case 0xE:
+                    case 0xF:
+                    case 0x10:
+                    case 0x28:
+                    case 0x29:
+                    case 0x2A:
+                    case 0x2B:
+                        var_1 = 3;
+                        break;
+                    case 0x11:
+                    case 0x12:
+                    case 0x13:
+                    case 0x14:
+                    case 0x15:
+                    case 0x16:
+                    case 0x17:
+                    case 0x18:
+                    case 0x19:
+                    case 0x1A:
+                    case 0x1B:
+                    case 0x1C:
+                    case 0x1D:
+                    case 0x1E:
+                    case 0x1F:
+                    case 0x20:
+                    case 0x21:
+                    case 0x22:
+                    case 0x23:
+                    case 0x24:
+                    case 0x30:
+                    case 0x31:
+                    case 0x32:
+                    case 0x33:
+                    case 0x34:
+                    case 0x35:
+                    case 0x59:
+                    case 0x5B:
+                    case 0x5C:
+                        var_1 = 4;
+                        break;
+                    case 0x36:
+                    case 0x37:
+                    case 0x38:
+                    case 0x39:
+                    case 0x3A:
+                    case 0x5A:
+                        var_1 = 5;
+                        break;
+                    case 0x25:
+                    case 0x26:
+                    case 0x27:
+                    case 0x3B:
+                    case 0x3C:
+                    case 0x3D:
+                    case 0x3E:
+                    case 0x3F:
+                    case 0x40:
+                    case 0x41:
+                    case 0x42:
+                    case 0x43:
+                    case 0x44:
+                    case 0x45:
+                    case 0x46:
+                    case 0x47:
+                    case 0x48:
+                    case 0x49:
+                    case 0x4A:
+                    case 0x4B:
+                    case 0x4C:
+                    case 0x4D:
+                    case 0x4E:
+                    case 0x50:
+                    case 0x52:
+                    case 0x54:
+                    case 0x5D:
+                        var_1 = 6;
+                        break;
+                    case 0x2C:
+                    case 0x2D:
+                    case 0x2E:
+                    case 0x2F:
+                        var_1 = 9;
+                        break;
+                    case 0x55:
+                    case 0x56:
+                    case 0x57:
+                    case 0x58:
+                        var_1 = 0xA;
+                        break;
+                    case 0x51:
+                        var_1 = 0xB;
+                        break;
+                }
+                break;
+        }
+        TalkOpen();
+        switch (var_1) {
+            case 1:
+                Set_Portrait(0x39);
+                TalkMessage(90);
+                break;
+            case 2:
+                Set_Portrait(0x39);
+                TalkMessage(91);
+                break;
+            case 3:
+                Set_Portrait(0x38);
+                TalkMessage(92);
+                break;
+            case 4:
+                Set_Portrait(0x3A);
+                TalkMessage(93);
+                break;
+            case 5:
+                Set_Portrait(0x3A);
+                TalkMessage(94);
+                break;
+            case 7:
+                Set_Portrait(0x39);
+                TalkMessage(95);
+                break;
+            case 8:
+                Set_Portrait(0x39);
+                TalkMessage(95);
+                break;
+            case 9:
+                Set_Portrait(0x3A);
+                TalkMessage(93);
+                break;
+            case 0xA:
+                Set_Portrait(0x3A);
+                TalkMessage(93);
+                break;
+            case 0xB:
+                Set_Portrait(0x3A);
+                TalkMessage(93);
+                break;
+            case 6:
+                Set_Portrait(0x38);
+                TalkMessage(96);
+                break;
+        }
+        TalkClose();
+        if ((Has_NPC_Talked_Today_2(0x1F) == 0)) {
+            switch (var_1) {
+                case 1:
+                    if (!(((((((Check_Flag(0x4C) == 2) || (Check_Flag(0x5F) == 2)) || (Check_Flag(0x67) == 2)) || (Check_Flag(0x6F) == 2)) || (Check_Flag(0x173) == 2)) || (Check_Flag(0x7E) == 2)) || (Check_Flag(0x7F) == 2))) {
+                        var_3 = 0x1F4;
+                    }
+                    var_2 = 9;
+                    break;
+                case 2:
+                    if (!(((((((Check_Flag(0x4C) == 2) || (Check_Flag(0x5F) == 2)) || (Check_Flag(0x67) == 2)) || (Check_Flag(0x6F) == 2)) || (Check_Flag(0x173) == 2)) || (Check_Flag(0x7E) == 2)) || (Check_Flag(0x7F) == 2))) {
+                        var_3 = 0x12C;
+                    }
+                    var_2 = 3;
+                    break;
+                case 3:
+                    if (!(((((((Check_Flag(0x4C) == 2) || (Check_Flag(0x5F) == 2)) || (Check_Flag(0x67) == 2)) || (Check_Flag(0x6F) == 2)) || (Check_Flag(0x173) == 2)) || (Check_Flag(0x7E) == 2)) || (Check_Flag(0x7F) == 2))) {
+                        var_3 = 0x64;
+                    }
+                    var_2 = 1;
+                    break;
+                case 4:
+                    if (!(((((((Check_Flag(0x4C) == 2) || (Check_Flag(0x5F) == 2)) || (Check_Flag(0x67) == 2)) || (Check_Flag(0x6F) == 2)) || (Check_Flag(0x173) == 2)) || (Check_Flag(0x7E) == 2)) || (Check_Flag(0x7F) == 2))) {
+                        var_3 = -0x1F4;
+                    }
+                    var_2 = -3;
+                    break;
+                case 5:
+                    if (!(((((((Check_Flag(0x4C) == 2) || (Check_Flag(0x5F) == 2)) || (Check_Flag(0x67) == 2)) || (Check_Flag(0x6F) == 2)) || (Check_Flag(0x173) == 2)) || (Check_Flag(0x7E) == 2)) || (Check_Flag(0x7F) == 2))) {
+                        var_3 = -0x320;
+                    }
+                    var_2 = -9;
+                    break;
+                case 7:
+                    if (!(((((((Check_Flag(0x4C) == 2) || (Check_Flag(0x5F) == 2)) || (Check_Flag(0x67) == 2)) || (Check_Flag(0x6F) == 2)) || (Check_Flag(0x173) == 2)) || (Check_Flag(0x7E) == 2)) || (Check_Flag(0x7F) == 2))) {
+                        var_3 = 0x12C;
+                    }
+                    var_2 = 3;
+                    break;
+                case 8:
+                    if (!(((((((Check_Flag(0x4C) == 2) || (Check_Flag(0x5F) == 2)) || (Check_Flag(0x67) == 2)) || (Check_Flag(0x6F) == 2)) || (Check_Flag(0x173) == 2)) || (Check_Flag(0x7E) == 2)) || (Check_Flag(0x7F) == 2))) {
+                        var_3 = -0x1F4;
+                    }
+                    var_2 = -3;
+                    break;
+                case 9:
+                    if (!(((((((Check_Flag(0x4C) == 2) || (Check_Flag(0x5F) == 2)) || (Check_Flag(0x67) == 2)) || (Check_Flag(0x6F) == 2)) || (Check_Flag(0x173) == 2)) || (Check_Flag(0x7E) == 2)) || (Check_Flag(0x7F) == 2))) {
+                        var_3 = -0x1F4;
+                    }
+                    var_2 = -3;
+                    break;
+                case 0xA:
+                    if (!(((((((Check_Flag(0x4C) == 2) || (Check_Flag(0x5F) == 2)) || (Check_Flag(0x67) == 2)) || (Check_Flag(0x6F) == 2)) || (Check_Flag(0x173) == 2)) || (Check_Flag(0x7E) == 2)) || (Check_Flag(0x7F) == 2))) {
+                        var_3 = -0x1F4;
+                    }
+                    var_2 = -3;
+                    break;
+                case 0xB:
+                    if (!(((((((Check_Flag(0x4C) == 2) || (Check_Flag(0x5F) == 2)) || (Check_Flag(0x67) == 2)) || (Check_Flag(0x6F) == 2)) || (Check_Flag(0x173) == 2)) || (Check_Flag(0x7E) == 2)) || (Check_Flag(0x7F) == 2))) {
+                        var_3 = -0x1F4;
+                    }
+                    var_2 = -3;
+                    break;
+            }
+        } else {
+            switch (var_1) {
+                case 1:
+                    var_2 = 3;
+                    break;
+                case 2:
+                    var_2 = 1;
+                    break;
+                case 3:
+                    var_2 = 0;
+                    break;
+                case 4:
+                    var_2 = -3;
+                    break;
+                case 5:
+                    var_2 = -9;
+                    break;
+                case 7:
+                    var_2 = 0;
+                    break;
+                case 8:
+                    var_2 = -3;
+                    break;
+                case 9:
+                    var_2 = -3;
+                    break;
+                case 0xA:
+                    var_2 = -3;
+                    break;
+                case 0xB:
+                    var_2 = -3;
+                    break;
+            }
+        }
+        if ((Is_NPC_Birthday(0x1F) == 1)) {
+            if (!(((((Check_Flag(0x4C) == 2) || (Check_Flag(0x5F) == 2)) || (Check_Flag(0x67) == 2)) || (Check_Flag(0x6F) == 2)) || (Check_Flag(0x55) == 2))) {
+                var_3 *= 5;
+            }
+            var_2 *= 5;
+        }
+        if (var_6) {
+            if (!(((((Check_Flag(0x4C) == 2) || (Check_Flag(0x5F) == 2)) || (Check_Flag(0x67) == 2)) || (Check_Flag(0x6F) == 2)) || (Check_Flag(0x55) == 2))) {
+                var_3 = (var_3 + (var_3 / 4));
+            }
+            var_2 = (var_2 + (var_2 / 4));
+        }
+        Give_Friendship_Points(0x1F, var_2);
+        Give_Love_Points(0x1F, var_3);
+        Warp_Entity_To_Map(0x1F);
+        if ((Check_Flag(0x23D) != 1)) {
+            if ((Check_Flag(0x23E) == 0xA)) {
+                Set_Flag(0x23E, 0);
+            } else {
+                Set_Flag(0x23E, (Check_Flag(0x23E) + 1));
+            }
+            Set_Flag(0x23D, 1);
+        }
+        Free_Event_Entity(0x1F);
+        SetEntityFacing(0x1F, "Down");
+        SetEntityAnim(0x1F, 0x675);
+        if ((GetEntityFacing(0) == 1)) {
+            Set_Vector_Y(0x1F, (GetEntityY(0) - 0x64), 1);
+        } else {
+            SetEntityFacing(0x1F, "Left");
+            Set_Vector_X(0x1F, (GetEntityX(0) + 0x64), 1);
+        }
+        SetEntityAnim(0x1F, 0x675);
+        Fade_Out(1, 1);
+        PlaySong(0, 0xBE);
+        Make_Delay(0x1E);
+        Hide_Entity(0x1F);
+        Fade_In(1, 1);
+    }
+    exit;
+}

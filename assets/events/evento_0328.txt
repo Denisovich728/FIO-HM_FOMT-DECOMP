@@ -1,0 +1,11 @@
+// Script 328
+#include "Fomt_Lib.src"
+
+script 328 Event_0328 {
+    const MESSAGE_0 = "Table\BRK";
+    
+    TalkOpen();
+    Print_Message(0);
+    TalkClose();
+    exit;
+}

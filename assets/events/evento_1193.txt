@@ -1,0 +1,27 @@
+// Script 1193
+#include "Fomt_Lib.src"
+
+script 1193 Event_1193 {
+    const MESSAGE_0 = "It wouldn't be Summer \r\nwithout the Firework\r\nFestival!\BRK";
+    
+    if ((Check_If_Single(2) == 0)) {
+        Free_Event_Entity(2);
+    }
+    SetEntityFacing(2, GetOppositeFacing(GetEntityFacing(0)));
+    TalkOpen();
+    Set_Portrait(1);
+    Set_Name_Window(2);
+    TalkMessage(0);
+    TalkClose();
+    if ((Has_NPC_Talked_Today(2) == 0)) {
+        Give_Friendship_Points(2, 5);
+    }
+    Free_Event_Entity(2);
+    if ((((((((((Has_NPC_Talked_Today(2) && Has_NPC_Talked_Today(7)) && Has_NPC_Talked_Today(0x14)) && ((Check_Flag(0xF4) == 0) || Has_NPC_Talked_Today(0x17))) && Has_NPC_Talked_Today(0x1A)) && Has_NPC_Talked_Today(0x13)) && Has_NPC_Talked_Today(0x15)) && Has_NPC_Talked_Today(0x19)) && Has_NPC_Talked_Today(3)) && Has_NPC_Talked_Today(0xC))) {
+        Set_Flag(0x19F, 0);
+        Fade_Out(2, 1);
+        Execute_Script(1192);
+    }
+    SetEntityFacing(2, "Right");
+    exit;
+}

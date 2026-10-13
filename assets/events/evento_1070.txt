@@ -1,0 +1,22 @@
+// Script 1070
+#include "Fomt_Lib.src"
+
+script 1070 Event_1070 {
+    const MESSAGE_0 = "So you came, too, \r\n\xFF!?\BRK\WAIT_CLICKI never miss a chance to \r\neat Rice Cakes! \BRK\WAIT_CLICKThe ones at New Year's\r\nalways seem to taste \r\nbetter, too! \BRK";
+    
+    if ((Check_If_Single(0xD) == 0)) {
+        Free_Event_Entity(0xD);
+    }
+    SetEntityFacing(0xD, GetOppositeFacing(GetEntityFacing(0)));
+    TalkOpen();
+    Set_Portrait(0x76);
+    Set_Name_Window(0xD);
+    TalkMessage(0);
+    TalkClose();
+    if ((Has_Spoken_To_NPC_Today(0xD) == 0)) {
+        Give_Friendship_Points(0xD, 5);
+    }
+    Free_Event_Entity(0xD);
+    SetEntityFacing(0xD, "Down");
+    exit;
+}

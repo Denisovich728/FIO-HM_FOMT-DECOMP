@@ -1,0 +1,58 @@
+// Script 63
+#include "Fomt_Lib.src"
+
+script 63 Event_0063 {
+    const MESSAGE_0 = "I don't think we'll \r\nbe interrupted here. \BRK";
+    const MESSAGE_1 = "Ah...So this is what being \r\nproposed to feels like. \BRK\r\nI'd only ever read about it \r\nin books. Of course I'll \r\nmarry you!\BRK";
+    const MESSAGE_2 = "I have to go tell my \r\nparents. I'm sure they'll be\r\nsurprised. \BRK";
+    
+    Warp_Player(0x1D, 0x14B, 0x94);
+    PlayBGM(1, 0x11);
+    SetEntityPosition(0, 0x14B, 0x94, "Left");
+    SetEntityAnim(0, 0x192);
+    SetEntityPosition(0xC, 0x12F, 0x94, "Right");
+    SetEntityAnim(0xC, 0x813);
+    Fade_In(2, 1);
+    TalkOpen();
+    Set_Portrait(0x6C);
+    Set_Name_Window(0xC);
+    Set_Hearth_Anim(0xC);
+    TalkMessage(0);
+    TalkClose();
+    SetEntityAnim(0, 0x1FE);
+    Make_Delay(0x3C);
+    SetEntityAnim(0, 0x192);
+    Make_Delay(0x28);
+    SetEntityAnim(0, 0x42);
+    Animation_Tool_Give(0x4B);
+    Make_Delay(0x3C);
+    SetEntityAnim(0, 0x192);
+    Show_Emote(0xC, 1, 0);
+    Make_Delay(0x3C);
+    TalkOpen();
+    Set_Portrait(0x6C);
+    Set_Name_Window(0xC);
+    Set_Hearth_Anim(0xC);
+    TalkMessage(1);
+    TalkClose();
+    Show_Emote(0, 1, 0);
+    Make_Delay(0x3C);
+    TalkOpen();
+    Set_Portrait(0x67);
+    Set_Name_Window(0xC);
+    Set_Hearth_Anim(0xC);
+    TalkMessage(2);
+    TalkClose();
+    Remove_Equipped_Item();
+    SetEntityFacing(0xC, "Down");
+    SetEntityAnim(0xC, 0x817);
+    SetEntityFacing(0, "Down");
+    Set_Vector_Y(0xC, 0xFA, 1);
+    Execute_Movement(0xC);
+    SetEntityAnim(0xC, 0x813);
+    Hide_Entity(0xC);
+    Free_Event_Entity(0xC);
+    Set_Flag(0x66, 2);
+    exit;
+    exit;
+}

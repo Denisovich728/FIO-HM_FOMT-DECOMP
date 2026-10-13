@@ -1,0 +1,30 @@
+// Script 21
+#include "Fomt_Lib.src"
+
+script 21 Event_0021 {
+    const MESSAGE_0 = "Thank goodness our quarrel\r\nis finally over...\BRK\WAIT_CLICKThank you, \xFF!. \BRK";
+    const MESSAGE_1 = "I'm glad our quarrel ended,\r\nbut Karen can hold a grudge\r\nfor a long time...\BRK";
+    
+    if ((Check_Flag(0x47) == 1)) {
+    }
+    if ((Check_Flag(0x48) == 0)) {
+        SetEntityFacing(0x11, GetOppositeFacing(GetEntityFacing(0)));
+        TalkOpen();
+        Set_Portrait(0x43);
+        Set_Name_Window(0x11);
+        TalkMessage(0);
+        TalkClose();
+        SetEntityFacing(0x11, "Down");
+        Free_Event_Entity(0x11);
+    } else {
+        SetEntityFacing(0x11, GetOppositeFacing(GetEntityFacing(0)));
+        TalkOpen();
+        Set_Portrait(0x46);
+        Set_Name_Window(0x11);
+        TalkMessage(1);
+        TalkClose();
+        SetEntityFacing(0x11, "Down");
+        Free_Event_Entity(0x11);
+    }
+    exit;
+}

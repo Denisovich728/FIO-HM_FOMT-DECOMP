@@ -1,0 +1,17 @@
+// Script 320
+#include "Fomt_Lib.src"
+
+script 320 Event_0320 {
+    const MESSAGE_0 = "Bookshelf\r\n\BRK";
+    
+    if ((GetEntityFacing(0) == 1)) {
+        Fade_Out(3, 1);
+        Show_Document_UI(0x3C);
+        Fade_In(3, 1);
+    } else {
+        TalkOpen();
+        TalkMessage(0);
+        TalkClose();
+    }
+    exit;
+}

@@ -1,0 +1,35 @@
+// Script 924
+#include "Fomt_Lib.src"
+
+script 924 Event_0924 {
+    const MESSAGE_0 = "Seems like Cliff is going to\r\nsettle down here for good. \r\nOf course, that means he \r\ncan't marry Aja...\BRK";
+    const MESSAGE_1 = "Still, Cliff is like my own \r\nson already, so that means \r\nAnn will become like our \r\ndaughter! \BRK";
+    const MESSAGE_2 = "Still...I hope Aja comes \r\nback home soon...\r\nI thought she'd get home-\r\nsick and come back sooner.\BRK";
+    
+    if ((Check_If_Single(9) == 0)) {
+        Free_Event_Entity(9);
+    }
+    if ((Has_NPC_Talked_Today(9) == 0)) {
+        SetEntityFacing(9, GetOppositeFacing(GetEntityFacing(0)));
+        TalkOpen();
+        Set_Portrait(0x89);
+        Set_Name_Window(9);
+        TalkMessageSlow(0);
+        Set_Portrait(0x8A);
+        Set_Name_Window(9);
+        TalkMessageSlow(1);
+        TalkClose();
+        SetEntityFacing(9, "Right");
+        Free_Event_Entity(9);
+    } else {
+        SetEntityFacing(9, GetOppositeFacing(GetEntityFacing(0)));
+        TalkOpen();
+        Set_Portrait(0x8C);
+        Set_Name_Window(9);
+        TalkMessageSlow(2);
+        TalkClose();
+        SetEntityFacing(9, "Right");
+        Free_Event_Entity(9);
+    }
+    exit;
+}

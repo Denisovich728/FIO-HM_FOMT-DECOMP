@@ -1,0 +1,22 @@
+// Script 1121
+#include "Fomt_Lib.src"
+
+script 1121 Event_1121 {
+    const MESSAGE_0 = "I\x81fm trying to teach Karen\r\nhow to cook, but it's \r\nhopeless! \BRK\WAIT_CLICKWhy does she insist on \r\ncompeting? \BRK";
+    
+    if ((Check_If_Single(0x12) == 0)) {
+        Free_Event_Entity(0x12);
+    }
+    SetEntityFacing(0x12, GetOppositeFacing(GetEntityFacing(0)));
+    TalkOpen();
+    Set_Portrait(0x52);
+    Set_Name_Window(0x12);
+    TalkMessage(0);
+    TalkClose();
+    if ((Has_Spoken_To_NPC_Today(0x12) == 0)) {
+        Give_Friendship_Points(0x12, 5);
+    }
+    SetEntityFacing(0x12, "Up");
+    Free_Event_Entity(0x12);
+    exit;
+}

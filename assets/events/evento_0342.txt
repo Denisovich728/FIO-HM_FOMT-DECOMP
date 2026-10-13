@@ -1,0 +1,96 @@
+// Script 342
+#include "Fomt_Lib.src"
+
+script 342 Event_0342 {
+    const MESSAGE_0 = "Turn in for the day?";
+    const MESSAGE_1 = "Yes";
+    const MESSAGE_2 = "No";
+    const MESSAGE_3 = "Bed\r\nInvestigate from left \r\nside to sleep.\BRK";
+    
+    var var_0;
+    var var_1;
+    var var_2;
+    var var_3;
+    
+    if ((GetEntityFacing(0) == 3)) {
+        var_0 = Check_Flag(1);
+        var_1 = Check_Flag(2);
+        var_2 = Check_Flag(3);
+        TalkOpen();
+        var_3 = Show_Tre_Option_Menu(0, 1, 2);
+        TalkClose();
+        switch (var_3) {
+            case 1:
+                Lock_Player_Input();
+                if ((GetEntityY(0) != 0x4C)) {
+                    SetEntityAnim(0, 0x1C6);
+                    SetEntityFacing(0, "Up");
+                    Set_Vector_Y(0, 0x4C, 1);
+                    Execute_Movement(0);
+                    SetEntityAnim(0, 0x192);
+                    SetEntityFacing(0, "Right");
+                }
+                switch (Check_Flag(0xE)) {
+                    case 0:
+                        if ((GetEntityX(0) != 0xC1)) {
+                            SetEntityAnim(0, 0x1C6);
+                            Set_Vector_X(0, 0xC1, 1);
+                            Execute_Movement(0);
+                            SetEntityAnim(0, 0x192);
+                        }
+                        break;
+                    case 1:
+                        if ((GetEntityX(0) != 0x139)) {
+                            SetEntityAnim(0, 0x1C6);
+                            Set_Vector_X(0, 0x139, 1);
+                            Execute_Movement(0);
+                            SetEntityAnim(0, 0x192);
+                        }
+                        break;
+                    case 2:
+                        if ((GetEntityX(0) != 0x179)) {
+                            SetEntityAnim(0, 0x1C6);
+                            Set_Vector_X(0, 0x179, 1);
+                            Execute_Movement(0);
+                            SetEntityAnim(0, 0x192);
+                        }
+                        break;
+                }
+                SetEntityAnim(0, 0x10E);
+                Make_Delay(0xC);
+                Set_Camera_Position(0, (GetEntityX(0) + 0x10), 0x8000);
+                Make_Delay(0x20);
+                switch (Check_Flag(0xE)) {
+                    case 0:
+                        SetEntityPosition(0, 0xC8, -0x2E, "Down");
+                        break;
+                    case 1:
+                        SetEntityPosition(0, 0x140, -0x2E, "Down");
+                        break;
+                    case 2:
+                        SetEntityPosition(0, 0x180, -0x2E, "Down");
+                        break;
+                }
+                SetEntityAnim(0, 0x18E);
+                Make_Delay(0x1E);
+                Fade_Out(2, 1);
+                Set_Global_RNG_Modifier(0x32, -5);
+                if ((((var_0 == 3) && (((var_1 == 0xE) && ((var_2 >= 0x12) && (var_2 <= 0x17))) || ((var_1 == 0xF) && ((var_2 >= 0) && (var_2 <= 5))))) && ((((((Check_Flag(0x4C) == 2) || (Check_Flag(0x55) == 2)) || (Check_Flag(0x5F) == 2)) || (Check_Flag(0x67) == 2)) || (Check_Flag(0x6F) == 2)) || (Check_Flag(0x173) == 2)))) {
+                    Execute_Script(1299);
+                    goto LBL_0035;
+                }
+                if (((var_0 == 3) && ((var_1 == 0x19) && ((var_2 >= 0x15) && (var_2 <= 0x17))))) {
+                    Execute_Script(1307);
+                }
+                Execute_Script(988);
+                break;
+            case 2:
+                break;
+        }
+    } else {
+        TalkOpen();
+        TalkMessage(3);
+        TalkClose();
+    }
+    exit;
+}

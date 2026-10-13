@@ -1,0 +1,11 @@
+// Script 514
+#include "Fomt_Lib.src"
+
+script 514 Event_0514 {
+    const MESSAGE_0 = "Smelting Furnace\BRK";
+    
+    TalkOpen();
+    Print_Message(0);
+    TalkClose();
+    exit;
+}

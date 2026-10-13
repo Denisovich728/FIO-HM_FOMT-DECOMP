@@ -1,0 +1,141 @@
+// Script 684
+#include "Fomt_Lib.src"
+
+script 684 Event_0684 {
+    const MESSAGE_0 = "\xFF), wake up!\r\nYou have to wake up!\BRK";
+    const MESSAGE_1 = "When I woke up this morning,\r\n\xFF*had fallen \r\nout of bed and hurt himself.\BRK";
+    const MESSAGE_2 = "Waaa...!!!!\BRK";
+    const MESSAGE_3 = "He'll be fine!";
+    const MESSAGE_4 = "Let's go to the Clinic.";
+    const MESSAGE_5 = "What are you talking about!?\r\n\xFF*'s injured,\r\nDon't you see!?\BRK";
+    const MESSAGE_6 = "I'm taking \xFF*\r\nto the Doctor now, even if\r\nI have to kick him out\BRK\r\nof bed!\BRK";
+    const MESSAGE_7 = "Don't worry, it's only \r\na scratch. \BRK";
+    const MESSAGE_8 = "Really?\BRK";
+    const MESSAGE_9 = "He's OK this time, but you\r\nhave to be especially\r\nwatchful at this age.\BRK";
+    const MESSAGE_10 = "I understand. \r\nI'm sorry, \xFF*.\BRK";
+    const MESSAGE_11 = "Da-!\BRK";
+    
+    var var_0;
+    
+    PlayBGM(1, 0x11);
+    Warp_Player(0x1D, 0x190, 0x64);
+    SetEntityPosition(0, 0x190, 0x64, "Right");
+    if (Inventory_Check()) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    SetEntityPosition(3, 0x1C2, 0x64, "Left");
+    SetEntityAnim(3, 0x22F);
+    SetEntityPosition(0x23, 0x1B0, 0x64, "Left");
+    if ((Check_Flag(0x2F) == 1)) {
+        SetEntityAnim(0x23, 0x267);
+    } else {
+        SetEntityAnim(0x23, 0x26B);
+    }
+    TalkOpen();
+    Set_Name_Window(3);
+    Set_Portrait(0xA);
+    Set_Hearth_Anim(3);
+    TalkMessage(0);
+    TalkClose();
+    Fade_In(2, 1);
+    Show_Emote(0, 3, 0);
+    Make_Delay(0x3C);
+    TalkOpen();
+    Set_Name_Window(3);
+    Set_Portrait(0xA);
+    Set_Hearth_Anim(3);
+    TalkMessage(1);
+    TalkClose();
+    TalkOpen();
+    Set_Name_Window(0x23);
+    Set_Portrait(0x15);
+    TalkMessage(2);
+    TalkClose();
+    TalkOpen();
+    var_0 = TalkChoice2(3, 4);
+    switch (var_0) {
+        case 1:
+            Give_Love_Points(3, -0x7D0);
+            Give_Friendship_Points(0x23, -0xA);
+            TalkClose();
+            TalkOpen();
+            Set_Name_Window(3);
+            Set_Portrait(9);
+            Set_Hearth_Anim(3);
+            TalkMessage(5);
+            TalkClose();
+            SetEntityFacing(3, "Down");
+            TalkOpen();
+            Set_Name_Window(3);
+            Set_Portrait(9);
+            Set_Hearth_Anim(3);
+            TalkMessage(6);
+            TalkClose();
+            Free_Event_Entity(3);
+            Free_Event_Entity(0x23);
+            Set_Flag(0xD7, 2);
+            Fade_Out(2, 1);
+            Execute_Script(988);
+            break;
+        case 2:
+            Give_Love_Points(3, 0xBB8);
+            Give_Friendship_Points(0x23, 0x14);
+            Give_Friendship_Points(0x14, 0x14);
+            TalkClose();
+            Fade_Out(2, 1);
+            Warp_Player(0x13, 0xE4, 0x94);
+            PlayBGM(1, 0x11);
+            SetEntityPosition(0, 0xE4, 0x7C, "Right");
+            if (Inventory_Check()) {
+                SetEntityAnim(0, 0x192);
+                goto LBL_0009;
+            }
+            SetEntityAnim(0, 0x152);
+            SetEntityPosition(3, 0xE4, 0x94, "Right");
+            SetEntityAnim(3, 0x22F);
+            SetEntityPosition(0x14, 0x106, 0x7C, "Left");
+            SetEntityAnim(0x14, 0x320);
+            SetEntityPosition(0x23, 0x106, 0x94, "Left");
+            if ((Check_Flag(0x2F) == 1)) {
+                SetEntityAnim(0x23, 0x267);
+                goto LBL_000D;
+            }
+            SetEntityAnim(0x23, 0x26B);
+            Fade_In(2, 1);
+            TalkOpen();
+            Set_Portrait(0x23);
+            Set_Name_Window(0x14);
+            TalkMessage(7);
+            TalkClose();
+            TalkOpen();
+            Set_Name_Window(3);
+            Set_Portrait(8);
+            TalkMessage(8);
+            TalkClose();
+            TalkOpen();
+            Set_Portrait(0x23);
+            Set_Name_Window(0x14);
+            TalkMessage(9);
+            TalkClose();
+            TalkOpen();
+            Set_Name_Window(3);
+            Set_Portrait(8);
+            TalkMessage(10);
+            TalkClose();
+            TalkOpen();
+            Set_Name_Window(0x23);
+            Set_Portrait(0x13);
+            TalkMessage(11);
+            TalkClose();
+            Free_Event_Entity(3);
+            Free_Event_Entity(0x23);
+            Free_Event_Entity(0x14);
+            Set_Flag(0xD7, 2);
+            Fade_Out(2, 1);
+            Execute_Script(988);
+            break;
+    }
+    exit;
+}

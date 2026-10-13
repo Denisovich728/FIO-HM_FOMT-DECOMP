@@ -1,0 +1,36 @@
+// Script 1141
+#include "Fomt_Lib.src"
+
+script 1141 Event_1141 {
+    const MESSAGE_0 = "Don't get too upset!\r\nI'm sure if you practice\r\nharder you can win \BRK\r\nnext year. \BRK";
+    const MESSAGE_1 = "I'm so impressed that\r\nyou won! Good job!\BRK";
+    const MESSAGE_2 = "I hadn't realized how smart\r\nDogs are! Now I want one\r\nof my own...\BRK";
+    
+    if ((Check_If_Single(0x12) == 0)) {
+        Free_Event_Entity(0x12);
+    }
+    SetEntityFacing(0x12, GetOppositeFacing(GetEntityFacing(0)));
+    TalkOpen();
+    if ((Check_Flag(0x193) == 1)) {
+        if ((Check_Flag(0x195) == 0)) {
+            Set_Portrait(0x4F);
+            Set_Name_Window(0x12);
+            TalkMessage(0);
+        } else {
+            Set_Portrait(0x50);
+            Set_Name_Window(0x12);
+            TalkMessage(1);
+        }
+    } else {
+        Set_Portrait(0x50);
+        Set_Name_Window(0x12);
+        TalkMessage(2);
+    }
+    TalkClose();
+    if ((Has_Spoken_To_NPC_Today(0x12) == 0)) {
+        Give_Friendship_Points(0x12, 5);
+    }
+    Free_Event_Entity(0x12);
+    SetEntityFacing(0x12, "Right");
+    exit;
+}

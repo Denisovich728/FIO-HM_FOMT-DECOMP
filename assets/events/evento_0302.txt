@@ -1,0 +1,11 @@
+// Script 302
+#include "Fomt_Lib.src"
+
+script 302 Event_0302 {
+    const MESSAGE_0 = "Counter\BRK";
+    
+    TalkOpen();
+    Print_Message(0);
+    TalkClose();
+    exit;
+}

@@ -1,0 +1,93 @@
+// Script 375
+#include "Fomt_Lib.src"
+
+script 375 Event_0375 {
+    const MESSAGE_0 = "It's locked...\BRK";
+    
+    var var_0;
+    var var_1;
+    var var_2;
+    var var_3;
+    var var_4;
+    
+    if ((GetEntityFacing(0) == 1)) {
+        var_0 = 0;
+        var_1 = Check_Flag(1);
+        var_2 = Check_Flag(2);
+        var_3 = Check_Flag(3);
+        var_4 = Check_Flag(5);
+        if (((((((((((((((var_1 == 0) && (var_2 == 1)) || ((var_1 == 0) && (var_2 == 0x12))) || ((var_1 == 0) && (var_2 == 0x16))) || ((var_1 == 1) && (var_2 == 1))) || ((var_1 == 1) && (var_2 == 7))) || ((var_1 == 1) && (var_2 == 0x18))) || ((var_1 == 1) && (var_2 == 0x14))) || ((var_1 == 2) && (var_2 == 3))) || ((var_1 == 2) && (var_2 == 9))) || ((var_1 == 2) && (var_2 == 0xD))) || ((var_1 == 2) && (var_2 == 0x12))) || ((var_1 == 2) && (var_2 == 0x15))) || ((var_1 == 3) && (var_2 == 0x1E)))) {
+            var_0 = 0;
+        } else {
+            if (((var_1 == 3) && (var_2 == 0x18))) {
+                if ((Check_Flag(0x1C2) == 5)) {
+                    if ((var_3 >= 0x12)) {
+                        var_0 = 1;
+                    }
+                } else {
+                    var_0 = 0;
+                }
+            } else {
+                if (((Check_Flag(0x247) == 1) || (Check_Flag(0x91) == 1))) {
+                    var_0 = 0;
+                } else {
+                    if ((GetEntityLocation(0xB) == 0x1A)) {
+                        if ((Chek_Friendship_Points(0xB) <= 0x64)) {
+                            if (((var_3 >= 0xA) && (var_3 < 0x13))) {
+                                var_0 = 1;
+                            }
+                        } else {
+                            if ((Chek_Friendship_Points(0xB) > 0x64)) {
+                                if (((var_3 >= 8) && (var_3 < 0x14))) {
+                                    var_0 = 1;
+                                }
+                                if ((Chek_Friendship_Points(0xB) > 0xC8)) {
+                                    if (((var_3 >= 6) && (var_3 < 0x16))) {
+                                        var_0 = 1;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        if ((var_0 == 1)) {
+            PlaySong(0, 0x9C);
+            Fade_Out(2, 1);
+            Warp_Player(0x1A, 0x78, 0xD0);
+            SetEntityPosition(0, 0x78, 0xD0, "Up");
+            if ((((var_1 == 3) && (var_2 == 0x18)) && (Check_Flag(0x1C2) == 5))) {
+                if ((var_3 >= 0x12)) {
+                    Execute_Script(1305);
+                }
+            } else {
+                if (((((((((((((((((((((((((Check_Flag(0x64) == 2) && (Check_Flag(0x65) == 0)) && (var_4 == 1)) && ((var_3 >= 0xA) && (var_3 < 0xD))) && (Check_Flag(0x4C) == 0)) && (Check_Flag(0x55) == 0)) && (Check_Flag(0x5F) == 0)) && (Check_Flag(0x67) == 0)) && (Check_Flag(0x6F) == 0)) && (Check_Flag(0x173) == 0)) && (Check_Flag(0x8E) == 0)) && (Check_Flag(0x8F) == 0)) && (Check_Flag(0x4B) == 0)) && (Check_Flag(0x54) == 0)) && (Check_Flag(0x5E) == 0)) && (Check_Flag(0x66) == 0)) && (Check_Flag(0x6E) == 0)) && (Check_Flag(0x172) == 0)) && (Check_Flag(0x8D) == 0)) && (Chek_Love_Points(0xC) >= 0x9C40)) && ((GetEntityLocation(0xA) == 0x1A) || (GetEntityLocation(0xA) == 0x1B))) && ((GetEntityLocation(0xB) == 0x1A) || (GetEntityLocation(0xB) == 0x1B))) && ((GetEntityLocation(0xC) == 0x1A) || (GetEntityLocation(0xC) == 0x1B))) && (Inventory_Check() == 1))) {
+                    Set_Flag(0x65, 1);
+                    Execute_Script(62);
+                } else {
+                    if ((((((((((((((Check_Flag(0xFF) == 0) && (var_4 == 4)) && ((var_3 >= 0x10) && (var_3 < 0x13))) && (Chek_Friendship_Points(0xA) >= 0xFA)) && ((Check_Flag(0x8E) == 2) || (Check_Flag(0x8F) == 2))) && (GetEntityLocation(0xA) == 0x1A)) && (GetEntityLocation(0xB) == 0x1A)) && (GetEntityLocation(0xC) == 0x1A)) && (GetEntityLocation(7) == 0x1A)) && (Check_If_Single(0xA) == 1)) && (Check_If_Single(0xB) == 1)) && (Check_If_Single(0xC) == 1)) && (Check_If_Single(7) == 1))) {
+                        Set_Flag(0xFF, 1);
+                        Execute_Script(726);
+                    } else {
+                        if ((((((((Check_Flag(0x100) == 0) && (var_4 == 6)) && ((var_3 >= 0xA) && (var_3 < 0xD))) && (Chek_Friendship_Points(0xB) >= 0xC8)) && (GetEntityLocation(9) == 0x1A)) && (Check_If_Single(9) == 1)) && (Check_If_Single(0xB) == 1))) {
+                            Set_Flag(0x100, 1);
+                            Execute_Script(731);
+                        } else {
+                            if ((((((((Check_Flag(0x100) == 2) && (Check_Flag(0x101) == 1)) && (Check_Flag(0x102) == 0)) && (Check_Flag(0x103) < 5)) && (var_4 == 6)) && ((var_3 >= 0xA) && (var_3 < 0xD))) && (GetEntityLocation(9) == 0x1A))) {
+                                Set_Flag(0x102, 1);
+                                Execute_Script(732);
+                            }
+                        }
+                    }
+                }
+            }
+            Fade_In(2, 1);
+        } else {
+            TalkOpen();
+            TalkMessage(0);
+            TalkClose();
+        }
+    }
+    exit;
+}

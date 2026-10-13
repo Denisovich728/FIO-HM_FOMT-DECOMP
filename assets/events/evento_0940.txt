@@ -1,0 +1,31 @@
+// Script 940
+#include "Fomt_Lib.src"
+
+script 940 Event_0940 {
+    const MESSAGE_0 = "And I thought Mary wasn't \r\ninterested in boys yet! \BRK";
+    const MESSAGE_1 = "I'm glad she is, though.\r\nIt's only healthy, \r\nafter all! \BRK";
+    
+    if ((Check_If_Single(0xB) == 0)) {
+        Free_Event_Entity(0xB);
+    }
+    if ((Has_NPC_Talked_Today(0xB) == 0)) {
+        SetEntityFacing(0xB, GetOppositeFacing(GetEntityFacing(0)));
+        TalkOpen();
+        Set_Portrait(0x6E);
+        Set_Name_Window(0xB);
+        TalkMessage(0);
+        TalkClose();
+        SetEntityFacing(0xB, "Left");
+        Free_Event_Entity(0xB);
+    } else {
+        SetEntityFacing(0xB, GetOppositeFacing(GetEntityFacing(0)));
+        TalkOpen();
+        Set_Portrait(0x6F);
+        Set_Name_Window(0xB);
+        TalkMessage(1);
+        TalkClose();
+        SetEntityFacing(0xB, "Left");
+        Free_Event_Entity(0xB);
+    }
+    exit;
+}

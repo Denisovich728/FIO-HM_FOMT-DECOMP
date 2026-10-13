@@ -1,0 +1,22 @@
+// Script 1115
+#include "Fomt_Lib.src"
+
+script 1115 Event_1115 {
+    const MESSAGE_0 = "I hope my mom is alright.\r\nI tried to convince her\r\nnot to come, you know. \BRK";
+    
+    if ((Check_If_Single(2) == 0)) {
+        Free_Event_Entity(2);
+    }
+    SetEntityFacing(2, GetOppositeFacing(GetEntityFacing(0)));
+    TalkOpen();
+    Set_Portrait(3);
+    Set_Name_Window(2);
+    TalkMessage(0);
+    TalkClose();
+    if ((Has_Spoken_To_NPC_Today(2) == 0)) {
+        Give_Friendship_Points(2, 5);
+    }
+    SetEntityFacing(2, "Right");
+    Free_Event_Entity(2);
+    exit;
+}

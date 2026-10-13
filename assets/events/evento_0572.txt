@@ -1,0 +1,64 @@
+// Script 572
+#include "Fomt_Lib.src"
+
+script 572 Event_0572 {
+    const MESSAGE_0 = "\x81c\x81c\x81c\x81c\r\n\r\n\BRK";
+    const MESSAGE_1 = "...Here you go.\r\nDon't come back.\r\n\BRK";
+    const MESSAGE_2 = "You sure are stubborn.\r\n\r\n\BRK";
+    
+    SetEntityAnim(0, 0x192);
+    Tick_Overnight_Engine(0, 0);
+    Tick_Overnight_Engine(0, 0);
+    Fade_Out(0, 1);
+    switch (GetEntityFacing(0)) {
+        case 1:
+            SetEntityPosition(0x20, GetEntityX(0), (GetEntityY(0) - 0x18), "Down");
+            break;
+        case 0:
+            SetEntityPosition(0x20, GetEntityX(0), (GetEntityY(0) + 0x18), "Up");
+            break;
+        case 2:
+            SetEntityPosition(0x20, (GetEntityX(0) - 0x18), GetEntityY(0), "Right");
+            break;
+        case 3:
+            SetEntityPosition(0x20, (GetEntityX(0) + 0x18), GetEntityY(0), "Left");
+            break;
+    }
+    SetEntityAnim(0x20, 0x7FE);
+    Fade_In(0, 1);
+    TalkOpen();
+    Set_Name_Window(0x20);
+    Set_Portrait(0x62);
+    if ((Check_Flag(0x148) != 2)) {
+        TalkMessage(0);
+        TalkClose();
+        Set_Flag(0x148, 2);
+    } else {
+        if (((Check_Flag(0x240) == 0xA) && (Check_Flag(0x14A) != 2))) {
+            TalkMessage(1);
+            TalkClose();
+            SetEntityAnim(0x20, 0x802);
+            Make_Delay(0x1E);
+            SetEntityAnim(0x20, 0x7FE);
+            PlaySong(0, 0xB6);
+            Proc062();
+            Set_Flag(0x14A, 2);
+            Set_Flag(0xD, 1);
+            goto LBL_0009;
+        }
+        TalkMessage(2);
+        TalkClose();
+    }
+    if ((Check_Flag(0x23F) != 1)) {
+        if ((Check_Flag(0x240) == 0xA)) {
+            Set_Flag(0x240, 0);
+        } else {
+            Set_Flag(0x240, (Check_Flag(0x240) + 1));
+        }
+        Set_Flag(0x23F, 1);
+    }
+    Fade_Out(0, 1);
+    Hide_Entity(0x20);
+    Fade_In(0, 1);
+    exit;
+}

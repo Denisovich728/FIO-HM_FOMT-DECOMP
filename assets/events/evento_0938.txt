@@ -1,0 +1,31 @@
+// Script 938
+#include "Fomt_Lib.src"
+
+script 938 Event_0938 {
+    const MESSAGE_0 = "So Mary's that age already? \BRK";
+    const MESSAGE_1 = "Well, I guess it \r\nhad to happen sometime...\BRK";
+    
+    if ((Check_If_Single(0xA) == 0)) {
+        Free_Event_Entity(0xA);
+    }
+    if ((Has_NPC_Talked_Today(0xA) == 0)) {
+        SetEntityFacing(0xA, GetOppositeFacing(GetEntityFacing(0)));
+        TalkOpen();
+        Set_Portrait(0x63);
+        Set_Name_Window(0xA);
+        TalkMessage(0);
+        TalkClose();
+        SetEntityFacing(0xA, "Left");
+        Free_Event_Entity(0xA);
+    } else {
+        SetEntityFacing(0xA, GetOppositeFacing(GetEntityFacing(0)));
+        TalkOpen();
+        Set_Portrait(0x64);
+        Set_Name_Window(0xA);
+        TalkMessage(1);
+        TalkClose();
+        SetEntityFacing(0xA, "Left");
+        Free_Event_Entity(0xA);
+    }
+    exit;
+}

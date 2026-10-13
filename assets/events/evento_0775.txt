@@ -1,0 +1,21 @@
+// Script 775
+#include "Fomt_Lib.src"
+
+script 775 Event_0775 {
+    const MESSAGE_0 = "I'm determined to cure my \r\ngrandma's legs!\BRK";
+    
+    if ((Check_Flag(0x11E) == 1)) {
+        SetEntityFacing(0x15, GetOppositeFacing(GetEntityFacing(0)));
+        TalkOpen();
+        Set_Name_Window(0x15);
+        if (!(((((((Check_Flag(0x4C) == 2) || (Check_Flag(0x55) == 2)) || (Check_Flag(0x5F) == 2)) || (Check_Flag(0x67) == 2)) || (Check_Flag(0x173) == 2)) || (Check_Flag(0x96) == 2)) || (Check_Flag(0x97) == 2))) {
+            Set_Hearth_Anim(0x15);
+        }
+        Set_Portrait(0x79);
+        TalkMessage(0);
+        TalkClose();
+        Free_Event_Entity(0x15);
+        SetEntityFacing(0x15, "Right");
+    }
+    exit;
+}

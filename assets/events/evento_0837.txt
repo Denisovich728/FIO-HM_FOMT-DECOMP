@@ -1,0 +1,7 @@
+// Script 837
+#include "Fomt_Lib.src"
+
+script 837 Event_0837 {
+    exit;
+    exit;
+}

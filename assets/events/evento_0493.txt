@@ -1,0 +1,11 @@
+// Script 493
+#include "Fomt_Lib.src"
+
+script 493 Event_0493 {
+    const MESSAGE_0 = "Kai's Beach House\r\nOpen Summer Only\r\nClosed Sunday\BRK\WAIT_CLICKHours: 11AM-1PM and\r\n5-7PM. \BRK";
+    
+    TalkOpen();
+    Print_Message(0);
+    TalkClose();
+    exit;
+}

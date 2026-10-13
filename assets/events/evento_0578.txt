@@ -1,0 +1,52 @@
+// Script 578
+#include "Fomt_Lib.src"
+
+script 578 Event_0578 {
+    const MESSAGE_0 = "The Knife you ordered \r\nis here. \BRK\WAIT_CLICKCan't cut anything without\r\none of these!\r\nIt's top quality, too!\BRK";
+    const MESSAGE_1 = "Delivered safe and sound!\BRK";
+    
+    Warp_Player(2, 0xE4, 0x78);
+    SetEntityPosition(0, 0xE4, 0x78, "Down");
+    if (Inventory_Check()) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    SetEntityPosition(0x1C, 0xE4, 0x91, "Up");
+    SetEntityAnim(0x1C, 0x318);
+    Fade_In(2, 1);
+    Set_Flag(0x9F, 1);
+    TalkOpen();
+    Set_Portrait(0x1F);
+    Set_Name_Window(0x1C);
+    TalkMessage(0);
+    Set_Portrait(0x20);
+    Set_Name_Window(0x1C);
+    TalkMessage(1);
+    TalkClose();
+    SetEntityAnim(0, 0x1FE);
+    Make_Delay(0x3C);
+    if (Inventory_Check()) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    SetEntityFacing(0x1C, "Right");
+    SetEntityAnim(0x1C, 0x31C);
+    Set_Vector_X(0x1C, 0x13F, 1);
+    Execute_Movement(0x1C);
+    SetEntityAnim(0x1C, 0x318);
+    SetEntityFacing(0x1C, "Up");
+    SetEntityAnim(0x1C, 0x31C);
+    SetEntityFacing(0, "Right");
+    Set_Vector_Y(0x1C, 0, 1);
+    Execute_Movement(0x1C);
+    SetEntityAnim(0x1C, 0x318);
+    Hide_Entity(0x1C);
+    Free_Event_Entity(0x1C);
+    Electrodomestic_initiation();
+    Set_Flag(0x20, 1);
+    Set_Flag(0x9F, 2);
+    exit;
+    exit;
+}

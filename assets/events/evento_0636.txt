@@ -1,0 +1,38 @@
+// Script 636
+#include "Fomt_Lib.src"
+
+script 636 Event_0636 {
+    Warp_Player(0x1D, 0x130, 0xD0);
+    PlayBGM(1, 0x11);
+    SetEntityPosition(0, 0x130, 0xD0, 1);
+    if (Inventory_Check()) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    SetEntityPosition(0xC, 0x147, 0x72, 0);
+    SetEntityAnim(0xC, 0x813);
+    if ((Check_Flag(0xCC) == 2)) {
+        if ((Check_Flag(0x2E) >= 0x3C)) {
+            SetEntityPosition(0x23, 0x124, 0x54, 0);
+            if ((Check_Flag(0x2F) == 1)) {
+                SetEntityAnim(0x23, 0x267);
+            } else {
+                SetEntityAnim(0x23, 0x26B);
+            }
+        } else {
+            SetEntityPosition(0x23, 0x1A0, -0x30, 0);
+            SetEntityAnim(0x23, 0xC);
+        }
+    }
+    Spawn_Item_On_Grid(0, 0x120, 0x7B, 2, Get_Item_Sprite_ID(0x8F));
+    Spawn_Item_On_Grid(1, 0x130, 0x7C, 2, Get_Item_Sprite_ID(0x54));
+    Fade_In(2, 1);
+    End_Cinematic_State();
+    Routine_State_Override(0xC, 0x27E);
+    if ((Check_Flag(0xCC) == 2)) {
+        Routine_State_Override(0x23, 0x27D);
+    }
+    Set_Flag(0xBD, 1);
+    exit;
+}

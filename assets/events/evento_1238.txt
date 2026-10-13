@@ -1,0 +1,22 @@
+// Script 1238
+#include "Fomt_Lib.src"
+
+script 1238 Event_1238 {
+    const MESSAGE_0 = "Hi there, \xFF!. \r\nDid you bring something \r\nextra tasty from the farm\r\nfor the pot?\r\nWe're counting on you!\BRK";
+    
+    if ((Check_If_Single(9) == 0)) {
+        Free_Event_Entity(9);
+    }
+    SetEntityFacing(9, GetOppositeFacing(GetEntityFacing(0)));
+    TalkOpen();
+    Set_Portrait(0x8A);
+    Set_Name_Window(9);
+    TalkMessageSlow(0);
+    TalkClose();
+    if ((Has_Spoken_To_NPC_Today(9) == 0)) {
+        Give_Friendship_Points(9, 5);
+    }
+    SetEntityFacing(9, "Right");
+    Free_Event_Entity(9);
+    exit;
+}

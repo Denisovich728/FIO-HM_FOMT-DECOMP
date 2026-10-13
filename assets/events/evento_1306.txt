@@ -1,0 +1,332 @@
+// Script 1306
+#include "Fomt_Lib.src"
+
+script 1306 Event_1306 {
+    const MESSAGE_0 = "Today is the Starry Night \r\nFestival. It took a lot of \r\neffort to make all this\BRK\r\nfood, so eat up!\BRK";
+    const MESSAGE_1 = "Today is the Starry Night\r\nFestival. I made some \r\ndelicious food, so \BRK\r\nlet's eat together!\BRK";
+    const MESSAGE_2 = "Look at this feast! \r\nLet's start our \r\nStarry Night Festival.\BRK";
+    const MESSAGE_3 = "Today my mom made some cake\r\nfor the Starry Night \r\nFestival. \BRK\r\nTell me what you think of\r\neverything!\BRK";
+    const MESSAGE_4 = "Why do you look so \r\nsurprised? Even I can make\r\nsomething good for the \BRK\r\nStarry Night Festival. \BRK\WAIT_CLICKLet's eat!\BRK";
+    const MESSAGE_5 = "I made a delicious feast for\r\nthe Starry Night Festival.\BRK\WAIT_CLICKLet's eat it together, \r\nalright?\BRK";
+    const MESSAGE_6 = "It took all day to make this\r\nfeast for the Starry \r\nNight Festival. \BRK\WAIT_CLICKLet's us 3 eat up!\BRK";
+    const MESSAGE_7 = "It took all day to make this\r\ndinner for the Starry \r\nNight Festival. \BRK\WAIT_CLICKLet's us 3 eat up!\BRK";
+    const MESSAGE_8 = "It took all day to make this\r\nfeast for the Starry \r\nNight Festival. \BRK\WAIT_CLICKLet's us 3 enjoy it!\BRK";
+    const MESSAGE_9 = "Goo-goo!\BRK";
+    const MESSAGE_10 = "Let's go to the mountaintop!\r\nWe shouldn't spend the \r\nwhole Starry Night \BRK\r\nFestival indoors!\BRK";
+    const MESSAGE_11 = "They say this is when the\r\nstars are the prettiest.\r\nLet's go look, OK?\BRK";
+    const MESSAGE_12 = "You're already tired?\r\nCan't you at least \r\nclimb the mountain?\BRK";
+    const MESSAGE_13 = "The stars should be \r\nout by now. Let's go\r\nto the mountaintop.\BRK";
+    const MESSAGE_14 = "This is perfect star-viewing\r\nweather, isn't it?\BRK\WAIT_CLICKLet's go look later. \BRK";
+    const MESSAGE_15 = "Want to go to the \r\nmountaintop to look at the \r\nbest stars of the year \BRK\r\nwith me? \BRK";
+    const MESSAGE_16 = "I never get tired \r\nof looking at the stars\r\nfrom here. \BRK\WAIT_CLICKThey're so beautiful...\BRK";
+    const MESSAGE_17 = "No matter how many times I\r\nsee them, they change. \BRK\WAIT_CLICKPeople don't think so, but\r\nthe mountain and stars are\r\nalive too, you know!\BRK";
+    const MESSAGE_18 = "When I see a whole sky \r\nfull of stars like this,\r\nit fills me with wonder.\BRK";
+    const MESSAGE_19 = "I wonder if there is \r\nsomeone out there looking\r\nat our star and thinking\BRK\r\nthe same thing...?\BRK";
+    const MESSAGE_20 = "Look! A falling star..!!\BRK\r\nDid you see it?\BRK";
+    const MESSAGE_21 = "Oh darn, I forgot \r\nto make a wish!\BRK";
+    const MESSAGE_22 = "These stars we're looking at\r\nnow may not even \r\nexist any more...\BRK";
+    const MESSAGE_23 = "But even though they may be\r\ngone, their light still \r\nreaches us...\BRK";
+    const MESSAGE_24 = "Look at all the stars...\BRK\r\nWhen my parents died, my\r\ngrandmother could still \r\nwalk, so she took me \BRK\r\nup here one night...\BRK";
+    const MESSAGE_25 = "She told me I could come up\r\nhere whenever I wanted and\r\nbe with my parents again.\BRK";
+    const MESSAGE_26 = "It seems like I'm always \r\nstaring down at the ground.\BRK\WAIT_CLICKIt feels good to stare up \r\nat the sky once in a while!\BRK";
+    const MESSAGE_27 = "I'd love to stay up here\r\nwith you forever, \r\n\xFF!.\BRK\WAIT_CLICKBut, the job of a Harvest\r\nGoddess never ends.\BRK\WAIT_CLICKI need a vacation! \BRK";
+    const MESSAGE_28 = "That was fun! \r\nI know I'll sleep well\r\ntonight...\BRK";
+    
+    Warp_Player(0x1D, 0x120, 0x98);
+    PlayBGM(1, 7);
+    Spawn_Item_On_Grid(0, 0x120, 0x70, 1, Get_Item_Sprite_ID(0x8F));
+    Spawn_Item_On_Grid(1, 0x130, 0x70, 1, Get_Item_Sprite_ID(0x3D));
+    SetEntityPosition(0, 0x130, 0xD0, "Up");
+    if ((Check_Flag(0x4C) == 2)) {
+        SetEntityPosition(0x13, 0x120, 0x64, "Down");
+        SetEntityAnim(0x13, 0x691);
+    }
+    if ((Check_Flag(0x55) == 2)) {
+        SetEntityPosition(3, 0x120, 0x64, "Down");
+        SetEntityAnim(3, 0x22F);
+    }
+    if ((Check_Flag(0x5F) == 2)) {
+        SetEntityPosition(0x19, 0x120, 0x64, "Down");
+        SetEntityAnim(0x19, 0x7BE);
+    }
+    if ((Check_Flag(0x67) == 2)) {
+        SetEntityPosition(0xC, 0x120, 0x64, "Down");
+        SetEntityAnim(0xC, 0x813);
+    }
+    if ((Check_Flag(0x6F) == 2)) {
+        SetEntityPosition(0x15, 0x120, 0x64, "Down");
+        SetEntityAnim(0x15, 0x884);
+    }
+    if ((Check_Flag(0x173) == 2)) {
+        SetEntityPosition(0x1F, 0x120, 0x64, "Down");
+        SetEntityAnim(0x1F, 0x669);
+    }
+    if ((Check_Flag(0x2F) == 1)) {
+        SetEntityPosition(0x23, 0x130, 0x60, "Down");
+        SetEntityAnim(0x23, 0x267);
+    }
+    Fade_In(2, 1);
+    if ((Inventory_Check() == 1)) {
+        SetEntityAnim(0, 0x1C6);
+    } else {
+        SetEntityAnim(0, 0x156);
+    }
+    Set_Vector_Y(0, 0x98, 1);
+    Execute_Movement(0);
+    SetEntityFacing(0, "Left");
+    Set_Vector_X(0, 0x120, 1);
+    Execute_Movement(0);
+    SetEntityFacing(0, "Up");
+    if ((Inventory_Check() == 1)) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    TalkOpen();
+    if ((Check_Flag(0x2F) == 0)) {
+        if ((Check_Flag(0x4C) == 2)) {
+            Set_Name_Window(0x13);
+            Set_Portrait(0x49);
+            Set_Hearth_Anim(0x13);
+            TalkMessage(0);
+        }
+        if ((Check_Flag(0x55) == 2)) {
+            Set_Name_Window(3);
+            Set_Portrait(8);
+            Set_Hearth_Anim(3);
+            TalkMessage(1);
+        }
+        if ((Check_Flag(0x5F) == 2)) {
+            Set_Name_Window(0x19);
+            Set_Portrait(0x58);
+            Set_Hearth_Anim(0x19);
+            TalkMessage(2);
+        }
+        if ((Check_Flag(0x67) == 2)) {
+            Set_Name_Window(0xC);
+            Set_Portrait(0x68);
+            Set_Hearth_Anim(0xC);
+            TalkMessage(3);
+        }
+        if ((Check_Flag(0x6F) == 2)) {
+            Set_Name_Window(0x15);
+            Set_Portrait(0x7A);
+            Set_Hearth_Anim(0x15);
+            TalkMessage(4);
+        }
+        if ((Check_Flag(0x173) == 2)) {
+            Set_Name_Window(0x1F);
+            Set_Portrait(0x39);
+            Set_Hearth_Anim(0x1F);
+            TalkMessage(5);
+        }
+        TalkClose();
+        SetEntityAnim(0, 0x1FE);
+        Make_Delay(0x1E);
+    } else {
+        if ((Check_Flag(0x4C) == 2)) {
+            Set_Name_Window(0x13);
+            Set_Portrait(0x49);
+            Set_Hearth_Anim(0x13);
+            TalkMessage(6);
+        }
+        if ((Check_Flag(0x55) == 2)) {
+            Set_Name_Window(3);
+            Set_Portrait(8);
+            Set_Hearth_Anim(3);
+            TalkMessage(7);
+        }
+        if ((Check_Flag(0x5F) == 2)) {
+            Set_Name_Window(0x19);
+            Set_Portrait(0x58);
+            Set_Hearth_Anim(0x19);
+            TalkMessage(8);
+        }
+        if ((Check_Flag(0x67) == 2)) {
+            Set_Name_Window(0xC);
+            Set_Portrait(0x68);
+            Set_Hearth_Anim(0xC);
+            TalkMessage(3);
+        }
+        if ((Check_Flag(0x6F) == 2)) {
+            Set_Name_Window(0x15);
+            Set_Portrait(0x7A);
+            Set_Hearth_Anim(0x15);
+            TalkMessage(4);
+        }
+        if ((Check_Flag(0x173) == 2)) {
+            Set_Name_Window(0x1F);
+            Set_Portrait(0x39);
+            Set_Hearth_Anim(0x1F);
+            TalkMessage(5);
+        }
+        TalkClose();
+        TalkOpen();
+        Set_Name_Window(0x23);
+        Set_Portrait(0x13);
+        TalkMessage(9);
+        TalkClose();
+        Fade_Out(2, 1);
+        Fade_In(2, 1);
+        TalkOpen();
+        if ((Check_Flag(0x4C) == 2)) {
+            Set_Name_Window(0x13);
+            Set_Portrait(0x49);
+            Set_Hearth_Anim(0x13);
+            TalkMessage(10);
+        }
+        if ((Check_Flag(0x55) == 2)) {
+            Set_Name_Window(3);
+            Set_Portrait(8);
+            Set_Hearth_Anim(3);
+            TalkMessage(11);
+        }
+        if ((Check_Flag(0x5F) == 2)) {
+            Set_Name_Window(0x19);
+            Set_Portrait(0x58);
+            Set_Hearth_Anim(0x19);
+            TalkMessage(12);
+        }
+        if ((Check_Flag(0x67) == 2)) {
+            Set_Name_Window(0xC);
+            Set_Portrait(0x68);
+            Set_Hearth_Anim(0xC);
+            TalkMessage(13);
+        }
+        if ((Check_Flag(0x6F) == 2)) {
+            Set_Name_Window(0x15);
+            Set_Portrait(0x7A);
+            Set_Hearth_Anim(0x15);
+            TalkMessage(14);
+        }
+        if ((Check_Flag(0x173) == 2)) {
+            Set_Name_Window(0x1F);
+            Set_Portrait(0x39);
+            Set_Hearth_Anim(0x1F);
+            TalkMessage(15);
+        }
+        TalkClose();
+        SetEntityAnim(0, 0x1FE);
+        Make_Delay(0x1E);
+        FadeOutBGM();
+        Fade_Out(2, 1);
+        Set_Time(0x15, 0);
+        PlayBGM(1, 0xE);
+        Warp_Player(8, 0xE0, 0x100);
+        SetEntityPosition(0, 0xE0, 0x100, "Right");
+        if ((Check_Flag(0x4C) == 2)) {
+            SetEntityPosition(0x13, 0xF0, 0x100, "Left");
+            SetEntityAnim(0x13, 0x691);
+        }
+        if ((Check_Flag(0x55) == 2)) {
+            SetEntityPosition(3, 0xF0, 0x100, "Left");
+            SetEntityAnim(3, 0x22F);
+        }
+        if ((Check_Flag(0x5F) == 2)) {
+            SetEntityPosition(0x19, 0xF0, 0x100, "Left");
+            SetEntityAnim(0x19, 0x7BE);
+        }
+        if ((Check_Flag(0x67) == 2)) {
+            SetEntityPosition(0xC, 0xF0, 0x100, "Left");
+            SetEntityAnim(0xC, 0x813);
+        }
+        if ((Check_Flag(0x6F) == 2)) {
+            SetEntityPosition(0x15, 0xF0, 0x100, "Left");
+            SetEntityAnim(0x15, 0x884);
+        }
+        if ((Check_Flag(0x173) == 2)) {
+            SetEntityPosition(0x1F, 0xF0, 0x100, "Left");
+            SetEntityAnim(0x1F, 0x669);
+        }
+        Fade_In(2, 1);
+        TalkOpen();
+        if ((Check_Flag(0x4C) == 2)) {
+            Set_Name_Window(0x13);
+            Set_Portrait(0x49);
+            Set_Hearth_Anim(0x13);
+            TalkMessage(16);
+            SetEntityFacing(0x13, "Up");
+            Set_Portrait(0x48);
+            TalkMessage(17);
+        }
+        if ((Check_Flag(0x55) == 2)) {
+            Set_Name_Window(3);
+            Set_Portrait(0xB);
+            Set_Hearth_Anim(3);
+            TalkMessage(18);
+            SetEntityFacing(3, "Up");
+            Set_Portrait(0xC);
+            TalkMessage(19);
+        }
+        if ((Check_Flag(0x5F) == 2)) {
+            Set_Name_Window(0x19);
+            Set_Portrait(0x59);
+            Set_Hearth_Anim(0x19);
+            TalkMessage(20);
+            SetEntityFacing(0x19, "Up");
+            Set_Portrait(0x59);
+            TalkMessage(21);
+        }
+        if ((Check_Flag(0x67) == 2)) {
+            Set_Name_Window(0xC);
+            Set_Portrait(0x6A);
+            Set_Hearth_Anim(0xC);
+            TalkMessage(22);
+            SetEntityFacing(0xC, "Up");
+            Set_Portrait(0x68);
+            TalkMessage(23);
+        }
+        if ((Check_Flag(0x6F) == 2)) {
+            Set_Name_Window(0x15);
+            Set_Portrait(0x7D);
+            Set_Hearth_Anim(0x15);
+            TalkMessage(24);
+            SetEntityFacing(0x15, "Up");
+            Set_Portrait(0x7C);
+            TalkMessage(25);
+        }
+        if ((Check_Flag(0x173) == 2)) {
+            Set_Name_Window(0x1F);
+            Set_Portrait(0x39);
+            Set_Hearth_Anim(0x1F);
+            TalkMessage(26);
+            SetEntityFacing(0x1F, "Up");
+            TalkMessage(27);
+        }
+        TalkClose();
+        SetEntityAnim(0, 0x1FE);
+        Make_Delay(0x1E);
+        SetEntityFacing(0, "Up");
+        Make_Delay(0x1E);
+    }
+    if ((Check_Flag(0x4C) == 2)) {
+        Give_Love_Points(0x13, 0x3E8);
+    }
+    if ((Check_Flag(0x55) == 2)) {
+        Give_Love_Points(3, 0x3E8);
+    }
+    if ((Check_Flag(0x5F) == 2)) {
+        Give_Love_Points(0x19, 0x3E8);
+    }
+    if ((Check_Flag(0x67) == 2)) {
+        Give_Love_Points(0xC, 0x3E8);
+    }
+    if ((Check_Flag(0x6F) == 2)) {
+        Give_Love_Points(0x15, 0x3E8);
+    }
+    if ((Check_Flag(0x173) == 2)) {
+        Give_Love_Points(0x1F, 0x3E8);
+    }
+    if (((((((Check_Flag(0xC8) == 2) || (Check_Flag(0xC9) == 2)) || (Check_Flag(0xCA) == 2)) || (Check_Flag(0xCB) == 2)) || (Check_Flag(0xCC) == 2)) || (Check_Flag(0x17A) == 2))) {
+        Give_Friendship_Points(0x23, 0x14);
+    }
+    Fade_Out(2, 1);
+    TalkOpen();
+    TalkMessage(28);
+    TalkClose();
+    Despawn_Map_Item(0);
+    Despawn_Map_Item(1);
+    Set_Flag(0x1CD, 2);
+    Execute_Script(988);
+    exit;
+}

@@ -1,0 +1,23 @@
+// Script 803
+#include "Fomt_Lib.src"
+
+script 803 Event_0803 {
+    const MESSAGE_0 = "You have to be careful\r\non the mountain. \BRK";
+    const MESSAGE_1 = "...............\r\n\BRK";
+    
+    SetEntityFacing(0x1B, GetOppositeFacing(GetEntityFacing(0)));
+    TalkOpen();
+    Set_Name_Window(0x1B);
+    if ((Has_NPC_Talked_Today(0x1B) == 0)) {
+        Set_Portrait(0xAC);
+        TalkMessage(0);
+    } else {
+        Set_Portrait(0xAF);
+        TalkMessage(1);
+    }
+    TalkClose();
+    Free_Event_Entity(0x1B);
+    SetEntityFacing(0x1B, "Left");
+    exit;
+    exit;
+}

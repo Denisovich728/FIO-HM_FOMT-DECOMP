@@ -1,0 +1,35 @@
+// Script 91
+#include "Fomt_Lib.src"
+
+script 91 Event_0091 {
+    if ((GetEntityFacing(0) == 1)) {
+        PlaySong(0, 0x9C);
+        Fade_Out(2, 1);
+        if ((Check_Flag(0x11C) == 1)) {
+            Refresh_Map_Entities();
+            Add_Festival_Friendship_Bonus(0x14);
+            Give_Friendship_Points(0x14, 0x14);
+            Set_Flag(0x11C, 2);
+        }
+        Warp_Player(0x12, 0x78, 0xD0);
+        SetEntityPosition(0, 0x78, 0xD0, 1);
+        if (Func0B4(0x12)) {
+            switch (Check_Flag(1)) {
+                case 0:
+                    Set_Global_RNG_Modifier(0, 1);
+                    break;
+                case 1:
+                    Set_Global_RNG_Modifier(0, 2);
+                    break;
+                case 2:
+                    Set_Global_RNG_Modifier(0, 1);
+                    break;
+                case 3:
+                    Set_Global_RNG_Modifier(0, -1);
+                    break;
+            }
+        }
+        Fade_In(2, 1);
+    }
+    exit;
+}

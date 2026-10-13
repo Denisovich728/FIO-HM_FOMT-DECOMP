@@ -1,0 +1,83 @@
+// Script 1309
+#include "Fomt_Lib.src"
+
+script 1309 Event_1309 {
+    const MESSAGE_0 = "Alright, let's eat!\BRK";
+    const MESSAGE_1 = "It looks like there's some \r\nextra Buckwheat Flour. \BRK\WAIT_CLICKWhy don't you take some \r\nhome, \xFF!?\r\nWe can't waste it!\BRK";
+    const MESSAGE_2 = "Looks like your Rucksack\r\nis full, \xFF!. \r\nToo bad...\BRK";
+    const MESSAGE_3 = "That was good!\r\nToo bad I couldn't take\r\nany home with me...\BRK";
+    const MESSAGE_4 = "That was good!\r\nI even got to take some\r\nhome with me!\BRK";
+    
+    Fade_In(2, 1);
+    if ((Inventory_Check() == 1)) {
+        PlaySong(0, 0x6A);
+        Give_Food(0x87);
+        TalkOpen();
+        Set_Portrait(0x75);
+        Set_Name_Window(0xD);
+        TalkMessage(0);
+        TalkClose();
+        Remove_Held_Item();
+        SetEntityAnim(0, 0x4E);
+        Make_Delay(0x1E);
+        SetEntityAnim(0, 0x192);
+        PlaySong(0, 0x65);
+    } else {
+        TalkOpen();
+        Set_Portrait(0x75);
+        Set_Name_Window(0xD);
+        TalkMessage(0);
+        TalkClose();
+    }
+    Fade_Out(2, 1);
+    Fade_In(2, 1);
+    TalkOpen();
+    Set_Portrait(0x75);
+    Set_Name_Window(0xD);
+    TalkMessage(1);
+    TalkClose();
+    if (((Inventory_Check() == 0) && (Func056() == -1))) {
+        SetEntityAnim(0, 0x126);
+        Make_Delay(0x3C);
+        SetEntityAnim(0, 0x192);
+        TalkOpen();
+        Set_Portrait(0x75);
+        Set_Name_Window(0xD);
+        TalkMessage(2);
+        TalkClose();
+        Make_Delay(0x14);
+        Fade_Out(2, 1);
+        TalkOpen();
+        TalkMessage(3);
+        TalkClose();
+    } else {
+        SetEntityAnim(0, 0x1FE);
+        Make_Delay(0x14);
+        PlaySong(0, 0x6A);
+        Give_Food(0x4A);
+        Add_Item_To_Bag(0x4A, 8);
+        Make_Delay(0x14);
+        Fade_Out(2, 1);
+        TalkOpen();
+        TalkMessage(4);
+        TalkClose();
+    }
+    Add_Festival_Friendship_Bonus(0xD);
+    Add_Festival_Friendship_Bonus(0x1B);
+    Add_Festival_Friendship_Bonus(0x16);
+    Add_Festival_Friendship_Bonus(8);
+    Add_Festival_Friendship_Bonus(9);
+    Add_Festival_Friendship_Bonus(0x11);
+    Add_Festival_Friendship_Bonus(0x12);
+    Add_Festival_Friendship_Bonus(0x19);
+    Despawn_Map_Item(0);
+    Despawn_Map_Item(1);
+    Despawn_Map_Item(2);
+    Despawn_Map_Item(3);
+    Despawn_Map_Item(4);
+    Despawn_Map_Item(5);
+    Refresh_Map_Entities();
+    Set_Flag(0x1D0, 2);
+    Execute_Script(988);
+    exit;
+}

@@ -1,0 +1,34 @@
+// Script 155
+#include "Fomt_Lib.src"
+
+script 155 Event_0155 {
+    const MESSAGE_0 = "\xFF#'s House\BRK";
+    const MESSAGE_1 = "There is a Jewel of Truth in\r\n\xFF#'s house.\BRK";
+    const MESSAGE_2 = "There is a Jewel of Truth in\r\n\xFF#'s house.\BRK\WAIT_CLICK...But you can't hold it,\r\nbecause your hands are full.\r\n";
+    
+    if (Func063()) {
+        exit;
+    }
+    if ((Check_Flag(0x214) == 1)) {
+        TalkOpen();
+        Print_Message(0);
+    } else {
+        if ((Check_Flag(0x16) == 1)) {
+            if ((Inventory_Check() == 1)) {
+                Give_Item(0x27);
+                TalkOpen();
+                TalkMessage(1);
+                Set_Flag(0x214, 1);
+                Set_Flag(0x154, (Check_Flag(0x154) + 1));
+            } else {
+                TalkOpen();
+                TalkMessage(2);
+            }
+            goto LBL_0004;
+        }
+        TalkOpen();
+        Print_Message(0);
+    }
+    TalkClose();
+    exit;
+}

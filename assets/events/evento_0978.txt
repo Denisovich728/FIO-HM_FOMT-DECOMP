@@ -1,0 +1,100 @@
+// Script 978
+#include "Fomt_Lib.src"
+
+script 978 Event_0978 {
+    const MESSAGE_0 = "Go down?";
+    const MESSAGE_1 = "Yes";
+    const MESSAGE_2 = "No";
+    const MESSAGE_3 = "It's morning...\BRK";
+    const MESSAGE_4 = "Underground in the mine\r\nnear the spring,\r\nlevel \xFF%\BRK";
+    const MESSAGE_5 = "Underground in the mine\r\nnear the lake,\r\nlevel \xFF%\BRK";
+    
+    var var_0;
+    var var_1;
+    var var_2;
+    var var_3;
+    var var_4;
+    var var_5;
+    var var_6;
+    
+    TalkOpen();
+    var_0 = Show_Tre_Option_Menu(0, 1, 2);
+    TalkClose();
+    switch (var_0) {
+        case 1:
+            Fade_Out(3, 1);
+            Mine_Descend_Level();
+            Fade_In(3, 1);
+            var_3 = Check_Flag(3);
+            var_4 = Check_Flag(4);
+            if ((var_4 == 0x3B)) {
+                var_4 = 0;
+                if ((var_3 == 0x17)) {
+                    var_3 = 0;
+                } else {
+                }
+                goto LBL_0008;
+            }
+            Set_Time(var_3, var_4);
+            if (((var_3 == 6) && (var_4 == 0))) {
+                TalkOpen();
+                TalkMessage(3);
+                TalkClose();
+                var_5 = Check_Flag(0xC);
+                Proc067();
+                Set_Global_RNG_Modifier(0, 0xA);
+                var_6 = Check_Flag(0xC);
+                if ((var_5 < var_6)) {
+                    if ((var_6 == 0x64)) {
+                        SetEntityAnim(0, 0x11A);
+                        Make_Delay(0xC2);
+                        Execute_Script(694);
+                    } else {
+                        if (((var_5 < 0x50) && (0x50 <= var_6))) {
+                            SetEntityAnim(0, 0x11E);
+                            Make_Delay(0x11A);
+                        } else {
+                            if (((var_5 < 0x32) && (0x32 <= var_6))) {
+                                SetEntityAnim(0, 0x122);
+                                Make_Delay(0xF0);
+                            }
+                        }
+                    }
+                }
+                Fade_Out(2, 1);
+                Execute_Script(980);
+            }
+            var_1 = GetEntityLocation(0);
+            if (((0x34 <= var_1) && (var_1 < (0x34 + 0x100)))) {
+                var_2 = (var_1 - 0x34);
+                if (((Check_Flag(0x16D) == 0) && (var_2 == 0x64))) {
+                    Execute_Script(842);
+                } else {
+                    if (((Check_Flag(0x16E) == 0) && (var_2 == 0xC8))) {
+                        Execute_Script(843);
+                    } else {
+                        if (((Check_Flag(0x16F) == 0) && (var_2 == 0xFF))) {
+                            Execute_Script(844);
+                        } else {
+                            Set_Text_Buffer_Int(0, var_2);
+                            TalkOpen();
+                            Print_Message(4);
+                            TalkClose();
+                        }
+                    }
+                }
+                goto LBL_0037;
+            }
+            if (((0x134 <= var_1) && (var_1 < (0x134 + 0x100)))) {
+                var_2 = (var_1 - 0x134);
+                Set_Text_Buffer_Int(0, var_2);
+                TalkOpen();
+                Print_Message(5);
+                TalkClose();
+            }
+            break;
+        case 2:
+            break;
+    }
+    exit;
+}

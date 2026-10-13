@@ -1,0 +1,21 @@
+// Script 217
+#include "Fomt_Lib.src"
+
+script 217 Event_0217 {
+    const MESSAGE_0 = "There's no Fodder at\r\nall in the Chicken Fodder\r\nstorage.\BRK";
+    
+    if ((((!Inventory_Check() && (Compare_Gift() == 1)) && !Is_Item_Wrapped()) && (Search_Item_Gift_Address() == 0x5C))) {
+        Drop_Held_Item();
+        Set_Flag(0x2A, (Check_Flag(0x2A) + 1));
+    } else {
+        if ((Check_Flag(0x2A) == 0)) {
+            TalkOpen();
+            Print_Message(0);
+            TalkClose();
+            goto LBL_0005;
+        }
+        Give_Item(0x5C);
+        Set_Flag(0x2A, (Check_Flag(0x2A) - 1));
+    }
+    exit;
+}

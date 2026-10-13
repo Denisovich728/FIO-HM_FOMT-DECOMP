@@ -1,0 +1,30 @@
+// Script 1168
+#include "Fomt_Lib.src"
+
+script 1168 Event_1168 {
+    const MESSAGE_0 = "You should drink Milk \r\neveryday, you know. \BRK";
+    const MESSAGE_1 = "Do you think you have a \r\nchance of winning? \BRK";
+    
+    if ((Check_If_Single(0x14) == 0)) {
+        Free_Event_Entity(0x14);
+    }
+    SetEntityFacing(0x14, GetOppositeFacing(GetEntityFacing(0)));
+    if ((Check_Flag(0x19B) == 0)) {
+        TalkOpen();
+        Set_Portrait(0x23);
+        Set_Name_Window(0x14);
+        TalkMessage(0);
+    } else {
+        TalkOpen();
+        Set_Portrait(0x23);
+        Set_Name_Window(0x14);
+        TalkMessage(1);
+    }
+    TalkClose();
+    if ((Has_Spoken_To_NPC_Today(0x14) == 0)) {
+        Give_Friendship_Points(0x14, 5);
+    }
+    Free_Event_Entity(0x14);
+    SetEntityFacing(0x14, "Down");
+    exit;
+}

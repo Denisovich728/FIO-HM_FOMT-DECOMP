@@ -1,0 +1,85 @@
+// Script 1194
+#include "Fomt_Lib.src"
+
+script 1194 Event_1194 {
+    const MESSAGE_0 = "Hi, \xFF!. \r\nI can't wait for the \r\nfireworks to start!\BRK";
+    const MESSAGE_1 = "Invite to the fireworks?";
+    const MESSAGE_2 = "Invite.";
+    const MESSAGE_3 = "Don't invite.";
+    const MESSAGE_4 = "OK. Thanks for asking.\r\nLook! They're starting!\BRK";
+    const MESSAGE_5 = "Hi, \xFF!. \r\nThe fireworks are starting!\BRK";
+    
+    var var_0;
+    var var_1;
+    var var_2;
+    var var_3;
+    var var_4;
+    
+    if ((Check_If_Single(3) == 0)) {
+        Free_Event_Entity(3);
+    }
+    SetEntityFacing(3, GetOppositeFacing(GetEntityFacing(0)));
+    if ((Has_NPC_Talked_Today(3) == 0)) {
+        Give_Friendship_Points(3, 5);
+    }
+    Free_Event_Entity(3);
+    TalkOpen();
+    var_1 = ((((((Check_Flag(0x4C) == 0) && (Check_Flag(0x5F) == 0)) && (Check_Flag(0x67) == 0)) && (Check_Flag(0x6F) == 0)) && (Check_Flag(0x173) == 0)) && (Check_Flag(0x55) == 0));
+    var_2 = (((((Check_Flag(0x4C) == 2) || (Check_Flag(0x5F) == 2)) || (Check_Flag(0x67) == 2)) || (Check_Flag(0x6F) == 2)) || (Check_Flag(0x173) == 2));
+    var_3 = (((Check_Flag(0x55) == 0) && (Check_Flag(0x7E) == 0)) && (Check_Flag(0x7F) == 0));
+    var_4 = ((Check_Flag(0x7E) == 2) || (Check_Flag(0x7F) == 2));
+    if (((((var_1 && var_3) && (Chek_Love_Points(3) < 0x7530)) || var_4) || var_2)) {
+        Set_Portrait(8);
+        Set_Name_Window(3);
+        if ((var_1 && var_3)) {
+            Set_Hearth_Anim(3);
+        }
+        TalkMessage(0);
+        TalkClose();
+    } else {
+        if (((var_1 && var_3) && (Chek_Love_Points(3) >= 0x7530))) {
+            Set_Portrait(8);
+            Set_Name_Window(3);
+            Set_Hearth_Anim(3);
+            TalkMessage(0);
+            TalkClose();
+            TalkOpen();
+            var_0 = Show_Tre_Option_Menu(1, 2, 3);
+            switch (var_0) {
+                case 1:
+                    Set_Flag(0x19F, 2);
+                    TalkClose();
+                    TalkOpen();
+                    Set_Portrait(7);
+                    Set_Name_Window(3);
+                    Set_Hearth_Anim(3);
+                    TalkMessage(4);
+                    TalkClose();
+                    Fade_Out(2, 1);
+                    Execute_Script(1192);
+                    break;
+                case 2:
+                    TalkClose();
+                    break;
+            }
+            goto LBL_002A;
+        }
+        if ((Check_Flag(0x55) == 2)) {
+            Set_Flag(0x19F, 2);
+            Set_Portrait(7);
+            Set_Name_Window(3);
+            Set_Hearth_Anim(3);
+            TalkMessage(5);
+            TalkClose();
+            Fade_Out(2, 1);
+            Execute_Script(1192);
+        }
+    }
+    if ((((((((((Has_NPC_Talked_Today(2) && Has_NPC_Talked_Today(7)) && Has_NPC_Talked_Today(0x14)) && ((Check_Flag(0xF4) == 0) || Has_NPC_Talked_Today(0x17))) && Has_NPC_Talked_Today(0x1A)) && Has_NPC_Talked_Today(0x13)) && Has_NPC_Talked_Today(0x15)) && Has_NPC_Talked_Today(0x19)) && Has_NPC_Talked_Today(3)) && Has_NPC_Talked_Today(0xC))) {
+        Set_Flag(0x19F, 0);
+        Fade_Out(2, 1);
+        Execute_Script(1192);
+    }
+    SetEntityFacing(3, "Right");
+    exit;
+}

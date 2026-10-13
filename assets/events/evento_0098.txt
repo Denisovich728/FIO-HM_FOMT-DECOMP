@@ -1,0 +1,34 @@
+// Script 98
+#include "Fomt_Lib.src"
+
+script 98 Event_0098 {
+    const MESSAGE_0 = "Water Tank\BRK";
+    const MESSAGE_1 = "Inside the water tank is\r\na Jewel of Truth.\BRK";
+    const MESSAGE_2 = "Inside the water tank is\r\na Jewel of Truth.\BRK\WAIT_CLICK...But, your hands are full,\r\nso you can't hold it.\BRK";
+    
+    if (Func063()) {
+        exit;
+    }
+    if ((Check_Flag(0x216) == 1)) {
+        TalkOpen();
+        Print_Message(0);
+    } else {
+        if ((Check_Flag(0x16) == 1)) {
+            if ((Inventory_Check() == 1)) {
+                Give_Item(0x27);
+                TalkOpen();
+                TalkMessage(1);
+                Set_Flag(0x216, 1);
+                Set_Flag(0x154, (Check_Flag(0x154) + 1));
+            } else {
+                TalkOpen();
+                TalkMessage(2);
+            }
+            goto LBL_0004;
+        }
+        TalkOpen();
+        Print_Message(0);
+    }
+    TalkClose();
+    exit;
+}

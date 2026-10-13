@@ -1,0 +1,6 @@
+// Script 15
+#include "Fomt_Lib.src"
+
+script 15 Event_0015 {
+    exit;
+}

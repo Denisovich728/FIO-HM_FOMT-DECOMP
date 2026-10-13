@@ -1,0 +1,31 @@
+// Script 962
+#include "Fomt_Lib.src"
+
+script 962 Event_0962 {
+    const MESSAGE_0 = "We may not look like it, but\r\nthe Doctor and I are \r\nthe same age. \BRK\WAIT_CLICKWe used to play together...\BRK";
+    const MESSAGE_1 = "We used to say how we wanted\r\nto help the people of this \r\ntown somehow. \BRK";
+    
+    if ((Check_If_Single(0xE) == 0)) {
+        Free_Event_Entity(0xE);
+    }
+    if ((Has_NPC_Talked_Today(0xE) == 0)) {
+        SetEntityFacing(0xE, GetOppositeFacing(GetEntityFacing(0)));
+        TalkOpen();
+        Set_Portrait(0x91);
+        Set_Name_Window(0xE);
+        TalkMessage(0);
+        TalkClose();
+        SetEntityFacing(0xE, "Right");
+        Free_Event_Entity(0xE);
+    } else {
+        SetEntityFacing(0xE, GetOppositeFacing(GetEntityFacing(0)));
+        TalkOpen();
+        Set_Portrait(0x92);
+        Set_Name_Window(0xE);
+        TalkMessage(1);
+        TalkClose();
+        SetEntityFacing(0xE, "Right");
+        Free_Event_Entity(0xE);
+    }
+    exit;
+}

@@ -1,0 +1,136 @@
+// Script 721
+#include "Fomt_Lib.src"
+
+script 721 Event_0721 {
+    const MESSAGE_0 = "Welcome. \BRK";
+    const MESSAGE_1 = "Oh, hi \xFF!. \BRK";
+    const MESSAGE_2 = "Did you come to do some \r\nshopping, \xFF!? \r\nMe, I came to chat with \r\nSasha, but I think I'll buy\r\nsome things while I'm here.\r\nI need some things for \r\ndinner, come to think \r\nof it. \BRK";
+    const MESSAGE_3 = "Can I have a Rice Ball \r\nand Curry Powder, please? \BRK";
+    const MESSAGE_4 = "Just one second. \BRK";
+    const MESSAGE_5 = "You look awfully handsome\r\nlately, Jeff. Have you been\r\nworking out? \BRK";
+    const MESSAGE_6 = "Huh? \BRK";
+    const MESSAGE_7 = "Yes, you definitely look\r\nlike you're in great shape!\BRK";
+    const MESSAGE_8 = "Well, if you say so...\BRK";
+    const MESSAGE_9 = "I might develop a crush \r\non you myself! Now, \r\nhow much for the food...?\BRK";
+    const MESSAGE_10 = "Umm...Half price for you \r\ntoday, Manna. \BRK";
+    const MESSAGE_11 = "Really? You're a \r\nsweety, Jeff!\r\nI wish my Duke would \r\ntake a lesson from you! \BRK";
+    const MESSAGE_12 = "Aww...Shucks...\BRK";
+    const MESSAGE_13 = "I always compliment Jeff\r\nlike that, and he always \r\ngives me a deal. \r\nIt never fails!...\BRK";
+    
+    End_Cinematic_State();
+    Warp_Player(0xF, 0xE4, 0x98);
+    SetEntityPosition(0, 0xE4, 0x98, "Up");
+    if ((Inventory_Check() == 1)) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    SetEntityPosition(0x11, 0xE4, 0x70, "Down");
+    SetEntityAnim(0x11, 0x689);
+    Fade_In(2, 1);
+    TalkOpen();
+    Set_Portrait(0x43);
+    Set_Name_Window(0x11);
+    TalkMessage(0);
+    TalkClose();
+    SetEntityAnim(0, 0x1FE);
+    Make_Delay(0x1E);
+    if ((Inventory_Check() == 1)) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    SetEntityPosition(9, 0x90, 0x120, "Up");
+    SetEntityAnim(9, 0x8D4);
+    Set_Vector_Y(9, 0xD0, 1);
+    Execute_Movement(9);
+    SetEntityFacing(9, "Right");
+    Set_Vector_X(9, 0xD0, 1);
+    Execute_Movement(9);
+    SetEntityFacing(9, "Up");
+    Set_Vector_Y(9, 0x98, 1);
+    Execute_Movement(9);
+    SetEntityFacing(9, "Right");
+    SetEntityAnim(9, 0x8D0);
+    TalkOpen();
+    Set_Portrait(0x89);
+    Set_Name_Window(9);
+    TalkMessageSlow(1);
+    TalkClose();
+    SetEntityFacing(0, "Left");
+    TalkOpen();
+    Set_Portrait(0x8A);
+    Set_Name_Window(9);
+    TalkMessageSlow(2);
+    TalkClose();
+    SetEntityFacing(9, "Up");
+    TalkOpen();
+    Set_Portrait(0x89);
+    Set_Name_Window(9);
+    TalkMessageSlow(3);
+    TalkClose();
+    TalkOpen();
+    Set_Portrait(0x43);
+    Set_Name_Window(0x11);
+    TalkMessage(4);
+    TalkClose();
+    Show_Emote(9, 2, 0);
+    Make_Delay(0x3C);
+    TalkOpen();
+    Set_Portrait(0x8A);
+    Set_Name_Window(9);
+    TalkMessageSlow(5);
+    TalkClose();
+    TalkOpen();
+    Set_Portrait(0x45);
+    Set_Name_Window(0x11);
+    TalkMessage(6);
+    TalkClose();
+    TalkOpen();
+    Set_Portrait(0x8A);
+    Set_Name_Window(9);
+    TalkMessageSlow(7);
+    TalkClose();
+    Show_Emote(0x11, 5, 0);
+    Make_Delay(0x3C);
+    TalkOpen();
+    Set_Portrait(0x45);
+    Set_Name_Window(0x11);
+    TalkMessage(8);
+    TalkClose();
+    TalkOpen();
+    Set_Portrait(0x8A);
+    Set_Name_Window(9);
+    TalkMessageSlow(9);
+    TalkClose();
+    TalkOpen();
+    Set_Portrait(0x44);
+    Set_Name_Window(0x11);
+    TalkMessage(10);
+    TalkClose();
+    TalkOpen();
+    Set_Portrait(0x8A);
+    Set_Name_Window(9);
+    TalkMessageSlow(11);
+    TalkClose();
+    TalkOpen();
+    Set_Portrait(0x44);
+    Set_Name_Window(0x11);
+    TalkMessage(12);
+    TalkClose();
+    SetEntityFacing(9, "Right");
+    TalkOpen();
+    Set_Portrait(0x8A);
+    Set_Name_Window(9);
+    TalkMessageSlow(13);
+    TalkClose();
+    Show_Emote(0, 6, 0);
+    Make_Delay(0x3C);
+    Free_Event_Entity(9);
+    End_Cinematic_State();
+    Set_Flag(0xFC, 1);
+    Routine_State_Override(9, 0x2D3);
+    Routine_State_Override(0x11, 0x2D2);
+    exit;
+    exit;
+}

@@ -1,0 +1,30 @@
+// Script 1252
+#include "Fomt_Lib.src"
+
+script 1252 Event_1252 {
+    const MESSAGE_0 = "Lillia said she wanted to \r\ncome see the Horses. \BRK\WAIT_CLICKI came with her in case\r\nshe catches a chill. \BRK";
+    const MESSAGE_1 = "Please try not to hurt \r\nyourselves!\BRK";
+    
+    if ((Check_If_Single(0x14) == 0)) {
+        Free_Event_Entity(0x14);
+    }
+    SetEntityFacing(0x14, GetOppositeFacing(GetEntityFacing(0)));
+    if ((Check_Flag(0x1AB) == 0)) {
+        TalkOpen();
+        Set_Portrait(0x23);
+        Set_Name_Window(0x14);
+        TalkMessage(0);
+    } else {
+        TalkOpen();
+        Set_Portrait(0x23);
+        Set_Name_Window(0x14);
+        TalkMessage(1);
+    }
+    TalkClose();
+    if ((Has_Spoken_To_NPC_Today(0x14) == 0)) {
+        Give_Friendship_Points(0x14, 5);
+    }
+    Free_Event_Entity(0x14);
+    SetEntityFacing(0x14, "Left");
+    exit;
+}

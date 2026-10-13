@@ -1,0 +1,11 @@
+// Script 548
+#include "Fomt_Lib.src"
+
+script 548 Event_0548 {
+    const MESSAGE_0 = "Fireplace\BRK";
+    
+    TalkOpen();
+    Print_Message(0);
+    TalkClose();
+    exit;
+}

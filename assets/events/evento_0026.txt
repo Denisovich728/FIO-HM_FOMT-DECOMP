@@ -1,0 +1,19 @@
+// Script 26
+#include "Fomt_Lib.src"
+
+script 26 Event_0026 {
+    const MESSAGE_0 = "I can't wait! \r\nI wonder when Dad will be\r\ndone with work? \BRK";
+    
+    if ((Check_Flag(0x49) == 1)) {
+    }
+    SetEntityFacing(0x13, GetOppositeFacing(GetEntityFacing(0)));
+    TalkOpen();
+    Set_Portrait(0x49);
+    Set_Name_Window(0x13);
+    Set_Hearth_Anim(0x13);
+    TalkMessage(0);
+    TalkClose();
+    SetEntityFacing(0x13, "Down");
+    Free_Event_Entity(0x13);
+    exit;
+}

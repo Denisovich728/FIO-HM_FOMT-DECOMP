@@ -1,0 +1,46 @@
+// Script 1163
+#include "Fomt_Lib.src"
+
+script 1163 Event_1163 {
+    const MESSAGE_0 = "Congratulations on winning!\r\nI've never seen such a\r\nstrong Chicken! \BRK\WAIT_CLICKThanks again for a\r\ngreat set of bouts! \BRK";
+    
+    Warp_Player(6, 0xDC, 0x5E);
+    StopBGM();
+    SetEntityPosition(2, 0xDC, 0x4C, "Down");
+    SetEntityAnim(2, 0x213);
+    SetEntityPosition(0, 0xDC, 0x5E, "Up");
+    if ((Inventory_Check() == 1)) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    SetEntityPosition(0x46, 0xC8, 0x62, "Up");
+    Spawn_Event_Entity(0x46, 0);
+    SetEntityAnim(0x46, 0x71C);
+    if ((GetEntityLocation(0x2B) == 6)) {
+        SetEntityPosition(0x2B, 0x1A0, 0x85, "Down");
+    }
+    Fade_In(3, 1);
+    Make_Delay(0x3C);
+    PlaySong(0, 0xB0);
+    Make_Delay((0x3C * 4));
+    PlayBGM(1, 7);
+    TalkOpen();
+    Set_Portrait(1);
+    Set_Name_Window(2);
+    TalkMessage(0);
+    TalkClose();
+    PlaySong(0, 0xB5);
+    Make_Delay((0x3C * 4));
+    Fade_Out(2, 1);
+    Give_Friendship_Points(2, 0x14);
+    Give_Friendship_Points(4, 0x14);
+    Give_Friendship_Points(6, 0x14);
+    Give_Friendship_Points(8, 0x14);
+    Give_Friendship_Points(0xD, 0x14);
+    Give_Friendship_Points(3, 0x14);
+    Give_Friendship_Points(0x18, 0x14);
+    Hide_Entity(0x46);
+    Execute_Script(1162);
+    exit;
+}

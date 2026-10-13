@@ -1,0 +1,738 @@
+[
+    {
+        "name": "Rick_Neutral",
+        "hex_id": "00"
+    },
+    {
+        "name": "Rick_Happy",
+        "hex_id": "01"
+    },
+    {
+        "name": "Rick_Angry",
+        "hex_id": "02"
+    },
+    {
+        "name": "Rick_Afraid",
+        "hex_id": "03"
+    },
+    {
+        "name": "Rick_Surprised",
+        "hex_id": "04"
+    },
+    {
+        "name": "Rick_Ruborized",
+        "hex_id": "05"
+    },
+    {
+        "name": "Rick_Weeding",
+        "hex_id": "06"
+    },
+    {
+        "name": "Popuri_Neutral",
+        "hex_id": "07"
+    },
+    {
+        "name": "Popuri_Happy",
+        "hex_id": "08"
+    },
+    {
+        "name": "Popuri_Angry",
+        "hex_id": "09"
+    },
+    {
+        "name": "Popuri_Afraid",
+        "hex_id": "0A"
+    },
+    {
+        "name": "Popuri_Surprised",
+        "hex_id": "0B"
+    },
+    {
+        "name": "Popuri_Ruborized",
+        "hex_id": "0C"
+    },
+    {
+        "name": "Popuri_Weeding",
+        "hex_id": "0D"
+    },
+    {
+        "name": "Lilia_Neutral",
+        "hex_id": "0E"
+    },
+    {
+        "name": "Lilia_Happy",
+        "hex_id": "0F"
+    },
+    {
+        "name": "Lilia_Angry",
+        "hex_id": "10"
+    },
+    {
+        "name": "Lilia_Afraid",
+        "hex_id": "11"
+    },
+    {
+        "name": "Baby_Neutral",
+        "hex_id": "12"
+    },
+    {
+        "name": "Baby_Happy",
+        "hex_id": "13"
+    },
+    {
+        "name": "Baby_Angry",
+        "hex_id": "14"
+    },
+    {
+        "name": "Baby_Crying",
+        "hex_id": "15"
+    },
+    {
+        "name": "Baby_Indignated",
+        "hex_id": "16"
+    },
+    {
+        "name": "Cliff_Neutral",
+        "hex_id": "17"
+    },
+    {
+        "name": "Cliff_Happy",
+        "hex_id": "18"
+    },
+    {
+        "name": "Cliff_Angry",
+        "hex_id": "19"
+    },
+    {
+        "name": "Cliff_Afraid",
+        "hex_id": "1A"
+    },
+    {
+        "name": "Cliff_Surprised",
+        "hex_id": "1B"
+    },
+    {
+        "name": "Cliff_Ruborized",
+        "hex_id": "1C"
+    },
+    {
+        "name": "Cliff_Weeding",
+        "hex_id": "1D"
+    },
+    {
+        "name": "Cliff_Colapsed",
+        "hex_id": "1E"
+    },
+    {
+        "name": "Zack_Neutral",
+        "hex_id": "1F"
+    },
+    {
+        "name": "Zack_Happy",
+        "hex_id": "20"
+    },
+    {
+        "name": "Zack_Angry",
+        "hex_id": "21"
+    },
+    {
+        "name": "Zack_Afraid",
+        "hex_id": "22"
+    },
+    {
+        "name": "Doctor_Neutral",
+        "hex_id": "23"
+    },
+    {
+        "name": "Doctor_Happy",
+        "hex_id": "24"
+    },
+    {
+        "name": "Doctor_Angry",
+        "hex_id": "25"
+    },
+    {
+        "name": "Doctor_Afraid",
+        "hex_id": "26"
+    },
+    {
+        "name": "Doctor_Surprised",
+        "hex_id": "27"
+    },
+    {
+        "name": "Doctor_Ruborized",
+        "hex_id": "28"
+    },
+    {
+        "name": "Doctor_Weeding",
+        "hex_id": "29"
+    },
+    {
+        "name": "Staid_Neutral",
+        "hex_id": "2A"
+    },
+    {
+        "name": "Staid_Scared",
+        "hex_id": "2B"
+    },
+    {
+        "name": "Nappy_Neutral",
+        "hex_id": "2C"
+    },
+    {
+        "name": "Nappy_Scared",
+        "hex_id": "2D"
+    },
+    {
+        "name": "Bold_Neutral",
+        "hex_id": "2E"
+    },
+    {
+        "name": "Bold_Scared",
+        "hex_id": "2F"
+    },
+    {
+        "name": "Chef_Neutral",
+        "hex_id": "30"
+    },
+    {
+        "name": "Chef_Scared",
+        "hex_id": "31"
+    },
+    {
+        "name": "Aqua_Neutral",
+        "hex_id": "32"
+    },
+    {
+        "name": "Aqua_Scared",
+        "hex_id": "33"
+    },
+    {
+        "name": "Hoggy_Neutral",
+        "hex_id": "34"
+    },
+    {
+        "name": "Hoggy_Scared",
+        "hex_id": "35"
+    },
+    {
+        "name": "Timid_Neutral",
+        "hex_id": "36"
+    },
+    {
+        "name": "Timid_Scared",
+        "hex_id": "37"
+    },
+    {
+        "name": "H_Goddes_Neutral",
+        "hex_id": "38"
+    },
+    {
+        "name": "H_Goddes_Happy",
+        "hex_id": "39"
+    },
+    {
+        "name": "H_Goddes_Angry",
+        "hex_id": "3A"
+    },
+    {
+        "name": "Gourmet_Neutral",
+        "hex_id": "3B"
+    },
+    {
+        "name": "Gourmet_Happy",
+        "hex_id": "3C"
+    },
+    {
+        "name": "Gourmet_Angry",
+        "hex_id": "3D"
+    },
+    {
+        "name": "Gourmet_Afraid",
+        "hex_id": "3E"
+    },
+    {
+        "name": "Ellen_Neutral",
+        "hex_id": "3F"
+    },
+    {
+        "name": "Ellen_Happy",
+        "hex_id": "40"
+    },
+    {
+        "name": "Ellen_Angry",
+        "hex_id": "41"
+    },
+    {
+        "name": "Ellen_Afraid",
+        "hex_id": "42"
+    },
+    {
+        "name": "Jeff_Neutral",
+        "hex_id": "43"
+    },
+    {
+        "name": "Jeff_Happy",
+        "hex_id": "44"
+    },
+    {
+        "name": "Jeff_Angry",
+        "hex_id": "45"
+    },
+    {
+        "name": "Jeff_Afraid",
+        "hex_id": "46"
+    },
+    {
+        "name": "Jeff_Hurt",
+        "hex_id": "47"
+    },
+    {
+        "name": "Karen_Neutral",
+        "hex_id": "48"
+    },
+    {
+        "name": "Karen_Happy",
+        "hex_id": "49"
+    },
+    {
+        "name": "Karen_Angry",
+        "hex_id": "4A"
+    },
+    {
+        "name": "Karen_Afraid",
+        "hex_id": "4B"
+    },
+    {
+        "name": "Karen_Surprised",
+        "hex_id": "4C"
+    },
+    {
+        "name": "Karen_Ruborized",
+        "hex_id": "4D"
+    },
+    {
+        "name": "Karen_Weeding",
+        "hex_id": "4E"
+    },
+    {
+        "name": "Sasha_Neutral",
+        "hex_id": "4F"
+    },
+    {
+        "name": "Sasha_Happy",
+        "hex_id": "50"
+    },
+    {
+        "name": "Sasha_Angry",
+        "hex_id": "51"
+    },
+    {
+        "name": "Sasha_Afraid",
+        "hex_id": "52"
+    },
+    {
+        "name": "Doug_Neutral",
+        "hex_id": "53"
+    },
+    {
+        "name": "Doug_Happy",
+        "hex_id": "54"
+    },
+    {
+        "name": "Doug_Angry",
+        "hex_id": "55"
+    },
+    {
+        "name": "Doug_Afraid",
+        "hex_id": "56"
+    },
+    {
+        "name": "Ann_Neutral",
+        "hex_id": "57"
+    },
+    {
+        "name": "Ann_Happy",
+        "hex_id": "58"
+    },
+    {
+        "name": "Ann_Angry",
+        "hex_id": "59"
+    },
+    {
+        "name": "Ann_Afraid",
+        "hex_id": "5A"
+    },
+    {
+        "name": "Ann_Surprised",
+        "hex_id": "5B"
+    },
+    {
+        "name": "Ann_Ruborized",
+        "hex_id": "5C"
+    },
+    {
+        "name": "Ann_Weeding",
+        "hex_id": "5D"
+    },
+    {
+        "name": "Ruby_Neutral",
+        "hex_id": "5E"
+    },
+    {
+        "name": "Ruby_Happy",
+        "hex_id": "5F"
+    },
+    {
+        "name": "Ruby_Angry",
+        "hex_id": "60"
+    },
+    {
+        "name": "Ruby_Afraid",
+        "hex_id": "61"
+    },
+    {
+        "name": "Kappa_Neutral",
+        "hex_id": "62"
+    },
+    {
+        "name": "Basil_Neutral",
+        "hex_id": "63"
+    },
+    {
+        "name": "Basil_Happy",
+        "hex_id": "64"
+    },
+    {
+        "name": "Basil_Angry",
+        "hex_id": "65"
+    },
+    {
+        "name": "Basil_Afraid",
+        "hex_id": "66"
+    },
+    {
+        "name": "Mary_Neutral",
+        "hex_id": "67"
+    },
+    {
+        "name": "Mary_Happy",
+        "hex_id": "68"
+    },
+    {
+        "name": "Mary_Angry",
+        "hex_id": "69"
+    },
+    {
+        "name": "Mary_Afraid",
+        "hex_id": "6A"
+    },
+    {
+        "name": "Mary_Surprised",
+        "hex_id": "6B"
+    },
+    {
+        "name": "Mary_Ruborized",
+        "hex_id": "6C"
+    },
+    {
+        "name": "Mary_Weeding",
+        "hex_id": "6D"
+    },
+    {
+        "name": "Anna_Neutral",
+        "hex_id": "6E"
+    },
+    {
+        "name": "Anna_Happy",
+        "hex_id": "6F"
+    },
+    {
+        "name": "Anna_Angry",
+        "hex_id": "70"
+    },
+    {
+        "name": "Anna_Afraid",
+        "hex_id": "71"
+    },
+    {
+        "name": "Won_Neutral",
+        "hex_id": "72"
+    },
+    {
+        "name": "Won_Happy",
+        "hex_id": "73"
+    },
+    {
+        "name": "Won_Angry",
+        "hex_id": "74"
+    },
+    {
+        "name": "Thomas_Neutral",
+        "hex_id": "75"
+    },
+    {
+        "name": "Thomas_Happy",
+        "hex_id": "76"
+    },
+    {
+        "name": "Thomas_Angry",
+        "hex_id": "77"
+    },
+    {
+        "name": "Thomas_Afraid",
+        "hex_id": "78"
+    },
+    {
+        "name": "Ellie_Neutral",
+        "hex_id": "79"
+    },
+    {
+        "name": "Ellie_Happy",
+        "hex_id": "7A"
+    },
+    {
+        "name": "Ellie_Angry",
+        "hex_id": "7B"
+    },
+    {
+        "name": "Ellie_Afraid",
+        "hex_id": "7C"
+    },
+    {
+        "name": "Ellie_Surprised",
+        "hex_id": "7D"
+    },
+    {
+        "name": "Ellie_Ruborized",
+        "hex_id": "7E"
+    },
+    {
+        "name": "Ellie_Weeding",
+        "hex_id": "7F"
+    },
+    {
+        "name": "Stu_Neutral",
+        "hex_id": "80"
+    },
+    {
+        "name": "Stu_Happy",
+        "hex_id": "81"
+    },
+    {
+        "name": "Stu_Angry",
+        "hex_id": "82"
+    },
+    {
+        "name": "Stu_Afraid",
+        "hex_id": "83"
+    },
+    {
+        "name": "Stu_Criying",
+        "hex_id": "84"
+    },
+    {
+        "name": "Duke_Neutral",
+        "hex_id": "85"
+    },
+    {
+        "name": "Duke_Happy",
+        "hex_id": "86"
+    },
+    {
+        "name": "Duke_Angry",
+        "hex_id": "87"
+    },
+    {
+        "name": "Duke_Afraid",
+        "hex_id": "88"
+    },
+    {
+        "name": "Manna_Neutral",
+        "hex_id": "89"
+    },
+    {
+        "name": "Manna_Happy",
+        "hex_id": "8A"
+    },
+    {
+        "name": "Manna_Angry",
+        "hex_id": "8B"
+    },
+    {
+        "name": "Manna_Afraid",
+        "hex_id": "8C"
+    },
+    {
+        "name": "Lou_Neutral",
+        "hex_id": "8D"
+    },
+    {
+        "name": "Lou_Happy",
+        "hex_id": "8E"
+    },
+    {
+        "name": "Lou_Angry",
+        "hex_id": "8F"
+    },
+    {
+        "name": "Lou_Afraid",
+        "hex_id": "90"
+    },
+    {
+        "name": "Harris_Neutral",
+        "hex_id": "91"
+    },
+    {
+        "name": "Harris_Happy",
+        "hex_id": "92"
+    },
+    {
+        "name": "Harris_Angry",
+        "hex_id": "93"
+    },
+    {
+        "name": "Harris_Afraid",
+        "hex_id": "94"
+    },
+    {
+        "name": "Carter_Neutral",
+        "hex_id": "95"
+    },
+    {
+        "name": "Carter_Happy",
+        "hex_id": "96"
+    },
+    {
+        "name": "Carter_Angry",
+        "hex_id": "97"
+    },
+    {
+        "name": "Carter_Afraid",
+        "hex_id": "98"
+    },
+    {
+        "name": "Kai_Neutral",
+        "hex_id": "99"
+    },
+    {
+        "name": "Kai_Happy",
+        "hex_id": "9A"
+    },
+    {
+        "name": "Kai_Angry",
+        "hex_id": "9B"
+    },
+    {
+        "name": "Kai_Afraid",
+        "hex_id": "9C"
+    },
+    {
+        "name": "Kai_Surprised",
+        "hex_id": "9D"
+    },
+    {
+        "name": "Kai_Ruborized",
+        "hex_id": "9E"
+    },
+    {
+        "name": "Kai_Weeding",
+        "hex_id": "9F"
+    },
+    {
+        "name": "Gray_Neutral",
+        "hex_id": "A0"
+    },
+    {
+        "name": "Gray_Happy",
+        "hex_id": "A1"
+    },
+    {
+        "name": "Gray_Angry",
+        "hex_id": "A2"
+    },
+    {
+        "name": "Gray_Afraid",
+        "hex_id": "A3"
+    },
+    {
+        "name": "Gray_Surprised",
+        "hex_id": "A4"
+    },
+    {
+        "name": "Gray_Timid",
+        "hex_id": "A5"
+    },
+    {
+        "name": "Gray_Ruborized",
+        "hex_id": "A6"
+    },
+    {
+        "name": "Gray_Weeding",
+        "hex_id": "A7"
+    },
+    {
+        "name": "Saibara_Neutral",
+        "hex_id": "A8"
+    },
+    {
+        "name": "Saibara_Happy",
+        "hex_id": "A9"
+    },
+    {
+        "name": "Saibara_Angry",
+        "hex_id": "AA"
+    },
+    {
+        "name": "Saibara_Afraid",
+        "hex_id": "AB"
+    },
+    {
+        "name": "Gotz_Neutral",
+        "hex_id": "AC"
+    },
+    {
+        "name": "Gotz_Happy",
+        "hex_id": "AD"
+    },
+    {
+        "name": "Gotz_Angry",
+        "hex_id": "AE"
+    },
+    {
+        "name": "Gotz_Afraid",
+        "hex_id": "AF"
+    },
+    {
+        "name": "May_Neutral",
+        "hex_id": "B0"
+    },
+    {
+        "name": "May_Happy",
+        "hex_id": "B1"
+    },
+    {
+        "name": "May_Angry",
+        "hex_id": "B2"
+    },
+    {
+        "name": "May_Afraid",
+        "hex_id": "B3"
+    },
+    {
+        "name": "Barley_Neutral",
+        "hex_id": "B4"
+    },
+    {
+        "name": "Barley_Happy",
+        "hex_id": "B5"
+    },
+    {
+        "name": "Barley_Angry",
+        "hex_id": "B6"
+    },
+    {
+        "name": "Barley_Afraid",
+        "hex_id": "B7"
+    }
+]

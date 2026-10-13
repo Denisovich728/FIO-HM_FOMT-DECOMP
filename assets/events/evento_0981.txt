@@ -1,0 +1,10 @@
+// Script 981
+#include "Fomt_Lib.src"
+
+script 981 Event_0981 {
+    Fade_Out(2, 1);
+    Force_Entity_Move_To(0, 0x1D, 0, 0);
+    Proc067();
+    Execute_Script(0x3D4);
+    exit;
+}

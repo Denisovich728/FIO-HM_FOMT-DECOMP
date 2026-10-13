@@ -1,0 +1,11 @@
+// Script 161
+#include "Fomt_Lib.src"
+
+script 161 Event_0161 {
+    const MESSAGE_0 = "\x81\xAAWater Drawing Spot\BRK";
+    
+    TalkOpen();
+    Print_Message(0);
+    TalkClose();
+    exit;
+}

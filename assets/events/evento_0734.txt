@@ -1,0 +1,17 @@
+// Script 734
+#include "Fomt_Lib.src"
+
+script 734 Event_0734 {
+    const MESSAGE_0 = "I'm touched he cares about\r\nme like that. \BRK\WAIT_CLICKI promise not to make \r\nhim worry any more. \BRK\WAIT_CLICKI'm so glad I married him!\BRK";
+    
+    SetEntityFacing(0xC, GetOppositeFacing(GetEntityFacing(0)));
+    TalkOpen();
+    Set_Portrait(0x68);
+    Set_Name_Window(0xC);
+    TalkMessage(0);
+    TalkClose();
+    Free_Event_Entity(0xC);
+    SetEntityFacing(0xC, "Right");
+    exit;
+    exit;
+}

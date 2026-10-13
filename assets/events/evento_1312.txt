@@ -1,0 +1,26 @@
+// Script 1312
+#include "Fomt_Lib.src"
+
+script 1312 Event_1312 {
+    const MESSAGE_0 = "It's too bad that New Year\r\nNoodles only come once \r\na year!\BRK";
+    
+    if ((Check_If_Single(0x19) == 0)) {
+        Free_Event_Entity(0x19);
+    }
+    SetEntityFacing(0x19, GetOppositeFacing(GetEntityFacing(0)));
+    TalkOpen();
+    Set_Portrait(0x58);
+    Set_Name_Window(0x19);
+    if (!(((((((Check_Flag(0x4C) == 2) || (Check_Flag(0x55) == 2)) || (Check_Flag(0x67) == 2)) || (Check_Flag(0x6F) == 2)) || (Check_Flag(0x173) == 2)) || (Check_Flag(0x86) == 2)) || (Check_Flag(0x87) == 2))) {
+        Set_Hearth_Anim(0x19);
+    }
+    TalkMessage(0);
+    Talk_Mini_Close();
+    TalkClose();
+    if ((Has_Spoken_To_NPC_Today(0x19) == 0)) {
+        Give_Friendship_Points(0x19, 5);
+    }
+    Free_Event_Entity(0x19);
+    SetEntityFacing(0x19, "Left");
+    exit;
+}

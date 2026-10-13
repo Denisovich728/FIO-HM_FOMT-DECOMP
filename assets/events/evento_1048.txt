@@ -1,0 +1,1504 @@
+// Script 1048
+#include "Fomt_Lib.src"
+
+script 1048 Event_1048 {
+    const MESSAGE_0 = "Mineral Town Friends!\r\n{VALUE9}\r\n{VALUE9}\r\nToday we'll introduce \r\nsomeone new.\r\n";
+    const MESSAGE_1 = "His name is Rick.\r\n\r\nHis birthday is the 27th of \r\nSummer.\r\n\r\nHe lives at the Poultry\r\nFarm.\r\n\r\nHis family is: \r\n";
+    const MESSAGE_2 = "his sister Popuri, \r\n";
+    const MESSAGE_3 = "his mother Lillia,\r\n";
+    const MESSAGE_4 = "and his dad Rod.\r\n";
+    const MESSAGE_5 = "He loves his sister very \r\nmuch, and is quite \r\nprotective of her. \r\nHe also has a fierce temper.\r\n\r\n\r\n\r\n";
+    const MESSAGE_6 = "Next time we'll introduce\r\nPopuri.\BRK";
+    const MESSAGE_7 = "Mineral Town Friends!\r\n\r\n\r\nToday we'll introduce \r\nsomeone new.\r\n";
+    const MESSAGE_8 = "This is Popuri.\r\n{VALUE9}{VALUE9}{VALUE9}{VALUE9}{VALUE9}\r\nHer birthday is the 10th of \r\nSummer.\r\n{VALUE9}{VALUE9}\r\nShe lives at the Poultry \r\nFarm. \r\n\r\nHer family is: \r\n";
+    const MESSAGE_9 = "Her name is Popuri.\r\n\r\nHer birthday is the 3rd of \r\nSummer.\r\n\r\nShe lives at the Poultry \r\nFarm. \r\n\r\nHer family is: \r\n";
+    const MESSAGE_10 = "her brother Rick, \r\n";
+    const MESSAGE_11 = "her mother Lillia,\r\n";
+    const MESSAGE_12 = "and her dad Rod.\r\n";
+    const MESSAGE_13 = "She is still childish, and\r\ncan be moody too.\r\nHer dream is to go live in\r\na big city, and she hates \r\nit when Rick babies her.\r\n\r\n\r\n\r\n";
+    const MESSAGE_14 = "Next time we'll introduce\r\nLillia.\BRK";
+    const MESSAGE_15 = "Her name is Lillia.\r\n\r\nHer birthday is the 27th of \r\nFall.\r\n\r\nShe runs the Poultry Farm.\r\n\r\nHer family is: \r\n";
+    const MESSAGE_16 = "her daughter Popuri,\r\n";
+    const MESSAGE_17 = "her son Rick, \r\n";
+    const MESSAGE_18 = "and her husband Rod. \r\n";
+    const MESSAGE_19 = "When Lillia took sick long  \r\nago, Rod went off to find\r\nmedicine to heal her.\r\nShe's cheerful and \r\neasygoing.\r\n\r\n\r\n\r\n";
+    const MESSAGE_20 = "Next time we'll introduce\r\nCliff.\BRK";
+    const MESSAGE_21 = "His name is Cliff.\r\n\r\nHis birthday is the \r\n6th of Summer.\r\n\r\nHe likes to hang out at the\r\nChurch so much you'd think\r\nhe lives there.\r\n\r\nHe left his family before \r\narriving in Mineral Town.\r\n\r\n";
+    const MESSAGE_22 = "At first he spent all his \r\ntime in confessional, but \r\nnow he's beginning to make\r\nmore friends. \r\n\r\n\r\n";
+    const MESSAGE_23 = "Next time we'll introduce\r\nZack.\BRK";
+    const MESSAGE_24 = "His name is Zack.\r\n\r\nHis birthday is the 29th\r\nof Summer.\r\n\r\nHe owns a house in Mineral \r\nBeach. \r\n\r\nThere's someone else \r\nstaying there too...\r\n";
+    const MESSAGE_25 = "The wandering salesman\r\nWon stays there as well.\r\n\r\n";
+    const MESSAGE_26 = "He comes and picks up \r\nthings from your Shipment\r\nbox everyday (except \r\nholidays). He also delivers\r\nwhat you buy on the TV \r\nShopping Network.\r\n\r\n\r\n";
+    const MESSAGE_27 = "Next time we'll introduce\r\nthe Doctor.\BRK";
+    const MESSAGE_28 = "This is the Doctor.\r\n\r\nHis birthday is the 17th\r\nof Fall. \r\n\r\nHe runs the Mineral Clinic.\r\n\r\nAt the Clinic, \r\n";
+    const MESSAGE_29 = "Elli works as a \r\nnurse-in-training.\r\n \r\n";
+    const MESSAGE_30 = "He seems cool and aloof,\r\nbut is passionate about his\r\npatients. He's tempted to \r\ngo study medicine in the \r\ncity, but doesn't want to\r\nleave them behind.\r\n\r\n\r\n";
+    const MESSAGE_31 = "Next time we'll introduce\r\nStaid.\BRK";
+    const MESSAGE_32 = "His name is Staid.\r\n\r\nHis birthday is the 15th\r\nof Spring.\r\n\r\nHe's a Harvest Sprite who \r\nlives behind the Church.\r\n\r\nWith him live: \r\n";
+    const MESSAGE_33 = "Nappy\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\r\n";
+    const MESSAGE_34 = "Bold\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\r\n";
+    const MESSAGE_35 = "Chef\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\r\n";
+    const MESSAGE_36 = "Aqua\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\r\n";
+    const MESSAGE_37 = "Hoggy\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\r\n";
+    const MESSAGE_38 = "Timid\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\r\n";
+    const MESSAGE_39 = "The 7 brothers (?) live here\r\ntogether.\r\n\r\nStaid likes work the most \r\nout of all of them.\r\n\r\n\r\n";
+    const MESSAGE_40 = "Next time we'll introduce\r\nNappy.\BRK";
+    const MESSAGE_41 = "His name is Nappy.\r\n\r\nHis birthday is the 22nd\r\nof Winter.\r\n\r\nHe's a Harvest Sprite who \r\nlives behind the Church.\r\n\r\nWith him live: \r\n";
+    const MESSAGE_42 = "Staid \r\n";
+    const MESSAGE_43 = "The 7 brothers (?) live here\r\ntogether.\r\n\r\nNappy is the most happy and\r\ncheerful of the bunch.\r\n\r\n\r\n";
+    const MESSAGE_44 = "Next time we'll introduce\r\nBold.\BRK";
+    const MESSAGE_45 = "His name is Bold.\r\n\r\nHis birthday is the 4th\r\nof Spring.\r\n\r\nHe's a Harvest Sprite who \r\nlives behind the Church.\r\n\r\nWith him live: \r\n";
+    const MESSAGE_46 = "Staid\x81@\x81@\x81@\x81@\x81@\x81@\r\n";
+    const MESSAGE_47 = "Nappy\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\r\n";
+    const MESSAGE_48 = "The 7 brothers (?) live here\r\ntogether.\r\n\r\nBold is the most self-\r\nconfident of them all.\r\n\r\n\r\n";
+    const MESSAGE_49 = "Next time we'll introduce\r\nChef.\BRK";
+    const MESSAGE_50 = "His name is Chef.\r\n\r\nHis birthday is the 14th\r\nof Fall.\r\n\r\nHe's a Harvest Sprite who \r\nlives behind the Church.\r\n\r\nWith him live: \r\n";
+    const MESSAGE_51 = "The 7 brothers (?) live here\r\ntogether.\r\n\r\nChef is the most \r\nconscientious of them all.\r\n\r\n\r\n";
+    const MESSAGE_52 = "Next time we'll introduce\r\nAqua.\BRK";
+    const MESSAGE_53 = "His name is Aqua.\r\n\r\nHis birthday is the 26th\r\nof Spring.\r\n\r\nHe's a Harvest Sprite who \r\nlives behind the Church.\r\n\r\nWith him live: \r\n";
+    const MESSAGE_54 = "Nappy \r\n";
+    const MESSAGE_55 = "The 7 brothers (?) live here\r\ntogether.\r\n\r\nOf all of them, Aqua is the\r\nmost stylish and fashion-\r\nconscious.\r\n\r\n\r\n";
+    const MESSAGE_56 = "Next time we'll introduce\r\nHoggy.\BRK";
+    const MESSAGE_57 = "His name is Hoggy.\r\n\r\nHis birthday is the 10th\r\nof Fall.\r\n\r\nHe's a Harvest Sprite who \r\nlives behind the Church.\r\n\r\nWith him live: \r\n";
+    const MESSAGE_58 = "The 7 brothers (?) live here\r\ntogether.\r\n\r\nHoggy enjoys eating more \r\nthan any of his brothers.\r\n\r\n\r\n";
+    const MESSAGE_59 = "Next time we'll introduce\r\nTimid.\BRK";
+    const MESSAGE_60 = "His name is Timid.\r\n\r\nHis birthday is the 16th\r\nof Summer.\r\n\r\nHe's a Harvest Sprite who \r\nlives behind the Church.\r\n\r\nWith him live: \r\n";
+    const MESSAGE_61 = "The 7 brothers (?) live here\r\ntogether.\r\n\r\nTimid is the most, well, \r\ntimid out of all of them.\r\n\r\n\r\n";
+    const MESSAGE_62 = "Next time we'll introduce\r\nthe Harvest Goddess.\BRK";
+    const MESSAGE_63 = "This is the Harvest \r\nGoddess. \r\n\r\nHer birthday is the 9th of \r\nSpring. \r\n\r\nShe lives (?) in the spring\r\non Mother's Hill. \r\n\r\nShe'll appear if you throw \r\nan offering into her spring.\r\n\r\n";
+    const MESSAGE_64 = "This is the Harvest \r\nGoddess. \r\n\r\nHer birthday is the 8th of \r\nSpring. \r\n\r\nShe lives (?) in the spring\r\non Mother's Hill. \r\n\r\nShe'll appear if you throw \r\nan offering into her spring.\r\n\r\n";
+    const MESSAGE_65 = "She's in charge of \r\ncommunications, and hates\r\nhaving to appear whenever\r\nsomeone throws an offering\r\ninto her spring. \r\n\r\n\r\n";
+    const MESSAGE_66 = "Next time we'll introduce\r\nthe Gourmet.\BRK";
+    const MESSAGE_67 = "This is the Gourmet.\r\n\r\nHis birthday is...unknown.\r\n\r\nHe's the judge of the \r\nCooking Festival. \r\n";
+    const MESSAGE_68 = "More than anything \r\nelse, he loves to eat. He \r\nknows everything about food.\r\n\r\n\r\n";
+    const MESSAGE_69 = "Next time we'll introduce\r\nEllen.\BRK";
+    const MESSAGE_70 = "This is Ellen.\r\n\r\nHer birthday is the 13th of\r\nWinter.\r\n\r\nShe lives in a house on the\r\nnorth side of Mineral Town.\r\n\r\nHer family is:    \r\n";
+    const MESSAGE_71 = "her granddaughter Elli\r\n";
+    const MESSAGE_72 = "and her grandson Stu. \r\n";
+    const MESSAGE_73 = "She can't walk very well\r\nbecause of sickness.\r\nShe used to be a midwife.\r\nShe worries about Elli. \r\n\r\n\r\n";
+    const MESSAGE_74 = "Next time we'll introduce\r\nElli.\BRK";
+    const MESSAGE_75 = "This is Elli.\r\n\r\nHer birthday is the 20th of \r\nSpring.\r\n\r\nShe wants to become a Nurse,\r\nand works at the Clinic.\r\n\r\nHer family is: \r\n";
+    const MESSAGE_76 = "This is Elli.\r\n\r\nHer birthday is the 16th of \r\nSpring.\r\n\r\nShe wants to become a Nurse,\r\nand works at the Clinic.\r\n\r\nHer family is: \r\n";
+    const MESSAGE_77 = "her grandmother Ellen and\r\n";
+    const MESSAGE_78 = "her younger brother Stu. \r\n";
+    const MESSAGE_79 = "Elli believes in hard work,\r\nmaybe because she's had to \r\nraise her brother after her\r\nparents died. She can be \r\nvery strict.\r\n\r\n\r\n";
+    const MESSAGE_80 = "Next time we'll introduce\r\nStu.\BRK";
+    const MESSAGE_81 = "This is Stu.\r\n\r\nHis birthday is the 5th of \r\nFall.\r\n\r\nHe lives in a house on the\r\nnorth side of Mineral Town.\r\n\r\nHis family is:    \r\n";
+    const MESSAGE_82 = "his sister Elli and \r\n";
+    const MESSAGE_83 = "his grandmother Ellen.\BRK";
+    const MESSAGE_84 = "Stu loves to play jokes\r\non people, but he's also a \r\ncry-baby. Still, the \r\ntownspeople all like him.\r\n\r\n\r\n";
+    const MESSAGE_85 = "Next time we'll introduce\r\nJeff.\BRK";
+    const MESSAGE_86 = "This is Jeff.\r\n\r\nHis birthday is the 29th\r\nof Winter.\r\n\r\nHe runs the Supermarket.\r\n\r\nHis family is: \r\n";
+    const MESSAGE_87 = "his wife Sasha and \r\n";
+    const MESSAGE_88 = "his daughter Karen. \r\n";
+    const MESSAGE_89 = "He can never stand up to \r\npeople, so he always lets\r\neveryone buy on credit.\r\nSo, he suffers from ulcers.\r\nHe's been picked on by Duke\r\nfrom childhood.\r\n\r\n\r\n";
+    const MESSAGE_90 = "Next time we'll introduce\r\nKaren.\BRK";
+    const MESSAGE_91 = "This is Karen.\r\n\r\nHer birthday is the 23rd\r\nof Fall. \r\n\r\nHer father runs the\r\nSupermarket.\r\n\r\nHer family is: \r\n";
+    const MESSAGE_92 = "This is Karen.\r\n\r\nHer birthday is the 15th\r\nof Fall. \r\n\r\nHer father runs the\r\nSupermarket.\r\n\r\nHer family is: \r\n";
+    const MESSAGE_93 = "her father Jeff and \r\n";
+    const MESSAGE_94 = "her mother Sasha.  \r\n";
+    const MESSAGE_95 = "She takes after her mother,\r\nso she likes to help folks.\r\nShe likes to drink and \r\ndance, but can't cook \r\nat all. \r\n\r\n\r\n";
+    const MESSAGE_96 = "Next time we'll introduce\r\nSasha.\BRK";
+    const MESSAGE_97 = "This is Sasha. \r\n\r\nHer birthday is the 30th\r\nof Spring. \r\n\r\nShe runs the Supermarket.\r\n\r\nHer family is: \r\n";
+    const MESSAGE_98 = "her husband Jeff and \r\n";
+    const MESSAGE_99 = "her daughter Karen.\r\n";
+    const MESSAGE_100 = "Unlike her husband, she\r\nis confident and assertive.\r\nShe loves her husband, but\r\nhas to look after him.\r\n\r\n\r\n";
+    const MESSAGE_101 = "This is Doug. \r\n\r\nHis birthday is the 11th\r\nof Winter.\r\n\r\nHe runs a bar, restaurant\r\nand inn called \"Doug's \r\nInn.\"\r\nHis family is: \r\n";
+    const MESSAGE_102 = "He always worries about\r\nAnn, whom he raised alone.\r\nHe still can't forget Ann's\r\nmom, who died. \r\n\r\n\r\n";
+    const MESSAGE_103 = "Next time we'll introduce\r\nAnn.\BRK";
+    const MESSAGE_104 = "This is Ann.\r\n\r\nHer birthday is the 22nd of\r\nSummer.\r\n\r\nShe always helps out her\r\ndad at Doug's Inn. \r\n\r\nHer family is: \r\n";
+    const MESSAGE_105 = "This is Ann.\r\n\r\nHer birthday is the 17th of\r\nSummer.\r\n\r\nShe always helps out her\r\ndad at Doug's Inn. \r\n\r\nHer family is: \r\n";
+    const MESSAGE_106 = "her dad Doug. \r\n";
+    const MESSAGE_107 = "She has no confidence \r\nin herself at all when it \r\ncomes to love.\r\nMaybe because she's a \r\ntom-boy. \r\n\r\n\r\n";
+    const MESSAGE_108 = "Next time we'll introduce\r\nthe Kappa.\BRK";
+    const MESSAGE_109 = "This is the Kappa. \r\n\r\nHis (?) birthday is...\r\nunknown.\r\n\r\nHe lives in the lake on \r\nMother's Hill.\r\n\r\nHe likes Cucumbers a lot.\r\nHe also gets upset when he\r\ngets caught up in the hooks\r\nwhen people fish in the \r\nlake. \r\n\r\n\r\n";
+    const MESSAGE_110 = "Next time we'll introduce\r\nBasil.\BRK";
+    const MESSAGE_111 = "This is Basil.\r\n\r\nHis birthday is the 11th\r\nof Summer. \r\n\r\nHe's a scientist, and books\r\nwritten by him are at\r\nMary's Library.\r\n\r\nHis family is: \r\n";
+    const MESSAGE_112 = "his wife Anna and \r\n";
+    const MESSAGE_113 = "his daughter Mary.\r\n";
+    const MESSAGE_114 = "He came to Mineral Town\r\nwith his family to study \r\nthe flora there. \r\n\r\n\r\n";
+    const MESSAGE_115 = "Next time we'll introduce\r\nMary.\BRK";
+    const MESSAGE_116 = "This is Mary.\r\n\r\nHer birthday is the 25th of\r\nWinter.\r\n\r\nShe works at the Library.\r\n\r\nHer birthday is:   \r\n";
+    const MESSAGE_117 = "This is Mary.\r\n\r\nHer birthday is the 20th of\r\nWinter.\r\n\r\nShe works at the Library.\r\n\r\nHer birthday is:   \r\n";
+    const MESSAGE_118 = "her dad Basil and \r\n";
+    const MESSAGE_119 = "her mother Anna.  \r\n";
+    const MESSAGE_120 = "She loves books, and even\r\nwrites novels herself. \r\nShe's not very interested\r\nin romance at all. \r\n\r\n \r\n";
+    const MESSAGE_121 = "Next time we'll introduce\r\nAnna.\BRK";
+    const MESSAGE_122 = "This is Anna.\r\n\r\nHer birthday is the 23rd of\r\nFall. \r\n\r\nShe lives next to the \r\nLibrary. \r\n\r\nHer family is:  \r\n";
+    const MESSAGE_123 = "her husband Basil and \r\n";
+    const MESSAGE_124 = "her daughter Mary. \r\n";
+    const MESSAGE_125 = "She is enjoying the country\r\nliving but a little bored\r\nbecause Basil is always\r\nbusy studying.\r\nGood at baking.\x81@\x81@\x81@\r\n\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\r\n\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\r\n";
+    const MESSAGE_126 = "Next time we'll introduce\r\nWon.\BRK";
+    const MESSAGE_127 = "This is Won.\r\n\r\nHis birthday is the 19th\r\nof Winter.\r\n\r\nHe's a wandering salesman \r\nwho just appeared in\r\nMineral Town. For some \r\nreason, he \r\n";
+    const MESSAGE_128 = "lives at Zack's house,\r\nwhere he also runs his\r\nshop.  \r\n \r\n";
+    const MESSAGE_129 = "He comes to the farm once \r\nin a while to sell his \r\nwares.\r\n\r\n\r\n";
+    const MESSAGE_130 = "Next time we'll introduce\r\nThomas.\BRK";
+    const MESSAGE_131 = "This is Thomas.\r\n\r\nHis birthday is the 25th\r\nof Summer.\r\n\r\nHe is a Mayor, and lives in\r\na house on the north side.\r\n\r\nHis family is: \r\n";
+    const MESSAGE_132 = "his son Harris.  \r\n";
+    const MESSAGE_133 = "A photographer named \r\nKano used to live with him,\r\nbut no more.\r\n\r\n\r\nHe believes in serving the\r\ntownspeople as well as he\r\ncan. He takes Ellen Apple\r\nPie every Sunday. He wants \r\neverybody in his town to \r\nbe friendly to each other.\r\n\r\n\r\n \r\n";
+    const MESSAGE_134 = "Next time we'll introduce\r\nHarris.\BRK";
+    const MESSAGE_135 = "This is Harris. \r\n\r\nHis birthday is the 4th of\r\nSummer. \r\n\r\nHe is a policeman, and \r\nlives on the north side.\r\n\r\nHis family is: \r\n";
+    const MESSAGE_136 = "his father Thomas.\r\n";
+    const MESSAGE_137 = "He's in charge of keeping\r\nthe peace in town.\r\nHe's in love with Aja, who\r\nlives in the city. \r\n\r\n\r\n";
+    const MESSAGE_138 = "Next time we'll introduce\r\nDuke.\BRK";
+    const MESSAGE_139 = "This is Duke\r\n\r\nHis birthday is the 15th\r\nof Winter.\r\n\r\nHe runs Aja Winery. \r\n\r\nHis family is:  \r\n";
+    const MESSAGE_140 = "his wife Manna and  \r\n";
+    const MESSAGE_141 = "his daughter Aja. \r\n";
+    const MESSAGE_142 = "He liked drinking to begin\r\nwith, but ever since Aja \r\nleft he's been drinking \r\ntoo much. He's a bully to \r\neveryone (except Manna, \r\nof course).\r\n\r\n \r\n";
+    const MESSAGE_143 = "Next time we'll introduce\r\nManna.\BRK";
+    const MESSAGE_144 = "This is Manna.\r\n\r\nHer birthday is the 11th of \r\nFall. \r\n\r\nShe runs Aja Winery.\r\n\r\nHer family is:  \r\n";
+    const MESSAGE_145 = "her husband Duke \r\n";
+    const MESSAGE_146 = "and her daughter Aja. \r\n";
+    const MESSAGE_147 = "She loves to talk and \r\ngossip about others.\r\nShe always hopes that Aja\r\nwill come back home. \r\n\r\n\r\n";
+    const MESSAGE_148 = "Next time we'll introduce\r\nCarter.\BRK";
+    const MESSAGE_149 = "This is Carter. \r\n\r\nHis birthday is the 20th of\r\nFall. \r\n\r\nHe is a priest who lives \r\nat the Church. \r\n";
+    const MESSAGE_150 = "He came to Mineral Town to\r\nspread the gospel, but seems\r\nnot to preach very much \r\nlately. He can lift curses \r\nfrom Tools, but wants to \r\nhelp people in other ways,\r\ntoo. \r\n\r\n \r\n";
+    const MESSAGE_151 = "Next time we'll introduce\r\nKai.\BRK";
+    const MESSAGE_152 = "This is Kai. \r\n\r\nHis birthday is the 22nd of\r\nSummer. \r\n\r\nHe runs Kai's Beach House\r\nduring the Summer. \r\n";
+    const MESSAGE_153 = "He comes from the city to \r\nspend Summers in Mineral\r\nBeach. He's popular with \r\nwomen and children, but men\r\ndon't like his attitude\r\nmuch. \r\n\r\n\r\n";
+    const MESSAGE_154 = "Next time we'll introduce\r\nGray.\BRK";
+    const MESSAGE_155 = "This is Gray. \r\n\r\nHis birthday is the 6th \r\nof Winter.\r\n\r\nHe is a blacksmith's apprentice.\r\n\r\nHis family is: \r\n";
+    const MESSAGE_156 = "his uncle Saibara. \r\n";
+    const MESSAGE_157 = "He came to Mineral Town to\r\napprentice with his uncle.\r\nHe hated it at first, but \r\nthen began to like it.\r\nHe's very prideful, but \r\nwith a good heart. \r\n\r\n\r\n";
+    const MESSAGE_158 = "Next time we'll introduce\r\nSaibara.\BRK";
+    const MESSAGE_159 = "This is Saibara.\r\n\r\nHis birthday is the 11th of\r\nSpring.\r\n\r\nHe's a blacksmith.\r\n\r\nHis family is: \r\n";
+    const MESSAGE_160 = "his grandson Gray. \r\n";
+    const MESSAGE_161 = "He's a stubborn old man,\r\nbut he takes great pride in\r\nhis work. He's training his\r\nnephew Gray.\r\n\r\n\r\n \r\n";
+    const MESSAGE_162 = "Next time we'll introduce\r\nGotz.\BRK";
+    const MESSAGE_163 = "This is Gotz.\r\n\r\nHis birthday is the 2nd of\r\nFall. \r\n\r\nHe's a woodcutter who lives\r\nalone in the woods.\r\n \r\n";
+    const MESSAGE_164 = "Both his daughter and\r\nwife died on the mountain\r\nyears ago. \r\n\r\n\r\n";
+    const MESSAGE_165 = "Next time we'll introduce\r\nMay.\BRK";
+    const MESSAGE_166 = "This is May.\r\n\r\nHer birthday is the 26th \r\nof Winter.\r\n\r\nShe lives in Yodel Farm. \r\n\r\nHer family is: \r\n";
+    const MESSAGE_167 = "her grandfather Barley\r\n";
+    const MESSAGE_168 = "and her mother Joanna. \r\n \r\n";
+    const MESSAGE_169 = "May is a very sweet little\r\ngirl, whom everybody loves.\r\nShe hopes everyday for her\r\nmom to come back. \r\n\r\n\r\n";
+    const MESSAGE_170 = "Next time we'll introduce\r\nBarley.\BRK";
+    const MESSAGE_171 = "This is Barley.\r\n\r\nHis birthday is the 17th \r\nof Spring.\r\n\r\nHe runs Yodel Farm.\r\n\r\nHis family is:  \r\n";
+    const MESSAGE_172 = "his granddaughter May and \r\n";
+    const MESSAGE_173 = "his daughter Joanna. \r\n";
+    const MESSAGE_174 = "His daughter Joanna left to\r\nthe city, then returned \r\nwith her daughter, May.\r\nHowever, she then left May\r\nwith Barley before leaving \r\nagain. Barley loves May \r\nvery much, so he worries \r\nabout her. \r\n\r\n\r\n";
+    const MESSAGE_175 = "Next time we'll introduce\r\nsomeone who never appears.\BRK";
+    const MESSAGE_176 = "Today we'll introduce \r\nsomeone new.\r\n\r\n\r\nThis is Kano.\r\nHis birthday is the 2nd of \r\nWinter. \r\n\r\nHe takes photographs of \r\nMineral Town to show people\r\nliving in harmony with \r\nNature. \r\n\r\n\r\nThis is Louis.\r\nHis birthday is the 2nd of \r\nSpring. \r\n\r\nHe studies insects, and \r\ncame to Mineral Town to\r\nwrite about Bees.\r\n\r\n\r\nThis is Greg.\r\nHis birthday is the 29th\r\nof Spring.\r\nHe loves fishing, and \r\nFishing Rods in particular. \r\n";
+    const MESSAGE_177 = "Next time we'll introduce\r\nRick.\BRK";
+    
+    var var_0;
+    
+    TalkOpen();
+    switch (Check_Flag(0x1ED)) {
+        case 0:
+            var_0 = Print_TV_Message(0);
+            TalkClose();
+            switch (var_0) {
+                case 0:
+                case 1:
+                case 2:
+                case 3:
+                    Set_Flag(0x244, var_0);
+                    Execute_Script(540);
+                    break;
+                case 4:
+                case 5:
+                    break;
+            }
+            TalkOpen();
+            Set_Portrait(0);
+            Set_Name_Window(2);
+            TalkMessageSlow(1);
+            Set_Portrait(0xD);
+            Set_Name_Window(3);
+            TalkMessageSlow(2);
+            Set_Portrait(0xF);
+            Set_Name_Window(1);
+            TalkMessageSlow(3);
+            Make_Store_Error();
+            Talk_Mini_Close();
+            TalkMessageSlow(4);
+            Set_Portrait(1);
+            Set_Name_Window(2);
+            TalkMessageSlow(5);
+            Set_Portrait(8);
+            Set_Name_Window(3);
+            TalkMessageSlow(6);
+            break;
+        case 1:
+            var_0 = Print_TV_Message(7);
+            TalkClose();
+            switch (var_0) {
+                case 0:
+                case 1:
+                case 2:
+                case 3:
+                    Set_Flag(0x244, var_0);
+                    Execute_Script(540);
+                    break;
+                case 4:
+                case 5:
+                    break;
+            }
+            TalkOpen();
+            Set_Portrait(7);
+            Set_Name_Window(3);
+            if (((Check_Flag(8) == 1) && (Check_Flag(9) == 3))) {
+                TalkMessageSlow(8);
+                goto LBL_0011;
+            }
+            TalkMessageSlow(9);
+            Set_Portrait(6);
+            Set_Name_Window(2);
+            TalkMessageSlow(10);
+            Set_Portrait(0xF);
+            Set_Name_Window(1);
+            TalkMessageSlow(11);
+            Make_Store_Error();
+            Talk_Mini_Close();
+            TalkMessageSlow(12);
+            Set_Portrait(8);
+            Set_Name_Window(3);
+            TalkMessageSlow(13);
+            Set_Portrait(0xF);
+            Set_Name_Window(1);
+            TalkMessageSlow(14);
+            break;
+        case 2:
+            var_0 = Print_TV_Message(7);
+            TalkClose();
+            switch (var_0) {
+                case 0:
+                case 1:
+                case 2:
+                case 3:
+                    Set_Flag(0x244, var_0);
+                    Execute_Script(540);
+                    break;
+                case 4:
+                case 5:
+                    break;
+            }
+            TalkOpen();
+            Set_Portrait(0xE);
+            Set_Name_Window(1);
+            TalkMessageSlow(15);
+            Set_Portrait(0xD);
+            Set_Name_Window(3);
+            TalkMessageSlow(16);
+            Set_Portrait(6);
+            Set_Name_Window(2);
+            TalkMessageSlow(17);
+            Make_Store_Error();
+            Talk_Mini_Close();
+            TalkMessage(18);
+            Set_Portrait(0xF);
+            Set_Name_Window(1);
+            TalkMessageSlow(19);
+            Set_Portrait(0x18);
+            Set_Name_Window(0x17);
+            TalkMessageSlow(20);
+            break;
+        case 3:
+            var_0 = Print_TV_Message(7);
+            TalkClose();
+            switch (var_0) {
+                case 0:
+                case 1:
+                case 2:
+                case 3:
+                    Set_Flag(0x244, var_0);
+                    Execute_Script(540);
+                    break;
+                case 4:
+                case 5:
+                    break;
+            }
+            TalkOpen();
+            Set_Portrait(0x17);
+            Set_Name_Window(0x17);
+            TalkMessageSlow(21);
+            Set_Portrait(0x1D);
+            Set_Name_Window(0x17);
+            TalkMessageSlow(22);
+            Set_Portrait(0x20);
+            Set_Name_Window(0x1C);
+            TalkMessageSlow(23);
+            break;
+        case 4:
+            var_0 = Print_TV_Message(7);
+            TalkClose();
+            switch (var_0) {
+                case 0:
+                case 1:
+                case 2:
+                case 3:
+                    Set_Flag(0x244, var_0);
+                    Execute_Script(540);
+                    break;
+                case 4:
+                case 5:
+                    break;
+            }
+            TalkOpen();
+            Set_Portrait(0x1F);
+            Set_Name_Window(0x1C);
+            TalkMessageSlow(24);
+            Set_Portrait(0x73);
+            Set_Name_Window(0x1D);
+            TalkMessageSlow(25);
+            Set_Portrait(0x20);
+            Set_Name_Window(0x1C);
+            TalkMessageSlow(26);
+            Set_Portrait(0x24);
+            Set_Name_Window(0x14);
+            TalkMessageSlow(27);
+            break;
+        case 5:
+            var_0 = Print_TV_Message(7);
+            TalkClose();
+            switch (var_0) {
+                case 0:
+                case 1:
+                case 2:
+                case 3:
+                    Set_Flag(0x244, var_0);
+                    Execute_Script(540);
+                    break;
+                case 4:
+                case 5:
+                    break;
+            }
+            TalkOpen();
+            Set_Portrait(0x24);
+            Set_Name_Window(0x14);
+            TalkMessageSlow(28);
+            Set_Portrait(0x7A);
+            Set_Name_Window(0x15);
+            TalkMessageSlow(29);
+            Set_Portrait(0x29);
+            Set_Name_Window(0x14);
+            TalkMessageSlow(30);
+            Set_Portrait(0x2A);
+            Set_Name_Window(0x24);
+            TalkMessageSlow(31);
+            break;
+        case 6:
+            var_0 = Print_TV_Message(7);
+            TalkClose();
+            switch (var_0) {
+                case 0:
+                case 1:
+                case 2:
+                case 3:
+                    Set_Flag(0x244, var_0);
+                    Execute_Script(540);
+                    break;
+                case 4:
+                case 5:
+                    break;
+            }
+            TalkOpen();
+            Set_Portrait(0x2B);
+            Set_Name_Window(0x24);
+            TalkMessageSlow(32);
+            Set_Portrait(0x2C);
+            Set_Name_Window(0x25);
+            TalkMessageSlow(33);
+            Set_Portrait(0x2E);
+            Set_Name_Window(0x26);
+            TalkMessageSlow(34);
+            Set_Portrait(0x30);
+            Set_Name_Window(0x27);
+            TalkMessageSlow(35);
+            Set_Portrait(0x32);
+            Set_Name_Window(0x28);
+            TalkMessageSlow(36);
+            Set_Portrait(0x34);
+            Set_Name_Window(0x29);
+            TalkMessageSlow(37);
+            Set_Portrait(0x36);
+            Set_Name_Window(0x2A);
+            TalkMessageSlow(38);
+            Set_Portrait(0x2A);
+            Set_Name_Window(0x24);
+            TalkMessageSlow(39);
+            Set_Portrait(0x2C);
+            Set_Name_Window(0x25);
+            TalkMessageSlow(40);
+            break;
+        case 7:
+            var_0 = Print_TV_Message(7);
+            TalkClose();
+            switch (var_0) {
+                case 0:
+                case 1:
+                case 2:
+                case 3:
+                    Set_Flag(0x244, var_0);
+                    Execute_Script(540);
+                    break;
+                case 4:
+                case 5:
+                    break;
+            }
+            TalkOpen();
+            Set_Portrait(0x2D);
+            Set_Name_Window(0x25);
+            TalkMessageSlow(41);
+            Set_Portrait(0x2A);
+            Set_Name_Window(0x24);
+            TalkMessageSlow(42);
+            Set_Portrait(0x2E);
+            Set_Name_Window(0x26);
+            TalkMessageSlow(34);
+            Set_Portrait(0x30);
+            Set_Name_Window(0x27);
+            TalkMessageSlow(35);
+            Set_Portrait(0x32);
+            Set_Name_Window(0x28);
+            TalkMessageSlow(36);
+            Set_Portrait(0x34);
+            Set_Name_Window(0x29);
+            TalkMessageSlow(37);
+            Set_Portrait(0x36);
+            Set_Name_Window(0x2A);
+            TalkMessageSlow(38);
+            Set_Portrait(0x2C);
+            Set_Name_Window(0x25);
+            TalkMessageSlow(43);
+            Set_Portrait(0x2E);
+            Set_Name_Window(0x26);
+            TalkMessageSlow(44);
+            break;
+        case 8:
+            var_0 = Print_TV_Message(7);
+            TalkClose();
+            switch (var_0) {
+                case 0:
+                case 1:
+                case 2:
+                case 3:
+                    Set_Flag(0x244, var_0);
+                    Execute_Script(540);
+                    break;
+                case 4:
+                case 5:
+                    break;
+            }
+            TalkOpen();
+            Set_Portrait(0x2F);
+            Set_Name_Window(0x26);
+            TalkMessageSlow(45);
+            Set_Portrait(0x2A);
+            Set_Name_Window(0x24);
+            TalkMessageSlow(46);
+            Set_Portrait(0x2C);
+            Set_Name_Window(0x25);
+            TalkMessageSlow(47);
+            Set_Portrait(0x30);
+            Set_Name_Window(0x27);
+            TalkMessageSlow(35);
+            Set_Portrait(0x32);
+            Set_Name_Window(0x28);
+            TalkMessageSlow(36);
+            Set_Portrait(0x34);
+            Set_Name_Window(0x29);
+            TalkMessageSlow(37);
+            Set_Portrait(0x36);
+            Set_Name_Window(0x2A);
+            TalkMessageSlow(38);
+            Set_Portrait(0x2E);
+            Set_Name_Window(0x26);
+            TalkMessageSlow(48);
+            Set_Portrait(0x30);
+            Set_Name_Window(0x27);
+            TalkMessageSlow(49);
+            break;
+        case 9:
+            var_0 = Print_TV_Message(7);
+            TalkClose();
+            switch (var_0) {
+                case 0:
+                case 1:
+                case 2:
+                case 3:
+                    Set_Flag(0x244, var_0);
+                    Execute_Script(540);
+                    break;
+                case 4:
+                case 5:
+                    break;
+            }
+            TalkOpen();
+            Set_Portrait(0x31);
+            Set_Name_Window(0x27);
+            TalkMessageSlow(50);
+            Set_Portrait(0x2A);
+            Set_Name_Window(0x24);
+            TalkMessageSlow(46);
+            Set_Portrait(0x2C);
+            Set_Name_Window(0x25);
+            TalkMessageSlow(33);
+            Set_Portrait(0x2E);
+            Set_Name_Window(0x26);
+            TalkMessageSlow(34);
+            Set_Portrait(0x32);
+            Set_Name_Window(0x28);
+            TalkMessageSlow(36);
+            Set_Portrait(0x34);
+            Set_Name_Window(0x29);
+            TalkMessageSlow(37);
+            Set_Portrait(0x36);
+            Set_Name_Window(0x2A);
+            TalkMessageSlow(38);
+            Set_Portrait(0x30);
+            Set_Name_Window(0x27);
+            TalkMessageSlow(51);
+            Set_Portrait(0x32);
+            Set_Name_Window(0x28);
+            TalkMessageSlow(52);
+            break;
+        case 0xA:
+            var_0 = Print_TV_Message(7);
+            TalkClose();
+            switch (var_0) {
+                case 0:
+                case 1:
+                case 2:
+                case 3:
+                    Set_Flag(0x244, var_0);
+                    Execute_Script(540);
+                    break;
+                case 4:
+                case 5:
+                    break;
+            }
+            TalkOpen();
+            Set_Portrait(0x33);
+            Set_Name_Window(0x28);
+            TalkMessageSlow(53);
+            Set_Portrait(0x2A);
+            Set_Name_Window(0x24);
+            TalkMessageSlow(42);
+            Set_Portrait(0x2C);
+            Set_Name_Window(0x25);
+            TalkMessageSlow(54);
+            Set_Portrait(0x2E);
+            Set_Name_Window(0x26);
+            TalkMessageSlow(34);
+            Set_Portrait(0x30);
+            Set_Name_Window(0x27);
+            TalkMessageSlow(35);
+            Set_Portrait(0x34);
+            Set_Name_Window(0x29);
+            TalkMessageSlow(37);
+            Set_Portrait(0x36);
+            Set_Name_Window(0x2A);
+            TalkMessageSlow(38);
+            Set_Portrait(0x32);
+            Set_Name_Window(0x28);
+            TalkMessageSlow(55);
+            Set_Portrait(0x34);
+            Set_Name_Window(0x29);
+            TalkMessageSlow(56);
+            break;
+        case 0xB:
+            var_0 = Print_TV_Message(7);
+            TalkClose();
+            switch (var_0) {
+                case 0:
+                case 1:
+                case 2:
+                case 3:
+                    Set_Flag(0x244, var_0);
+                    Execute_Script(540);
+                    break;
+                case 4:
+                case 5:
+                    break;
+            }
+            TalkOpen();
+            Set_Portrait(0x35);
+            Set_Name_Window(0x29);
+            TalkMessageSlow(57);
+            Set_Portrait(0x2A);
+            Set_Name_Window(0x24);
+            TalkMessageSlow(42);
+            Set_Portrait(0x2C);
+            Set_Name_Window(0x25);
+            TalkMessageSlow(54);
+            Set_Portrait(0x2E);
+            Set_Name_Window(0x26);
+            TalkMessageSlow(34);
+            Set_Portrait(0x30);
+            Set_Name_Window(0x27);
+            TalkMessageSlow(35);
+            Set_Portrait(0x32);
+            Set_Name_Window(0x28);
+            TalkMessageSlow(36);
+            Set_Portrait(0x36);
+            Set_Name_Window(0x2A);
+            TalkMessageSlow(38);
+            Set_Portrait(0x34);
+            Set_Name_Window(0x29);
+            TalkMessageSlow(58);
+            Set_Portrait(0x36);
+            Set_Name_Window(0x2A);
+            TalkMessageSlow(59);
+            break;
+        case 0xC:
+            var_0 = Print_TV_Message(7);
+            TalkClose();
+            switch (var_0) {
+                case 0:
+                case 1:
+                case 2:
+                case 3:
+                    Set_Flag(0x244, var_0);
+                    Execute_Script(540);
+                    break;
+                case 4:
+                case 5:
+                    break;
+            }
+            TalkOpen();
+            Set_Portrait(0x37);
+            Set_Name_Window(0x2A);
+            TalkMessageSlow(60);
+            Set_Portrait(0x2A);
+            Set_Name_Window(0x24);
+            TalkMessageSlow(42);
+            Set_Portrait(0x2C);
+            Set_Name_Window(0x25);
+            TalkMessageSlow(54);
+            Set_Portrait(0x2E);
+            Set_Name_Window(0x26);
+            TalkMessageSlow(34);
+            Set_Portrait(0x30);
+            Set_Name_Window(0x27);
+            TalkMessageSlow(35);
+            Set_Portrait(0x32);
+            Set_Name_Window(0x28);
+            TalkMessageSlow(36);
+            Set_Portrait(0x34);
+            Set_Name_Window(0x29);
+            TalkMessageSlow(37);
+            Set_Portrait(0x36);
+            Set_Name_Window(0x2A);
+            TalkMessageSlow(61);
+            Set_Portrait(0x39);
+            Set_Name_Window(0x1F);
+            TalkMessageSlow(62);
+            break;
+        case 0xD:
+            var_0 = Print_TV_Message(7);
+            TalkClose();
+            switch (var_0) {
+                case 0:
+                case 1:
+                case 2:
+                case 3:
+                    Set_Flag(0x244, var_0);
+                    Execute_Script(540);
+                    break;
+                case 4:
+                case 5:
+                    break;
+            }
+            TalkOpen();
+            Set_Portrait(0x38);
+            Set_Name_Window(0x1F);
+            if (((Check_Flag(8) == 0) && (Check_Flag(9) == 8))) {
+                TalkMessageSlow(63);
+                goto LBL_005F;
+            }
+            TalkMessageSlow(64);
+            Set_Portrait(0x39);
+            Set_Name_Window(0x1F);
+            TalkMessageSlow(65);
+            Set_Portrait(0x3C);
+            Set_Name_Window(0x1E);
+            TalkMessageSlow(66);
+            break;
+        case 0xE:
+            var_0 = Print_TV_Message(7);
+            TalkClose();
+            switch (var_0) {
+                case 0:
+                case 1:
+                case 2:
+                case 3:
+                    Set_Flag(0x244, var_0);
+                    Execute_Script(540);
+                    break;
+                case 4:
+                case 5:
+                    break;
+            }
+            TalkOpen();
+            Set_Portrait(0x3E);
+            Set_Name_Window(0x1E);
+            TalkMessageSlow(67);
+            Set_Portrait(0x3C);
+            Set_Name_Window(0x1E);
+            TalkMessageSlow(68);
+            Set_Portrait(0x40);
+            Set_Name_Window(0xF);
+            TalkMessageSlow(69);
+            break;
+        case 0xF:
+            var_0 = Print_TV_Message(7);
+            TalkClose();
+            switch (var_0) {
+                case 0:
+                case 1:
+                case 2:
+                case 3:
+                    Set_Flag(0x244, var_0);
+                    Execute_Script(540);
+                    break;
+                case 4:
+                case 5:
+                    break;
+            }
+            TalkOpen();
+            Set_Portrait(0x3F);
+            Set_Name_Window(0xF);
+            TalkMessageSlow(70);
+            Set_Portrait(0x7F);
+            Set_Name_Window(0x15);
+            TalkMessageSlow(71);
+            Set_Portrait(0x83);
+            Set_Name_Window(0x10);
+            TalkMessageSlow(72);
+            Set_Portrait(0x40);
+            Set_Name_Window(0xF);
+            TalkMessageSlow(73);
+            Set_Portrait(0x7A);
+            Set_Name_Window(0x15);
+            TalkMessageSlow(74);
+            break;
+        case 0x10:
+            var_0 = Print_TV_Message(7);
+            TalkClose();
+            switch (var_0) {
+                case 0:
+                case 1:
+                case 2:
+                case 3:
+                    Set_Flag(0x244, var_0);
+                    Execute_Script(540);
+                    break;
+                case 4:
+                case 5:
+                    break;
+            }
+            TalkOpen();
+            Set_Portrait(0x79);
+            Set_Name_Window(0x15);
+            if (((Check_Flag(8) == 0) && (Check_Flag(9) == 0x10))) {
+                TalkMessageSlow(75);
+                goto LBL_0077;
+            }
+            TalkMessageSlow(76);
+            Set_Portrait(0x40);
+            Set_Name_Window(0xF);
+            TalkMessageSlow(77);
+            Set_Portrait(0x83);
+            Set_Name_Window(0x10);
+            TalkMessageSlow(78);
+            Set_Portrait(0x7A);
+            Set_Name_Window(0x15);
+            TalkMessageSlow(79);
+            Set_Portrait(0x84);
+            Set_Name_Window(0x10);
+            TalkMessageSlow(80);
+            break;
+        case 0x11:
+            var_0 = Print_TV_Message(7);
+            TalkClose();
+            switch (var_0) {
+                case 0:
+                case 1:
+                case 2:
+                case 3:
+                    Set_Flag(0x244, var_0);
+                    Execute_Script(540);
+                    break;
+                case 4:
+                case 5:
+                    break;
+            }
+            TalkOpen();
+            Set_Portrait(0x80);
+            Set_Name_Window(0x10);
+            TalkMessageSlow(81);
+            Set_Portrait(0x7F);
+            Set_Name_Window(0x15);
+            TalkMessageSlow(82);
+            Set_Portrait(0x40);
+            Set_Name_Window(0xF);
+            TalkMessage(83);
+            Set_Portrait(0x81);
+            Set_Name_Window(0x10);
+            TalkMessageSlow(84);
+            Set_Portrait(0x44);
+            Set_Name_Window(0x11);
+            TalkMessageSlow(85);
+            break;
+        case 0x12:
+            var_0 = Print_TV_Message(7);
+            TalkClose();
+            switch (var_0) {
+                case 0:
+                case 1:
+                case 2:
+                case 3:
+                    Set_Flag(0x244, var_0);
+                    Execute_Script(540);
+                    break;
+                case 4:
+                case 5:
+                    break;
+            }
+            TalkOpen();
+            Set_Portrait(0x43);
+            Set_Name_Window(0x11);
+            TalkMessageSlow(86);
+            Set_Portrait(0x50);
+            Set_Name_Window(0x12);
+            TalkMessageSlow(87);
+            Set_Portrait(0x4E);
+            Set_Name_Window(0x13);
+            TalkMessageSlow(88);
+            Set_Portrait(0x44);
+            Set_Name_Window(0x11);
+            TalkMessageSlow(89);
+            Set_Portrait(0x49);
+            Set_Name_Window(0x13);
+            TalkMessageSlow(90);
+            break;
+        case 0x13:
+            var_0 = Print_TV_Message(7);
+            TalkClose();
+            switch (var_0) {
+                case 0:
+                case 1:
+                case 2:
+                case 3:
+                    Set_Flag(0x244, var_0);
+                    Execute_Script(540);
+                    break;
+                case 4:
+                case 5:
+                    break;
+            }
+            TalkOpen();
+            Set_Portrait(0x48);
+            Set_Name_Window(0x13);
+            if (((Check_Flag(8) == 2) && (Check_Flag(9) == 0xF))) {
+                TalkMessageSlow(91);
+                goto LBL_008F;
+            }
+            TalkMessageSlow(92);
+            Set_Portrait(0x47);
+            Set_Name_Window(0x11);
+            TalkMessageSlow(93);
+            Set_Portrait(0x50);
+            Set_Name_Window(0x12);
+            TalkMessageSlow(94);
+            Set_Portrait(0x49);
+            Set_Name_Window(0x13);
+            TalkMessageSlow(95);
+            Set_Portrait(0x50);
+            Set_Name_Window(0x12);
+            TalkMessageSlow(96);
+            break;
+        case 0x14:
+            var_0 = Print_TV_Message(7);
+            TalkClose();
+            switch (var_0) {
+                case 0:
+                case 1:
+                case 2:
+                case 3:
+                    Set_Flag(0x244, var_0);
+                    Execute_Script(540);
+                    break;
+                case 4:
+                case 5:
+                    break;
+            }
+            TalkOpen();
+            Set_Portrait(0x4F);
+            Set_Name_Window(0x12);
+            TalkMessageSlow(97);
+            Set_Portrait(0x47);
+            Set_Name_Window(0x11);
+            TalkMessageSlow(98);
+            Set_Portrait(0x4E);
+            Set_Name_Window(0x13);
+            TalkMessage(99);
+            Set_Portrait(0x50);
+            Set_Name_Window(0x12);
+            TalkMessageSlow(100);
+            Set_Portrait(0x54);
+            Set_Name_Window(0x18);
+            break;
+        case 0x15:
+            var_0 = Print_TV_Message(7);
+            TalkClose();
+            switch (var_0) {
+                case 0:
+                case 1:
+                case 2:
+                case 3:
+                    Set_Flag(0x244, var_0);
+                    Execute_Script(540);
+                    break;
+                case 4:
+                case 5:
+                    break;
+            }
+            TalkOpen();
+            Set_Portrait(0x53);
+            Set_Name_Window(0x18);
+            TalkMessageSlow(101);
+            Set_Portrait(0x5D);
+            Set_Name_Window(0x19);
+            Set_Portrait(0x54);
+            Set_Name_Window(0x18);
+            TalkMessageSlow(102);
+            Set_Portrait(0x58);
+            Set_Name_Window(0x19);
+            TalkMessageSlow(103);
+            break;
+        case 0x16:
+            var_0 = Print_TV_Message(7);
+            TalkClose();
+            switch (var_0) {
+                case 0:
+                case 1:
+                case 2:
+                case 3:
+                    Set_Flag(0x244, var_0);
+                    Execute_Script(540);
+                    break;
+                case 4:
+                case 5:
+                    break;
+            }
+            TalkOpen();
+            Set_Portrait(0x57);
+            Set_Name_Window(0x19);
+            if (((Check_Flag(8) == 1) && (Check_Flag(9) == 0x11))) {
+                TalkMessageSlow(104);
+                goto LBL_00A7;
+            }
+            TalkMessageSlow(105);
+            Set_Portrait(0x54);
+            Set_Name_Window(0x18);
+            TalkMessageSlow(106);
+            Set_Portrait(0x58);
+            Set_Name_Window(0x19);
+            TalkMessageSlow(107);
+            Set_Portrait(0x62);
+            Set_Name_Window(0x20);
+            TalkMessageSlow(108);
+            break;
+        case 0x17:
+            var_0 = Print_TV_Message(7);
+            TalkClose();
+            switch (var_0) {
+                case 0:
+                case 1:
+                case 2:
+                case 3:
+                    Set_Flag(0x244, var_0);
+                    Execute_Script(540);
+                    break;
+                case 4:
+                case 5:
+                    break;
+            }
+            TalkOpen();
+            Set_Portrait(0x62);
+            Set_Name_Window(0x20);
+            TalkMessageSlow(109);
+            Set_Portrait(0x64);
+            Set_Name_Window(0xA);
+            TalkMessageSlow(110);
+            break;
+        case 0x18:
+            var_0 = Print_TV_Message(7);
+            TalkClose();
+            switch (var_0) {
+                case 0:
+                case 1:
+                case 2:
+                case 3:
+                    Set_Flag(0x244, var_0);
+                    Execute_Script(540);
+                    break;
+                case 4:
+                case 5:
+                    break;
+            }
+            TalkOpen();
+            Set_Portrait(0x63);
+            Set_Name_Window(0xA);
+            TalkMessageSlow(111);
+            Set_Portrait(0x6F);
+            Set_Name_Window(0xB);
+            TalkMessageSlow(112);
+            Set_Portrait(0x6D);
+            Set_Name_Window(0xC);
+            TalkMessageSlow(113);
+            Set_Portrait(0x64);
+            Set_Name_Window(0xA);
+            TalkMessageSlow(114);
+            Set_Portrait(0x68);
+            Set_Name_Window(0xC);
+            TalkMessageSlow(115);
+            break;
+        case 0x19:
+            var_0 = Print_TV_Message(7);
+            TalkClose();
+            switch (var_0) {
+                case 0:
+                case 1:
+                case 2:
+                case 3:
+                    Set_Flag(0x244, var_0);
+                    Execute_Script(540);
+                    break;
+                case 4:
+                case 5:
+                    break;
+            }
+            TalkOpen();
+            Set_Portrait(0x67);
+            Set_Name_Window(0xC);
+            if (((Check_Flag(8) == 3) && (Check_Flag(9) == 0x14))) {
+                TalkMessageSlow(116);
+                goto LBL_00BF;
+            }
+            TalkMessageSlow(117);
+            Set_Portrait(0x64);
+            Set_Name_Window(0xA);
+            TalkMessageSlow(118);
+            Set_Portrait(0x6F);
+            Set_Name_Window(0xB);
+            TalkMessageSlow(119);
+            Set_Portrait(0x68);
+            Set_Name_Window(0xC);
+            TalkMessageSlow(120);
+            Set_Portrait(0x6F);
+            Set_Name_Window(0xB);
+            TalkMessageSlow(121);
+            break;
+        case 0x1A:
+            var_0 = Print_TV_Message(7);
+            TalkClose();
+            switch (var_0) {
+                case 0:
+                case 1:
+                case 2:
+                case 3:
+                    Set_Flag(0x244, var_0);
+                    Execute_Script(540);
+                    break;
+                case 4:
+                case 5:
+                    break;
+            }
+            TalkOpen();
+            Set_Portrait(0x6E);
+            Set_Name_Window(0xB);
+            TalkMessageSlow(122);
+            Set_Portrait(0x64);
+            Set_Name_Window(0xA);
+            TalkMessageSlow(123);
+            Set_Portrait(0x6D);
+            Set_Name_Window(0xC);
+            TalkMessageSlow(124);
+            Set_Portrait(0x6F);
+            Set_Name_Window(0xB);
+            TalkMessageSlow(125);
+            Set_Portrait(0x73);
+            Set_Name_Window(0x1D);
+            TalkMessageSlow(126);
+            break;
+        case 0x1B:
+            var_0 = Print_TV_Message(7);
+            TalkClose();
+            switch (var_0) {
+                case 0:
+                case 1:
+                case 2:
+                case 3:
+                    Set_Flag(0x244, var_0);
+                    Execute_Script(540);
+                    break;
+                case 4:
+                case 5:
+                    break;
+            }
+            TalkOpen();
+            Set_Portrait(0x72);
+            Set_Name_Window(0x1D);
+            TalkMessageSlow(127);
+            Set_Portrait(0x21);
+            Set_Name_Window(0x1C);
+            TalkMessageSlow(128);
+            Set_Portrait(0x73);
+            Set_Name_Window(0x1D);
+            TalkMessageSlow(129);
+            Set_Portrait(0x76);
+            Set_Name_Window(0xD);
+            TalkMessageSlow(130);
+            break;
+        case 0x1C:
+            var_0 = Print_TV_Message(7);
+            TalkClose();
+            switch (var_0) {
+                case 0:
+                case 1:
+                case 2:
+                case 3:
+                    Set_Flag(0x244, var_0);
+                    Execute_Script(540);
+                    break;
+                case 4:
+                case 5:
+                    break;
+            }
+            TalkOpen();
+            Set_Portrait(0x75);
+            Set_Name_Window(0xD);
+            TalkMessageSlow(131);
+            Set_Portrait(0x92);
+            Set_Name_Window(0xE);
+            TalkMessageSlow(132);
+            Set_Portrait(0x76);
+            Set_Name_Window(0xD);
+            TalkMessageSlow(133);
+            Set_Portrait(0x92);
+            Set_Name_Window(0xE);
+            TalkMessageSlow(134);
+            break;
+        case 0x1D:
+            var_0 = Print_TV_Message(7);
+            TalkClose();
+            switch (var_0) {
+                case 0:
+                case 1:
+                case 2:
+                case 3:
+                    Set_Flag(0x244, var_0);
+                    Execute_Script(540);
+                    break;
+                case 4:
+                case 5:
+                    break;
+            }
+            TalkOpen();
+            Set_Portrait(0x91);
+            Set_Name_Window(0xE);
+            TalkMessageSlow(135);
+            Set_Portrait(0x76);
+            Set_Name_Window(0xD);
+            TalkMessageSlow(136);
+            Set_Portrait(0x92);
+            Set_Name_Window(0xE);
+            TalkMessageSlow(137);
+            Set_Portrait(0x86);
+            Set_Name_Window(8);
+            TalkMessageSlow(138);
+            break;
+        case 0x1E:
+            var_0 = Print_TV_Message(7);
+            TalkClose();
+            switch (var_0) {
+                case 0:
+                case 1:
+                case 2:
+                case 3:
+                    Set_Flag(0x244, var_0);
+                    Execute_Script(540);
+                    break;
+                case 4:
+                case 5:
+                    break;
+            }
+            TalkOpen();
+            Set_Portrait(0x85);
+            Set_Name_Window(8);
+            TalkMessageSlow(139);
+            Set_Portrait(0x8A);
+            Set_Name_Window(9);
+            TalkMessageSlow(140);
+            Make_Store_Error();
+            Talk_Mini_Close();
+            TalkMessageSlow(141);
+            Set_Portrait(0x86);
+            Set_Name_Window(8);
+            TalkMessageSlow(142);
+            Set_Portrait(0x8A);
+            Set_Name_Window(9);
+            TalkMessageSlow(143);
+            break;
+        case 0x1F:
+            var_0 = Print_TV_Message(7);
+            TalkClose();
+            switch (var_0) {
+                case 0:
+                case 1:
+                case 2:
+                case 3:
+                    Set_Flag(0x244, var_0);
+                    Execute_Script(540);
+                    break;
+                case 4:
+                case 5:
+                    break;
+            }
+            TalkOpen();
+            Set_Portrait(0x89);
+            Set_Name_Window(9);
+            TalkMessageSlow(144);
+            Set_Portrait(0x86);
+            Set_Name_Window(8);
+            TalkMessageSlow(145);
+            Make_Store_Error();
+            Talk_Mini_Close();
+            TalkMessageSlow(146);
+            Set_Portrait(0x8A);
+            Set_Name_Window(9);
+            TalkMessageSlow(147);
+            Set_Portrait(0x96);
+            Set_Name_Window(0x16);
+            TalkMessageSlow(148);
+            break;
+        case 0x20:
+            var_0 = Print_TV_Message(7);
+            TalkClose();
+            switch (var_0) {
+                case 0:
+                case 1:
+                case 2:
+                case 3:
+                    Set_Flag(0x244, var_0);
+                    Execute_Script(540);
+                    break;
+                case 4:
+                case 5:
+                    break;
+            }
+            TalkOpen();
+            Set_Portrait(0x95);
+            Set_Name_Window(0x16);
+            TalkMessageSlow(149);
+            Set_Portrait(0x96);
+            Set_Name_Window(0x16);
+            TalkMessageSlow(150);
+            Set_Portrait(0x9F);
+            Set_Name_Window(0x1A);
+            TalkMessageSlow(151);
+            break;
+        case 0x21:
+            var_0 = Print_TV_Message(7);
+            TalkClose();
+            switch (var_0) {
+                case 0:
+                case 1:
+                case 2:
+                case 3:
+                    Set_Flag(0x244, var_0);
+                    Execute_Script(540);
+                    break;
+                case 4:
+                case 5:
+                    break;
+            }
+            TalkOpen();
+            Set_Portrait(0x99);
+            Set_Name_Window(0x1A);
+            TalkMessageSlow(152);
+            Set_Portrait(0x9A);
+            Set_Name_Window(0x1A);
+            TalkMessageSlow(153);
+            Set_Portrait(0xA1);
+            Set_Name_Window(7);
+            TalkMessageSlow(154);
+            break;
+        case 0x22:
+            var_0 = Print_TV_Message(7);
+            TalkClose();
+            switch (var_0) {
+                case 0:
+                case 1:
+                case 2:
+                case 3:
+                    Set_Flag(0x244, var_0);
+                    Execute_Script(540);
+                    break;
+                case 4:
+                case 5:
+                    break;
+            }
+            TalkOpen();
+            Set_Portrait(0xA0);
+            Set_Name_Window(7);
+            TalkMessageSlow(155);
+            Set_Portrait(0xA9);
+            Set_Name_Window(6);
+            TalkMessageSlow(156);
+            Set_Portrait(0xA1);
+            Set_Name_Window(7);
+            TalkMessageSlow(157);
+            Set_Portrait(0xA9);
+            Set_Name_Window(6);
+            TalkMessageSlow(158);
+            break;
+        case 0x23:
+            var_0 = Print_TV_Message(7);
+            TalkClose();
+            switch (var_0) {
+                case 0:
+                case 1:
+                case 2:
+                case 3:
+                    Set_Flag(0x244, var_0);
+                    Execute_Script(540);
+                    break;
+                case 4:
+                case 5:
+                    break;
+            }
+            TalkOpen();
+            Set_Portrait(0xA8);
+            Set_Name_Window(6);
+            TalkMessageSlow(159);
+            Set_Portrait(0xA7);
+            Set_Name_Window(7);
+            TalkMessageSlow(160);
+            Set_Portrait(0xA9);
+            Set_Name_Window(6);
+            TalkMessageSlow(161);
+            Set_Portrait(0xAD);
+            Set_Name_Window(0x1B);
+            TalkMessageSlow(162);
+            break;
+        case 0x24:
+            var_0 = Print_TV_Message(7);
+            TalkClose();
+            switch (var_0) {
+                case 0:
+                case 1:
+                case 2:
+                case 3:
+                    Set_Flag(0x244, var_0);
+                    Execute_Script(540);
+                    break;
+                case 4:
+                case 5:
+                    break;
+            }
+            TalkOpen();
+            Set_Portrait(0xAC);
+            Set_Name_Window(0x1B);
+            TalkMessageSlow(163);
+            Set_Portrait(0xAD);
+            Set_Name_Window(0x1B);
+            TalkMessageSlow(164);
+            Set_Portrait(0xB1);
+            Set_Name_Window(5);
+            TalkMessageSlow(165);
+            break;
+        case 0x25:
+            var_0 = Print_TV_Message(7);
+            TalkClose();
+            switch (var_0) {
+                case 0:
+                case 1:
+                case 2:
+                case 3:
+                    Set_Flag(0x244, var_0);
+                    Execute_Script(540);
+                    break;
+                case 4:
+                case 5:
+                    break;
+            }
+            TalkOpen();
+            Set_Portrait(0xB0);
+            Set_Name_Window(5);
+            TalkMessageSlow(166);
+            Set_Portrait(0xB5);
+            Set_Name_Window(4);
+            TalkMessageSlow(167);
+            Make_Store_Error();
+            Talk_Mini_Close();
+            TalkMessageSlow(168);
+            Set_Portrait(0xB1);
+            Set_Name_Window(5);
+            TalkMessageSlow(169);
+            Set_Portrait(0xB5);
+            Set_Name_Window(4);
+            TalkMessageSlow(170);
+            break;
+        case 0x26:
+            var_0 = Print_TV_Message(7);
+            TalkClose();
+            switch (var_0) {
+                case 0:
+                case 1:
+                case 2:
+                case 3:
+                    Set_Flag(0x244, var_0);
+                    Execute_Script(540);
+                    break;
+                case 4:
+                case 5:
+                    break;
+            }
+            TalkOpen();
+            Set_Portrait(0xB4);
+            Set_Name_Window(4);
+            TalkMessageSlow(171);
+            Set_Portrait(0xB1);
+            Set_Name_Window(5);
+            TalkMessageSlow(172);
+            Make_Store_Error();
+            Talk_Mini_Close();
+            TalkMessageSlow(173);
+            Set_Portrait(0xB5);
+            Set_Name_Window(4);
+            TalkMessageSlow(174);
+            Make_Store_Error();
+            Talk_Mini_Close();
+            TalkMessageSlow(175);
+            break;
+        case 0x27:
+            var_0 = Print_TV_Message(7);
+            TalkClose();
+            switch (var_0) {
+                case 0:
+                case 1:
+                case 2:
+                case 3:
+                    Set_Flag(0x244, var_0);
+                    Execute_Script(540);
+                    break;
+                case 4:
+                case 5:
+                    break;
+            }
+            TalkOpen();
+            TalkMessageSlow(176);
+            Set_Portrait(1);
+            Set_Name_Window(2);
+            TalkMessageSlow(177);
+            break;
+    }
+    Close_TV_Interface();
+    TalkClose();
+    exit;
+}

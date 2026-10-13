@@ -1,0 +1,29 @@
+// Script 782
+#include "Fomt_Lib.src"
+
+script 782 Event_0782 {
+    const MESSAGE_0 = "!!...Where did you \r\nfind this...?\BRK";
+    const MESSAGE_1 = "Ahh..So you told \r\nAnn and the others for me.\BRK\WAIT_CLICKThis photo shows me with\r\nmy mother and sister.\BRK\WAIT_CLICK";
+    const MESSAGE_2 = "I didn't like the town\r\nwe lived in, so I left my\r\nmother and my sister to\BRK\r\nstrike off on my own. \BRK\WAIT_CLICKWhen I came back, my \r\nmother had died and my\r\nsister was gone...\BRK\r\nThis town reminds me of\r\nthat one very much...\BRK";
+    const MESSAGE_3 = "Sorry! I'm sure you don't\r\ncare about my story...\r\nThanks for the photo!\BRK";
+    
+    SetEntityAnim(0x17, 0x297);
+    TalkOpen();
+    Set_Portrait(0x1E);
+    Set_Name_Window(0x17);
+    TalkMessage(0);
+    Set_Portrait(0x17);
+    TalkMessage(1);
+    Set_Portrait(0x1A);
+    TalkMessage(2);
+    Set_Portrait(0x17);
+    TalkMessage(3);
+    TalkClose();
+    SetEntityAnim(0, 0x126);
+    Make_Delay(0x3C);
+    SetEntityAnim(0x17, 0x293);
+    Set_Flag(0x124, 2);
+    Give_Friendship_Points(0x17, 0x14);
+    Free_Event_Entity(0x17);
+    exit;
+}

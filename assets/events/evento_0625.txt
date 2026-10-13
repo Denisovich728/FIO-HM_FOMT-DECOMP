@@ -1,0 +1,219 @@
+// Script 625
+#include "Fomt_Lib.src"
+
+script 625 Event_0625 {
+    const MESSAGE_0 = "Are you done with work?\BRK";
+    const MESSAGE_1 = "Yes";
+    const MESSAGE_2 = "No";
+    const MESSAGE_3 = "You know what day it is\r\ntoday, right...?\BRK";
+    const MESSAGE_4 = "Our anniversary";
+    const MESSAGE_5 = "My birthday";
+    const MESSAGE_6 = "Your birthday";
+    const MESSAGE_7 = "It's my birthday!!\r\nHow can you forget both my\r\nbirthday and our\BRK\r\nanniversary!?\BRK";
+    const MESSAGE_8 = "I'd better apologize \r\nlater...\BRK";
+    const MESSAGE_9 = "What!? \r\nIt's my birthday today,\r\nyou idiot!\BRK";
+    const MESSAGE_10 = "You remembered!\r\nI don't know why, but I was\r\nsure you'd forget...Sorry!\BRK";
+    const MESSAGE_11 = "I look more mature to\r\nyou, don't I...?\BRK\WAIT_CLICKWell, one day does too\r\nmake a difference!\BRK";
+    const MESSAGE_12 = "I had so much fun today!\r\nI'll sleep like a log...\BRK";
+    const MESSAGE_13 = "\xFF*'s birthday";
+    const MESSAGE_14 = "What kind of a father \r\nare you!? \BRK\WAIT_CLICKHow can you forget both\r\n\xFF*'s birthday\r\nand mine!?\BRK";
+    const MESSAGE_15 = "Hurry up and finish.\r\nToday is an important day.\BRK";
+    
+    var var_0;
+    
+    SetEntityFacing(3, GetOppositeFacing(GetEntityFacing(0)));
+    Free_Event_Entity(3);
+    TalkOpen();
+    Set_Name_Window(3);
+    Set_Portrait(7);
+    Set_Hearth_Anim(3);
+    TalkMessage(0);
+    TalkClose();
+    TalkOpen();
+    var_0 = TalkChoice2(1, 2);
+    switch (var_0) {
+        case 1:
+            TalkClose();
+            TalkOpen();
+            Set_Name_Window(3);
+            Set_Portrait(7);
+            Set_Hearth_Anim(3);
+            TalkMessage(3);
+            TalkClose();
+            TalkOpen();
+            if ((Check_Flag(0xC8) == 0)) {
+                var_0 = TalkChoice3(4, 5, 6);
+                switch (var_0) {
+                    case 1:
+                        Give_Love_Points(3, -0x7D0);
+                        TalkClose();
+                        TalkOpen();
+                        Set_Name_Window(3);
+                        Set_Portrait(9);
+                        Set_Hearth_Anim(3);
+                        TalkMessage(7);
+                        TalkClose();
+                        Fade_Out(2, 1);
+                        Despawn_Map_Item(0);
+                        Despawn_Map_Item(1);
+                        TalkOpen();
+                        TalkMessage(8);
+                        TalkClose();
+                        Refresh_Map_Entities();
+                        Add_Festival_Friendship_Bonus(3);
+                        Set_Flag(0xB9, 2);
+                        Execute_Script(988);
+                        break;
+                    case 2:
+                        Give_Love_Points(3, -0x7D0);
+                        TalkClose();
+                        TalkOpen();
+                        Set_Name_Window(3);
+                        Set_Portrait(9);
+                        Set_Hearth_Anim(3);
+                        TalkMessage(9);
+                        TalkClose();
+                        Fade_Out(2, 1);
+                        Despawn_Map_Item(0);
+                        Despawn_Map_Item(1);
+                        TalkOpen();
+                        TalkMessage(8);
+                        TalkClose();
+                        Refresh_Map_Entities();
+                        Add_Festival_Friendship_Bonus(3);
+                        Set_Flag(0xB9, 2);
+                        Execute_Script(988);
+                        break;
+                    case 3:
+                        Give_Love_Points(3, 0xBB8);
+                        TalkClose();
+                        TalkOpen();
+                        Set_Name_Window(3);
+                        Set_Portrait(8);
+                        Set_Hearth_Anim(3);
+                        TalkMessage(10);
+                        TalkClose();
+                        SetEntityAnim(0, 0x1FE);
+                        Make_Delay(0x3C);
+                        if (Inventory_Check()) {
+                            SetEntityAnim(0, 0x192);
+                            goto LBL_0008;
+                        }
+                        SetEntityAnim(0, 0x152);
+                        Make_Delay(0x3C);
+                        TalkOpen();
+                        Set_Name_Window(3);
+                        Set_Portrait(0xB);
+                        Set_Hearth_Anim(3);
+                        TalkMessage(11);
+                        TalkClose();
+                        Fade_Out(2, 1);
+                        Despawn_Map_Item(0);
+                        Despawn_Map_Item(1);
+                        TalkOpen();
+                        TalkMessage(12);
+                        TalkClose();
+                        Refresh_Map_Entities();
+                        Add_Festival_Friendship_Bonus(3);
+                        Set_Flag(0xB9, 2);
+                        Execute_Script(988);
+                        break;
+                }
+                goto LBL_000B;
+            }
+            var_0 = TalkChoice3(5, 6, 0xD);
+            switch (var_0) {
+                case 1:
+                    Give_Love_Points(3, -0x7D0);
+                    Give_Friendship_Points(0x23, -0xA);
+                    TalkClose();
+                    TalkOpen();
+                    Set_Name_Window(3);
+                    Set_Portrait(9);
+                    Set_Hearth_Anim(3);
+                    TalkMessage(9);
+                    TalkClose();
+                    Fade_Out(2, 1);
+                    Despawn_Map_Item(0);
+                    Despawn_Map_Item(1);
+                    TalkOpen();
+                    TalkMessage(8);
+                    TalkClose();
+                    Refresh_Map_Entities();
+                    Add_Festival_Friendship_Bonus(3);
+                    Add_Festival_Friendship_Bonus(0x23);
+                    Set_Flag(0xB9, 2);
+                    Execute_Script(988);
+                    break;
+                case 2:
+                    Give_Love_Points(3, 0xBB8);
+                    Give_Friendship_Points(0x23, 0x14);
+                    TalkClose();
+                    TalkOpen();
+                    Set_Name_Window(3);
+                    Set_Portrait(8);
+                    Set_Hearth_Anim(3);
+                    TalkMessage(10);
+                    TalkClose();
+                    SetEntityAnim(0, 0x1FE);
+                    Make_Delay(0x3C);
+                    if (Inventory_Check()) {
+                        SetEntityAnim(0, 0x192);
+                        goto LBL_000F;
+                    }
+                    SetEntityAnim(0, 0x152);
+                    Make_Delay(0x3C);
+                    TalkOpen();
+                    Set_Name_Window(3);
+                    Set_Portrait(0xB);
+                    Set_Hearth_Anim(3);
+                    TalkMessage(11);
+                    TalkClose();
+                    Fade_Out(2, 1);
+                    Despawn_Map_Item(0);
+                    Despawn_Map_Item(1);
+                    TalkOpen();
+                    TalkMessage(12);
+                    TalkClose();
+                    Refresh_Map_Entities();
+                    Add_Festival_Friendship_Bonus(3);
+                    Add_Festival_Friendship_Bonus(0x23);
+                    Set_Flag(0xB9, 2);
+                    Execute_Script(988);
+                    break;
+                case 3:
+                    Give_Love_Points(3, -0x7D0);
+                    Give_Friendship_Points(0x23, -0xA);
+                    TalkClose();
+                    TalkOpen();
+                    Set_Name_Window(3);
+                    Set_Portrait(0xA);
+                    Set_Hearth_Anim(3);
+                    TalkMessage(14);
+                    TalkClose();
+                    Fade_Out(2, 1);
+                    Despawn_Map_Item(0);
+                    Despawn_Map_Item(1);
+                    TalkOpen();
+                    TalkMessage(8);
+                    TalkClose();
+                    Refresh_Map_Entities();
+                    Add_Festival_Friendship_Bonus(3);
+                    Add_Festival_Friendship_Bonus(0x23);
+                    Set_Flag(0xB9, 2);
+                    Execute_Script(988);
+                    break;
+            }
+        case 2:
+            TalkClose();
+            TalkOpen();
+            Set_Name_Window(3);
+            Set_Portrait(7);
+            Set_Hearth_Anim(3);
+            TalkMessage(15);
+            TalkClose();
+            break;
+    }
+    SetEntityFacing(3, "Down");
+    exit;
+}

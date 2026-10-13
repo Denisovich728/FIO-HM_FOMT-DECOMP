@@ -1,0 +1,23 @@
+// Script 1074
+#include "Fomt_Lib.src"
+
+script 1074 Event_1074 {
+    const MESSAGE_0 = "So you're here too, \r\n\xFF!?\BRK\r\nI don't usually eat Rice \r\nCakes because they're \r\nfattening. Just this once, \BRK\r\nevery year, I let myself \r\nlose control. Tee-hee...\BRK";
+    
+    if ((Check_If_Single(9) == 0)) {
+        Free_Event_Entity(9);
+    }
+    SetEntityFacing(9, GetOppositeFacing(GetEntityFacing(0)));
+    TalkOpen();
+    Set_Portrait(0x8A);
+    Set_Name_Window(9);
+    TalkMessage(0);
+    Talk_Mini_Close();
+    TalkClose();
+    if ((Has_Spoken_To_NPC_Today(9) == 0)) {
+        Give_Friendship_Points(9, 5);
+    }
+    Free_Event_Entity(9);
+    SetEntityFacing(9, "Left");
+    exit;
+}

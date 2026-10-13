@@ -1,0 +1,57 @@
+// Script 810
+#include "Fomt_Lib.src"
+
+script 810 Event_0810 {
+    const MESSAGE_0 = "Good day!\BRK";
+    const MESSAGE_1 = "I'm Won by name, \r\nand wandering salesman\r\nfrom the East. \BRK\WAIT_CLICKHow do you do. \BRK";
+    const MESSAGE_2 = "I have lots of rare Seeds!\r\nYou would be very glad to\r\nbuy them. \BRK\WAIT_CLICKI stay at Zack's place,\r\nso come any time to \r\ntake a look!\BRK";
+    const MESSAGE_3 = "I have to go make \r\nmy rounds now. \r\nI be waiting for you. \BRK";
+    
+    if ((Inventory_Check() == 1)) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    SetEntityPosition(0x1D, 0xE4, 0x91, "Up");
+    SetEntityAnim(0x1D, 0x857);
+    Fade_In(2, 1);
+    TalkOpen();
+    Set_Portrait(0x73);
+    Set_Name_Window(0x1D);
+    TalkMessage(0);
+    TalkClose();
+    Show_Emote(0, 3, 0);
+    Make_Delay(0x3C);
+    TalkOpen();
+    Set_Portrait(0x72);
+    Set_Name_Window(0x1D);
+    TalkMessage(1);
+    Set_Portrait(0x73);
+    Set_Name_Window(0x1D);
+    TalkMessage(2);
+    TalkClose();
+    SetEntityAnim(0, 0x1FE);
+    Make_Delay(0x3C);
+    if ((Inventory_Check() == 1)) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    TalkOpen();
+    Set_Portrait(0x72);
+    Set_Name_Window(0x1D);
+    TalkMessage(3);
+    TalkClose();
+    SetEntityFacing(0x1D, "Right");
+    SetEntityAnim(0x1D, 0x85B);
+    Set_Vector_X(0x1D, 0x13F, 1);
+    Execute_Movement(0x1D);
+    SetEntityFacing(0x1D, "Up");
+    Set_Vector_Y(0x1D, 0, 1);
+    Execute_Movement(0x1D);
+    Hide_Entity(0x1D);
+    Free_Event_Entity(0x1D);
+    Set_Flag(0x137, 2);
+    exit;
+    exit;
+}

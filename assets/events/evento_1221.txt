@@ -1,0 +1,30 @@
+// Script 1221
+#include "Fomt_Lib.src"
+
+script 1221 Event_1221 {
+    const MESSAGE_0 = "That's strange...\r\nI tasted it a while ago, \r\nbut...\BRK";
+    const MESSAGE_1 = "Mmm...Anything I make is \r\nbound to turn out well! \BRK";
+    
+    if ((Check_If_Single(0x18) == 0)) {
+        Free_Event_Entity(0x18);
+    }
+    SetEntityFacing(0x18, GetOppositeFacing(GetEntityFacing(0)));
+    if ((Has_Spoken_To_NPC_Today(0x18) == 0)) {
+        Give_Friendship_Points(0x18, 5);
+    }
+    TalkOpen();
+    Set_Name_Window(0x18);
+    if ((Check_Flag(0x1A5) == 1)) {
+        Set_Portrait(0x56);
+        TalkMessage(0);
+        TalkClose();
+        Free_Event_Entity(0x18);
+    } else {
+        Set_Portrait(0x54);
+        TalkMessage(1);
+        TalkClose();
+        Free_Event_Entity(0x18);
+    }
+    SetEntityFacing(0x18, "Left");
+    exit;
+}

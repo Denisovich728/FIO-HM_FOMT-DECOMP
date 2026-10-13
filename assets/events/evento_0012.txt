@@ -1,0 +1,12 @@
+// Script 12
+#include "Fomt_Lib.src"
+
+script 12 Event_0012 {
+    const MESSAGE_0 = "Now play nicely with\r\n\xFF#, Hannah.\r\n\BRK";
+    
+    TalkOpen();
+    TalkMessage(0);
+    TalkClose();
+    PlaySong(0, 0xA9);
+    exit;
+}

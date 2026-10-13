@@ -1,0 +1,347 @@
+Rastreo Heurístico Completado.
+Dirección de memoria inicial: 0x0EDCD8
+Dirección de memoria final:   0x0EE778
+Cantidad de índices extraídos: 171
+----------------------------------------
+ID [000] Nombre: Turnip          | Raw Struct: [D8 AE 0E 08 00 03 FF 00 C9 01 00 00 E0 AE 0E 08]
+  -> Desc: Turnip | Can be eaten or shipped. | 
+ID [001] Nombre: Potato          | Raw Struct: [04 AF 0E 08 00 03 FF 00 5B 01 00 00 0C AF 0E 08]
+  -> Desc: Potato | Can be eaten or shipped. | 
+ID [002] Nombre: Cucumber        | Raw Struct: [30 AF 0E 08 00 04 FF 00 71 00 00 00 3C AF 0E 08]
+  -> Desc: Cucumber | Can be eaten or shipped. | 
+ID [003] Nombre: Strawberry      | Raw Struct: [64 AF 0E 08 00 05 FE 00 AE 01 00 00 70 AF 0E 08]
+  -> Desc: Strawberry | Can be eaten or shipped. | 
+ID [004] Nombre: Cabbage         | Raw Struct: [98 AF 0E 08 00 03 FF 00 54 00 00 00 A0 AF 0E 08]
+  -> Desc: Cabbage | Can be eaten or shipped. | 
+ID [005] Nombre: Tomato          | Raw Struct: [C4 AF 0E 08 00 04 FF 00 C0 01 00 00 CC AF 0E 08]
+  -> Desc: Tomato | Can be eaten or shipped. | 
+ID [006] Nombre: Corn            | Raw Struct: [F0 AF 0E 08 00 03 FF 00 6D 00 00 00 F8 AF 0E 08]
+  -> Desc: Corn | Can be eaten or shipped. | 
+ID [007] Nombre: Onion           | Raw Struct: [1C B0 0E 08 00 03 FF 00 3F 01 00 00 24 B0 0E 08]
+  -> Desc: Onion | Can be eaten or shipped. | 
+ID [008] Nombre: Pumpkin         | Raw Struct: [48 B0 0E 08 00 03 FF 00 62 01 00 00 50 B0 0E 08]
+  -> Desc: Pumpkin | Can be eaten or shipped. | 
+ID [009] Nombre: Pineapple       | Raw Struct: [74 B0 0E 08 00 05 FE 00 4E 01 00 00 80 B0 0E 08]
+  -> Desc: Pineapple | Can be eaten or shipped. | 
+ID [010] Nombre: Eggplant        | Raw Struct: [A8 B0 0E 08 00 03 FF 00 84 00 00 00 B4 B0 0E 08]
+  -> Desc: Eggplant | Can be eaten or shipped. | 
+ID [011] Nombre: Carrot          | Raw Struct: [DC B0 0E 08 00 04 FF 00 59 00 00 00 E4 B0 0E 08]
+  -> Desc: Carrot | Can be eaten or shipped. | 
+ID [012] Nombre: Sweet Potato    | Raw Struct: [08 B1 0E 08 00 03 FF 00 B7 01 00 00 18 B1 0E 08]
+  -> Desc: Sweet Potato | Can be eaten or shipped. | 
+ID [013] Nombre: Spinach         | Raw Struct: [44 B1 0E 08 00 03 FF 00 A7 01 00 00 4C B1 0E 08]
+  -> Desc: Spinach | Can be eaten or shipped. | 
+ID [014] Nombre: Green Pepper    | Raw Struct: [70 B1 0E 08 00 03 FF 00 DA 00 00 00 80 B1 0E 08]
+  -> Desc: Green Pepper | Can be eaten or shipped. | 
+ID [015] Nombre: Regular Quality Egg | Raw Struct: [AC B1 0E 08 00 03 FF 00 7D 00 00 00 C0 B1 0E 08]
+  -> Desc: Regular Quality Egg | Can be eaten or shipped. | 
+ID [016] Nombre: Good Quality Egg | Raw Struct: [F0 B1 0E 08 00 03 FF 00 7E 00 00 00 04 B2 0E 08]
+  -> Desc: Good Quality Egg | Can be eaten or shipped. | 
+ID [017] Nombre: High Quality Egg | Raw Struct: [34 B2 0E 08 00 03 FF 00 7F 00 00 00 48 B2 0E 08]
+  -> Desc: High Quality Egg | Can be eaten or shipped. | 
+ID [018] Nombre: Golden Egg      | Raw Struct: [78 B2 0E 08 00 04 FE 00 80 00 00 00 84 B2 0E 08]
+  -> Desc: Golden Egg | Can be eaten or shipped. | 
+ID [019] Nombre: P Egg           | Raw Struct: [AC B2 0E 08 00 05 FD 00 81 00 00 00 B4 B2 0E 08]
+  -> Desc: P Egg | Can be eaten or shipped. | 
+ID [020] Nombre: X Egg           | Raw Struct: [D8 B2 0E 08 00 06 FC 00 82 00 00 00 E0 B2 0E 08]
+  -> Desc: X Egg | Can be eaten or shipped. | 
+ID [021] Nombre: Spa-Boiled Egg  | Raw Struct: [04 B3 0E 08 00 04 FE 00 83 00 00 00 14 B3 0E 08]
+  -> Desc: Spa-Boiled Egg | Put an Egg in Hot Spring. | Can be eaten or shipped.
+ID [022] Nombre: Mayonnaise (S)  | Raw Struct: [58 B3 0E 08 00 01 FF 00 1C 01 00 00 68 B3 0E 08]
+  -> Desc: Mayonnaise (S) | Place Eggs in the  | Mayonnaise Maker.
+ID [023] Nombre: Mayonnaise (M)  | Raw Struct: [A0 B3 0E 08 00 02 FF 00 1D 01 00 00 B0 B3 0E 08]
+  -> Desc: Mayonnaise (M) | Place Eggs in the  | Mayonnaise Maker.
+ID [024] Nombre: Mayonnaise (L)  | Raw Struct: [E8 B3 0E 08 00 03 FF 00 1E 01 00 00 F8 B3 0E 08]
+  -> Desc: Mayonnaise (L) | Place Eggs in the  | Mayonnaise Maker.
+ID [025] Nombre: Mayonnaise (G)  | Raw Struct: [30 B4 0E 08 00 04 FE 00 1F 01 00 00 40 B4 0E 08]
+  -> Desc: Mayonnaise (G) | Place Eggs in the  | Mayonnaise Maker.
+ID [026] Nombre: Mayonnaise (P)  | Raw Struct: [78 B4 0E 08 00 05 FD 00 20 01 00 00 88 B4 0E 08]
+  -> Desc: Mayonnaise (P) | Place Eggs in the  | Mayonnaise Maker.
+ID [027] Nombre: Mayonnaise (X)  | Raw Struct: [C0 B4 0E 08 00 06 FD 00 21 01 00 00 D0 B4 0E 08]
+  -> Desc: Mayonnaise (X) | Place Eggs in the  | Mayonnaise Maker.
+ID [028] Nombre: Milk (S)        | Raw Struct: [08 B5 0E 08 01 02 FE 00 28 01 00 00 14 B5 0E 08]
+  -> Desc: Milk (S) | Milk from a Cow. | Can be drunk or shipped.
+ID [029] Nombre: Milk (M)        | Raw Struct: [4C B5 0E 08 01 03 FE 00 25 01 00 00 58 B5 0E 08]
+  -> Desc: Milk (M) | Milk from a Cow. | Can be drunk or shipped.
+ID [030] Nombre: Milk (L)        | Raw Struct: [90 B5 0E 08 01 04 FE 00 24 01 00 00 9C B5 0E 08]
+  -> Desc: Milk (L) | Milk from a Cow. | Can be drunk or shipped.
+ID [031] Nombre: Milk (G)        | Raw Struct: [D4 B5 0E 08 01 05 FD 00 23 01 00 00 E0 B5 0E 08]
+  -> Desc: Milk (G) | Milk from a Cow. | Can be drunk or shipped.
+ID [032] Nombre: Milk (P)        | Raw Struct: [18 B6 0E 08 01 06 FC 00 27 01 00 00 24 B6 0E 08]
+  -> Desc: Milk (P) | Milk from a Cow. | Can be drunk or shipped.
+ID [033] Nombre: Milk (X)        | Raw Struct: [5C B6 0E 08 01 07 FB 00 29 01 00 00 68 B6 0E 08]
+  -> Desc: Milk (X) | Milk from a Cow. | Can be drunk or shipped.
+ID [034] Nombre: Cheese (S)      | Raw Struct: [A0 B6 0E 08 00 05 FF 00 5C 00 00 00 AC B6 0E 08]
+  -> Desc: Cheese (S) | Place Milk in the Cheese  | Maker. 
+ID [035] Nombre: Cheese (M)      | Raw Struct: [DC B6 0E 08 00 06 FF 00 5D 00 00 00 E8 B6 0E 08]
+  -> Desc: Cheese (M) | Place Milk in the Cheese  | Maker. 
+ID [036] Nombre: Cheese (L)      | Raw Struct: [18 B7 0E 08 00 07 FF 00 5E 00 00 00 24 B7 0E 08]
+  -> Desc: Cheese (L) | Place Milk in the Cheese  | Maker. 
+ID [037] Nombre: Cheese (G)      | Raw Struct: [54 B7 0E 08 00 08 FE 00 5F 00 00 00 60 B7 0E 08]
+  -> Desc: Cheese (G) | Place Milk in the Cheese  | Maker. 
+ID [038] Nombre: Cheese (P)      | Raw Struct: [90 B7 0E 08 00 09 FD 00 60 00 00 00 9C B7 0E 08]
+  -> Desc: Cheese (P) | Place Milk in the Cheese  | Maker. 
+ID [039] Nombre: Cheese (X)      | Raw Struct: [CC B7 0E 08 00 0A FC 00 61 00 00 00 D8 B7 0E 08]
+  -> Desc: Cheese (X) | Place Milk in the Cheese  | Maker. 
+ID [040] Nombre: Apple           | Raw Struct: [08 B8 0E 08 00 02 FE 00 08 00 00 00 10 B8 0E 08]
+  -> Desc: Apple | Grows on Apple Trees | Can be eated or shipped.
+ID [041] Nombre: Honey           | Raw Struct: [48 B8 0E 08 00 02 FE 00 F2 00 00 00 50 B8 0E 08]
+  -> Desc: Honey | Made by Honey Bees. | Can be eaten or shipped.
+ID [042] Nombre: Bamboo Shoot    | Raw Struct: [88 B8 0E 08 00 0A FF 00 32 00 00 00 98 B8 0E 08]
+  -> Desc: Bamboo Shoot | Find them in the mountains. | Can be eaten or shipped.
+ID [043] Nombre: Wild Grapes     | Raw Struct: [DC B8 0E 08 00 0A FE 00 35 01 00 00 E8 B8 0E 08]
+  -> Desc: Wild Grapes | Find them in the mountains. | Can be eaten or shipped.
+ID [044] Nombre: Mushroom        | Raw Struct: [2C B9 0E 08 00 0A FF 00 32 01 00 00 38 B9 0E 08]
+  -> Desc: Mushroom | Find them in the mountains. | Can be eaten or shipped.
+ID [045] Nombre: Poisonous Mushroom | Raw Struct: [78 B9 0E 08 00 CE 0A 00 F5 00 00 00 8C B9 0E 08]
+  -> Desc: Poisonous Mushroom | Find them in the mountains. | Dangerous if eaten.
+ID [046] Nombre: Truffle         | Raw Struct: [D4 B9 0E 08 00 14 FF 00 19 01 00 00 DC B9 0E 08]
+  -> Desc: Truffle | Find them in the mountains. | Very rare.
+ID [047] Nombre: Blue Grass      | Raw Struct: [10 BA 0E 08 00 0A FF 00 41 00 00 00 1C BA 0E 08]
+  -> Desc: Blue Grass | Find them in the mountains. | Eat to recover some Stamina.
+ID [048] Nombre: Green Grass     | Raw Struct: [64 BA 0E 08 00 00 FE 00 D8 00 00 00 70 BA 0E 08]
+  -> Desc: Green Grass | Find them in the mountains. | Eat to recover some Fatigue.
+ID [049] Nombre: Red Grass       | Raw Struct: [B8 BA 0E 08 00 F6 05 00 78 01 00 00 C4 BA 0E 08]
+  -> Desc: Red Grass | Find them in the mountains. | Dangerous if eaten.
+ID [050] Nombre: Yellow Grass    | Raw Struct: [00 BB 0E 08 00 FB FB 00 EA 01 00 00 10 BB 0E 08]
+  -> Desc: Yellow Grass | Decreases Stamina, | but recovers some Fatigue.
+ID [051] Nombre: Orange Grass    | Raw Struct: [50 BB 0E 08 00 00 00 00 42 01 00 00 60 BB 0E 08]
+  -> Desc: Orange Grass | Does not affect | Stamina or Fatigue.
+ID [052] Nombre: Purple Grass    | Raw Struct: [94 BB 0E 08 00 05 FE 00 65 01 00 00 A4 BB 0E 08]
+  -> Desc: Purple Grass | Eat to recover some | Stamina and Fatigue.
+ID [053] Nombre: Indigo Grass    | Raw Struct: [DC BB 0E 08 00 14 FF 00 00 01 00 00 EC BB 0E 08]
+  -> Desc: Indigo Grass | Find them on the beach. | Eat to recover Stamina.
+ID [054] Nombre: Black Grass     | Raw Struct: [2C BC 0E 08 00 05 FB 00 3F 00 00 00 38 BC 0E 08]
+  -> Desc: Black Grass | Eat to recover some | Stamina and Fatigue.
+ID [055] Nombre: White Grass     | Raw Struct: [70 BC 0E 08 00 0A F6 00 D9 01 00 00 7C BC 0E 08]
+  -> Desc: White Grass | Eat to recover some | Stamina and Fatigue.
+ID [056] Nombre: Queen of the Night | Raw Struct: [B4 BC 0E 08 00 00 00 00 3A 00 00 00 C8 BC 0E 08]
+  -> Desc: Queen of the Night | Blooms on Summer nights.  | Brings good luck.
+ID [057] Nombre: Bodigizer       | Raw Struct: [0C BD 0E 08 01 32 FF 00 5D 01 00 00 18 BD 0E 08]
+  -> Desc: Bodigizer | Helps recuperate Stamina. | 
+ID [058] Nombre: Bodigizer XL    | Raw Struct: [40 BD 0E 08 01 64 FF 00 5E 01 00 00 50 BD 0E 08]
+  -> Desc: Bodigizer XL | Helps recuperate  | lots of Stamina.
+ID [059] Nombre: Turbojolt       | Raw Struct: [84 BD 0E 08 01 00 EC 00 92 00 00 00 90 BD 0E 08]
+  -> Desc: Turbojolt | Helps recuperate Fatigue. | 
+ID [060] Nombre: Turbojolt XL    | Raw Struct: [B8 BD 0E 08 01 00 CE 00 93 00 00 00 C8 BD 0E 08]
+  -> Desc: Turbojolt XL | Helps recuperate  | lots of Fatigue.
+ID [061] Nombre: Wine            | Raw Struct: [FC BD 0E 08 01 01 FB 00 DB 01 00 00 04 BE 0E 08]
+  -> Desc: Wine | Made with Grapes from the  | winery or the mountain.
+ID [062] Nombre: Grape Juice     | Raw Struct: [40 BE 0E 08 01 05 FB 00 DD 00 00 00 4C BE 0E 08]
+  -> Desc: Grape Juice | Made with Grapes from the  | winery or the mountain.
+ID [063] Nombre: Rice Ball       | Raw Struct: [90 BE 0E 08 00 02 FF 00 7C 01 00 00 9C BE 0E 08]
+  -> Desc: Rice Ball | May be eaten as is, | or used for cooking.
+ID [064] Nombre: Bread           | Raw Struct: [D4 BE 0E 08 00 02 FF 00 4E 00 00 00 DC BE 0E 08]
+  -> Desc: Bread | May be eaten as is, | or used for cooking. | 
+ID [065] Nombre: Oil             | Raw Struct: [10 BF 0E 08 00 01 01 00 3B 01 00 00 14 BF 0E 08]
+  -> Desc: Oil | May be eaten as is, | or used for cooking.
+ID [066] Nombre: Flower          | Raw Struct: [44 BF 0E 08 00 01 01 00 A3 00 00 00 4C BF 0E 08]
+  -> Desc: Flower | May be eaten as is, | or used for cooking.
+ID [067] Nombre: Curry Powder    | Raw Struct: [80 BF 0E 08 00 01 01 00 76 00 00 00 90 BF 0E 08]
+  -> Desc: Curry Powder | May be eaten as is, | or used for cooking.
+ID [068] Nombre: Muffin Mix      | Raw Struct: [C8 BF 0E 08 00 01 01 00 7A 00 00 00 D4 BF 0E 08]
+  -> Desc: Muffin Mix | May be eaten as is, | or used for cooking.
+ID [069] Nombre: Chocolate       | Raw Struct: [0C C0 0E 08 00 02 FE 00 66 00 00 00 18 C0 0E 08]
+  -> Desc: Chocolate | May be eaten as is, | or used for cooking.
+ID [070] Nombre: Relax Tea Leaves | Raw Struct: [50 C0 0E 08 00 02 FD 00 7B 01 00 00 64 C0 0E 08]
+  -> Desc: Relaxation Tea Leaves | Present from the Harvest | Sprite's Tea Party.
+ID [071] Nombre: SUGDW Apple     | Raw Struct: [AC C0 0E 08 00 02 FE 00 B3 01 00 00 B8 C0 0E 08]
+  -> Desc: SUGDW Apple | Full name: Super Ultra Great | Delicious Wonderful Apple.
+ID [072] Nombre: HMSGB Apple     | Raw Struct: [00 C1 0E 08 00 02 FE 00 E9 00 00 00 0C C1 0E 08]
+  -> Desc: HMSGB Apple | Stands for Hyper-Miracle  | Sweet-Gorgeous-Beautiful.
+ID [073] Nombre: AEPFE Apple     | Raw Struct: [50 C1 0E 08 00 02 FE 00 01 00 00 00 5C C1 0E 08]
+  -> Desc: AEPFE Apple | Stands for Angelic-Eternal- | Pure-Fresh-Elegant.
+ID [074] Nombre: Buckwheat Flour | Raw Struct: [9C C1 0E 08 00 01 01 00 51 00 00 00 AC C1 0E 08]
+  -> Desc: Buckwheat Flour | May be eaten as is, | or used for cooking.
+ID [075] Nombre: Wild Grape Juice | Raw Struct: [E8 C1 0E 08 01 01 D8 00 D6 00 00 00 FC C1 0E 08]
+  -> Desc: A wine made with  | Wild Grapes. | 
+ID [076] Nombre: Salad           | Raw Struct: [20 C2 0E 08 00 14 FB 00 8C 01 00 00 28 C2 0E 08]
+  -> Desc: Salad | Made with fresh vegetables. | To eat or use as a gift.
+ID [077] Nombre: Curry Rice      | Raw Struct: [68 C2 0E 08 00 1E FE 00 73 00 00 00 74 C2 0E 08]
+  -> Desc: Curry Rice | Curry eaten with Rice. | To eat or use as a gift.
+ID [078] Nombre: Stew            | Raw Struct: [B4 C2 0E 08 00 1E FE 00 AB 01 00 00 BC C2 0E 08]
+  -> Desc: Stew | Stewed vegetables. | To eat or use as a gift.
+ID [079] Nombre: Miso Soup       | Raw Struct: [F0 C2 0E 08 00 05 FD 00 2A 01 00 00 FC C2 0E 08]
+  -> Desc: Miso Soup | A delicious soup. | To drink or use as a gift.
+ID [080] Nombre: Stir Fry        | Raw Struct: [38 C3 0E 08 00 28 FF 00 CE 00 00 00 44 C3 0E 08]
+  -> Desc: Stir Fry | Healthy veggy stir fry. | To eat or use as a gift.
+ID [081] Nombre: Fried Rice      | Raw Struct: [80 C3 0E 08 00 28 FF 00 84 01 00 00 8C C3 0E 08]
+  -> Desc: Fried Rice | A yummy rice dish. | To eat or use as a gift.
+ID [082] Nombre: Savory Pancake  | Raw Struct: [C8 C3 0E 08 00 32 FF 00 3C 01 00 00 D8 C3 0E 08]
+  -> Desc: Savory Pancake | Made with flour and veggies. | To eat or use as a gift.
+ID [083] Nombre: Sandwich        | Raw Struct: [20 C4 0E 08 00 28 FB 00 8E 01 00 00 2C C4 0E 08]
+  -> Desc: Sandwich | An old favorite. | To eat or use as a gift.
+ID [084] Nombre: Fruit Juice     | Raw Struct: [64 C4 0E 08 01 14 F1 00 CA 00 00 00 70 C4 0E 08]
+  -> Desc: Fruit Juice | A drink made with fruits. | To drink or use as a gift.
+ID [085] Nombre: Vegetable Juice | Raw Struct: [B4 C4 0E 08 01 14 EC 00 CB 01 00 00 C4 C4 0E 08]
+  -> Desc: Vegetable Juice | A drink made with veggies. | To drink or use as a gift.
+ID [086] Nombre: Mixed Juice     | Raw Struct: [0C C5 0E 08 01 32 E2 00 2C 01 00 00 18 C5 0E 08]
+  -> Desc: Mixed Juice | A drink made with fruits. | To drink or use as a gift.
+ID [087] Nombre: Fruit Latte     | Raw Struct: [5C C5 0E 08 01 1E F1 00 CB 00 00 00 68 C5 0E 08]
+  -> Desc: Fruit Latte | Made with fruits and Milk. | To eat or use as a gift.
+ID [088] Nombre: Vegetable Latte | Raw Struct: [AC C5 0E 08 01 1E EC 00 CC 01 00 00 BC C5 0E 08]
+  -> Desc: Vegetable Latte | A drink made with   | vegetables and Milk.
+ID [089] Nombre: Mixed Latte     | Raw Struct: [F8 C5 0E 08 01 3C EC 00 2D 01 00 00 04 C6 0E 08]
+  -> Desc: Mixed Latte | A drink made with fruit,  | vegetables and Milk.
+ID [090] Nombre: Strawberry Milk | Raw Struct: [44 C6 0E 08 01 1E F1 00 B0 01 00 00 54 C6 0E 08]
+  -> Desc: A drink made with | Strawberries and Milk. | To drink or use as a gift.
+ID [091] Nombre: Strawberry Jam  | Raw Struct: [9C C6 0E 08 00 05 FB 00 AF 01 00 00 AC C6 0E 08]
+  -> Desc: Strawberry Jam | Jam made with Strawberries. | To eat or use as a gift.
+ID [092] Nombre: Tomato Juice    | Raw Struct: [F4 C6 0E 08 01 14 EC 00 C1 01 00 00 04 C7 0E 08]
+  -> Desc: Tomato Juice | A juice made from Tomatoes. | To drink or use as a gift.
+ID [093] Nombre: Pickled Turnip  | Raw Struct: [4C C7 0E 08 00 14 FC 00 4D 01 00 00 5C C7 0E 08]
+  -> Desc: Pickled Turnip | A Turnip dish. | To eat or use as a gift.
+ID [094] Nombre: French Fries    | Raw Struct: [98 C7 0E 08 00 1E FE 00 CD 00 00 00 A8 C7 0E 08]
+  -> Desc: French Fries | Everyone's favorite. | To eat or use as a gift.
+ID [095] Nombre: Pickles         | Raw Struct: [E8 C7 0E 08 00 14 F9 00 4C 01 00 00 F0 C7 0E 08]
+  -> Desc: Pickles | A Pickled Cucumber. | To eat or use as a gift.
+ID [096] Nombre: Ketchup         | Raw Struct: [28 C8 0E 08 00 01 00 00 08 01 00 00 30 C8 0E 08]
+  -> Desc: Ketchup | Made with fresh Tomatoes. | To eat or use as a gift.
+ID [097] Nombre: Popcorn         | Raw Struct: [70 C8 0E 08 00 1E FF 00 57 01 00 00 78 C8 0E 08]
+  -> Desc: Popcorn | Made with fresh Corn. | To eat or use as a gift.
+ID [098] Nombre: Corn Flakes     | Raw Struct: [B4 C8 0E 08 00 0A FE 00 6E 00 00 00 C0 C8 0E 08]
+  -> Desc: Corn Flakes | Great in the morning. | To eat or use as a gift.
+ID [099] Nombre: Baked Corn      | Raw Struct: [00 C9 0E 08 00 07 FF 00 80 01 00 00 0C C9 0E 08]
+  -> Desc: Baked Corn | Made with fresh Corn. | To eat or use as a gift.
+ID [100] Nombre: Pineapple Juice | Raw Struct: [48 C9 0E 08 01 05 F1 00 67 01 00 00 58 C9 0E 08]
+  -> Desc: Pineapple Juice | Freshly squeezed Pinapple. | To drink or use as a gift.
+ID [101] Nombre: Pumpkin Pudding | Raw Struct: [A0 C9 0E 08 00 32 F6 00 63 01 00 00 B0 C9 0E 08]
+  -> Desc: Pumpkin Pudding | A delicious dessert. | To eat or use as a gift.
+ID [102] Nombre: Pumpkin Stew    | Raw Struct: [F0 C9 0E 08 00 08 FF 00 46 00 00 00 00 CA 0E 08]
+  -> Desc: Pumpkin Stew | Savory Pumpkin dish. | To eat or use as a gift.
+ID [103] Nombre: Happy Eggplant  | Raw Struct: [40 CA 0E 08 00 1E FE 00 85 00 00 00 50 CA 0E 08]
+  -> Desc: Happy Eggplant | Using Eggplant and Miso. | To eat or use as a gift.
+ID [104] Nombre: Sweet Potatoes  | Raw Struct: [94 CA 0E 08 00 28 FB 00 B9 01 00 00 A4 CA 0E 08]
+  -> Desc: Sweet Potatoes | Sweet and yummy. | To eat or use as a gift.
+ID [105] Nombre: Baked Sweet Potato | Raw Struct: [E0 CA 0E 08 00 28 FB 00 83 01 00 00 F4 CA 0E 08]
+  -> Desc: Baked Sweet Potato | Sweet and delicious. | To eat or use as a gift.
+ID [106] Nombre: Greens          | Raw Struct: [38 CB 0E 08 00 14 FF 00 3A 01 00 00 40 CB 0E 08]
+  -> Desc: Greens | Healthy and delicious. | To eat or use as a gift.
+ID [107] Nombre: Scrambled Eggs  | Raw Struct: [7C CB 0E 08 00 28 FD 00 81 01 00 00 8C CB 0E 08]
+  -> Desc: Scrambled Eggs | Made with fresh Eggs. | To eat or use as a gift.
+ID [108] Nombre: Omelet          | Raw Struct: [CC CB 0E 08 00 32 FC 00 3D 01 00 00 D4 CB 0E 08]
+  -> Desc: Omelet | Made with fresh Eggs. | To eat or use as a gift.
+ID [109] Nombre: Omelet Rice     | Raw Struct: [0C CC 0E 08 00 3C FC 00 3E 01 00 00 18 CC 0E 08]
+  -> Desc: Omelet Rice | Made with fresh Eggs. | To eat or use as a gift.
+ID [110] Nombre: Boiled Egg      | Raw Struct: [58 CC 0E 08 00 14 FE 00 44 00 00 00 64 CC 0E 08]
+  -> Desc: Boiled Egg | Made with a fresh Egg. | To eat or use as a gift.
+ID [111] Nombre: Hot Milk        | Raw Struct: [A4 CC 0E 08 01 14 F6 00 F4 00 00 00 B0 CC 0E 08]
+  -> Desc: Hot Milk | Made with fresh Milk. | To eat or use as a gift.
+ID [112] Nombre: Butter          | Raw Struct: [EC CC 0E 08 00 01 00 00 52 00 00 00 F4 CC 0E 08]
+  -> Desc: Butter | Made with fresh Milk. | To eat or use as a gift.
+ID [113] Nombre: Cheese Cake     | Raw Struct: [2C CD 0E 08 00 32 FB 00 62 00 00 00 38 CD 0E 08]
+  -> Desc: Cheese Cake | Made with fresh Cheese. | To eat or use as a gift.
+ID [114] Nombre: Cheese Fondue   | Raw Struct: [78 CD 0E 08 00 28 FD 00 63 00 00 00 88 CD 0E 08]
+  -> Desc: Cheese Fondue | Made with fresh Cheese. | To eat or use as a gift.
+ID [115] Nombre: Apple Pie       | Raw Struct: [CC CD 0E 08 00 32 F8 00 0B 00 00 00 D8 CD 0E 08]
+  -> Desc: Apple Pie | A traditional dessert. | To eat or use as a gift.
+ID [116] Nombre: Apple Jam       | Raw Struct: [14 CE 0E 08 00 05 FB 00 0A 00 00 00 20 CE 0E 08]
+  -> Desc: Apple Jam | Made with fresh Apples. | To eat or use as a gift.
+ID [117] Nombre: Apple Souffl?   | Raw Struct: [60 CE 0E 08 00 08 FE 00 7F 01 00 00 70 CE 0E 08]
+  -> Desc: Apple Souffl? | Made with fresh Apples. | To eat or use as a gift.
+ID [118] Nombre: Mushroom Rice   | Raw Struct: [B4 CE 0E 08 00 1E FF 00 34 01 00 00 C4 CE 0E 08]
+  -> Desc: Mushroom Rice | Mushroom-mixed Rice. | To eat or use as a gift.
+ID [119] Nombre: Bamboo Rice     | Raw Struct: [04 CF 0E 08 00 1E FF 00 BA 01 00 00 10 CF 0E 08]
+  -> Desc: Bamboo Rice | Bamboo Shoots-mixed Rice. | To eat or use as a gift.
+ID [120] Nombre: Truffle Rice    | Raw Struct: [54 CF 0E 08 00 3C FF 00 1B 01 00 00 64 CF 0E 08]
+  -> Desc: Truffle Rice | Truffle-mixed Rice. | To eat or use as a gift.
+ID [121] Nombre: Sushi           | Raw Struct: [A0 CF 0E 08 00 28 FF 00 B6 01 00 00 A8 CF 0E 08]
+  -> Desc: Sushi | Made with Sashimi, Rice, | and Vinegar.
+ID [122] Nombre: Jam Bun         | Raw Struct: [D8 CF 0E 08 00 28 FB 00 04 01 00 00 E0 CF 0E 08]
+  -> Desc: Jam Bun | Made with Jam and Bread. | To eat or use as a gift.
+ID [123] Nombre: Dinner Role     | Raw Struct: [1C D0 0E 08 00 28 FE 00 53 00 00 00 28 D0 0E 08]
+  -> Desc: Dinner Role | Made with Bread and Butter. | To eat or use as a gift.
+ID [124] Nombre: Raisin Bread    | Raw Struct: [6C D0 0E 08 00 1E FC 00 D4 00 00 00 7C D0 0E 08]
+  -> Desc: Raisin Bread | Made with Wild Grapes. | To eat or use as a gift.
+ID [125] Nombre: Grape Jam       | Raw Struct: [BC D0 0E 08 00 05 FB 00 D5 00 00 00 C8 D0 0E 08]
+  -> Desc: Grape Jam | Made with Wild Grapes. | To eat or use as a gift.
+ID [126] Nombre: Curry Bread     | Raw Struct: [04 D1 0E 08 00 1E FE 00 74 00 00 00 10 D1 0E 08]
+  -> Desc: Curry Bread | Made with Curry and Bread. | To eat or use as a gift.
+ID [127] Nombre: Sashimi         | Raw Struct: [54 D1 0E 08 00 1E FD 00 8F 01 00 00 5C D1 0E 08]
+  -> Desc: Sashimi | Thinly sliced raw fish. | To eat or use as a gift.
+ID [128] Nombre: Grilled Fish    | Raw Struct: [98 D1 0E 08 00 1E FF 00 DC 00 00 00 A8 D1 0E 08]
+  -> Desc: Grilled Fish | Made with fresh fish. | To eat or use as a gift.
+ID [129] Nombre: Chirashi Sushi  | Raw Struct: [E8 D1 0E 08 00 32 FF 00 65 00 00 00 F8 D1 0E 08]
+  -> Desc: Sashimi and other goodies | on top of Rice. | To eat or use as a gift.
+ID [130] Nombre: Pizza           | Raw Struct: [40 D2 0E 08 00 28 FF 00 55 01 00 00 48 D2 0E 08]
+  -> Desc: Pizza | Savory Italian Pizza. | To eat or use as a gift.
+ID [131] Nombre: Noodles         | Raw Struct: [80 D2 0E 08 00 28 FD 00 38 01 00 00 88 D2 0E 08]
+  -> Desc: Noodles | Made with Flour. | To eat or use as a gift.
+ID [132] Nombre: Curry Noodles   | Raw Struct: [BC D2 0E 08 00 3C FD 00 75 00 00 00 CC D2 0E 08]
+  -> Desc: Curry Noodles | Made with Curry and Noodles. | To eat or use as a gift.
+ID [133] Nombre: Tempura Noodles | Raw Struct: [14 D3 0E 08 00 3C FD 00 BD 01 00 00 24 D3 0E 08]
+  -> Desc: Tempura Noodles | Made with Noodles. | To eat or use as a gift.
+ID [134] Nombre: Fried Noodles   | Raw Struct: [64 D3 0E 08 00 3C FE 00 82 01 00 00 74 D3 0E 08]
+  -> Desc: Fried Noodles | Made with Noodles. | To eat or use as a gift.
+ID [135] Nombre: Buckwheat Noodles | Raw Struct: [B0 D3 0E 08 00 28 FD 00 EC 01 00 00 C4 D3 0E 08]
+  -> Desc: Buckwheat Noodles | Noodles made with  | Buckwheat flour. 
+ID [136] Nombre: Noodles w/ Tempura | Raw Struct: [00 D4 0E 08 00 3C FD 00 BE 01 00 00 14 D4 0E 08]
+  -> Desc: Tempura Buckwheat Noodles | Made with Tempura. | To eat or use as a gift.
+ID [137] Nombre: Fried Noodles   | Raw Struct: [64 D3 0E 08 00 3C FE 00 87 01 00 00 74 D3 0E 08]
+  -> Desc: Fried Noodles | Made with Noodles. | To eat or use as a gift.
+ID [138] Nombre: Buckwheat Chips | Raw Struct: [5C D4 0E 08 00 0F FE 00 A5 01 00 00 6C D4 0E 08]
+  -> Desc: Buckwheat Chips | Made with Buckwheat Flour. | To eat or use as a gift.
+ID [139] Nombre: Cookies         | Raw Struct: [B4 D4 0E 08 00 0F FB 00 6B 00 00 00 BC D4 0E 08]
+  -> Desc: Cookies | A delicious treat. | To eat or use as a gift.
+ID [140] Nombre: Chocolate Cookies | Raw Struct: [F4 D4 0E 08 00 1E FB 00 68 00 00 00 08 D5 0E 08]
+  -> Desc: Chocolate Cookies | A delicious treat. | To eat or use as a gift.
+ID [141] Nombre: Tempura         | Raw Struct: [48 D5 0E 08 00 14 FE 00 BB 01 00 00 50 D5 0E 08]
+  -> Desc: Tempura | Deep-fried. | To eat or use as a gift.
+ID [142] Nombre: Ice Cream       | Raw Struct: [80 D5 0E 08 00 1E EC 00 F8 00 00 00 8C D5 0E 08]
+  -> Desc: Ice Cream | Cold and sweet. | To eat or use as a gift.
+ID [143] Nombre: Cake            | Raw Struct: [C4 D5 0E 08 00 28 F8 00 56 00 00 00 CC D5 0E 08]
+  -> Desc: Cake | A sweet treat. | To eat or use as a gift.
+ID [144] Nombre: Chocolate Cake  | Raw Struct: [FC D5 0E 08 00 46 F8 00 67 00 00 00 0C D6 0E 08]
+  -> Desc: Chocolate Cake | A delicious treat. | To eat or use as a gift.
+ID [145] Nombre: Relaxation Tea  | Raw Struct: [4C D6 0E 08 01 32 CE 00 7A 01 00 00 5C D6 0E 08]
+  -> Desc: Relaxation Tea  | An English Tea. | To drink or use as a gift.
+ID [146] Nombre: Toast           | Raw Struct: [9C D6 0E 08 00 07 FF 00 BF 01 00 00 A4 D6 0E 08]
+  -> Desc: Toast | Toasted Bread. | To eat or use as a gift.
+ID [147] Nombre: French Toast    | Raw Struct: [D4 D6 0E 08 00 1E FE 00 A8 00 00 00 E4 D6 0E 08]
+  -> Desc: French Toast | Made with fresh Bread. | To eat or use as a gift.
+ID [148] Nombre: Pudding         | Raw Struct: [24 D7 0E 08 00 1E F8 00 61 01 00 00 2C D7 0E 08]
+  -> Desc: Pudding | A delicious dessert. | To eat or use as a gift.
+ID [149] Nombre: Mountain Stew   | Raw Struct: [64 D7 0E 08 00 28 FF 00 64 00 00 00 74 D7 0E 08]
+  -> Desc: Mountain Stew | A very healthy dish. | To eat or use as a gift.
+ID [150] Nombre: Moon Dumplings  | Raw Struct: [B4 D7 0E 08 00 28 FD 00 77 00 00 00 C4 D7 0E 08]
+  -> Desc: Moon Dumplings | Roasted veggies on a stick. | To eat or use as a gift.
+ID [151] Nombre: Rice Cake       | Raw Struct: [0C D8 0E 08 00 02 FF 00 7D 01 00 00 18 D8 0E 08]
+  -> Desc: <desc_data>
+ID [152] Nombre: Roasted Rice Cake | Raw Struct: [58 D8 0E 08 00 0A FE 00 86 01 00 00 6C D8 0E 08]
+  -> Desc: Roasted Rice Cake | Made with Rice Cakes. | To eat or use as a gift.
+ID [153] Nombre: Elli Leaves     | Raw Struct: [B0 D8 0E 08 00 64 CE 00 8A 00 00 00 BC D8 0E 08]
+  -> Desc: Elli Leaves | Recover Stamina and Fatigue. | To eat or use as a gift.
+ID [154] Nombre: Failed Dish     | Raw Struct: [00 D9 0E 08 00 F6 0A 00 8C 00 00 00 0C D9 0E 08]
+  -> Desc: Failure | Too bad the recipe didn't | work out...
+ID [155] Nombre: Failed Drink    | Raw Struct: [3C D9 0E 08 01 F6 0A 00 8F 00 00 00 0C D9 0E 08]
+  -> Desc: Failure | Too bad the recipe didn't | work out...
+ID [156] Nombre: Failed Pot Dish | Raw Struct: [4C D9 0E 08 00 F6 0A 00 91 00 00 00 0C D9 0E 08]
+  -> Desc: Failure | Too bad the recipe didn't | work out...
+ID [157] Nombre: Failed Dessert  | Raw Struct: [5C D9 0E 08 00 F6 0A 00 8E 00 00 00 0C D9 0E 08]
+  -> Desc: Failure | Too bad the recipe didn't | work out...
+ID [158] Nombre: Failed Bread    | Raw Struct: [6C D9 0E 08 00 F6 0A 00 8D 00 00 00 0C D9 0E 08]
+  -> Desc: Failure | Too bad the recipe didn't | work out...
+ID [159] Nombre: Failed Noodles  | Raw Struct: [7C D9 0E 08 00 F6 0A 00 90 00 00 00 0C D9 0E 08]
+  -> Desc: Failure | Too bad the recipe didn't | work out...
+ID [160] Nombre: Small Fish      | Raw Struct: [8C D9 0E 08 00 02 FF 00 9F 00 00 00 98 D9 0E 08]
+  -> Desc: Small Fish | Caught in ocean or river. | Can be eaten or shipped.
+ID [161] Nombre: Medium Fish     | Raw Struct: [D8 D9 0E 08 00 03 FF 00 9E 00 00 00 E4 D9 0E 08]
+  -> Desc: Medium Fish | Caught in ocean or river. | Can be eaten or shipped.
+ID [162] Nombre: Large Fish      | Raw Struct: [28 DA 0E 08 00 04 FF 00 9D 00 00 00 34 DA 0E 08]
+  -> Desc: Large Fish | Caught in ocean or river. | Can be eaten or shipped.
+ID [163] Nombre: Toasted Rice Ball | Raw Struct: [74 DA 0E 08 00 05 FF 00 85 01 00 00 88 DA 0E 08]
+  -> Desc: Toasted Rice Ball | Made with Rice. | To eat or use as a gift.
+ID [164] Nombre: Tempura Rice    | Raw Struct: [C8 DA 0E 08 00 1E FE 00 BC 01 00 00 D8 DA 0E 08]
+  -> Desc: Tempura Rice | Tempura with Rice. | To eat or use as a gift.
+ID [165] Nombre: Egg Over Rice   | Raw Struct: [14 DB 0E 08 00 14 FF 00 87 00 00 00 24 DB 0E 08]
+  -> Desc: Egg Over Rice | Made with Eggs and Rice. | To eat or use as a gift.
+ID [166] Nombre: Rice Gruel      | Raw Struct: [68 DB 0E 08 00 05 FD 00 7E 01 00 00 74 DB 0E 08]
+  -> Desc: Rice Gruel | A soft Rice soup. | To eat or use as a gift.
+ID [167] Nombre: Pancakes        | Raw Struct: [AC DB 0E 08 00 14 FD 00 F3 00 00 00 B8 DB 0E 08]
+  -> Desc: Pancakes | Made with Flour. | To eat or use as a gift.
+ID [168] Nombre: Fish Sticks     | Raw Struct: [F0 DB 0E 08 00 05 FF 00 45 00 00 00 FC DB 0E 08]
+  -> Desc: Fish Sticks | Made with Fish. | To eat or use as a gift.
+ID [169] Nombre: Candied Potato  | Raw Struct: [34 DC 0E 08 00 08 FF 00 58 00 00 00 44 DC 0E 08]
+  -> Desc: Candied Potato | Potato with sweet glaze. | To eat or use as a gift.
+ID [170] Nombre: Potato Pancakes | Raw Struct: [88 DC 0E 08 00 14 FE 00 70 00 00 00 98 DC 0E 08]
+  -> Desc: Potato Pancakes | Made with Potatoes. | To eat or use as a gift.

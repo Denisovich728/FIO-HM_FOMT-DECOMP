@@ -1,0 +1,10 @@
+{
+    "name": "Barley_Right",
+    "anim_id": "0x9f5",
+    "anim_id_dec": 2549,
+    "graphic_id": 4,
+    "script_addr": "0x8667040",
+    "script_rom_offset": "0x667040",
+    "frame_count": 0,
+    "frames": []
+}

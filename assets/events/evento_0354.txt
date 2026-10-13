@@ -1,0 +1,119 @@
+// Script 354
+#include "Fomt_Lib.src"
+
+script 354 Event_0354 {
+    const MESSAGE_0 = "Nothing in the sock.\BRK";
+    const MESSAGE_1 = "There was a present inside!\BRK";
+    const MESSAGE_2 = "It's Mystrile!\BRK";
+    const MESSAGE_3 = "I have to put \r\nsomething down first.\BRK";
+    const MESSAGE_4 = "It's Orichalc!\BRK";
+    const MESSAGE_5 = "It's a Moon Stone!\BRK";
+    const MESSAGE_6 = "It's Sand Rose!\BRK";
+    const MESSAGE_7 = "It's Alexandrite \BRK";
+    const MESSAGE_8 = "Sock Hook\BRK";
+    
+    if ((Check_Flag(0x1E) == 1)) {
+        switch (Check_Flag(0x1F)) {
+            case 0x5F:
+                TalkOpen();
+                TalkMessage(0);
+                TalkClose();
+                break;
+            case 0x15:
+                TalkOpen();
+                TalkMessage(1);
+                TalkClose();
+                if (Inventory_Check()) {
+                    PlaySong(0, 0x6A);
+                    Give_Item_Shelf(0x15);
+                    Make_Delay(0x1E);
+                    TalkOpen();
+                    TalkMessage(2);
+                    TalkClose();
+                    Set_Flag(0x1F, 0x5F);
+                    goto LBL_0006;
+                }
+                TalkOpen();
+                TalkMessage(3);
+                TalkClose();
+                break;
+            case 0x16:
+                TalkOpen();
+                TalkMessage(1);
+                TalkClose();
+                if (Inventory_Check()) {
+                    PlaySong(0, 0x6A);
+                    Give_Item_Shelf(0x16);
+                    Make_Delay(0x1E);
+                    TalkOpen();
+                    TalkMessage(4);
+                    TalkClose();
+                    Set_Flag(0x1F, 0x5F);
+                    goto LBL_0009;
+                }
+                TalkOpen();
+                TalkMessage(3);
+                TalkClose();
+                break;
+            case 0x18:
+                TalkOpen();
+                TalkMessage(1);
+                TalkClose();
+                if (Inventory_Check()) {
+                    PlaySong(0, 0x6A);
+                    Give_Item_Shelf(0x18);
+                    Make_Delay(0x1E);
+                    TalkOpen();
+                    TalkMessage(5);
+                    TalkClose();
+                    Set_Flag(0x1F, 0x5F);
+                    goto LBL_000C;
+                }
+                TalkOpen();
+                TalkMessage(3);
+                TalkClose();
+                break;
+            case 0x19:
+                TalkOpen();
+                TalkMessage(1);
+                TalkClose();
+                if (Inventory_Check()) {
+                    PlaySong(0, 0x6A);
+                    Give_Item_Shelf(0x19);
+                    Make_Delay(0x1E);
+                    TalkOpen();
+                    TalkMessage(6);
+                    TalkClose();
+                    Set_Flag(0x1F, 0x5F);
+                    goto LBL_000F;
+                }
+                TalkOpen();
+                TalkMessage(3);
+                TalkClose();
+                break;
+            case 0x1B:
+                TalkOpen();
+                TalkMessage(1);
+                TalkClose();
+                if (Inventory_Check()) {
+                    PlaySong(0, 0x6A);
+                    Give_Item_Shelf(0x1B);
+                    Make_Delay(0x1E);
+                    TalkOpen();
+                    TalkMessage(7);
+                    TalkClose();
+                    Set_Flag(0x1F, 0x5F);
+                    goto LBL_0012;
+                }
+                TalkOpen();
+                TalkMessage(3);
+                TalkClose();
+                break;
+        }
+    } else {
+        TalkOpen();
+        TalkMessage(8);
+        TalkClose();
+    }
+    exit;
+}

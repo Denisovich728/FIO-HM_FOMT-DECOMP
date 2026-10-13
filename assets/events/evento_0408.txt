@@ -1,0 +1,11 @@
+// Script 408
+#include "Fomt_Lib.src"
+
+script 408 Event_0408 {
+    const MESSAGE_0 = "Square's street lamp\BRK";
+    
+    TalkOpen();
+    Print_Message(0);
+    TalkClose();
+    exit;
+}

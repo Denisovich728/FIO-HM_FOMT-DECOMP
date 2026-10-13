@@ -1,0 +1,46 @@
+// Script 1308
+#include "Fomt_Lib.src"
+
+script 1308 Event_1308 {
+    PlayBGM(1, 7);
+    Spawn_Item_On_Grid(0, ((0x14 * 8) + 8), ((0x12 * 8) + 8), 2, Get_Item_Sprite_ID(0x87));
+    Spawn_Item_On_Grid(1, ((0x17 * 8) + 8), ((0x12 * 8) + 8), 2, Get_Item_Sprite_ID(0x87));
+    Spawn_Item_On_Grid(2, ((0x1A * 8) + 8), ((0x12 * 8) + 8), 2, Get_Item_Sprite_ID(0x87));
+    Spawn_Item_On_Grid(3, ((0x1D * 8) + 8), ((0x12 * 8) + 8), 2, Get_Item_Sprite_ID(0x87));
+    Spawn_Item_On_Grid(4, ((0x20 * 8) + 8), ((0x12 * 8) + 8), 2, Get_Item_Sprite_ID(0x87));
+    Spawn_Item_On_Grid(5, ((0x23 * 8) + 8), ((0x12 * 8) + 8), 2, Get_Item_Sprite_ID(0x87));
+    if ((GetEntityLocation(0x4A) == 6)) {
+        SetEntityPosition(0x4A, (0x1A0 + 0x10), 0x85, 0);
+    }
+    if ((GetEntityLocation(0x4B) == 6)) {
+        SetEntityPosition(0x4B, (0x1A0 + 0x20), 0x85, 0);
+    }
+    SetEntityPosition(0xD, 0xDC, 0x80, 0);
+    SetEntityAnim(0xD, 0x85F);
+    SetEntityPosition(0x1B, 0x178, 0xF8, 2);
+    SetEntityAnim(0x1B, 0x9D3);
+    SetEntityPosition(0x16, 0x174, 0x68, 0);
+    SetEntityAnim(0x16, 0x8EC);
+    SetEntityPosition(8, 0x50, 0xB8, 3);
+    SetEntityAnim(8, 0x8C0);
+    SetEntityPosition(9, 0x70, 0xC0, 3);
+    SetEntityAnim(9, 0x8D0);
+    SetEntityPosition(0x11, 0x140, 0x170, 0);
+    SetEntityAnim(0x11, 0x689);
+    SetEntityPosition(0x12, 0x130, 0x180, 3);
+    SetEntityAnim(0x12, 0x6C5);
+    SetEntityPosition(0x19, 0x9C, 0x168, 2);
+    SetEntityAnim(0x19, 0x7BE);
+    End_Cinematic_State();
+    Fade_In(2, 1);
+    Set_Flag(0x1D0, 1);
+    Routine_State_Override(0xD, 0x521);
+    Routine_State_Override(0x1B, 0x525);
+    Routine_State_Override(0x16, 0x524);
+    Routine_State_Override(8, 0x522);
+    Routine_State_Override(9, 0x523);
+    Routine_State_Override(0x11, 0x51E);
+    Routine_State_Override(0x12, 0x51F);
+    Routine_State_Override(0x19, 0x520);
+    exit;
+}

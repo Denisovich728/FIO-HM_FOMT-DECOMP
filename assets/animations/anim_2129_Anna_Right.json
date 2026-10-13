@@ -1,0 +1,10 @@
+{
+    "name": "Anna_Right",
+    "anim_id": "0x851",
+    "anim_id_dec": 2129,
+    "graphic_id": 4,
+    "script_addr": "0x8666458",
+    "script_rom_offset": "0x666458",
+    "frame_count": 0,
+    "frames": []
+}

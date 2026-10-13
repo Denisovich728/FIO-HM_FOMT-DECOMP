@@ -1,0 +1,20 @@
+// Script 730
+#include "Fomt_Lib.src"
+
+script 730 Event_0730 {
+    const MESSAGE_0 = "Basil really is such \r\na genius! \BRK";
+    const MESSAGE_1 = "I'm glad to have someone \r\nlike that in my own family!\BRK";
+    
+    SetEntityFacing(7, GetOppositeFacing(GetEntityFacing(0)));
+    TalkOpen();
+    Set_Name_Window(7);
+    Set_Portrait(0xA1);
+    TalkMessage(0);
+    Set_Portrait(0xA6);
+    TalkMessage(1);
+    TalkClose();
+    Free_Event_Entity(7);
+    SetEntityFacing(7, "Up");
+    exit;
+    exit;
+}

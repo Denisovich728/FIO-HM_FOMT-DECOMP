@@ -1,0 +1,49 @@
+// Script 683
+#include "Fomt_Lib.src"
+
+script 683 Event_0683 {
+    const MESSAGE_0 = "I guess I'm just not used to\r\nlife on the farm, yet! I'll\r\nhave to study it more...\BRK";
+    const MESSAGE_1 = "I took some medicine, so I \r\nthink if I just go to bed\r\nnow I should be alright.\BRK";
+    
+    Warp_Player(0x1D, 0x1C0, 0x64);
+    PlayBGM(1, 0x11);
+    SetEntityPosition(0, 0x1C0, 0x64, "Up");
+    if (Inventory_Check()) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    SetEntityPosition(0xC, 0x1B8, -0x30, "Down");
+    SetEntityAnim(0xC, 0x827);
+    Fade_In(2, 1);
+    Make_Delay(0x3C);
+    SetEntityAnim(0xC, 0x82B);
+    Make_Delay(0x3C);
+    TalkOpen();
+    Set_Name_Window(0xC);
+    Set_Portrait(0x6B);
+    Set_Hearth_Anim(0xC);
+    TalkMessage(0);
+    TalkClose();
+    SetEntityAnim(0, 0x126);
+    Make_Delay(0x3C);
+    if (Inventory_Check()) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    Make_Delay(0x3C);
+    TalkOpen();
+    Set_Name_Window(0xC);
+    Set_Portrait(0x6B);
+    Set_Hearth_Anim(0xC);
+    TalkMessage(1);
+    TalkClose();
+    SetEntityAnim(0xC, 0x843);
+    Make_Delay(0x3C);
+    Free_Event_Entity(0xC);
+    Give_Love_Points(0xC, -0x7D0);
+    Set_Flag(0xD6, 1);
+    Finalize_Event();
+    exit;
+}

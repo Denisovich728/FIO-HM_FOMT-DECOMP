@@ -1,0 +1,124 @@
+// Script 605
+#include "Fomt_Lib.src"
+
+script 605 Event_0605 {
+    const MESSAGE_0 = "Good morning!\r\nDid you sleep well?\r\nDo you know what today is?\BRK";
+    const MESSAGE_1 = "Your birthday";
+    const MESSAGE_2 = "Our anniversary";
+    const MESSAGE_3 = "My birthday";
+    const MESSAGE_4 = "My birthday?!?\r\nThis means you don't \r\nreally remember either my\BRK\r\nbirthday or our anniversary!\BRK\WAIT_CLICKSo much for your present!\BRK";
+    const MESSAGE_5 = "Of course! I knew \r\nyou'd remember! You're so\r\nconsiderate, \xFF).\BRK\WAIT_CLICKHere's a present for you!\BRK";
+    const MESSAGE_6 = "Here you are, \xFF).\BRK";
+    const MESSAGE_7 = "I'm going to give you a \r\npresent, so empty your \r\nhands, OK?\BRK";
+    const MESSAGE_8 = "You're birthday!?\r\nThat's the most insensitive \r\nthing I've ever heard!\BRK\WAIT_CLICKNow you're not getting\r\nyour present anymore!\BRK";
+    
+    var var_0;
+    
+    Warp_Player(0x1D, 0x109, 0x8A);
+    PlayBGM(1, 0x11);
+    SetEntityPosition(0, 0x109, 0x8A, "Up");
+    if (Inventory_Check()) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    SetEntityPosition(0xC, 0x109, 0x72, "Down");
+    SetEntityAnim(0xC, 0x813);
+    if ((Check_Flag(0xCC) == 2)) {
+        if ((Check_Flag(0x2E) >= 0x3C)) {
+            SetEntityPosition(0x23, 0x124, 0x54, "Down");
+            if ((Check_Flag(0x2F) == 1)) {
+                SetEntityAnim(0x23, 0x267);
+            } else {
+                SetEntityAnim(0x23, 0x26B);
+            }
+        } else {
+            SetEntityPosition(0x23, 0x1A0, -0x30, "Down");
+            SetEntityAnim(0x23, 0xC);
+        }
+    }
+    Fade_In(2, 1);
+    TalkOpen();
+    Set_Name_Window(0xC);
+    Set_Portrait(0x68);
+    Set_Hearth_Anim(0xC);
+    TalkMessage(0);
+    TalkClose();
+    TalkOpen();
+    var_0 = TalkChoice3(1, 2, 3);
+    switch (var_0) {
+        case 1:
+            Give_Love_Points(0xC, -0x7D0);
+            TalkClose();
+            TalkOpen();
+            Set_Name_Window(0xC);
+            Set_Portrait(0x69);
+            Set_Hearth_Anim(0xC);
+            TalkMessage(4);
+            TalkClose();
+            Set_Flag(0xB2, 2);
+            Fade_Out(2, 1);
+            Warp_Player(0x1D, 0x147, 0x70);
+            SetEntityPosition(0, 0x147, 0x70, "Left");
+            Fade_In(2, 1);
+            break;
+        case 2:
+            Give_Love_Points(0xC, 0xBB8);
+            TalkClose();
+            TalkOpen();
+            Set_Name_Window(0xC);
+            Set_Portrait(0x68);
+            Set_Hearth_Anim(0xC);
+            TalkMessage(5);
+            TalkClose();
+            TalkOpen();
+            Set_Name_Window(0xC);
+            Set_Hearth_Anim(0xC);
+            if (Inventory_Check()) {
+                Set_Portrait(0x68);
+                TalkMessage(6);
+                TalkClose();
+                SetEntityAnim(0xC, 0x81B);
+                Make_Delay(0x3C);
+                SetEntityAnim(0xC, 0x813);
+                PlaySong(0, 0x6A);
+                SetEntityAnim(0, 0x146);
+                Give_Item_Shelf(Func122());
+                SetEntityAnim(0, 0x152);
+                Set_Flag(0xB2, 2);
+                Make_Delay(0x3C);
+                Fade_Out(2, 1);
+                Warp_Player(0x1D, 0x147, 0x70);
+                SetEntityPosition(0, 0x147, 0x70, "Left");
+                Fade_In(2, 1);
+                goto LBL_0010;
+            }
+            Set_Portrait(0x67);
+            TalkMessage(7);
+            TalkClose();
+            End_Cinematic_State();
+            Routine_State_Override(0xC, 0x25F);
+            if ((Check_Flag(0xCC) == 2)) {
+                Routine_State_Override(0x23, 0x25E);
+            }
+            Set_Flag(0xB2, 1);
+            break;
+        case 3:
+            Give_Love_Points(0xC, -0x7D0);
+            TalkClose();
+            TalkOpen();
+            Set_Name_Window(0xC);
+            Set_Portrait(0x69);
+            Set_Hearth_Anim(0xC);
+            TalkMessage(8);
+            TalkClose();
+            Set_Flag(0xB2, 2);
+            Fade_Out(2, 1);
+            Warp_Player(0x1D, 0x147, 0x70);
+            SetEntityPosition(0, 0x147, 0x70, "Left");
+            Fade_In(2, 1);
+            break;
+    }
+    Free_Event_Entity(0xC);
+    exit;
+}

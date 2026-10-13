@@ -1,0 +1,26 @@
+// Script 1321
+#include "Fomt_Lib.src"
+
+script 1321 Event_1321 {
+    const MESSAGE_0 = "The year went by \r\nso quickly!\BRK";
+    
+    if ((Check_If_Single(0x18) == 0)) {
+        Free_Event_Entity(0x18);
+    }
+    SetEntityFacing(0x18, GetOppositeFacing(GetEntityFacing(0)));
+    TalkOpen();
+    Set_Portrait(0x53);
+    Set_Name_Window(0x18);
+    TalkMessage(0);
+    TalkClose();
+    if ((Has_NPC_Talked_Today(0x18) == 0)) {
+        Give_Friendship_Points(0x18, 5);
+    }
+    Free_Event_Entity(0x18);
+    if (((((((((Check_Flag(0xF4) == 0) || Has_NPC_Talked_Today(0x17)) && Has_NPC_Talked_Today(0x18)) && Has_NPC_Talked_Today(0xB)) && Has_NPC_Talked_Today(0xA)) && Has_NPC_Talked_Today(0xC)) && Has_NPC_Talked_Today(6)) && Has_NPC_Talked_Today(7))) {
+        Fade_Out(2, 1);
+        Execute_Script(1319);
+    }
+    SetEntityFacing(0x18, "Up");
+    exit;
+}

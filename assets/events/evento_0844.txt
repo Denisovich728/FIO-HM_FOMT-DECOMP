@@ -1,0 +1,22 @@
+// Script 844
+#include "Fomt_Lib.src"
+
+script 844 Event_0844 {
+    const MESSAGE_0 = "Ta-daaaa!\r\nYou've reached the lowest\BRK\WAIT_CLICKlevel.  That's all.\r\nYou get nothing.\r\nBye.\BRK";
+    
+    Set_Flag(0x16F, 1);
+    Tick_Overnight_Engine(1, 0);
+    Tick_Overnight_Engine(1, 0);
+    Fade_Out(1, 1);
+    PlaySong(0, 0xBE);
+    TalkOpen();
+    Set_Name_Window(0x1F);
+    Set_Portrait(0x39);
+    TalkMessage(0);
+    TalkClose();
+    Free_Event_Entity(0x1F);
+    Give_Love_Points(0x1F, 0xBB8);
+    Set_Flag(0x16F, 2);
+    Fade_In(1, 1);
+    exit;
+}

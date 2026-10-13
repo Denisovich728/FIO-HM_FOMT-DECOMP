@@ -1,0 +1,36 @@
+// Script 173
+#include "Fomt_Lib.src"
+
+script 173 Event_0173 {
+    if (Func063()) {
+        exit;
+    }
+    if (!Inventory_Check()) {
+        switch (Compare_Gift()) {
+            case 2:
+            case 3:
+            case 4:
+                exit;
+            case 1:
+                if (((!Func04B() || (Search_Item_Gift_Address() == 0x31)) || (Search_Item_Gift_Address() == 0x35))) {
+                    exit;
+                }
+                break;
+            case 0:
+                if ((Search_Food_Gift_Address() == 6)) {
+                    if ((Is_Item_Wrapped() == 1)) {
+                        exit;
+                    } else {
+                        Drop_Held_Item();
+                        PlaySong(0, 0x6E);
+                        Make_Delay(0xA);
+                        Set_Flag(0x2A, (Check_Flag(0x2A) + 0x1E));
+                        exit;
+                    }
+                }
+                break;
+        }
+        Trigger_Machine_Processing();
+    }
+    exit;
+}

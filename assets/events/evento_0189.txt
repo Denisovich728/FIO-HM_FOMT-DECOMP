@@ -1,0 +1,11 @@
+// Script 189
+#include "Fomt_Lib.src"
+
+script 189 Event_0189 {
+    const MESSAGE_0 = "Vase\BRK";
+    
+    TalkOpen();
+    Print_Message(0);
+    TalkClose();
+    exit;
+}

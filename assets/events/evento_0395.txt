@@ -1,0 +1,23 @@
+// Script 395
+#include "Fomt_Lib.src"
+
+script 395 Event_0395 {
+    const MESSAGE_0 = "It's locked...\BRK";
+    
+    var var_0;
+    
+    if ((Chek_Friendship_Points(9) <= 0xC8)) {
+        var_0 = 0;
+    } else {
+        var_0 = 1;
+    }
+    if ((var_0 == 1)) {
+        PlaySong(0, 0x9C);
+        Anim_Door_Close(0);
+    } else {
+        TalkOpen();
+        TalkMessage(0);
+        TalkClose();
+    }
+    exit;
+}

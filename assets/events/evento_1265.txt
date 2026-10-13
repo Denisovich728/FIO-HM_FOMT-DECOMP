@@ -1,0 +1,159 @@
+// Script 1265
+#include "Fomt_Lib.src"
+
+script 1265 Event_1265 {
+    const MESSAGE_0 = "The Sheep Festival is \r\ntomorrow at Rose Square.\BRK\WAIT_CLICKAny adult Sheep that isn't \r\npregnant, sick, or shorn \r\ncan compete. \BRK\WAIT_CLICKI hope to see an entry from\r\n\xFF$ next year. \BRK\r\nHope to see you tomorrow!\BRK";
+    const MESSAGE_1 = "The Sheep Festival is \r\ntomorrow at Rose Square.\BRK\WAIT_CLICKAny adult Sheep that isn't \r\npregnant, sick, or shorn \r\ncan compete. \BRK\WAIT_CLICKI hope to see a Sheep from\r\n\xFF$ next year. \BRK\r\nIt's fun; I hope you come!\BRK";
+    const MESSAGE_2 = "The Sheep Festival is \r\ntomorrow at Rose Square.\BRK\WAIT_CLICKDo you want to enter a \r\nSheep from \xFF$?\BRK";
+    const MESSAGE_3 = "Sure!";
+    const MESSAGE_4 = "Not this year.";
+    const MESSAGE_5 = "Will you select which Sheep?\r\nRemember, it has to be \r\nadult, and can't be sick, \BRK\r\npregnant, or shorn. \BRK";
+    const MESSAGE_6 = "Really? And I thought \r\nyour Sheep had a good \r\nchance, too...\BRK";
+    const MESSAGE_7 = "The Sheep Festival is \r\ntomorrow at Rose Square.\BRK\WAIT_CLICKAny adult Sheep that isn't \r\npregnant, sick, or shorn \r\ncan compete. \BRK\WAIT_CLICKYou don't have any eligible\r\nSheep, but I hope you can \r\ncome watch anyway!\BRK";
+    const MESSAGE_8 = "I'll bring this one with \r\nme now, then. Don't forget \r\nto come tomorrow. \BRK";
+    
+    var var_0;
+    var var_1;
+    var var_2;
+    var var_3;
+    var var_4;
+    var var_5;
+    
+    if ((Inventory_Check() == 1)) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    SetEntityPosition(4, 0xE4, 0x91, "Up");
+    SetEntityAnim(4, 0x9EF);
+    Fade_In(2, 1);
+    var_1 = -1;
+    TalkOpen();
+    Set_Portrait(0xB4);
+    Set_Name_Window(4);
+    if ((Func10F(2, 0) == 0)) {
+        TalkOpen();
+        Set_Portrait(0xB4);
+        Set_Name_Window(4);
+        TalkMessage(0);
+        TalkClose();
+    } else {
+        var_2 = 0;
+        var_3 = 0;
+        var_4 = 0;
+        var_5 = 0;
+    LBL_000C:
+        (var_5 < 0x10);
+        if ((var_5 < 0x10)) {
+        } else {
+            goto LBL_000B;
+            goto LBL_000C;
+        }
+        if ((Func114(var_5) == 0)) {
+            if ((Func10D(2, var_5) == 1)) {
+                if ((((GetAnimalAge(2, var_5) == 0) && (Is_Animal_Pregnant(2, var_5) == 0)) && (Func10E(var_5) == 0))) {
+                }
+            } else {
+            }
+        }
+        goto LBL_000C;
+    LBL_000B:
+        if (((var_2 > 0) && (var_3 == 0))) {
+            TalkOpen();
+            Set_Portrait(0xB4);
+            Set_Name_Window(4);
+            TalkMessage(1);
+            TalkClose();
+            goto LBL_0007;
+        }
+        if ((var_4 > 0)) {
+            TalkOpen();
+            Set_Portrait(0xB4);
+            Set_Name_Window(4);
+            TalkMessage(2);
+            TalkClose();
+            TalkOpen();
+            var_0 = TalkChoice2(3, 4);
+            TalkClose();
+            if ((var_0 == 1)) {
+                TalkOpen();
+                Set_Portrait(0xB4);
+                Set_Name_Window(4);
+                TalkMessage(5);
+                TalkClose();
+                Fade_Out(3, 1);
+                var_1 = Func0A7(2);
+                if ((var_1 != -1)) {
+                    GetAnimalName(0, 2, var_1);
+                    SetEntityPosition(4, 0xF2, 0x91, "Up");
+                    SetEntityAnim(4, 0x9EF);
+                    SetEntityPosition((0x36 + var_1), 0xD4, 0x91, "Up");
+                    SetEntityAnim((0x36 + var_1), 0x91D);
+                    Wait_For_Animation((0x36 + var_1));
+                }
+                Fade_In(3, 1);
+            } else {
+                var_1 = -1;
+            }
+            if ((var_1 == -1)) {
+                TalkOpen();
+                Set_Portrait(0xB4);
+                Set_Name_Window(4);
+                TalkMessage(6);
+                TalkClose();
+            }
+            goto LBL_0007;
+        }
+        TalkOpen();
+        Set_Portrait(0xB4);
+        Set_Name_Window(4);
+        TalkMessage(7);
+        TalkClose();
+    }
+    if ((var_1 == -1)) {
+        SetEntityAnim(4, 0x9F3);
+        SetEntityFacing(4, "Right");
+        Set_Vector_X(4, 0x13F, 1);
+        Execute_Movement(4);
+        SetEntityFacing(4, "Up");
+        Set_Vector_Y(4, 0, 1);
+        Execute_Movement(4);
+        Hide_Entity(4);
+        Set_Flag(0x1AF, 0);
+        Set_Flag(0x1AE, 2);
+        exit;
+    } else {
+        TalkOpen();
+        Set_Portrait(0xB4);
+        Set_Name_Window(4);
+        TalkMessage(8);
+        TalkClose();
+        SetEntityAnim(4, 0x9F3);
+        SetEntityFacing(4, "Right");
+        Set_Vector_X(4, 0x14A, 1);
+        Execute_Movement(4);
+        SetEntityAnim(4, 0x9EF);
+        SetEntityFacing(4, "Left");
+        SetEntityAnim((0x36 + var_1), 0x921);
+        SetEntityFacing((0x36 + var_1), "Right");
+        Set_Vector_X((0x36 + var_1), 0x131, 1);
+        Execute_Movement((0x36 + var_1));
+        SetEntityAnim((0x36 + var_1), 0x91D);
+        Make_Delay(0x1E);
+        SetEntityFacing((0x36 + var_1), "Up");
+        SetEntityFacing(4, "Up");
+        SetEntityAnim(4, 0x9F3);
+        Set_Vector_Y(4, 0, 1);
+        SetEntityAnim((0x36 + var_1), 0x921);
+        Set_Vector_Y((0x36 + var_1), 0, 1);
+        Execute_Movement(4);
+        Execute_Movement((0x36 + var_1));
+        Hide_Entity(4);
+        Hide_Entity((0x36 + var_1));
+        SetEntityFacing(0, "Down");
+        Set_Flag(0x1AF, 1);
+        Open_Animal_Selection_UI(var_1);
+        Set_Flag(0x1AE, 2);
+    }
+    exit;
+}

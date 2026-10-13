@@ -1,0 +1,11 @@
+// Script 208
+#include "Fomt_Lib.src"
+
+script 208 Event_0208 {
+    const MESSAGE_0 = "Poster\BRK";
+    
+    TalkOpen();
+    Print_Message(0);
+    TalkClose();
+    exit;
+}

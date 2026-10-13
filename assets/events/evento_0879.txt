@@ -1,0 +1,122 @@
+// Script 879
+#include "Fomt_Lib.src"
+
+script 879 Event_0879 {
+    const MESSAGE_0 = "Hi there, \xFF!.\r\nToday is Karen and  \r\nRick's wedding!! \BRK\WAIT_CLICKCome celebrate with us! \BRK";
+    const MESSAGE_1 = "OK!";
+    const MESSAGE_2 = "I've got work to do.";
+    const MESSAGE_3 = "Let's celebrate, then! \BRK";
+    const MESSAGE_4 = "To the young couple! \BRK";
+    const MESSAGE_5 = "Well, come by if you get \r\na chance. \BRK";
+    
+    var var_0;
+    var var_1;
+    
+    var_1 = 1;
+    var_1 = 0;
+    Warp_Player(0xC, 0xB8, 0x140);
+    PlayBGM(1, 6);
+    SetEntityPosition(0x13, 0xC8, 0x98, "Down");
+    SetEntityAnim(0x13, 0x6B5);
+    SetEntityPosition(2, 0xA8, 0x98, "Down");
+    SetEntityAnim(2, 0x223);
+    SetEntityPosition(0x16, 0x90, 0x98, "Right");
+    SetEntityAnim(0x16, 0x8EC);
+    SetEntityPosition(0, 0xB8, 0x140, "Up");
+    if (Inventory_Check()) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    SetEntityPosition(1, 0x68, 0x9B, "Right");
+    SetEntityAnim(1, 0x25F);
+    SetEntityPosition(0x11, 0x128, 0x9B, "Left");
+    SetEntityAnim(0x11, 0x689);
+    SetEntityPosition(0x12, 0x108, 0x9B, "Left");
+    SetEntityAnim(0x12, 0x6C5);
+    if ((GetEntityLocation(0x17) == 0xC)) {
+        Hide_Entity(0x17);
+    }
+    if ((GetEntityLocation(0x14) == 0xC)) {
+        Hide_Entity(0x14);
+    }
+    if ((GetEntityLocation(8) == 0xC)) {
+        Hide_Entity(8);
+    }
+    if ((GetEntityLocation(9) == 0xC)) {
+        Hide_Entity(9);
+    }
+    if ((GetEntityLocation(3) == 0xC)) {
+        Hide_Entity(3);
+    }
+    if ((Check_Flag(0x78) == 0)) {
+        Fade_In(2, 1);
+        Pan_Camera_To(0xB8, 0xA0, 1);
+        Wait_Camera_Stop();
+        SetEntityFacing(0x16, "Down");
+        TalkOpen();
+        Set_Portrait(0x95);
+        Set_Name_Window(0x16);
+        TalkMessage(0);
+        TalkClose();
+        TalkOpen();
+        var_0 = TalkChoice2(1, 2);
+        switch (var_0) {
+            case 1:
+                Give_Friendship_Points(0x13, 0x14);
+                Give_Friendship_Points(0x16, 0x14);
+                Give_Friendship_Points(1, 0x14);
+                Give_Friendship_Points(0x11, 0x14);
+                Give_Friendship_Points(0x12, 0x14);
+                Add_Rival_Points(2, 0xC8);
+                TalkClose();
+                TalkOpen();
+                Set_Portrait(0x96);
+                Set_Name_Window(0x16);
+                TalkMessage(3);
+                TalkClose();
+                Fade_Out(2, 1);
+                TalkOpen();
+                TalkMessage(4);
+                TalkClose();
+                Free_Event_Entity(0x16);
+                Set_Flag(0x77, 2);
+                Set_Flag(0x79, 0);
+                Set_Flag(0x245, 0);
+                Execute_Script(988);
+                break;
+            case 2:
+                Set_Flag(0x78, 1);
+                TalkClose();
+                TalkOpen();
+                Set_Portrait(0x95);
+                Set_Name_Window(0x16);
+                TalkMessage(5);
+                TalkClose();
+                SetEntityFacing(0x16, "Right");
+                Pan_Camera_To(0xB8, 0x140, 1);
+                Wait_Camera_Stop();
+                End_Cinematic_State();
+                Free_Event_Entity(0x16);
+                Routine_State_Override(0x16, 0x375);
+                Routine_State_Override(2, 0x370);
+                Routine_State_Override(1, 0x371);
+                Routine_State_Override(0x11, 0x372);
+                Routine_State_Override(0x13, 0x373);
+                Routine_State_Override(0x12, 0x374);
+                Set_Flag(0x77, 1);
+                break;
+        }
+    } else {
+        End_Cinematic_State();
+        Fade_In(2, 1);
+        Routine_State_Override(0x16, 0x375);
+        Routine_State_Override(2, 0x370);
+        Routine_State_Override(1, 0x371);
+        Routine_State_Override(0x11, 0x372);
+        Routine_State_Override(0x13, 0x373);
+        Routine_State_Override(0x12, 0x374);
+        Set_Flag(0x77, 1);
+    }
+    exit;
+}

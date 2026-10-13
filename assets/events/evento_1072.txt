@@ -1,0 +1,23 @@
+// Script 1072
+#include "Fomt_Lib.src"
+
+script 1072 Event_1072 {
+    const MESSAGE_0 = "I like how gooey they are! \BRK";
+    
+    if ((Check_If_Single(0x10) == 0)) {
+        Free_Event_Entity(0x10);
+    }
+    SetEntityFacing(0x10, GetOppositeFacing(GetEntityFacing(0)));
+    TalkOpen();
+    Set_Portrait(0x80);
+    Set_Name_Window(0x10);
+    TalkMessage(0);
+    Talk_Mini_Close();
+    TalkClose();
+    if ((Has_Spoken_To_NPC_Today(0x10) == 0)) {
+        Give_Friendship_Points(0x10, 5);
+    }
+    Free_Event_Entity(0x10);
+    SetEntityFacing(0x10, "Right");
+    exit;
+}

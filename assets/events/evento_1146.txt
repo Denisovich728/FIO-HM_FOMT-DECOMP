@@ -1,0 +1,158 @@
+// Script 1146
+#include "Fomt_Lib.src"
+
+script 1146 Event_1146 {
+    const MESSAGE_0 = "The Chicken Festival is \r\ntomorrow in Rose Square.\BRK\WAIT_CLICKWe'll see who is the \r\nstrongest Chicken of all!\BRK\WAIT_CLICKI was going to invite you, \r\nbut it seems you don't have\r\nan eligible Chicken. \BRK";
+    const MESSAGE_1 = "The Chicken Festival is \r\ntomorrow in Rose Square.\BRK\WAIT_CLICKWe'll see who is the \r\nstrongest Chicken of all!\BRK\WAIT_CLICKBaby Chicks can't compete,\r\nthough. It's too dangerous.\BRK";
+    const MESSAGE_2 = "The Chicken Festival is \r\ntomorrow in Rose Square.\BRK\WAIT_CLICKWe'll see who is the \r\nstrongest Chicken of all!\BRK\WAIT_CLICKDo you want to enter? \BRK";
+    const MESSAGE_3 = "Yes, I do.";
+    const MESSAGE_4 = "No, I don't.";
+    const MESSAGE_5 = "Will you select which \r\nChicken you want to compete?\BRK";
+    const MESSAGE_6 = "The Chicken Festival is \r\ntomorrow in Rose Square.\BRK\WAIT_CLICKWe'll see who is the \r\nstrongest Chicken of all!\BRK\WAIT_CLICKI was going to invite you, \r\nbut it looks like none of \r\nyour Chickens is eligible. \BRK";
+    const MESSAGE_7 = "It's fun to root for other \r\nChickens, though, so you \r\nshould come down, anyway! \BRK";
+    const MESSAGE_8 = "In that case, I'll bring \r\n\xFF% along now.\r\nIt starts at 10AM. \BRK";
+    
+    var var_0;
+    var var_1;
+    var var_2;
+    var var_3;
+    var var_4;
+    var var_5;
+    
+    if ((Inventory_Check() == 1)) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    SetEntityPosition(2, 0xE4, 0x91, "Up");
+    SetEntityAnim(2, 0x213);
+    Fade_In(2, 1);
+    var_1 = -1;
+    var_0 = 2;
+    var_5 = 0;
+    var_2 = 0;
+    var_3 = 0;
+    var_4 = 0;
+    LBL_0008:
+    (var_4 < 8);
+    if ((var_4 < 8)) {
+    } else {
+        goto LBL_0007;
+        goto LBL_0008;
+    }
+    if (Func0FF(3, var_4)) {
+        if ((Func10D(3, var_4) == 1)) {
+            if ((GetAnimalAge(3, var_4) == 0)) {
+            }
+        } else {
+        }
+    }
+    goto LBL_0008;
+    LBL_0007:
+    TalkOpen();
+    Set_Portrait(0);
+    Set_Name_Window(2);
+    if ((var_5 == 0)) {
+        TalkMessage(0);
+    } else {
+        if ((var_2 >= var_5)) {
+            TalkOpen();
+            Set_Portrait(0);
+            Set_Name_Window(2);
+            TalkMessage(1);
+            goto LBL_0015;
+        }
+        if ((var_3 > 0)) {
+            TalkMessage(2);
+            TalkClose();
+            TalkOpen();
+            var_0 = TalkChoice2(3, 4);
+            TalkClose();
+            if ((var_0 == 1)) {
+                TalkOpen();
+                Set_Portrait(0);
+                Set_Name_Window(2);
+                TalkMessage(5);
+                TalkClose();
+                Fade_Out(3, 1);
+                var_1 = Func0A7(0);
+                SetEntityPosition(2, 0xE4, 0x91, "Up");
+                SetEntityAnim(2, 0x213);
+                if ((Inventory_Check() == 1)) {
+                    SetEntityAnim(0, 0x192);
+                } else {
+                    SetEntityAnim(0, 0x152);
+                }
+                if ((var_1 != -1)) {
+                    GetAnimalName(0, 3, var_1);
+                    if (((!Inventory_Check() && (Compare_Gift() == 3)) && (Func044() == var_1))) {
+                        Drop_Held_Item();
+                    }
+                    Hide_Entity((0x2E + var_1));
+                    Set_Flag(0x197, 1);
+                    Open_Animal_Selection_UI(var_1);
+                    SetEntityPosition(0x46, 0xD4, 0x91, "Up");
+                    Spawn_Event_Entity(0x46, 0);
+                    SetEntityAnim(0x46, 0x71C);
+                    Wait_For_Animation(0x46);
+                }
+                Fade_In(3, 1);
+            }
+            if ((var_1 == -1)) {
+                TalkOpen();
+                Set_Portrait(0);
+                Set_Name_Window(2);
+            }
+            goto LBL_0015;
+        }
+        TalkOpen();
+        Set_Portrait(0);
+        Set_Name_Window(2);
+        TalkMessage(6);
+    }
+    if ((var_1 == -1)) {
+        TalkMessage(7);
+        TalkClose();
+        SetEntityFacing(2, "Right");
+        SetEntityAnim(2, 0x217);
+        Set_Vector_X(2, 0x13F, 1);
+        Execute_Movement(2);
+        SetEntityFacing(2, "Up");
+        Set_Vector_Y(2, 0, 1);
+        Execute_Movement(2);
+        Hide_Entity(2);
+        Set_Flag(0x197, 0);
+        Set_Flag(0x196, 2);
+    } else {
+        TalkOpen();
+        Set_Portrait(0);
+        Set_Name_Window(2);
+        TalkMessage(8);
+        TalkClose();
+        SetEntityAnim(2, 0x217);
+        SetEntityFacing(2, "Right");
+        Set_Vector_X(2, 0x145, 1);
+        Execute_Movement(2);
+        SetEntityAnim(2, 0x213);
+        SetEntityFacing(2, "Left");
+        SetEntityAnim(0x46, 0x720);
+        SetEntityFacing(0x46, "Right");
+        Set_Vector_X(0x46, 0x131, 1);
+        Execute_Movement(0x46);
+        SetEntityAnim(0x46, 0x71C);
+        Make_Delay(0x1E);
+        SetEntityFacing(0x46, "Up");
+        SetEntityFacing(2, "Up");
+        SetEntityAnim(2, 0x217);
+        Set_Vector_Y(2, 0, 1);
+        SetEntityAnim(0x46, 0x720);
+        Set_Vector_Y(0x46, 0, 1);
+        Execute_Movement(2);
+        Execute_Movement(0x46);
+        Hide_Entity(2);
+        Hide_Entity(0x46);
+        SetEntityFacing(0, "Down");
+        Set_Flag(0x196, 2);
+    }
+    exit;
+}

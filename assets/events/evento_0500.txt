@@ -1,0 +1,11 @@
+// Script 500
+#include "Fomt_Lib.src"
+
+script 500 Event_0500 {
+    const MESSAGE_0 = "Mineral Clinic\r\nOffice Hours: 9AM-4PM\r\nClosed on Wednesdays\BRK";
+    
+    TalkOpen();
+    Print_Message(0);
+    TalkClose();
+    exit;
+}

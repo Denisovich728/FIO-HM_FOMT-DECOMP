@@ -1,0 +1,23 @@
+// Script 802
+#include "Fomt_Lib.src"
+
+script 802 Event_0802 {
+    const MESSAGE_0 = "Ever since he lost his wife \r\nand daughter in the \r\nmountains, Gotz has taken \BRK\r\nit upon himself to patrol \r\nthem in his spare time. \BRK";
+    const MESSAGE_1 = "I'm really grateful to \r\nhim for it. \BRK";
+    
+    SetEntityFacing(0xE, GetOppositeFacing(GetEntityFacing(0)));
+    TalkOpen();
+    Set_Name_Window(0xE);
+    if ((Has_NPC_Talked_Today(0xE) == 0)) {
+        Set_Portrait(0x94);
+        TalkMessage(0);
+    } else {
+        Set_Portrait(0x91);
+        TalkMessage(1);
+    }
+    TalkClose();
+    Free_Event_Entity(0xE);
+    SetEntityFacing(0xE, "Right");
+    exit;
+    exit;
+}

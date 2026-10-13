@@ -1,0 +1,79 @@
+// Script 806
+#include "Fomt_Lib.src"
+
+script 806 Event_0806 {
+    const MESSAGE_0 = "Hmm...What should I do \r\nwith this....?\BRK";
+    const MESSAGE_1 = "Hey, \xFF!! \BRK\WAIT_CLICKYou came at a great time!\BRK";
+    const MESSAGE_2 = "You see, a friend of mine \r\nleft me this Fishing Rod. \BRK\WAIT_CLICKI don't fish, but I don't\r\nwant to throw it away, \r\neither. \BRK\WAIT_CLICKWill you use it? You look \r\nlike a good fisher to me!\BRK";
+    const MESSAGE_3 = "You got a \r\nFishing Rod!\BRK";
+    
+    if ((Inventory_Check() == 1)) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    SetEntityPosition(0x1C, 0xD7, 0x73, "Down");
+    SetEntityAnim(0x1C, 0x318);
+    if ((Check_Flag(0x137) == 2)) {
+        SetEntityPosition(0x1D, 0xBF, 0x8D, "Left");
+        SetEntityAnim(0x1D, 0x857);
+    }
+    Fade_In(2, 1);
+    TalkOpen();
+    Set_Portrait(0x1F);
+    Set_Name_Window(0x1C);
+    TalkMessage(0);
+    TalkClose();
+    if ((Inventory_Check() == 1)) {
+        SetEntityAnim(0, 0x1C6);
+    } else {
+        SetEntityAnim(0, 0x156);
+    }
+    Set_Vector_Y(0, 0x6F, 1);
+    Execute_Movement(0);
+    SetEntityFacing(0, "Right");
+    Set_Vector_X(0, 0xA9, 1);
+    Execute_Movement(0);
+    if ((Inventory_Check() == 1)) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    Make_Delay(0x1E);
+    Show_Emote(0x1C, 2, 0);
+    Make_Delay(0x3C);
+    SetEntityFacing(0x1C, "Left");
+    TalkOpen();
+    Set_Portrait(0x1F);
+    Set_Name_Window(0x1C);
+    TalkMessage(1);
+    TalkClose();
+    Show_Emote(0, 3, 0);
+    Make_Delay(0x3C);
+    TalkOpen();
+    Set_Portrait(0x1F);
+    Set_Name_Window(0x1C);
+    TalkMessage(2);
+    TalkClose();
+    Free_Event_Entity(0x1C);
+    if ((Check_Equped_Tool() == -1)) {
+        Give_Tool_In_ToolBox(0x28, 1);
+    } else {
+        Give_Tool_In_Inventory(0x28, 1);
+    }
+    PlaySong(0, 0xB6);
+    Animation_Tool_Give(0x28);
+    TalkOpen();
+    TalkMessage(3);
+    TalkClose();
+    Pan_Camera_To(0xA9, 0x6F, 1);
+    Wait_Camera_Stop();
+    Free_Event_Entity(0x1C);
+    End_Cinematic_State();
+    Set_Flag(0x135, 1);
+    Routine_State_Override(0x1C, 0x327);
+    if ((Check_Flag(0x137) == 2)) {
+        Routine_State_Override(0x1D, 0x328);
+    }
+    exit;
+}

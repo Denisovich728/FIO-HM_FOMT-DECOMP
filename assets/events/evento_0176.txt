@@ -1,0 +1,27 @@
+// Script 176
+#include "Fomt_Lib.src"
+
+script 176 Event_0176 {
+    var var_0;
+    var var_1;
+    var var_2;
+    var var_3;
+    var var_4;
+    
+    if ((GetEntityFacing(0) == 2)) {
+        var_0 = Check_Flag(1);
+        var_1 = Check_Flag(2);
+        var_2 = Check_Flag(3);
+        var_3 = Check_Flag(5);
+        var_4 = Check_Flag(6);
+        Fade_Out(2, 1);
+        Warp_Player(0, 0x497, 0x2F0);
+        SetEntityPosition(0, 0x497, 0x2F0, 2);
+        if (((((((Check_Flag(0x11C) == 0) && (var_3 == 3)) && ((var_2 >= 8) && (var_2 < 0xA))) && (Chek_Friendship_Points(0x14) >= 0x64)) && (Check_If_Single(0x14) == 1)) && (GetEntityLocation(0x14) == 0))) {
+            Set_Flag(0x11C, 1);
+            Execute_Script(0x2FF);
+        }
+        Fade_In(2, 1);
+    }
+    exit;
+}

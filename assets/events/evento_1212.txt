@@ -1,0 +1,22 @@
+// Script 1212
+#include "Fomt_Lib.src"
+
+script 1212 Event_1212 {
+    const MESSAGE_0 = "Karen is going to sing.\r\nShe has such a beautiful\r\nvoice!\BRK";
+    
+    if ((Check_If_Single(0x10) == 0)) {
+        Free_Event_Entity(0x10);
+    }
+    SetEntityFacing(0x10, GetOppositeFacing(GetEntityFacing(0)));
+    TalkOpen();
+    Set_Portrait(0x80);
+    Set_Name_Window(0x10);
+    TalkMessage(0);
+    TalkClose();
+    if ((Has_Spoken_To_NPC_Today(0x10) == 0)) {
+        Give_Friendship_Points(0x10, 5);
+    }
+    SetEntityFacing(0x10, "Up");
+    Free_Event_Entity(0x10);
+    exit;
+}

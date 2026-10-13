@@ -1,0 +1,73 @@
+// Script 1035
+#include "Fomt_Lib.src"
+
+script 1035 Event_1035 {
+    const MESSAGE_0 = "This is Dueling Chefs,\r\nbroadcast every Tuesday.\r\nI'm your host, Alyson, in \r\nthis weekly culinary battle\r\nof the giants!\r\n\r\nThis week's challenge is \r\nStew!\r\n\r\nHere we go...!\r\n\r\nChef A's recipe is...\r\n   Ingredients:\r\n      Flour\r\n      Milk (S)\r\n   Utensils:\r\n      Pot\r\n   Seasoning: Salt \r\n\r\nChef B's recipe is...\r\n   Ingredients:\r\n      Flour\r\n      Milk (S)\r\n      Potato\r\n      Corn\r\n      Carrot\r\n      Fish (S)\r\n      Fish (M)\r\n      Fish (L)\r\n   Utensils:\r\n      Pot\r\n   Seasoning: Salt \r\n \r\nLet's now have a taste \r\ntest to determine the \r\nwinner!\r\n\r\nFirst, Chef A's creation.\r\nMunch munch...\r\n \r\nThis is a very traditional,\r\nbasic Stew. \r\n\r\nNext, Chef B's creation.\r\nMunch munch...\r\n\r\nVery interesting, with lots\r\nof different flavors.\r\n\r\nAnd the winner is....\r\nChef B's Stew tastes better,\r\nwith all its different \r\nIngredients. It might be \r\ndifficult to gather all \r\nthese Ingredients, though.\r\nSo Chef A's recipe is also\r\ngood to know. \r\n\r\nThat's it for this week.\r\nTune in next week! \BRK";
+    const MESSAGE_1 = "This is Dueling Chefs,\r\nbroadcast every Tuesday.\r\nI'm your host, Alyson, in \r\nthis weekly culinary battle\r\nof the giants!\r\n\r\nThis week's challenge is \r\nFried Rice!\r\n\r\nHere we go...!\r\n\r\nChef A's recipe is...\r\n   Ingredients:\r\n      Rice Ball\r\n      Oil\r\n      Normal Egg\r\n\r\n   Utensils:\r\n      Frying Pan\r\n \r\nChef B's recipe is...\r\n   Ingredients:\r\n      Rice Ball\r\n      Oil\r\n      Normal Egg\r\n      Eggplant\r\n      Cheese (S)\r\n      Poisonous Mushroom\r\n      Fried Rice\r\n\r\n   Utensils:\r\n      Frying Pan\r\n      Seasoning: Salt\r\n \r\nLet's now have a taste \r\ntest to determine the \r\nwinner!\r\n\r\nFirst, Chef A's creation.\r\nMunch munch...\r\n \r\nThis is a very traditional,\r\nbasic Fried Rice. \r\n\r\nNext, Chef B's creation.\r\nMunch munch...\r\n\r\nVery interesting, with lots\r\nof different flavors.\r\nHowever, not all of them \r\nadd to the flavor in a good\r\nway, especially Poisonous\r\nMushrooms!\r\n\r\n\r\nAnd the winner is....\r\nChef A, since his recipe \r\ndoesn't include lots of \r\nunnecessary Ingredients.\r\n\r\nThat's it for this week.\r\nTune in next week! \BRK";
+    const MESSAGE_2 = "This is Dueling Chefs,\r\nbroadcast every Tuesday.\r\nI'm your host, Alyson, in \r\nthis weekly culinary battle\r\nof the giants!\r\n\r\nThis week's challenge is \r\nFruit Juice!\r\n\r\nHere we go...!\r\n\r\nChef A's recipe is...\r\n   Ingredients:\r\n      Strawberry\r\n\r\n   Utensils:\r\n      Mixer\r\n \r\nChef B's recipe is...\r\n   Ingredients:\r\n      Apple\r\n      Grape Juice\r\n      Honey\r\n      Pineapple\r\n      Milk (L)\r\n\r\n   Utensils:\r\n      Mixer\r\n      Seasoning: Sugar\r\n \r\nLet's now have a taste \r\ntest to determine the \r\nwinner!\r\n\r\nFirst, Chef A's creation.\r\nGlug glug...\r\n\r\nThis is a very traditional,\r\nbasic Fruit Juice. \r\n\r\nNext, Chef B's creation.\r\nGlug glug...\r\n\r\nVery good! But, it has Milk\r\nin it, so it's really a\r\nFruit Latte.\r\n\r\n\r\nAnd the winner is....\r\nChef A! Chef B's creation\r\ntasted fabulous, but it was\r\nreally a Fruit Latte, so it\r\nwas disqualified!\r\n\r\nThat's it for this week.\r\nTune in next week! \BRK";
+    const MESSAGE_3 = "This is Dueling Chefs,\r\nbroadcast every Tuesday.\r\nI'm your host, Alyson, in \r\nthis weekly culinary battle\r\nof the giants!\r\n\r\nThis week's challenge is \r\nMayonnaise!\r\n\r\nHere we go...!\r\n\r\nChef A's recipe is...\r\n   Ingredients:\r\n      Normal Egg\r\n      Oil\r\n\r\n   Utensils:\r\n       Whisk\r\n       Seasoning: Vinegar\r\n \r\nChef B's recipe is...\r\n   Ingredients:\r\n       Good Egg\r\n       Oil\r\n\r\n   Utensils:\r\n       Whisk\r\n       Seasoning: Vinegar\r\n \r\nLet's now have a taste \r\ntest to determine the \r\nwinner!\r\n\r\nFirst, Chef A's creation.\r\nMunch munch...\r\n\r\nThis is a very traditional,\r\nbasic Mayonnaise. \r\n\r\nNext, Chef B's creation.\r\nMunch munch...\r\n\r\nIt doesn't taste much \r\ndifferent. Whose idea was \r\nit to taste test Mayo, \r\nanyway?\r\n\r\nAnd the winner is....\r\n\r\nChef B's Mayonnaise!\r\nThe higher quality Egg does\r\nmake it taste a little \r\nbetter!\r\n\r\n\r\nThat's it for this week.\r\nTune in next week! \BRK";
+    const MESSAGE_4 = "This is Dueling Chefs,\r\nbroadcast every Tuesday.\r\nI'm your host, Alyson, in \r\nthis weekly culinary battle\r\nof the giants!\r\n\r\nThis week's challenge is \r\nBaked Sweet Potato!\r\n\r\nHere we go...!\r\n\r\nChef A's recipe is...\r\n   Ingredients:\r\n      Sweet Potato\r\n\r\n   Utensils:\r\n      Oven\r\n \r\nChef B's recipe is...\r\n   Ingredients:\r\n      Sweet Potato\r\n      Butter\r\n      Stone\r\n\r\n   Utensils:\r\n      Oven\r\n      Seasoning: Sugar\r\n      Seasoning: Salt\r\n \r\nLet's now have a taste \r\ntest to determine the \r\nwinner!\r\n\r\nFirst, Chef A's creation.\r\nMunch munch...\r\n\r\nThis is a very traditional,\r\nbasic Baked Potato. \r\nNo need for a Stone here!\r\nNext, Chef B's creation.\r\nMunch munch...\r\n\r\nMmm! This is really good!\r\nThe Stone does add some-\r\nthing after all!\r\n\r\nAnd the winner is....\r\nChef B! His Baked Sweet\r\nPotato is superior!\r\n\r\nThat's it for this week.\r\nTune in next week! \BRK";
+    const MESSAGE_5 = "This is Dueling Chefs,\r\nbroadcast every Tuesday.\r\nI'm your host, Alyson, in \r\nthis weekly culinary battle\r\nof the giants!\r\n\r\nThis week's challenge is \r\nGrape Juice!\r\n\r\nHere we go...!\r\n\r\nChef A's recipe is...\r\n   Ingredients:\r\n       Wild Grapes\r\n       Honey\r\n\r\n   Utensils:\r\n      Mixer\r\n \r\nChef B's recipe is...\r\n   Ingredients:\r\n      Wild Grapes\r\n\r\n   Utensils:\r\n       Mixer\r\n       Seasoning: Sugar\r\n       Seasoning: Salt\r\n \r\nLet's now have a taste \r\ntest to determine the \r\nwinner!\r\n\r\nFirst, Chef A's creation.\r\nMunch munch...\r\n\r\nIt's unusual for Chef A to\r\nbreak away from tradition\r\nand add Honey!\r\n\r\nNext, Chef B's creation.\r\nMunch munch...\r\n\r\nHmm...The extra seasonings\r\nundeniably add something\r\nto it!\r\n\r\nAnd the winner is....\r\nA tie! Chef A's recipe will\r\nrecuperate Fatigue more, but\r\nChef B's recipe will recover\r\nStamina more!\r\n\r\nThat's it for this week.\r\nTune in next week! \BRK";
+    const MESSAGE_6 = "This is Dueling Chefs,\r\nbroadcast every Tuesday.\r\nI'm your host, Alyson, in \r\nthis weekly culinary battle\r\nof the giants!\r\n\r\nThis week's challenge is \r\nJam Bun!\r\n\r\nHere we go...!\r\n\r\nChef A's recipe is...\r\n   Ingredients:\r\n      Bread\r\n      Apple Jam\r\n\r\nChef B's recipe is...\r\n   Ingredients:\r\n      Bread\r\n      Strawberry Jam\r\n \r\nLet's now have a taste \r\ntest to determine the \r\nwinner!\r\n\r\nFirst, Chef A's creation.\r\nMunch munch...\r\n\r\nThis is a very traditional\r\nJam Bun. \r\n\r\nNext, Chef B's creation.\r\nMunch munch...\r\n\r\nStrangely for Chef B, this\r\nis also a very traditional\r\nJam Bun.\r\n\r\nAnd the winner is....\r\nIt's a tie! They both are \r\nvery similar dishes.\r\n\r\nThat's it for this week.\r\nTune in next week! \BRK";
+    const MESSAGE_7 = "This is Dueling Chefs,\r\nbroadcast every Tuesday.\r\nI'm your host, Alyson, in \r\nthis weekly culinary battle\r\nof the giants!\r\n\r\nThis week's challenge is \r\nNoodles!\r\n\r\nHere we go...!\r\n\r\nChef A's recipe is...\r\n   Ingredients:\r\n      Noodles\r\n      Curry Powder\r\n\r\n   Utensils:\r\n      Pot\r\n \r\nChef B's recipe is...\r\n   Ingredients:\r\n      Flour\r\n      Onion\r\n      Good Egg\r\n      Bamboo Root\r\n      Fish (S)\r\n\r\n   Utensils:\r\n      Rolling Pin\r\n      Pot\r\n      Knife\r\n \r\nLet's now have a taste \r\ntest to determine the \r\nwinner!\r\n\r\nFirst, Chef A's creation.\r\nMunch munch...\r\n\r\nThis is very traditional\r\nCurry Noodles. \r\n\r\nNext, Chef B's creation.\r\nMunch munch...\r\n\r\nHmm...There are a lot of\r\ndifferent flavors in \r\nthis one.\r\n\r\nAnd the winner is....\r\nChef A, for basic, good\r\nCurry Noodles. However, it\r\nis possible to beat this \r\nwith regular Noodles given\r\nthe right Ingredients.\r\n\r\nThat's it for this week.\r\nTune in next week! \BRK";
+    const MESSAGE_8 = "This is Dueling Chefs,\r\nbroadcast every Tuesday.\r\nI'm your host, Alyson, in \r\nthis weekly culinary battle\r\nof the giants!\r\n\r\nThis week's challenge is \r\nToast!\r\n\r\nHere we go...!\r\n\r\nChef A's recipe is...\r\n   Ingredients:\r\n      Bread\r\n\r\n   Utensils:\r\n      Oven\r\n \r\nChef B's recipe is...\r\n   Ingredients:\r\n      Bread\r\n      Fish (S)\r\n      Tomato\r\n      Rice Cake\r\n      Oil\r\n\r\n   Utensils:\r\n      Oven\r\n \r\nLet's now have a taste \r\ntest to determine the \r\nwinner!\r\n\r\nFirst, Chef A's creation.\r\nMunch munch...\r\n\r\nThis is very traditional,\r\nbasic Toast. \r\n\r\nNext, Chef B's creation.\r\nMunch munch...\r\n\r\nI hate to say it, but this\r\nis a Failure. Too many \r\nthings that don't mix!\r\n\r\n\r\nAnd the winner is....\r\nChef A! For not being afraid\r\nto be simple. Let Chef B's\r\nFailure be a lesson to those\r\nwho think more is \r\nalways better!\r\n\r\nThat's it for this week.\r\nTune in next week! \BRK";
+    const MESSAGE_9 = "This is Dueling Chefs,\r\nbroadcast every Tuesday.\r\nI'm your host, Alyson, in \r\nthis weekly culinary battle\r\nof the giants!\r\n\r\nThis week's challenge is \r\nTruffle Rice!\r\n\r\nHere we go...!\r\n\r\nChef A's recipe is...\r\n   Ingredients:\r\n      Truffle\r\n      Rice Ball\r\n \r\nChef B's recipe is...\r\n   Ingredients:\r\n      Mushroom\r\n      Rice Ball\r\n \r\nLet's now have a taste \r\ntest to determine the \r\nwinner!\r\n\r\nFirst, Chef A's creation.\r\nMunch munch...\r\n\r\nThis is a very traditional,\r\nbasic Truffle Rice. \r\n\r\nNext, Chef B's creation.\r\nMunch munch...\r\n\r\nThis is Mushroom Rice,\r\nnot Truffle Rice!\r\n\r\n\r\nAnd the winner is....\r\nChef A, because Chef B \r\nmade the wrong dish!\r\n\r\nThat's it for this week.\r\nTune in next week! \BRK";
+    const MESSAGE_10 = "This is Dueling Chefs,\r\nbroadcast every Tuesday.\r\nI'm your host, Alyson, in \r\nthis weekly culinary battle\r\nof the giants!\r\n\r\nThis week's challenge is \r\nMoon Dumplings!\r\n\r\nHere we go...!\r\n\r\nChef A's recipe is...\r\n   Ingredients:\r\n      Muffin Mix\r\n\r\n   Utensils:\r\n      Seasoning: Sugar\r\n \r\nChef B's recipe is...\r\n   Ingredients:\r\n      Muffin Mix\r\n\r\n   Utensils:\r\n      Seasoning: Sugar\r\n \r\nLet's now have a taste \r\ntest to determine the \r\nwinner!\r\n\r\nFirst, Chef A's creation.\r\nMunch munch...\r\n\r\nThis is a very traditional,\r\nbasic Moon Dumpling. \r\n\r\nNext, Chef B's creation.\r\nMunch munch...\r\n\r\nThis is also traditional, \r\nbasic Moon Dumpling. \r\n\r\nAnd the winner is....\r\nA tie! They're both the same\r\nrecipe. There really isn't\r\nmuch room for improvisation\r\nwith Moon Dumplings, \r\nis there?\r\n\r\nThat's it for this week.\r\nTune in next week! \BRK";
+    const MESSAGE_11 = "This is Dueling Chefs,\r\nbroadcast every Tuesday.\r\nI'm your host, Alyson, in \r\nthis weekly culinary battle\r\nof the giants!\r\n\r\nThis week's challenge is \r\nBodigizer XL!\r\n\r\nHere we go...!\r\n\r\nChef A's recipe is...\r\n   Ingredients:\r\n      Bodigizer\r\n      Blue Grass\r\n\r\n   Utensils:\r\n      Mixer\r\n \r\nChef B's recipe is...\r\n   Ingredients:\r\n      Nothing?\r\n\r\n   Utensils:\r\n      Nothing\r\n \r\nLet's now have a taste \r\ntest to determine the \r\nwinner!\r\n\r\nFirst, Chef A's creation.\r\nMunch munch...\r\n\r\nThis is a very traditional,\r\nbasic Bodigizer XL. \r\n\r\nNext, Chef B's creation.\r\nMunch munch...\r\n\r\nWait a second! This is \r\nbought from the Clinic!\r\nIt still has the label \r\non it!\r\n\r\nAnd the winner is....\r\nChef A, for making his \r\nBodigizer XL honestly!\r\nShame on Chef B for\r\ntrying to cheat.\r\n\r\n\r\nThat's it for this week.\r\nTune in next week! \BRK";
+    
+    var var_0;
+    
+    switch (Check_Flag(0x1E4)) {
+        case 0:
+            var_0 = Print_TV_Message(0);
+            break;
+        case 1:
+            var_0 = Print_TV_Message(1);
+            break;
+        case 2:
+            var_0 = Print_TV_Message(2);
+            break;
+        case 3:
+            var_0 = Print_TV_Message(3);
+            break;
+        case 4:
+            var_0 = Print_TV_Message(4);
+            break;
+        case 5:
+            var_0 = Print_TV_Message(5);
+            break;
+        case 6:
+            var_0 = Print_TV_Message(6);
+            break;
+        case 7:
+            var_0 = Print_TV_Message(7);
+            break;
+        case 8:
+            var_0 = Print_TV_Message(8);
+            break;
+        case 9:
+            var_0 = Print_TV_Message(9);
+            break;
+        case 0xA:
+            var_0 = Print_TV_Message(10);
+            break;
+        case 0xB:
+            var_0 = Print_TV_Message(11);
+            break;
+    }
+    Close_TV_Interface();
+    TalkClose();
+    switch (var_0) {
+        case 0:
+        case 1:
+        case 2:
+        case 3:
+            Set_Flag(0x244, var_0);
+            Execute_Script(356);
+            break;
+        case 4:
+        case 5:
+            break;
+    }
+    exit;
+}

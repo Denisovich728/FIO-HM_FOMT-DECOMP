@@ -1,0 +1,109 @@
+// Script 1038
+#include "Fomt_Lib.src"
+
+script 1038 Event_1038 {
+    const MESSAGE_0 = "Fishing Hour\r\n\r\nThis is \"Fishing Hour\",\r\nyour one-stop-shop\r\nof fishing knowledge!\r\n\r\nToday we'll ask our renowned\r\nfishing expert Angler Jake\r\nabout Spring fishing.\r\n\r\n\r\nHowdy, folks. This is Angler\r\nJake here to tell you all\r\nabout what you can catch\r\nin Spring, when the fish \r\nare bountiful.\r\n\r\nSea fish you can catch are\r\nSardine, Herring, and \r\nSandfish. \r\nI'll leave it to you to \r\nfigure out what level\r\nFishing Rod you need.\r\n\r\nThanks for watching, and\r\nI'll see you next time! \BRK";
+    const MESSAGE_1 = "Fishing Hour\r\n\r\nThis is \"Fishing Hour\",\r\nyour one-stop-shop\r\nof fishing knowledge!\r\n\r\nToday we'll ask our renowned\r\nfishing expert Angler Jake\r\nabout Spring fishing.\r\n\r\n\r\nHowdy, folks. This is Angler\r\nJake here to tell you all\r\nabout what you can catch\r\nin Spring, when the fish \r\nare bountiful.\r\n\r\nSea fish you can catch are\r\nNeedlefish and Spanish \r\nMackerel. Very tasty. \r\nLake fish you can catch\r\nare Fatminnow.\r\n\r\nI'll leave it to you to \r\nfigure out what level \r\nFishing Rod you need.\r\n\r\nThanks for watching, and\r\nI'll see you next time! \BRK";
+    const MESSAGE_2 = "Fishing Hour\r\n\r\nThis is \"Fishing Hour\",\r\nyour one-stop-shop\r\nof fishing knowledge!\r\n\r\nToday we'll ask our renowned\r\nfishing expert Angler Jake\r\nabout Spring fishing.\r\n\r\n\r\nHowdy, folks. This is Angler\r\nJake here to tell you all\r\nabout what you can catch\r\nin Spring, when the fish \r\nare bountiful.\r\n\r\nSea fish you can catch are\r\nGreenling and Rockfish.\r\nUpstream fish you can \r\ncatch are Mountain Trout.\r\nI'll leave it to you to \r\nfigure out what kind of \r\nFishing Rod you need.\r\n\r\nThanks for watching, and\r\nI'll see you next time! \BRK";
+    const MESSAGE_3 = "Fishing Hour\r\n\r\nThis is \"Fishing Hour\",\r\nyour one-stop-shop\r\nof fishing knowledge!\r\n\r\nToday Anger Jake is on \r\nvacation, so we'll have a\r\nspecial episode instead.\r\n\r\n\r\nRecently, a Japanese \r\nhuchen measuring more than\r\n100cm was fished in the\r\ndownstream region.\r\nThis fish is indeed a River\r\nKing. \r\n\r\nThe person who fished it \r\nsaid it was good for Sushi,\r\nSashimi, or Grilled Fish.\r\nWe hope our viewers also\r\nlearn lots of fish dishes,\r\nthen go out and catch a \r\nRiver King of their own!\r\nAny season except Winter\r\nis good, we are told.\r\n\r\n\r\nUntil next time! \BRK";
+    const MESSAGE_4 = "Fishing Hour\r\n\r\nThis is \"Fishing Hour\",\r\nyour one-stop-shop\r\nof fishing knowledge!\r\n\r\nToday we'll ask our renowned\r\nfishing expert Angler Jake\r\nabout Summer fishing.\r\n\r\n\r\nHowdy, folks. This is Angler\r\nJake here to tell you all\r\nabout what you can catch\r\nin Summer, when the water\r\nis warm and the fish are\r\na little lazy.\r\n\r\nSea fish you can catch are\r\nScad, downstream fish are \r\nEel, and upstream fish \r\nCherry Salmon.\r\nI'll leave it to you to \r\nfigure out what kind of \r\nFishing Rod you need.\r\n\r\nThanks for watching, and\r\nI'll see you next time! \BRK";
+    const MESSAGE_5 = "Fishing Hour\r\n\r\nThis is \"Fishing Hour\",\r\nyour one-stop-shop\r\nof fishing knowledge!\r\n\r\nToday we'll ask our renowned\r\nfishing expert Angler Jake\r\nabout Summer fishing.\r\n\r\n\r\nHowdy, folks. This is Angler\r\nJake here to tell you all\r\nabout what you can catch\r\nin Summer, when the water\r\nis warm and the fish are\r\na little lazy.\r\n\r\nSea fish you can catch are\r\nBonito, Dorado, and Red\r\nSnapper.\r\nI'll leave it to you to \r\nfigure out what kind of \r\nFishing Rod you need.\r\n\r\nThanks for watching, and\r\nI'll see you next time! \BRK";
+    const MESSAGE_6 = "Fishing Hour\r\n\r\nThis is \"Fishing Hour\",\r\nyour one-stop-shop\r\nof fishing knowledge!\r\n\r\nToday we'll ask our renowned\r\nfishing expert Angler Jake\r\nabout Summer fishing.\r\n\r\n\r\nHowdy, folks. This is Angler\r\nJake here to tell you all\r\nabout what you can catch\r\nin Summer, when the water\r\nis warm and the fish are\r\na little lazy.\r\n\r\nSea fish you can catch are\r\nFlounder, downstream fish  \r\nare Snakehead, and upstream\r\nfish are Rainbow Trout.\r\nI'll leave it to you to \r\nfigure out what kind of \r\nFishing Rod you need.\r\n\r\nThanks for watching, and\r\nI'll see you next time! \BRK";
+    const MESSAGE_7 = "Fishing Hour\r\n\r\nThis is \"Fishing Hour\",\r\nyour one-stop-shop\r\nof fishing knowledge!\r\n\r\nToday Anger Jake is on \r\nvacation, so we'll have a\r\nspecial episode instead.\r\n\r\n\r\nThe regal Carp is fit to\r\nbe called a Lake King, but\r\nno few angers now living\r\nhave ever fished it.\r\nIt is said that Carp only\r\nappear for anglers with \r\ngreat experience. Having\r\nshipped over 200 fish,\r\nfor instance...\r\nIt is said Carp may \r\nappear in any season \r\nexcept Winter.\BRK";
+    const MESSAGE_8 = "Fishing Hour\r\n\r\nThis is \"Fishing Hour\",\r\nyour one-stop-shop\r\nof fishing knowledge!\r\n\r\nToday we'll ask our renowned\r\nfishing expert Angler Jake\r\nabout Fall fishing.\r\n\r\n\r\nHowdy, folks. This is Angler\r\nJake here to tell you all\r\nabout what you can catch\r\nin Fall, when the water\r\nis cool and the fish are\r\nactive.\r\n\r\nFatminnow can be caught in\r\nlakes or upstream.\r\nWhitefish and Golden crucian\r\ncarp can be caught\r\ndownstream.\r\nI'll leave it to you to \r\nfigure out what kind of \r\nFishing Rod you need.\r\n\r\nThanks for watching, and\r\nI'll see you next time! \BRK";
+    const MESSAGE_9 = "Fishing Hour\r\n\r\nThis is \"Fishing Hour\",\r\nyour one-stop-shop\r\nof fishing knowledge!\r\n\r\nToday we'll ask our renowned\r\nfishing expert Angler Jake\r\nabout Fall fishing.\r\n\r\n\r\nHowdy, folks. This is Angler\r\nJake here to tell you all\r\nabout what you can catch\r\nin Fall, when the water\r\nis cool and the fish are\r\nactive.\r\n\r\nSea Fish you can catch are\r\nSaury pike, and downstream\r\nfish are Salmon and Loach.\r\nI'll leave it to you to \r\nfigure out what kind of \r\nFishing Rod you need.\r\n\r\nThanks for watching, and\r\nI'll see you next time! \BRK";
+    const MESSAGE_10 = "Fishing Hour\r\n\r\nThis is \"Fishing Hour\",\r\nyour one-stop-shop\r\nof fishing knowledge!\r\n\r\nToday we'll ask our renowned\r\nfishing expert Angler Jake\r\nabout Fall fishing.\r\n\r\n\r\nHowdy, folks. This is Angler\r\nJake here to tell you all\r\nabout what you can catch\r\nin Fall, when the water\r\nis cool and the fish are\r\nactive.\r\n \r\nYou can catch Black bass\r\nand Bluegill downstream,\r\nat the spring, upstream,\r\nand in the lake.\r\nYou can also catch Crucian\r\ncarp at the spring or in\r\nthe lake.\r\nI'll leave it to you to \r\nfigure out what kind of \r\nFishing Rod you need.\r\n\r\nThanks for watching, and\r\nI'll see you next time! \BRK";
+    const MESSAGE_11 = "Fishing Hour\r\n\r\nThis is \"Fishing Hour\",\r\nyour one-stop-shop\r\nof fishing knowledge!\r\n\r\nToday Anger Jake is on \r\nvacation, so we'll have a\r\nspecial episode instead.\r\n\r\n\r\nOnce, there was a man who \r\nthought he caught a monster\r\nwhen fishing at sea in the\r\nnighttime. When day came,\r\nthough, he saw it was a\r\nMonkfish. If you ever see \r\none of these fierce fish,\r\nyou'll know why they are\r\nknown as Kings of the Sea.\r\nThey can be caught in \r\nSpring or Winter, and \r\nonly at night! \BRK";
+    const MESSAGE_12 = "Fishing Hour\r\n\r\nThis is \"Fishing Hour\",\r\nyour one-stop-shop\r\nof fishing knowledge!\r\n\r\nToday we'll ask our renowned\r\nfishing expert Angler Jake\r\nabout Winter fishing.\r\n\r\n\r\nHowdy, folks. This is Angler\r\nJake here to tell you all\r\nabout what you can catch\r\nin Winter. Winter fishing is\r\ntough, but not impossible.\r\n\r\nSea fish you can catch are\r\nRock trout, Fluke, and\r\nKelp bass.\r\nI'll leave it to you to \r\nfigure out what kind of \r\nFishing Rod you need.\r\n\r\nThanks for watching, and\r\nI'll see you next time! \BRK";
+    const MESSAGE_13 = "Fishing Hour\r\n\r\nThis is \"Fishing Hour\",\r\nyour one-stop-shop\r\nof fishing knowledge!\r\n\r\nToday we'll ask our renowned\r\nfishing expert Angler Jake\r\nabout Winter fishing.\r\n\r\n\r\nHowdy, folks. This is Angler\r\nJake here to tell you all\r\nabout what you can catch\r\nin Winter. Winter fishing is\r\ntough, but not impossible.\r\n\r\nSea fish you can catch are\r\nTuna and Blowfish.\r\nDownstream fish are \r\nLake smelt.\r\nI'll leave it to you to \r\nfigure out what kind of \r\nFishing Rod you need.\r\n\r\nThanks for watching, and\r\nI'll see you next time! \BRK";
+    const MESSAGE_14 = "Fishing Hour\r\n\r\nThis is \"Fishing Hour\",\r\nyour one-stop-shop\r\nof fishing knowledge!\r\n\r\nToday we'll ask our renowned\r\nfishing expert Angler Jake\r\nabout Winter fishing.\r\n\r\n\r\nHowdy, folks. This is Angler\r\nJake here to tell you all\r\nabout what you can catch\r\nin Winter. Winter fishing is\r\ntough, but not impossible.\r\n\r\nSea fish you can catch are\r\nCod and Yellow tail.\r\nDownstream fish are Silver\r\ncarp. \r\nI'll leave it to you to \r\nfigure out what kind of \r\nFishing Rod you need.\r\n\r\nThanks for watching, and\r\nI'll see you next time! \BRK";
+    const MESSAGE_15 = "Fishing Hour\r\n\r\nThis is \"Fishing Hour\",\r\nyour one-stop-shop\r\nof fishing knowledge!\r\n\r\nToday Anger Jake is on \r\nvacation, so we'll have a\r\nspecial episode instead.\r\n\r\n\r\nDo you know of the King\r\nFish that can be caught\r\nonly in Winter?\r\nIt's said to be a mutant\r\nCatfish, which you can\r\ncatch in a place you're\r\nalready familiar with.\r\nWhere is that, you ask?\r\nYou'll have to find out\r\nfor yourself. \r\n\r\nWhen you fish all of the \r\nKing Fish on this and other\r\nprograms, you'll get the \r\nchance to fish the Legendary\r\nKing Fish. \r\nNo one knows where this\r\nfish can be found, but who\r\nknows - you may be the \r\none destined to find it.\BRK";
+    
+    var var_0;
+    var var_1;
+    var var_2;
+    
+    var_1 = Check_Flag(1);
+    var_2 = Check_Flag(0x1EF);
+    switch (var_1) {
+        case 0:
+            switch (var_2) {
+                case 0:
+                    var_0 = Print_TV_Message(0);
+                    break;
+                case 1:
+                    var_0 = Print_TV_Message(1);
+                    break;
+                case 2:
+                    var_0 = Print_TV_Message(2);
+                    break;
+                case 3:
+                    var_0 = Print_TV_Message(3);
+                    break;
+            }
+            break;
+        case 1:
+            switch (var_2) {
+                case 0:
+                    var_0 = Print_TV_Message(4);
+                    break;
+                case 1:
+                    var_0 = Print_TV_Message(5);
+                    break;
+                case 2:
+                    var_0 = Print_TV_Message(6);
+                    break;
+                case 3:
+                    var_0 = Print_TV_Message(7);
+                    break;
+            }
+            break;
+        case 2:
+            switch (var_2) {
+                case 0:
+                    var_0 = Print_TV_Message(8);
+                    break;
+                case 1:
+                    var_0 = Print_TV_Message(9);
+                    break;
+                case 2:
+                    var_0 = Print_TV_Message(10);
+                    break;
+                case 3:
+                    var_0 = Print_TV_Message(11);
+                    break;
+            }
+            break;
+        case 3:
+            switch (var_2) {
+                case 0:
+                    var_0 = Print_TV_Message(12);
+                    break;
+                case 1:
+                    var_0 = Print_TV_Message(13);
+                    break;
+                case 2:
+                    var_0 = Print_TV_Message(14);
+                    break;
+                case 3:
+                    var_0 = Print_TV_Message(15);
+                    break;
+            }
+            break;
+    }
+    Close_TV_Interface();
+    TalkClose();
+    switch (var_0) {
+        case 0:
+        case 1:
+        case 2:
+        case 3:
+            Set_Flag(0x244, var_0);
+            Execute_Script(356);
+            break;
+        case 4:
+        case 5:
+            break;
+    }
+    exit;
+}

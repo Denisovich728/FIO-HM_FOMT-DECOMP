@@ -1,0 +1,22 @@
+// Script 1101
+#include "Fomt_Lib.src"
+
+script 1101 Event_1101 {
+    const MESSAGE_0 = "Don't overdo it, Mom...\BRK";
+    
+    if ((Check_If_Single(2) == 0)) {
+        Free_Event_Entity(2);
+    }
+    SetEntityFacing(2, GetOppositeFacing(GetEntityFacing(0)));
+    TalkOpen();
+    Set_Portrait(3);
+    Set_Name_Window(2);
+    TalkMessage(0);
+    TalkClose();
+    if ((Has_Spoken_To_NPC_Today(2) == 0)) {
+        Give_Friendship_Points(2, 5);
+    }
+    SetEntityFacing(2, "Right");
+    Free_Event_Entity(2);
+    exit;
+}

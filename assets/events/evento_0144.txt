@@ -1,0 +1,11 @@
+// Script 144
+#include "Fomt_Lib.src"
+
+script 144 Event_0144 {
+    const MESSAGE_0 = "Window\BRK";
+    
+    TalkOpen();
+    Print_Message(0);
+    TalkClose();
+    exit;
+}

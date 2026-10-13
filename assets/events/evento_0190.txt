@@ -1,0 +1,11 @@
+// Script 190
+#include "Fomt_Lib.src"
+
+script 190 Event_0190 {
+    const MESSAGE_0 = "Bed\BRK";
+    
+    TalkOpen();
+    Print_Message(0);
+    TalkClose();
+    exit;
+}

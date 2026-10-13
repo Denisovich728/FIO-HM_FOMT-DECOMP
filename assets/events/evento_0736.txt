@@ -1,0 +1,110 @@
+// Script 736
+#include "Fomt_Lib.src"
+
+script 736 Event_0736 {
+    const MESSAGE_0 = "I wonder if this is \r\nthe right grass?...\BRK";
+    const MESSAGE_1 = "Oh! Hi, \xFF!. \BRK";
+    const MESSAGE_2 = "How do you like your\r\nmarried life? Takes some\r\nadjusting to, I bet!\BRK";
+    const MESSAGE_3 = "What was I doing? \r\nI'm looking for a grass for\r\nmy father that he needs \BRK\r\nfor his research. \BRK";
+    const MESSAGE_4 = "That's nice of you.";
+    const MESSAGE_5 = "I see.";
+    const MESSAGE_6 = "I try to help out my dad. \r\nBesides, I actually enjoy\r\nit!\BRK";
+    const MESSAGE_7 = "Sorry for interrupting you. \r\nI have to get back now. \BRK\WAIT_CLICKGood luck on the farm!\BRK";
+    const MESSAGE_8 = "Well, Dad's research really\r\nis important, so I like to \r\nhelp out any way I can. \BRK";
+    
+    var var_0;
+    
+    End_Cinematic_State();
+    if ((Inventory_Check() == 1)) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    SetEntityPosition(0xC, 0x288, 0x80, "Left");
+    SetEntityAnim(0xC, 0x813);
+    Fade_In(2, 1);
+    Pan_Camera_To(0x29C, 0x80, 2);
+    Wait_Camera_Stop();
+    Show_Emote(0xC, 2, 0);
+    Make_Delay(0x3C);
+    TalkOpen();
+    Set_Portrait(0x6B);
+    Set_Name_Window(0xC);
+    TalkMessage(0);
+    TalkClose();
+    SetEntityFacing(0, "Down");
+    if ((Inventory_Check() == 1)) {
+        SetEntityAnim(0, 0x1C6);
+    } else {
+        SetEntityAnim(0, 0x156);
+    }
+    Set_Vector_Y(0, 0x80, 1);
+    Execute_Movement(0);
+    SetEntityFacing(0, "Left");
+    Set_Vector_X(0, 0x29C, 1);
+    Execute_Movement(0);
+    if ((Inventory_Check() == 1)) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    Show_Emote(0xC, 2, 0);
+    SetEntityFacing(0xC, "Right");
+    Set_Vector_X(0xC, 0x284, 1);
+    Make_Delay(0x3C);
+    TalkOpen();
+    Set_Portrait(0x67);
+    Set_Name_Window(0xC);
+    TalkMessage(1);
+    Set_Portrait(0x68);
+    TalkMessage(2);
+    TalkClose();
+    SetEntityAnim(0, 0x1FE);
+    Make_Delay(0x1E);
+    if ((Inventory_Check() == 1)) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    Show_Emote(0, 3, 0);
+    Make_Delay(0x3C);
+    TalkOpen();
+    Set_Portrait(0x67);
+    Set_Name_Window(0xC);
+    TalkMessage(3);
+    TalkClose();
+    TalkOpen();
+    var_0 = TalkChoice2(4, 5);
+    switch (var_0) {
+        case 1:
+            TalkOpen();
+            Set_Portrait(0x68);
+            Set_Name_Window(0xC);
+            TalkMessage(6);
+            Set_Portrait(0x67);
+            TalkMessage(7);
+            TalkClose();
+            Give_Friendship_Points(0xC, 0x14);
+            break;
+        case 2:
+            TalkOpen();
+            Set_Portrait(0x6B);
+            Set_Name_Window(0xC);
+            TalkMessage(8);
+            Set_Portrait(0x67);
+            TalkMessage(7);
+            TalkClose();
+            Give_Friendship_Points(0xC, -0xA);
+            break;
+    }
+    SetEntityFacing(0xC, "Left");
+    SetEntityAnim(0xC, 0x817);
+    Set_Vector_X(0xC, 0x1D0, 1);
+    Execute_Movement(0xC);
+    Hide_Entity(0xC);
+    Free_Event_Entity(0xC);
+    Refresh_Map_Entities();
+    Set_Flag(0x105, 2);
+    exit;
+    exit;
+}

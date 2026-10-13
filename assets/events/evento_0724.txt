@@ -1,0 +1,138 @@
+// Script 724
+#include "Fomt_Lib.src"
+
+script 724 Event_0724 {
+    const MESSAGE_0 = "Hmm....\BRK";
+    const MESSAGE_1 = "Hello, \xFF!.  \r\nI was just puzzling over \r\na problem...\BRK";
+    const MESSAGE_2 = "You see, a long time ago I \r\nwrote a book on Mushrooms. \BRK\WAIT_CLICKI just received a letter \r\nfrom someone who \r\nmisunderstood the book and \BRK\r\naccidentally ate a poison \r\none! They lived, thank \r\ngoodness...\BRK";
+    const MESSAGE_3 = "In their letter, the person \r\nblames me for their own \r\nerror. \BRK\WAIT_CLICKWhat do you think I \r\nshould do?\BRK";
+    const MESSAGE_4 = "Explain their error.";
+    const MESSAGE_5 = "Apologize.";
+    const MESSAGE_6 = "You're right. I should help \r\nthem understand better. \BRK";
+    const MESSAGE_7 = "Thanks, \xFF!. \r\nNow I feel more confident\r\nin myself. Now to that \r\nletter...\BRK";
+    const MESSAGE_8 = "You think so...?\r\nMaybe I should have written\r\nit more clearly, after \BRK\r\nall...!\BRK\WAIT_CLICKNow I feel horrible.\r\nWill you leave me alone\r\nnow please? \BRK";
+    
+    var var_0;
+    
+    End_Cinematic_State();
+    if ((Inventory_Check() == 1)) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    SetEntityPosition(0xA, 0x20, 0x50, "Down");
+    SetEntityAnim(0xA, 0x80B);
+    Fade_In(2, 1);
+    Pan_Camera_To(0x30, 0x50, 2);
+    Show_Emote(0xA, 6, 0);
+    Make_Delay(0x3C);
+    SetEntityFacing(0xA, "Right");
+    SetEntityAnim(0xA, 0x80F);
+    Set_Vector_X(0xA, 0x38, 1);
+    Execute_Movement(0xA);
+    SetEntityAnim(0xA, 0x80B);
+    Show_Emote(0xA, 6, 0);
+    Make_Delay(0xA);
+    SetEntityFacing(0xA, "Left");
+    SetEntityAnim(0xA, 0x80F);
+    Set_Vector_X(0xA, 0x20, 1);
+    Execute_Movement(0xA);
+    SetEntityAnim(0xA, 0x80B);
+    Show_Emote(0xA, 6, 0);
+    Make_Delay(0xA);
+    SetEntityFacing(0xA, "Right");
+    SetEntityAnim(0xA, 0x80F);
+    Set_Vector_X(0xA, 0x38, 1);
+    Execute_Movement(0xA);
+    SetEntityAnim(0xA, 0x80B);
+    Show_Emote(0xA, 6, 0);
+    Make_Delay(0xA);
+    SetEntityFacing(0xA, "Left");
+    SetEntityAnim(0xA, 0x80F);
+    Set_Vector_X(0xA, 0x20, 1);
+    Execute_Movement(0xA);
+    SetEntityAnim(0xA, 0x80B);
+    Show_Emote(0xA, 6, 1);
+    SetEntityFacing(0xA, "Up");
+    TalkOpen();
+    Set_Portrait(0x66);
+    Set_Name_Window(0xA);
+    TalkMessage(0);
+    TalkClose();
+    if ((Inventory_Check() == 1)) {
+        SetEntityAnim(0, 0x1C6);
+    } else {
+        SetEntityAnim(0, 0x156);
+    }
+    Set_Vector_Y(0, 0x50, 1);
+    Execute_Movement(0);
+    SetEntityFacing(0, "Left");
+    Set_Vector_X(0, 0x30, 1);
+    Execute_Movement(0);
+    if ((Inventory_Check() == 1)) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    SetEntityFacing(0xA, "Left");
+    Show_Emote(0xA, 2, 0);
+    Set_Vector_X(0xA, 0x18, 1);
+    Execute_Movement(0xA);
+    SetEntityFacing(0xA, "Right");
+    Make_Delay(0x32);
+    TalkOpen();
+    Set_Portrait(0x66);
+    Set_Name_Window(0xA);
+    TalkMessage(1);
+    TalkClose();
+    Show_Emote(0, 3, 0);
+    Make_Delay(0x3C);
+    TalkOpen();
+    Set_Portrait(0x66);
+    Set_Name_Window(0xA);
+    TalkMessage(2);
+    Set_Portrait(0x63);
+    TalkMessage(3);
+    TalkClose();
+    TalkOpen();
+    var_0 = TalkChoice2(4, 5);
+    switch (var_0) {
+        case 1:
+            TalkOpen();
+            Set_Portrait(0x64);
+            Set_Name_Window(0xA);
+            TalkMessage(6);
+            TalkClose();
+            SetEntityAnim(0, 0x1FE);
+            Make_Delay(0x1E);
+            if ((Inventory_Check() == 1)) {
+                SetEntityAnim(0, 0x192);
+                goto LBL_0010;
+            }
+            SetEntityAnim(0, 0x152);
+            TalkOpen();
+            Set_Portrait(0x64);
+            Set_Name_Window(0xA);
+            TalkMessage(7);
+            TalkClose();
+            Give_Friendship_Points(0xA, 0x14);
+            Set_Flag(0xFE, 1);
+            break;
+        case 2:
+            TalkOpen();
+            Set_Portrait(0x66);
+            Set_Name_Window(0xA);
+            TalkMessage(8);
+            TalkClose();
+            Give_Friendship_Points(0xA, -0xA);
+            Set_Flag(0xFE, 0);
+            break;
+    }
+    SetEntityFacing(0xA, "Up");
+    Free_Event_Entity(0xA);
+    End_Cinematic_State();
+    Set_Flag(0xFD, 1);
+    Routine_State_Override(0xA, 0x2D5);
+    exit;
+    exit;
+}

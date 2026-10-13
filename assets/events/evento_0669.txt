@@ -1,0 +1,17 @@
+// Script 669
+#include "Fomt_Lib.src"
+
+script 669 Event_0669 {
+    const MESSAGE_0 = "I can't wait to go on a \r\nfamily hike!\BRK";
+    
+    SetEntityFacing(0x19, GetOppositeFacing(GetEntityFacing(0)));
+    TalkOpen();
+    Set_Name_Window(0x19);
+    Set_Portrait(0x57);
+    Set_Hearth_Anim(0x19);
+    TalkMessage(0);
+    TalkClose();
+    Free_Event_Entity(0x19);
+    SetEntityFacing(0x19, "Left");
+    exit;
+}

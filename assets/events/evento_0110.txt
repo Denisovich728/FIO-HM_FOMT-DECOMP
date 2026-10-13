@@ -1,0 +1,11 @@
+// Script 110
+#include "Fomt_Lib.src"
+
+script 110 Event_0110 {
+    const MESSAGE_0 = "Wood Box\BRK";
+    
+    TalkOpen();
+    Print_Message(0);
+    TalkClose();
+    exit;
+}

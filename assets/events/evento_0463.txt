@@ -1,0 +1,52 @@
+// Script 463
+#include "Fomt_Lib.src"
+
+script 463 Event_0463 {
+    const MESSAGE_0 = "Yarn Maker\r\nPlace Wool in here to \r\nmake Yarn.\BRK";
+    
+    var var_0;
+    var var_1;
+    
+    var_0 = 0;
+    if (((!Inventory_Check() && (Compare_Gift() == 1)) && !Is_Item_Wrapped())) {
+        var_1 = Search_Item_Gift_Address();
+        switch (var_1) {
+            case 5:
+            case 6:
+            case 7:
+            case 8:
+            case 9:
+            case 0xA:
+                var_0 = 1;
+                break;
+        }
+    }
+    if (var_0) {
+        Drop_Held_Item();
+        switch (var_1) {
+            case 5:
+                Give_Item(0xB);
+                break;
+            case 6:
+                Give_Item(0xC);
+                break;
+            case 7:
+                Give_Item(0xD);
+                break;
+            case 8:
+                Give_Item(0xE);
+                break;
+            case 9:
+                Give_Item(0xF);
+                break;
+            case 0xA:
+                Give_Item(0x10);
+                break;
+        }
+    } else {
+        TalkOpen();
+        Print_Message(0);
+        TalkClose();
+    }
+    exit;
+}

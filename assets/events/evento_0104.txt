@@ -1,0 +1,68 @@
+// Script 104
+#include "Fomt_Lib.src"
+
+script 104 Event_0104 {
+    const MESSAGE_0 = "Are you ready for the\r\nFrisbee Tournament?\BRK";
+    const MESSAGE_1 = "I'm ready.";
+    const MESSAGE_2 = "Wait one second.";
+    const MESSAGE_3 = "Alright, let's go!\BRK";
+    const MESSAGE_4 = "Just tell me when you want\r\nto start the Frisbee\r\nTournament.\BRK";
+    const MESSAGE_5 = "Counter\BRK";
+    
+    var var_0;
+    var var_1;
+    var var_2;
+    
+    var_1 = Check_Flag(3);
+    var_2 = Check_Flag(4);
+    if (((Check_Flag(0x194) == 1) && !((var_1 == 0x12) && (var_2 == 1)))) {
+        if ((GetEntityFacing(0) == 1)) {
+            Free_Event_Entity(0x1C);
+            SetEntityFacing(0x1C, "Down");
+            TalkOpen();
+            Set_Portrait(0x1F);
+            Set_Name_Window(0x1C);
+            TalkMessage(0);
+            TalkClose();
+            TalkOpen();
+            var_0 = TalkChoice2(1, 2);
+            switch (var_0) {
+                case 1:
+                    TalkClose();
+                    TalkOpen();
+                    Set_Portrait(0x1F);
+                    Set_Name_Window(0x1C);
+                    TalkMessage(3);
+                    TalkClose();
+                    SetEntityFacing(0x1C, "Down");
+                    Fade_Out(3, 1);
+                    if ((Check_Flag(0x193) == 1)) {
+                        Set_Flag(0x195, Func0DA(1));
+                        if ((Check_Flag(0x195) == 1)) {
+                            Execute_Script(1145);
+                        }
+                    }
+                    Execute_Script(1138);
+                    break;
+                case 2:
+                    TalkClose();
+                    TalkOpen();
+                    Set_Portrait(0x1F);
+                    Set_Name_Window(0x1C);
+                    TalkMessage(4);
+                    TalkClose();
+                    SetEntityFacing(0x1C, "Down");
+                    break;
+            }
+        } else {
+            TalkOpen();
+            TalkMessage(5);
+            TalkClose();
+        }
+    } else {
+        TalkOpen();
+        TalkMessage(5);
+        TalkClose();
+    }
+    exit;
+}

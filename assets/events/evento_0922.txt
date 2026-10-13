@@ -1,0 +1,31 @@
+// Script 922
+#include "Fomt_Lib.src"
+
+script 922 Event_0922 {
+    const MESSAGE_0 = "I'm kind of embarrassed \r\nto be all dressed up \r\nlike this!\BRK";
+    const MESSAGE_1 = "You're happy for me too,\r\naren't you dad? \BRK";
+    
+    if ((Check_If_Single(0x19) == 0)) {
+        Free_Event_Entity(0x19);
+    }
+    if ((Has_NPC_Talked_Today(0x19) == 0)) {
+        SetEntityFacing(0x19, GetOppositeFacing(GetEntityFacing(0)));
+        TalkOpen();
+        Set_Portrait(0x5D);
+        Set_Name_Window(0x19);
+        TalkMessage(0);
+        TalkClose();
+        SetEntityFacing(0x19, "Down");
+        Free_Event_Entity(0x19);
+    } else {
+        SetEntityFacing(0x19, GetOppositeFacing(GetEntityFacing(0)));
+        TalkOpen();
+        Set_Portrait(0x5D);
+        Set_Name_Window(0x19);
+        TalkMessage(1);
+        TalkClose();
+        SetEntityFacing(0x19, "Down");
+        Free_Event_Entity(0x19);
+    }
+    exit;
+}

@@ -1,0 +1,51 @@
+// Script 592
+#include "Fomt_Lib.src"
+
+script 592 Event_0592 {
+    const MESSAGE_0 = "Good morning, \xFF).\r\nToday is our 50th wedding \r\nanniversary!\BRK\WAIT_CLICKI have a present for you.\r\nActually...It's a Cottage \r\nin the mountains!\BRK\WAIT_CLICKHow did I pay for it?\r\nThat's a secret.\BRK";
+    const MESSAGE_1 = "Be sure and go look at it\r\nlater, OK?\BRK";
+    
+    Warp_Player(0x1D, 0x109, 0x8A);
+    PlayBGM(1, 0x11);
+    SetEntityPosition(0, 0x109, 0x8A, "Up");
+    if (Inventory_Check()) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    SetEntityPosition(3, 0x109, 0x72, "Down");
+    SetEntityAnim(3, 0x22F);
+    if ((Check_Flag(0xC8) == 2)) {
+        if ((Check_Flag(0x2E) >= 0x3C)) {
+            SetEntityPosition(0x23, 0x124, 0x54, "Down");
+            if ((Check_Flag(0x2F) == 1)) {
+                SetEntityAnim(0x23, 0x267);
+            } else {
+                SetEntityAnim(0x23, 0x26B);
+            }
+        } else {
+            SetEntityPosition(0x23, 0x1A0, -0x30, "Down");
+            SetEntityAnim(0x23, 0xC);
+        }
+    }
+    Fade_In(2, 1);
+    Set_Flag(0xAB, 1);
+    TalkOpen();
+    Set_Name_Window(3);
+    Set_Portrait(8);
+    Set_Hearth_Anim(3);
+    TalkMessage(0);
+    Set_Name_Window(3);
+    Set_Portrait(7);
+    Set_Hearth_Anim(3);
+    TalkMessage(1);
+    TalkClose();
+    Free_Event_Entity(3);
+    Set_Flag(0xAB, 2);
+    Unlock_Mountain_Cottage();
+    Fade_Out(2, 1);
+    Warp_Player(0x1D, 0x147, 0x70);
+    SetEntityPosition(0, 0x147, 0x70, "Left");
+    Fade_In(2, 1);
+    exit;
+}

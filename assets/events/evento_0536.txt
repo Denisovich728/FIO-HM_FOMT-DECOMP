@@ -1,0 +1,98 @@
+// Script 536
+#include "Fomt_Lib.src"
+
+script 536 Event_0536 {
+    const MESSAGE_0 = "Spring";
+    const MESSAGE_1 = "Summer";
+    const MESSAGE_2 = "Fall";
+    const MESSAGE_3 = "Winter";
+    const MESSAGE_4 = "Sunday";
+    const MESSAGE_5 = "Monday";
+    const MESSAGE_6 = "Tuesday";
+    const MESSAGE_7 = "Wednesday";
+    const MESSAGE_8 = "Thursday";
+    const MESSAGE_9 = "Friday";
+    const MESSAGE_10 = "Saturday";
+    const MESSAGE_11 = "Year \xFF%\r\n\xFF&\x81@Day \xFF' (\xFF()\BRK";
+    const MESSAGE_12 = "\xFF%:0\xFF& AM\BRK";
+    const MESSAGE_13 = "\xFF%:\xFF& AM\BRK";
+    const MESSAGE_14 = "\xFF%:0\xFF& PM\BRK";
+    const MESSAGE_15 = "\xFF%:\xFF& PM\BRK";
+    
+    TalkOpen();
+    Set_Text_Buffer_Int(0, Check_Flag(0));
+    switch (Check_Flag(1)) {
+        case 0:
+            Check_Date(1, 0);
+            break;
+        case 1:
+            Check_Date(1, 1);
+            break;
+        case 2:
+            Check_Date(1, 2);
+            break;
+        case 3:
+            Check_Date(1, 3);
+            break;
+    }
+    Set_Text_Buffer_Int(2, Check_Flag(2));
+    switch (Check_Flag(5)) {
+        case 0:
+            Check_Date(3, 4);
+            break;
+        case 1:
+            Check_Date(3, 5);
+            break;
+        case 2:
+            Check_Date(3, 6);
+            break;
+        case 3:
+            Check_Date(3, 7);
+            break;
+        case 4:
+            Check_Date(3, 8);
+            break;
+        case 5:
+            Check_Date(3, 9);
+            break;
+        case 6:
+            Check_Date(3, 0xA);
+            break;
+    }
+    Print_Message(11);
+    if ((Check_Flag(3) < 0xC)) {
+        Set_Text_Buffer_Int(0, Check_Flag(3));
+        Set_Text_Buffer_Int(1, Check_Flag(4));
+        if ((Check_Flag(3) < 0xA)) {
+            if ((Check_Flag(4) < 0xA)) {
+                Print_Message(12);
+            } else {
+                Print_Message(13);
+            }
+        } else {
+            if ((Check_Flag(4) < 0xA)) {
+                Print_Message(12);
+            } else {
+                Print_Message(13);
+            }
+        }
+    } else {
+        Set_Text_Buffer_Int(0, (Check_Flag(3) - 0xC));
+        Set_Text_Buffer_Int(1, Check_Flag(4));
+        if ((Check_Flag(3) < 0x16)) {
+            if ((Check_Flag(4) < 0xA)) {
+                Print_Message(14);
+            } else {
+                Print_Message(15);
+            }
+            goto LBL_001E;
+        }
+        if ((Check_Flag(4) < 0xA)) {
+            Print_Message(14);
+            goto LBL_001E;
+        }
+        Print_Message(15);
+    }
+    TalkClose();
+    exit;
+}

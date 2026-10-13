@@ -1,0 +1,22 @@
+// Script 1214
+#include "Fomt_Lib.src"
+
+script 1214 Event_1214 {
+    const MESSAGE_0 = "When I get bigger, I want\r\nto sing in the Music \r\nFestival, too!\BRK";
+    
+    if ((Check_If_Single(5) == 0)) {
+        Free_Event_Entity(5);
+    }
+    SetEntityFacing(5, GetOppositeFacing(GetEntityFacing(0)));
+    TalkOpen();
+    Set_Portrait(0xB0);
+    Set_Name_Window(5);
+    TalkMessage(0);
+    TalkClose();
+    if ((Has_Spoken_To_NPC_Today(5) == 0)) {
+        Give_Friendship_Points(5, 5);
+    }
+    SetEntityFacing(5, "Up");
+    Free_Event_Entity(5);
+    exit;
+}

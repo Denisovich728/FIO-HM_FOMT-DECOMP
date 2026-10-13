@@ -1,0 +1,30 @@
+// Script 1227
+#include "Fomt_Lib.src"
+
+script 1227 Event_1227 {
+    const MESSAGE_0 = "\xFF!, \r\ndo you have any water?\BRK";
+    const MESSAGE_1 = "It was Anna who put in \r\nthose herbs. They make the \r\nfish much more fragrant.\r\nToo fragrant, maybe...\BRK";
+    
+    if ((Check_If_Single(9) == 0)) {
+        Free_Event_Entity(9);
+    }
+    SetEntityFacing(9, GetOppositeFacing(GetEntityFacing(0)));
+    if ((Has_Spoken_To_NPC_Today(9) == 0)) {
+        Give_Friendship_Points(9, 5);
+    }
+    TalkOpen();
+    Set_Name_Window(9);
+    if ((Check_Flag(0x1A5) == 1)) {
+        Set_Portrait(0x8C);
+        TalkMessageSlow(0);
+        TalkClose();
+        Free_Event_Entity(9);
+    } else {
+        Set_Portrait(0x89);
+        TalkMessageSlow(1);
+        TalkClose();
+        Free_Event_Entity(9);
+    }
+    SetEntityFacing(9, "Right");
+    exit;
+}

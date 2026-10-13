@@ -1,0 +1,64 @@
+// Script 1276
+#include "Fomt_Lib.src"
+
+script 1276 Event_1276 {
+    const MESSAGE_0 = "It's time for the judging \r\nto begin! \r\nAre you ready?\BRK";
+    const MESSAGE_1 = "I'm ready.";
+    const MESSAGE_2 = "Wait a minute.";
+    const MESSAGE_3 = "Let's start, then. \BRK";
+    const MESSAGE_4 = "Just let me know \r\nwhen you're ready. \BRK";
+    
+    var var_1;
+    var var_2;
+    
+    var_2 = Func11A(2);
+    if ((Check_If_Single(4) == 0)) {
+        Free_Event_Entity(4);
+    }
+    SetEntityFacing(4, GetOppositeFacing(GetEntityFacing(0)));
+    TalkOpen();
+    Set_Portrait(0xB4);
+    Set_Name_Window(4);
+    TalkMessage(0);
+    TalkClose();
+    TalkOpen();
+    var_1 = TalkChoice2(1, 2);
+    switch (var_1) {
+        case 1:
+            TalkClose();
+            TalkOpen();
+            Set_Portrait(0xB4);
+            Set_Name_Window(4);
+            TalkMessage(3);
+            TalkClose();
+            Fade_Out(2, 1);
+            if ((Has_Spoken_To_NPC_Today(4) == 0)) {
+                Give_Friendship_Points(4, 5);
+            }
+            Free_Event_Entity(4);
+            SetEntityFacing(4, "Down");
+            if ((Func10C(2, var_2) >= 0xC8)) {
+                Set_Flag(0x1B1, 1);
+            }
+            if ((Check_Flag(0x1B1) == 1)) {
+                Execute_Script(1289);
+                goto LBL_000D;
+            }
+            Execute_Script(1277);
+            break;
+        case 2:
+            TalkClose();
+            TalkOpen();
+            Set_Portrait(0xB4);
+            Set_Name_Window(4);
+            TalkMessage(4);
+            TalkClose();
+            if ((Has_Spoken_To_NPC_Today(4) == 0)) {
+                Give_Friendship_Points(4, 5);
+            }
+            Free_Event_Entity(4);
+            SetEntityFacing(4, "Down");
+            break;
+    }
+    exit;
+}

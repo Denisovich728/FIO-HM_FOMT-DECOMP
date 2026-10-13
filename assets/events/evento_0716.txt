@@ -1,0 +1,79 @@
+// Script 716
+#include "Fomt_Lib.src"
+
+script 716 Event_0716 {
+    const MESSAGE_0 = "Hi, \xFF!. \r\nTomorrow we're harvesting \r\nWine Grapes. \BRK\r\nDo you want to help out?\BRK";
+    const MESSAGE_1 = "Sure!";
+    const MESSAGE_2 = "I'm too busy.";
+    const MESSAGE_3 = "Great! In that case, come by\r\naround 10AM. \BRK\WAIT_CLICKWe'll pay you, of course. \BRK";
+    const MESSAGE_4 = "Oh yeah. We need one more\r\nperson, so invite someone \r\nif you think of it. \BRK";
+    const MESSAGE_5 = "That's understandable. \r\nYou do have your own farm \r\nto run! \BRK\WAIT_CLICKWill you ask someone for me,\r\nthen? You can still come \r\ntoo, of course!\BRK";
+    
+    var var_0;
+    
+    if ((Inventory_Check() == 1)) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    SetEntityPosition(8, 0xE4, 0x91, "Up");
+    SetEntityAnim(8, 0x8C0);
+    Fade_In(2, 1);
+    TalkOpen();
+    Set_Portrait(0x86);
+    Set_Name_Window(8);
+    TalkMessage(0);
+    TalkClose();
+    TalkOpen();
+    var_0 = TalkChoice2(1, 2);
+    switch (var_0) {
+        case 1:
+            TalkClose();
+            TalkOpen();
+            Set_Portrait(0x86);
+            Set_Name_Window(8);
+            TalkMessage(3);
+            TalkClose();
+            SetEntityFacing(8, "Right");
+            SetEntityAnim(8, 0x8C4);
+            Set_Vector_X(8, 0x13F, 1);
+            Execute_Movement(8);
+            SetEntityAnim(8, 0x8C0);
+            Make_Delay(0x1E);
+            SetEntityFacing(8, "Left");
+            SetEntityFacing(0, "Right");
+            TalkOpen();
+            Set_Portrait(0x85);
+            Set_Name_Window(8);
+            TalkMessage(4);
+            TalkClose();
+            SetEntityAnim(8, 0x8C4);
+            SetEntityFacing(8, "Up");
+            Set_Vector_Y(8, 0, 1);
+            Execute_Movement(8);
+            Hide_Entity(8);
+            Give_Friendship_Points(8, 0x14);
+            break;
+        case 2:
+            TalkClose();
+            TalkOpen();
+            Set_Portrait(0x85);
+            Set_Name_Window(8);
+            TalkMessage(5);
+            TalkClose();
+            SetEntityFacing(8, "Right");
+            SetEntityAnim(8, 0x8C4);
+            Set_Vector_X(8, 0x13F, 1);
+            Execute_Movement(8);
+            SetEntityFacing(8, "Up");
+            Set_Vector_Y(8, 0, 1);
+            Execute_Movement(8);
+            Hide_Entity(8);
+            Give_Friendship_Points(8, -0xA);
+            break;
+    }
+    Set_Flag(0xF3, 2);
+    Free_Event_Entity(8);
+    SetEntityFacing(0, "Down");
+    exit;
+}

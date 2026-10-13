@@ -1,0 +1,31 @@
+// Script 881
+#include "Fomt_Lib.src"
+
+script 881 Event_0881 {
+    const MESSAGE_0 = "Why is it so surprising how \r\nfast kids grow up?!...\BRK";
+    const MESSAGE_1 = "If only I would get better\r\nso that my darling could\r\ncome home...\BRK\WAIT_CLICKIf he were here with me \r\neverything would be OK...\BRK";
+    
+    if ((Check_If_Single(1) == 0)) {
+        Free_Event_Entity(1);
+    }
+    if ((Has_NPC_Talked_Today(1) == 0)) {
+        SetEntityFacing(1, GetOppositeFacing(GetEntityFacing(0)));
+        TalkOpen();
+        Set_Portrait(0xE);
+        Set_Name_Window(1);
+        TalkMessage(0);
+        TalkClose();
+        SetEntityFacing(1, "Right");
+        Free_Event_Entity(1);
+    } else {
+        SetEntityFacing(1, GetOppositeFacing(GetEntityFacing(0)));
+        TalkOpen();
+        Set_Portrait(0xF);
+        Set_Name_Window(1);
+        TalkMessage(1);
+        TalkClose();
+        SetEntityFacing(1, "Right");
+        Free_Event_Entity(1);
+    }
+    exit;
+}

@@ -1,0 +1,981 @@
+// Script 982
+#include "Fomt_Lib.src"
+
+script 982 Event_0982 {
+    var var_0;
+    var var_1;
+    var var_2;
+    var var_3;
+    var var_4;
+    var var_5;
+    
+    Proc128();
+    var_0 = Check_Flag(0);
+    var_1 = Check_Flag(1);
+    var_2 = Check_Flag(2);
+    var_3 = Check_Flag(5);
+    var_4 = Check_Flag(6);
+    switch (Func0B6()) {
+        case 0:
+            Set_Global_RNG_Modifier(0xA, 0);
+            break;
+        case 1:
+            Set_Global_RNG_Modifier(0, -5);
+            break;
+        case 2:
+            Set_Global_RNG_Modifier(3, 0);
+            break;
+        case 3:
+            Set_Global_RNG_Modifier(0, -0xA);
+            break;
+        case 4:
+            Set_Global_RNG_Modifier(0, -7);
+            break;
+    }
+    Set_Flag(0x23D, 0);
+    Set_Flag(0x23F, 0);
+    Set_Flag(0x241, 0);
+    Set_Flag(0x152, 0);
+    if ((((Check_Flag(0) == 1) && (Check_Flag(1) == 0)) && (Check_Flag(2) == 3))) {
+        Set_Flag(0x1E2, 0);
+        Set_Flag(0x1E3, 0);
+        Set_Flag(0x1E4, 0);
+        Set_Flag(0x1E5, 0);
+        Set_Flag(0x1E6, 0);
+        Set_Flag(0x1E7, 0);
+        Set_Flag(0x1E8, 0);
+        Set_Flag(0x1E9, 0);
+        Set_Flag(0x1ED, 0);
+        Set_Flag(0x1EE, 0);
+        Set_Flag(0x1EB, 0);
+        Set_Flag(0x1EA, 0);
+        Set_Flag(0x1EC, 0);
+        Set_Flag(0x1EF, 0);
+    }
+    if ((((Check_Flag(1) == 0) && (((((Check_Flag(2) == 1) || (Check_Flag(2) == 2)) || (Check_Flag(2) == 3)) || (Check_Flag(2) == 4)) || (Check_Flag(2) == 5))) || ((Check_Flag(1) == 3) && ((Check_Flag(2) == 0x1D) || (Check_Flag(2) == 0x1E))))) {
+        Set_Flag(0x1EE, 0);
+    }
+    if ((!(((Check_Flag(0) == 1) && (Check_Flag(1) == 0)) && (Check_Flag(2) == 6)) && (Check_Flag(5) == 5))) {
+        if ((((Check_Flag(1) == 0) && (((((Check_Flag(2) == 1) || (Check_Flag(2) == 2)) || (Check_Flag(2) == 3)) || (Check_Flag(2) == 4)) || (Check_Flag(2) == 5))) || ((Check_Flag(1) == 3) && ((Check_Flag(2) == 0x1D) || (Check_Flag(2) == 0x1E))))) {
+        } else {
+            if ((Check_Flag(0x1E2) == 0xB)) {
+                Set_Flag(0x1E2, 0);
+            } else {
+                Set_Flag(0x1E2, (Check_Flag(0x1E2) + 1));
+            }
+            if ((Check_Flag(0x1E3) == 0x21)) {
+                Set_Flag(0x1E3, 0);
+            } else {
+                Set_Flag(0x1E3, (Check_Flag(0x1E3) + 1));
+            }
+            if ((Check_Flag(0x1E4) == 0xB)) {
+                Set_Flag(0x1E4, 0);
+            } else {
+                Set_Flag(0x1E4, (Check_Flag(0x1E4) + 1));
+            }
+            if ((Check_Flag(0x1E5) == 0x25)) {
+                Set_Flag(0x1E5, 0);
+                Set_Flag(0x1E6, 0);
+            } else {
+                Set_Flag(0x1E5, (Check_Flag(0x1E5) + 1));
+                Set_Flag(0x1E6, (Check_Flag(0x1E6) + 1));
+            }
+            if ((Check_Flag(0x1E7) == 0x26)) {
+                Set_Flag(0x1E7, 0);
+            } else {
+                Set_Flag(0x1E7, (Check_Flag(0x1E7) + 1));
+            }
+            if ((Check_Flag(0x1E8) == 0x2F)) {
+                Set_Flag(0x1E8, 0);
+            } else {
+                Set_Flag(0x1E8, (Check_Flag(0x1E8) + 1));
+            }
+            if ((Check_Flag(0x1E9) == 0x13)) {
+                Set_Flag(0x1E9, 0);
+            } else {
+                Set_Flag(0x1E9, (Check_Flag(0x1E9) + 1));
+            }
+            if ((Check_Flag(0x1ED) == 0x27)) {
+                Set_Flag(0x1ED, 0);
+            } else {
+                Set_Flag(0x1ED, (Check_Flag(0x1ED) + 1));
+            }
+            if ((Check_Flag(0x1EE) == 7)) {
+                Set_Flag(0x1EE, 0);
+            } else {
+                Set_Flag(0x1EE, (Check_Flag(0x1EE) + 1));
+            }
+            if ((Check_Flag(0x1EB) == 9)) {
+                Set_Flag(0x1EB, 0);
+            } else {
+                Set_Flag(0x1EB, (Check_Flag(0x1EB) + 1));
+            }
+            if ((Check_Flag(0x1EA) == 0x18)) {
+                Set_Flag(0x1EA, 0);
+            } else {
+                Set_Flag(0x1EA, (Check_Flag(0x1EA) + 1));
+            }
+            if ((Check_Flag(0x1EC) == 0xC)) {
+                Set_Flag(0x1EC, 0);
+            } else {
+                Set_Flag(0x1EC, (Check_Flag(0x1EC) + 1));
+            }
+            if ((Check_Flag(0x1EF) == 3)) {
+                Set_Flag(0x1EF, 0);
+            } else {
+                Set_Flag(0x1EF, (Check_Flag(0x1EF) + 1));
+            }
+        }
+    }
+    if (((Check_Flag(1) == 0) && (Check_Flag(2) == 1))) {
+        if ((Check_If_Single(0x17) == 1)) {
+            if ((Chek_Friendship_Points(0x17) >= 0x64)) {
+                if (((Check_Flag(0x86) == 2) || (Check_Flag(0x87) == 2))) {
+                    Schedule_Next_Event(0x4F);
+                } else {
+                    if (((Check_Flag(0xF4) == 0) && (Check_Flag(0) >= 2))) {
+                        Schedule_Next_Event(0x4E);
+                    } else {
+                        if ((Check_Flag(0xF4) == 1)) {
+                            Schedule_Next_Event(0x4D);
+                        }
+                    }
+                }
+            }
+        }
+        if ((Check_If_Single(0x14) == 1)) {
+            if ((Chek_Friendship_Points(0x14) >= 0x64)) {
+                if (((Check_Flag(0x96) == 2) || (Check_Flag(0x97) == 2))) {
+                    Schedule_Next_Event(0x50);
+                } else {
+                    if ((Check_Flag(0x6F) == 2)) {
+                        Schedule_Next_Event(0x52);
+                    } else {
+                        Schedule_Next_Event(0x51);
+                    }
+                }
+            }
+        }
+        if ((((Check_If_Single(2) == 1) || (Check_If_Single(3) == 1)) || (Check_If_Single(1) == 1))) {
+            if ((((Chek_Friendship_Points(2) >= 0x64) || (Chek_Friendship_Points(3) >= 0x64)) || (Chek_Friendship_Points(1) >= 0x64))) {
+                if (((((((Check_Flag(0x7E) != 2) && (Check_Flag(0x7F) != 2)) && (Check_Flag(0x55) != 2)) && (Check_Flag(0x75) != 2)) && (Check_Flag(0x76) != 2)) && (Check_Flag(0x77) != 2))) {
+                    Schedule_Next_Event(0x53);
+                }
+                if ((((Check_Flag(0x75) == 2) || (Check_Flag(0x76) == 2)) || (Check_Flag(0x77) == 2))) {
+                    Schedule_Next_Event(0x56);
+                } else {
+                    if (((Check_Flag(0x7E) == 2) || (Check_Flag(0x7F) == 2))) {
+                        Schedule_Next_Event(0x54);
+                    }
+                    if ((Check_Flag(0x55) == 2)) {
+                        Schedule_Next_Event(0x55);
+                    }
+                }
+            }
+        }
+        if ((Check_If_Single(7) == 1)) {
+            if ((Chek_Friendship_Points(7) >= 0x64)) {
+                Schedule_Next_Event(0x57);
+            } else {
+                Schedule_Next_Event(0x58);
+            }
+        }
+        if ((Check_If_Single(0x1A) == 1)) {
+            if ((Chek_Friendship_Points(0x1A) >= 0x64)) {
+                if (((Check_Flag(0x7E) == 2) || (Check_Flag(0x7F) == 2))) {
+                    Schedule_Next_Event(0x5A);
+                } else {
+                    Schedule_Next_Event(0x59);
+                }
+            }
+        }
+        if ((Check_If_Single(0x11) == 1)) {
+            if ((Chek_Friendship_Points(0x11) >= 0x64)) {
+                Schedule_Next_Event(0x5B);
+            }
+        }
+        if ((Check_If_Single(6) == 1)) {
+            if ((Chek_Friendship_Points(6) >= 0x64)) {
+                Schedule_Next_Event(0x5C);
+            }
+        }
+        if ((Check_If_Single(0x18) == 1)) {
+            if ((Chek_Friendship_Points(0x18) >= 0x64)) {
+                if ((Check_Flag(0x5F) == 2)) {
+                    Schedule_Next_Event(0x5E);
+                } else {
+                    Schedule_Next_Event(0x5D);
+                }
+            }
+        }
+        if ((Check_If_Single(0x16) == 1)) {
+            if ((Chek_Friendship_Points(0x16) >= 0x64)) {
+                Schedule_Next_Event(0x5F);
+            }
+        }
+        if (((Check_If_Single(0xA) == 1) && (Check_If_Single(0xB) == 1))) {
+            if (((Chek_Friendship_Points(0xA) >= 0x64) || (Chek_Friendship_Points(0xB) >= 0x64))) {
+                Schedule_Next_Event(0x60);
+            }
+        }
+        if (((Check_If_Single(5) == 1) && (Check_If_Single(4) == 1))) {
+            if (((Chek_Friendship_Points(5) >= 0x64) && (Chek_Friendship_Points(4) >= 0x64))) {
+                Schedule_Next_Event(0x61);
+            }
+        }
+        if (((Check_If_Single(0xD) == 1) && (Check_If_Single(0xE) == 1))) {
+            if (((Chek_Friendship_Points(0xD) >= 0x64) && (Chek_Friendship_Points(0xE) >= 0x64))) {
+                Schedule_Next_Event(0x63);
+            } else {
+                Schedule_Next_Event(0x62);
+            }
+        }
+        if (((Check_If_Single(9) == 1) && (Check_If_Single(8) == 1))) {
+            if (((Chek_Friendship_Points(9) >= 0x64) && (Chek_Friendship_Points(8) >= 0x64))) {
+                Schedule_Next_Event(0x64);
+            }
+        }
+        if ((Check_If_Single(0xF) == 1)) {
+            if ((Chek_Friendship_Points(0xF) >= 0x64)) {
+                Schedule_Next_Event(0x65);
+            }
+        }
+        if ((((((((Check_If_Single(0x24) == 1) && (Check_If_Single(0x25) == 1)) && (Check_If_Single(0x27) == 1)) && (Check_If_Single(0x28) == 1)) && (Check_If_Single(0x29) == 1)) && (Check_If_Single(0x2A) == 1)) && (Check_If_Single(0x24) == 1))) {
+            if ((((((((Chek_Friendship_Points(0x24) >= 0x64) && (Chek_Friendship_Points(0x26) >= 0x64)) && (Chek_Friendship_Points(0x27) >= 0x64)) && (Chek_Friendship_Points(0x28) >= 0x64)) && (Chek_Friendship_Points(0x29) >= 0x64)) && (Chek_Friendship_Points(0x2A) >= 0x64)) && (Chek_Friendship_Points(0x24) >= 0x64))) {
+                Schedule_Next_Event(0x66);
+            }
+        }
+        if ((Check_If_Single(3) == 1)) {
+            if ((Chek_Friendship_Points(3) >= 0x64)) {
+                if (((((((((Check_Flag(0x4C) != 2) && (Check_Flag(0x55) != 2)) && (Check_Flag(0x5F) != 2)) && (Check_Flag(0x67) != 2)) && (Check_Flag(0x6F) != 2)) && (Check_Flag(0x173) != 2)) && (Check_Flag(0x7E) != 2)) && (Check_Flag(0x7F) != 2))) {
+                    Schedule_Next_Event(0x67);
+                }
+            }
+        }
+        if ((Check_If_Single(0x19) == 1)) {
+            if ((Chek_Friendship_Points(0x19) >= 0x64)) {
+                if (((((((((Check_Flag(0x4C) != 2) && (Check_Flag(0x55) != 2)) && (Check_Flag(0x5F) != 2)) && (Check_Flag(0x67) != 2)) && (Check_Flag(0x6F) != 2)) && (Check_Flag(0x173) != 2)) && (Check_Flag(0x86) != 2)) && (Check_Flag(0x87) != 2))) {
+                    Schedule_Next_Event(0x68);
+                }
+            }
+        }
+        if ((Check_If_Single(0x13) == 1)) {
+            if ((Chek_Friendship_Points(0x13) >= 0x64)) {
+                if ((((((((((Check_Flag(0x4C) != 2) && (Check_Flag(0x55) != 2)) && (Check_Flag(0x5F) != 2)) && (Check_Flag(0x67) != 2)) && (Check_Flag(0x6F) != 2)) && (Check_Flag(0x173) != 2)) && (Check_Flag(0x75) != 2)) && (Check_Flag(0x76) != 2)) && (Check_Flag(0x77) != 2))) {
+                    Schedule_Next_Event(0x69);
+                }
+            }
+        }
+        if ((Check_If_Single(0x15) == 1)) {
+            if ((Chek_Friendship_Points(0x15) >= 0x64)) {
+                if (((((((((Check_Flag(0x4C) != 2) && (Check_Flag(0x55) != 2)) && (Check_Flag(0x5F) != 2)) && (Check_Flag(0x67) != 2)) && (Check_Flag(0x6F) != 2)) && (Check_Flag(0x173) != 2)) && (Check_Flag(0x96) != 2)) && (Check_Flag(0x97) != 2))) {
+                    Schedule_Next_Event(0x6A);
+                }
+            }
+        }
+        if ((Check_If_Single(0xC) == 1)) {
+            if ((Chek_Friendship_Points(0xC) >= 0x64)) {
+                if (((((((((Check_Flag(0x4C) != 2) && (Check_Flag(0x55) != 2)) && (Check_Flag(0x5F) != 2)) && (Check_Flag(0x67) != 2)) && (Check_Flag(0x6F) != 2)) && (Check_Flag(0x173) != 2)) && (Check_Flag(0x8E) != 2)) && (Check_Flag(0x8F) != 2))) {
+                    Schedule_Next_Event(0x6B);
+                }
+            }
+        }
+    }
+    if (((Check_Flag(1) == Check_Flag(8)) && (Check_Flag(2) == Check_Flag(9)))) {
+        if ((Check_If_Single(3) == 1)) {
+            if ((Check_Flag(0x55) != 2)) {
+                if (((Check_Flag(0x7E) == 2) || (Check_Flag(0x7F) == 2))) {
+                    if ((Chek_Friendship_Points(3) >= 0xC8)) {
+                        Schedule_Next_Event(0x6D);
+                    }
+                } else {
+                    if ((Chek_Love_Points(3) >= 0x9C40)) {
+                        Schedule_Next_Event(0x6D);
+                    }
+                }
+            }
+        }
+        if ((Check_If_Single(0x19) == 1)) {
+            if ((Check_Flag(0x5F) != 2)) {
+                if (((Check_Flag(0x86) == 2) || (Check_Flag(0x87) == 2))) {
+                    if ((Chek_Friendship_Points(0x19) >= 0xC8)) {
+                        Schedule_Next_Event(0x6E);
+                    }
+                } else {
+                    if ((Chek_Love_Points(0x19) >= 0x9C40)) {
+                        Schedule_Next_Event(0x6E);
+                    }
+                }
+            }
+        }
+        if ((Check_If_Single(0x13) == 1)) {
+            if ((Check_Flag(0x4C) != 2)) {
+                if ((((Check_Flag(0x75) == 2) || (Check_Flag(0x76) == 2)) || (Check_Flag(0x77) == 2))) {
+                    if ((Chek_Friendship_Points(0x13) >= 0xC8)) {
+                        Schedule_Next_Event(0x6F);
+                    }
+                } else {
+                    if ((Chek_Love_Points(0x13) >= 0x9C40)) {
+                        Schedule_Next_Event(0x6F);
+                    }
+                }
+            }
+        }
+        if ((Check_If_Single(0x15) == 1)) {
+            if ((Check_Flag(0x6F) != 2)) {
+                if (((Check_Flag(0x96) == 2) || (Check_Flag(0x97) == 2))) {
+                    if ((Chek_Friendship_Points(0x15) >= 0xC8)) {
+                        Schedule_Next_Event(0x70);
+                    }
+                } else {
+                    if ((Chek_Love_Points(0x15) >= 0x9C40)) {
+                        Schedule_Next_Event(0x70);
+                    }
+                }
+            }
+        }
+        if ((Check_If_Single(0xC) == 1)) {
+            if ((Check_Flag(0x67) != 2)) {
+                if (((Check_Flag(0x8E) == 2) || (Check_Flag(0x8F) == 2))) {
+                    if ((Chek_Friendship_Points(0xC) >= 0xC8)) {
+                        Schedule_Next_Event(0x71);
+                    }
+                } else {
+                    if ((Chek_Love_Points(0xC) >= 0x9C40)) {
+                        Schedule_Next_Event(0x71);
+                    }
+                }
+            }
+        }
+        if ((Check_If_Single(0x1A) == 1)) {
+            if ((Chek_Friendship_Points(0x1A) >= 0x64)) {
+                Schedule_Next_Event(0x72);
+            }
+        }
+        if ((Check_If_Single(0x17) == 1)) {
+            if (((Check_Flag(0xF4) == 0) && (Check_Flag(0) >= 2))) {
+                if ((Chek_Friendship_Points(0x17) >= 0x64)) {
+                    Schedule_Next_Event(0x73);
+                }
+            }
+        }
+        if ((Check_If_Single(0x14) == 1)) {
+            if ((Chek_Friendship_Points(0x14) >= 0x64)) {
+                Schedule_Next_Event(0x74);
+            }
+        }
+    }
+    if (((((((Check_Flag(0xC8) == 2) || (Check_Flag(0xC9) == 2)) || (Check_Flag(0xCA) == 2)) || (Check_Flag(0xCB) == 2)) || (Check_Flag(0xCC) == 2)) || (Check_Flag(0x17A) == 2))) {
+        if (((Check_If_Single(0x1A) == 1) && (Check_If_Single(3) == 1))) {
+            if (((Check_Flag(0x7E) == 2) || (Check_Flag(0x7F) == 2))) {
+                if ((Func0F6(0x75) == 0)) {
+                    if ((Check_Flag(0x2E) <= 5)) {
+                        Schedule_Next_Event(0x75);
+                    }
+                }
+            }
+        }
+        if (((Check_If_Single(0x17) == 1) && (Check_If_Single(0x19) == 1))) {
+            if (((Check_Flag(0x86) == 2) || (Check_Flag(0x87) == 2))) {
+                if ((Func0F6(0x76) == 0)) {
+                    if ((Check_Flag(0x2E) <= 5)) {
+                        Schedule_Next_Event(0x76);
+                    }
+                }
+            }
+        }
+        if (((Check_If_Single(2) == 1) && (Check_If_Single(0x13) == 1))) {
+            if ((((Check_Flag(0x75) == 2) || (Check_Flag(0x76) == 2)) || (Check_Flag(0x77) == 2))) {
+                if ((Func0F6(0x77) == 0)) {
+                    if ((Check_Flag(0x2E) <= 5)) {
+                        Schedule_Next_Event(0x77);
+                    }
+                }
+            }
+        }
+        if (((Check_If_Single(0x14) == 1) && (Check_If_Single(0x15) == 1))) {
+            if (((Check_Flag(0x96) == 2) || (Check_Flag(0x97) == 2))) {
+                if ((Func0F6(0x78) == 0)) {
+                    if ((Check_Flag(0x2E) <= 5)) {
+                        Schedule_Next_Event(0x78);
+                    }
+                }
+            }
+        }
+        if (((Check_If_Single(7) == 1) && (Check_If_Single(0xC) == 1))) {
+            if (((Check_Flag(0x8E) == 2) || (Check_Flag(0x8F) == 2))) {
+                if ((Func0F6(0x79) == 0)) {
+                    if ((Check_Flag(0x2E) <= 5)) {
+                        Schedule_Next_Event(0x79);
+                    }
+                }
+            }
+        }
+        if (((Check_If_Single(0xD) == 1) && (Check_If_Single(0xE) == 1))) {
+            if ((Func0F6(0x7A) == 0)) {
+                Schedule_Next_Event(0x7A);
+            }
+        }
+    }
+    if ((((Func12C(0) >= 0x64) && (Func12C(1) >= 0x64)) && (Func12C(2) >= 0x64))) {
+        if ((Func0F6(0x7B) == 0)) {
+            Schedule_Next_Event(0x7B);
+        }
+    }
+    if ((((Func12C(5) >= 0x64) && (Func12C(6) >= 0x64)) && (Func12C(7) >= 0x64))) {
+        if ((Func0F6(0x7C) == 0)) {
+            Schedule_Next_Event(0x7C);
+        }
+    }
+    if ((((Func12C(0xA) >= 0x64) && (Func12C(0xB) >= 0x64)) && (Func12C(0xC) >= 0x64))) {
+        if ((Func0F6(0x7D) == 0)) {
+            Schedule_Next_Event(0x7D);
+        }
+    }
+    if (((((((Chek_Love_Points(0x13) >= 0xC350) || (Chek_Love_Points(3) >= 0xC350)) || (Chek_Love_Points(0x19) >= 0xC350)) || (Chek_Love_Points(0xC) >= 0xC350)) || (Chek_Love_Points(0x15) >= 0xC350)) || (Chek_Love_Points(0x1F) >= 0xC350))) {
+        if ((Func0F6(0x7E) == 0)) {
+            Schedule_Next_Event(0x7E);
+        }
+    }
+    if ((Func12C(0x32) >= 0x32)) {
+        if ((Func0F6(0x80) == 0)) {
+            Schedule_Next_Event(0x80);
+        }
+    }
+    if ((Func12C(0x33) >= 0x32)) {
+        if ((Func0F6(0x81) == 0)) {
+            Schedule_Next_Event(0x81);
+        }
+    }
+    if (((((Func115() >= 1) || (Func116() >= 1)) || ((Check_Flag(0xDC) == 2) && (Check_Flag(0x43) == 1))) && (Func05D(0x46) == 0))) {
+        if ((Func0F6(0x82) == 0)) {
+            Schedule_Next_Event(0x82);
+        }
+    }
+    if (((Func115() >= 1) && (Func05D(0x47) == 0))) {
+        if ((Func0F6(0x83) == 0)) {
+            Schedule_Next_Event(0x83);
+        }
+    }
+    if (((Func116() >= 1) && (Func05D(0x48) == 0))) {
+        if ((Func0F6(0x84) == 0)) {
+            Schedule_Next_Event(0x84);
+        }
+    }
+    if (((Check_If_Single(7) == 1) && (Check_If_Single(0xC) == 1))) {
+        if (((Check_Flag(0x8E) == 2) || (Check_Flag(0x8F) == 2))) {
+            if ((Func0F6(0x85) == 0)) {
+                Schedule_Next_Event(0x85);
+            }
+        }
+    }
+    if (((var_1 == 1) && ((var_2 == 1) || (var_2 == 2)))) {
+        Set_Flag(0x141, 0);
+    }
+    if (((((((((((!Func05F(0x54) && (Check_Flag(0x141) == 0)) && (var_1 == 0)) && ((var_2 == 0x1E) || (RNG_Generator(0, 0x63) < 0x1E))) && (Chek_Friendship_Points(0x24) >= 0x4B)) && (Chek_Friendship_Points(0x25) >= 0x4B)) && (Chek_Friendship_Points(0x26) >= 0x4B)) && (Chek_Friendship_Points(0x27) >= 0x4B)) && (Chek_Friendship_Points(0x28) >= 0x4B)) && (Chek_Friendship_Points(0x29) >= 0x4B)) && (Chek_Friendship_Points(0x2A) >= 0x4B))) {
+        Schedule_Next_Event(0x86);
+    }
+    if (((((((Check_Flag(0x4C) == 2) || (Check_Flag(0x55) == 2)) || (Check_Flag(0x5F) == 2)) || (Check_Flag(0x67) == 2)) || (Check_Flag(0x6F) == 2)) || (Check_Flag(0x173) == 2))) {
+        if ((Func0F6(0x87) == 0)) {
+            Schedule_Next_Event(0x87);
+        }
+    }
+    if ((Check_Flag(0xE5) == 1)) {
+        Set_Flag(0xE5, 0);
+    }
+    if ((Check_Flag(0x51) == 1)) {
+        Set_Flag(0x51, 0);
+    }
+    if ((Check_Flag(0x124) == 1)) {
+        if ((Check_Flag(0x125) <= 2)) {
+            Set_Flag(0x125, (Check_Flag(0x125) + 1));
+        } else {
+            Set_Flag(0x124, 2);
+        }
+    }
+    if ((Check_Flag(0x122) == 2)) {
+        Set_Flag(0x122, 0);
+    }
+    if (((var_2 == 0x1E) || (var_2 == 1))) {
+        Set_Flag(0x138, 0);
+        Set_Flag(0x139, 0);
+    }
+    if (((var_1 == 3) && (((var_2 == 2) || (var_2 == 3)) || (var_2 == 4)))) {
+        Set_Flag(0x107, 0);
+        Set_Flag(0x109, 0);
+        Set_Flag(0x10A, 0);
+    }
+    if ((((Check_Flag(0x10B) == 2) && (Check_Flag(0x10C) == 0)) && (Check_Flag(0x10D) < 0x14))) {
+        Set_Flag(0x10D, (Check_Flag(0x10D) + 1));
+    }
+    if ((Check_Flag(0x102) == 2)) {
+        Set_Flag(0x102, 0);
+    }
+    if (((((Check_Flag(0xDD) == 2) && (Check_Flag(0xDF) == 0)) && (Check_Flag(0xDE) < 0x78)) && (Check_Flag(0x43) == 0))) {
+        Set_Flag(0xDE, (Check_Flag(0xDE) + 1));
+    }
+    if (((((var_0 == 1) && (var_1 == 2)) && ((var_2 == 0x10) || (var_2 == 0x11))) && (Check_Flag(0xF9) == 0))) {
+        Set_Flag(0xF9, 2);
+    }
+    if ((Check_Flag(0x242) == 1)) {
+        Set_Flag(0x242, 0);
+    }
+    if ((Check_Flag(0x14B) == 2)) {
+        Set_Flag(0x14B, 0);
+    }
+    if (((var_1 == 0) && ((var_2 == 0x13) || (var_2 == 0x14)))) {
+        Recalculate_Global_Schedules(0);
+        Set_Flag(0x188, 0);
+        Set_Flag(0x18A, 0);
+    }
+    if (((var_1 == 1) && ((var_2 == 2) || (var_2 == 3)))) {
+        Recalculate_Global_Schedules(4);
+        Set_Flag(0x193, 0);
+        Set_Flag(0x195, 0);
+    }
+    if (((var_1 == 1) && ((var_2 == 8) || (var_2 == 9)))) {
+        Recalculate_Global_Schedules(3);
+        Set_Flag(0x197, 0);
+        Set_Flag(0x199, 0);
+    }
+    if (((var_1 == 1) && ((var_2 == 0x15) || (var_2 == 0x16)))) {
+        Recalculate_Global_Schedules(1);
+        Set_Flag(0x19B, 0);
+        Set_Flag(0x19D, 0);
+    }
+    if (((var_1 == 2) && ((var_2 == 0x13) || (var_2 == 0x14)))) {
+        Recalculate_Global_Schedules(0);
+        Set_Flag(0x1AB, 0);
+        Set_Flag(0x1AD, 0);
+    }
+    if (((var_1 == 2) && ((var_2 == 0x16) || (var_2 == 0x17)))) {
+        Recalculate_Global_Schedules(2);
+        Set_Flag(0x1AF, 0);
+        Set_Flag(0x1B1, 0);
+    }
+    if (((((var_0 == 1) && (var_1 == 3)) && (var_2 == 0x1E)) || (((var_0 == 2) && (var_1 == 0)) && (var_2 == 1)))) {
+        if (((Check_Flag(0xF4) == 0) && (Check_Flag(0x126) == 0))) {
+            Set_Flag(0x126, 2);
+        }
+    }
+    if ((Check_Flag(0x55) == 2)) {
+        if (((Check_Flag(0x33) == var_1) && (Check_Flag(0x34) == var_2))) {
+            Set_Flag(0x24A, (Check_Flag(0x24A) + 1));
+        }
+        if ((Check_Flag(0xD2) == 1)) {
+            Set_Flag(0xD2, 2);
+        }
+        if ((((((Check_Flag(0xAA) == 1) || (Check_Flag(0xB9) == 1)) || (Check_Flag(0xBE) == 1)) || (Check_Flag(0xB4) == 1)) || (Check_Flag(0xCD) == 1))) {
+            Refresh_Map_Entities();
+            Despawn_Map_Item(0);
+            Despawn_Map_Item(1);
+        }
+        Add_Festival_Friendship_Bonus(3);
+        Add_Festival_Friendship_Bonus(0x23);
+        Set_Flag(0xAA, 2);
+        Set_Flag(0xB9, 2);
+        Set_Flag(0xBE, 2);
+        Set_Flag(0xB4, 2);
+        if ((Check_Flag(0xCD) == 1)) {
+            Set_Flag(0xCD, 2);
+        }
+        if ((Check_Flag(0xD2) == 1)) {
+            Set_Flag(0xD2, 2);
+        }
+    }
+    if ((Check_Flag(0x5F) == 2)) {
+        if (((Check_Flag(0x33) == var_1) && (Check_Flag(0x34) == var_2))) {
+            Set_Flag(0x24A, (Check_Flag(0x24A) + 1));
+        }
+        if ((Check_Flag(0xD3) == 1)) {
+            Set_Flag(0xD3, 2);
+        }
+        if ((((((Check_Flag(0xAC) == 1) || (Check_Flag(0xB5) == 1)) || (Check_Flag(0xBA) == 1)) || (Check_Flag(0xBF) == 1)) || (Check_Flag(0xCE) == 1))) {
+            Refresh_Map_Entities();
+            Despawn_Map_Item(0);
+            Despawn_Map_Item(1);
+        }
+        Add_Festival_Friendship_Bonus(0x19);
+        Add_Festival_Friendship_Bonus(0x23);
+        Set_Flag(0xAC, 2);
+        Set_Flag(0xB5, 2);
+        Set_Flag(0xBA, 2);
+        Set_Flag(0xBF, 2);
+        if ((Check_Flag(0xCE) == 1)) {
+            Set_Flag(0xCE, 2);
+        }
+        if ((Check_Flag(0xD3) == 1)) {
+            Set_Flag(0xD3, 2);
+        }
+    }
+    if ((Check_Flag(0x6F) == 2)) {
+        if (((Check_Flag(0x33) == var_1) && (Check_Flag(0x34) == var_2))) {
+            Set_Flag(0x24A, (Check_Flag(0x24A) + 1));
+        }
+        if ((Check_Flag(0xD4) == 1)) {
+            Set_Flag(0xD4, 2);
+        }
+        if ((((((Check_Flag(0xAE) == 1) || (Check_Flag(0xB6) == 1)) || (Check_Flag(0xBB) == 1)) || (Check_Flag(0xC0) == 1)) || (Check_Flag(0xCF) == 1))) {
+            Refresh_Map_Entities();
+            Despawn_Map_Item(0);
+            Despawn_Map_Item(1);
+        }
+        Add_Festival_Friendship_Bonus(0x15);
+        Add_Festival_Friendship_Bonus(0x23);
+        Set_Flag(0xAE, 2);
+        Set_Flag(0xB6, 2);
+        Set_Flag(0xBB, 2);
+        Set_Flag(0xC0, 2);
+        if ((Check_Flag(0xCF) == 1)) {
+            Set_Flag(0xCF, 2);
+        }
+        if ((Check_Flag(0xD4) == 1)) {
+            Set_Flag(0xD4, 2);
+        }
+    }
+    if ((Check_Flag(0x4C) == 2)) {
+        if (((Check_Flag(0x33) == var_1) && (Check_Flag(0x34) == var_2))) {
+            Set_Flag(0x24A, (Check_Flag(0x24A) + 1));
+        }
+        if ((Check_Flag(0xD5) == 1)) {
+            Set_Flag(0xD5, 2);
+        }
+        if ((((((Check_Flag(0xB0) == 1) || (Check_Flag(0xB7) == 1)) || (Check_Flag(0xBC) == 1)) || (Check_Flag(0xC1) == 1)) || (Check_Flag(0xD0) == 1))) {
+            Refresh_Map_Entities();
+            Despawn_Map_Item(0);
+            Despawn_Map_Item(1);
+        }
+        Add_Festival_Friendship_Bonus(0x13);
+        Add_Festival_Friendship_Bonus(0x23);
+        Set_Flag(0xB0, 2);
+        Set_Flag(0xB7, 2);
+        Set_Flag(0xBC, 2);
+        Set_Flag(0xC1, 2);
+        if ((Check_Flag(0xD0) == 1)) {
+            Set_Flag(0xD0, 2);
+        }
+        if ((Check_Flag(0xD5) == 1)) {
+            Set_Flag(0xD5, 2);
+        }
+    }
+    if ((Check_Flag(0x67) == 2)) {
+        if (((Check_Flag(0x33) == var_1) && (Check_Flag(0x34) == var_2))) {
+            Set_Flag(0x24A, (Check_Flag(0x24A) + 1));
+        }
+        if ((Check_Flag(0xD6) == 1)) {
+            Set_Flag(0xD6, 2);
+        }
+        if ((((((Check_Flag(0xB2) == 1) || (Check_Flag(0xB8) == 1)) || (Check_Flag(0xBD) == 1)) || (Check_Flag(0xC2) == 1)) || (Check_Flag(0xD1) == 1))) {
+            Refresh_Map_Entities();
+            Despawn_Map_Item(0);
+            Despawn_Map_Item(1);
+        }
+        Add_Festival_Friendship_Bonus(0xC);
+        Add_Festival_Friendship_Bonus(0x23);
+        Set_Flag(0xB2, 2);
+        Set_Flag(0xB8, 2);
+        Set_Flag(0xBD, 2);
+        Set_Flag(0xC2, 2);
+        if ((Check_Flag(0xD1) == 1)) {
+            Set_Flag(0xD1, 2);
+        }
+        if ((Check_Flag(0xD6) == 1)) {
+            Set_Flag(0xD6, 2);
+        }
+    }
+    if ((Check_Flag(0x173) == 2)) {
+        if (((Check_Flag(0x33) == var_1) && (Check_Flag(0x34) == var_2))) {
+            Set_Flag(0x24A, (Check_Flag(0x24A) + 1));
+        }
+        if ((((((Check_Flag(0x174) == 1) || (Check_Flag(0x176) == 1)) || (Check_Flag(0x177) == 1)) || (Check_Flag(0x178) == 1)) || (Check_Flag(0x17B) == 1))) {
+            Refresh_Map_Entities();
+            Despawn_Map_Item(0);
+            Despawn_Map_Item(1);
+        }
+        Add_Festival_Friendship_Bonus(0x1F);
+        Add_Festival_Friendship_Bonus(0x23);
+        Set_Flag(0x174, 2);
+        Set_Flag(0x176, 2);
+        Set_Flag(0x177, 2);
+        Set_Flag(0x178, 2);
+        if ((Check_Flag(0x17B) == 1)) {
+            Set_Flag(0x17B, 2);
+        }
+    }
+    if (((var_1 == 0) && ((var_2 == 0xF) || (var_2 == 0x10)))) {
+        Set_Flag(0x1B7, 0);
+        Set_Flag(0x1B9, 0);
+        Set_Flag(0x1BB, 0);
+        Set_Flag(0x1BD, 0);
+        Set_Flag(0x1BF, 0);
+    }
+    if (((var_1 == 2) && ((var_2 == 0xA) || (var_2 == 0xB)))) {
+        Set_Flag(0x1A4, 2);
+        Add_Festival_Friendship_Bonus(0xD);
+        Add_Festival_Friendship_Bonus(0x15);
+        Add_Festival_Friendship_Bonus(0x16);
+        Add_Festival_Friendship_Bonus(0x19);
+        Add_Festival_Friendship_Bonus(0x1B);
+        Add_Festival_Friendship_Bonus(0x13);
+        Add_Festival_Friendship_Bonus(0x18);
+        Add_Festival_Friendship_Bonus(0xC);
+        Add_Festival_Friendship_Bonus(0x12);
+        Add_Festival_Friendship_Bonus(0xB);
+        Add_Festival_Friendship_Bonus(9);
+    }
+    if (((var_1 == 2) && ((var_2 == 0xE) || (var_2 == 0xF)))) {
+        Set_Flag(0x1A8, 2);
+        switch (Check_Flag(0x1A9)) {
+            case 0:
+                var_5 = 0x13;
+                break;
+            case 1:
+                var_5 = 0x19;
+                break;
+            case 2:
+                var_5 = 3;
+                break;
+            case 3:
+                var_5 = 0xC;
+                break;
+            case 4:
+                var_5 = 0x15;
+                break;
+        }
+        Add_Festival_Friendship_Bonus(var_5);
+    }
+    if (Check_Flag(0x79)) {
+        Set_Flag(0x79, 0);
+        Set_Flag(0x245, 0);
+        Add_Festival_Friendship_Bonus(0x16);
+        Add_Festival_Friendship_Bonus(2);
+        Add_Festival_Friendship_Bonus(1);
+        Add_Festival_Friendship_Bonus(0x11);
+        Add_Festival_Friendship_Bonus(0x13);
+        Add_Festival_Friendship_Bonus(0x12);
+        Give_Friendship_Points(0x13, -0xA);
+        Give_Friendship_Points(0x16, -0xA);
+        Give_Friendship_Points(1, -0xA);
+        Give_Friendship_Points(0x11, -0xA);
+        Give_Friendship_Points(0x12, -0xA);
+        Add_Rival_Points(2, 0x64);
+        Set_Flag(0x77, 2);
+    } else {
+        if ((Check_Flag(0x245) == 1)) {
+            Set_Flag(0x245, 0);
+            Set_Flag(0x77, 2);
+            goto LBL_0467;
+        }
+        if (Check_Flag(0x81)) {
+            Set_Flag(0x81, 0);
+            Set_Flag(0x246, 0);
+            Add_Festival_Friendship_Bonus(2);
+            Add_Festival_Friendship_Bonus(3);
+            Add_Festival_Friendship_Bonus(1);
+            Add_Festival_Friendship_Bonus(0x13);
+            Add_Festival_Friendship_Bonus(0x16);
+            Add_Festival_Friendship_Bonus(0x1A);
+            Give_Friendship_Points(0x16, -0xA);
+            Give_Friendship_Points(1, -0xA);
+            Give_Friendship_Points(2, -0xA);
+            Give_Friendship_Points(0x13, -0xA);
+            Add_Rival_Points(3, 0x64);
+            Set_Flag(0x7F, 2);
+            goto LBL_0467;
+        }
+        if ((Check_Flag(0x246) == 1)) {
+            Set_Flag(0x246, 0);
+            Set_Flag(0x7F, 2);
+            goto LBL_0467;
+        }
+        if (Check_Flag(0x89)) {
+            Set_Flag(0x89, 0);
+            Set_Flag(0x249, 0);
+            Add_Festival_Friendship_Bonus(0x17);
+            Add_Festival_Friendship_Bonus(0x18);
+            Add_Festival_Friendship_Bonus(0x19);
+            Add_Festival_Friendship_Bonus(8);
+            Add_Festival_Friendship_Bonus(9);
+            Add_Festival_Friendship_Bonus(0x16);
+            Give_Friendship_Points(0x16, -0xA);
+            Give_Friendship_Points(9, -0xA);
+            Give_Friendship_Points(8, -0xA);
+            Give_Friendship_Points(0x18, -0xA);
+            Add_Rival_Points(0x19, 0x64);
+            Add_Rival_Points(0x17, 0x64);
+            Set_Flag(0x87, 2);
+            goto LBL_0467;
+        }
+        if ((Check_Flag(0x249) == 1)) {
+            Set_Flag(0x249, 0);
+            Set_Flag(0x87, 2);
+            goto LBL_0467;
+        }
+        if (Check_Flag(0x91)) {
+            Set_Flag(0x91, 0);
+            Set_Flag(0x247, 0);
+            Add_Festival_Friendship_Bonus(0xA);
+            Add_Festival_Friendship_Bonus(0xC);
+            Add_Festival_Friendship_Bonus(0xB);
+            Add_Festival_Friendship_Bonus(0x16);
+            Add_Festival_Friendship_Bonus(7);
+            Add_Festival_Friendship_Bonus(6);
+            Give_Friendship_Points(0x16, -0xA);
+            Give_Friendship_Points(6, -0xA);
+            Give_Friendship_Points(0xB, -0xA);
+            Give_Friendship_Points(0xA, -0xA);
+            Add_Rival_Points(0xC, 0x64);
+            Add_Rival_Points(7, 0x64);
+            Set_Flag(0x8F, 2);
+            goto LBL_0467;
+        }
+        if ((Check_Flag(0x247) == 1)) {
+            Set_Flag(0x247, 0);
+            Set_Flag(0x8F, 2);
+            goto LBL_0467;
+        }
+        if (Check_Flag(0x99)) {
+            Set_Flag(0x99, 0);
+            Set_Flag(0x248, 0);
+            Add_Festival_Friendship_Bonus(0x14);
+            Add_Festival_Friendship_Bonus(0xF);
+            Add_Festival_Friendship_Bonus(0x15);
+            Add_Festival_Friendship_Bonus(0x10);
+            Add_Festival_Friendship_Bonus(0xE);
+            Add_Festival_Friendship_Bonus(0x16);
+            Give_Friendship_Points(0x16, -0xA);
+            Give_Friendship_Points(0xF, -0xA);
+            Give_Friendship_Points(0x10, -0xA);
+            Give_Friendship_Points(0xE, -0xA);
+            Add_Rival_Points(0x15, 0x64);
+            Add_Rival_Points(0x14, 0x64);
+            Set_Flag(0x97, 2);
+            goto LBL_0467;
+        }
+        if ((Check_Flag(0x248) == 1)) {
+            Set_Flag(0x248, 0);
+            Set_Flag(0x97, 2);
+        }
+    }
+    if (((var_1 == 3) && (var_2 == 0x19))) {
+        Set_Flag(0x1CF, Func121());
+    }
+    if (((var_1 == 0) && (var_2 == 0x16))) {
+        if ((var_0 >= 6)) {
+            Set_Flag(0x18D, RNG_Generator(0, 4));
+        } else {
+            Set_Flag(0x18D, (var_0 - 1));
+        }
+    }
+    if ((((var_1 == 0) && (var_2 == 0x12)) && (Check_Flag(0x187) == 0))) {
+        Set_Animal_Festival_Entry_Status(0);
+    }
+    if ((((var_1 == 2) && (var_2 == 0x12)) && (Check_Flag(0x1AA) == 0))) {
+        Set_Animal_Festival_Entry_Status(0);
+    }
+    if (((var_1 == 1) && (var_2 == 1))) {
+        Unlock_Summer_Events();
+    }
+    if (((var_1 == 2) && (var_2 == 0xD))) {
+        Set_Flag(0x1A9, Func11F());
+    }
+    if (Init_Notice_Board_UI()) {
+        Set_Flag(0x23C, 1);
+    } else {
+        Set_Flag(0x23C, 0);
+    }
+    if ((((var_1 == 0) && (var_2 == 1)) || ((var_1 == 0) && (var_2 == 2)))) {
+        Set_Flag(0x180, 0);
+        Set_Flag(0x182, 0);
+        Set_Flag(0x183, 0);
+        Set_Flag(0x186, 0);
+        Set_Flag(0x185, 0);
+        Set_Flag(0x184, 0);
+        Set_Flag(0x187, 0);
+        Set_Flag(0x189, 0);
+        Set_Flag(0x18B, 0);
+        Set_Flag(0x18C, 0);
+        Set_Flag(0x18E, 0);
+        Set_Flag(0x192, 0);
+        Set_Flag(0x194, 0);
+        Set_Flag(0x196, 0);
+        Set_Flag(0x198, 0);
+        Set_Flag(0x19A, 0);
+        Set_Flag(0x19C, 0);
+        Set_Flag(0x19E, 0);
+        Set_Flag(0x1A0, 0);
+        Set_Flag(0x1A2, 0);
+        Set_Flag(0x1A1, 0);
+        Set_Flag(0x1A3, 0);
+        Set_Flag(0x1A4, 0);
+        Set_Flag(0x1A6, 0);
+        Set_Flag(0x1A7, 0);
+        Set_Flag(0x1A8, 0);
+        Set_Flag(0x1AA, 0);
+        Set_Flag(0x1AC, 0);
+        Set_Flag(0x1AE, 0);
+        Set_Flag(0x1B0, 0);
+        Set_Flag(0x1B2, 0);
+        Set_Flag(0x1B3, 0);
+        Set_Flag(0x1B4, 0);
+        Set_Flag(0x1B5, 0);
+        Set_Flag(0x1B6, 0);
+        Set_Flag(0x1B8, 0);
+        Set_Flag(0x1BA, 0);
+        Set_Flag(0x1BC, 0);
+        Set_Flag(0x1BE, 0);
+        Set_Flag(0x1C0, 0);
+        Set_Flag(0x1C1, 0);
+        Set_Flag(0x1C2, 0);
+        Set_Flag(0x1C8, 0);
+        Set_Flag(0x1C9, 0);
+        Set_Flag(0x1CA, 0);
+        Set_Flag(0x1CB, 0);
+        Set_Flag(0x1CC, 0);
+        Set_Flag(0x1C3, 0);
+        Set_Flag(0x1C4, 0);
+        Set_Flag(0x1C5, 0);
+        Set_Flag(0x1C6, 0);
+        Set_Flag(0x1C7, 0);
+        Set_Flag(0x1CD, 0);
+        Set_Flag(0x1CE, 0);
+        Set_Flag(0x1D0, 0);
+        Set_Flag(0x1D1, 0);
+        Set_Flag(0x12E, 0);
+        Set_Flag(0x12F, 0);
+        Set_Flag(0xAA, 0);
+        Set_Flag(0xAC, 0);
+        Set_Flag(0xAE, 0);
+        Set_Flag(0xB0, 0);
+        Set_Flag(0xB2, 0);
+        Set_Flag(0x174, 0);
+        Set_Flag(0xB4, 0);
+        Set_Flag(0xB5, 0);
+        Set_Flag(0xB6, 0);
+        Set_Flag(0xB7, 0);
+        Set_Flag(0xB8, 0);
+        Set_Flag(0x176, 0);
+        Set_Flag(0xB9, 0);
+        Set_Flag(0xBA, 0);
+        Set_Flag(0xBB, 0);
+        Set_Flag(0xBC, 0);
+        Set_Flag(0xBD, 0);
+        Set_Flag(0x177, 0);
+        Set_Flag(0xBE, 0);
+        Set_Flag(0xBF, 0);
+        Set_Flag(0xC0, 0);
+        Set_Flag(0xC1, 0);
+        Set_Flag(0xC2, 0);
+        Set_Flag(0x178, 0);
+        Set_Flag(0x156, 0);
+        Set_Flag(0x127, 0);
+    }
+    if ((Check_Flag(0xE3) == 2)) {
+        Set_Flag(0xE3, 0);
+        if (!(((((((((Check_Flag(0x4B) == 2) && (Check_Flag(0x4C) == 0)) && (Check_Flag(0x33) == var_1)) && (Check_Flag(0x34) == var_2)) || ((((Check_Flag(0x54) == 2) && (Check_Flag(0x55) == 0)) && (Check_Flag(0x33) == var_1)) && (Check_Flag(0x34) == var_2))) || ((((Check_Flag(0x5E) == 2) && (Check_Flag(0x5F) == 0)) && (Check_Flag(0x33) == var_1)) && (Check_Flag(0x34) == var_2))) || ((((Check_Flag(0x66) == 2) && (Check_Flag(0x67) == 0)) && (Check_Flag(0x33) == var_1)) && (Check_Flag(0x34) == var_2))) || ((((Check_Flag(0x6E) == 2) && (Check_Flag(0x6F) == 0)) && (Check_Flag(0x33) == var_1)) && (Check_Flag(0x34) == var_2))) || ((((Check_Flag(0x172) == 2) && (Check_Flag(0x173) == 0)) && (Check_Flag(0x33) == var_1)) && (Check_Flag(0x34) == var_2)))) {
+            Execute_Script(0x3DC);
+        }
+    }
+    Execute_Script(0x3D7);
+    exit;
+}

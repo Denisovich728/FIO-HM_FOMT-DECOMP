@@ -1,0 +1,11 @@
+// Script 340
+#include "Fomt_Lib.src"
+
+script 340 Event_0340 {
+    const MESSAGE_0 = "Stairs to Basement\BRK";
+    
+    TalkOpen();
+    TalkMessage(0);
+    TalkClose();
+    exit;
+}

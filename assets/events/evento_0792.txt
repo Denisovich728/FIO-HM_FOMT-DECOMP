@@ -1,0 +1,128 @@
+// Script 792
+#include "Fomt_Lib.src"
+
+script 792 Event_0792 {
+    const MESSAGE_0 = "Sorry, \xFF!,\r\nbut I'm busy right now. \r\nCome back later. \BRK";
+    const MESSAGE_1 = "Dad...\BRK";
+    const MESSAGE_2 = "What is it, Ann? \BRK";
+    const MESSAGE_3 = "I have a present for you. \BRK";
+    const MESSAGE_4 = "A present? What? \BRK";
+    const MESSAGE_5 = "Here you are. \BRK";
+    const MESSAGE_6 = "What's the special occasion? \BRK";
+    const MESSAGE_7 = "I can't believe you forgot\r\nyour own birthday, Dad!\BRK";
+    const MESSAGE_8 = "You're right! I'd totally \r\nforgotten! You're a \r\ngood daughter, Ann. \BRK";
+    const MESSAGE_9 = "I'll be going back \r\nto the store now. \BRK";
+    const MESSAGE_10 = "Alright. Thanks. \BRK";
+    
+    End_Cinematic_State();
+    Warp_Player(0x16, 0x44, 0x50);
+    SetEntityPosition(0, 0x67, 0xE0, "Up");
+    if ((Inventory_Check() == 1)) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    SetEntityPosition(0x18, 0x30, 0x50, "Up");
+    SetEntityAnim(0x18, 0x7B2);
+    Fade_In(2, 1);
+    if ((Inventory_Check() == 1)) {
+        SetEntityAnim(0, 0x1C6);
+    } else {
+        SetEntityAnim(0, 0x156);
+    }
+    Set_Vector_Y(0, 0x50, 1);
+    Execute_Movement(0);
+    SetEntityFacing(0, "Left");
+    Set_Vector_X(0, 0x44, 1);
+    Execute_Movement(0);
+    if ((Inventory_Check() == 1)) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    SetEntityFacing(0x18, "Right");
+    TalkOpen();
+    Set_Portrait(0x53);
+    Set_Name_Window(0x18);
+    TalkMessage(0);
+    TalkClose();
+    SetEntityPosition(0x19, 0x24, 0xE0, "Up");
+    SetEntityAnim(0x19, 0x7C2);
+    Set_Vector_Y(0x19, 0x64, 1);
+    Execute_Movement(0x19);
+    SetEntityFacing(0x19, "Right");
+    Set_Vector_X(0x19, 0x30, 1);
+    Execute_Movement(0x19);
+    SetEntityFacing(0x19, "Up");
+    SetEntityAnim(0x19, 0x7BE);
+    SetEntityFacing(0x18, "Down");
+    TalkOpen();
+    Set_Portrait(0x57);
+    Set_Name_Window(0x19);
+    TalkMessage(1);
+    TalkClose();
+    TalkOpen();
+    Set_Portrait(0x53);
+    Set_Name_Window(0x18);
+    TalkMessage(2);
+    TalkClose();
+    TalkOpen();
+    Set_Portrait(0x58);
+    Set_Name_Window(0x19);
+    TalkMessage(3);
+    TalkClose();
+    TalkOpen();
+    Set_Portrait(0x53);
+    Set_Name_Window(0x18);
+    TalkMessage(4);
+    TalkClose();
+    TalkOpen();
+    Set_Portrait(0x58);
+    Set_Name_Window(0x19);
+    TalkMessage(5);
+    TalkClose();
+    SetEntityAnim(0x19, 0x7C6);
+    Make_Delay(0x1E);
+    SetEntityAnim(0x19, 0x7BE);
+    Show_Emote(0x18, 3, 0);
+    Make_Delay(0x3C);
+    TalkOpen();
+    Set_Portrait(0x56);
+    Set_Name_Window(0x18);
+    TalkMessage(6);
+    TalkClose();
+    TalkOpen();
+    Set_Portrait(0x59);
+    Set_Name_Window(0x19);
+    TalkMessage(7);
+    TalkClose();
+    TalkOpen();
+    Set_Portrait(0x54);
+    Set_Name_Window(0x18);
+    TalkMessage(8);
+    TalkClose();
+    TalkOpen();
+    Set_Portrait(0x5C);
+    Set_Name_Window(0x19);
+    TalkMessage(9);
+    TalkClose();
+    TalkOpen();
+    Set_Portrait(0x54);
+    Set_Name_Window(0x18);
+    TalkMessage(10);
+    TalkClose();
+    SetEntityAnim(0x19, 0x7C2);
+    SetEntityFacing(0x19, "Left");
+    Set_Vector_X(0x19, 0x24, 1);
+    Execute_Movement(0x19);
+    SetEntityFacing(0x19, "Down");
+    Set_Vector_Y(0x19, 0xE0, 1);
+    Execute_Movement(0x19);
+    Hide_Entity(0x19);
+    Free_Event_Entity(0x18);
+    End_Cinematic_State();
+    Set_Flag(0x12A, 1);
+    Routine_State_Override(0x18, 0x319);
+    exit;
+    exit;
+}

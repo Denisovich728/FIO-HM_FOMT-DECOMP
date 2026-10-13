@@ -1,0 +1,30 @@
+// Script 1270
+#include "Fomt_Lib.src"
+
+script 1270 Event_1270 {
+    const MESSAGE_0 = "I love Sheep. They're\r\nsuch gentle creatures. \BRK";
+    const MESSAGE_1 = "Your sheep are going to \r\ncompete, too? \r\nI hope you win!\BRK";
+    
+    if ((Check_If_Single(0xB) == 0)) {
+        Free_Event_Entity(0xB);
+    }
+    SetEntityFacing(0xB, GetOppositeFacing(GetEntityFacing(0)));
+    if ((Check_Flag(0x1AF) == 0)) {
+        TalkOpen();
+        Set_Portrait(0x6F);
+        Set_Name_Window(0xB);
+        TalkMessage(0);
+    } else {
+        TalkOpen();
+        Set_Portrait(0x6F);
+        Set_Name_Window(0xB);
+        TalkMessage(1);
+    }
+    TalkClose();
+    if ((Has_Spoken_To_NPC_Today(0xB) == 0)) {
+        Give_Friendship_Points(0xB, 5);
+    }
+    Free_Event_Entity(0xB);
+    SetEntityFacing(0xB, "Up");
+    exit;
+}

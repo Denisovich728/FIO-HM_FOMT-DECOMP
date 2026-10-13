@@ -1,0 +1,42 @@
+// Script 1180
+#include "Fomt_Lib.src"
+
+script 1180 Event_1180 {
+    const MESSAGE_0 = "If a Cow ever steps on your\r\nfoot, don't try to pull \r\nit out. That'll only make \BRK\r\nit worse. \BRK";
+    const MESSAGE_1 = "\xFF% looks \r\nlike she gives great Milk. \r\nCan I drink some later? \BRK";
+    const MESSAGE_2 = "I thought \xFF% \r\nwould win for sure. \r\nTry again next year. \BRK";
+    
+    var var_0;
+    
+    var_0 = Func11A(1);
+    GetAnimalName(0, 1, var_0);
+    if ((Check_If_Single(0x14) == 0)) {
+        Free_Event_Entity(0x14);
+    }
+    SetEntityFacing(0x14, GetOppositeFacing(GetEntityFacing(0)));
+    if ((Check_Flag(0x19B) == 0)) {
+        TalkOpen();
+        Set_Portrait(0x23);
+        Set_Name_Window(0x14);
+        TalkMessage(0);
+    } else {
+        if ((Check_Flag(0x19D) == 1)) {
+            TalkOpen();
+            Set_Portrait(0x24);
+            Set_Name_Window(0x14);
+            TalkMessage(1);
+            goto LBL_0006;
+        }
+        TalkOpen();
+        Set_Portrait(0x23);
+        Set_Name_Window(0x14);
+        TalkMessage(2);
+    }
+    TalkClose();
+    if ((Has_Spoken_To_NPC_Today(0x14) == 0)) {
+        Give_Friendship_Points(0x14, 5);
+    }
+    Free_Event_Entity(0x14);
+    SetEntityFacing(0x14, "Down");
+    exit;
+}

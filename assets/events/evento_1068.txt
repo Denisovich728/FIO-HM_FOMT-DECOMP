@@ -1,0 +1,23 @@
+// Script 1068
+#include "Fomt_Lib.src"
+
+script 1068 Event_1068 {
+    const MESSAGE_0 = "Fresh Rice Cakes are the \r\nbest. I can never stop \r\neating them! \BRK";
+    
+    if ((Check_If_Single(0x18) == 0)) {
+        Free_Event_Entity(0x18);
+    }
+    SetEntityFacing(0x18, GetOppositeFacing(GetEntityFacing(0)));
+    TalkOpen();
+    Set_Portrait(0x54);
+    Set_Name_Window(0x18);
+    TalkMessage(0);
+    Talk_Mini_Close();
+    TalkClose();
+    if ((Has_Spoken_To_NPC_Today(0x18) == 0)) {
+        Give_Friendship_Points(0x18, 5);
+    }
+    Free_Event_Entity(0x18);
+    SetEntityFacing(0x18, "Down");
+    exit;
+}

@@ -1,0 +1,23 @@
+// Script 86
+#include "Fomt_Lib.src"
+
+script 86 Event_0086 {
+    Kill_NPC(0);
+    Pan_Camera_To(0x358, 0x218, 2);
+    SetEntityFacing(0, 2);
+    PlaySong(0, 0x6D);
+    SetEntityAnim(0, 0x12A);
+    Set_Vector_X(0, 0x358, 2);
+    Execute_Movement(0);
+    Make_Delay(0x1E);
+    PlaySong(0, 0x9C);
+    Anim_Door_Close(0xD);
+    SetEntityFacing(0, 0);
+    SetEntityAnim(0, 0x1C6);
+    Set_Vector_Y(0, 0x218, 1);
+    Execute_Movement(0);
+    Wait_Camera_Stop();
+    PlaySong(0, 0xCD);
+    Anim_Door_Exit(0xD);
+    exit;
+}

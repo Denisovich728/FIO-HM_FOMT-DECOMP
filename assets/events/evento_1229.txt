@@ -1,0 +1,29 @@
+// Script 1229
+#include "Fomt_Lib.src"
+
+script 1229 Event_1229 {
+    const MESSAGE_0 = "It doesn't matter what it \r\ntastes like! \BRK\WAIT_CLICKNot eating it would be a \r\nwaste. \BRK\WAIT_CLICKHave you finished yours, \r\n\xFF!? \BRK";
+    const MESSAGE_1 = "Now that I'm stuffed, I've \r\ngot to get back to work. \BRK";
+    
+    if ((Check_If_Single(0x1B) == 0)) {
+        Free_Event_Entity(0x1B);
+    }
+    SetEntityFacing(0x1B, GetOppositeFacing(GetEntityFacing(0)));
+    if ((Has_Spoken_To_NPC_Today(0x1B) == 0)) {
+        Give_Friendship_Points(0x1B, 5);
+    }
+    TalkOpen();
+    Set_Name_Window(0x1B);
+    if ((Check_Flag(0x1A5) == 1)) {
+        Set_Portrait(0xAC);
+        TalkMessage(0);
+        TalkClose();
+    } else {
+        Set_Portrait(0xAC);
+        TalkMessage(1);
+        TalkClose();
+    }
+    Free_Event_Entity(0x1B);
+    SetEntityFacing(0x1B, "Left");
+    exit;
+}

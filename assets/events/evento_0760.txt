@@ -1,0 +1,88 @@
+// Script 760
+#include "Fomt_Lib.src"
+
+script 760 Event_0760 {
+    const MESSAGE_0 = "You and Jeff have been \r\nmarried a long time, \r\nhaven't you? \BRK";
+    const MESSAGE_1 = "Yes. \BRK";
+    const MESSAGE_2 = "You've known each other\r\nsince you were kids, right?\BRK";
+    const MESSAGE_3 = "Yeah...Jeff never used to be\r\nable to do anything without \r\nme!\BRK";
+    const MESSAGE_4 = "He used to cling to you\r\nwhen we were kids, \r\ndidn't he? \BRK";
+    const MESSAGE_5 = "He was always scared\r\nof things without me...\BRK";
+    const MESSAGE_6 = "Ha ha...He used to run\r\nto you when Duke bullied \r\nhim too, didn't he? \BRK";
+    const MESSAGE_7 = "That's right! Jeff never\r\nknew how to stand up for\r\nhimself to Duke...\BRK\WAIT_CLICKThat's why he came \r\nrunning to me...\BRK";
+    const MESSAGE_8 = "Still, I am grateful to him\r\nfor everything.\BRK\WAIT_CLICKHe's been a great husband\r\nand a great dad to Karen.\BRK";
+    const MESSAGE_9 = "Huh, thanks for the mushy.\r\nstory. Hee hee hee! \BRK";
+    const MESSAGE_10 = "Come by any time. \BRK";
+    
+    Warp_Player(0xA, 0xA1, 0x57);
+    SetEntityPosition(1, 0xD0, 0x4F, "Left");
+    SetEntityAnim(1, 0x25F);
+    SetEntityPosition(0x12, 0xBE, 0x4F, "Right");
+    SetEntityAnim(0x12, 0x6C5);
+    SetEntityPosition(0, 0x78, 0xD0, "Up");
+    if ((Inventory_Check() == 1)) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    Fade_In(2, 1);
+    TalkOpen();
+    Set_Portrait(0xE);
+    Set_Name_Window(1);
+    TalkMessage(0);
+    TalkClose();
+    TalkOpen();
+    Set_Portrait(0x4F);
+    Set_Name_Window(0x12);
+    TalkMessage(1);
+    TalkClose();
+    TalkOpen();
+    Set_Portrait(0xE);
+    Set_Name_Window(1);
+    TalkMessage(2);
+    TalkClose();
+    TalkOpen();
+    Set_Portrait(0x4F);
+    Set_Name_Window(0x12);
+    TalkMessage(3);
+    TalkClose();
+    TalkOpen();
+    Set_Portrait(0xE);
+    Set_Name_Window(1);
+    TalkMessage(4);
+    TalkClose();
+    TalkOpen();
+    Set_Portrait(0x50);
+    Set_Name_Window(0x12);
+    TalkMessage(5);
+    TalkClose();
+    TalkOpen();
+    Set_Portrait(0xF);
+    Set_Name_Window(1);
+    TalkMessage(6);
+    TalkClose();
+    TalkOpen();
+    Set_Portrait(0x50);
+    Set_Name_Window(0x12);
+    TalkMessage(7);
+    Set_Portrait(0x4F);
+    TalkMessage(8);
+    TalkClose();
+    TalkOpen();
+    Set_Portrait(0xF);
+    Set_Name_Window(1);
+    TalkMessage(9);
+    TalkClose();
+    TalkOpen();
+    Set_Portrait(0x50);
+    Set_Name_Window(0x12);
+    TalkMessage(10);
+    TalkClose();
+    End_Cinematic_State();
+    Pan_Camera_To(0x78, 0xD0, 2);
+    Wait_Camera_Stop();
+    Set_Flag(0x119, 1);
+    Routine_State_Override(0x12, 0x2FA);
+    Routine_State_Override(1, 0x2F9);
+    exit;
+}

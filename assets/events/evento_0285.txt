@@ -1,0 +1,385 @@
+// Script 285
+#include "Fomt_Lib.src"
+
+script 285 Event_0285 {
+    const MESSAGE_0 = "You'll have to wait until \r\nwhat you bought arrives.\BRK";
+    const MESSAGE_1 = "There is a phone.\BRK";
+    const MESSAGE_2 = "You can make a call for 10G.";
+    const MESSAGE_3 = "Make a call.";
+    const MESSAGE_4 = "Don't make a call.";
+    const MESSAGE_5 = "You need 10G to make a call.\BRK";
+    const MESSAGE_6 = "Hello.\r\nThis is the TV\r\nShopping Network.\BRK\WAIT_CLICK";
+    const MESSAGE_7 = "The Watch is 2,000G.\r\nDo you want it?\BRK";
+    const MESSAGE_8 = "\x81\x99Watch: 2,000G";
+    const MESSAGE_9 = "Buy";
+    const MESSAGE_10 = "Don't buy";
+    const MESSAGE_11 = "The Mirror is 1,000G.\r\nDo you want it?\BRK";
+    const MESSAGE_12 = "\x81\x99Mirror: 1,000G";
+    const MESSAGE_13 = "The refrigerator is 2,500G.\r\nDo you want it?\BRK";
+    const MESSAGE_14 = "\x81\x99Refrigerator: 2,500G";
+    const MESSAGE_15 = "The Shelf is 2,500G.\r\nDo you want it?\BRK";
+    const MESSAGE_16 = "\x81\x99Shelf: 2,500G";
+    const MESSAGE_17 = "The Kitchen is 4,000G.\r\nDo you want it?\BRK";
+    const MESSAGE_18 = "\x81\x99Kitchen: 4,000G";
+    const MESSAGE_19 = "The Carpet is 5,000G.\r\nDo you want it?\BRK";
+    const MESSAGE_20 = "\x81\x99Carpet: 5,000G";
+    const MESSAGE_21 = "The Large Bed is 10,000G.\r\nDo you want it?\BRK";
+    const MESSAGE_22 = "\x81\x99Large Bed: 10,000G";
+    const MESSAGE_23 = "The Knife is 1,500G.\r\nDo you want it?\BRK";
+    const MESSAGE_24 = "\x81\x99Knife: 1,500G";
+    const MESSAGE_25 = "The Frying Pan is 1,200G.\r\nDo you want it?\BRK";
+    const MESSAGE_26 = "\x81\x99Frying Pan: 1,200G";
+    const MESSAGE_27 = "The Pot is 1,000G.\r\nDo you want it?\BRK";
+    const MESSAGE_28 = "\x81\x99Pot: 1,000G";
+    const MESSAGE_29 = "The Mixer is 1,200G.\r\nDo you want it?\BRK";
+    const MESSAGE_30 = "\x81\x99Mixer: 1,200G";
+    const MESSAGE_31 = "The Whisk is 500G.\r\nDo you want it?\BRK";
+    const MESSAGE_32 = "\x81\x99Whisk: 500G";
+    const MESSAGE_33 = "The Rolling Pin is 750G.\r\nDo you want it?\BRK";
+    const MESSAGE_34 = "\x81\x99Rolling Pin: 750G";
+    const MESSAGE_35 = "The Oven is 2,500G.\r\nDo you want it?\BRK";
+    const MESSAGE_36 = "\x81\x99Oven: 2,500G";
+    const MESSAGE_37 = "Seasoning Set is 2,500G.\r\nDo you want it?\BRK";
+    const MESSAGE_38 = "\x81\x99Seasoning Set: 2,500G";
+    const MESSAGE_39 = "Power Berry is 10,000G.\r\nDo you want it?\BRK";
+    const MESSAGE_40 = "\x81\x99Power Berry: 10,000G";
+    const MESSAGE_41 = "...But, I'm not\r\nselling anything right now.\BRK";
+    const MESSAGE_42 = "Thanks a lot.\r\nI'll deliver it in \r\n2-3 days.\BRK";
+    const MESSAGE_43 = "It looks like you don't\r\nhave enough gold. I'd\r\nhold off if I were you.\BRK";
+    const MESSAGE_44 = "Just give me a call if you\r\ndecide you want it \r\nafter all.\BRK";
+    
+    var var_0;
+    var var_1;
+    
+    TalkOpen();
+    if ((Chek_Envio() != 0x10)) {
+        TalkMessage(0);
+        TalkClose();
+        exit;
+    } else {
+        if (((((Check_Flag(0xE) == 0) && (Check_Flag(0x1A) == 1)) && (Check_Flag(0x1B) == 1)) || ((((((((((((((Check_Flag(0xE) == 1) && (Check_Flag(0x1A) == 1)) && (Check_Flag(0x1B) == 1)) && (Check_Flag(0x15) == 1)) && (Check_Flag(0x16) == 1)) && (Check_Flag(0x17) == 1)) && (Check_Flag(0x20) == 1)) && (Check_Flag(0x21) == 1)) && (Check_Flag(0x22) == 1)) && (Check_Flag(0x23) == 1)) && (Check_Flag(0x24) == 1)) && (Check_Flag(0x25) == 1)) && (Check_Flag(0x26) == 1)) && (Check_Flag(0x27) == 1)))) {
+            TalkMessage(1);
+            TalkClose();
+            exit;
+            goto LBL_0003;
+        }
+        if ((Func0DD() == 0x10)) {
+            TalkMessage(1);
+            TalkClose();
+            exit;
+            goto LBL_0003;
+        }
+        var_0 = Show_Tre_Option_Menu(2, 3, 4);
+        switch (var_0) {
+            case 1:
+                if ((Check_Money() >= 0xA)) {
+                    Take_Money(0xA);
+                    goto LBL_0030;
+                }
+                TalkMessage(5);
+                TalkClose();
+                exit;
+                break;
+            case 2:
+                TalkClose();
+                exit;
+                break;
+        }
+        TalkMessage(6);
+        switch (Func0DD()) {
+            case 0:
+                TalkMessage(7);
+                var_0 = Show_Tre_Option_Menu(8, 9, 10);
+                switch (var_0) {
+                    case 1:
+                        if ((Check_Money() >= 0x7D0)) {
+                            Take_Money(0x7D0);
+                            var_1 = 0;
+                            goto LBL_0039;
+                        }
+                        var_1 = 1;
+                        break;
+                    case 2:
+                        var_1 = 2;
+                        break;
+                }
+                break;
+            case 1:
+                TalkMessage(11);
+                var_0 = Show_Tre_Option_Menu(12, 9, 10);
+                switch (var_0) {
+                    case 1:
+                        if ((Check_Money() >= 0x3E8)) {
+                            Take_Money(0x3E8);
+                            var_1 = 0;
+                            goto LBL_0042;
+                        }
+                        var_1 = 1;
+                        break;
+                    case 2:
+                        var_1 = 2;
+                        break;
+                }
+                break;
+            case 2:
+                TalkMessage(13);
+                var_0 = Show_Tre_Option_Menu(14, 9, 10);
+                switch (var_0) {
+                    case 1:
+                        if ((Check_Money() >= 0x9C4)) {
+                            Take_Money(0x9C4);
+                            var_1 = 0;
+                            goto LBL_004B;
+                        }
+                        var_1 = 1;
+                        break;
+                    case 2:
+                        var_1 = 2;
+                        break;
+                }
+                break;
+            case 3:
+                TalkMessage(15);
+                var_0 = Show_Tre_Option_Menu(16, 9, 10);
+                switch (var_0) {
+                    case 1:
+                        if ((Check_Money() >= 0x9C4)) {
+                            Take_Money(0x9C4);
+                            var_1 = 0;
+                            goto LBL_0054;
+                        }
+                        var_1 = 1;
+                        break;
+                    case 2:
+                        var_1 = 2;
+                        break;
+                }
+                break;
+            case 4:
+                TalkMessage(17);
+                var_0 = Show_Tre_Option_Menu(18, 9, 10);
+                switch (var_0) {
+                    case 1:
+                        if ((Check_Money() >= 0xFA0)) {
+                            Take_Money(0xFA0);
+                            var_1 = 0;
+                            goto LBL_005D;
+                        }
+                        var_1 = 1;
+                        break;
+                    case 2:
+                        var_1 = 2;
+                        break;
+                }
+                break;
+            case 5:
+                TalkMessage(19);
+                var_0 = Show_Tre_Option_Menu(20, 9, 10);
+                switch (var_0) {
+                    case 1:
+                        if ((Check_Money() >= 0x1388)) {
+                            Take_Money(0x1388);
+                            var_1 = 0;
+                            goto LBL_0066;
+                        }
+                        var_1 = 1;
+                        break;
+                    case 2:
+                        var_1 = 2;
+                        break;
+                }
+                break;
+            case 6:
+                TalkMessage(21);
+                var_0 = Show_Tre_Option_Menu(22, 9, 10);
+                switch (var_0) {
+                    case 1:
+                        if ((Check_Money() >= 0x2710)) {
+                            Take_Money(0x2710);
+                            var_1 = 0;
+                            goto LBL_006F;
+                        }
+                        var_1 = 1;
+                        break;
+                    case 2:
+                        var_1 = 2;
+                        break;
+                }
+                break;
+            case 7:
+                TalkMessage(23);
+                var_0 = Show_Tre_Option_Menu(24, 9, 10);
+                switch (var_0) {
+                    case 1:
+                        if ((Check_Money() >= 0x5DC)) {
+                            Take_Money(0x5DC);
+                            var_1 = 0;
+                            goto LBL_0078;
+                        }
+                        var_1 = 1;
+                        break;
+                    case 2:
+                        var_1 = 2;
+                        break;
+                }
+                break;
+            case 8:
+                TalkMessage(25);
+                var_0 = Show_Tre_Option_Menu(26, 9, 10);
+                switch (var_0) {
+                    case 1:
+                        if ((Check_Money() >= 0x4B0)) {
+                            Take_Money(0x4B0);
+                            var_1 = 0;
+                            goto LBL_0081;
+                        }
+                        var_1 = 1;
+                        break;
+                    case 2:
+                        var_1 = 2;
+                        break;
+                }
+                break;
+            case 9:
+                TalkMessage(27);
+                var_0 = Show_Tre_Option_Menu(28, 9, 10);
+                switch (var_0) {
+                    case 1:
+                        if ((Check_Money() >= 0x3E8)) {
+                            Take_Money(0x3E8);
+                            var_1 = 0;
+                            goto LBL_008A;
+                        }
+                        var_1 = 1;
+                        break;
+                    case 2:
+                        var_1 = 2;
+                        break;
+                }
+                break;
+            case 0xA:
+                TalkMessage(29);
+                var_0 = Show_Tre_Option_Menu(30, 9, 10);
+                switch (var_0) {
+                    case 1:
+                        if ((Check_Money() >= 0x4B0)) {
+                            Take_Money(0x4B0);
+                            var_1 = 0;
+                            goto LBL_0093;
+                        }
+                        var_1 = 1;
+                        break;
+                    case 2:
+                        var_1 = 2;
+                        break;
+                }
+                break;
+            case 0xB:
+                TalkMessage(31);
+                var_0 = Show_Tre_Option_Menu(32, 9, 10);
+                switch (var_0) {
+                    case 1:
+                        if ((Check_Money() >= 0x1F4)) {
+                            Take_Money(0x1F4);
+                            var_1 = 0;
+                            goto LBL_009C;
+                        }
+                        var_1 = 1;
+                        break;
+                    case 2:
+                        var_1 = 2;
+                        break;
+                }
+                break;
+            case 0xC:
+                TalkMessage(33);
+                var_0 = Show_Tre_Option_Menu(34, 9, 10);
+                switch (var_0) {
+                    case 1:
+                        if ((Check_Money() >= 0x2EE)) {
+                            Take_Money(0x2EE);
+                            var_1 = 0;
+                            goto LBL_00A5;
+                        }
+                        var_1 = 1;
+                        break;
+                    case 2:
+                        var_1 = 2;
+                        break;
+                }
+                break;
+            case 0xD:
+                TalkMessage(35);
+                var_0 = Show_Tre_Option_Menu(36, 9, 10);
+                switch (var_0) {
+                    case 1:
+                        if ((Check_Money() >= 0x9C4)) {
+                            Take_Money(0x9C4);
+                            var_1 = 0;
+                            goto LBL_00AE;
+                        }
+                        var_1 = 1;
+                        break;
+                    case 2:
+                        var_1 = 2;
+                        break;
+                }
+                break;
+            case 0xE:
+                TalkMessage(37);
+                var_0 = Show_Tre_Option_Menu(38, 9, 10);
+                switch (var_0) {
+                    case 1:
+                        if ((Check_Money() >= 0x9C4)) {
+                            Take_Money(0x9C4);
+                            var_1 = 0;
+                            goto LBL_00B7;
+                        }
+                        var_1 = 1;
+                        break;
+                    case 2:
+                        var_1 = 2;
+                        break;
+                }
+                break;
+            case 0xF:
+                TalkMessage(39);
+                var_0 = Show_Tre_Option_Menu(40, 9, 10);
+                switch (var_0) {
+                    case 1:
+                        if ((Check_Money() >= 0x2710)) {
+                            Take_Money(0x2710);
+                            var_1 = 0;
+                            goto LBL_00C0;
+                        }
+                        var_1 = 1;
+                        break;
+                    case 2:
+                        var_1 = 2;
+                        break;
+                }
+                break;
+            case 0x10:
+                TalkMessage(41);
+                TalkClose();
+                exit;
+                break;
+        }
+    }
+    TalkOpen();
+    switch (var_1) {
+        case 0:
+            TalkMessage(42);
+            Proc0E1();
+            break;
+        case 1:
+            TalkMessage(43);
+            break;
+        case 2:
+            TalkMessage(44);
+            break;
+    }
+    TalkClose();
+    exit;
+    exit;
+}

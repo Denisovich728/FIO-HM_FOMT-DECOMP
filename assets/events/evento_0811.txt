@@ -1,0 +1,103 @@
+// Script 811
+#include "Fomt_Lib.src"
+
+script 811 Event_0811 {
+    const MESSAGE_0 = "I brought 3 rare and \r\nvaluable items for you \r\ntoday! These are special\BRK\r\nfor you.\BRK";
+    const MESSAGE_1 = "These 3 kinds of Apples are\r\nno ordinary Apples, \r\nyou understand? \BRK";
+    const MESSAGE_2 = "This is the first kind. \r\nIt's called SUGDW Apple. \BRK";
+    const MESSAGE_3 = "It's real name is very long:\r\nSuper Ultra Great Delicious\r\nWonderful Apple!\BRK";
+    const MESSAGE_4 = "Sometimes I can't remember\r\nall of it...! \BRK";
+    const MESSAGE_5 = "This is the second one: \r\nthe HMSGB Apple! \BRK";
+    const MESSAGE_6 = "That's short for Hyper \r\nMiracle Sweet Gorgeous \r\nBeautiful  Apple!\BRK";
+    const MESSAGE_7 = "That one is hard to \r\nremember, too!\BRK";
+    const MESSAGE_8 = "Finally, I have this. \r\nIt's an AEPFE Apple!\BRK";
+    const MESSAGE_9 = "That's short for:\r\nAngel Eternal Pure \r\nFresh Elegant Apple. \BRK";
+    const MESSAGE_10 = "See? Even the name \r\nis wonderful!\BRK";
+    const MESSAGE_11 = "Of course, you have to eat\r\neach one to see how \r\nwonderful it really is!\BRK";
+    const MESSAGE_12 = "Price is 500G. \r\nVery cheap, very cheap. \BRK";
+    const MESSAGE_13 = "Which will it be?";
+    const MESSAGE_14 = "SUGDW";
+    const MESSAGE_15 = "HMSGB";
+    const MESSAGE_16 = "AEPFE";
+    const MESSAGE_17 = "No thanks.";
+    const MESSAGE_18 = "Thanks very much!\r\nI didn't think anyone would\r\never -- I mean...\BRK\r\nYou have a fine eye, sir!\r\nI'll be going now!\BRK";
+    const MESSAGE_19 = "You don't even have 500G?\r\nWhat a poor man you are!\BRK";
+    
+    var var_0;
+    
+    if ((Inventory_Check() == 1)) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    SetEntityPosition(0x1D, 0xE4, 0x91, "Up");
+    SetEntityAnim(0x1D, 0x857);
+    Fade_In(2, 1);
+    TalkOpen();
+    Set_Portrait(0x72);
+    Set_Name_Window(0x1D);
+    TalkMessage(0);
+    Set_Portrait(0x73);
+    TalkMessage(1);
+    Set_Portrait(0x73);
+    TalkMessage(2);
+    Set_Portrait(0x72);
+    TalkMessage(3);
+    Set_Portrait(0x74);
+    TalkMessage(4);
+    Set_Portrait(0x73);
+    TalkMessage(5);
+    Set_Portrait(0x72);
+    TalkMessage(6);
+    Set_Portrait(0x74);
+    TalkMessage(7);
+    Set_Portrait(0x73);
+    TalkMessage(8);
+    Set_Portrait(0x72);
+    TalkMessage(9);
+    Set_Portrait(0x74);
+    TalkMessage(10);
+    Set_Portrait(0x72);
+    TalkMessage(11);
+    Set_Portrait(0x73);
+    TalkMessage(12);
+    Draw_Menu_With_Header(0, 0xD, 0xE, 0xF, 0x10, 0x11);
+    switch (var_0) {
+        case 1:
+            TalkMessage(18);
+            TalkClose();
+            Give_Food(0x47);
+            Take_Money(0x1F4);
+            break;
+        case 2:
+            TalkMessage(18);
+            TalkClose();
+            Give_Food(0x48);
+            Take_Money(0x1F4);
+            break;
+        case 3:
+            TalkMessage(18);
+            TalkClose();
+            Give_Food(0x49);
+            Take_Money(0x1F4);
+            break;
+        case 4:
+            Set_Portrait(0x74);
+            Set_Name_Window(0x1D);
+            TalkMessage(19);
+            TalkClose();
+            break;
+    }
+    SetEntityFacing(0x1D, "Right");
+    SetEntityAnim(0x1D, 0x85B);
+    Set_Vector_X(0x1D, 0x13F, 1);
+    Execute_Movement(0x1D);
+    SetEntityFacing(0x1D, "Up");
+    Set_Vector_Y(0x1D, 0, 1);
+    Execute_Movement(0x1D);
+    Hide_Entity(0x1D);
+    Free_Event_Entity(0x1D);
+    Set_Flag(0x138, 2);
+    exit;
+    exit;
+}

@@ -1,0 +1,12 @@
+// Script 160
+#include "Fomt_Lib.src"
+
+script 160 Event_0160 {
+    const MESSAGE_0 = "Pieces of Lumber\r\n\x81@\r\n\x81@\x81@\x81@\x81@\x81@\x81@\x81@\xFF%boards\BRK";
+    
+    TalkOpen();
+    Set_Text_Buffer_Int_Formatted(0, Check_Flag(0x28), 3);
+    Print_Message(0);
+    TalkClose();
+    exit;
+}

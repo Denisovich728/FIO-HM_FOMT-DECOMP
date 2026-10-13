@@ -1,0 +1,7 @@
+// Script 1288
+#include "Fomt_Lib.src"
+
+script 1288 Event_1288 {
+    PlaySong(0, 0xA3);
+    exit;
+}

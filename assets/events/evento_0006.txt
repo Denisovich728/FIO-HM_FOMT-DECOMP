@@ -1,0 +1,135 @@
+// Script 6
+#include "Fomt_Lib.src"
+
+script 6 Event_0006 {
+    const MESSAGE_0 = "Hi, \xFF!.\r\nI came to look at\r\n\xFF%.\BRK\r\nI bet he's gotten \r\nbig by now!\BRK";
+    const MESSAGE_1 = "Hmm...\BRK";
+    const MESSAGE_2 = "Looks like you've been\r\ntreating him right this \r\npast year. Good job!\BRK";
+    const MESSAGE_3 = "As my thanks for taking such\r\ngood care of \xFF%,\r\nI will let you have him\BRK\r\nfor good. After all, he\r\nseems to be fond of you.\r\nI hope you two have a\BRK\r\ngood life together.\BRK";
+    const MESSAGE_4 = "I'm sorry,\r\n\xFF!.\BRK\WAIT_CLICKIt seems like you haven't\r\ndone such a good job of\r\ntaking care of \BRK\r\n\xFF%.\BRK";
+    const MESSAGE_5 = "I'll be taking \r\n\xFF% home, now.\BRK";
+    
+    var var_0;
+    
+    SetEntityPosition(0, 0xE4, 0x78, "Down");
+    if ((Inventory_Check() == 1)) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    SetEntityPosition(4, 0xE4, 0x91, "Up");
+    SetEntityAnim(4, 0x9EF);
+    SetEntityPosition(0x2C, 0, 0, "Up");
+    Fade_In(2, 1);
+    GetAnimalName(0, 0, 0);
+    TalkOpen();
+    Set_Portrait(0xB4);
+    Set_Name_Window(4);
+    TalkMessage(0);
+    TalkClose();
+    SetEntityAnim(0, 0x1FE);
+    Make_Delay(0x3C);
+    if ((Inventory_Check() == 1)) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    Make_Delay(0x1E);
+    Fade_Out(2, 1);
+    Warp_Player(9, 0x44, 0x7C);
+    SetEntityPosition(0, 0x44, 0x7C, "Up");
+    if ((Inventory_Check() == 1)) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    SetEntityPosition(4, 0x5A, 0x7C, "Up");
+    SetEntityAnim(4, 0x9EF);
+    SetEntityPosition(0x2C, 0x53, 0x4C, "Down");
+    SetEntityAnim(0x2C, 0x77A);
+    Fade_In(2, 1);
+    var_0 = Check_Flag(0x45);
+    if ((var_0 >= 0x64)) {
+        TalkOpen();
+        Set_Portrait(0xB4);
+        Set_Name_Window(4);
+        TalkMessage(1);
+        Talk_Mini_Close();
+        Set_Portrait(0xB5);
+        TalkMessage(2);
+        TalkClose();
+        Fade_Out(2, 1);
+        Warp_Player(2, 0x13C, 0x74);
+        SetEntityPosition(0, 0x13C, 0x74, "Right");
+        if ((Inventory_Check() == 1)) {
+            SetEntityAnim(0, 0x192);
+        } else {
+            SetEntityAnim(0, 0x152);
+        }
+        SetEntityPosition(4, 0x156, 0x74, "Left");
+        SetEntityAnim(4, 0x9EF);
+        Fade_In(2, 1);
+        TalkOpen();
+        Set_Portrait(0xB4);
+        Set_Name_Window(4);
+        TalkMessage(3);
+        TalkClose();
+        SetEntityAnim(0, 0x1FE);
+        Make_Delay(0x3C);
+        if ((Inventory_Check() == 1)) {
+            SetEntityAnim(0, 0x192);
+        } else {
+            SetEntityAnim(0, 0x152);
+        }
+        SetEntityFacing(4, "Up");
+        SetEntityFacing(0, "Up");
+        SetEntityAnim(4, 0x9F3);
+        Set_Vector_Y(4, 0, 1);
+        Execute_Movement(4);
+        Hide_Entity(4);
+        SetEntityFacing(0, "Down");
+        Give_Friendship_Points(4, 0xA);
+        Set_Flag(0xDD, 2);
+    } else {
+        TalkOpen();
+        Set_Portrait(0xB4);
+        Set_Name_Window(4);
+        TalkMessage(1);
+        Talk_Mini_Close();
+        Set_Portrait(0xB6);
+        TalkMessage(4);
+        TalkClose();
+        Fade_Out(2, 1);
+        Warp_Player(2, 0x13C, 0x74);
+        SetEntityPosition(0, 0x13C, 0x74, "Right");
+        if ((Inventory_Check() == 1)) {
+            SetEntityAnim(0, 0x192);
+        } else {
+            SetEntityAnim(0, 0x152);
+        }
+        SetEntityPosition(4, 0x156, 0x74, "Left");
+        SetEntityAnim(4, 0x9EF);
+        SetEntityPosition(0x2C, 0x16E, 0x74, "Left");
+        SetEntityAnim(0x2C, 0x77A);
+        Fade_In(2, 1);
+        TalkOpen();
+        Set_Portrait(0xB6);
+        Set_Name_Window(4);
+        TalkMessage(5);
+        TalkClose();
+        SetEntityFacing(4, "Up");
+        SetEntityFacing(0x2C, "Up");
+        SetEntityAnim(4, 0x9F3);
+        SetEntityAnim(0x2C, 0x77E);
+        Set_Vector_Y(4, 0, 1);
+        Set_Vector_Y(0x2C, 0, 1);
+        Execute_Movement(4);
+        Execute_Movement(0x2C);
+        Hide_Entity(4);
+        Hide_Entity(0x2C);
+        Give_Friendship_Points(4, -0xA);
+        Deallocate_Unique_Animal(0, 0);
+        Set_Flag(0xDD, 2);
+    }
+    exit;
+}

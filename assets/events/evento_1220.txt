@@ -1,0 +1,30 @@
+// Script 1220
+#include "Fomt_Lib.src"
+
+script 1220 Event_1220 {
+    const MESSAGE_0 = "I bet it's Karen's fault \r\nagain! She probably put in \r\ncandy or something...\BRK";
+    const MESSAGE_1 = "Thank goodness no one\r\nput in something strange\r\nthis time!\BRK";
+    
+    if ((Check_If_Single(0x12) == 0)) {
+        Free_Event_Entity(0x12);
+    }
+    SetEntityFacing(0x12, GetOppositeFacing(GetEntityFacing(0)));
+    if ((Has_Spoken_To_NPC_Today(0x12) == 0)) {
+        Give_Friendship_Points(0x12, 5);
+    }
+    TalkOpen();
+    Set_Name_Window(0x12);
+    if ((Check_Flag(0x1A5) == 1)) {
+        Set_Portrait(0x52);
+        TalkMessage(0);
+        TalkClose();
+        Free_Event_Entity(0x12);
+    } else {
+        Set_Portrait(0x4F);
+        TalkMessage(1);
+        TalkClose();
+        Free_Event_Entity(0x12);
+    }
+    SetEntityFacing(0x12, "Left");
+    exit;
+}

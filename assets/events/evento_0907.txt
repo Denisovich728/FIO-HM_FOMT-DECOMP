@@ -1,0 +1,16 @@
+// Script 907
+#include "Fomt_Lib.src"
+
+script 907 Event_0907 {
+    const MESSAGE_0 = "....................\BRK";
+    
+    SetEntityFacing(0x17, GetOppositeFacing(GetEntityFacing(0)));
+    TalkOpen();
+    Set_Portrait(0x1A);
+    Set_Name_Window(0x17);
+    TalkMessage(0);
+    TalkClose();
+    SetEntityFacing(0x17, "Down");
+    Free_Event_Entity(0x17);
+    exit;
+}

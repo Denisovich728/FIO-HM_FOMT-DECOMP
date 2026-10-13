@@ -1,0 +1,11 @@
+// Script 499
+#include "Fomt_Lib.src"
+
+script 499 Event_0499 {
+    const MESSAGE_0 = "North side of Mineral Town\x81\xA8\r\n\x81@\r\n\x81\xABCentral Mineral Town\BRK";
+    
+    TalkOpen();
+    Print_Message(0);
+    TalkClose();
+    exit;
+}

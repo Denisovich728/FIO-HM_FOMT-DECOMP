@@ -1,0 +1,38 @@
+// Script 1185
+#include "Fomt_Lib.src"
+
+script 1185 Event_1185 {
+    const MESSAGE_0 = "Sis got mad at me when I \r\ntried to ride the pretty \r\nCow. \BRK\WAIT_CLICKShe's such a meany...\BRK";
+    const MESSAGE_1 = "It's great you won!\r\nCan I ride your Cow now? \BRK";
+    const MESSAGE_2 = "I'm sorry you lost.\r\nI bet you could win next\r\nyear, though!\BRK";
+    
+    if ((Check_If_Single(0x10) == 0)) {
+        Free_Event_Entity(0x10);
+    }
+    SetEntityFacing(0x10, GetOppositeFacing(GetEntityFacing(0)));
+    if ((Check_Flag(0x19B) == 0)) {
+        TalkOpen();
+        Set_Portrait(0x80);
+        Set_Name_Window(0x10);
+        TalkMessage(0);
+    } else {
+        if ((Check_Flag(0x19D) == 1)) {
+            TalkOpen();
+            Set_Portrait(0x81);
+            Set_Name_Window(0x10);
+            TalkMessage(1);
+            goto LBL_0006;
+        }
+        TalkOpen();
+        Set_Portrait(0x80);
+        Set_Name_Window(0x10);
+        TalkMessage(2);
+    }
+    TalkClose();
+    if ((Has_Spoken_To_NPC_Today(0x10) == 0)) {
+        Give_Friendship_Points(0x10, 5);
+    }
+    Free_Event_Entity(0x10);
+    SetEntityFacing(0x10, "Up");
+    exit;
+}

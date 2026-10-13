@@ -1,0 +1,11 @@
+// Script 522
+#include "Fomt_Lib.src"
+
+script 522 Event_0522 {
+    const MESSAGE_0 = "Mailbox\BRK";
+    
+    TalkOpen();
+    Print_Message(0);
+    TalkClose();
+    exit;
+}

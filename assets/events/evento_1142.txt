@@ -1,0 +1,36 @@
+// Script 1142
+#include "Fomt_Lib.src"
+
+script 1142 Event_1142 {
+    const MESSAGE_0 = "Better luck next time. \r\n\xFF# was fun \r\nto watch, though!\BRK";
+    const MESSAGE_1 = "Congratulations, \r\n\xFF!. \r\nI thought you'd win \BRK\r\nall the time!\BRK";
+    const MESSAGE_2 = "That was fun. \r\nThis is my favorite of all\r\nthe Festivals! \BRK";
+    
+    if ((Check_If_Single(0xD) == 0)) {
+        Free_Event_Entity(0xD);
+    }
+    SetEntityFacing(0xD, GetOppositeFacing(GetEntityFacing(0)));
+    TalkOpen();
+    if ((Check_Flag(0x193) == 1)) {
+        if ((Check_Flag(0x195) == 0)) {
+            Set_Portrait(0x78);
+            Set_Name_Window(0xD);
+            TalkMessage(0);
+        } else {
+            Set_Portrait(0x76);
+            Set_Name_Window(0xD);
+            TalkMessage(1);
+        }
+    } else {
+        Set_Portrait(0x76);
+        Set_Name_Window(0xD);
+        TalkMessage(2);
+    }
+    TalkClose();
+    if ((Has_Spoken_To_NPC_Today(0xD) == 0)) {
+        Give_Friendship_Points(0xD, 5);
+    }
+    Free_Event_Entity(0xD);
+    SetEntityFacing(0xD, "Right");
+    exit;
+}

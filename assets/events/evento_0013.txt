@@ -1,0 +1,65 @@
+// Script 13
+#include "Fomt_Lib.src"
+
+script 13 Event_0013 {
+    const MESSAGE_0 = "Ah...your\xFF%\r\nis sick.\BRK";
+    const MESSAGE_1 = "\xFF%is pregnant.\r\nShe'll give birth soon.\BRK";
+    const MESSAGE_2 = "\xFF% is pregnant.\r\nThe baby is due in\r\nabout \xFF& days.\BRK";
+    const MESSAGE_3 = "Hmmm...\xFF%\r\ndoesn't seem too happy.\BRK";
+    const MESSAGE_4 = "Hi, \xFF%.\r\nYou seem happy today!\BRK";
+    
+    var var_0;
+    var var_1;
+    var var_2;
+    var var_3;
+    var var_4;
+    
+    var_0 = Get_Targeted_Animal_Index();
+    var_1 = Func10A(2, var_0);
+    var_2 = 0x15;
+    var_3 = (var_2 - var_1);
+    var_4 = HasAnimalBeenTalkedTo(2, var_0);
+    GetAnimalName(0, 2, var_0);
+    if (GetAnimalAge(2, var_0)) {
+        TalkOpen();
+        TalkMessage(0);
+        TalkClose();
+        Show_Emote((0x36 + var_0), 7, 0);
+    } else {
+        if (Is_Animal_Pregnant(2, var_0)) {
+            Set_Text_Buffer_Int(1, var_3);
+            TalkOpen();
+            if ((var_3 < 2)) {
+                TalkMessage(1);
+                TalkClose();
+            } else {
+                TalkMessage(2);
+                TalkClose();
+            }
+            PlaySong(0, 0xA3);
+            if (!var_4) {
+                Show_Emote((0x36 + var_0), 1, 0);
+            }
+            goto LBL_0001;
+        }
+        if (Is_Animal_Stressed(2, var_0)) {
+            TalkOpen();
+            TalkMessage(3);
+            TalkClose();
+            Show_Emote((0x36 + var_0), 6, 0);
+            goto LBL_0001;
+        }
+        TalkOpen();
+        TalkMessage(4);
+        TalkClose();
+        PlaySong(0, 0xA3);
+        if (!var_4) {
+            Show_Emote((0x36 + var_0), 1, 0);
+        }
+    }
+    if (!var_4) {
+        SetAnimalTalkedTo(2, var_0);
+        Add_Animal_Affection(2, var_0, 1);
+    }
+    exit;
+}

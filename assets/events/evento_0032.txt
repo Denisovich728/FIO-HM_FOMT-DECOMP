@@ -1,0 +1,18 @@
+// Script 32
+#include "Fomt_Lib.src"
+
+script 32 Event_0032 {
+    const MESSAGE_0 = "Now where did I put that \r\nstomach medicine...\BRK";
+    
+    if ((Check_Flag(0x4A) == 1)) {
+    }
+    SetEntityFacing(0x12, GetOppositeFacing(GetEntityFacing(0)));
+    TalkOpen();
+    Set_Portrait(0x52);
+    Set_Name_Window(0x12);
+    TalkMessage(0);
+    TalkClose();
+    SetEntityFacing(0x12, "Up");
+    Free_Event_Entity(0x12);
+    exit;
+}

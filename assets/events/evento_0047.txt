@@ -1,0 +1,18 @@
+// Script 47
+#include "Fomt_Lib.src"
+
+script 47 Event_0047 {
+    const MESSAGE_0 = "Come again any time. \r\nI won't treat you all the\r\ntime, though! \BRK";
+    
+    if ((Check_Flag(0x57) == 1)) {
+    }
+    SetEntityFacing(0x18, GetOppositeFacing(GetEntityFacing(0)));
+    TalkOpen();
+    Set_Portrait(0x53);
+    Set_Name_Window(0x18);
+    TalkMessage(0);
+    TalkClose();
+    SetEntityFacing(0x18, "Left");
+    Free_Event_Entity(0x18);
+    exit;
+}

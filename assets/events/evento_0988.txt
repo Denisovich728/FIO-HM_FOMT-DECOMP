@@ -1,0 +1,10 @@
+// Script 988
+#include "Fomt_Lib.src"
+
+script 988 Event_0988 {
+    FadeOutBGM();
+    Proc066();
+    Set_Time(6, 0);
+    Execute_Script(0x3D4);
+    exit;
+}

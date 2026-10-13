@@ -1,0 +1,17 @@
+// Script 727
+#include "Fomt_Lib.src"
+
+script 727 Event_0727 {
+    const MESSAGE_0 = "It's all thanks to \r\nmy family, you know. \BRK";
+    
+    SetEntityFacing(0xA, GetOppositeFacing(GetEntityFacing(0)));
+    TalkOpen();
+    Set_Portrait(0x64);
+    Set_Name_Window(0xA);
+    TalkMessage(0);
+    TalkClose();
+    Free_Event_Entity(0xA);
+    SetEntityFacing(0xA, "Down");
+    exit;
+    exit;
+}

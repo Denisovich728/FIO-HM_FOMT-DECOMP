@@ -1,0 +1,30 @@
+// Script 380
+#include "Fomt_Lib.src"
+
+script 380 Event_0380 {
+    var var_0;
+    var var_1;
+    var var_2;
+    var var_3;
+    var var_4;
+    var var_5;
+    
+    if ((GetEntityFacing(0) == 1)) {
+        var_0 = Check_Flag(1);
+        var_1 = Check_Flag(2);
+        var_3 = Check_Flag(3);
+        var_2 = Check_Flag(5);
+        var_4 = Check_Flag(6);
+        var_5 = Check_Flag(0);
+        PlaySong(0, 0x9C);
+        Fade_Out(2, 1);
+        Warp_Player(0x21, 0x78, 0xD0);
+        SetEntityPosition(0, 0x78, 0xD0, 1);
+        if ((((((((((((Check_Flag(0x84) == 2) && (Check_Flag(0x85) == 0)) && (var_5 >= 4)) && !(var_2 == 6)) && ((var_3 >= 0xA) && (var_3 < 0xD))) && (Check_Flag(0x5F) == 0)) && (Check_Flag(0x86) == 0)) && (Check_Flag(0x87) == 0)) && (Check_Flag(0x5E) == 0)) && (Chek_Love_Points(0x19) < 0xEA60)) && (GetEntityLocation(0x17) == 0x22))) {
+            Set_Flag(0x85, 1);
+            Execute_Script(0x393);
+        }
+        Fade_In(2, 1);
+    }
+    exit;
+}

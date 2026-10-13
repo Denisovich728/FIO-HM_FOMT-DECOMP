@@ -1,0 +1,18 @@
+// Script 785
+#include "Fomt_Lib.src"
+
+script 785 Event_0785 {
+    const MESSAGE_0 = "Today is the one day I \r\nallow myself to \r\nthink about her...\BRK";
+    
+    if ((Check_Flag(0x127) == 1)) {
+        SetEntityFacing(0x18, GetOppositeFacing(GetEntityFacing(0)));
+        TalkOpen();
+        Set_Portrait(0x56);
+        Set_Name_Window(0x18);
+        TalkMessage(0);
+        TalkClose();
+        Free_Event_Entity(0x18);
+        SetEntityFacing(0x18, "Up");
+    }
+    exit;
+}

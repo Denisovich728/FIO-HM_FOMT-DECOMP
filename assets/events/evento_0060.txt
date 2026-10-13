@@ -1,0 +1,32 @@
+// Script 60
+#include "Fomt_Lib.src"
+
+script 60 Event_0060 {
+    const MESSAGE_0 = "Now I can get some more \r\nwritten on my novel. \BRK";
+    const MESSAGE_1 = "I wonder where I put \r\nthat...I can't write \r\nwithout it...\BRK";
+    
+    if ((Check_Flag(0x62) == 1)) {
+    }
+    if ((Check_Flag(0x63) == 0)) {
+        SetEntityFacing(0xC, GetOppositeFacing(GetEntityFacing(0)));
+        TalkOpen();
+        Set_Portrait(0x68);
+        Set_Name_Window(0xC);
+        Set_Hearth_Anim(0xC);
+        TalkMessage(0);
+        TalkClose();
+        SetEntityFacing(0xC, "Left");
+        Free_Event_Entity(0xC);
+    } else {
+        SetEntityFacing(0xC, GetOppositeFacing(GetEntityFacing(0)));
+        TalkOpen();
+        Set_Portrait(0x69);
+        Set_Name_Window(0xC);
+        Set_Hearth_Anim(0xC);
+        TalkMessage(1);
+        TalkClose();
+        SetEntityFacing(0xC, "Down");
+        Free_Event_Entity(0xC);
+    }
+    exit;
+}

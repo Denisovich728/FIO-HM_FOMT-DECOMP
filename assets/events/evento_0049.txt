@@ -1,0 +1,103 @@
+// Script 49
+#include "Fomt_Lib.src"
+
+script 49 Event_0049 {
+    const MESSAGE_0 = "La la la....\r\nla la la...\BRK";
+    const MESSAGE_1 = "Oh, \xFF!!\r\nYou scared me! Don't \r\nsneak up on me like that!\BRK";
+    const MESSAGE_2 = "That's OK. \r\nI'm not really mad.\BRK";
+    const MESSAGE_3 = "What was I doing? \r\nCleaning, of course!\BRK\WAIT_CLICKI love to clean. It makes \r\nme happy to see everything\r\nbecome so nice and tidy. \BRK\WAIT_CLICKDo you like to clean, \r\n\xFF!? \BRK";
+    const MESSAGE_4 = "I like cleaning.";
+    const MESSAGE_5 = "I hate cleaning.";
+    const MESSAGE_6 = "Ha ha, I knew it!\r\nI knew you like it!\r\nGood for you. \BRK\WAIT_CLICKMy dad hates cleaning, \r\nso I have to do all of it\r\naround here. \BRK\WAIT_CLICKIt's a good thing \r\nI like it so much! \BRK";
+    const MESSAGE_7 = "That's too bad. \r\nYou should really try it. \r\nYou might like it!\BRK\WAIT_CLICKMy dad hates cleaning, too.\r\nWhat is it with men?...\BRK";
+    
+    var var_0;
+    
+    Warp_Player(0x17, 0x114, 0x74);
+    PlayBGM(1, 0x11);
+    SetEntityPosition(0, 0x114, 0xF8, "Up");
+    SetEntityAnim(0, 0x192);
+    SetEntityPosition(0x19, 0xFF, 0x74, "Left");
+    SetEntityAnim(0x19, 0x7BE);
+    Fade_In(2, 1);
+    Show_Emote(0x19, 5, 0);
+    Make_Delay(0x3C);
+    TalkOpen();
+    Set_Portrait(0x58);
+    Set_Name_Window(0x19);
+    TalkMessage(0);
+    TalkClose();
+    PlaySong(0, 0x9C);
+    Make_Delay(0x3C);
+    PlaySong(0, 0xCD);
+    SetEntityAnim(0, 0x1C6);
+    Set_Vector_Y(0, 0x74, 1);
+    Execute_Movement(0);
+    SetEntityAnim(0, 0x192);
+    SetEntityFacing(0, "Left");
+    Show_Emote(0x19, 2, 0);
+    Make_Delay(0x3C);
+    SetEntityFacing(0x19, "Right");
+    TalkOpen();
+    Set_Portrait(0x59);
+    Set_Name_Window(0x19);
+    Set_Hearth_Anim(0x19);
+    TalkMessage(1);
+    TalkClose();
+    SetEntityAnim(0, 0x1FE);
+    Make_Delay(0x3C);
+    SetEntityAnim(0, 0x192);
+    TalkOpen();
+    Set_Portrait(0x5B);
+    Set_Name_Window(0x19);
+    Set_Hearth_Anim(0x19);
+    TalkMessage(2);
+    Set_Portrait(0x57);
+    Set_Name_Window(0x19);
+    Set_Hearth_Anim(0x19);
+    TalkMessage(3);
+    TalkClose();
+    TalkOpen();
+    var_0 = TalkChoice2(4, 5);
+    switch (var_0) {
+        case 1:
+            Give_Love_Points(0x19, 0xBB8);
+            TalkClose();
+            SetEntityAnim(0, 0x1FE);
+            Make_Delay(0x3C);
+            SetEntityAnim(0, 0x192);
+            Show_Emote(0x19, 5, 0);
+            Make_Delay(0x3C);
+            TalkOpen();
+            Set_Portrait(0x58);
+            Set_Name_Window(0x19);
+            Set_Hearth_Anim(0x19);
+            TalkMessage(6);
+            TalkClose();
+            End_Cinematic_State();
+            Free_Event_Entity(0x19);
+            Routine_State_Override(0x19, 0x32);
+            Set_Flag(0x59, 0);
+            Set_Flag(0x58, 1);
+            break;
+        case 2:
+            Give_Love_Points(0x19, -0x7D0);
+            TalkClose();
+            SetEntityAnim(0, 0x126);
+            Make_Delay(0x3C);
+            SetEntityAnim(0, 0x192);
+            TalkOpen();
+            Set_Portrait(0x59);
+            Set_Name_Window(0x19);
+            Set_Hearth_Anim(0x19);
+            TalkMessage(7);
+            TalkClose();
+            End_Cinematic_State();
+            Free_Event_Entity(0x19);
+            Routine_State_Override(0x19, 0x32);
+            Set_Flag(0x59, 1);
+            Set_Flag(0x58, 1);
+            break;
+    }
+    exit;
+}

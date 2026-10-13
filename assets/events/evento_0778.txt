@@ -1,0 +1,18 @@
+// Script 778
+#include "Fomt_Lib.src"
+
+script 778 Event_0778 {
+    const MESSAGE_0 = "So you want to hear about\r\nthat matter...?\BRK\WAIT_CLICKIt's a secret! Heh heh...\BRK";
+    
+    if ((Check_Flag(0x120) == 1)) {
+        SetEntityFacing(0x16, GetOppositeFacing(GetEntityFacing(0)));
+        TalkOpen();
+        Set_Portrait(0x95);
+        Set_Name_Window(0x16);
+        TalkMessage(0);
+        TalkClose();
+        Free_Event_Entity(0x16);
+        SetEntityFacing(0x16, "Down");
+    }
+    exit;
+}

@@ -1,0 +1,26 @@
+// Script 513
+#include "Fomt_Lib.src"
+
+script 513 Event_0513 {
+    const MESSAGE_0 = "That's my room!\r\nDon't go in there!\BRK";
+    
+    var var_0;
+    
+    if ((Chek_Friendship_Points(6) <= 0xC8)) {
+        var_0 = 0;
+    } else {
+        if ((Chek_Friendship_Points(6) > 0xC8)) {
+            var_0 = 1;
+        }
+    }
+    if ((var_0 == 1)) {
+        PlaySong(0, 0x9C);
+        Anim_Door_Close(8);
+    } else {
+        TalkOpen();
+        Set_Portrait(0xA8);
+        TalkMessage(0);
+        TalkClose();
+    }
+    exit;
+}

@@ -1,0 +1,149 @@
+// Script 318
+#include "Fomt_Lib.src"
+
+script 318 Event_0318 {
+    const MESSAGE_0 = "Get Kitchen";
+    const MESSAGE_1 = "Recipe Book 1";
+    const MESSAGE_2 = "Exit";
+    const MESSAGE_3 = "Recipe Book1";
+    const MESSAGE_4 = "Recipe Book2";
+    const MESSAGE_5 = "Recipe Book3";
+    const MESSAGE_6 = "Recipe Book 2";
+    const MESSAGE_7 = "Recipe Book 3";
+    const MESSAGE_8 = "Recipe Book 4";
+    
+    var var_0;
+    
+    if ((Check_Flag(0) == 1)) {
+        Fade_Out(3, 1);
+        Show_Document_UI(0x3B);
+        Fade_In(3, 1);
+    } else {
+        if ((Check_Flag(0) <= 3)) {
+            TalkOpen();
+            var_0 = TalkChoice3(0, 1, 2);
+            switch (var_0) {
+                case 1:
+                    TalkClose();
+                    Fade_Out(3, 1);
+                    Show_Document_UI(0x3B);
+                    Fade_In(3, 1);
+                    break;
+                case 2:
+                    TalkClose();
+                    Fade_Out(3, 1);
+                    Show_Document_UI(0x37);
+                    Fade_In(3, 1);
+                    break;
+                case 3:
+                    TalkClose();
+                    exit;
+                    break;
+            }
+            goto LBL_0003;
+        }
+        if ((Check_Flag(0) <= 5)) {
+            TalkOpen();
+            var_0 = TalkChoice4(0, 3, 4, 2);
+            switch (var_0) {
+                case 1:
+                    TalkClose();
+                    Fade_Out(3, 1);
+                    Show_Document_UI(0x3B);
+                    Fade_In(3, 1);
+                    break;
+                case 2:
+                    TalkClose();
+                    Fade_Out(3, 1);
+                    Show_Document_UI(0x37);
+                    Fade_In(3, 1);
+                    break;
+                case 3:
+                    TalkClose();
+                    Fade_Out(3, 1);
+                    Show_Document_UI(0x38);
+                    Fade_In(3, 1);
+                    break;
+                case 4:
+                    TalkClose();
+                    exit;
+                    break;
+            }
+            goto LBL_0003;
+        }
+        if ((Check_Flag(0) <= 0xA)) {
+            TalkOpen();
+            var_0 = TalkChoice5(0, 3, 4, 5, 2);
+            switch (var_0) {
+                case 1:
+                    TalkClose();
+                    Fade_Out(3, 1);
+                    Show_Document_UI(0x3B);
+                    Fade_In(3, 1);
+                    break;
+                case 2:
+                    TalkClose();
+                    Fade_Out(3, 1);
+                    Show_Document_UI(0x37);
+                    Fade_In(3, 1);
+                    break;
+                case 3:
+                    TalkClose();
+                    Fade_Out(3, 1);
+                    Show_Document_UI(0x38);
+                    Fade_In(3, 1);
+                    break;
+                case 4:
+                    TalkClose();
+                    Fade_Out(3, 1);
+                    Show_Document_UI(0x39);
+                    Fade_In(3, 1);
+                    break;
+                case 5:
+                    TalkClose();
+                    exit;
+                    break;
+            }
+            goto LBL_0003;
+        }
+        TalkOpen();
+        var_0 = TalkChoice6(0, 1, 6, 7, 8, 2);
+        switch (var_0) {
+            case 1:
+                TalkClose();
+                Fade_Out(3, 1);
+                Show_Document_UI(0x3B);
+                Fade_In(3, 1);
+                break;
+            case 2:
+                TalkClose();
+                Fade_Out(3, 1);
+                Show_Document_UI(0x37);
+                Fade_In(3, 1);
+                break;
+            case 3:
+                TalkClose();
+                Fade_Out(3, 1);
+                Show_Document_UI(0x38);
+                Fade_In(3, 1);
+                break;
+            case 4:
+                TalkClose();
+                Fade_Out(3, 1);
+                Show_Document_UI(0x39);
+                Fade_In(3, 1);
+                break;
+            case 5:
+                TalkClose();
+                Fade_Out(3, 1);
+                Show_Document_UI(0x3A);
+                Fade_In(3, 1);
+                break;
+            case 6:
+                TalkClose();
+                exit;
+                break;
+        }
+    }
+    exit;
+}

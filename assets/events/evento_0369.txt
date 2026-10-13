@@ -1,0 +1,11 @@
+// Script 369
+#include "Fomt_Lib.src"
+
+script 369 Event_0369 {
+    const MESSAGE_0 = "Grave\BRK";
+    
+    TalkOpen();
+    Print_Message(0);
+    TalkClose();
+    exit;
+}

@@ -1,0 +1,23 @@
+// Script 1314
+#include "Fomt_Lib.src"
+
+script 1314 Event_1314 {
+    const MESSAGE_0 = "It just wouldn't be New Year\r\nwithout New Year Noodles, \r\nwould it? \BRK";
+    
+    if ((Check_If_Single(8) == 0)) {
+        Free_Event_Entity(8);
+    }
+    SetEntityFacing(8, GetOppositeFacing(GetEntityFacing(0)));
+    TalkOpen();
+    Set_Portrait(0x86);
+    Set_Name_Window(8);
+    TalkMessage(0);
+    Talk_Mini_Close();
+    TalkClose();
+    if ((Has_Spoken_To_NPC_Today(8) == 0)) {
+        Give_Friendship_Points(8, 5);
+    }
+    Free_Event_Entity(8);
+    SetEntityFacing(8, "Right");
+    exit;
+}

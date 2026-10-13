@@ -1,0 +1,9 @@
+// Script 339
+#include "Fomt_Lib.src"
+
+script 339 Event_0339 {
+    if ((GetEntityFacing(0) == 0)) {
+        Execute_Script(0x3D1);
+    }
+    exit;
+}

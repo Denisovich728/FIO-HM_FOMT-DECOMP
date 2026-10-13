@@ -1,0 +1,22 @@
+// Script 1248
+#include "Fomt_Lib.src"
+
+script 1248 Event_1248 {
+    const MESSAGE_0 = "Everyone's going home now.\BRK\WAIT_CLICKIf you want to exchange \r\nyour medal for a prize,\r\nlet me know soon.\BRK";
+    
+    if ((Check_If_Single(0xD) == 0)) {
+        Free_Event_Entity(0xD);
+    }
+    SetEntityFacing(0xD, GetOppositeFacing(GetEntityFacing(0)));
+    TalkOpen();
+    Set_Portrait(0x75);
+    Set_Name_Window(0xD);
+    TalkMessage(0);
+    TalkClose();
+    if ((Has_Spoken_To_NPC_Today(0xD) == 0)) {
+        Give_Friendship_Points(0xD, 5);
+    }
+    Free_Event_Entity(0xD);
+    SetEntityFacing(0xD, "Down");
+    exit;
+}

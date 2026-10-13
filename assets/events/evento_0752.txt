@@ -1,0 +1,18 @@
+// Script 752
+#include "Fomt_Lib.src"
+
+script 752 Event_0752 {
+    const MESSAGE_0 = "I think his painting is\r\ngreat. Who knew he had\r\nsuch talent?\BRK";
+    
+    if ((Check_Flag(0x116) == 1)) {
+        SetEntityFacing(0x12, GetOppositeFacing(GetEntityFacing(0)));
+        TalkOpen();
+        Set_Portrait(0x50);
+        Set_Name_Window(0x12);
+        TalkMessage(0);
+        TalkClose();
+        Free_Event_Entity(0x12);
+        SetEntityFacing(0x12, "Right");
+    }
+    exit;
+}

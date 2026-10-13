@@ -1,0 +1,88 @@
+// Script 1213
+#include "Fomt_Lib.src"
+
+script 1213 Event_1213 {
+    const MESSAGE_0 = "I'm looking forward to \r\nhearing you play Ocarina.\BRK\WAIT_CLICKAre you ready yet?\BRK";
+    const MESSAGE_1 = "I'm ready.";
+    const MESSAGE_2 = "Wait a minute.";
+    const MESSAGE_3 = "OK... \r\nEveryone, we're on! \BRK";
+    const MESSAGE_4 = "What's wrong? When you\r\ndo get ready, just \r\nlet me know. \BRK";
+    const MESSAGE_5 = "You can't play the Ocarina\r\nif you're holding anything.\r\nPlease put that down first. \BRK";
+    const MESSAGE_6 = "You aren't performing with \r\nus this time, right? \BRK\WAIT_CLICKJust sit back and enjoy\r\nthe music!\BRK";
+    
+    var var_0;
+    
+    SetEntityFacing(0x16, GetOppositeFacing(GetEntityFacing(0)));
+    if ((Check_If_Single(0x16) == 0)) {
+        Free_Event_Entity(0x16);
+    }
+    if ((Has_Spoken_To_NPC_Today(0x16) == 0)) {
+        Give_Friendship_Points(0x16, 5);
+    }
+    Free_Event_Entity(0x16);
+    TalkOpen();
+    Set_Name_Window(0x16);
+    if ((Check_Flag(0x1A1) == 1)) {
+        if (Inventory_Check()) {
+            Set_Portrait(0x95);
+            TalkMessage(0);
+            TalkClose();
+            TalkOpen();
+            var_0 = TalkChoice2(1, 2);
+            switch (var_0) {
+                case 1:
+                    TalkClose();
+                    TalkOpen();
+                    Set_Name_Window(0x16);
+                    Set_Portrait(0x96);
+                    TalkMessage(3);
+                    TalkClose();
+                    Fade_Out(2, 1);
+                    Execute_Script(1215);
+                    break;
+                case 2:
+                    TalkClose();
+                    TalkOpen();
+                    Set_Name_Window(0x16);
+                    Set_Portrait(0x95);
+                    TalkMessage(4);
+                    TalkClose();
+                    break;
+            }
+        } else {
+            Set_Portrait(0x95);
+            Set_Name_Window(0x16);
+            TalkMessage(5);
+            TalkClose();
+        }
+    } else {
+        Set_Portrait(0x95);
+        Set_Name_Window(0x16);
+        TalkMessage(6);
+        TalkClose();
+        TalkOpen();
+        var_0 = TalkChoice2(1, 2);
+        switch (var_0) {
+            case 1:
+                TalkClose();
+                TalkOpen();
+                Set_Name_Window(0x16);
+                Set_Portrait(0x96);
+                TalkMessage(3);
+                TalkClose();
+                Fade_Out(2, 1);
+                Execute_Script(1215);
+                break;
+            case 2:
+                TalkClose();
+                TalkOpen();
+                Set_Name_Window(0x16);
+                Set_Portrait(0x95);
+                TalkMessage(4);
+                TalkClose();
+                break;
+        }
+    }
+    SetEntityFacing(0x16, "Down");
+    exit;
+}

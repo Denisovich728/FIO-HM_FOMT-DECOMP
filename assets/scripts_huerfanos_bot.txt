@@ -1,0 +1,4 @@
+=== LOG DE SCRIPTS FALLIDOS / DINÁMICOS ===
+Los siguientes eventos no pudieron ser descompilados estáticamente.
+El Bot debe ejecutar el juego, transitar por estas zonas y mapear las posiciones de RAM que los instancían.
+

@@ -1,0 +1,45 @@
+// Script 41
+#include "Fomt_Lib.src"
+
+script 41 Event_0041 {
+    const MESSAGE_0 = "Thanks for taking my side, \r\n\xFF!.\BRK";
+    const MESSAGE_1 = "I can't believe you took\r\nmy brother's side!\BRK";
+    const MESSAGE_2 = "Sorry for worrying you,\r\n\xFF!. \BRK\r\nEverything's OK now. \BRK";
+    
+    if ((Check_Flag(0x52) == 1)) {
+        if ((Check_Flag(0x53) == 0)) {
+            SetEntityFacing(3, GetOppositeFacing(GetEntityFacing(0)));
+            TalkOpen();
+            Set_Portrait(0xC);
+            Set_Name_Window(3);
+            Set_Hearth_Anim(3);
+            TalkMessage(0);
+            TalkClose();
+            SetEntityFacing(3, "Down");
+            Free_Event_Entity(3);
+        } else {
+            if ((Check_Flag(0x53) == 1)) {
+                SetEntityFacing(3, GetOppositeFacing(GetEntityFacing(0)));
+                TalkOpen();
+                Set_Portrait(9);
+                Set_Name_Window(3);
+                Set_Hearth_Anim(3);
+                TalkMessage(1);
+                TalkClose();
+                SetEntityFacing(3, "Right");
+                Free_Event_Entity(3);
+            } else {
+                SetEntityFacing(3, GetOppositeFacing(GetEntityFacing(0)));
+                TalkOpen();
+                Set_Portrait(7);
+                Set_Name_Window(3);
+                Set_Hearth_Anim(3);
+                TalkMessage(2);
+                TalkClose();
+                SetEntityFacing(3, "Up");
+                Free_Event_Entity(3);
+            }
+        }
+    }
+    exit;
+}

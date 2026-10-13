@@ -1,0 +1,148 @@
+// Script 742
+#include "Fomt_Lib.src"
+
+script 742 Event_0742 {
+    const MESSAGE_0 = "Hello, \xFF!. \BRK";
+    const MESSAGE_1 = "Basil is supposed to come\r\ntoday, too. \BRK";
+    const MESSAGE_2 = "Welcome, Basil. \BRK";
+    const MESSAGE_3 = "Thanks for assisting \r\nme, Ellen. \BRK";
+    const MESSAGE_4 = "Hi, \xFF!. \BRK";
+    const MESSAGE_5 = "Today Ellen is going to tell\r\nme about a very rare plant. \BRK\WAIT_CLICKWhy don't you listen, too?\BRK";
+    const MESSAGE_6 = "Alright?\BRK";
+    const MESSAGE_7 = "I'm ready, Ellen. \BRK";
+    const MESSAGE_8 = "When I was young, before \r\nboth of you were born...\BRK\WAIT_CLICKI heard someone talk of a \r\nbeautiful white flower that\r\nbloomed on a Summer night.\BRK";
+    const MESSAGE_9 = "That flower was called the \r\nWhite Flower, and \r\nthere is no one left alive\BRK\r\nwho has seen it. \BRK";
+    const MESSAGE_10 = "The White Flower, eh?\r\nI'd love to find it...\BRK";
+    const MESSAGE_11 = "If you find it, \r\n\xFF!, will you \r\nbring it to Ellen for me? \BRK\WAIT_CLICKI'll try searching for it \r\nas well. \BRK";
+    const MESSAGE_12 = "I'm going to research \r\nit more at home. \BRK";
+    
+    Warp_Player(0xE, 0x80, 0x77);
+    SetEntityPosition(0xF, 0x80, 0x60, "Down");
+    SetEntityAnim(0xF, 0x685);
+    SetEntityPosition(0xA, 0x80, 0xFA, "Up");
+    SetEntityAnim(0xA, 0x80B);
+    SetEntityPosition(0, 0x80, 0x77, "Up");
+    if ((Inventory_Check() == 1)) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    Fade_In(2, 1);
+    Make_Delay(0x3C);
+    TalkOpen();
+    Set_Portrait(0x40);
+    Set_Name_Window(0xF);
+    TalkMessage(0);
+    Set_Portrait(0x3F);
+    TalkMessage(1);
+    TalkClose();
+    Make_Delay(0x3C);
+    PlaySong(0, 0x9C);
+    SetEntityFacing(0, "Down");
+    SetEntityAnim(0xA, 0x80F);
+    Set_Vector_Y(0xA, 0x99, 1);
+    Execute_Movement(0xA);
+    SetEntityFacing(0xA, "Right");
+    Set_Vector_X(0xA, 0x97, 1);
+    Execute_Movement(0xA);
+    SetEntityFacing(0, "Right");
+    SetEntityFacing(0xA, "Up");
+    Set_Vector_Y(0xA, 0x60, 1);
+    Execute_Movement(0xA);
+    SetEntityFacing(0xA, "Left");
+    SetEntityFacing(0, "Up");
+    SetEntityAnim(0xA, 0x80B);
+    TalkOpen();
+    Set_Portrait(0x40);
+    Set_Name_Window(0xF);
+    TalkMessage(2);
+    TalkClose();
+    TalkOpen();
+    Set_Portrait(0x64);
+    Set_Name_Window(0xA);
+    TalkMessage(3);
+    TalkClose();
+    SetEntityFacing(0xA, "Down");
+    Make_Delay(0x1E);
+    TalkOpen();
+    Set_Portrait(0x64);
+    Set_Name_Window(0xA);
+    TalkMessage(4);
+    Set_Portrait(0x63);
+    TalkMessage(5);
+    TalkClose();
+    SetEntityAnim(0, 0x1FE);
+    Make_Delay(0x3C);
+    if ((Inventory_Check() == 1)) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    TalkOpen();
+    Set_Portrait(0x63);
+    Set_Name_Window(0xA);
+    TalkMessage(6);
+    TalkClose();
+    SetEntityFacing(0xA, "Left");
+    Make_Delay(0x1E);
+    TalkOpen();
+    Set_Portrait(0x63);
+    Set_Name_Window(0xA);
+    TalkMessage(7);
+    TalkClose();
+    Make_Delay(0x3C);
+    TalkOpen();
+    Set_Portrait(0x3F);
+    Set_Name_Window(0xF);
+    TalkMessage(8);
+    Set_Portrait(0x40);
+    TalkMessage(9);
+    TalkClose();
+    TalkOpen();
+    Set_Portrait(0x64);
+    Set_Name_Window(0xA);
+    TalkMessage(10);
+    TalkClose();
+    SetEntityFacing(0xA, "Down");
+    Make_Delay(0x1E);
+    TalkOpen();
+    Set_Portrait(0x63);
+    Set_Name_Window(0xA);
+    TalkMessage(11);
+    TalkClose();
+    SetEntityAnim(0, 0x1FE);
+    Make_Delay(0x3C);
+    if ((Inventory_Check() == 1)) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    TalkOpen();
+    Set_Portrait(0x63);
+    Set_Name_Window(0xA);
+    TalkMessage(12);
+    TalkClose();
+    Free_Event_Entity(0xA);
+    SetEntityAnim(0xA, 0x80F);
+    SetEntityFacing(0, "Right");
+    Set_Vector_Y(0xA, 0x99, 1);
+    Execute_Movement(0xA);
+    SetEntityFacing(0, "Down");
+    SetEntityFacing(0xA, "Left");
+    Set_Vector_X(0xA, 0x80, 1);
+    Execute_Movement(0xA);
+    SetEntityFacing(0xA, "Down");
+    Set_Vector_Y(0xA, 0xE0, 1);
+    Execute_Movement(0xA);
+    SetEntityAnim(0xA, 0x80B);
+    PlaySong(0, 0xCD);
+    Hide_Entity(0xA);
+    Free_Event_Entity(0xF);
+    Free_Event_Entity(0xA);
+    End_Cinematic_State();
+    Pan_Camera_To(0x80, 0x77, 2);
+    Wait_Camera_Stop();
+    Set_Flag(0x10F, 1);
+    Routine_State_Override(0xF, 0x2E7);
+    exit;
+}

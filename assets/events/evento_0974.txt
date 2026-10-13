@@ -1,0 +1,9 @@
+// Script 974
+#include "Fomt_Lib.src"
+
+script 974 Event_0974 {
+    Fade_Out(3, 1);
+    Proc0A5();
+    Fade_In(3, 1);
+    exit;
+}

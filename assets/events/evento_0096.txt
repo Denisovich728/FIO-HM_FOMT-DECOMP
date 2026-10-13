@@ -1,0 +1,11 @@
+// Script 96
+#include "Fomt_Lib.src"
+
+script 96 Event_0096 {
+    const MESSAGE_0 = "Tools\BRK";
+    
+    TalkOpen();
+    Print_Message(0);
+    TalkClose();
+    exit;
+}

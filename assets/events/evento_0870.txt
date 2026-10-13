@@ -1,0 +1,6 @@
+// Script 870
+#include "Fomt_Lib.src"
+
+script 870 Event_0870 {
+    exit;
+}

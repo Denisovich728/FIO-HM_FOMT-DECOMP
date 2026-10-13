@@ -1,0 +1,66 @@
+// Script 1266
+#include "Fomt_Lib.src"
+
+script 1266 Event_1266 {
+    PlayBGM(1, 9);
+    if ((Inventory_Check() == 1)) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    SetEntityPosition(4, 0x55, 0x5B, 0);
+    SetEntityAnim(4, 0x9EF);
+    SetEntityPosition(2, 0x82, 0x136, 0);
+    SetEntityAnim(2, 0x213);
+    SetEntityPosition(0x13, 0x5A, 0x13F, 0);
+    SetEntityAnim(0x13, 0x691);
+    SetEntityPosition(0xD, 0x4C, 0x159, 3);
+    SetEntityAnim(0xD, 0x85F);
+    SetEntityPosition(5, 0x100, 0x73, 2);
+    SetEntityAnim(5, 0x9E7);
+    SetEntityPosition(0xB, 0xDC, 0x85, 1);
+    SetEntityAnim(0xB, 0x84B);
+    SetEntityPosition(0xE, 0xC4, 0x5C, 0);
+    SetEntityAnim(0xE, 0x8E4);
+    SetEntityPosition(0x11, 0x17C, 0x13C, 2);
+    SetEntityAnim(0x11, 0x689);
+    SetEntityPosition(7, 0x160, 0x14E, 1);
+    SetEntityAnim(7, 0x989);
+    SetEntityPosition(0x1B, 0x162, 0x121, 0);
+    SetEntityAnim(0x1B, 0x9D3);
+    SetEntityPosition(0x47, 0x63, 0x14F, 3);
+    Spawn_Event_Entity(0x47, 2);
+    SetEntityAnim(0x47, 0x91D);
+    SetEntityPosition(0x48, 0x15E, 0x132, 3);
+    Spawn_Event_Entity(0x48, 2);
+    SetEntityAnim(0x48, 0x91D);
+    SetEntityPosition(0x49, 0xDE, 0x6D, 2);
+    Spawn_Event_Entity(0x49, 2);
+    SetEntityAnim(0x49, 0x91D);
+    if ((GetEntityLocation(0x2B) == 6)) {
+        SetEntityPosition(0x2B, 0x1A0, 0x85, 0);
+    }
+    if ((GetEntityLocation(0x4A) == 6)) {
+        SetEntityPosition(0x4A, (0x1A0 + 0x10), 0x85, 0);
+    }
+    if ((GetEntityLocation(0x4B) == 6)) {
+        SetEntityPosition(0x4B, (0x1A0 + 0x20), 0x85, 0);
+    }
+    End_Cinematic_State();
+    Fade_In(2, 1);
+    Set_Flag(0x1B0, 1);
+    Routine_State_Override(2, 0x4F3);
+    Routine_State_Override(0x13, 0x4F5);
+    Routine_State_Override(4, 0x4FC);
+    Routine_State_Override(5, 0x4FB);
+    Routine_State_Override(0xE, 0x4F8);
+    Routine_State_Override(0xB, 0x4F6);
+    Routine_State_Override(0xD, 0x4F7);
+    Routine_State_Override(0x1B, 0x4FA);
+    Routine_State_Override(7, 0x4F9);
+    Routine_State_Override(0x11, 0x4F4);
+    Routine_State_Override(0x47, 0x508);
+    Routine_State_Override(0x48, 0x508);
+    Routine_State_Override(0x49, 0x508);
+    exit;
+}

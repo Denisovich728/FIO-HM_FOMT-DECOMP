@@ -1,0 +1,19 @@
+// Script 31
+#include "Fomt_Lib.src"
+
+script 31 Event_0031 {
+    const MESSAGE_0 = "You'll be sorry you didn't \r\neat them, \xFF!!\BRK\WAIT_CLICKThey'll be delicious!\r\n...I think...\BRK";
+    
+    if ((Check_Flag(0x4A) == 1)) {
+    }
+    SetEntityFacing(0x13, GetOppositeFacing(GetEntityFacing(0)));
+    TalkOpen();
+    Set_Portrait(0x4A);
+    Set_Name_Window(0x13);
+    Set_Hearth_Anim(0x13);
+    TalkMessage(0);
+    TalkClose();
+    SetEntityFacing(0x13, "Down");
+    Free_Event_Entity(0x13);
+    exit;
+}

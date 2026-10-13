@@ -1,0 +1,11 @@
+// Script 510
+#include "Fomt_Lib.src"
+
+script 510 Event_0510 {
+    const MESSAGE_0 = "Yodel Farm\r\nWe're open 10AM to \r\n3PM, except Mondays\BRK";
+    
+    TalkOpen();
+    Print_Message(0);
+    TalkClose();
+    exit;
+}

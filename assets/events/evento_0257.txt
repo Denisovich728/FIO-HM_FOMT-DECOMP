@@ -1,0 +1,11 @@
+// Script 257
+#include "Fomt_Lib.src"
+
+script 257 Event_0257 {
+    const MESSAGE_0 = "Dresser\BRK";
+    
+    TalkOpen();
+    Print_Message(0);
+    TalkClose();
+    exit;
+}

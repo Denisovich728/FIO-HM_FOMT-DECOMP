@@ -1,0 +1,11 @@
+// Script 269
+#include "Fomt_Lib.src"
+
+script 269 Event_0269 {
+    const MESSAGE_0 = "Shelf\BRK";
+    
+    TalkOpen();
+    Print_Message(0);
+    TalkClose();
+    exit;
+}

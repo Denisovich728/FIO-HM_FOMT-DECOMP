@@ -1,0 +1,16 @@
+// Script 888
+#include "Fomt_Lib.src"
+
+script 888 Event_0888 {
+    const MESSAGE_0 = "What should I make...?\BRK";
+    
+    SetEntityFacing(0x1A, GetOppositeFacing(GetEntityFacing(0)));
+    TalkOpen();
+    Set_Portrait(0x99);
+    Set_Name_Window(0x1A);
+    TalkMessage(0);
+    TalkClose();
+    SetEntityFacing(0x1A, "Left");
+    Free_Event_Entity(0x1A);
+    exit;
+}

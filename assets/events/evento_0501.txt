@@ -1,0 +1,11 @@
+// Script 501
+#include "Fomt_Lib.src"
+
+script 501 Event_0501 {
+    const MESSAGE_0 = "Doug's Place\r\nBar Hours: 8:00 - 21:00\BRK";
+    
+    TalkOpen();
+    Print_Message(0);
+    TalkClose();
+    exit;
+}

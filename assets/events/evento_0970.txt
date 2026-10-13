@@ -1,0 +1,11 @@
+// Script 970
+#include "Fomt_Lib.src"
+
+script 970 Event_0970 {
+    const MESSAGE_0 = "Large Stone\r\nYour Hammer can't crush\r\nit unless it's LV2\BRK\r\nor higher.\BRK";
+    
+    TalkOpen();
+    Print_Message(0);
+    TalkClose();
+    exit;
+}

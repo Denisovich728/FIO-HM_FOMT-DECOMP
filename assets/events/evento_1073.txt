@@ -1,0 +1,23 @@
+// Script 1073
+#include "Fomt_Lib.src"
+
+script 1073 Event_1073 {
+    const MESSAGE_0 = "They're so tasty, \r\nit's easy to get stuffed\r\non 'em! \BRK";
+    
+    if ((Check_If_Single(8) == 0)) {
+        Free_Event_Entity(8);
+    }
+    SetEntityFacing(8, GetOppositeFacing(GetEntityFacing(0)));
+    TalkOpen();
+    Set_Portrait(0x86);
+    Set_Name_Window(8);
+    TalkMessage(0);
+    Talk_Mini_Close();
+    TalkClose();
+    if ((Has_Spoken_To_NPC_Today(8) == 0)) {
+        Give_Friendship_Points(8, 5);
+    }
+    Free_Event_Entity(8);
+    SetEntityFacing(8, "Down");
+    exit;
+}

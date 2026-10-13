@@ -1,0 +1,162 @@
+// Script 5
+#include "Fomt_Lib.src"
+
+script 5 Event_0005 {
+    const MESSAGE_0 = "Hello, \xFF!.\r\nI've got a favor I'd\r\nlike to ask of you.\BRK";
+    const MESSAGE_1 = "This Foal was born at\r\nour farm, but for some\r\nreason he's not doing\BRK\r\nvery well.\BRK\r\nWe can't look after him\r\nall the time, so do you\r\nthink you'd be able to\BRK\r\nuntil he grows up?\BRK";
+    const MESSAGE_2 = "Won't you reconsider?\r\nWe really have\r\nanywhere else to go...\BRK";
+    const MESSAGE_3 = "Are you absolutely sure?\BRK";
+    const MESSAGE_4 = "Accept";
+    const MESSAGE_5 = "Don't accept";
+    const MESSAGE_6 = "Well, I guess I \r\nwas wrong to depend on\r\nyou, anyway!\BRK\r\nBye now.\BRK";
+    const MESSAGE_7 = "That's great!\r\nThanks so much!\BRK\WAIT_CLICKIn that case, you \r\ncan even name him!\BRK";
+    const MESSAGE_8 = "Of course, you don't need\r\nto worry about him\r\nall that much.\BRK\WAIT_CLICKJust take care of him,\r\nand look after his needs.\BRK\WAIT_CLICKMost importantly, don't\r\nforget to talk to him\r\neveryday.\BRK\WAIT_CLICKBrushing regularly is also\r\na good idea.\BRK";
+    const MESSAGE_9 = "I'll bring him to \r\nthe Stable for you.\BRK";
+    const MESSAGE_10 = "I'll come back again\r\nwhen he gets bigger.\BRK\WAIT_CLICKUntil then please take\r\ngood care of him, OK?\BRK";
+    
+    var var_0;
+    var var_1;
+    var var_2;
+    
+    var_2 = 0;
+    Allocate_Unique_Animal(0, 0, 2, 0xCF, 0x91);
+    if ((Inventory_Check() == 1)) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    SetEntityPosition(4, 0xE4, 0x91, "Up");
+    SetEntityAnim(4, 0x9EF);
+    SetEntityPosition(0x2C, 0xCF, 0x91, "Up");
+    SetEntityAnim(0x2C, 0x79A);
+    Fade_In(2, 1);
+    TalkOpen();
+    Set_Portrait(0xB7);
+    Set_Name_Window(4);
+    TalkMessage(0);
+    TalkClose();
+    SetEntityFacing(4, "Left");
+    Make_Delay(0x3C);
+    SetEntityFacing(4, "Up");
+    do {
+        switch (var_2) {
+            case 0:
+                TalkOpen();
+                Set_Portrait(0xB7);
+                Set_Name_Window(4);
+                TalkMessage(1);
+                TalkClose();
+                break;
+            case 1:
+                TalkOpen();
+                Set_Portrait(0xB7);
+                Set_Name_Window(4);
+                TalkMessage(2);
+                TalkClose();
+                break;
+            case 2:
+                TalkOpen();
+                Set_Portrait(0xB7);
+                Set_Name_Window(4);
+                TalkMessage(3);
+                TalkClose();
+                break;
+        }
+        TalkOpen();
+        var_0 = TalkChoice2(4, 5);
+        TalkClose();
+        switch (var_0) {
+            case 1:
+                var_1 = 0;
+                break;
+            case 2:
+                var_1 = 1;
+                break;
+        }
+    } while (((var_1 != 0) && (var_2 < 3)));
+    if ((var_1 != 0)) {
+        TalkOpen();
+        Set_Portrait(0xB6);
+        Set_Name_Window(4);
+        TalkMessage(6);
+        TalkClose();
+        Give_Friendship_Points(4, -0xA);
+        SetEntityFacing(0, "Right");
+        SetEntityFacing(4, "Right");
+        SetEntityAnim(4, 0x9F3);
+        Set_Vector_X(4, 0x151, 1);
+        Execute_Movement(4);
+        SetEntityAnim(4, 0x9EF);
+        SetEntityFacing(4, "Left");
+        SetEntityFacing(0x2C, "Right");
+        SetEntityAnim(0x2C, 0x79E);
+        Set_Vector_X(0x2C, 0x131, 1);
+        Execute_Movement(0x2C);
+        SetEntityAnim(0x2C, 0x79A);
+        Make_Delay(0x1E);
+        SetEntityFacing(0x2C, "Up");
+        SetEntityFacing(4, "Up");
+        SetEntityAnim(4, 0x9F3);
+        Set_Vector_Y(4, 0, 1);
+        SetEntityAnim(0x2C, 0x79E);
+        Set_Vector_Y(0x2C, 0, 1);
+        Execute_Movement(4);
+        Execute_Movement(0x2C);
+        Hide_Entity(4);
+        Hide_Entity(0x2C);
+        Deallocate_Unique_Animal(0, 0);
+    } else {
+        TalkOpen();
+        Set_Portrait(0xB5);
+        Set_Name_Window(4);
+        TalkMessage(7);
+        TalkClose();
+        Fade_Out(3, 1);
+        Trigger_Naming_Sequence(0);
+        Fade_In(3, 1);
+        TalkOpen();
+        Set_Portrait(0xB4);
+        Set_Name_Window(4);
+        TalkMessage(8);
+        TalkClose();
+        SetEntityFacing(4, "Left");
+        Make_Delay(0x1E);
+        SetEntityFacing(4, "Up");
+        TalkOpen();
+        Set_Portrait(0xB4);
+        Set_Name_Window(4);
+        TalkMessage(9);
+        TalkClose();
+        SetEntityFacing(0, "Right");
+        SetEntityFacing(4, "Right");
+        SetEntityAnim(4, 0x9F3);
+        SetEntityFacing(0x2C, "Right");
+        SetEntityAnim(0x2C, 0x79E);
+        Set_Vector_X(4, 0x1F4, 1);
+        Set_Vector_X(0x2C, 0x1F4, 1);
+        Execute_Movement(4);
+        Execute_Movement(0x2C);
+        Force_Entity_Move_To(0x2C, 9, 0x54, 0x7C);
+        SetEntityAnim(4, 0x9EF);
+        SetEntityFacing(4, "Left");
+        SetEntityAnim(4, 0x9F3);
+        Set_Vector_X(4, 0x13F, 1);
+        Execute_Movement(4);
+        SetEntityAnim(4, 0x9EF);
+        TalkOpen();
+        Set_Portrait(0xB4);
+        Set_Name_Window(4);
+        TalkMessage(10);
+        TalkClose();
+        SetEntityFacing(4, "Up");
+        SetEntityAnim(4, 0x9F3);
+        Set_Vector_Y(4, 0, 1);
+        Execute_Movement(4);
+        SetEntityAnim(4, 0x9EF);
+        Hide_Entity(4);
+        Give_Friendship_Points(4, 0xA);
+    }
+    Set_Flag(0xDC, 2);
+    SetEntityFacing(0, "Down");
+    exit;
+}

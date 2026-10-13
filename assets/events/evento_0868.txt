@@ -1,0 +1,6 @@
+// Script 868
+#include "Fomt_Lib.src"
+
+script 868 Event_0868 {
+    exit;
+}

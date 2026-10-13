@@ -1,0 +1,11 @@
+// Script 365
+#include "Fomt_Lib.src"
+
+script 365 Event_0365 {
+    const MESSAGE_0 = "Grape Vine\BRK";
+    
+    TalkOpen();
+    Print_Message(0);
+    TalkClose();
+    exit;
+}

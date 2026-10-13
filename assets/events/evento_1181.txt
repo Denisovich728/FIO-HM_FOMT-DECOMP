@@ -1,0 +1,38 @@
+// Script 1181
+#include "Fomt_Lib.src"
+
+script 1181 Event_1181 {
+    const MESSAGE_0 = "Ha ha ha...\r\nThat Cow licked me all \r\nover my face!...\BRK";
+    const MESSAGE_1 = "It's impressive to win among\r\nsuch tough competition!\BRK";
+    const MESSAGE_2 = "Don't get too upset. \r\nIt's the trying that's\r\nimportant, not winning. \BRK";
+    
+    if ((Check_If_Single(0xA) == 0)) {
+        Free_Event_Entity(0xA);
+    }
+    SetEntityFacing(0xA, GetOppositeFacing(GetEntityFacing(0)));
+    if ((Check_Flag(0x19B) == 0)) {
+        TalkOpen();
+        Set_Portrait(0x64);
+        Set_Name_Window(0xA);
+        TalkMessage(0);
+    } else {
+        if ((Check_Flag(0x19D) == 1)) {
+            TalkOpen();
+            Set_Portrait(0x64);
+            Set_Name_Window(0xA);
+            TalkMessage(1);
+            goto LBL_0006;
+        }
+        TalkOpen();
+        Set_Portrait(0x63);
+        Set_Name_Window(0xA);
+        TalkMessage(2);
+    }
+    TalkClose();
+    if ((Has_Spoken_To_NPC_Today(0xA) == 0)) {
+        Give_Friendship_Points(0xA, 5);
+    }
+    Free_Event_Entity(0xA);
+    SetEntityFacing(0xA, "Up");
+    exit;
+}

@@ -1,0 +1,11 @@
+// Script 137
+#include "Fomt_Lib.src"
+
+script 137 Event_0137 {
+    const MESSAGE_0 = "Candlesticks\BRK";
+    
+    TalkOpen();
+    Print_Message(0);
+    TalkClose();
+    exit;
+}

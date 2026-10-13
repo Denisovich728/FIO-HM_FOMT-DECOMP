@@ -1,0 +1,409 @@
+// Script 1192
+#include "Fomt_Lib.src"
+
+script 1192 Event_1192 {
+    const MESSAGE_0 = "I just love fireworks. \r\nThey're so beautiful, but \r\nthe disappear so quickly. \BRK\WAIT_CLICKThe colors are so pretty, \r\ntoo. It's like magic. \BRK";
+    const MESSAGE_1 = "Wasn't the finale grand? \r\nNobody could take \r\ntheir eyes off it. \BRK";
+    const MESSAGE_2 = "I love watching fireworks\r\nfrom Mineral Beach. \BRK";
+    const MESSAGE_3 = "I wonder how they make \r\nall those colors and shapes! \BRK";
+    const MESSAGE_4 = "Too bad they're over!\BRK";
+    const MESSAGE_5 = "In the town I used to live,\r\nthey had fireworks all the \r\ntime. \BRK\WAIT_CLICKSomehow they look most \r\nbeautiful here once a \r\nyear, though. \BRK";
+    const MESSAGE_6 = "I can't wait until \r\nnext year! \BRK";
+    const MESSAGE_7 = "I used to be afraid of \r\nfireworks when I was a kid.\BRK\WAIT_CLICKNow I think they're pretty,\r\nbut it still seems like \r\nthey're about to fall on \BRK\r\ntop of me!\BRK";
+    const MESSAGE_8 = "That was fun! \r\nNow I can get back to work \r\ntomorrow all refreshed! \BRK";
+    const MESSAGE_9 = "Just once a year the \r\nsky gets so bright and \r\nloud...\BRK\WAIT_CLICKI always wonder what the \r\nfish think is happening!\BRK";
+    const MESSAGE_10 = "My neck hurts from \r\nlooking up so much! \r\nTime to go home. \BRK";
+    
+    Warp_Player(1, 0x181, 0x7C);
+    PlayBGM(1, 0xC);
+    SetEntityPosition(0, 0x181, 0x7C, "Right");
+    if ((Check_Flag(0x19F) == 1)) {
+        SetEntityPosition(0x13, 0x181, 0x8E, "Right");
+        SetEntityAnim(0x13, 0x691);
+    } else {
+        if ((Check_Flag(0x19F) == 2)) {
+            SetEntityPosition(3, 0x181, 0x8E, "Right");
+            SetEntityAnim(3, 0x22F);
+            goto LBL_0003;
+        }
+        if ((Check_Flag(0x19F) == 3)) {
+            SetEntityPosition(0xC, 0x181, 0x8E, "Right");
+            SetEntityAnim(0xC, 0x813);
+            goto LBL_0003;
+        }
+        if ((Check_Flag(0x19F) == 4)) {
+            SetEntityPosition(0x15, 0x181, 0x8E, "Right");
+            SetEntityAnim(0x15, 0x884);
+            goto LBL_0003;
+        }
+        if ((Check_Flag(0x19F) == 5)) {
+            SetEntityPosition(0x19, 0x181, 0x8E, "Right");
+            SetEntityAnim(0x19, 0x7BE);
+        }
+    }
+    Fade_In(2, 1);
+    PlaySong(0, 0xB1);
+    Make_Delay((0x3C * 3));
+    PlaySong(0, 0xB2);
+    Spawn_Firework_Color_Effect(0x1F, 0, 0);
+    PlaySong(0, 0xB1);
+    Make_Delay((0x3C * 3));
+    PlaySong(0, 0xB2);
+    Spawn_Firework_Color_Effect(0, 0, 0x1F);
+    PlaySong(0, 0xB1);
+    Make_Delay((0x3C * 3));
+    PlaySong(0, 0xB2);
+    Spawn_Firework_Color_Effect(0, 0x1F, 0);
+    if ((Check_Flag(0x19F) == 1)) {
+        TalkOpen();
+        Set_Portrait(0x48);
+        Set_Name_Window(0x13);
+        Set_Hearth_Anim(0x13);
+        TalkMessage(0);
+        TalkClose();
+        PlaySong(0, 0xB1);
+        Make_Delay((0x3C * 3));
+        PlaySong(0, 0xB2);
+        Spawn_Firework_Color_Effect(0x1F, 0, 0);
+        PlaySong(0, 0xB1);
+        Make_Delay((0x3C * 3));
+        PlaySong(0, 0xB2);
+        Spawn_Firework_Color_Effect(0, 0, 0x1F);
+        PlaySong(0, 0xB1);
+        Make_Delay((0x3C * 3));
+        PlaySong(0, 0xB2);
+        Spawn_Firework_Color_Effect(0, 0x1F, 0);
+        if ((Check_Flag(0x4C) == 2)) {
+            SetEntityFacing(0x13, "Up");
+            SetEntityFacing(0, "Down");
+            TalkOpen();
+            Set_Portrait(0x49);
+            Set_Name_Window(0x13);
+            Set_Hearth_Anim(0x13);
+            TalkMessage(1);
+            TalkClose();
+            Fade_Out(2, 1);
+            TalkOpen();
+            TalkMessage(2);
+            TalkClose();
+            Refresh_Map_Entities();
+            Add_Festival_Friendship_Bonus(0x15);
+            Add_Festival_Friendship_Bonus(0x14);
+            Add_Festival_Friendship_Bonus(7);
+            Add_Festival_Friendship_Bonus(0x19);
+            Add_Festival_Friendship_Bonus(0x17);
+            Add_Festival_Friendship_Bonus(0x13);
+            Add_Festival_Friendship_Bonus(0x1A);
+            Add_Festival_Friendship_Bonus(0xC);
+            Add_Festival_Friendship_Bonus(2);
+            Add_Festival_Friendship_Bonus(3);
+            Set_Flag(0x19E, 2);
+        } else {
+            Fade_Out(2, 1);
+            TalkOpen();
+            TalkMessage(2);
+            TalkClose();
+            Refresh_Map_Entities();
+            Refresh_Map_Entities();
+            Add_Festival_Friendship_Bonus(0x15);
+            Add_Festival_Friendship_Bonus(0x14);
+            Add_Festival_Friendship_Bonus(7);
+            Add_Festival_Friendship_Bonus(0x19);
+            Add_Festival_Friendship_Bonus(0x17);
+            Add_Festival_Friendship_Bonus(0x13);
+            Add_Festival_Friendship_Bonus(0x1A);
+            Add_Festival_Friendship_Bonus(0xC);
+            Add_Festival_Friendship_Bonus(2);
+            Add_Festival_Friendship_Bonus(3);
+            Set_Flag(0x19E, 2);
+        }
+    } else {
+        if ((Check_Flag(0x19F) == 2)) {
+            TalkOpen();
+            Set_Portrait(9);
+            Set_Name_Window(3);
+            Set_Hearth_Anim(3);
+            TalkMessage(3);
+            TalkClose();
+            PlaySong(0, 0xB1);
+            Make_Delay((0x3C * 3));
+            PlaySong(0, 0xB2);
+            Spawn_Firework_Color_Effect(0x1F, 0, 0);
+            PlaySong(0, 0xB1);
+            Make_Delay((0x3C * 3));
+            PlaySong(0, 0xB2);
+            Spawn_Firework_Color_Effect(0, 0, 0x1F);
+            PlaySong(0, 0xB1);
+            Make_Delay((0x3C * 3));
+            PlaySong(0, 0xB2);
+            Spawn_Firework_Color_Effect(0, 0x1F, 0);
+            if ((Check_Flag(0x55) == 2)) {
+                SetEntityFacing(3, "Up");
+                SetEntityFacing(0, "Down");
+                TalkOpen();
+                Set_Portrait(8);
+                Set_Name_Window(3);
+                Set_Hearth_Anim(3);
+                TalkMessage(4);
+                TalkClose();
+                Fade_Out(2, 1);
+                TalkOpen();
+                TalkMessage(2);
+                TalkClose();
+                Refresh_Map_Entities();
+                Add_Festival_Friendship_Bonus(0x15);
+                Add_Festival_Friendship_Bonus(0x14);
+                Add_Festival_Friendship_Bonus(7);
+                Add_Festival_Friendship_Bonus(0x19);
+                Add_Festival_Friendship_Bonus(0x17);
+                Add_Festival_Friendship_Bonus(0x13);
+                Add_Festival_Friendship_Bonus(0x1A);
+                Add_Festival_Friendship_Bonus(0xC);
+                Add_Festival_Friendship_Bonus(2);
+                Add_Festival_Friendship_Bonus(3);
+                Set_Flag(0x19E, 2);
+            } else {
+                Fade_Out(2, 1);
+                TalkOpen();
+                TalkMessage(2);
+                TalkClose();
+                Refresh_Map_Entities();
+                Add_Festival_Friendship_Bonus(0x15);
+                Add_Festival_Friendship_Bonus(0x14);
+                Add_Festival_Friendship_Bonus(7);
+                Add_Festival_Friendship_Bonus(0x19);
+                Add_Festival_Friendship_Bonus(0x17);
+                Add_Festival_Friendship_Bonus(0x13);
+                Add_Festival_Friendship_Bonus(0x1A);
+                Add_Festival_Friendship_Bonus(0xC);
+                Add_Festival_Friendship_Bonus(2);
+                Add_Festival_Friendship_Bonus(3);
+                Set_Flag(0x19E, 2);
+            }
+            goto LBL_001A;
+        }
+        if ((Check_Flag(0x19F) == 3)) {
+            TalkOpen();
+            Set_Portrait(0x67);
+            Set_Name_Window(0xC);
+            Set_Hearth_Anim(0xC);
+            TalkMessage(5);
+            TalkClose();
+            PlaySong(0, 0xB1);
+            Make_Delay((0x3C * 3));
+            PlaySong(0, 0xB2);
+            Spawn_Firework_Color_Effect(0x1F, 0, 0);
+            PlaySong(0, 0xB1);
+            Make_Delay((0x3C * 3));
+            PlaySong(0, 0xB2);
+            Spawn_Firework_Color_Effect(0, 0, 0x1F);
+            PlaySong(0, 0xB1);
+            Make_Delay((0x3C * 3));
+            PlaySong(0, 0xB2);
+            Spawn_Firework_Color_Effect(0, 0x1F, 0);
+            if ((Check_Flag(0x67) == 2)) {
+                SetEntityFacing(0xC, "Up");
+                SetEntityFacing(0, "Down");
+                TalkOpen();
+                Set_Portrait(0x68);
+                Set_Name_Window(0xC);
+                Set_Hearth_Anim(0xC);
+                TalkMessage(6);
+                TalkClose();
+                Fade_Out(2, 1);
+                TalkOpen();
+                TalkMessage(2);
+                TalkClose();
+                Refresh_Map_Entities();
+                Add_Festival_Friendship_Bonus(0x15);
+                Add_Festival_Friendship_Bonus(0x14);
+                Add_Festival_Friendship_Bonus(7);
+                Add_Festival_Friendship_Bonus(0x19);
+                Add_Festival_Friendship_Bonus(0x17);
+                Add_Festival_Friendship_Bonus(0x13);
+                Add_Festival_Friendship_Bonus(0x1A);
+                Add_Festival_Friendship_Bonus(0xC);
+                Add_Festival_Friendship_Bonus(2);
+                Add_Festival_Friendship_Bonus(3);
+                Set_Flag(0x19E, 2);
+            } else {
+                Fade_Out(2, 1);
+                TalkOpen();
+                TalkMessage(2);
+                TalkClose();
+                Refresh_Map_Entities();
+                Add_Festival_Friendship_Bonus(0x15);
+                Add_Festival_Friendship_Bonus(0x14);
+                Add_Festival_Friendship_Bonus(7);
+                Add_Festival_Friendship_Bonus(0x19);
+                Add_Festival_Friendship_Bonus(0x17);
+                Add_Festival_Friendship_Bonus(0x13);
+                Add_Festival_Friendship_Bonus(0x1A);
+                Add_Festival_Friendship_Bonus(0xC);
+                Add_Festival_Friendship_Bonus(2);
+                Add_Festival_Friendship_Bonus(3);
+                Set_Flag(0x19E, 2);
+            }
+            goto LBL_001A;
+        }
+        if ((Check_Flag(0x19F) == 4)) {
+            TalkOpen();
+            Set_Portrait(0x7E);
+            Set_Name_Window(0x15);
+            Set_Hearth_Anim(0x15);
+            TalkMessage(7);
+            TalkClose();
+            PlaySong(0, 0xB1);
+            Make_Delay((0x3C * 3));
+            PlaySong(0, 0xB2);
+            Spawn_Firework_Color_Effect(0x1F, 0, 0);
+            PlaySong(0, 0xB1);
+            Make_Delay((0x3C * 3));
+            PlaySong(0, 0xB2);
+            Spawn_Firework_Color_Effect(0, 0, 0x1F);
+            PlaySong(0, 0xB1);
+            Make_Delay((0x3C * 3));
+            PlaySong(0, 0xB2);
+            Spawn_Firework_Color_Effect(0, 0x1F, 0);
+            if ((Check_Flag(0x6F) == 2)) {
+                SetEntityFacing(0x15, "Up");
+                SetEntityFacing(0, "Down");
+                TalkOpen();
+                Set_Portrait(0x79);
+                Set_Name_Window(0x15);
+                Set_Hearth_Anim(0x15);
+                TalkMessage(8);
+                TalkClose();
+                Fade_Out(2, 1);
+                TalkOpen();
+                TalkMessage(2);
+                TalkClose();
+                Refresh_Map_Entities();
+                Add_Festival_Friendship_Bonus(0x15);
+                Add_Festival_Friendship_Bonus(0x14);
+                Add_Festival_Friendship_Bonus(7);
+                Add_Festival_Friendship_Bonus(0x19);
+                Add_Festival_Friendship_Bonus(0x17);
+                Add_Festival_Friendship_Bonus(0x13);
+                Add_Festival_Friendship_Bonus(0x1A);
+                Add_Festival_Friendship_Bonus(0xC);
+                Add_Festival_Friendship_Bonus(2);
+                Add_Festival_Friendship_Bonus(3);
+                Set_Flag(0x19E, 2);
+            } else {
+                Fade_Out(2, 1);
+                TalkOpen();
+                TalkMessage(2);
+                TalkClose();
+                Refresh_Map_Entities();
+                Add_Festival_Friendship_Bonus(0x15);
+                Add_Festival_Friendship_Bonus(0x14);
+                Add_Festival_Friendship_Bonus(7);
+                Add_Festival_Friendship_Bonus(0x19);
+                Add_Festival_Friendship_Bonus(0x17);
+                Add_Festival_Friendship_Bonus(0x13);
+                Add_Festival_Friendship_Bonus(0x1A);
+                Add_Festival_Friendship_Bonus(0xC);
+                Add_Festival_Friendship_Bonus(2);
+                Add_Festival_Friendship_Bonus(3);
+                Set_Flag(0x19E, 2);
+            }
+            goto LBL_001A;
+        }
+        if ((Check_Flag(0x19F) == 5)) {
+            TalkOpen();
+            Set_Flag(0x19F, 5);
+            Set_Portrait(0x57);
+            Set_Name_Window(0x19);
+            Set_Hearth_Anim(0x19);
+            TalkMessage(9);
+            TalkClose();
+            PlaySong(0, 0xB1);
+            Make_Delay((0x3C * 3));
+            PlaySong(0, 0xB2);
+            Spawn_Firework_Color_Effect(0x1F, 0, 0);
+            PlaySong(0, 0xB1);
+            Make_Delay((0x3C * 3));
+            PlaySong(0, 0xB2);
+            Spawn_Firework_Color_Effect(0, 0, 0x1F);
+            PlaySong(0, 0xB1);
+            Make_Delay((0x3C * 3));
+            PlaySong(0, 0xB2);
+            Spawn_Firework_Color_Effect(0, 0x1F, 0);
+            if ((Check_Flag(0x5F) == 2)) {
+                SetEntityFacing(0x19, "Up");
+                SetEntityFacing(0, "Down");
+                TalkOpen();
+                Set_Portrait(0x5B);
+                Set_Name_Window(0x19);
+                Set_Hearth_Anim(0x19);
+                TalkMessage(10);
+                TalkClose();
+                Fade_Out(2, 1);
+                TalkOpen();
+                TalkMessage(2);
+                TalkClose();
+                Refresh_Map_Entities();
+                Add_Festival_Friendship_Bonus(0x15);
+                Add_Festival_Friendship_Bonus(0x14);
+                Add_Festival_Friendship_Bonus(7);
+                Add_Festival_Friendship_Bonus(0x19);
+                Add_Festival_Friendship_Bonus(0x17);
+                Add_Festival_Friendship_Bonus(0x13);
+                Add_Festival_Friendship_Bonus(0x1A);
+                Add_Festival_Friendship_Bonus(0xC);
+                Add_Festival_Friendship_Bonus(2);
+                Add_Festival_Friendship_Bonus(3);
+                Set_Flag(0x19E, 2);
+            } else {
+                Fade_Out(2, 1);
+                TalkOpen();
+                TalkMessage(2);
+                TalkClose();
+                Refresh_Map_Entities();
+                Add_Festival_Friendship_Bonus(0x15);
+                Add_Festival_Friendship_Bonus(0x14);
+                Add_Festival_Friendship_Bonus(7);
+                Add_Festival_Friendship_Bonus(0x19);
+                Add_Festival_Friendship_Bonus(0x17);
+                Add_Festival_Friendship_Bonus(0x13);
+                Add_Festival_Friendship_Bonus(0x1A);
+                Add_Festival_Friendship_Bonus(0xC);
+                Add_Festival_Friendship_Bonus(2);
+                Add_Festival_Friendship_Bonus(3);
+                Set_Flag(0x19E, 2);
+            }
+            goto LBL_001A;
+        }
+        PlaySong(0, 0xB1);
+        Make_Delay((0x3C * 3));
+        PlaySong(0, 0xB2);
+        Spawn_Firework_Color_Effect(0x1F, 0, 0);
+        PlaySong(0, 0xB1);
+        Make_Delay((0x3C * 3));
+        PlaySong(0, 0xB2);
+        Spawn_Firework_Color_Effect(0, 0, 0x1F);
+        PlaySong(0, 0xB1);
+        Make_Delay((0x3C * 3));
+        PlaySong(0, 0xB2);
+        Spawn_Firework_Color_Effect(0, 0x1F, 0);
+        Fade_Out(2, 1);
+        TalkOpen();
+        TalkMessage(2);
+        TalkClose();
+        Refresh_Map_Entities();
+        Add_Festival_Friendship_Bonus(0x15);
+        Add_Festival_Friendship_Bonus(0x14);
+        Add_Festival_Friendship_Bonus(7);
+        Add_Festival_Friendship_Bonus(0x19);
+        Add_Festival_Friendship_Bonus(0x17);
+        Add_Festival_Friendship_Bonus(0x13);
+        Add_Festival_Friendship_Bonus(0x1A);
+        Add_Festival_Friendship_Bonus(0xC);
+        Add_Festival_Friendship_Bonus(2);
+        Add_Festival_Friendship_Bonus(3);
+        Set_Flag(0x19E, 2);
+    }
+    Execute_Script(988);
+    exit;
+}

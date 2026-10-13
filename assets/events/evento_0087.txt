@@ -1,0 +1,29 @@
+// Script 87
+#include "Fomt_Lib.src"
+
+script 87 Event_0087 {
+    const MESSAGE_0 = "You found a Power Berry.\r\n\BRK";
+    const MESSAGE_1 = "...But your hands are\r\nalready full, so you \r\ncan't hold it.\BRK";
+    const MESSAGE_2 = "There's nothing here now.\r\n\BRK";
+    
+    if ((GetEntityFacing(0) == 0)) {
+        if ((Check_Flag(0x149) == 0)) {
+            TalkOpen();
+            TalkMessage(0);
+            if ((Inventory_Check() == 1)) {
+                TalkClose();
+                PlaySong(0, 0xB6);
+                Player_Eat_Power_Berry_Anim();
+                Set_Flag(0x149, 2);
+            } else {
+                TalkMessage(1);
+                TalkClose();
+            }
+        } else {
+            TalkOpen();
+            TalkMessage(2);
+            TalkClose();
+        }
+    }
+    exit;
+}

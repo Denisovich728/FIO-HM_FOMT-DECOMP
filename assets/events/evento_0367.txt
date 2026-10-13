@@ -1,0 +1,11 @@
+// Script 367
+#include "Fomt_Lib.src"
+
+script 367 Event_0367 {
+    const MESSAGE_0 = "Street lamp\BRK";
+    
+    TalkOpen();
+    Print_Message(0);
+    TalkClose();
+    exit;
+}

@@ -1,0 +1,11 @@
+// Script 364
+#include "Fomt_Lib.src"
+
+script 364 Event_0364 {
+    const MESSAGE_0 = "Bench\BRK";
+    
+    TalkOpen();
+    Print_Message(0);
+    TalkClose();
+    exit;
+}

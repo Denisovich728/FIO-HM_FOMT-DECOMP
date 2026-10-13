@@ -1,0 +1,344 @@
+// Script 739
+#include "Fomt_Lib.src"
+
+script 739 Event_0739 {
+    const MESSAGE_0 = "Did you bring it for me, \r\n\xFF!? \BRK\WAIT_CLICKShow me quick!\BRK";
+    const MESSAGE_1 = "This isn't it. \r\n\BRK";
+    const MESSAGE_2 = "I asked you for a \r\nDiamond, remember? \r\nBring one quick!\BRK";
+    const MESSAGE_3 = "I asked you for a \r\nBracelet, remember? \r\nBring one quick!\BRK";
+    const MESSAGE_4 = "I asked you for a \r\nGreen Pepper, remember? \r\nBring one quick!\BRK";
+    const MESSAGE_5 = "I asked you for a \r\nGolden Egg, remember? \r\nBring one quick!\BRK";
+    const MESSAGE_6 = "I asked you for \r\nBlack Grass, remember? \r\nBring some quick!\BRK";
+    const MESSAGE_7 = "I asked you for  \r\nWhite Grass, remember? \r\nBring some quick!\BRK";
+    const MESSAGE_8 = "I asked you for a \r\nTruffle, remember? \r\nBring one quick!\BRK";
+    const MESSAGE_9 = "I asked you for a \r\nMoon Stone, remember? \r\nBring one quick!\BRK";
+    const MESSAGE_10 = "I asked you for an \r\nAEPFE Apple, remember? \r\nBring one quick!\BRK";
+    const MESSAGE_11 = "I asked you for a \r\nRice Cake, remember? \r\nBring one quick!\BRK";
+    const MESSAGE_12 = "This is exactly what I \r\nwanted. Thank you!\BRK\WAIT_CLICKNow I have to go show it to\r\nthe Mayor from the next \r\ntown. \BRK\WAIT_CLICKThis is an expression of\r\nmy thanks. Take it. \BRK";
+    const MESSAGE_13 = "This is called Golden \r\nLumber. It's very valuable. \BRK\WAIT_CLICKKeep it inside your house. \r\nIf you put it outside, \r\neverybody will think you're\BRK\r\nshowing off. \BRK";
+    const MESSAGE_14 = "Thanks again for \r\nyour help in this matter. \BRK";
+    const MESSAGE_15 = "Sorry, but it has to be a \r\nregular Diamond. \BRK\WAIT_CLICKBring one to me quickly!\BRK";
+    const MESSAGE_16 = "I said I needed a Bracelet, \r\nnot just any piece of \r\njewelry! \BRK\WAIT_CLICKBring one to me quickly!\BRK";
+    const MESSAGE_17 = "I said I needed a Golden \r\nEgg, not just any old Egg!\BRK\WAIT_CLICKBring one to me quickly!\BRK";
+    const MESSAGE_18 = "What am I supposed to do \r\nwith an Egg dish!?\BRK\WAIT_CLICKBring me a Golden Egg soon!\BRK";
+    const MESSAGE_19 = "Sorry, but this isn't the \r\nkind of Grass I need!\BRK";
+    const MESSAGE_20 = "Bring me some Black Grass\r\nquickly!\BRK";
+    const MESSAGE_21 = "Bring me some White Grass\r\nquickly!\BRK";
+    const MESSAGE_22 = "I need a Truffle, not \r\nTruffle Rice! \BRK\WAIT_CLICKBring one to me quickly!\BRK";
+    const MESSAGE_23 = "I need a Truffle, not a \r\nnormal Mushroom!\BRK\WAIT_CLICKBring one to me quickly!\BRK";
+    const MESSAGE_24 = "I need an AEPFE Apple, \r\nnot a normal one!\BRK\WAIT_CLICKBring one to me quickly!\BRK";
+    const MESSAGE_25 = "It looks delicious, but I \r\nneed an AEPFE Apple, not a \r\nregular one! \BRK\WAIT_CLICKBring one to me quickly!\BRK";
+    const MESSAGE_26 = "I need an AEPFE Apple, not\r\nApple cooking!\BRK\WAIT_CLICKBring one to me quickly!\BRK";
+    const MESSAGE_27 = "I need a regular Rice Cake, \r\nnot a cooked one!\BRK\WAIT_CLICKBring one to me quickly!\BRK";
+    
+    var var_1;
+    
+    Set_Flag(0x10A, 1);
+    var_1 = 0;
+    SetEntityFacing(0xD, GetOppositeFacing(GetEntityFacing(0)));
+    if ((Inventory_Check() == 1)) {
+        TalkOpen();
+        Set_Flag(0x10A, 0);
+        Set_Portrait(0x76);
+        Set_Name_Window(0xD);
+        TalkMessage(0);
+        TalkClose();
+        exit;
+    } else {
+        switch (Check_Flag(0x108)) {
+            case 0:
+                if ((Compare_Gift() == 1)) {
+                    if ((Search_Item_Gift_Address() == 0x1D)) {
+                        var_1 = 1;
+                    }
+                    if ((Search_Item_Gift_Address() == 0x1A)) {
+                        var_1 = 2;
+                    }
+                }
+                break;
+            case 1:
+                if ((Compare_Gift() == 1)) {
+                    if ((Search_Item_Gift_Address() == 0x2C)) {
+                        var_1 = 1;
+                    }
+                    if ((((Search_Item_Gift_Address() == 0x2D) || (Search_Item_Gift_Address() == 0x2E)) || (Search_Item_Gift_Address() == 0x2F))) {
+                        var_1 = 3;
+                    }
+                }
+                break;
+            case 2:
+                if ((Compare_Gift() == 0)) {
+                    if ((Search_Food_Gift_Address() == 0xE)) {
+                        var_1 = 1;
+                    }
+                }
+                break;
+            case 3:
+                if ((Compare_Gift() == 0)) {
+                    if ((Search_Food_Gift_Address() == 0x12)) {
+                        var_1 = 1;
+                    }
+                    if ((((((Search_Food_Gift_Address() == 0xF) || (Search_Food_Gift_Address() == 0x10)) || (Search_Food_Gift_Address() == 0x11)) || (Search_Food_Gift_Address() == 0x13)) || (Search_Food_Gift_Address() == 0x14))) {
+                        var_1 = 4;
+                    }
+                    if (((((((Search_Food_Gift_Address() == 0x15) || (Search_Food_Gift_Address() == 0x6B)) || (Search_Food_Gift_Address() == 0x6C)) || (Search_Food_Gift_Address() == 0x6D)) || (Search_Food_Gift_Address() == 0x6E)) || (Search_Food_Gift_Address() == 0xA5))) {
+                        var_1 = 5;
+                    }
+                }
+                break;
+            case 4:
+                if ((Compare_Gift() == 0)) {
+                    if ((Search_Food_Gift_Address() == 0x36)) {
+                        var_1 = 1;
+                    }
+                    if ((((((((((Search_Food_Gift_Address() == 0x2F) || (Search_Food_Gift_Address() == 0x30)) || (Search_Food_Gift_Address() == 0x31)) || (Search_Food_Gift_Address() == 0x32)) || (Search_Food_Gift_Address() == 0x33)) || (Search_Food_Gift_Address() == 0x34)) || (Search_Food_Gift_Address() == 0x35)) || (Search_Food_Gift_Address() == 0x37)) || (Search_Food_Gift_Address() == 0x99))) {
+                        var_1 = 6;
+                    }
+                }
+                break;
+            case 5:
+                if ((Compare_Gift() == 0)) {
+                    if ((Search_Food_Gift_Address() == 0x37)) {
+                        var_1 = 1;
+                    }
+                    if ((((((((((Search_Food_Gift_Address() == 0x2F) || (Search_Food_Gift_Address() == 0x30)) || (Search_Food_Gift_Address() == 0x31)) || (Search_Food_Gift_Address() == 0x32)) || (Search_Food_Gift_Address() == 0x33)) || (Search_Food_Gift_Address() == 0x34)) || (Search_Food_Gift_Address() == 0x35)) || (Search_Food_Gift_Address() == 0x36)) || (Search_Food_Gift_Address() == 0x99))) {
+                        var_1 = 6;
+                    }
+                }
+                break;
+            case 6:
+                if ((Compare_Gift() == 0)) {
+                    if ((Search_Food_Gift_Address() == 0x2E)) {
+                        var_1 = 1;
+                    }
+                    if ((Search_Food_Gift_Address() == 0x78)) {
+                        var_1 = 7;
+                    }
+                    if (((Search_Food_Gift_Address() == 0x2C) || (Search_Food_Gift_Address() == 0x2D))) {
+                        var_1 = 0xC;
+                    }
+                }
+                break;
+            case 7:
+                if ((Compare_Gift() == 1)) {
+                    if ((Search_Item_Gift_Address() == 0x18)) {
+                        var_1 = 1;
+                    }
+                }
+                break;
+            case 8:
+                if ((Compare_Gift() == 0)) {
+                    if ((Search_Food_Gift_Address() == 0x49)) {
+                        var_1 = 1;
+                    }
+                    if ((Search_Food_Gift_Address() == 0x28)) {
+                        var_1 = 8;
+                    }
+                    if (((Search_Food_Gift_Address() == 0x47) || (Search_Food_Gift_Address() == 0x48))) {
+                        var_1 = 9;
+                    }
+                    if ((((Search_Food_Gift_Address() == 0x73) || (Search_Food_Gift_Address() == 0x74)) || (Search_Food_Gift_Address() == 0x75))) {
+                        var_1 = 0xA;
+                    }
+                }
+                break;
+            case 9:
+                if ((Compare_Gift() == 0)) {
+                    if ((Search_Food_Gift_Address() == 0x97)) {
+                        var_1 = 1;
+                    }
+                    if ((Search_Food_Gift_Address() == 0x98)) {
+                        var_1 = 0xB;
+                    }
+                }
+                break;
+        }
+        switch (var_1) {
+            case 0:
+                Set_Flag(0x10A, 0);
+                TalkOpen();
+                Set_Portrait(0x77);
+                Set_Name_Window(0xD);
+                TalkMessage(1);
+                Set_Portrait(0x75);
+                switch (Check_Flag(0x108)) {
+                    case 0:
+                        TalkMessage(2);
+                        break;
+                    case 1:
+                        TalkMessage(3);
+                        break;
+                    case 2:
+                        TalkMessage(4);
+                        break;
+                    case 3:
+                        TalkMessage(5);
+                        break;
+                    case 4:
+                        TalkMessage(6);
+                        break;
+                    case 5:
+                        TalkMessage(7);
+                        break;
+                    case 6:
+                        TalkMessage(8);
+                        break;
+                    case 7:
+                        TalkMessage(9);
+                        break;
+                    case 8:
+                        TalkMessage(10);
+                        break;
+                    case 9:
+                        TalkMessage(11);
+                        break;
+                }
+                TalkClose();
+                SetEntityFacing(0xD, "Down");
+                break;
+            case 1:
+                Drop_Held_Item();
+                SetEntityAnim(0, 0x192);
+                TalkOpen();
+                Set_Portrait(0x76);
+                Set_Name_Window(0xD);
+                TalkMessage(12);
+                TalkClose();
+                Give_Item(0x5A);
+                TalkOpen();
+                Set_Portrait(0x76);
+                Set_Name_Window(0xD);
+                TalkMessage(13);
+                Set_Portrait(0x75);
+                TalkMessage(14);
+                TalkClose();
+                SetEntityFacing(0xD, "Down");
+                Give_Friendship_Points(0xD, 0x1E);
+                if ((GetEntityX(0xD) != 0x154)) {
+                    SetEntityFacing(0xD, "Right");
+                    SetEntityAnim(0xD, 0x863);
+                    Set_Vector_X(0xD, 0x154, 1);
+                    Execute_Movement(0xD);
+                    SetEntityAnim(0xD, 0x85F);
+                }
+                SetEntityFacing(0xD, "Up");
+                SetEntityAnim(0xD, 0x863);
+                Set_Vector_Y(0xD, 0, 1);
+                Execute_Movement(0xD);
+                SetEntityAnim(0xD, 0x85F);
+                Hide_Entity(0xD);
+                Set_Flag(0x10A, 2);
+                Finalize_Event();
+                break;
+            case 2:
+                Set_Flag(0x10A, 0);
+                TalkOpen();
+                Set_Portrait(0x78);
+                Set_Name_Window(0xD);
+                TalkMessage(15);
+                TalkClose();
+                SetEntityFacing(0xD, "Down");
+                break;
+            case 3:
+                Set_Flag(0x10A, 0);
+                TalkOpen();
+                Set_Portrait(0x78);
+                Set_Name_Window(0xD);
+                TalkMessage(16);
+                TalkClose();
+                SetEntityFacing(0xD, "Down");
+                break;
+            case 4:
+                Set_Flag(0x10A, 0);
+                TalkOpen();
+                Set_Portrait(0x78);
+                Set_Name_Window(0xD);
+                TalkMessage(17);
+                TalkClose();
+                SetEntityFacing(0xD, "Down");
+                break;
+            case 5:
+                Set_Flag(0x10A, 0);
+                TalkOpen();
+                Set_Portrait(0x77);
+                Set_Name_Window(0xD);
+                TalkMessage(18);
+                TalkClose();
+                SetEntityFacing(0xD, "Down");
+                break;
+            case 6:
+                Set_Flag(0x10A, 0);
+                TalkOpen();
+                Set_Portrait(0x78);
+                Set_Name_Window(0xD);
+                TalkMessage(19);
+                switch (Check_Flag(0x108)) {
+                    case 4:
+                        TalkMessage(20);
+                        break;
+                    case 5:
+                        TalkMessage(21);
+                        break;
+                }
+                TalkClose();
+                SetEntityFacing(0xD, "Down");
+                break;
+            case 7:
+                Set_Flag(0x10A, 0);
+                TalkOpen();
+                Set_Portrait(0x77);
+                Set_Name_Window(0xD);
+                TalkMessage(22);
+                TalkClose();
+                SetEntityFacing(0xD, "Down");
+                break;
+            case 0xC:
+                Set_Flag(0x10A, 0);
+                TalkOpen();
+                Set_Portrait(0x77);
+                Set_Name_Window(0xD);
+                TalkMessage(23);
+                TalkClose();
+                SetEntityFacing(0xD, "Down");
+                break;
+            case 8:
+                Set_Flag(0x10A, 0);
+                TalkOpen();
+                Set_Portrait(0x78);
+                Set_Name_Window(0xD);
+                TalkMessage(24);
+                TalkClose();
+                SetEntityFacing(0xD, "Down");
+                break;
+            case 9:
+                Set_Flag(0x10A, 0);
+                TalkOpen();
+                Set_Portrait(0x78);
+                Set_Name_Window(0xD);
+                TalkMessage(25);
+                TalkClose();
+                SetEntityFacing(0xD, "Down");
+                break;
+            case 0xA:
+                Set_Flag(0x10A, 0);
+                TalkOpen();
+                Set_Portrait(0x77);
+                Set_Name_Window(0xD);
+                TalkMessage(26);
+                TalkClose();
+                SetEntityFacing(0xD, "Down");
+                break;
+            case 0xB:
+                Set_Flag(0x10A, 0);
+                TalkOpen();
+                Set_Portrait(0x78);
+                Set_Name_Window(0xD);
+                TalkMessage(27);
+                TalkClose();
+                SetEntityFacing(0xD, "Down");
+                break;
+        }
+    }
+    exit;
+    exit;
+}

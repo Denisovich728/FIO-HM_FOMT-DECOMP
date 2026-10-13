@@ -1,0 +1,11 @@
+// Script 94
+#include "Fomt_Lib.src"
+
+script 94 Event_0094 {
+    const MESSAGE_0 = "Bucket\BRK";
+    
+    TalkOpen();
+    Print_Message(0);
+    TalkClose();
+    exit;
+}

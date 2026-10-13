@@ -1,0 +1,31 @@
+// Script 920
+#include "Fomt_Lib.src"
+
+script 920 Event_0920 {
+    const MESSAGE_0 = "Have I told you Ann and I\r\nare getting married?\BRK";
+    const MESSAGE_1 = "I'm going to stay here \r\nforever, now. \r\nI'm happy here. \BRK";
+    
+    if ((Check_If_Single(0x17) == 0)) {
+        Free_Event_Entity(0x17);
+    }
+    if ((Has_NPC_Talked_Today(0x17) == 0)) {
+        SetEntityFacing(0x17, GetOppositeFacing(GetEntityFacing(0)));
+        TalkOpen();
+        Set_Portrait(0x1D);
+        Set_Name_Window(0x17);
+        TalkMessage(0);
+        TalkClose();
+        SetEntityFacing(0x17, "Down");
+        Free_Event_Entity(0x17);
+    } else {
+        SetEntityFacing(0x17, GetOppositeFacing(GetEntityFacing(0)));
+        TalkOpen();
+        Set_Portrait(0x1D);
+        Set_Name_Window(0x17);
+        TalkMessage(1);
+        TalkClose();
+        SetEntityFacing(0x17, "Down");
+        Free_Event_Entity(0x17);
+    }
+    exit;
+}

@@ -1,0 +1,11 @@
+// Script 109
+#include "Fomt_Lib.src"
+
+script 109 Event_0109 {
+    const MESSAGE_0 = "Timber\BRK";
+    
+    TalkOpen();
+    Print_Message(0);
+    TalkClose();
+    exit;
+}

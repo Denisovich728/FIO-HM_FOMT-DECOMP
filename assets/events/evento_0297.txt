@@ -1,0 +1,11 @@
+// Script 297
+#include "Fomt_Lib.src"
+
+script 297 Event_0297 {
+    const MESSAGE_0 = "Plant\BRK";
+    
+    TalkOpen();
+    Print_Message(0);
+    TalkClose();
+    exit;
+}

@@ -1,0 +1,18 @@
+// Script 754
+#include "Fomt_Lib.src"
+
+script 754 Event_0754 {
+    const MESSAGE_0 = "I'm OK now!!\r\n...I think...\BRK";
+    
+    if ((Check_Flag(0x117) == 1)) {
+        SetEntityFacing(0x11, GetOppositeFacing(GetEntityFacing(0)));
+        TalkOpen();
+        Set_Portrait(0x43);
+        Set_Name_Window(0x11);
+        TalkMessage(0);
+        TalkClose();
+        Free_Event_Entity(0x11);
+        SetEntityFacing(0x11, "Left");
+    }
+    exit;
+}

@@ -1,0 +1,30 @@
+// Script 1175
+#include "Fomt_Lib.src"
+
+script 1175 Event_1175 {
+    const MESSAGE_0 = "For some reason, my \r\ngrandfather doesn't like \r\nentering competitions...\BRK\r\nI bet we could win, too!\BRK";
+    const MESSAGE_1 = "You're going to compete, \r\nright? I hope you win!\BRK";
+    
+    if ((Check_If_Single(5) == 0)) {
+        Free_Event_Entity(5);
+    }
+    SetEntityFacing(5, GetOppositeFacing(GetEntityFacing(0)));
+    if ((Check_Flag(0x19B) == 0)) {
+        TalkOpen();
+        Set_Portrait(0xB3);
+        Set_Name_Window(5);
+        TalkMessage(0);
+    } else {
+        TalkOpen();
+        Set_Portrait(0xB1);
+        Set_Name_Window(5);
+        TalkMessage(1);
+    }
+    TalkClose();
+    if ((Has_Spoken_To_NPC_Today(5) == 0)) {
+        Give_Friendship_Points(5, 5);
+    }
+    Free_Event_Entity(5);
+    SetEntityFacing(5, "Left");
+    exit;
+}

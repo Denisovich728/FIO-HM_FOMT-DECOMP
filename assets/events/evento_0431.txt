@@ -1,0 +1,11 @@
+// Script 431
+#include "Fomt_Lib.src"
+
+script 431 Event_0431 {
+    const MESSAGE_0 = "Window\BRK";
+    
+    TalkOpen();
+    TalkMessage(0);
+    TalkClose();
+    exit;
+}

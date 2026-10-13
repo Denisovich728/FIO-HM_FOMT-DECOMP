@@ -1,0 +1,11 @@
+// Script 244
+#include "Fomt_Lib.src"
+
+script 244 Event_0244 {
+    const MESSAGE_0 = "Sofa\BRK";
+    
+    TalkOpen();
+    Print_Message(0);
+    TalkClose();
+    exit;
+}

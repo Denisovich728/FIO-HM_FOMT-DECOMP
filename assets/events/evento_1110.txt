@@ -1,0 +1,22 @@
+// Script 1110
+#include "Fomt_Lib.src"
+
+script 1110 Event_1110 {
+    const MESSAGE_0 = "I wonder what the food for\r\nthis year will be...?\BRK";
+    
+    if ((Check_If_Single(0xD) == 0)) {
+        Free_Event_Entity(0xD);
+    }
+    SetEntityFacing(0xD, GetOppositeFacing(GetEntityFacing(0)));
+    TalkOpen();
+    Set_Portrait(0x76);
+    Set_Name_Window(0xD);
+    TalkMessage(0);
+    TalkClose();
+    if ((Has_Spoken_To_NPC_Today(0xD) == 0)) {
+        Give_Friendship_Points(0xD, 5);
+    }
+    SetEntityFacing(0xD, "Down");
+    Free_Event_Entity(0xD);
+    exit;
+}

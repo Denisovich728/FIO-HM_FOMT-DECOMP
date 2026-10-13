@@ -1,0 +1,124 @@
+// Script 984
+#include "Fomt_Lib.src"
+
+script 984 Event_0984 {
+    const MESSAGE_0 = "It should be born soon...\BRK";
+    const MESSAGE_1 = "A Baby Chick has been born.\r\nGive it a name for this \r\nlife.\BRK";
+    const MESSAGE_2 = "A Calf has been born.\r\nGive it a name for this \r\nlife.\BRK";
+    const MESSAGE_3 = "A Lamb has been born.\r\nGive it a name for this \r\nlife.\BRK";
+    const MESSAGE_4 = "A new member of my family.\r\nGotta work harder.\BRK";
+    
+    var var_0;
+    var var_1;
+    var var_2;
+    var var_3;
+    var var_4;
+    
+    var_2 = 0;
+    var_0 = 0;
+    LBL_0004:
+    (0 < Func0BB(var_0));
+    if ((0 < Func0BB(var_0))) {
+    } else {
+        goto LBL_0003;
+        goto LBL_0004;
+    }
+    if (Func0BC(var_0)) {
+        var_2 = 1;
+    }
+    goto LBL_0004;
+    LBL_0003:
+    var_0 = 0;
+    LBL_000B:
+    (var_0 < Func0C1());
+    if ((var_0 < Func0C1())) {
+    } else {
+        goto LBL_000A;
+        goto LBL_000B;
+    }
+    if (Func0C2(var_0)) {
+        var_2 = 1;
+    }
+    goto LBL_000B;
+    LBL_000A:
+    if ((var_2 != 0)) {
+        TalkOpen();
+        TalkMessage(0);
+        TalkClose();
+        var_0 = 0;
+    }
+    LBL_0015:
+    (0 < Func0BB(var_0));
+    if ((0 < Func0BB(var_0))) {
+    } else {
+        goto LBL_0014;
+        goto LBL_0015;
+    }
+    if (Func0BC(var_0)) {
+        var_1 = Func0BD(var_0);
+        Warp_Player(0x11, 0x3B, 0x99);
+        var_3 = GetEntityX((0x2E + var_1));
+        var_4 = GetEntityY((0x2E + var_1));
+        Hide_Entity((0x2E + var_1));
+        SetEntityPosition(0x46, var_3, var_4, "Right");
+        SetEntityAnim(0x46, 0x735);
+        SetEntityPosition(0, (var_3 + 0x11), var_4, "Left");
+        if ((Inventory_Check() == 1)) {
+            SetEntityAnim(0, 0x192);
+        } else {
+            SetEntityAnim(0, 0x152);
+        }
+        Fade_In(2, 1);
+        TalkOpen();
+        TalkMessage(1);
+        TalkClose();
+        Fade_Out(3, 1);
+        Trigger_Naming_Sequence(var_1);
+        Hide_Entity(0x46);
+        SetEntityPosition((0x2E + var_1), var_3, var_4, "Right");
+    }
+    goto LBL_0015;
+    LBL_0014:
+    var_0 = 0;
+    LBL_0020:
+    (var_0 < Func0C1());
+    if ((var_0 < Func0C1())) {
+    } else {
+        goto LBL_001F;
+        goto LBL_0020;
+    }
+    if (Func0C2(var_0)) {
+        var_1 = Func0C3(var_0);
+        var_3 = GetEntityX((0x36 + var_1));
+        var_4 = GetEntityY((0x36 + var_1));
+        Warp_Player(0x25, (var_3 + 0x1A), var_4);
+        SetEntityPosition(0, (var_3 + 0x1A), var_4, "Left");
+        if ((Inventory_Check() == 1)) {
+            SetEntityAnim(0, 0x192);
+        } else {
+            SetEntityAnim(0, 0x152);
+        }
+        Fade_In(3, 1);
+        if (Func114(var_1)) {
+            TalkOpen();
+            TalkMessage(2);
+            TalkClose();
+            Fade_Out(3, 1);
+            Trigger_Naming_Sequence(var_1);
+        } else {
+            TalkOpen();
+            TalkMessage(3);
+            TalkClose();
+            Trigger_Naming_Sequence(var_1);
+        }
+    }
+    goto LBL_0020;
+    LBL_001F:
+    Fade_In(3, 1);
+    TalkOpen();
+    TalkMessage(4);
+    TalkClose();
+    Fade_Out(2, 1);
+    Execute_Script(985);
+    exit;
+}

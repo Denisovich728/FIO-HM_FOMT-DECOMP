@@ -1,0 +1,37 @@
+// Script 1138
+#include "Fomt_Lib.src"
+
+script 1138 Event_1138 {
+    const MESSAGE_0 = "Beach Day is now over. \r\nWe'll return your Dogs to\r\nyour homes, so you can go\BRK\r\nback home without them. \r\nCome again next year!\BRK";
+    
+    PlayBGM(1, 7);
+    Set_Time(0x12, 1);
+    if ((Inventory_Check() == 1)) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    SetEntityPosition(0xD, 0xF5, 0xB2, "Right");
+    SetEntityAnim(0xD, 0x85F);
+    SetEntityPosition(0x11, 0x80, 0x12D, "Right");
+    SetEntityAnim(0x11, 0x689);
+    SetEntityPosition(0x12, 0x80, 0x104, "Right");
+    SetEntityAnim(0x12, 0x6C5);
+    SetEntityPosition(0x1A, 0xD3, 0x13E, "Right");
+    SetEntityAnim(0x1A, 0x902);
+    SetEntityPosition(3, 0xE7, 0x15D, "Right");
+    SetEntityAnim(3, 0x22F);
+    SetEntityPosition(0x1C, 0xCD, 0x83, "Down");
+    SetEntityAnim(0x1C, 0x318);
+    Fade_In(3, 1);
+    TalkOpen();
+    TalkMessage(0);
+    TalkClose();
+    Routine_State_Override(0xD, 0x476);
+    Routine_State_Override(0x11, 0x474);
+    Routine_State_Override(0x12, 0x475);
+    Routine_State_Override(0x1A, 0x477);
+    Routine_State_Override(3, 0x473);
+    Routine_State_Override(0x1C, 0x478);
+    exit;
+}

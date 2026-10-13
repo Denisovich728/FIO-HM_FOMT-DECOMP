@@ -1,0 +1,27 @@
+// Script 525
+#include "Fomt_Lib.src"
+
+script 525 Event_0525 {
+    var var_0;
+    var var_1;
+    var var_2;
+    var var_3;
+    var var_4;
+    
+    if ((GetEntityFacing(0) == 0)) {
+        var_0 = Check_Flag(1);
+        var_1 = Check_Flag(2);
+        var_3 = Check_Flag(3);
+        var_2 = Check_Flag(5);
+        var_4 = Check_Flag(6);
+        Fade_Out(2, 1);
+        Warp_Player(3, 0x340, 0x18);
+        SetEntityPosition(0, 0x340, 0x18, 0);
+        if ((((((((((((Check_Flag(0x105) == 0) && (var_0 != 3)) && (var_2 != 1)) && (var_4 == 0)) && ((var_3 >= 0xA) && (var_3 < 0x12))) && (((((Check_Flag(0x4C) == 2) || (Check_Flag(0x55) == 2)) || (Check_Flag(0x5F) == 2)) || (Check_Flag(0x6F) == 2)) || (Check_Flag(0x173) == 2))) && (Check_Flag(0x8E) == 0)) && (Check_Flag(0x8F) == 0)) && (GetEntityLocation(0x1B) != 3)) && (GetEntityLocation(0xE) != 3)) && (Check_If_Single(0xC) == 1))) {
+            Set_Flag(0x105, 1);
+            Execute_Script(0x2E0);
+        }
+        Fade_In(2, 1);
+    }
+    exit;
+}

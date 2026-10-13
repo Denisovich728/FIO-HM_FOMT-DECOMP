@@ -1,0 +1,11 @@
+// Script 278
+#include "Fomt_Lib.src"
+
+script 278 Event_0278 {
+    const MESSAGE_0 = "Table\BRK";
+    
+    TalkOpen();
+    Print_Message(0);
+    TalkClose();
+    exit;
+}

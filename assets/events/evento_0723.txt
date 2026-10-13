@@ -1,0 +1,17 @@
+// Script 723
+#include "Fomt_Lib.src"
+
+script 723 Event_0723 {
+    const MESSAGE_0 = "Jeff is so easy to fool!...\BRK";
+    
+    SetEntityFacing(9, GetOppositeFacing(GetEntityFacing(0)));
+    TalkOpen();
+    Set_Name_Window(9);
+    Set_Portrait(0x89);
+    TalkMessage(0);
+    TalkClose();
+    Free_Event_Entity(9);
+    SetEntityFacing(9, "Right");
+    exit;
+    exit;
+}

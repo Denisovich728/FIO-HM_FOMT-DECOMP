@@ -1,0 +1,11 @@
+// Script 546
+#include "Fomt_Lib.src"
+
+script 546 Event_0546 {
+    const MESSAGE_0 = "Plant\BRK";
+    
+    TalkOpen();
+    Print_Message(0);
+    TalkClose();
+    exit;
+}

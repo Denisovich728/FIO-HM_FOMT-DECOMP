@@ -1,0 +1,31 @@
+// Script 880
+#include "Fomt_Lib.src"
+
+script 880 Event_0880 {
+    const MESSAGE_0 = "This does feel kind of \r\nstrange. After all, I've\r\nknown Karen for ever. \BRK";
+    const MESSAGE_1 = "But, I like being with her\r\nmore than anybody. I guess\r\nI always knew this would \BRK\r\nhappen. \BRK";
+    
+    if ((Check_If_Single(2) == 0)) {
+        Free_Event_Entity(2);
+    }
+    if ((Has_NPC_Talked_Today(2) == 0)) {
+        SetEntityFacing(2, GetOppositeFacing(GetEntityFacing(0)));
+        TalkOpen();
+        Set_Portrait(6);
+        Set_Name_Window(2);
+        TalkMessage(0);
+        TalkClose();
+        SetEntityFacing(2, "Down");
+        Free_Event_Entity(2);
+    } else {
+        SetEntityFacing(2, GetOppositeFacing(GetEntityFacing(0)));
+        TalkOpen();
+        Set_Portrait(6);
+        Set_Name_Window(2);
+        TalkMessage(1);
+        TalkClose();
+        SetEntityFacing(2, "Down");
+        Free_Event_Entity(2);
+    }
+    exit;
+}

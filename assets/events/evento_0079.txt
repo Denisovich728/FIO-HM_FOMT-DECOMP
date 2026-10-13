@@ -1,0 +1,121 @@
+// Script 79
+#include "Fomt_Lib.src"
+
+script 79 Event_0079 {
+    const MESSAGE_0 = "Now that we're married, \r\nI wonder what I should \r\ncall you...?\BRK";
+    const MESSAGE_1 = "Just my name";
+    const MESSAGE_2 = "Honey";
+    const MESSAGE_3 = "Darling";
+    const MESSAGE_4 = "Other";
+    const MESSAGE_5 = "\xFF!";
+    const MESSAGE_6 = "OK, it's \r\n\xFF), then. \BRK";
+    const MESSAGE_7 = "I wonder what\x81fs\r\na good name for you...?\BRK";
+    const MESSAGE_8 = "\xFF), \r\nI'd like to keep working at\r\nthe Clinic. Especially \BRK\r\nbecause of my grandmother.\BRK\WAIT_CLICKYou don't mind, right?\BRK";
+    const MESSAGE_9 = "Thanks, \xFF)!\BRK";
+    const MESSAGE_10 = "Tomorrow is the first day\r\nof our new life together!\BRK";
+    
+    var var_0;
+    
+    Set_Flag(0x70, 1);
+    Warp_Player(0x1D, 0x12F, 0x94);
+    PlayBGM(1, 0x11);
+    SetEntityPosition(0, 0x12F, 0x94, "Right");
+    Lock_Player_Input();
+    SetEntityAnim(0, 0x192);
+    SetEntityPosition(0x15, 0x14B, 0x94, "Left");
+    SetEntityAnim(0x15, 0x884);
+    Fade_In(1, 1);
+    TalkOpen();
+    Set_Portrait(0x7E);
+    Set_Name_Window(0x15);
+    Set_Hearth_Anim(0x15);
+    TalkMessage(0);
+    TalkClose();
+    TalkOpen();
+    var_0 = TalkChoice4(1, 2, 3, 4);
+    switch (var_0) {
+        case 1:
+            TalkClose();
+            TalkOpen();
+            Set_Portrait(0x7E);
+            Set_Name_Window(0x15);
+            Set_Hearth_Anim(0x15);
+            OpcodeUnknw_125();
+            TalkMessage(6);
+            TalkClose();
+            SetEntityAnim(0, 0x1FE);
+            Make_Delay(0x3C);
+            SetEntityAnim(0, 0x192);
+            break;
+        case 2:
+            TalkClose();
+            TalkOpen();
+            Set_Portrait(0x7E);
+            Set_Name_Window(0x15);
+            Set_Hearth_Anim(0x15);
+            TalkMessage(6);
+            TalkClose();
+            SetEntityAnim(0, 0x1FE);
+            Make_Delay(0x3C);
+            SetEntityAnim(0, 0x192);
+            break;
+        case 3:
+            TalkClose();
+            TalkOpen();
+            Set_Portrait(0x7E);
+            Set_Name_Window(0x15);
+            Set_Hearth_Anim(0x15);
+            OpcodeUnknw_125();
+            TalkMessage(6);
+            TalkClose();
+            SetEntityAnim(0, 0x1FE);
+            Make_Delay(0x3C);
+            SetEntityAnim(0, 0x192);
+            break;
+        case 4:
+            TalkClose();
+            TalkOpen();
+            Set_Portrait(0x79);
+            Set_Name_Window(0x15);
+            Set_Hearth_Anim(0x15);
+            TalkMessage(7);
+            TalkClose();
+            Fade_Out(3, 1);
+            Trigger_Naming_Sequence(0);
+            Lock_Player_Input();
+            Fade_In(3, 1);
+            TalkOpen();
+            Set_Portrait(0x7E);
+            Set_Name_Window(0x15);
+            Set_Hearth_Anim(0x15);
+            TalkMessage(6);
+            TalkClose();
+            SetEntityAnim(0, 0x1FE);
+            Make_Delay(0x3C);
+            SetEntityAnim(0, 0x192);
+            break;
+    }
+    TalkOpen();
+    Set_Portrait(0x79);
+    Set_Name_Window(0x15);
+    Set_Hearth_Anim(0x15);
+    TalkMessage(8);
+    TalkClose();
+    SetEntityAnim(0, 0x1FE);
+    Make_Delay(0x3C);
+    SetEntityAnim(0, 0x192);
+    TalkOpen();
+    Set_Portrait(0x7A);
+    Set_Name_Window(0x15);
+    Set_Hearth_Anim(0x15);
+    TalkMessage(9);
+    TalkClose();
+    Free_Event_Entity(0x15);
+    Set_Flag(0x70, 2);
+    Fade_Out(2, 1);
+    TalkOpen();
+    TalkMessage(10);
+    TalkClose();
+    Execute_Script(988);
+    exit;
+}

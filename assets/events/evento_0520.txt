@@ -1,0 +1,11 @@
+// Script 520
+#include "Fomt_Lib.src"
+
+script 520 Event_0520 {
+    const MESSAGE_0 = "Water\BRK";
+    
+    TalkOpen();
+    Print_Message(0);
+    TalkClose();
+    exit;
+}

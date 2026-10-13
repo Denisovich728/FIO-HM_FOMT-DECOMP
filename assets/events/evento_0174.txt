@@ -1,0 +1,11 @@
+// Script 174
+#include "Fomt_Lib.src"
+
+script 174 Event_0174 {
+    const MESSAGE_0 = "Tree\BRK";
+    
+    TalkOpen();
+    Print_Message(0);
+    TalkClose();
+    exit;
+}

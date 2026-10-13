@@ -1,0 +1,285 @@
+// Script 1040
+#include "Fomt_Lib.src"
+
+script 1040 Event_1040 {
+    const MESSAGE_0 = "I was going to play\r\nRock-Papers-Scissors with \r\nyou...But I don't feel like\r\nit today after all. \BRK";
+    const MESSAGE_1 = "This is a \r\nRock-Paper-Scissors show!\r\nLet's play, \xFF!.\BRK";
+    const MESSAGE_2 = "One...Two...Three!...\BRK\r\n";
+    const MESSAGE_3 = "One...Two...Three...\BRK\r\n";
+    const MESSAGE_4 = "Rock";
+    const MESSAGE_5 = "Paper";
+    const MESSAGE_6 = "Scissors";
+    const MESSAGE_7 = "\xFF!\r\nRock\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@Rock\r\n\x81@\x81@\x81@\x81@\x81@\x81@ Harvest Goddess\BRK\WAIT_CLICK";
+    const MESSAGE_8 = "\xFF!\r\nRock\x81@\x81@\x81@\x81@\x81@\x81@    Scissors\r\n\x81@\x81@\x81@\x81@\x81@\x81@ Harvest Goddess\BRK\WAIT_CLICK";
+    const MESSAGE_9 = "\xFF!\r\nRock  \x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@ Paper\r\n\x81@\x81@\x81@       Harvest Goddess\BRK\WAIT_CLICK";
+    const MESSAGE_10 = "\xFF!\r\nScissors\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@Rock\r\n\x81@\x81@\x81@\x81@\x81@\x81@ Harvest Goddess\BRK\WAIT_CLICK";
+    const MESSAGE_11 = "\xFF!\r\nScissors\x81@\x81@\x81@\x81@\x81@\x81@Scissors\r\n\x81@\x81@\x81@       Harvest Goddess\BRK\WAIT_CLICK";
+    const MESSAGE_12 = "\xFF!\r\nScissors \x81@\x81@\x81@\x81@\x81@\x81@\x81@Paper\r\n\x81@\x81@\x81@\x81@\x81@\x81@ Harvest Goddess\BRK\WAIT_CLICK";
+    const MESSAGE_13 = "\xFF!\r\nPaper\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@Rock\r\n\x81@\x81@\x81@\x81@\x81@   Harvest Goddess\BRK\WAIT_CLICK";
+    const MESSAGE_14 = "\xFF!\r\nPaper \x81@\x81@\x81@\x81@\x81@\x81@\x81@Scissors\r\n\x81@\x81@\x81@\x81@\x81@\x81@ Harvest Goddess\BRK\WAIT_CLICK";
+    const MESSAGE_15 = "\xFF!\r\nPaper\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@Paper\r\n\x81@\x81@\x81@\x81@     Harvest Goddess\BRK\WAIT_CLICK";
+    const MESSAGE_16 = "I lost this time.\r\nGive me a rematch! \BRK\WAIT_CLICK";
+    const MESSAGE_17 = "Again, again! \BRK\WAIT_CLICK";
+    const MESSAGE_18 = "I won! \BRK\WAIT_CLICK";
+    const MESSAGE_19 = "Bye now. \r\n\BRK";
+    const MESSAGE_20 = "It's one win, one loss for \r\neach of us.\r\nBye now.\BRK";
+    const MESSAGE_21 = "I can't believe I lost\r\nmore than 100 times in \r\na row!!...\BRK\WAIT_CLICK";
+    const MESSAGE_22 = "I can't believe I've lost \r\n\xFF% times \r\nin a row!\BRK";
+    const MESSAGE_23 = "I'll give you this \r\nas a reward. \BRK";
+    const MESSAGE_24 = "I was going to give you \r\nsomething as a reward, but \r\nyour hands are full. \BRK\WAIT_CLICKToo bad, but you'll have to \r\nwait until next time....\BRK\WAIT_CLICK";
+    const MESSAGE_25 = "Bye now.\r\n\BRK";
+    
+    var var_0;
+    var var_1;
+    var var_2;
+    var var_3;
+    var var_4;
+    
+    var_2 = 0;
+    var_3 = 0;
+    TalkOpen();
+    Set_Name_Window(0x1F);
+    Set_Portrait(0x39);
+    if ((Has_Spoken_To_NPC_Today(0x1F) == 1)) {
+        var_4 = Print_TV_Message(0);
+        Close_TV_Interface();
+        TalkClose();
+        switch (var_4) {
+            case 0:
+            case 1:
+            case 2:
+            case 3:
+                Set_Flag(0x244, var_4);
+                Execute_Script(540);
+                break;
+            case 4:
+            case 5:
+                break;
+        }
+        exit;
+    } else {
+        var_4 = Print_TV_Message(1);
+        TalkClose();
+        switch (var_4) {
+            case 0:
+            case 1:
+            case 2:
+            case 3:
+                Set_Flag(0x244, var_4);
+                Execute_Script(540);
+                break;
+            case 5:
+                break;
+        }
+        TalkOpen();
+        do {
+            switch (var_2) {
+                case 0:
+                    Set_Portrait(0x39);
+                    TalkMessage(2);
+                    break;
+                case 1:
+                    Set_Portrait(0x39);
+                    TalkMessage(3);
+                    break;
+            }
+            var_0 = TalkChoice3(4, 5, 6);
+            switch (var_0) {
+                case 1:
+                    var_1 = RNG_Generator(0, 2);
+                    switch (var_1) {
+                        case 0:
+                            TalkOpen();
+                            Print_Message(7);
+                            var_2 = 1;
+                            break;
+                        case 1:
+                            TalkOpen();
+                            Print_Message(8);
+                            var_2 = 0;
+                            break;
+                        case 2:
+                            TalkOpen();
+                            Print_Message(9);
+                            var_2 = 2;
+                            break;
+                    }
+                    break;
+                case 2:
+                    var_1 = RNG_Generator(0, 2);
+                    switch (var_1) {
+                        case 0:
+                            TalkOpen();
+                            Print_Message(10);
+                            var_2 = 2;
+                            break;
+                        case 1:
+                            TalkOpen();
+                            Print_Message(11);
+                            var_2 = 1;
+                            break;
+                        case 2:
+                            TalkOpen();
+                            Print_Message(12);
+                            var_2 = 0;
+                            break;
+                    }
+                    break;
+                case 3:
+                    var_1 = RNG_Generator(0, 2);
+                    switch (var_1) {
+                        case 0:
+                            TalkOpen();
+                            Print_Message(13);
+                            var_2 = 0;
+                            break;
+                        case 1:
+                            TalkOpen();
+                            Print_Message(14);
+                            var_2 = 2;
+                            break;
+                        case 2:
+                            TalkOpen();
+                            Print_Message(15);
+                            var_2 = 1;
+                            break;
+                    }
+                    break;
+            }
+            switch (var_2) {
+                case 0:
+                    PlaySong(0, 0xB8);
+                    Make_Delay(0x1E);
+                    Set_Name_Window(0x1F);
+                    Set_Portrait(0x3A);
+                    TalkMessage(16);
+                    if ((var_3 != 0x64)) {
+                        var_3 = (var_3 + 1);
+                    }
+                    break;
+                case 1:
+                    Set_Name_Window(0x1F);
+                    Set_Portrait(0x38);
+                    TalkMessage(17);
+                    break;
+                case 2:
+                    PlaySong(0, 0xC7);
+                    Make_Delay(0x1E);
+                    Set_Name_Window(0x1F);
+                    Set_Portrait(0x39);
+                    TalkMessage(18);
+                    break;
+            }
+        } while (((var_2 == 0) || (var_2 == 1)));
+        if ((var_3 == 0)) {
+            TalkMessage(19);
+            goto LBL_0008;
+        }
+        if ((var_3 == 1)) {
+            Set_Portrait(0x38);
+            TalkMessage(20);
+            goto LBL_0008;
+        }
+        if ((var_3 == 0x64)) {
+            Set_Portrait(0x3A);
+            TalkMessage(21);
+        } else {
+            Set_Portrait(0x3A);
+            Set_Text_Buffer_Int(0, var_3);
+            TalkMessage(22);
+        }
+        if ((Inventory_Check() == 1)) {
+            Set_Portrait(0x39);
+            TalkMessage(23);
+            TalkClose();
+            if ((var_3 == 0x64)) {
+                PlaySong(0, 0xB3);
+                Give_Item(0x5D);
+                Make_Delay(0x14A);
+            } else {
+                if ((var_3 >= 0x5A)) {
+                    PlaySong(0, 0xB0);
+                    Give_Item(0x4A);
+                    Make_Delay(0xF0);
+                } else {
+                    if ((var_3 >= 0x50)) {
+                        PlaySong(0, 0xB0);
+                        Give_Item(0x4B);
+                        Make_Delay(0xF0);
+                    } else {
+                        if ((var_3 >= 0x46)) {
+                            PlaySong(0, 0xB0);
+                            Give_Item(0x4C);
+                            Make_Delay(0xF0);
+                        } else {
+                            if ((var_3 >= 0x3C)) {
+                                PlaySong(0, 0xB0);
+                                Give_Item(0x4D);
+                                Make_Delay(0xF0);
+                            } else {
+                                if ((var_3 >= 0x32)) {
+                                    PlaySong(0, 0xB0);
+                                    Give_Item(0x4E);
+                                    Make_Delay(0xF0);
+                                } else {
+                                    if ((var_3 >= 0x28)) {
+                                        PlaySong(0, 0xB6);
+                                        Give_Item(0x1C);
+                                        Make_Delay(0x78);
+                                    } else {
+                                        if ((var_3 >= 0x1E)) {
+                                            PlaySong(0, 0xB6);
+                                            Give_Item(0x1A);
+                                            Make_Delay(0x78);
+                                        } else {
+                                            if ((var_3 >= 0x14)) {
+                                                PlaySong(0, 0xB6);
+                                                Give_Item(0x1B);
+                                                Make_Delay(0x78);
+                                            } else {
+                                                if ((var_3 >= 0xA)) {
+                                                    PlaySong(0, 0xB6);
+                                                    Give_Food(0x99);
+                                                    Make_Delay(0x78);
+                                                } else {
+                                                    if ((var_3 >= 3)) {
+                                                        PlaySong(0, 0xBC);
+                                                        var_1 = RNG_Generator(0, 1);
+                                                        switch (var_1) {
+                                                            case 0:
+                                                                Give_Food(0x97);
+                                                                break;
+                                                            case 1:
+                                                                Give_Food(0x4A);
+                                                                break;
+                                                        }
+                                                        Make_Delay(0x3C);
+                                                    } else {
+                                                        PlaySong(0, 0xBC);
+                                                        Give_Food(0x37);
+                                                        Make_Delay(0x3C);
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        } else {
+            Set_Portrait(0x38);
+            TalkMessage(24);
+        }
+        TalkOpen();
+        Set_Name_Window(0x1F);
+        Set_Portrait(0x39);
+        TalkMessage(25);
+    }
+    Free_Event_Entity(0x1F);
+    Close_TV_Interface();
+    TalkClose();
+    exit;
+}

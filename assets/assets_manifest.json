@@ -1,0 +1,35 @@
+{
+    "engine": "FoMT Studio / Symphony / SlipSpace",
+    "game": "Harvest Moon: Friends of Mineral Town (GBA)",
+    "rom_code": "A4NE",
+    "generated_timestamp": "2026-10-13T15:21:23Z",
+    "categories": {
+        "events": {
+            "file_count": 1331,
+            "total_bytes": 5890091,
+            "path": "assets/events"
+        },
+        "sprites": {
+            "file_count": 91,
+            "total_bytes": 293166,
+            "path": "assets/sprites"
+        },
+        "animations": {
+            "file_count": 2523,
+            "total_bytes": 37821967,
+            "path": "assets/animations"
+        },
+        "palettes": {
+            "file_count": 90,
+            "total_bytes": 149400,
+            "path": "assets/palettes"
+        },
+        "data": {
+            "file_count": 4,
+            "total_bytes": 116243,
+            "path": "assets/data"
+        }
+    },
+    "total_files": 4039,
+    "total_bytes": 44270867
+}

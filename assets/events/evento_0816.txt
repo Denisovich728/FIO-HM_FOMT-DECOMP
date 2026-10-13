@@ -1,0 +1,53 @@
+// Script 816
+#include "Fomt_Lib.src"
+
+script 816 Event_0816 {
+    const MESSAGE_0 = "Congratulations! \r\nYou have collected all the\r\nGoddess Jewels, so I will \BRK\r\nallow you to trade them \r\nfor the Goddess Gem. \BRK\WAIT_CLICKBye now. \BRK";
+    
+    Tick_Overnight_Engine(1, 0);
+    Tick_Overnight_Engine(1, 0);
+    Fade_Out(1, 1);
+    PlaySong(0, 0xBE);
+    if ((GetEntityX(0) > 0xA0)) {
+        SetEntityPosition(0x1F, (GetEntityX(0) - 0x10), (GetEntityY(0) - 0x20), "Down");
+    } else {
+        SetEntityPosition(0x1F, (GetEntityX(0) + 0x10), (GetEntityY(0) - 0x20), "Down");
+    }
+    SetEntityAnim(0x1F, 0x675);
+    Fade_In(1, 1);
+    Set_Vector_Y(0x1F, GetEntityY(0), 1);
+    Execute_Movement(0x1F);
+    if ((GetEntityX(0) > 0xA0)) {
+        SetEntityFacing(0x1F, "Right");
+        Make_Delay(0xA);
+        SetEntityFacing(0, "Left");
+    } else {
+        SetEntityFacing(0x1F, "Left");
+        Make_Delay(0xA);
+        SetEntityFacing(0, "Right");
+    }
+    TalkOpen();
+    Set_Name_Window(0x1F);
+    Set_Portrait(0x39);
+    TalkMessage(0);
+    TalkClose();
+    SetEntityFacing(0x1F, "Down");
+    Set_Vector_Y(0x1F, (GetEntityY(0) - 0x64), 1);
+    Fade_Out(1, 1);
+    PlaySong(0, 0xBE);
+    Hide_Entity(0x1F);
+    Drop_Held_Item();
+    Consume_Items_From_Inventory(0x25);
+    Tick_Overnight_Engine(1, 1);
+    PlaySong(0, 0xB6);
+    Animation_Tool_Give(0x4E);
+    Make_Delay(0x32);
+    SetEntityAnim(0, 0x192);
+    if ((Check_Tool_TBox_Space() == -1)) {
+        Give_Tool_In_ToolBox(0x4E, 1);
+    } else {
+        Give_Tool_In_Inventory(0x4E, 1);
+    }
+    Set_Flag(0x146, 2);
+    exit;
+}

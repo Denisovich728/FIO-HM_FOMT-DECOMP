@@ -1,0 +1,84 @@
+// Script 1203
+#include "Fomt_Lib.src"
+
+script 1203 Event_1203 {
+    const MESSAGE_0 = "We're having the Music\r\nFestival tomorrow at 6PM\r\nat the Church. \BRK\WAIT_CLICKDo you want to come? \BRK";
+    const MESSAGE_1 = "I'd love to.";
+    const MESSAGE_2 = "Sorry, I'm busy.";
+    const MESSAGE_3 = "In that case, you can play\r\nthe Ocarina. \BRK\WAIT_CLICKI'll give it to you \r\ntomorrow. \BRK";
+    const MESSAGE_4 = "Don't be late tomorrow!\BRK";
+    const MESSAGE_5 = "You'll be able to hear\r\nKaren's beautiful voice if\r\nyou do come. \BRK\WAIT_CLICKCome if you have time. \BRK";
+    
+    var var_0;
+    
+    Warp_Player(2, 0xE4, 0x78);
+    PlayBGM(1, 3);
+    SetEntityPosition(0, 0xE4, 0x78, "Down");
+    if (Inventory_Check()) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    SetEntityPosition(0x16, 0xE4, 0x91, "Up");
+    SetEntityAnim(0x16, 0x8EC);
+    Fade_In(2, 1);
+    TalkOpen();
+    Set_Portrait(0x95);
+    Set_Name_Window(0x16);
+    TalkMessage(0);
+    TalkClose();
+    TalkOpen();
+    var_0 = TalkChoice2(1, 2);
+    switch (var_0) {
+        case 1:
+            TalkClose();
+            TalkOpen();
+            Set_Portrait(0x96);
+            Set_Name_Window(0x16);
+            TalkMessage(3);
+            Set_Portrait(0x96);
+            Set_Name_Window(0x16);
+            TalkMessage(4);
+            TalkClose();
+            SetEntityFacing(0x16, "Right");
+            SetEntityAnim(0x16, 0x8F0);
+            Set_Vector_X(0x16, 0x13F, 1);
+            Execute_Movement(0x16);
+            SetEntityAnim(0x16, 0x8EC);
+            SetEntityFacing(0x16, "Up");
+            SetEntityAnim(0x16, 0x8F0);
+            SetEntityFacing(0, "Right");
+            Set_Vector_Y(0x16, 0, 1);
+            Execute_Movement(0x16);
+            SetEntityAnim(0x16, 0x8EC);
+            Hide_Entity(0x16);
+            Free_Event_Entity(0x16);
+            Set_Flag(0x1A1, 1);
+            Set_Flag(0x1A0, 2);
+            break;
+        case 2:
+            TalkClose();
+            TalkOpen();
+            Set_Portrait(0x95);
+            Set_Name_Window(0x16);
+            TalkMessage(5);
+            TalkClose();
+            SetEntityFacing(0x16, "Right");
+            SetEntityAnim(0x16, 0x8F0);
+            Set_Vector_X(0x16, 0x13F, 1);
+            Execute_Movement(0x16);
+            SetEntityAnim(0x16, 0x8EC);
+            SetEntityFacing(0x16, "Up");
+            SetEntityAnim(0x16, 0x8F0);
+            SetEntityFacing(0, "Right");
+            Set_Vector_Y(0x16, 0, 1);
+            Execute_Movement(0x16);
+            SetEntityAnim(0x16, 0x8EC);
+            Hide_Entity(0x16);
+            Free_Event_Entity(0x16);
+            Set_Flag(0x1A1, 0);
+            Set_Flag(0x1A0, 2);
+            break;
+    }
+    exit;
+}

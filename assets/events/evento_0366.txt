@@ -1,0 +1,11 @@
+// Script 366
+#include "Fomt_Lib.src"
+
+script 366 Event_0366 {
+    const MESSAGE_0 = "Mailbox\BRK";
+    
+    TalkOpen();
+    Print_Message(0);
+    TalkClose();
+    exit;
+}

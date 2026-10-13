@@ -1,0 +1,11 @@
+// Script 436
+#include "Fomt_Lib.src"
+
+script 436 Event_0436 {
+    const MESSAGE_0 = "Poster\BRK";
+    
+    TalkOpen();
+    Print_Message(0);
+    TalkClose();
+    exit;
+}

@@ -1,0 +1,11 @@
+// Script 554
+#include "Fomt_Lib.src"
+
+script 554 Event_0554 {
+    const MESSAGE_0 = "Kitchen\BRK";
+    
+    TalkOpen();
+    Print_Message(0);
+    TalkClose();
+    exit;
+}

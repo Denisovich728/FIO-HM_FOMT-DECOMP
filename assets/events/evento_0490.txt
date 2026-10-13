@@ -1,0 +1,11 @@
+// Script 490
+#include "Fomt_Lib.src"
+
+script 490 Event_0490 {
+    const MESSAGE_0 = "Hot Spring\r\nEffects: Recuperate \r\nStamina and Fatigue\BRK";
+    
+    TalkOpen();
+    Print_Message(0);
+    TalkClose();
+    exit;
+}

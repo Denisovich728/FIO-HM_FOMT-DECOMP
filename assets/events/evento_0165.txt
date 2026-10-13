@@ -1,0 +1,16 @@
+// Script 165
+#include "Fomt_Lib.src"
+
+script 165 Event_0165 {
+    if ((GetEntityFacing(0) == 1)) {
+        PlaySong(0, 0x9C);
+        Fade_Out(2, 1);
+        Warp_Player(9, 0x78, 0xD0);
+        SetEntityPosition(0, 0x78, 0xD0, 1);
+        if ((Func063() == 1)) {
+            SetEntityPosition(0x2C, 0x78, 0xD0, 1);
+        }
+        Fade_In(2, 1);
+    }
+    exit;
+}

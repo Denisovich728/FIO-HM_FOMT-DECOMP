@@ -1,0 +1,16 @@
+// Script 509
+#include "Fomt_Lib.src"
+
+script 509 Event_0509 {
+    const MESSAGE_0 = "\xFF!'s Cottage\r\n\BRK";
+    const MESSAGE_1 = "Empty Lot\r\n\BRK";
+    
+    TalkOpen();
+    if ((Check_Flag(0x12) == 1)) {
+        Print_Message(0);
+    } else {
+        Print_Message(1);
+    }
+    TalkClose();
+    exit;
+}

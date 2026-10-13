@@ -1,0 +1,17 @@
+// Script 678
+#include "Fomt_Lib.src"
+
+script 678 Event_0678 {
+    const MESSAGE_0 = "I've got to tell dad and \r\neveryone else!\BRK";
+    
+    SetEntityFacing(0xC, GetOppositeFacing(GetEntityFacing(0)));
+    TalkOpen();
+    Set_Name_Window(0xC);
+    Set_Portrait(0x67);
+    Set_Hearth_Anim(0xC);
+    TalkMessage(0);
+    TalkClose();
+    Free_Event_Entity(0xC);
+    SetEntityFacing(0xC, "Left");
+    exit;
+}

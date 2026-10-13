@@ -1,0 +1,18 @@
+// Script 771
+#include "Fomt_Lib.src"
+
+script 771 Event_0771 {
+    const MESSAGE_0 = "I have to tell Sasha about\r\nthis when I get home! \BRK\WAIT_CLICKShe always did say that\r\nmy personality was too kind\r\nfor that blood type!\BRK";
+    
+    if ((Check_Flag(0x11D) == 1)) {
+        SetEntityFacing(0x11, GetOppositeFacing(GetEntityFacing(0)));
+        TalkOpen();
+        Set_Portrait(0x46);
+        Set_Name_Window(0x11);
+        TalkMessage(0);
+        TalkClose();
+        Free_Event_Entity(0x11);
+        SetEntityFacing(0x11, "Down");
+    }
+    exit;
+}

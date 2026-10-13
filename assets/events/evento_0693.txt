@@ -1,0 +1,40 @@
+// Script 693
+#include "Fomt_Lib.src"
+
+script 693 Event_0693 {
+    const MESSAGE_0 = "Beach Day is today at the\r\nBeach from 10 AM on. \BRK\WAIT_CLICKRight now I'm getting ready\r\nfor it.\BRK\WAIT_CLICKYou should come, too. \BRK";
+    
+    var var_0;
+    var var_1;
+    var var_2;
+    
+    Warp_Player(1, 0x104, 0x1EC);
+    PlayBGM(1, 0xC);
+    SetEntityPosition(0, 0x104, 0x1EC, "Down");
+    if (Inventory_Check()) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    SetEntityPosition(0xD, 0x104, 0x203, "Up");
+    SetEntityAnim(0xD, 0x85F);
+    Fade_In(2, 1);
+    var_0 = Check_Flag(1);
+    var_1 = Check_Flag(2);
+    var_2 = Check_Flag(3);
+    Set_Flag(0xE2, 1);
+    if ((((Check_Flag(0x194) == 0) && (var_0 == 1)) && (var_1 == 1))) {
+        TalkOpen();
+        Set_Name_Window(0xD);
+        Set_Portrait(0x75);
+        TalkMessage(0);
+        TalkClose();
+        Set_Flag(0xE2, 2);
+        Fade_Out(2, 1);
+        Warp_Player(6, 0x1C8, 0x80);
+        SetEntityPosition(0, 0x1C8, 0x80, "Left");
+        Fade_In(2, 1);
+        exit;
+    }
+    exit;
+}

@@ -1,0 +1,36 @@
+// Script 85
+#include "Fomt_Lib.src"
+
+script 85 Event_0085 {
+    const MESSAGE_0 = "Enter the Hot Spring\r\nfrom here. However, you\r\ncan't get in while\BRK\r\nholding something.\BRK";
+    
+    if ((GetEntityFacing(0) == 1)) {
+        if ((Inventory_Check() == 1)) {
+            SetEntityAnim(0, 0x1C6);
+            Set_Vector_X(0, 0x358, 1);
+            Execute_Movement(0);
+            Pan_Camera_To(0x390, 0x1D8, 1);
+            PlaySong(0, 0x9C);
+            Anim_Door_Close(0xD);
+            Set_Vector_Y(0, 0x1D8, 1);
+            Execute_Movement(0);
+            PlaySong(0, 0xCD);
+            Anim_Door_Exit(0xD);
+            Make_Delay(0x1E);
+            PlaySong(0, 0x69);
+            SetEntityFacing(0, "Right");
+            SetEntityAnim(0, 0x12A);
+            Set_Vector_X(0, 0x390, 2);
+            Execute_Movement(0);
+            SetEntityAnim(0, 0xF2);
+            PlaySong(0, 0x6D);
+            Wait_Camera_Stop();
+            Activate_Hot_Spring_Healing();
+        } else {
+            TalkOpen();
+            TalkMessage(0);
+            TalkClose();
+        }
+    }
+    exit;
+}

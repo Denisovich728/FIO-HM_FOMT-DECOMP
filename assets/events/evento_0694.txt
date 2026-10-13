@@ -1,0 +1,101 @@
+// Script 694
+#include "Fomt_Lib.src"
+
+script 694 Event_0694 {
+    const MESSAGE_0 = "I see you're awake now.\r\nYou worked too hard and \r\ncollapsed. \BRK";
+    const MESSAGE_1 = "You'll have to learn to pace\r\nyourself better from now on.\r\nRest here for today. \BRK";
+    
+    Fade_Out(2, 1);
+    Kill_NPC(0);
+    Set_Flag(0xE3, 1);
+    PlayBGM(1, 0xD);
+    if ((GetEntityLocation(0x17) == 0x13)) {
+        Warp_Player(0x13, 0xF1, 0x132);
+        SetEntityPosition(0, (0x140 + 0x70), 0xE8, "Down");
+        SetEntityAnim(0, 0x162);
+        SetEntityPosition(0x14, 0xDB, 0xE2, "Down");
+        SetEntityAnim(0x14, 0x320);
+        SetEntityPosition(0x17, 0xDB, 0xF5, "Down");
+        SetEntityAnim(0x17, 0x27B);
+        SetEntityPosition(0x15, 0x64, 0x101, "Right");
+        SetEntityAnim(0x15, 0x884);
+        Fade_In(2, 1);
+        Make_Delay(0x1E);
+        PlaySong(0, 0x95);
+        SetEntityAnim(0x14, 0x328);
+        Make_Delay(0x1E);
+        Fade_Out(1, 0);
+        Fade_In(1, 0);
+        SetEntityAnim(0x17, 0x29B);
+        Make_Delay(0x3C);
+        SetEntityAnim(0x14, 0x320);
+        Make_Delay(0x1E);
+        SetEntityFacing(0x14, "Up");
+        SetEntityAnim(0x14, 0x324);
+        Set_Vector_Y(0x14, 0x8F, 1);
+        Execute_Movement(0x14);
+        SetEntityFacing(0x14, "Right");
+        SetEntityAnim(0x14, 0x324);
+        Set_Vector_X(0x14, 0x11F, 1);
+        Execute_Movement(0x14);
+        SetEntityFacing(0x14, "Down");
+        SetEntityAnim(0x14, 0x324);
+        Set_Vector_Y(0x14, 0x107, 1);
+        Execute_Movement(0x14);
+        SetEntityFacing(0x14, "Right");
+        SetEntityAnim(0x14, 0x324);
+        Set_Vector_X(0x14, 0x137, 1);
+        Execute_Movement(0x14);
+        SetEntityAnim(0x14, 0x320);
+        Make_Delay(0x3C);
+    } else {
+        Warp_Player(0x13, 0xF1, 0x132);
+        SetEntityPosition(0, (0x140 + 0x70), 0xE8, "Down");
+        SetEntityAnim(0, 0x162);
+        SetEntityPosition(0x14, 0x137, 0x107, "Right");
+        SetEntityAnim(0x14, 0x320);
+        Fade_In(2, 1);
+    }
+    TalkOpen();
+    Set_Portrait(0x27);
+    Set_Name_Window(0x14);
+    TalkMessage(0);
+    if ((GetEntityLocation(0x17) == 0x13)) {
+        TalkClose();
+        SetEntityAnim(0x15, 0x888);
+        Set_Vector_X(0x15, 0xC7, 2);
+        Execute_Movement(0x15);
+        SetEntityAnim(0x15, 0x884);
+        Make_Delay(0x1E);
+        SetEntityAnim(0x15, 0x88C);
+        Make_Delay(0x1E);
+        Set_Vector_X(0x15, 0x98, 2);
+        Set_Vector_X(0x17, 0xA9, 2);
+        Execute_Movement(0x15);
+        Execute_Movement(0x17);
+        SetEntityFacing(0x15, "Down");
+        Set_Vector_Y(0x15, 0xF0, 2);
+        Set_Vector_X(0x17, 0x98, 2);
+        Make_Delay(0x1E);
+        Set_Vector_Y(0x15, 0x42, 2);
+        Set_Vector_Y(0x17, 0x4F, 2);
+        Execute_Movement(0x15);
+        Execute_Movement(0x17);
+        TalkOpen();
+    }
+    Set_Portrait(0x23);
+    Set_Name_Window(0x14);
+    TalkMessage(1);
+    TalkClose();
+    Make_Delay(0x1E);
+    Fade_Out(2, 1);
+    Set_Global_RNG_Modifier(0xC8, -0x64);
+    Force_Entity_Move_To(0, 0x1D, 0, 0);
+    if ((Check_Flag(3) < 6)) {
+        Set_Flag(0xE3, 2);
+    } else {
+        Set_Flag(0xE3, 0);
+    }
+    Execute_Script(988);
+    exit;
+}

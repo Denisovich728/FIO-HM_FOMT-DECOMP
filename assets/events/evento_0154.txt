@@ -1,0 +1,16 @@
+// Script 154
+#include "Fomt_Lib.src"
+
+script 154 Event_0154 {
+    const MESSAGE_0 = "Bee Nest\r\nCheck everyday to \r\nfind some honey.\BRK";
+    
+    if (((!Func063() && Inventory_Check()) && Check_Flag(0x2B))) {
+        Set_Flag(0x2B, 0);
+        Give_Food(0x29);
+    } else {
+        TalkOpen();
+        Print_Message(0);
+        TalkClose();
+    }
+    exit;
+}

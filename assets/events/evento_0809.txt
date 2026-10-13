@@ -1,0 +1,32 @@
+// Script 809
+#include "Fomt_Lib.src"
+
+script 809 Event_0809 {
+    const MESSAGE_0 = "Hi there, \xFF!!\r\nI heard that you fished \r\nall kids of fish!\BRK\WAIT_CLICKThat's great! I knew you \r\nwere the right person to\r\ngive that Rod to!\BRK\WAIT_CLICKKeep it up, now!\r\nMy friend'll be so jealous.\BRK";
+    
+    if ((Inventory_Check() == 1)) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    SetEntityPosition(0x1C, 0xE4, 0x91, "Up");
+    SetEntityAnim(0x1C, 0x318);
+    Fade_In(2, 1);
+    TalkOpen();
+    Set_Portrait(0x20);
+    Set_Name_Window(0x1C);
+    TalkMessage(0);
+    TalkClose();
+    SetEntityFacing(0x1C, "Right");
+    SetEntityAnim(0x1C, 0x31C);
+    Set_Vector_X(0x1C, 0x13F, 1);
+    Execute_Movement(0x1C);
+    SetEntityFacing(0x1C, "Up");
+    Set_Vector_Y(0x1C, 0, 1);
+    Execute_Movement(0x1C);
+    Hide_Entity(0x1C);
+    Give_Friendship_Points(0x1C, 0xA);
+    Set_Flag(0x136, 2);
+    Free_Event_Entity(0x1C);
+    exit;
+}

@@ -1,0 +1,50 @@
+// Script 157
+#include "Fomt_Lib.src"
+
+script 157 Event_0157 {
+    const MESSAGE_0 = "No letter inside.\BRK";
+    
+    var var_0;
+    
+    if (Func063()) {
+        exit;
+    }
+    if ((Func0F9() == 0)) {
+        TalkOpen();
+        Print_Message(0);
+        TalkClose();
+    } else {
+        var_0 = 0x4D;
+    LBL_0009:
+        (var_0 <= 0x85);
+        if ((var_0 <= 0x85)) {
+        } else {
+            goto LBL_0008;
+            goto LBL_0009;
+        }
+        if ((Func0F5(var_0) == 1)) {
+            Fade_Out(3, 1);
+            Show_Document_UI(var_0);
+            Fade_In(3, 1);
+            Mark_Letter_As_Read(var_0);
+        }
+        goto LBL_0009;
+    LBL_0008:
+        if ((Func0F5(0x87) == 1)) {
+            Fade_Out(3, 1);
+            Show_Document_UI(0x87);
+            Fade_In(3, 1);
+            Mark_Letter_As_Read(0x87);
+        }
+        if ((Inventory_Check() == 1)) {
+            if ((Func0F5(0x86) == 1)) {
+                Fade_Out(3, 1);
+                Show_Document_UI(0x86);
+                Fade_In(3, 1);
+                Mark_Letter_As_Read(0x86);
+                Give_Item(0x54);
+            }
+        }
+    }
+    exit;
+}

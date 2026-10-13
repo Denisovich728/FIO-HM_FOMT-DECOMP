@@ -1,0 +1,2872 @@
+[
+    {
+        "id": "0x0",
+        "name": "System_TotalShipments",
+        "desc": "state"
+    },
+    {
+        "id": "0x1",
+        "name": "System_Season",
+        "desc": "binary"
+    },
+    {
+        "id": "0x2",
+        "name": "System_DayOfMonth",
+        "desc": "binary"
+    },
+    {
+        "id": "0x3",
+        "name": "System_Hour",
+        "desc": "binary"
+    },
+    {
+        "id": "0x4",
+        "name": "System_Minute",
+        "desc": "binary"
+    },
+    {
+        "id": "0x5",
+        "name": "System_Weather_Tomorrow",
+        "desc": "binary"
+    },
+    {
+        "id": "0x6",
+        "name": "System_Weather_Today",
+        "desc": "binary"
+    },
+    {
+        "id": "0x7",
+        "name": "Flag_0x7",
+        "desc": "binary"
+    },
+    {
+        "id": "0x8",
+        "name": "System_Season_Alt",
+        "desc": "binary"
+    },
+    {
+        "id": "0x9",
+        "name": "System_DayOfMonth_Alt",
+        "desc": "binary"
+    },
+    {
+        "id": "0xA",
+        "name": "Flag_0xA",
+        "desc": "binary"
+    },
+    {
+        "id": "0xB",
+        "name": "Flag_0xB",
+        "desc": "binary"
+    },
+    {
+        "id": "0xC",
+        "name": "Flag_0xC",
+        "desc": "binary"
+    },
+    {
+        "id": "0xD",
+        "name": "Flag_0xD",
+        "desc": "binary"
+    },
+    {
+        "id": "0xE",
+        "name": "Flag_0xE",
+        "desc": "binary"
+    },
+    {
+        "id": "0xF",
+        "name": "Flag_0xF",
+        "desc": "binary"
+    },
+    {
+        "id": "0x11",
+        "name": "Owns_Town_Cottage",
+        "desc": "binary"
+    },
+    {
+        "id": "0x12",
+        "name": "Owns_Sea_Cottage",
+        "desc": "binary"
+    },
+    {
+        "id": "0x13",
+        "name": "Owns_Mountain_Cottage",
+        "desc": "binary"
+    },
+    {
+        "id": "0x15",
+        "name": "Flag_0x15",
+        "desc": "binary"
+    },
+    {
+        "id": "0x16",
+        "name": "Flag_0x16",
+        "desc": "binary"
+    },
+    {
+        "id": "0x17",
+        "name": "Flag_0x17",
+        "desc": "binary"
+    },
+    {
+        "id": "0x18",
+        "name": "Flag_0x18",
+        "desc": "binary"
+    },
+    {
+        "id": "0x19",
+        "name": "Flag_0x19",
+        "desc": "binary"
+    },
+    {
+        "id": "0x1A",
+        "name": "Flag_0x1A",
+        "desc": "binary"
+    },
+    {
+        "id": "0x1B",
+        "name": "Flag_0x1B",
+        "desc": "binary"
+    },
+    {
+        "id": "0x1C",
+        "name": "Flag_0x1C",
+        "desc": "binary"
+    },
+    {
+        "id": "0x1D",
+        "name": "Flag_0x1D",
+        "desc": "binary"
+    },
+    {
+        "id": "0x1E",
+        "name": "Stocking_Event_Active",
+        "desc": "binary"
+    },
+    {
+        "id": "0x1F",
+        "name": "Stocking_Item_Given",
+        "desc": "state"
+    },
+    {
+        "id": "0x20",
+        "name": "Flag_0x20",
+        "desc": "binary"
+    },
+    {
+        "id": "0x21",
+        "name": "Flag_0x21",
+        "desc": "binary"
+    },
+    {
+        "id": "0x22",
+        "name": "Flag_0x22",
+        "desc": "binary"
+    },
+    {
+        "id": "0x23",
+        "name": "Flag_0x23",
+        "desc": "binary"
+    },
+    {
+        "id": "0x24",
+        "name": "Flag_0x24",
+        "desc": "binary"
+    },
+    {
+        "id": "0x25",
+        "name": "Flag_0x25",
+        "desc": "binary"
+    },
+    {
+        "id": "0x26",
+        "name": "Flag_0x26",
+        "desc": "binary"
+    },
+    {
+        "id": "0x27",
+        "name": "Flag_0x27",
+        "desc": "binary"
+    },
+    {
+        "id": "0x28",
+        "name": "Flag_0x28",
+        "desc": "state"
+    },
+    {
+        "id": "0x29",
+        "name": "Flag_0x29",
+        "desc": "state"
+    },
+    {
+        "id": "0x2A",
+        "name": "Flag_0x2A",
+        "desc": "state"
+    },
+    {
+        "id": "0x2B",
+        "name": "Flag_0x2B",
+        "desc": "binary"
+    },
+    {
+        "id": "0x2C",
+        "name": "Flag_0x2C",
+        "desc": "binary"
+    },
+    {
+        "id": "0x2D",
+        "name": "System_TotalMoney",
+        "desc": "state"
+    },
+    {
+        "id": "0x2E",
+        "name": "Baby_Age_Days",
+        "desc": "state"
+    },
+    {
+        "id": "0x2F",
+        "name": "Baby_Growth_Stage",
+        "desc": "state"
+    },
+    {
+        "id": "0x30",
+        "name": "Flag_0x30",
+        "desc": "binary"
+    },
+    {
+        "id": "0x31",
+        "name": "Flag_0x31",
+        "desc": "binary"
+    },
+    {
+        "id": "0x32",
+        "name": "Flag_0x32",
+        "desc": "binary"
+    },
+    {
+        "id": "0x33",
+        "name": "Flag_0x33",
+        "desc": "binary"
+    },
+    {
+        "id": "0x34",
+        "name": "Flag_0x34",
+        "desc": "binary"
+    },
+    {
+        "id": "0x35",
+        "name": "Spouse_Works_At_Store",
+        "desc": "binary"
+    },
+    {
+        "id": "0x3C",
+        "name": "Flag_0x3C",
+        "desc": "binary"
+    },
+    {
+        "id": "0x3D",
+        "name": "Flag_0x3D",
+        "desc": "binary"
+    },
+    {
+        "id": "0x3E",
+        "name": "Flag_0x3E",
+        "desc": "binary"
+    },
+    {
+        "id": "0x3F",
+        "name": "Flag_0x3F",
+        "desc": "binary"
+    },
+    {
+        "id": "0x40",
+        "name": "Flag_0x40",
+        "desc": "binary"
+    },
+    {
+        "id": "0x41",
+        "name": "Flag_0x41",
+        "desc": "binary"
+    },
+    {
+        "id": "0x43",
+        "name": "Flag_0x43",
+        "desc": "binary"
+    },
+    {
+        "id": "0x44",
+        "name": "Flag_0x44",
+        "desc": "binary"
+    },
+    {
+        "id": "0x45",
+        "name": "Flag_0x45",
+        "desc": "binary"
+    },
+    {
+        "id": "0x46",
+        "name": "Flag_0x46",
+        "desc": "binary"
+    },
+    {
+        "id": "0x47",
+        "name": "Karen_Heart_Black",
+        "desc": "binary"
+    },
+    {
+        "id": "0x48",
+        "name": "Karen_Heart_Purple",
+        "desc": "binary"
+    },
+    {
+        "id": "0x49",
+        "name": "Karen_Heart_Blue",
+        "desc": "binary"
+    },
+    {
+        "id": "0x4A",
+        "name": "Karen_Heart_Yellow",
+        "desc": "binary"
+    },
+    {
+        "id": "0x4B",
+        "name": "Karen_Heart_Orange",
+        "desc": "binary"
+    },
+    {
+        "id": "0x4C",
+        "name": "Karen_Marriage_State",
+        "desc": "state"
+    },
+    {
+        "id": "0x4D",
+        "name": "Flag_0x4D",
+        "desc": "binary"
+    },
+    {
+        "id": "0x4E",
+        "name": "Flag_0x4E",
+        "desc": "binary"
+    },
+    {
+        "id": "0x4F",
+        "name": "Flag_0x4F",
+        "desc": "binary"
+    },
+    {
+        "id": "0x50",
+        "name": "Popuri_Heart_Black",
+        "desc": "binary"
+    },
+    {
+        "id": "0x51",
+        "name": "Popuri_Heart_Purple",
+        "desc": "binary"
+    },
+    {
+        "id": "0x52",
+        "name": "Popuri_Heart_Blue",
+        "desc": "binary"
+    },
+    {
+        "id": "0x53",
+        "name": "Popuri_Heart_Yellow",
+        "desc": "binary"
+    },
+    {
+        "id": "0x54",
+        "name": "Popuri_Heart_Orange",
+        "desc": "binary"
+    },
+    {
+        "id": "0x55",
+        "name": "Popuri_Marriage_State",
+        "desc": "state"
+    },
+    {
+        "id": "0x56",
+        "name": "Flag_0x56",
+        "desc": "binary"
+    },
+    {
+        "id": "0x57",
+        "name": "Flag_0x57",
+        "desc": "binary"
+    },
+    {
+        "id": "0x58",
+        "name": "Flag_0x58",
+        "desc": "binary"
+    },
+    {
+        "id": "0x59",
+        "name": "Flag_0x59",
+        "desc": "binary"
+    },
+    {
+        "id": "0x5A",
+        "name": "Ann_Heart_Black",
+        "desc": "binary"
+    },
+    {
+        "id": "0x5B",
+        "name": "Ann_Heart_Purple",
+        "desc": "binary"
+    },
+    {
+        "id": "0x5C",
+        "name": "Ann_Heart_Blue",
+        "desc": "binary"
+    },
+    {
+        "id": "0x5D",
+        "name": "Ann_Heart_Yellow",
+        "desc": "binary"
+    },
+    {
+        "id": "0x5E",
+        "name": "Ann_Heart_Orange",
+        "desc": "binary"
+    },
+    {
+        "id": "0x5F",
+        "name": "Ann_Marriage_State",
+        "desc": "state"
+    },
+    {
+        "id": "0x60",
+        "name": "Flag_0x60",
+        "desc": "binary"
+    },
+    {
+        "id": "0x61",
+        "name": "Flag_0x61",
+        "desc": "binary"
+    },
+    {
+        "id": "0x62",
+        "name": "Mary_Heart_Black",
+        "desc": "binary"
+    },
+    {
+        "id": "0x63",
+        "name": "Mary_Heart_Purple",
+        "desc": "binary"
+    },
+    {
+        "id": "0x64",
+        "name": "Mary_Heart_Blue",
+        "desc": "binary"
+    },
+    {
+        "id": "0x65",
+        "name": "Mary_Heart_Yellow",
+        "desc": "binary"
+    },
+    {
+        "id": "0x66",
+        "name": "Mary_Heart_Orange",
+        "desc": "binary"
+    },
+    {
+        "id": "0x67",
+        "name": "Mary_Marriage_State",
+        "desc": "state"
+    },
+    {
+        "id": "0x68",
+        "name": "Flag_0x68",
+        "desc": "binary"
+    },
+    {
+        "id": "0x69",
+        "name": "Flag_0x69",
+        "desc": "binary"
+    },
+    {
+        "id": "0x6A",
+        "name": "Elli_Heart_Black",
+        "desc": "binary"
+    },
+    {
+        "id": "0x6B",
+        "name": "Elli_Heart_Purple",
+        "desc": "binary"
+    },
+    {
+        "id": "0x6C",
+        "name": "Elli_Heart_Blue",
+        "desc": "binary"
+    },
+    {
+        "id": "0x6D",
+        "name": "Elli_Heart_Yellow",
+        "desc": "binary"
+    },
+    {
+        "id": "0x6E",
+        "name": "Elli_Heart_Orange",
+        "desc": "binary"
+    },
+    {
+        "id": "0x6F",
+        "name": "Elli_Marriage_State",
+        "desc": "state"
+    },
+    {
+        "id": "0x70",
+        "name": "Flag_0x70",
+        "desc": "binary"
+    },
+    {
+        "id": "0x71",
+        "name": "Flag_0x71",
+        "desc": "binary"
+    },
+    {
+        "id": "0x72",
+        "name": "Flag_0x72",
+        "desc": "binary"
+    },
+    {
+        "id": "0x73",
+        "name": "Flag_0x73",
+        "desc": "binary"
+    },
+    {
+        "id": "0x74",
+        "name": "Flag_0x74",
+        "desc": "binary"
+    },
+    {
+        "id": "0x75",
+        "name": "Flag_0x75",
+        "desc": "binary"
+    },
+    {
+        "id": "0x76",
+        "name": "Rival_Karen_Rick_Event_1",
+        "desc": "binary"
+    },
+    {
+        "id": "0x77",
+        "name": "Rival_Karen_Rick_Event_2",
+        "desc": "binary"
+    },
+    {
+        "id": "0x78",
+        "name": "Rival_Karen_Rick_Event_3",
+        "desc": "binary"
+    },
+    {
+        "id": "0x79",
+        "name": "Rival_Karen_Rick_Event_4",
+        "desc": "binary"
+    },
+    {
+        "id": "0x7A",
+        "name": "Rival_Karen_Rick_Married",
+        "desc": "binary"
+    },
+    {
+        "id": "0x7B",
+        "name": "Flag_0x7B",
+        "desc": "binary"
+    },
+    {
+        "id": "0x7C",
+        "name": "Flag_0x7C",
+        "desc": "binary"
+    },
+    {
+        "id": "0x7D",
+        "name": "Rival_Popuri_Kai_Event_1",
+        "desc": "binary"
+    },
+    {
+        "id": "0x7E",
+        "name": "Rival_Popuri_Kai_Event_2",
+        "desc": "binary"
+    },
+    {
+        "id": "0x7F",
+        "name": "Rival_Popuri_Kai_Event_3",
+        "desc": "binary"
+    },
+    {
+        "id": "0x80",
+        "name": "Rival_Popuri_Kai_Event_4",
+        "desc": "binary"
+    },
+    {
+        "id": "0x81",
+        "name": "Rival_Popuri_Kai_Married",
+        "desc": "binary"
+    },
+    {
+        "id": "0x82",
+        "name": "Flag_0x82",
+        "desc": "binary"
+    },
+    {
+        "id": "0x83",
+        "name": "Flag_0x83",
+        "desc": "binary"
+    },
+    {
+        "id": "0x84",
+        "name": "Rival_Ann_Cliff_Event_1",
+        "desc": "binary"
+    },
+    {
+        "id": "0x85",
+        "name": "Rival_Ann_Cliff_Event_2",
+        "desc": "binary"
+    },
+    {
+        "id": "0x86",
+        "name": "Rival_Ann_Cliff_Event_3",
+        "desc": "binary"
+    },
+    {
+        "id": "0x87",
+        "name": "Rival_Ann_Cliff_Event_4",
+        "desc": "binary"
+    },
+    {
+        "id": "0x88",
+        "name": "Rival_Ann_Cliff_Married",
+        "desc": "binary"
+    },
+    {
+        "id": "0x89",
+        "name": "Flag_0x89",
+        "desc": "binary"
+    },
+    {
+        "id": "0x8A",
+        "name": "Flag_0x8A",
+        "desc": "binary"
+    },
+    {
+        "id": "0x8B",
+        "name": "Rival_Mary_Gray_Event_1",
+        "desc": "binary"
+    },
+    {
+        "id": "0x8C",
+        "name": "Rival_Mary_Gray_Event_2",
+        "desc": "binary"
+    },
+    {
+        "id": "0x8D",
+        "name": "Rival_Mary_Gray_Event_3",
+        "desc": "binary"
+    },
+    {
+        "id": "0x8E",
+        "name": "Rival_Mary_Gray_Event_4",
+        "desc": "binary"
+    },
+    {
+        "id": "0x8F",
+        "name": "Rival_Mary_Gray_Married",
+        "desc": "binary"
+    },
+    {
+        "id": "0x90",
+        "name": "Flag_0x90",
+        "desc": "binary"
+    },
+    {
+        "id": "0x91",
+        "name": "Flag_0x91",
+        "desc": "binary"
+    },
+    {
+        "id": "0x92",
+        "name": "Rival_Elli_Doctor_Event_1",
+        "desc": "binary"
+    },
+    {
+        "id": "0x93",
+        "name": "Rival_Elli_Doctor_Event_2",
+        "desc": "binary"
+    },
+    {
+        "id": "0x94",
+        "name": "Rival_Elli_Doctor_Event_3",
+        "desc": "binary"
+    },
+    {
+        "id": "0x95",
+        "name": "Rival_Elli_Doctor_Event_4",
+        "desc": "binary"
+    },
+    {
+        "id": "0x96",
+        "name": "Rival_Elli_Doctor_Married",
+        "desc": "binary"
+    },
+    {
+        "id": "0x97",
+        "name": "Flag_0x97",
+        "desc": "binary"
+    },
+    {
+        "id": "0x98",
+        "name": "Flag_0x98",
+        "desc": "binary"
+    },
+    {
+        "id": "0x99",
+        "name": "Flag_0x99",
+        "desc": "binary"
+    },
+    {
+        "id": "0x9A",
+        "name": "Flag_0x9A",
+        "desc": "binary"
+    },
+    {
+        "id": "0x9B",
+        "name": "Flag_0x9B",
+        "desc": "binary"
+    },
+    {
+        "id": "0x9C",
+        "name": "Flag_0x9C",
+        "desc": "binary"
+    },
+    {
+        "id": "0x9D",
+        "name": "Flag_0x9D",
+        "desc": "binary"
+    },
+    {
+        "id": "0x9E",
+        "name": "Flag_0x9E",
+        "desc": "binary"
+    },
+    {
+        "id": "0x9F",
+        "name": "Flag_0x9F",
+        "desc": "binary"
+    },
+    {
+        "id": "0xA0",
+        "name": "Flag_0xA0",
+        "desc": "binary"
+    },
+    {
+        "id": "0xA1",
+        "name": "Flag_0xA1",
+        "desc": "binary"
+    },
+    {
+        "id": "0xA2",
+        "name": "Flag_0xA2",
+        "desc": "binary"
+    },
+    {
+        "id": "0xA3",
+        "name": "Flag_0xA3",
+        "desc": "binary"
+    },
+    {
+        "id": "0xA4",
+        "name": "Flag_0xA4",
+        "desc": "binary"
+    },
+    {
+        "id": "0xA5",
+        "name": "Flag_0xA5",
+        "desc": "binary"
+    },
+    {
+        "id": "0xA6",
+        "name": "Flag_0xA6",
+        "desc": "binary"
+    },
+    {
+        "id": "0xA7",
+        "name": "Flag_0xA7",
+        "desc": "binary"
+    },
+    {
+        "id": "0xA8",
+        "name": "Flag_0xA8",
+        "desc": "binary"
+    },
+    {
+        "id": "0xA9",
+        "name": "Flag_0xA9",
+        "desc": "binary"
+    },
+    {
+        "id": "0xAA",
+        "name": "Flag_0xAA",
+        "desc": "binary"
+    },
+    {
+        "id": "0xAB",
+        "name": "Flag_0xAB",
+        "desc": "binary"
+    },
+    {
+        "id": "0xAC",
+        "name": "Flag_0xAC",
+        "desc": "binary"
+    },
+    {
+        "id": "0xAD",
+        "name": "Flag_0xAD",
+        "desc": "binary"
+    },
+    {
+        "id": "0xAE",
+        "name": "Flag_0xAE",
+        "desc": "binary"
+    },
+    {
+        "id": "0xAF",
+        "name": "Flag_0xAF",
+        "desc": "binary"
+    },
+    {
+        "id": "0xB0",
+        "name": "Flag_0xB0",
+        "desc": "binary"
+    },
+    {
+        "id": "0xB1",
+        "name": "Flag_0xB1",
+        "desc": "binary"
+    },
+    {
+        "id": "0xB2",
+        "name": "Flag_0xB2",
+        "desc": "binary"
+    },
+    {
+        "id": "0xB3",
+        "name": "Flag_0xB3",
+        "desc": "binary"
+    },
+    {
+        "id": "0xB4",
+        "name": "Flag_0xB4",
+        "desc": "binary"
+    },
+    {
+        "id": "0xB5",
+        "name": "Flag_0xB5",
+        "desc": "binary"
+    },
+    {
+        "id": "0xB6",
+        "name": "Flag_0xB6",
+        "desc": "binary"
+    },
+    {
+        "id": "0xB7",
+        "name": "Flag_0xB7",
+        "desc": "binary"
+    },
+    {
+        "id": "0xB8",
+        "name": "Flag_0xB8",
+        "desc": "binary"
+    },
+    {
+        "id": "0xB9",
+        "name": "Flag_0xB9",
+        "desc": "binary"
+    },
+    {
+        "id": "0xBA",
+        "name": "Flag_0xBA",
+        "desc": "binary"
+    },
+    {
+        "id": "0xBB",
+        "name": "Flag_0xBB",
+        "desc": "binary"
+    },
+    {
+        "id": "0xBC",
+        "name": "Flag_0xBC",
+        "desc": "binary"
+    },
+    {
+        "id": "0xBD",
+        "name": "Flag_0xBD",
+        "desc": "binary"
+    },
+    {
+        "id": "0xBE",
+        "name": "Flag_0xBE",
+        "desc": "binary"
+    },
+    {
+        "id": "0xBF",
+        "name": "Flag_0xBF",
+        "desc": "binary"
+    },
+    {
+        "id": "0xC0",
+        "name": "Flag_0xC0",
+        "desc": "binary"
+    },
+    {
+        "id": "0xC1",
+        "name": "Flag_0xC1",
+        "desc": "binary"
+    },
+    {
+        "id": "0xC2",
+        "name": "Flag_0xC2",
+        "desc": "binary"
+    },
+    {
+        "id": "0xC3",
+        "name": "Flag_0xC3",
+        "desc": "binary"
+    },
+    {
+        "id": "0xC4",
+        "name": "Flag_0xC4",
+        "desc": "binary"
+    },
+    {
+        "id": "0xC5",
+        "name": "Flag_0xC5",
+        "desc": "binary"
+    },
+    {
+        "id": "0xC6",
+        "name": "Flag_0xC6",
+        "desc": "binary"
+    },
+    {
+        "id": "0xC7",
+        "name": "Flag_0xC7",
+        "desc": "binary"
+    },
+    {
+        "id": "0xC8",
+        "name": "Baby_Birth_Event_State",
+        "desc": "state"
+    },
+    {
+        "id": "0xC9",
+        "name": "Flag_0xC9",
+        "desc": "binary"
+    },
+    {
+        "id": "0xCA",
+        "name": "Flag_0xCA",
+        "desc": "binary"
+    },
+    {
+        "id": "0xCB",
+        "name": "Flag_0xCB",
+        "desc": "binary"
+    },
+    {
+        "id": "0xCC",
+        "name": "Flag_0xCC",
+        "desc": "binary"
+    },
+    {
+        "id": "0xCD",
+        "name": "Flag_0xCD",
+        "desc": "binary"
+    },
+    {
+        "id": "0xCE",
+        "name": "Flag_0xCE",
+        "desc": "binary"
+    },
+    {
+        "id": "0xCF",
+        "name": "Flag_0xCF",
+        "desc": "binary"
+    },
+    {
+        "id": "0xD0",
+        "name": "Flag_0xD0",
+        "desc": "binary"
+    },
+    {
+        "id": "0xD1",
+        "name": "Flag_0xD1",
+        "desc": "binary"
+    },
+    {
+        "id": "0xD2",
+        "name": "Flag_0xD2",
+        "desc": "binary"
+    },
+    {
+        "id": "0xD3",
+        "name": "Flag_0xD3",
+        "desc": "binary"
+    },
+    {
+        "id": "0xD4",
+        "name": "Flag_0xD4",
+        "desc": "binary"
+    },
+    {
+        "id": "0xD5",
+        "name": "Flag_0xD5",
+        "desc": "binary"
+    },
+    {
+        "id": "0xD6",
+        "name": "Flag_0xD6",
+        "desc": "binary"
+    },
+    {
+        "id": "0xD7",
+        "name": "Flag_0xD7",
+        "desc": "binary"
+    },
+    {
+        "id": "0xD8",
+        "name": "Flag_0xD8",
+        "desc": "binary"
+    },
+    {
+        "id": "0xD9",
+        "name": "Flag_0xD9",
+        "desc": "binary"
+    },
+    {
+        "id": "0xDA",
+        "name": "Flag_0xDA",
+        "desc": "binary"
+    },
+    {
+        "id": "0xDB",
+        "name": "Flag_0xDB",
+        "desc": "binary"
+    },
+    {
+        "id": "0xDC",
+        "name": "Flag_0xDC",
+        "desc": "binary"
+    },
+    {
+        "id": "0xDD",
+        "name": "Flag_0xDD",
+        "desc": "binary"
+    },
+    {
+        "id": "0xDE",
+        "name": "Flag_0xDE",
+        "desc": "state"
+    },
+    {
+        "id": "0xDF",
+        "name": "Flag_0xDF",
+        "desc": "binary"
+    },
+    {
+        "id": "0xE0",
+        "name": "Flag_0xE0",
+        "desc": "binary"
+    },
+    {
+        "id": "0xE1",
+        "name": "Flag_0xE1",
+        "desc": "binary"
+    },
+    {
+        "id": "0xE2",
+        "name": "Flag_0xE2",
+        "desc": "binary"
+    },
+    {
+        "id": "0xE3",
+        "name": "Flag_0xE3",
+        "desc": "binary"
+    },
+    {
+        "id": "0xE4",
+        "name": "Flag_0xE4",
+        "desc": "binary"
+    },
+    {
+        "id": "0xE5",
+        "name": "Flag_0xE5",
+        "desc": "binary"
+    },
+    {
+        "id": "0xE6",
+        "name": "Flag_0xE6",
+        "desc": "binary"
+    },
+    {
+        "id": "0xE7",
+        "name": "Flag_0xE7",
+        "desc": "binary"
+    },
+    {
+        "id": "0xE8",
+        "name": "Flag_0xE8",
+        "desc": "binary"
+    },
+    {
+        "id": "0xE9",
+        "name": "Flag_0xE9",
+        "desc": "binary"
+    },
+    {
+        "id": "0xEA",
+        "name": "Flag_0xEA",
+        "desc": "binary"
+    },
+    {
+        "id": "0xEB",
+        "name": "Flag_0xEB",
+        "desc": "binary"
+    },
+    {
+        "id": "0xEC",
+        "name": "Flag_0xEC",
+        "desc": "binary"
+    },
+    {
+        "id": "0xED",
+        "name": "Flag_0xED",
+        "desc": "binary"
+    },
+    {
+        "id": "0xEE",
+        "name": "Flag_0xEE",
+        "desc": "binary"
+    },
+    {
+        "id": "0xEF",
+        "name": "Flag_0xEF",
+        "desc": "binary"
+    },
+    {
+        "id": "0xF0",
+        "name": "Flag_0xF0",
+        "desc": "binary"
+    },
+    {
+        "id": "0xF1",
+        "name": "Flag_0xF1",
+        "desc": "binary"
+    },
+    {
+        "id": "0xF2",
+        "name": "Flag_0xF2",
+        "desc": "binary"
+    },
+    {
+        "id": "0xF3",
+        "name": "Flag_0xF3",
+        "desc": "binary"
+    },
+    {
+        "id": "0xF4",
+        "name": "Flag_0xF4",
+        "desc": "binary"
+    },
+    {
+        "id": "0xF5",
+        "name": "Flag_0xF5",
+        "desc": "binary"
+    },
+    {
+        "id": "0xF6",
+        "name": "Flag_0xF6",
+        "desc": "binary"
+    },
+    {
+        "id": "0xF7",
+        "name": "Flag_0xF7",
+        "desc": "binary"
+    },
+    {
+        "id": "0xF8",
+        "name": "Flag_0xF8",
+        "desc": "binary"
+    },
+    {
+        "id": "0xF9",
+        "name": "Flag_0xF9",
+        "desc": "binary"
+    },
+    {
+        "id": "0xFA",
+        "name": "Flag_0xFA",
+        "desc": "binary"
+    },
+    {
+        "id": "0xFB",
+        "name": "Flag_0xFB",
+        "desc": "binary"
+    },
+    {
+        "id": "0xFC",
+        "name": "Flag_0xFC",
+        "desc": "binary"
+    },
+    {
+        "id": "0xFD",
+        "name": "Flag_0xFD",
+        "desc": "binary"
+    },
+    {
+        "id": "0xFE",
+        "name": "Flag_0xFE",
+        "desc": "binary"
+    },
+    {
+        "id": "0xFF",
+        "name": "Flag_0xFF",
+        "desc": "binary"
+    },
+    {
+        "id": "0x100",
+        "name": "Flag_0x100",
+        "desc": "binary"
+    },
+    {
+        "id": "0x101",
+        "name": "Flag_0x101",
+        "desc": "binary"
+    },
+    {
+        "id": "0x102",
+        "name": "Flag_0x102",
+        "desc": "binary"
+    },
+    {
+        "id": "0x103",
+        "name": "Flag_0x103",
+        "desc": "state"
+    },
+    {
+        "id": "0x104",
+        "name": "Flag_0x104",
+        "desc": "binary"
+    },
+    {
+        "id": "0x105",
+        "name": "Flag_0x105",
+        "desc": "binary"
+    },
+    {
+        "id": "0x106",
+        "name": "Flag_0x106",
+        "desc": "binary"
+    },
+    {
+        "id": "0x107",
+        "name": "Flag_0x107",
+        "desc": "binary"
+    },
+    {
+        "id": "0x108",
+        "name": "Flag_0x108",
+        "desc": "state"
+    },
+    {
+        "id": "0x109",
+        "name": "Flag_0x109",
+        "desc": "binary"
+    },
+    {
+        "id": "0x10A",
+        "name": "Flag_0x10A",
+        "desc": "binary"
+    },
+    {
+        "id": "0x10B",
+        "name": "Flag_0x10B",
+        "desc": "binary"
+    },
+    {
+        "id": "0x10C",
+        "name": "Flag_0x10C",
+        "desc": "binary"
+    },
+    {
+        "id": "0x10D",
+        "name": "Flag_0x10D",
+        "desc": "state"
+    },
+    {
+        "id": "0x10E",
+        "name": "Flag_0x10E",
+        "desc": "binary"
+    },
+    {
+        "id": "0x10F",
+        "name": "Flag_0x10F",
+        "desc": "binary"
+    },
+    {
+        "id": "0x110",
+        "name": "Flag_0x110",
+        "desc": "binary"
+    },
+    {
+        "id": "0x111",
+        "name": "Flag_0x111",
+        "desc": "binary"
+    },
+    {
+        "id": "0x112",
+        "name": "Flag_0x112",
+        "desc": "binary"
+    },
+    {
+        "id": "0x113",
+        "name": "Flag_0x113",
+        "desc": "binary"
+    },
+    {
+        "id": "0x114",
+        "name": "Flag_0x114",
+        "desc": "binary"
+    },
+    {
+        "id": "0x115",
+        "name": "Flag_0x115",
+        "desc": "binary"
+    },
+    {
+        "id": "0x116",
+        "name": "Flag_0x116",
+        "desc": "binary"
+    },
+    {
+        "id": "0x117",
+        "name": "Flag_0x117",
+        "desc": "binary"
+    },
+    {
+        "id": "0x118",
+        "name": "Flag_0x118",
+        "desc": "binary"
+    },
+    {
+        "id": "0x119",
+        "name": "Flag_0x119",
+        "desc": "binary"
+    },
+    {
+        "id": "0x11A",
+        "name": "Flag_0x11A",
+        "desc": "binary"
+    },
+    {
+        "id": "0x11B",
+        "name": "Flag_0x11B",
+        "desc": "binary"
+    },
+    {
+        "id": "0x11C",
+        "name": "Flag_0x11C",
+        "desc": "binary"
+    },
+    {
+        "id": "0x11D",
+        "name": "Flag_0x11D",
+        "desc": "binary"
+    },
+    {
+        "id": "0x11E",
+        "name": "Flag_0x11E",
+        "desc": "binary"
+    },
+    {
+        "id": "0x11F",
+        "name": "Flag_0x11F",
+        "desc": "binary"
+    },
+    {
+        "id": "0x120",
+        "name": "Flag_0x120",
+        "desc": "binary"
+    },
+    {
+        "id": "0x121",
+        "name": "Flag_0x121",
+        "desc": "binary"
+    },
+    {
+        "id": "0x122",
+        "name": "Flag_0x122",
+        "desc": "binary"
+    },
+    {
+        "id": "0x123",
+        "name": "Flag_0x123",
+        "desc": "binary"
+    },
+    {
+        "id": "0x124",
+        "name": "Flag_0x124",
+        "desc": "binary"
+    },
+    {
+        "id": "0x125",
+        "name": "Flag_0x125",
+        "desc": "state"
+    },
+    {
+        "id": "0x126",
+        "name": "Flag_0x126",
+        "desc": "binary"
+    },
+    {
+        "id": "0x127",
+        "name": "Flag_0x127",
+        "desc": "binary"
+    },
+    {
+        "id": "0x128",
+        "name": "Flag_0x128",
+        "desc": "binary"
+    },
+    {
+        "id": "0x129",
+        "name": "Flag_0x129",
+        "desc": "binary"
+    },
+    {
+        "id": "0x12A",
+        "name": "Flag_0x12A",
+        "desc": "binary"
+    },
+    {
+        "id": "0x12B",
+        "name": "Flag_0x12B",
+        "desc": "binary"
+    },
+    {
+        "id": "0x12C",
+        "name": "Flag_0x12C",
+        "desc": "binary"
+    },
+    {
+        "id": "0x12D",
+        "name": "Flag_0x12D",
+        "desc": "binary"
+    },
+    {
+        "id": "0x12E",
+        "name": "Flag_0x12E",
+        "desc": "binary"
+    },
+    {
+        "id": "0x12F",
+        "name": "Flag_0x12F",
+        "desc": "binary"
+    },
+    {
+        "id": "0x130",
+        "name": "Flag_0x130",
+        "desc": "binary"
+    },
+    {
+        "id": "0x131",
+        "name": "Flag_0x131",
+        "desc": "binary"
+    },
+    {
+        "id": "0x132",
+        "name": "Flag_0x132",
+        "desc": "binary"
+    },
+    {
+        "id": "0x133",
+        "name": "Flag_0x133",
+        "desc": "binary"
+    },
+    {
+        "id": "0x134",
+        "name": "Flag_0x134",
+        "desc": "binary"
+    },
+    {
+        "id": "0x135",
+        "name": "Flag_0x135",
+        "desc": "binary"
+    },
+    {
+        "id": "0x136",
+        "name": "Flag_0x136",
+        "desc": "binary"
+    },
+    {
+        "id": "0x137",
+        "name": "Flag_0x137",
+        "desc": "binary"
+    },
+    {
+        "id": "0x138",
+        "name": "Flag_0x138",
+        "desc": "binary"
+    },
+    {
+        "id": "0x139",
+        "name": "Flag_0x139",
+        "desc": "binary"
+    },
+    {
+        "id": "0x13B",
+        "name": "Flag_0x13B",
+        "desc": "binary"
+    },
+    {
+        "id": "0x13C",
+        "name": "Flag_0x13C",
+        "desc": "binary"
+    },
+    {
+        "id": "0x13D",
+        "name": "Flag_0x13D",
+        "desc": "binary"
+    },
+    {
+        "id": "0x13E",
+        "name": "Flag_0x13E",
+        "desc": "binary"
+    },
+    {
+        "id": "0x13F",
+        "name": "Flag_0x13F",
+        "desc": "binary"
+    },
+    {
+        "id": "0x140",
+        "name": "Flag_0x140",
+        "desc": "binary"
+    },
+    {
+        "id": "0x141",
+        "name": "Flag_0x141",
+        "desc": "binary"
+    },
+    {
+        "id": "0x142",
+        "name": "Goddess_First_Offering_Done",
+        "desc": "binary"
+    },
+    {
+        "id": "0x143",
+        "name": "Flag_0x143",
+        "desc": "binary"
+    },
+    {
+        "id": "0x144",
+        "name": "Flag_0x144",
+        "desc": "state"
+    },
+    {
+        "id": "0x145",
+        "name": "Flag_0x145",
+        "desc": "binary"
+    },
+    {
+        "id": "0x146",
+        "name": "Flag_0x146",
+        "desc": "binary"
+    },
+    {
+        "id": "0x148",
+        "name": "Flag_0x148",
+        "desc": "binary"
+    },
+    {
+        "id": "0x149",
+        "name": "Flag_0x149",
+        "desc": "binary"
+    },
+    {
+        "id": "0x14A",
+        "name": "Flag_0x14A",
+        "desc": "binary"
+    },
+    {
+        "id": "0x14B",
+        "name": "Flag_0x14B",
+        "desc": "binary"
+    },
+    {
+        "id": "0x14C",
+        "name": "Flag_0x14C",
+        "desc": "binary"
+    },
+    {
+        "id": "0x14E",
+        "name": "Flag_0x14E",
+        "desc": "binary"
+    },
+    {
+        "id": "0x14F",
+        "name": "Flag_0x14F",
+        "desc": "binary"
+    },
+    {
+        "id": "0x150",
+        "name": "Flag_0x150",
+        "desc": "binary"
+    },
+    {
+        "id": "0x151",
+        "name": "Flag_0x151",
+        "desc": "binary"
+    },
+    {
+        "id": "0x152",
+        "name": "System_Interaction_Blocked",
+        "desc": "state"
+    },
+    {
+        "id": "0x153",
+        "name": "Flag_0x153",
+        "desc": "binary"
+    },
+    {
+        "id": "0x154",
+        "name": "Flag_0x154",
+        "desc": "state"
+    },
+    {
+        "id": "0x155",
+        "name": "Flag_0x155",
+        "desc": "binary"
+    },
+    {
+        "id": "0x156",
+        "name": "Flag_0x156",
+        "desc": "binary"
+    },
+    {
+        "id": "0x158",
+        "name": "Flag_0x158",
+        "desc": "binary"
+    },
+    {
+        "id": "0x159",
+        "name": "Flag_0x159",
+        "desc": "binary"
+    },
+    {
+        "id": "0x15A",
+        "name": "Flag_0x15A",
+        "desc": "binary"
+    },
+    {
+        "id": "0x15B",
+        "name": "Flag_0x15B",
+        "desc": "binary"
+    },
+    {
+        "id": "0x15C",
+        "name": "Flag_0x15C",
+        "desc": "binary"
+    },
+    {
+        "id": "0x15D",
+        "name": "Flag_0x15D",
+        "desc": "binary"
+    },
+    {
+        "id": "0x15E",
+        "name": "Flag_0x15E",
+        "desc": "binary"
+    },
+    {
+        "id": "0x15F",
+        "name": "Event_Goddess_Shipment_Reward_Active",
+        "desc": "binary"
+    },
+    {
+        "id": "0x160",
+        "name": "Flag_0x160",
+        "desc": "binary"
+    },
+    {
+        "id": "0x161",
+        "name": "Flag_0x161",
+        "desc": "binary"
+    },
+    {
+        "id": "0x162",
+        "name": "Flag_0x162",
+        "desc": "binary"
+    },
+    {
+        "id": "0x163",
+        "name": "Flag_0x163",
+        "desc": "binary"
+    },
+    {
+        "id": "0x164",
+        "name": "Flag_0x164",
+        "desc": "binary"
+    },
+    {
+        "id": "0x165",
+        "name": "Flag_0x165",
+        "desc": "binary"
+    },
+    {
+        "id": "0x166",
+        "name": "Flag_0x166",
+        "desc": "binary"
+    },
+    {
+        "id": "0x167",
+        "name": "Flag_0x167",
+        "desc": "binary"
+    },
+    {
+        "id": "0x168",
+        "name": "Flag_0x168",
+        "desc": "binary"
+    },
+    {
+        "id": "0x169",
+        "name": "Flag_0x169",
+        "desc": "binary"
+    },
+    {
+        "id": "0x16A",
+        "name": "Flag_0x16A",
+        "desc": "binary"
+    },
+    {
+        "id": "0x16B",
+        "name": "Flag_0x16B",
+        "desc": "binary"
+    },
+    {
+        "id": "0x16C",
+        "name": "Flag_0x16C",
+        "desc": "binary"
+    },
+    {
+        "id": "0x16D",
+        "name": "Flag_0x16D",
+        "desc": "binary"
+    },
+    {
+        "id": "0x16E",
+        "name": "Flag_0x16E",
+        "desc": "binary"
+    },
+    {
+        "id": "0x16F",
+        "name": "Flag_0x16F",
+        "desc": "binary"
+    },
+    {
+        "id": "0x170",
+        "name": "Flag_0x170",
+        "desc": "binary"
+    },
+    {
+        "id": "0x171",
+        "name": "Flag_0x171",
+        "desc": "binary"
+    },
+    {
+        "id": "0x172",
+        "name": "Flag_0x172",
+        "desc": "binary"
+    },
+    {
+        "id": "0x173",
+        "name": "Flag_0x173",
+        "desc": "binary"
+    },
+    {
+        "id": "0x174",
+        "name": "Flag_0x174",
+        "desc": "binary"
+    },
+    {
+        "id": "0x175",
+        "name": "Flag_0x175",
+        "desc": "binary"
+    },
+    {
+        "id": "0x176",
+        "name": "Flag_0x176",
+        "desc": "binary"
+    },
+    {
+        "id": "0x177",
+        "name": "Flag_0x177",
+        "desc": "binary"
+    },
+    {
+        "id": "0x178",
+        "name": "Flag_0x178",
+        "desc": "binary"
+    },
+    {
+        "id": "0x179",
+        "name": "Flag_0x179",
+        "desc": "binary"
+    },
+    {
+        "id": "0x17A",
+        "name": "Flag_0x17A",
+        "desc": "binary"
+    },
+    {
+        "id": "0x17B",
+        "name": "Flag_0x17B",
+        "desc": "binary"
+    },
+    {
+        "id": "0x17C",
+        "name": "Flag_0x17C",
+        "desc": "binary"
+    },
+    {
+        "id": "0x17D",
+        "name": "Flag_0x17D",
+        "desc": "binary"
+    },
+    {
+        "id": "0x17E",
+        "name": "Flag_0x17E",
+        "desc": "binary"
+    },
+    {
+        "id": "0x17F",
+        "name": "Flag_0x17F",
+        "desc": "binary"
+    },
+    {
+        "id": "0x180",
+        "name": "Event_NewYears_Day_Active",
+        "desc": "binary"
+    },
+    {
+        "id": "0x181",
+        "name": "Flag_0x181",
+        "desc": "binary"
+    },
+    {
+        "id": "0x182",
+        "name": "Flag_0x182",
+        "desc": "binary"
+    },
+    {
+        "id": "0x183",
+        "name": "Flag_0x183",
+        "desc": "binary"
+    },
+    {
+        "id": "0x184",
+        "name": "Flag_0x184",
+        "desc": "binary"
+    },
+    {
+        "id": "0x185",
+        "name": "Flag_0x185",
+        "desc": "binary"
+    },
+    {
+        "id": "0x186",
+        "name": "Flag_0x186",
+        "desc": "binary"
+    },
+    {
+        "id": "0x187",
+        "name": "Flag_0x187",
+        "desc": "binary"
+    },
+    {
+        "id": "0x188",
+        "name": "Flag_0x188",
+        "desc": "binary"
+    },
+    {
+        "id": "0x189",
+        "name": "Event_Spring_HorseRace_Active",
+        "desc": "binary"
+    },
+    {
+        "id": "0x18A",
+        "name": "Flag_0x18A",
+        "desc": "binary"
+    },
+    {
+        "id": "0x18B",
+        "name": "Flag_0x18B",
+        "desc": "binary"
+    },
+    {
+        "id": "0x18C",
+        "name": "Event_Cooking_Festival_Active",
+        "desc": "binary"
+    },
+    {
+        "id": "0x18D",
+        "name": "Event_Cooking_Festival_Result",
+        "desc": "state"
+    },
+    {
+        "id": "0x18E",
+        "name": "Event_Cooking_Festival_Completed",
+        "desc": "binary"
+    },
+    {
+        "id": "0x18F",
+        "name": "Flag_0x18F",
+        "desc": "binary"
+    },
+    {
+        "id": "0x190",
+        "name": "Flag_0x190",
+        "desc": "state"
+    },
+    {
+        "id": "0x191",
+        "name": "Flag_0x191",
+        "desc": "binary"
+    },
+    {
+        "id": "0x192",
+        "name": "Flag_0x192",
+        "desc": "binary"
+    },
+    {
+        "id": "0x193",
+        "name": "Flag_0x193",
+        "desc": "binary"
+    },
+    {
+        "id": "0x194",
+        "name": "Event_BeachDay_Active",
+        "desc": "binary"
+    },
+    {
+        "id": "0x195",
+        "name": "Flag_0x195",
+        "desc": "state"
+    },
+    {
+        "id": "0x196",
+        "name": "Flag_0x196",
+        "desc": "binary"
+    },
+    {
+        "id": "0x197",
+        "name": "Flag_0x197",
+        "desc": "binary"
+    },
+    {
+        "id": "0x198",
+        "name": "Event_Chicken_Festival_Active",
+        "desc": "binary"
+    },
+    {
+        "id": "0x199",
+        "name": "Flag_0x199",
+        "desc": "state"
+    },
+    {
+        "id": "0x19A",
+        "name": "Flag_0x19A",
+        "desc": "binary"
+    },
+    {
+        "id": "0x19B",
+        "name": "Flag_0x19B",
+        "desc": "binary"
+    },
+    {
+        "id": "0x19C",
+        "name": "Event_Cow_Festival_Active",
+        "desc": "binary"
+    },
+    {
+        "id": "0x19D",
+        "name": "Flag_0x19D",
+        "desc": "binary"
+    },
+    {
+        "id": "0x19E",
+        "name": "Event_Fireworks_Active",
+        "desc": "binary"
+    },
+    {
+        "id": "0x19F",
+        "name": "Selected_Festival_Partner",
+        "desc": "state"
+    },
+    {
+        "id": "0x1A0",
+        "name": "Flag_0x1A0",
+        "desc": "binary"
+    },
+    {
+        "id": "0x1A1",
+        "name": "Flag_0x1A1",
+        "desc": "binary"
+    },
+    {
+        "id": "0x1A2",
+        "name": "Flag_0x1A2",
+        "desc": "binary"
+    },
+    {
+        "id": "0x1A3",
+        "name": "Flag_0x1A3",
+        "desc": "binary"
+    },
+    {
+        "id": "0x1A4",
+        "name": "Event_Music_Festival_Active",
+        "desc": "binary"
+    },
+    {
+        "id": "0x1A5",
+        "name": "Flag_0x1A5",
+        "desc": "binary"
+    },
+    {
+        "id": "0x1A6",
+        "name": "Flag_0x1A6",
+        "desc": "binary"
+    },
+    {
+        "id": "0x1A7",
+        "name": "Flag_0x1A7",
+        "desc": "binary"
+    },
+    {
+        "id": "0x1A8",
+        "name": "Event_MoonViewing_Active",
+        "desc": "binary"
+    },
+    {
+        "id": "0x1A9",
+        "name": "Moon_Viewing_Partner",
+        "desc": "state"
+    },
+    {
+        "id": "0x1AA",
+        "name": "Flag_0x1AA",
+        "desc": "binary"
+    },
+    {
+        "id": "0x1AB",
+        "name": "Flag_0x1AB",
+        "desc": "binary"
+    },
+    {
+        "id": "0x1AC",
+        "name": "Event_Fall_HorseRace_Active",
+        "desc": "binary"
+    },
+    {
+        "id": "0x1AD",
+        "name": "Flag_0x1AD",
+        "desc": "binary"
+    },
+    {
+        "id": "0x1AE",
+        "name": "Flag_0x1AE",
+        "desc": "binary"
+    },
+    {
+        "id": "0x1AF",
+        "name": "Flag_0x1AF",
+        "desc": "binary"
+    },
+    {
+        "id": "0x1B0",
+        "name": "Event_Sheep_Festival_Active",
+        "desc": "binary"
+    },
+    {
+        "id": "0x1B1",
+        "name": "Flag_0x1B1",
+        "desc": "binary"
+    },
+    {
+        "id": "0x1B2",
+        "name": "Flag_0x1B2",
+        "desc": "binary"
+    },
+    {
+        "id": "0x1B3",
+        "name": "Flag_0x1B3",
+        "desc": "binary"
+    },
+    {
+        "id": "0x1B4",
+        "name": "Flag_0x1B4",
+        "desc": "binary"
+    },
+    {
+        "id": "0x1B5",
+        "name": "Flag_0x1B5",
+        "desc": "binary"
+    },
+    {
+        "id": "0x1B6",
+        "name": "Flag_0x1B6",
+        "desc": "binary"
+    },
+    {
+        "id": "0x1B7",
+        "name": "Flag_0x1B7",
+        "desc": "binary"
+    },
+    {
+        "id": "0x1B8",
+        "name": "Flag_0x1B8",
+        "desc": "binary"
+    },
+    {
+        "id": "0x1B9",
+        "name": "Flag_0x1B9",
+        "desc": "binary"
+    },
+    {
+        "id": "0x1BA",
+        "name": "Flag_0x1BA",
+        "desc": "binary"
+    },
+    {
+        "id": "0x1BB",
+        "name": "Flag_0x1BB",
+        "desc": "binary"
+    },
+    {
+        "id": "0x1BC",
+        "name": "Flag_0x1BC",
+        "desc": "binary"
+    },
+    {
+        "id": "0x1BD",
+        "name": "Flag_0x1BD",
+        "desc": "binary"
+    },
+    {
+        "id": "0x1BE",
+        "name": "Flag_0x1BE",
+        "desc": "binary"
+    },
+    {
+        "id": "0x1BF",
+        "name": "Flag_0x1BF",
+        "desc": "binary"
+    },
+    {
+        "id": "0x1C0",
+        "name": "Flag_0x1C0",
+        "desc": "binary"
+    },
+    {
+        "id": "0x1C1",
+        "name": "Flag_0x1C1",
+        "desc": "binary"
+    },
+    {
+        "id": "0x1C2",
+        "name": "Flag_0x1C2",
+        "desc": "state"
+    },
+    {
+        "id": "0x1C3",
+        "name": "Flag_0x1C3",
+        "desc": "binary"
+    },
+    {
+        "id": "0x1C4",
+        "name": "Flag_0x1C4",
+        "desc": "binary"
+    },
+    {
+        "id": "0x1C5",
+        "name": "Flag_0x1C5",
+        "desc": "binary"
+    },
+    {
+        "id": "0x1C6",
+        "name": "Flag_0x1C6",
+        "desc": "binary"
+    },
+    {
+        "id": "0x1C7",
+        "name": "Flag_0x1C7",
+        "desc": "binary"
+    },
+    {
+        "id": "0x1C8",
+        "name": "Flag_0x1C8",
+        "desc": "binary"
+    },
+    {
+        "id": "0x1C9",
+        "name": "Flag_0x1C9",
+        "desc": "binary"
+    },
+    {
+        "id": "0x1CA",
+        "name": "Flag_0x1CA",
+        "desc": "binary"
+    },
+    {
+        "id": "0x1CB",
+        "name": "Flag_0x1CB",
+        "desc": "binary"
+    },
+    {
+        "id": "0x1CC",
+        "name": "Flag_0x1CC",
+        "desc": "binary"
+    },
+    {
+        "id": "0x1CD",
+        "name": "Flag_0x1CD",
+        "desc": "binary"
+    },
+    {
+        "id": "0x1CE",
+        "name": "Flag_0x1CE",
+        "desc": "binary"
+    },
+    {
+        "id": "0x1CF",
+        "name": "Flag_0x1CF",
+        "desc": "state"
+    },
+    {
+        "id": "0x1D0",
+        "name": "Event_NewYears_Eve_Active",
+        "desc": "binary"
+    },
+    {
+        "id": "0x1D1",
+        "name": "Event_NewYears_Eve_Morning_Active",
+        "desc": "binary"
+    },
+    {
+        "id": "0x1D2",
+        "name": "Flag_0x1D2",
+        "desc": "binary"
+    },
+    {
+        "id": "0x1D3",
+        "name": "Flag_0x1D3",
+        "desc": "binary"
+    },
+    {
+        "id": "0x1D4",
+        "name": "Flag_0x1D4",
+        "desc": "binary"
+    },
+    {
+        "id": "0x1D5",
+        "name": "Flag_0x1D5",
+        "desc": "binary"
+    },
+    {
+        "id": "0x1D6",
+        "name": "Flag_0x1D6",
+        "desc": "binary"
+    },
+    {
+        "id": "0x1D7",
+        "name": "Flag_0x1D7",
+        "desc": "binary"
+    },
+    {
+        "id": "0x1D8",
+        "name": "Flag_0x1D8",
+        "desc": "binary"
+    },
+    {
+        "id": "0x1D9",
+        "name": "Flag_0x1D9",
+        "desc": "binary"
+    },
+    {
+        "id": "0x1DA",
+        "name": "Flag_0x1DA",
+        "desc": "binary"
+    },
+    {
+        "id": "0x1DB",
+        "name": "Flag_0x1DB",
+        "desc": "binary"
+    },
+    {
+        "id": "0x1DC",
+        "name": "Flag_0x1DC",
+        "desc": "binary"
+    },
+    {
+        "id": "0x1DD",
+        "name": "Flag_0x1DD",
+        "desc": "binary"
+    },
+    {
+        "id": "0x1DE",
+        "name": "Flag_0x1DE",
+        "desc": "binary"
+    },
+    {
+        "id": "0x1DF",
+        "name": "Flag_0x1DF",
+        "desc": "binary"
+    },
+    {
+        "id": "0x1E0",
+        "name": "Flag_0x1E0",
+        "desc": "binary"
+    },
+    {
+        "id": "0x1E1",
+        "name": "Flag_0x1E1",
+        "desc": "binary"
+    },
+    {
+        "id": "0x1E2",
+        "name": "Flag_0x1E2",
+        "desc": "state"
+    },
+    {
+        "id": "0x1E3",
+        "name": "Flag_0x1E3",
+        "desc": "state"
+    },
+    {
+        "id": "0x1E4",
+        "name": "Flag_0x1E4",
+        "desc": "state"
+    },
+    {
+        "id": "0x1E5",
+        "name": "Flag_0x1E5",
+        "desc": "state"
+    },
+    {
+        "id": "0x1E6",
+        "name": "Flag_0x1E6",
+        "desc": "state"
+    },
+    {
+        "id": "0x1E7",
+        "name": "Flag_0x1E7",
+        "desc": "state"
+    },
+    {
+        "id": "0x1E8",
+        "name": "Flag_0x1E8",
+        "desc": "state"
+    },
+    {
+        "id": "0x1E9",
+        "name": "Flag_0x1E9",
+        "desc": "state"
+    },
+    {
+        "id": "0x1EA",
+        "name": "Flag_0x1EA",
+        "desc": "state"
+    },
+    {
+        "id": "0x1EB",
+        "name": "Flag_0x1EB",
+        "desc": "state"
+    },
+    {
+        "id": "0x1EC",
+        "name": "Flag_0x1EC",
+        "desc": "state"
+    },
+    {
+        "id": "0x1ED",
+        "name": "TV_Character_Intro_Index",
+        "desc": "state"
+    },
+    {
+        "id": "0x1EE",
+        "name": "TV_Shopping_Cycle_Index",
+        "desc": "state"
+    },
+    {
+        "id": "0x1EF",
+        "name": "Flag_0x1EF",
+        "desc": "state"
+    },
+    {
+        "id": "0x1F0",
+        "name": "Flag_0x1F0",
+        "desc": "binary"
+    },
+    {
+        "id": "0x1F1",
+        "name": "Flag_0x1F1",
+        "desc": "binary"
+    },
+    {
+        "id": "0x1F2",
+        "name": "Flag_0x1F2",
+        "desc": "binary"
+    },
+    {
+        "id": "0x1F3",
+        "name": "Flag_0x1F3",
+        "desc": "binary"
+    },
+    {
+        "id": "0x1F4",
+        "name": "Flag_0x1F4",
+        "desc": "binary"
+    },
+    {
+        "id": "0x1F5",
+        "name": "Flag_0x1F5",
+        "desc": "binary"
+    },
+    {
+        "id": "0x1F6",
+        "name": "Flag_0x1F6",
+        "desc": "binary"
+    },
+    {
+        "id": "0x1F7",
+        "name": "Flag_0x1F7",
+        "desc": "binary"
+    },
+    {
+        "id": "0x1F8",
+        "name": "Flag_0x1F8",
+        "desc": "binary"
+    },
+    {
+        "id": "0x1F9",
+        "name": "Flag_0x1F9",
+        "desc": "binary"
+    },
+    {
+        "id": "0x1FA",
+        "name": "Lou_Visit_Requested",
+        "desc": "binary"
+    },
+    {
+        "id": "0x1FB",
+        "name": "GCN_Sync_Active",
+        "desc": "binary"
+    },
+    {
+        "id": "0x1FC",
+        "name": "Flag_0x1FC",
+        "desc": "state"
+    },
+    {
+        "id": "0x1FD",
+        "name": "Flag_0x1FD",
+        "desc": "state"
+    },
+    {
+        "id": "0x1FE",
+        "name": "GCN_Achievement_Counter",
+        "desc": "state"
+    },
+    {
+        "id": "0x1FF",
+        "name": "Goddess_Link_Sync_Success",
+        "desc": "binary"
+    },
+    {
+        "id": "0x200",
+        "name": "Goddess_Link_Data_Saved",
+        "desc": "binary"
+    },
+    {
+        "id": "0x201",
+        "name": "GCN_Reward_01_Unlocked",
+        "desc": "binary"
+    },
+    {
+        "id": "0x202",
+        "name": "GCN_Reward_02_Unlocked",
+        "desc": "binary"
+    },
+    {
+        "id": "0x203",
+        "name": "GCN_Reward_03_Unlocked",
+        "desc": "binary"
+    },
+    {
+        "id": "0x204",
+        "name": "GCN_Reward_04_Unlocked",
+        "desc": "binary"
+    },
+    {
+        "id": "0x205",
+        "name": "GCN_Reward_05_Unlocked",
+        "desc": "binary"
+    },
+    {
+        "id": "0x206",
+        "name": "GCN_Reward_06_Unlocked",
+        "desc": "binary"
+    },
+    {
+        "id": "0x207",
+        "name": "GCN_Reward_07_Unlocked",
+        "desc": "binary"
+    },
+    {
+        "id": "0x208",
+        "name": "GCN_Reward_08_Unlocked",
+        "desc": "binary"
+    },
+    {
+        "id": "0x209",
+        "name": "GCN_Reward_09_Unlocked",
+        "desc": "binary"
+    },
+    {
+        "id": "0x20A",
+        "name": "GCN_Reward_10_Unlocked",
+        "desc": "binary"
+    },
+    {
+        "id": "0x20B",
+        "name": "GCN_Reward_11_Unlocked",
+        "desc": "binary"
+    },
+    {
+        "id": "0x20C",
+        "name": "GCN_Reward_12_Unlocked",
+        "desc": "binary"
+    },
+    {
+        "id": "0x20D",
+        "name": "Goddess_Link_Level",
+        "desc": "state"
+    },
+    {
+        "id": "0x20E",
+        "name": "Flag_0x20E",
+        "desc": "binary"
+    },
+    {
+        "id": "0x211",
+        "name": "Flag_0x211",
+        "desc": "binary"
+    },
+    {
+        "id": "0x212",
+        "name": "Flag_0x212",
+        "desc": "binary"
+    },
+    {
+        "id": "0x213",
+        "name": "Flag_0x213",
+        "desc": "binary"
+    },
+    {
+        "id": "0x214",
+        "name": "Flag_0x214",
+        "desc": "binary"
+    },
+    {
+        "id": "0x215",
+        "name": "Flag_0x215",
+        "desc": "binary"
+    },
+    {
+        "id": "0x216",
+        "name": "Flag_0x216",
+        "desc": "binary"
+    },
+    {
+        "id": "0x217",
+        "name": "GCN_AWL_Bio_Player",
+        "desc": "binary"
+    },
+    {
+        "id": "0x219",
+        "name": "GCN_AWL_Bio_Tak",
+        "desc": "binary"
+    },
+    {
+        "id": "0x21A",
+        "name": "GCN_AWL_Bio_Manna",
+        "desc": "binary"
+    },
+    {
+        "id": "0x21B",
+        "name": "GCN_AWL_Bio_Lumina",
+        "desc": "binary"
+    },
+    {
+        "id": "0x21C",
+        "name": "GCN_AWL_Bio_Sebastian",
+        "desc": "binary"
+    },
+    {
+        "id": "0x21D",
+        "name": "GCN_AWL_Bio_Wally",
+        "desc": "binary"
+    },
+    {
+        "id": "0x21E",
+        "name": "GCN_AWL_Bio_Chris",
+        "desc": "binary"
+    },
+    {
+        "id": "0x21F",
+        "name": "GCN_AWL_Bio_Hugh",
+        "desc": "binary"
+    },
+    {
+        "id": "0x220",
+        "name": "GCN_AWL_Bio_Grant",
+        "desc": "binary"
+    },
+    {
+        "id": "0x221",
+        "name": "GCN_AWL_Bio_Sam",
+        "desc": "binary"
+    },
+    {
+        "id": "0x222",
+        "name": "GCN_AWL_Bio_Kate",
+        "desc": "binary"
+    },
+    {
+        "id": "0x223",
+        "name": "GCN_AWL_Bio_Galen",
+        "desc": "binary"
+    },
+    {
+        "id": "0x224",
+        "name": "GCN_AWL_Bio_Nina",
+        "desc": "binary"
+    },
+    {
+        "id": "0x225",
+        "name": "GCN_AWL_Bio_Daryl",
+        "desc": "binary"
+    },
+    {
+        "id": "0x226",
+        "name": "GCN_AWL_Bio_Gustafa",
+        "desc": "binary"
+    },
+    {
+        "id": "0x227",
+        "name": "GCN_AWL_Bio_Cody",
+        "desc": "binary"
+    },
+    {
+        "id": "0x228",
+        "name": "GCN_AWL_Bio_Kassey",
+        "desc": "binary"
+    },
+    {
+        "id": "0x229",
+        "name": "GCN_AWL_Bio_Patrick",
+        "desc": "binary"
+    },
+    {
+        "id": "0x22A",
+        "name": "GCN_AWL_Bio_Murray",
+        "desc": "binary"
+    },
+    {
+        "id": "0x22B",
+        "name": "GCN_AWL_Bio_Tim",
+        "desc": "binary"
+    },
+    {
+        "id": "0x22C",
+        "name": "GCN_AWL_Bio_Ruby",
+        "desc": "binary"
+    },
+    {
+        "id": "0x22D",
+        "name": "GCN_AWL_Bio_Nancy",
+        "desc": "binary"
+    },
+    {
+        "id": "0x22E",
+        "name": "GCN_AWL_Bio_Rock",
+        "desc": "binary"
+    },
+    {
+        "id": "0x22F",
+        "name": "GCN_AWL_Bio_Garcia",
+        "desc": "binary"
+    },
+    {
+        "id": "0x230",
+        "name": "GCN_AWL_Bio_Muffy",
+        "desc": "binary"
+    },
+    {
+        "id": "0x231",
+        "name": "GCN_AWL_Bio_Carter_AWL",
+        "desc": "binary"
+    },
+    {
+        "id": "0x232",
+        "name": "GCN_AWL_Bio_Flora",
+        "desc": "binary"
+    },
+    {
+        "id": "0x233",
+        "name": "GCN_AWL_Bio_Vesta",
+        "desc": "binary"
+    },
+    {
+        "id": "0x234",
+        "name": "GCN_AWL_Bio_Marlin",
+        "desc": "binary"
+    },
+    {
+        "id": "0x235",
+        "name": "GCN_AWL_Bio_Celia",
+        "desc": "binary"
+    },
+    {
+        "id": "0x236",
+        "name": "GCN_AWL_Bio_Hardy",
+        "desc": "binary"
+    },
+    {
+        "id": "0x237",
+        "name": "GCN_AWL_Bio_Van",
+        "desc": "binary"
+    },
+    {
+        "id": "0x238",
+        "name": "GCN_AWL_Bio_Mooky",
+        "desc": "binary"
+    },
+    {
+        "id": "0x239",
+        "name": "GCN_AWL_Bio_David",
+        "desc": "binary"
+    },
+    {
+        "id": "0x23A",
+        "name": "GCN_AWL_Bio_Nic",
+        "desc": "binary"
+    },
+    {
+        "id": "0x23B",
+        "name": "GCN_AWL_Bio_Brad",
+        "desc": "binary"
+    },
+    {
+        "id": "0x23C",
+        "name": "Flag_0x23C",
+        "desc": "binary"
+    },
+    {
+        "id": "0x23D",
+        "name": "Goddess_Offering_Done_Today",
+        "desc": "binary"
+    },
+    {
+        "id": "0x23E",
+        "name": "Goddess_Offering_Counter",
+        "desc": "state"
+    },
+    {
+        "id": "0x23F",
+        "name": "Flag_0x23F",
+        "desc": "binary"
+    },
+    {
+        "id": "0x240",
+        "name": "Flag_0x240",
+        "desc": "state"
+    },
+    {
+        "id": "0x241",
+        "name": "Flag_0x241",
+        "desc": "binary"
+    },
+    {
+        "id": "0x242",
+        "name": "Flag_0x242",
+        "desc": "binary"
+    },
+    {
+        "id": "0x243",
+        "name": "Flag_0x243",
+        "desc": "binary"
+    },
+    {
+        "id": "0x244",
+        "name": "Flag_0x244",
+        "desc": "state"
+    },
+    {
+        "id": "0x245",
+        "name": "Flag_0x245",
+        "desc": "binary"
+    },
+    {
+        "id": "0x246",
+        "name": "Flag_0x246",
+        "desc": "binary"
+    },
+    {
+        "id": "0x247",
+        "name": "Flag_0x247",
+        "desc": "binary"
+    },
+    {
+        "id": "0x248",
+        "name": "Flag_0x248",
+        "desc": "binary"
+    },
+    {
+        "id": "0x249",
+        "name": "Flag_0x249",
+        "desc": "binary"
+    },
+    {
+        "id": "0x24A",
+        "name": "Flag_0x24A",
+        "desc": "state"
+    },
+    {
+        "id": "0x24B",
+        "name": "Flag_0x24B",
+        "desc": "binary"
+    },
+    {
+        "id": "0x24C",
+        "name": "Flag_0x24C",
+        "desc": "binary"
+    },
+    {
+        "id": "0x24D",
+        "name": "Flag_0x24D",
+        "desc": "state"
+    }
+]

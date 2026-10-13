@@ -1,0 +1,36 @@
+// Script 1148
+#include "Fomt_Lib.src"
+
+script 1148 Event_1148 {
+    const MESSAGE_0 = "Are you going to enter \r\na Chicken? It's very fun. \BRK";
+    const MESSAGE_1 = "The Chickens are so cute!...\BRK";
+    
+    if ((Check_If_Single(3) == 0)) {
+        Free_Event_Entity(3);
+    }
+    SetEntityFacing(3, GetOppositeFacing(GetEntityFacing(0)));
+    if ((Check_Flag(0x197) == 0)) {
+        TalkOpen();
+        Set_Portrait(7);
+        Set_Name_Window(3);
+        if (!(((((((Check_Flag(0x4C) == 2) || (Check_Flag(0x5F) == 2)) || (Check_Flag(0x67) == 2)) || (Check_Flag(0x6F) == 2)) || (Check_Flag(0x173) == 2)) || (Check_Flag(0x7E) == 2)) || (Check_Flag(0x7F) == 2))) {
+            Set_Hearth_Anim(3);
+        }
+        TalkMessage(0);
+    } else {
+        TalkOpen();
+        Set_Portrait(8);
+        Set_Name_Window(3);
+        if (!(((((((Check_Flag(0x4C) == 2) || (Check_Flag(0x5F) == 2)) || (Check_Flag(0x67) == 2)) || (Check_Flag(0x6F) == 2)) || (Check_Flag(0x173) == 2)) || (Check_Flag(0x7E) == 2)) || (Check_Flag(0x7F) == 2))) {
+            Set_Hearth_Anim(3);
+        }
+        TalkMessage(1);
+    }
+    TalkClose();
+    if ((Has_Spoken_To_NPC_Today(3) == 0)) {
+        Give_Friendship_Points(3, 5);
+    }
+    Free_Event_Entity(3);
+    SetEntityFacing(3, "Up");
+    exit;
+}

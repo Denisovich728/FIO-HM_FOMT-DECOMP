@@ -1,0 +1,12 @@
+// Script 353
+#include "Fomt_Lib.src"
+
+script 353 Event_0353 {
+    Proc0AE();
+    Fade_Out(3, 1);
+    Proc09E();
+    Proc0AE();
+    Tick_Overnight_Engine(3, 1);
+    Proc0AF();
+    exit;
+}

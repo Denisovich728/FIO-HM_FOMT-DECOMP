@@ -1,0 +1,28 @@
+// Script 75
+#include "Fomt_Lib.src"
+
+script 75 Event_0075 {
+    const MESSAGE_0 = "........\BRK";
+    const MESSAGE_1 = "Hah... She\x81fs gonna\r\ncook again, and I have\r\nto eat them...\BRK";
+    
+    if ((Check_Flag(0x6C) == 0)) {
+        SetEntityFacing(0x10, GetOppositeFacing(GetEntityFacing(0)));
+        TalkOpen();
+        Set_Portrait(0x83);
+        Set_Name_Window(0x10);
+        TalkMessage(0);
+        TalkClose();
+        SetEntityFacing(0x10, "Up");
+        Free_Event_Entity(0x10);
+    } else {
+        SetEntityFacing(0x10, GetOppositeFacing(GetEntityFacing(0)));
+        TalkOpen();
+        Set_Portrait(0x82);
+        Set_Name_Window(0x10);
+        TalkMessage(1);
+        TalkClose();
+        SetEntityFacing(0x10, "Up");
+        Free_Event_Entity(0x10);
+    }
+    exit;
+}

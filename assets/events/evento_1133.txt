@@ -1,0 +1,29 @@
+// Script 1133
+#include "Fomt_Lib.src"
+
+script 1133 Event_1133 {
+    const MESSAGE_0 = "Dogs are so clever!\r\nMaybe I should keep one \r\nas a guard dog...\BRK";
+    const MESSAGE_1 = "You're going to compete?\r\nI'll be rooting for you! \BRK";
+    
+    if ((Check_If_Single(0x11) == 0)) {
+        Free_Event_Entity(0x11);
+    }
+    SetEntityFacing(0x11, GetOppositeFacing(GetEntityFacing(0)));
+    TalkOpen();
+    if ((Check_Flag(0x193) == 0)) {
+        Set_Portrait(0x43);
+        Set_Name_Window(0x11);
+        TalkMessage(0);
+    } else {
+        Set_Portrait(0x44);
+        Set_Name_Window(0x11);
+        TalkMessage(1);
+    }
+    TalkClose();
+    if ((Has_Spoken_To_NPC_Today(0x11) == 0)) {
+        Give_Friendship_Points(0x11, 5);
+    }
+    Free_Event_Entity(0x11);
+    SetEntityFacing(0x11, "Right");
+    exit;
+}

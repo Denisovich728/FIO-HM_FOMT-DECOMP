@@ -1,0 +1,9 @@
+// Script 226
+#include "Fomt_Lib.src"
+
+script 226 Event_0226 {
+    Fade_Out(3, 1);
+    Proc09F();
+    Fade_In(3, 1);
+    exit;
+}

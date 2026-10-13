@@ -1,0 +1,17 @@
+// Script 675
+#include "Fomt_Lib.src"
+
+script 675 Event_0675 {
+    const MESSAGE_0 = "Babies grow up so quickly!\BRK";
+    
+    SetEntityFacing(0x13, GetOppositeFacing(GetEntityFacing(0)));
+    TalkOpen();
+    Set_Name_Window(0x13);
+    Set_Portrait(0x48);
+    Set_Hearth_Anim(0x13);
+    TalkMessage(0);
+    TalkClose();
+    Free_Event_Entity(0x13);
+    SetEntityFacing(0x13, "Left");
+    exit;
+}

@@ -1,0 +1,16 @@
+// Script 928
+#include "Fomt_Lib.src"
+
+script 928 Event_0928 {
+    const MESSAGE_0 = "What's wrong with Gray? \r\nHe's been smiling non-stop! \BRK";
+    
+    SetEntityFacing(6, GetOppositeFacing(GetEntityFacing(0)));
+    TalkOpen();
+    Set_Portrait(0xA8);
+    Set_Name_Window(6);
+    TalkMessage(0);
+    TalkClose();
+    SetEntityFacing(6, "Down");
+    Free_Event_Entity(6);
+    exit;
+}

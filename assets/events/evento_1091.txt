@@ -1,0 +1,30 @@
+// Script 1091
+#include "Fomt_Lib.src"
+
+script 1091 Event_1091 {
+    const MESSAGE_0 = "This is where you place\r\nbets or exchange medals for\r\nprizes. \BRK\WAIT_CLICKAlso, come tell me here\r\nif you want to race. \BRK";
+    const MESSAGE_1 = "You can bet even if you \r\nrace. Most people bet on \r\nthemselves. \BRK";
+    
+    if ((Check_If_Single(0xD) == 0)) {
+        Free_Event_Entity(0xD);
+    }
+    SetEntityFacing(0xD, GetOppositeFacing(GetEntityFacing(0)));
+    if ((Check_Flag(0x188) == 0)) {
+        TalkOpen();
+        Set_Portrait(0x75);
+        Set_Name_Window(0xD);
+        TalkMessage(0);
+    } else {
+        TalkOpen();
+        Set_Portrait(0x75);
+        Set_Name_Window(0xD);
+        TalkMessage(1);
+    }
+    TalkClose();
+    if ((Has_Spoken_To_NPC_Today(0xD) == 0)) {
+        Give_Friendship_Points(0xD, 5);
+    }
+    Free_Event_Entity(0xD);
+    SetEntityFacing(0xD, "Down");
+    exit;
+}

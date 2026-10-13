@@ -1,0 +1,18 @@
+// Script 70
+#include "Fomt_Lib.src"
+
+script 70 Event_0070 {
+    const MESSAGE_0 = "Elli is working very hard.\BRK";
+    
+    if ((Check_Flag(0x6A) == 1)) {
+    }
+    SetEntityFacing(0x14, GetOppositeFacing(GetEntityFacing(0)));
+    TalkOpen();
+    Set_Portrait(0x23);
+    Set_Name_Window(0x14);
+    TalkMessage(0);
+    TalkClose();
+    SetEntityFacing(0x14, "Down");
+    Free_Event_Entity(0x14);
+    exit;
+}

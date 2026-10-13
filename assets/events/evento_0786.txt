@@ -1,0 +1,254 @@
+// Script 786
+#include "Fomt_Lib.src"
+
+script 786 Event_0786 {
+    const MESSAGE_0 = "Dad, please stop it now!\BRK";
+    const MESSAGE_1 = "You shut up!\BRK";
+    const MESSAGE_2 = "Don't try to stop me, Ann!\BRK";
+    const MESSAGE_3 = "\xFF!! Please \r\nstop this fight for me!\BRK";
+    const MESSAGE_4 = "Stop the fight.";
+    const MESSAGE_5 = "Don't intervene.";
+    const MESSAGE_6 = "Thank you so much! . \BRK";
+    const MESSAGE_7 = "This is none of your\r\nbusiness, \xFF!!\BRK";
+    const MESSAGE_8 = "Get out of my way, \r\n\xFF!! \BRK";
+    const MESSAGE_9 = "Now what were we\r\nfighting about...?\BRK";
+    const MESSAGE_10 = "It was...umm...\BRK";
+    const MESSAGE_11 = "......I forget...\BRK";
+    const MESSAGE_12 = "Now why was I so mad...?\BRK";
+    const MESSAGE_13 = "I can't believe you two \r\nold men can't even remember\r\nwhat you're fighting over!\BRK";
+    const MESSAGE_14 = "Sorry, \xFF!. \r\nWe won't fight any more. \BRK";
+    const MESSAGE_15 = "Yes, it's over now. \BRK";
+    const MESSAGE_16 = "Thanks for helping out, \r\n\xFF!. \BRK\WAIT_CLICKI'll try to keep a handle \r\non Dad from now on. \BRK";
+    const MESSAGE_17 = "I knew I shouldn't count on \r\nyou, \xFF!!\BRK";
+    
+    var var_0;
+    
+    End_Cinematic_State();
+    if ((Inventory_Check() == 1)) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    SetEntityPosition(0x18, 0xAE, 0x88, "Right");
+    SetEntityAnim(0x18, 0x7B2);
+    SetEntityPosition(8, 0xC2, 0x88, "Left");
+    SetEntityAnim(8, 0x8C0);
+    SetEntityPosition(0x19, 0xB8, 0x78, "Down");
+    SetEntityAnim(0x19, 0x7BE);
+    SetEntityPosition(0xD, 0x50, 0xE0, "Right");
+    SetEntityAnim(0xD, 0x85F);
+    SetEntityPosition(0xE, 0x10, 0xB8, "Right");
+    SetEntityAnim(0xE, 0x8E4);
+    Fade_In(2, 1);
+    Show_Emote(0x18, 0, 1);
+    Show_Emote(8, 0, 1);
+    Show_Emote(0x19, 6, 1);
+    Pan_Camera_To(0xB8, 0x80, 2);
+    Wait_Camera_Stop();
+    Set_Vector_Y(0, 0x110, 1);
+    TalkOpen();
+    Set_Portrait(0x59);
+    Set_Name_Window(0x19);
+    TalkMessage(0);
+    TalkClose();
+    TalkOpen();
+    Set_Portrait(0x55);
+    Set_Name_Window(0x18);
+    TalkMessage(1);
+    TalkClose();
+    TalkOpen();
+    Set_Portrait(0x87);
+    Set_Name_Window(8);
+    TalkMessage(2);
+    TalkClose();
+    if ((Inventory_Check() == 1)) {
+        SetEntityAnim(0, 0x1C6);
+    } else {
+        SetEntityAnim(0, 0x156);
+    }
+    Set_Vector_Y(0, 0xC4, 1);
+    Execute_Movement(0);
+    if ((Inventory_Check() == 1)) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    Show_Emote(0, 2, 0);
+    Make_Delay(0x3C);
+    SetEntityFacing(0, "Left");
+    if ((Inventory_Check() == 1)) {
+        SetEntityAnim(0, 0x15E);
+    } else {
+        SetEntityAnim(0, 0x14E);
+    }
+    Set_Vector_X(0, 0x88, 2);
+    Execute_Movement(0);
+    SetEntityFacing(0, "Up");
+    Set_Vector_Y(0, 0x78, 2);
+    Execute_Movement(0);
+    SetEntityFacing(0, "Right");
+    if ((Inventory_Check() == 1)) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    Wait_For_Animation(0x19);
+    SetEntityFacing(0x19, "Left");
+    TalkOpen();
+    Set_Portrait(0x59);
+    Set_Name_Window(0x19);
+    if (!(((((((Check_Flag(0x4C) == 2) || (Check_Flag(0x5F) == 2)) || (Check_Flag(0x67) == 2)) || (Check_Flag(0x6F) == 2)) || (Check_Flag(0x173) == 2)) || (Check_Flag(0x7E) == 2)) || (Check_Flag(0x7F) == 2))) {
+        Set_Hearth_Anim(3);
+    }
+    TalkMessage(3);
+    TalkClose();
+    TalkOpen();
+    var_0 = TalkChoice2(4, 5);
+    switch (var_0) {
+        case 1:
+            TalkOpen();
+            Set_Portrait(0x58);
+            Set_Name_Window(0x19);
+            if (!(((((((Check_Flag(0x4C) == 2) || (Check_Flag(0x5F) == 2)) || (Check_Flag(0x67) == 2)) || (Check_Flag(0x6F) == 2)) || (Check_Flag(0x173) == 2)) || (Check_Flag(0x7E) == 2)) || (Check_Flag(0x7F) == 2))) {
+                Set_Hearth_Anim(3);
+            }
+            TalkMessage(6);
+            TalkClose();
+            SetEntityFacing(0x19, "Right");
+            Set_Vector_X(0x19, 0xC8, 1);
+            if ((Inventory_Check() == 1)) {
+                SetEntityAnim(0, 0x15E);
+                goto LBL_0036;
+            }
+            SetEntityAnim(0, 0x14E);
+            Set_Vector_X(0, 0xB8, 3);
+            Execute_Movement(0);
+            SetEntityAnim(0x19, 0x7BE);
+            SetEntityFacing(0, "Down");
+            SetEntityFacing(0x19, "Down");
+            Set_Vector_Y(0, 0x80, 2);
+            Set_Vector_X(0x18, 0xA8, 1);
+            Set_Vector_X(8, 0xC8, 1);
+            Execute_Movement(0);
+            if ((Inventory_Check() == 1)) {
+                SetEntityAnim(0, 0x192);
+                goto LBL_003A;
+            }
+            SetEntityAnim(0, 0x152);
+            TalkOpen();
+            Set_Portrait(0x55);
+            Set_Name_Window(0x18);
+            TalkMessage(7);
+            TalkClose();
+            TalkOpen();
+            Set_Portrait(0x87);
+            Set_Name_Window(8);
+            TalkMessage(8);
+            TalkClose();
+            SetEntityAnim(0, 0x126);
+            Make_Delay(0x3C);
+            if ((Inventory_Check() == 1)) {
+                SetEntityAnim(0, 0x192);
+                goto LBL_003E;
+            }
+            SetEntityAnim(0, 0x152);
+            TalkOpen();
+            Set_Portrait(0x55);
+            Set_Name_Window(0x18);
+            TalkMessage(9);
+            Wait_For_Animation(0x18);
+            Wait_For_Animation(8);
+            TalkMessage(10);
+            TalkClose();
+            Show_Emote(0x18, 3, 0);
+            Show_Emote(8, 3, 0);
+            Make_Delay(0x3C);
+            TalkOpen();
+            Set_Portrait(0x53);
+            Set_Name_Window(0x18);
+            TalkMessage(11);
+            TalkClose();
+            TalkOpen();
+            Set_Portrait(0x85);
+            Set_Name_Window(8);
+            TalkMessage(12);
+            TalkClose();
+            Show_Emote(0, 6, 0);
+            Make_Delay(0x3C);
+            TalkOpen();
+            Set_Portrait(0x59);
+            Set_Name_Window(0x19);
+            TalkMessage(13);
+            TalkClose();
+            TalkOpen();
+            Set_Portrait(0x54);
+            Set_Name_Window(0x18);
+            TalkMessage(14);
+            TalkClose();
+            TalkOpen();
+            Set_Portrait(0x86);
+            Set_Name_Window(8);
+            TalkMessage(15);
+            TalkClose();
+            SetEntityFacing(0, "Down");
+            TalkOpen();
+            Set_Portrait(0x57);
+            Set_Name_Window(0x19);
+            if (!(((((((Check_Flag(0x4C) == 2) || (Check_Flag(0x5F) == 2)) || (Check_Flag(0x67) == 2)) || (Check_Flag(0x6F) == 2)) || (Check_Flag(0x173) == 2)) || (Check_Flag(0x7E) == 2)) || (Check_Flag(0x7F) == 2))) {
+                Set_Hearth_Anim(3);
+            }
+            TalkMessage(16);
+            TalkClose();
+            SetEntityAnim(0, 0x1FE);
+            Make_Delay(0x1E);
+            if ((Inventory_Check() == 1)) {
+                SetEntityAnim(0, 0x192);
+                goto LBL_0051;
+            }
+            SetEntityAnim(0, 0x152);
+            Give_Love_Points(0x19, 0xBB8);
+            Give_Friendship_Points(0xD, 0x14);
+            Give_Friendship_Points(0xE, 0x14);
+            Give_Friendship_Points(0x18, 0x14);
+            Give_Friendship_Points(8, 0x14);
+            Set_Flag(0x129, 0);
+            break;
+        case 2:
+            TalkOpen();
+            Set_Portrait(0x59);
+            Set_Name_Window(0x19);
+            if (!(((((((Check_Flag(0x4C) == 2) || (Check_Flag(0x5F) == 2)) || (Check_Flag(0x67) == 2)) || (Check_Flag(0x6F) == 2)) || (Check_Flag(0x173) == 2)) || (Check_Flag(0x7E) == 2)) || (Check_Flag(0x7F) == 2))) {
+                Set_Hearth_Anim(3);
+            }
+            TalkMessage(17);
+            TalkClose();
+            SetEntityFacing(0x19, "Down");
+            Wait_For_Animation(0x18);
+            Wait_For_Animation(8);
+            Give_Love_Points(0x19, -0x7D0);
+            Give_Friendship_Points(0xD, -0xA);
+            Give_Friendship_Points(0xE, -0xA);
+            Give_Friendship_Points(0x18, -0xA);
+            Give_Friendship_Points(8, -0xA);
+            Set_Flag(0x129, 1);
+            break;
+    }
+    Free_Event_Entity(0x19);
+    Free_Event_Entity(0x18);
+    Free_Event_Entity(8);
+    if ((Check_Flag(0x129) == 0)) {
+        Pan_Camera_To(0xB8, 0x80, 2);
+    } else {
+        Pan_Camera_To(0x88, 0x78, 2);
+    }
+    Wait_Camera_Stop();
+    End_Cinematic_State();
+    Set_Flag(0x128, 1);
+    Routine_State_Override(0x19, 0x314);
+    Routine_State_Override(0x18, 0x313);
+    Routine_State_Override(8, 0x316);
+    Routine_State_Override(0xD, 0x315);
+    Routine_State_Override(0xE, 0x317);
+    exit;
+    exit;
+}

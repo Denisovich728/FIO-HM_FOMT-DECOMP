@@ -1,0 +1,11 @@
+// Script 331
+#include "Fomt_Lib.src"
+
+script 331 Event_0331 {
+    const MESSAGE_0 = "Bookshelf\BRK";
+    
+    TalkOpen();
+    Print_Message(0);
+    TalkClose();
+    exit;
+}

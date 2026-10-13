@@ -1,0 +1,30 @@
+// Script 23
+#include "Fomt_Lib.src"
+
+script 23 Event_0023 {
+    const MESSAGE_0 = "Hmm...\r\nI think the Seeds I chose \r\nwere better.\BRK";
+    const MESSAGE_1 = "You chose the same Seeds \r\nas me. Good choice. \BRK";
+    
+    if ((Check_Flag(0x47) == 1)) {
+    }
+    if ((Check_Flag(0x48) == 0)) {
+        SetEntityFacing(0x12, GetOppositeFacing(GetEntityFacing(0)));
+        TalkOpen();
+        Set_Portrait(0x52);
+        Set_Name_Window(0x12);
+        TalkMessage(0);
+        TalkClose();
+        SetEntityFacing(0x12, "Right");
+        Free_Event_Entity(0x12);
+    } else {
+        SetEntityFacing(0x12, GetOppositeFacing(GetEntityFacing(0)));
+        TalkOpen();
+        Set_Portrait(0x50);
+        Set_Name_Window(0x12);
+        TalkMessage(1);
+        TalkClose();
+        SetEntityFacing(0x12, "Right");
+        Free_Event_Entity(0x12);
+    }
+    exit;
+}

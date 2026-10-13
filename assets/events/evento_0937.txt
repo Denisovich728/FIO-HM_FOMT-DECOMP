@@ -1,0 +1,122 @@
+// Script 937
+#include "Fomt_Lib.src"
+
+script 937 Event_0937 {
+    const MESSAGE_0 = "Hi there, \xFF!. \r\nToday is Mary and Gray's \r\nwedding day, you know! \BRK\WAIT_CLICKWhy don't you come \r\nto the party with us? \BRK";
+    const MESSAGE_1 = "Alright!";
+    const MESSAGE_2 = "I've got more work to do.";
+    const MESSAGE_3 = "Let's celebrate! \BRK";
+    const MESSAGE_4 = "To the young couple!! \BRK";
+    const MESSAGE_5 = "Well, come join us if you \r\nhave the time. \BRK";
+    
+    var var_0;
+    
+    Warp_Player(0xC, 0xB8, 0x140);
+    PlayBGM(1, 6);
+    SetEntityPosition(0xC, 0xC8, 0x98, "Down");
+    SetEntityAnim(0xC, 0x837);
+    SetEntityPosition(7, 0xA8, 0x98, "Down");
+    SetEntityAnim(7, 0x995);
+    SetEntityPosition(0x16, 0x90, 0x98, "Right");
+    SetEntityAnim(0x16, 0x8EC);
+    SetEntityPosition(0, 0xB8, 0x140, "Up");
+    if (Inventory_Check()) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    SetEntityPosition(6, 0x68, 0x9B, "Right");
+    SetEntityAnim(6, 0x9A1);
+    SetEntityPosition(0xB, 0x108, 0xC3, "Left");
+    SetEntityAnim(0xB, 0x84B);
+    SetEntityPosition(0xA, 0x128, 0xC3, "Left");
+    SetEntityAnim(0xA, 0x80B);
+    if ((GetEntityLocation(0x17) == 0xC)) {
+        Hide_Entity(0x17);
+    }
+    if ((GetEntityLocation(0x11) == 0xC)) {
+        Hide_Entity(0x11);
+    }
+    if ((GetEntityLocation(0x14) == 0xC)) {
+        Hide_Entity(0x14);
+    }
+    if ((GetEntityLocation(8) == 0xC)) {
+        Hide_Entity(8);
+    }
+    if ((GetEntityLocation(9) == 0xC)) {
+        Hide_Entity(9);
+    }
+    if ((GetEntityLocation(3) == 0xC)) {
+        Hide_Entity(3);
+    }
+    if ((Check_Flag(0x90) == 0)) {
+        Fade_In(2, 1);
+        Pan_Camera_To(0xB8, 0xA0, 1);
+        Wait_Camera_Stop();
+        SetEntityFacing(0x16, "Down");
+        TalkOpen();
+        Set_Portrait(0x95);
+        Set_Name_Window(0x16);
+        TalkMessage(0);
+        TalkClose();
+        TalkOpen();
+        var_0 = TalkChoice2(1, 2);
+        switch (var_0) {
+            case 1:
+                Give_Friendship_Points(0x16, 0x14);
+                Give_Friendship_Points(6, 0x14);
+                Give_Friendship_Points(0xB, 0x14);
+                Give_Friendship_Points(0xA, 0x14);
+                Add_Rival_Points(0xC, 0xC8);
+                Add_Rival_Points(7, 0xC8);
+                TalkClose();
+                TalkOpen();
+                Set_Portrait(0x96);
+                Set_Name_Window(0x16);
+                TalkMessage(3);
+                TalkClose();
+                Fade_Out(2, 1);
+                TalkOpen();
+                TalkMessage(4);
+                TalkClose();
+                Free_Event_Entity(0x16);
+                Set_Flag(0x8F, 2);
+                Set_Flag(0x91, 0);
+                Set_Flag(0x247, 0);
+                Execute_Script(988);
+                break;
+            case 2:
+                Set_Flag(0x90, 1);
+                TalkClose();
+                TalkOpen();
+                Set_Portrait(0x95);
+                Set_Name_Window(0x16);
+                TalkMessage(5);
+                TalkClose();
+                SetEntityFacing(0x16, "Right");
+                Pan_Camera_To(0xB8, 0x140, 1);
+                Wait_Camera_Stop();
+                End_Cinematic_State();
+                Free_Event_Entity(0x16);
+                Routine_State_Override(0xA, 0x3AA);
+                Routine_State_Override(0xC, 0x3AB);
+                Routine_State_Override(0xB, 0x3AC);
+                Routine_State_Override(0x16, 0x3AD);
+                Routine_State_Override(7, 0x3AE);
+                Routine_State_Override(6, 0x3AF);
+                Set_Flag(0x8F, 1);
+                break;
+        }
+    } else {
+        End_Cinematic_State();
+        Fade_In(2, 1);
+        Routine_State_Override(0xA, 0x3AA);
+        Routine_State_Override(0xC, 0x3AB);
+        Routine_State_Override(0xB, 0x3AC);
+        Routine_State_Override(0x16, 0x3AD);
+        Routine_State_Override(7, 0x3AE);
+        Routine_State_Override(6, 0x3AF);
+        Set_Flag(0x8F, 1);
+    }
+    exit;
+}

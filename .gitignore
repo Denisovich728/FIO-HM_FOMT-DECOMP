@@ -1,0 +1,37 @@
+# Ignore Game Boy Advance ROMs and save states
+*.gba
+*.sav
+*.gb
+*.gbc
+
+# Legal & Copyright Compliance: Zero copyrighted media files
+*.png
+*.bmp
+*.jpg
+*.jpeg
+*.gif
+*.ico
+assets/sprites/*.png
+assets/animations/previews/
+
+# Build outputs
+build/
+bin/
+obj/
+*.o
+*.a
+*.elf
+*.map
+
+# Python caches
+__pycache__/
+*.pyc
+
+# IDE and OS files
+.vscode/
+.idea/
+.vs/
+Thumbs.db
+.DS_Store
+*.swp
+*.bak

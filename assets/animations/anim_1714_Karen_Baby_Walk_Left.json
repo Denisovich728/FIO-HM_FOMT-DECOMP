@@ -1,0 +1,10 @@
+{
+    "name": "Karen_Baby_Walk_Left",
+    "anim_id": "0x6b2",
+    "anim_id_dec": 1714,
+    "graphic_id": 4,
+    "script_addr": "0x8665978",
+    "script_rom_offset": "0x665978",
+    "frame_count": 0,
+    "frames": []
+}

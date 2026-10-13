@@ -1,0 +1,22 @@
+// Script 459
+#include "Fomt_Lib.src"
+
+script 459 Event_0459 {
+    const MESSAGE_0 = "Pregnant animal Feed Box\r\nPut Feed for pregnant\r\nanimals here.\BRK";
+    
+    var var_0;
+    
+    var_0 = 0;
+    if ((((!Inventory_Check() && (Compare_Gift() == 1)) && !Is_Item_Wrapped()) && (Search_Item_Gift_Address() == 0x5B))) {
+        var_0 = 1;
+    }
+    if ((var_0 && !Func0BE(0x10))) {
+        Drop_Held_Item();
+        Add_Fodder_to_Box(0x10);
+    } else {
+        TalkOpen();
+        Print_Message(0);
+        TalkClose();
+    }
+    exit;
+}

@@ -1,0 +1,58 @@
+// Script 33
+#include "Fomt_Lib.src"
+
+script 33 Event_0033 {
+    const MESSAGE_0 = "I don't think anyone\r\nwill bother us here...\BRK";
+    const MESSAGE_1 = "My mom used to tell me about\r\nher wedding, and I wondered\r\nwhen my own would come...\BRK\WAIT_CLICKI had no idea it would be\r\nyou, though. \BRK\WAIT_CLICKOf course my answer is yes!\BRK";
+    const MESSAGE_2 = "I have to go tell my parents\r\nnow. My mom will be happy, \r\nbut I think my dad'll cry!\BRK";
+    
+    Warp_Player(0x1D, 0x14B, 0x94);
+    PlayBGM(1, 0x11);
+    SetEntityPosition(0, 0x14B, 0x94, "Left");
+    SetEntityAnim(0, 0x192);
+    SetEntityPosition(0x13, 0x12F, 0x94, "Right");
+    SetEntityAnim(0x13, 0x691);
+    Fade_In(2, 1);
+    TalkOpen();
+    Set_Portrait(0x4D);
+    Set_Name_Window(0x13);
+    Set_Hearth_Anim(0x13);
+    TalkMessage(0);
+    TalkClose();
+    SetEntityAnim(0, 0x1FE);
+    Make_Delay(0x3C);
+    SetEntityAnim(0, 0x192);
+    Make_Delay(0x28);
+    SetEntityAnim(0, 0x42);
+    Animation_Tool_Give(0x4B);
+    Make_Delay(0x3C);
+    SetEntityAnim(0, 0x192);
+    Show_Emote(0x13, 1, 0);
+    Make_Delay(0x3C);
+    TalkOpen();
+    Set_Portrait(0x4D);
+    Set_Name_Window(0x13);
+    Set_Hearth_Anim(0x13);
+    TalkMessage(1);
+    TalkClose();
+    Show_Emote(0, 1, 0);
+    Make_Delay(0x3C);
+    TalkOpen();
+    Set_Portrait(0x48);
+    Set_Name_Window(0x13);
+    Set_Hearth_Anim(0x13);
+    TalkMessage(2);
+    TalkClose();
+    Remove_Equipped_Item();
+    SetEntityFacing(0x13, "Down");
+    SetEntityAnim(0x13, 0x695);
+    SetEntityFacing(0, "Down");
+    Set_Vector_Y(0x13, 0xFA, 1);
+    Execute_Movement(0x13);
+    SetEntityAnim(0x13, 0x691);
+    Hide_Entity(0x13);
+    Free_Event_Entity(0x13);
+    Set_Flag(0x4B, 2);
+    exit;
+    exit;
+}

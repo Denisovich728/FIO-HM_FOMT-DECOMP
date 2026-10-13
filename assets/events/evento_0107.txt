@@ -1,0 +1,100 @@
+// Script 107
+#include "Fomt_Lib.src"
+
+script 107 Event_0107 {
+    const MESSAGE_0 = "Where are you going?\r\nThe fireworks are\r\nabout to start!\BRK";
+    const MESSAGE_1 = "Where are you going?\r\nThe Beach Day\r\nis about to start!\BRK";
+    const MESSAGE_2 = "That was fun!\r\nAlright, back to work...\BRK";
+    
+    var var_0;
+    var var_1;
+    var var_2;
+    var var_3;
+    
+    var_0 = Check_Flag(1);
+    var_1 = Check_Flag(2);
+    var_2 = Check_Flag(3);
+    var_3 = Check_Flag(4);
+    if ((GetEntityFacing(0) == 1)) {
+        if ((Check_Flag(0x19E) == 1)) {
+            TalkOpen();
+            Set_Portrait(0);
+            Set_Name_Window(2);
+            TalkMessage(0);
+            TalkClose();
+            exit;
+        } else {
+            if ((Check_Flag(0x7A) == 1)) {
+                Set_Flag(0x7A, 2);
+                Add_Festival_Friendship_Bonus(3);
+                Add_Festival_Friendship_Bonus(0x1A);
+                Refresh_Map_Entities();
+            } else {
+                if ((Check_Flag(0x7B) == 1)) {
+                    Set_Flag(0x7B, 2);
+                    Add_Festival_Friendship_Bonus(0x1A);
+                    Refresh_Map_Entities();
+                } else {
+                    if ((Check_Flag(0x7C) == 1)) {
+                        Set_Flag(0x7C, 2);
+                        Add_Festival_Friendship_Bonus(3);
+                        Add_Festival_Friendship_Bonus(0x1A);
+                        Refresh_Map_Entities();
+                    } else {
+                        if ((Check_Flag(0x95) == 1)) {
+                            Set_Flag(0x95, 2);
+                            Add_Festival_Friendship_Bonus(0x14);
+                            Add_Festival_Friendship_Bonus(0x15);
+                            Refresh_Map_Entities();
+                        }
+                    }
+                }
+            }
+        }
+        if ((Check_Flag(0x194) == 1)) {
+            if (!((var_2 == 0x12) && (var_3 == 1))) {
+                TalkOpen();
+                Set_Portrait(0x21);
+                Set_Name_Window(0x1C);
+                TalkMessage(1);
+                TalkClose();
+                SetEntityFacing(0, "Down");
+                exit;
+            } else {
+                PlaySong(0, 0x9C);
+                Fade_Out(2, 1);
+                if ((Check_Flag(0x195) == 1)) {
+                    Give_Friendship_Points(0xD, 0x14);
+                    Give_Friendship_Points(0x11, 0x14);
+                    Give_Friendship_Points(0x12, 0x14);
+                    Give_Friendship_Points(0x1A, 0x14);
+                    Give_Friendship_Points(3, 0x14);
+                    Give_Friendship_Points(0x1C, 0x14);
+                }
+                TalkOpen();
+                TalkMessage(2);
+                TalkClose();
+                Refresh_Map_Entities();
+                Set_Flag(0x194, 2);
+                Recalculate_Global_Schedules(4);
+                Set_Flag(0x193, 0);
+                Add_Festival_Friendship_Bonus(0xD);
+                Add_Festival_Friendship_Bonus(0x11);
+                Add_Festival_Friendship_Bonus(0x12);
+                Add_Festival_Friendship_Bonus(0x1A);
+                Add_Festival_Friendship_Bonus(3);
+                Add_Festival_Friendship_Bonus(0x1C);
+                Warp_Player(0x23, 0x78, 0xD0);
+                SetEntityPosition(0, 0x78, 0xD0, "Up");
+                Fade_In(2, 1);
+                exit;
+            }
+        }
+        PlaySong(0, 0x9C);
+        Fade_Out(2, 1);
+        Warp_Player(0x23, 0x78, 0xD0);
+        SetEntityPosition(0, 0x78, 0xD0, "Up");
+        Fade_In(2, 1);
+    }
+    exit;
+}

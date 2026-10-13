@@ -1,0 +1,127 @@
+// Script 658
+#include "Fomt_Lib.src"
+
+script 658 Event_0658 {
+    const MESSAGE_0 = "I wonder if I've been \r\nreading too much...?\BRK\WAIT_CLICKI don't feel well all of\r\nthe sudden.\BRK\WAIT_CLICK\xFF), will you \r\ntake me to the Clinic?\BRK";
+    const MESSAGE_1 = "Thank you. \BRK";
+    const MESSAGE_2 = "Your wife isn't sick.\BRK";
+    const MESSAGE_3 = "You're going to be parents.\r\nCongratulations!\BRK";
+    const MESSAGE_4 = "Mary, you're going to have \r\na baby. Congratulations!\BRK";
+    const MESSAGE_5 = "Hmmm...I'm not sure how\r\nI feel...\BRK";
+    const MESSAGE_6 = "This is kind of sudden news,\r\nbut I'm excited!\BRK";
+    const MESSAGE_7 = "My parents will be so happy!\r\nI can't wait to tell them!\r\nLet's go home, OK?\BRK";
+    const MESSAGE_8 = "I can't believe I'm about to\r\nbecome a father...\r\nThis is so great!\BRK";
+    
+    Warp_Player(0x1D, 0x12C, 0x5E);
+    PlayBGM(1, 0x11);
+    SetEntityPosition(0, 0x12C, 0x5E, "Right");
+    if (Inventory_Check()) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    SetEntityPosition(0xC, 0x14D, 0x5E, "Left");
+    SetEntityAnim(0xC, 0x813);
+    Fade_In(2, 1);
+    Set_Flag(0xC7, 1);
+    TalkOpen();
+    Set_Name_Window(0xC);
+    Set_Portrait(0x6A);
+    Set_Hearth_Anim(0xC);
+    TalkMessage(0);
+    TalkClose();
+    SetEntityAnim(0, 0x1FE);
+    Make_Delay(0x3C);
+    if (Inventory_Check()) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    Show_Emote(0xC, 5, 0);
+    Make_Delay(0x3C);
+    TalkOpen();
+    Set_Name_Window(0xC);
+    Set_Portrait(0x67);
+    Set_Hearth_Anim(0xC);
+    TalkMessage(1);
+    TalkClose();
+    Fade_Out(2, 1);
+    Warp_Player(0x13, 0xE4, 0x94);
+    PlayBGM(1, 0x11);
+    SetEntityPosition(0, 0xE4, 0x7C, "Right");
+    if (Inventory_Check()) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    SetEntityPosition(0xC, 0xE4, 0x94, "Right");
+    SetEntityAnim(0xC, 0x813);
+    SetEntityPosition(0x14, 0x106, 0x94, "Left");
+    SetEntityAnim(0x14, 0x320);
+    SetEntityPosition(0x15, 0x106, 0x7C, "Left");
+    SetEntityAnim(0x15, 0x884);
+    Fade_In(2, 1);
+    TalkOpen();
+    Set_Portrait(0x23);
+    Set_Name_Window(0x14);
+    TalkMessage(2);
+    TalkClose();
+    Show_Emote(0xC, 3, 0);
+    Show_Emote(0, 3, 0);
+    Make_Delay(0x3C);
+    TalkOpen();
+    Set_Portrait(0x24);
+    Set_Name_Window(0x14);
+    TalkMessage(3);
+    TalkClose();
+    Show_Emote(0xC, 1, 0);
+    Show_Emote(0, 2, 0);
+    Make_Delay(0x3C);
+    TalkOpen();
+    Set_Portrait(0x7A);
+    Set_Name_Window(0x15);
+    TalkMessage(4);
+    TalkClose();
+    TalkOpen();
+    Set_Name_Window(0xC);
+    Set_Portrait(0x6C);
+    TalkMessage(5);
+    TalkClose();
+    SetEntityFacing(0xC, "Up");
+    TalkOpen();
+    Set_Name_Window(0xC);
+    Set_Portrait(0x6C);
+    Set_Hearth_Anim(0xC);
+    TalkMessage(6);
+    Set_Name_Window(0xC);
+    Set_Portrait(0x68);
+    Set_Hearth_Anim(0xC);
+    TalkMessage(7);
+    TalkClose();
+    SetEntityFacing(0, "Down");
+    Make_Delay(0x3C);
+    SetEntityAnim(0, 0x1FE);
+    Make_Delay(0x3C);
+    if (Inventory_Check()) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    Make_Delay(0x1E);
+    Free_Event_Entity(0xC);
+    Free_Event_Entity(0x14);
+    Free_Event_Entity(0x15);
+    Give_Love_Points(0xC, 0xBB8);
+    Give_Friendship_Points(0x14, 0x14);
+    Give_Friendship_Points(0x15, 0x14);
+    Set_Flag(0xC7, 2);
+    Fade_Out(2, 1);
+    TalkOpen();
+    TalkMessage(8);
+    TalkClose();
+    Reset_Player_After_Festival_Activity();
+    Set_Time(0x11, 0);
+    Fade_In(2, 1);
+    exit;
+    exit;
+}

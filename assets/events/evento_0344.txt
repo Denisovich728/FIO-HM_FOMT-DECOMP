@@ -1,0 +1,37 @@
+// Script 344
+#include "Fomt_Lib.src"
+
+script 344 Event_0344 {
+    const MESSAGE_0 = "Book List";
+    const MESSAGE_1 = "Letter List";
+    const MESSAGE_2 = "Exit";
+    const MESSAGE_3 = "No letter inside.\BRK";
+    
+    var var_0;
+    
+    TalkOpen();
+    var_0 = TalkChoice3(0, 1, 2);
+    switch (var_0) {
+        case 1:
+            TalkClose();
+            Fade_Out(3, 1);
+            Proc099();
+            Fade_In(3, 1);
+            break;
+        case 2:
+            if ((Func0FA() == 0)) {
+                Print_Message(3);
+                TalkClose();
+                goto LBL_0005;
+            }
+            TalkClose();
+            Fade_Out(3, 1);
+            Proc09A();
+            Fade_In(3, 1);
+            break;
+        case 3:
+            TalkClose();
+            break;
+    }
+    exit;
+}

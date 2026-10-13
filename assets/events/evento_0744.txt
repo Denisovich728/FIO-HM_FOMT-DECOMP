@@ -1,0 +1,117 @@
+// Script 744
+#include "Fomt_Lib.src"
+
+script 744 Event_0744 {
+    const MESSAGE_0 = "Is this the White Flower\r\nthat Ellen was talking \r\nabout?\BRK\WAIT_CLICKYou should bring it to her.\BRK";
+    const MESSAGE_1 = "That's...\BRK";
+    const MESSAGE_2 = "It's beautiful...\BRK";
+    const MESSAGE_3 = "You really found it...?\BRK";
+    const MESSAGE_4 = "It's wonderful! \r\nThis is the famous \r\nWhite Flower...\BRK";
+    const MESSAGE_5 = "Where did you find this, \r\n\xFF!?\BRK\WAIT_CLICKOn the mountaintop?\r\nSo that's where it blooms!\BRK";
+    const MESSAGE_6 = "Thanks, \xFF!. \r\nI'll treasure it. \BRK";
+    const MESSAGE_7 = "You made Ellen very \r\nhappy. \BRK";
+    
+    Warp_Player(8, 0xEC, 0x123);
+    Spawn_Item_On_Grid(0, 0xEC, 0xFF, 2, Get_Item_Sprite_ID(0x38));
+    SetEntityPosition(0, 0xEC, 0x1BB, "Up");
+    if ((Inventory_Check() == 1)) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    Fade_In(2, 1);
+    if ((Inventory_Check() == 1)) {
+        SetEntityAnim(0, 0x1C6);
+    } else {
+        SetEntityAnim(0, 0x156);
+    }
+    Set_Vector_Y(0, 0x14C, 1);
+    Execute_Movement(0);
+    if ((Inventory_Check() == 1)) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    Make_Delay(0x1E);
+    Show_Emote(0, 2, 0);
+    Make_Delay(0x3C);
+    if ((Inventory_Check() == 1)) {
+        SetEntityAnim(0, 0x15E);
+    } else {
+        SetEntityAnim(0, 0x14E);
+    }
+    Set_Vector_Y(0, 0x11B, 1);
+    Execute_Movement(0);
+    if ((Inventory_Check() == 1)) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    Make_Delay((0x3C * 2));
+    Fade_Out(2, 1);
+    TalkOpen();
+    TalkMessage(0);
+    TalkClose();
+    Despawn_Map_Item(0);
+    Warp_Player(0xE, 0x8F, 0x72);
+    SetEntityPosition(0xF, 0x80, 0x60, "Down");
+    SetEntityAnim(0xF, 0x685);
+    SetEntityPosition(0xA, 0x9A, 0x60, "Down");
+    SetEntityAnim(0xA, 0x80B);
+    SetEntityPosition(0x10, 0xB7, 0x66, "Left");
+    SetEntityAnim(0x10, 0x8B8);
+    SetEntityPosition(0, 0x80, 0x76, "Up");
+    Lock_Player_Input();
+    SetEntityAnim(0, 0x152);
+    Spawn_Item_On_Grid(0, 0x80, (0x76 - 0x15), 1, Get_Item_Sprite_ID(0x38));
+    Fade_In(2, 1);
+    Make_Delay(0x1E);
+    TalkOpen();
+    Set_Portrait(0x65);
+    Set_Name_Window(0xA);
+    TalkMessage(1);
+    TalkClose();
+    TalkOpen();
+    Set_Portrait(0x81);
+    Set_Name_Window(0x10);
+    TalkMessage(2);
+    TalkClose();
+    TalkOpen();
+    Set_Portrait(0x3F);
+    Set_Name_Window(0xF);
+    TalkMessage(3);
+    TalkClose();
+    Make_Delay(0x3C);
+    Despawn_Map_Item(0);
+    SetEntityAnim(0, 0x19E);
+    Make_Delay(0x3C);
+    SetEntityAnim(0, 0x192);
+    TalkOpen();
+    Set_Portrait(0x40);
+    Set_Name_Window(0xF);
+    TalkMessage(4);
+    TalkClose();
+    TalkOpen();
+    Set_Portrait(0x63);
+    Set_Name_Window(0xA);
+    TalkMessage(5);
+    TalkClose();
+    TalkOpen();
+    Set_Portrait(0x3F);
+    Set_Name_Window(0xF);
+    TalkMessage(6);
+    TalkClose();
+    Make_Delay(0x3C);
+    Fade_Out(2, 1);
+    TalkOpen();
+    TalkMessage(7);
+    TalkClose();
+    Free_Event_Entity(0xF);
+    Free_Event_Entity(0xA);
+    Give_Friendship_Points(0xF, 0x14);
+    Give_Friendship_Points(0xA, 0x14);
+    Give_Friendship_Points(0x10, 0x14);
+    Set_Flag(0x110, 2);
+    Execute_Script(988);
+    exit;
+}

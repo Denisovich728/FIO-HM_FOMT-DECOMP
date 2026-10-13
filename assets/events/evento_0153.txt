@@ -1,0 +1,26 @@
+// Script 153
+#include "Fomt_Lib.src"
+
+script 153 Event_0153 {
+    if ((GetEntityFacing(0) == 0)) {
+        Fade_Out(2, 1);
+        if ((Check_Flag(0x135) == 1)) {
+            Refresh_Map_Entities();
+            Add_Festival_Friendship_Bonus(0x1C);
+            Add_Festival_Friendship_Bonus(0x1D);
+            Set_Flag(0x135, 2);
+        } else {
+            if ((Check_Flag(0x11B) == 1)) {
+                Refresh_Map_Entities();
+                Add_Festival_Friendship_Bonus(0x1C);
+                Add_Festival_Friendship_Bonus(0x1D);
+                Set_Flag(0x11B, 2);
+            }
+        }
+        Warp_Player(1, 0xD4, 0x78);
+        SetEntityPosition(0, 0xD4, 0x78, 0);
+        PlaySong(0, 0xCD);
+        Fade_In(2, 1);
+    }
+    exit;
+}

@@ -1,0 +1,11 @@
+// Script 973
+#include "Fomt_Lib.src"
+
+script 973 Event_0973 {
+    const MESSAGE_0 = "The Basket is full.\BRK";
+    
+    TalkOpen();
+    TalkMessage(0);
+    TalkClose();
+    exit;
+}

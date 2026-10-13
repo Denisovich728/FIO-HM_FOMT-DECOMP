@@ -1,0 +1,102 @@
+// Script 821
+#include "Fomt_Lib.src"
+
+script 821 Event_0821 {
+    const MESSAGE_0 = "Wow, shooting stars!\r\nI'll wish for...\BRK";
+    const MESSAGE_1 = "Healthy animals.";
+    const MESSAGE_2 = "Befriend townspeople.";
+    const MESSAGE_3 = "Shipping for a high price.";
+    const MESSAGE_4 = "I hope my wish \r\ncomes true...\BRK";
+    
+    var var_0;
+    var var_2;
+    
+    Set_Flag(0x156, 1);
+    Fade_In(3, 1);
+    if ((Inventory_Check() == 1)) {
+        SetEntityAnim(0, 0x1C6);
+    } else {
+        SetEntityAnim(0, 0x156);
+    }
+    Pan_Camera_To(0xEC, 0x8C, 1);
+    Set_Vector_Y(0, 0xF8, 1);
+    Execute_Movement(0);
+    if ((Inventory_Check() == 1)) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    Wait_Camera_Stop();
+    PlaySong(0, 0xBC);
+    Trigger_Screen_Flash();
+    TalkOpen();
+    TalkMessage(0);
+    var_0 = TalkChoice3(1, 2, 3);
+    switch (var_0) {
+        case 1:
+            Set_Spouse_Nickname(0);
+            break;
+        case 2:
+            TalkClose();
+            Give_Friendship_Points(1, 0xA);
+            Give_Friendship_Points(2, 0xA);
+            Give_Friendship_Points(3, 0xA);
+            Give_Friendship_Points(4, 0xA);
+            Give_Friendship_Points(5, 0xA);
+            Give_Friendship_Points(6, 0xA);
+            Give_Friendship_Points(7, 0xA);
+            Give_Friendship_Points(8, 0xA);
+            Give_Friendship_Points(9, 0xA);
+            Give_Friendship_Points(0xA, 0xA);
+            Give_Friendship_Points(0xB, 0xA);
+            Give_Friendship_Points(0xC, 0xA);
+            Give_Friendship_Points(0xD, 0xA);
+            Give_Friendship_Points(0xE, 0xA);
+            Give_Friendship_Points(0xF, 0xA);
+            Give_Friendship_Points(0x10, 0xA);
+            Give_Friendship_Points(0x11, 0xA);
+            Give_Friendship_Points(0x12, 0xA);
+            Give_Friendship_Points(0x13, 0xA);
+            Give_Friendship_Points(0x14, 0xA);
+            Give_Friendship_Points(0x15, 0xA);
+            Give_Friendship_Points(0x16, 0xA);
+            Give_Friendship_Points(0x17, 0xA);
+            Give_Friendship_Points(0x18, 0xA);
+            Give_Friendship_Points(0x19, 0xA);
+            Give_Friendship_Points(0x1A, 0xA);
+            Give_Friendship_Points(0x1B, 0xA);
+            Give_Friendship_Points(0x1C, 0xA);
+            Give_Friendship_Points(0x1D, 0xA);
+            Give_Friendship_Points(0x1E, 0xA);
+            Give_Friendship_Points(0x1F, 0xA);
+            Give_Friendship_Points(0x21, 0xA);
+            Give_Friendship_Points(0x22, 0xA);
+            Give_Friendship_Points(0x23, 0xA);
+            Give_Friendship_Points(0x24, 0xA);
+            Give_Friendship_Points(0x25, 0xA);
+            Give_Friendship_Points(0x26, 0xA);
+            Give_Friendship_Points(0x27, 0xA);
+            Give_Friendship_Points(0x28, 0xA);
+            Give_Friendship_Points(0x29, 0xA);
+            Give_Friendship_Points(0x2A, 0xA);
+            break;
+        case 3:
+            Screen_Flash(0, 0, 0);
+            break;
+    }
+    TalkClose();
+    var_2 = RNG_Generator(1, 4);
+    do {
+        Trigger_Screen_Flash();
+        PlaySong(0, 0xBC);
+        Make_Delay(3);
+        var_2 = (var_2 - 1);
+    } while ((var_2 >= 0));
+    Fade_Out(2, 1);
+    TalkOpen();
+    TalkMessage(4);
+    TalkClose();
+    Set_Flag(0x156, 2);
+    Execute_Script(988);
+    exit;
+}

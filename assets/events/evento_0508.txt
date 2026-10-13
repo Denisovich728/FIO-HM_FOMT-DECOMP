@@ -1,0 +1,11 @@
+// Script 508
+#include "Fomt_Lib.src"
+
+script 508 Event_0508 {
+    const MESSAGE_0 = "Saibara the Blacksmith\r\nOpen 10AM-4PM\r\nClosed Thursdays\BRK";
+    
+    TalkOpen();
+    Print_Message(0);
+    TalkClose();
+    exit;
+}

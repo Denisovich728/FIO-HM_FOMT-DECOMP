@@ -1,0 +1,68 @@
+// Script 532
+#include "Fomt_Lib.src"
+
+script 532 Event_0532 {
+    const MESSAGE_0 = "Wait one second!\r\nYou've come too far\r\nto turn back now!\BRK";
+    
+    var var_0;
+    var var_1;
+    
+    var_1 = 1;
+    switch (Check_Flag(0x1A9)) {
+        case 0:
+            var_0 = 0x13;
+            break;
+        case 1:
+            var_0 = 0x19;
+            break;
+        case 2:
+            var_0 = 3;
+            break;
+        case 3:
+            var_0 = 0xC;
+            break;
+        case 4:
+            var_0 = 0x15;
+            break;
+    }
+    if ((GetEntityFacing(0) == 0)) {
+        if ((Check_Flag(0x1D1) == 1)) {
+            TalkOpen();
+            Set_Portrait(0xA8);
+            Set_Name_Window(6);
+            TalkMessage(0);
+            TalkClose();
+            var_1 = 0;
+        } else {
+            if ((Check_Flag(0x1A8) == 1)) {
+                Set_Flag(0x1A8, 0);
+                Add_Festival_Friendship_Bonus(var_0);
+                Refresh_Map_Entities();
+            } else {
+                if ((Check_Flag(0x104) == 1)) {
+                    Set_Flag(0x104, 2);
+                    Add_Festival_Friendship_Bonus(0xC);
+                    Add_Festival_Friendship_Bonus(7);
+                    Refresh_Map_Entities();
+                } else {
+                    if ((Check_Flag(0x127) == 1)) {
+                        Set_Flag(0x127, 2);
+                        Add_Festival_Friendship_Bonus(0x18);
+                        Refresh_Map_Entities();
+                    }
+                }
+            }
+        }
+        if (var_1) {
+            Fade_Out(2, 1);
+            Warp_Player(0, 0x1F4, 0x14);
+            SetEntityPosition(0, 0x1F4, 0x14, "Down");
+            Fade_In(2, 1);
+        } else {
+            SetEntityFacing(0, "Up");
+            Set_Vector_Y(0, 0x1B6, 1);
+            Execute_Movement(0);
+        }
+    }
+    exit;
+}

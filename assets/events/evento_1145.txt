@@ -1,0 +1,47 @@
+// Script 1145
+#include "Fomt_Lib.src"
+
+script 1145 Event_1145 {
+    const MESSAGE_0 = "Listen, everyone!\r\nThis year's champion is\r\n\xFF#!!\BRK\r\nGood job!\BRK";
+    
+    Warp_Player(1, 0x9C, 0x9A);
+    StopBGM();
+    SetEntityPosition(0x1C, 0x9C, 0x88, "Down");
+    SetEntityAnim(0x1C, 0x318);
+    SetEntityPosition(0, 0x9C, 0x9A, "Up");
+    if ((Inventory_Check() == 1)) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    SetEntityPosition(0x46, 0x8C, 0x9A, "Up");
+    Spawn_Event_Entity(0x46, 0);
+    SetEntityAnim(0x46, 0x338);
+    Fade_In(3, 1);
+    Make_Delay(0x3C);
+    StopBGM();
+    PlaySong(0, 0xB0);
+    Make_Delay((0x3C * 4));
+    PlayBGM(1, 7);
+    TalkOpen();
+    Set_Portrait(0x20);
+    Set_Name_Window(0x1C);
+    TalkMessage(0);
+    TalkClose();
+    if (((Inventory_Check() == 1) && (Check_Flag(0x24C) == 0))) {
+        Player_Eat_Power_Berry_Anim();
+        Set_Flag(0x24C, 1);
+    }
+    PlaySong(0, 0xB5);
+    Make_Delay((0x3C * 4));
+    Fade_Out(2, 1);
+    Give_Friendship_Points(0xD, 0x14);
+    Give_Friendship_Points(0x11, 0x14);
+    Give_Friendship_Points(0x12, 0x14);
+    Give_Friendship_Points(0x1A, 0x14);
+    Give_Friendship_Points(3, 0x14);
+    Give_Friendship_Points(0x1C, 0x14);
+    Hide_Entity(0x46);
+    Execute_Script(1138);
+    exit;
+}

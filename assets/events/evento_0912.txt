@@ -1,0 +1,16 @@
+// Script 912
+#include "Fomt_Lib.src"
+
+script 912 Event_0912 {
+    const MESSAGE_0 = "I'll be living here \r\npermanently from now on. \BRK\WAIT_CLICKIn a guest room, of course!\BRK";
+    
+    SetEntityFacing(0x17, GetOppositeFacing(GetEntityFacing(0)));
+    TalkOpen();
+    Set_Portrait(0x18);
+    Set_Name_Window(0x17);
+    TalkMessage(0);
+    TalkClose();
+    SetEntityFacing(0x17, "Up");
+    Free_Event_Entity(0x17);
+    exit;
+}

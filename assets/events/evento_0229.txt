@@ -1,0 +1,45 @@
+// Script 229
+#include "Fomt_Lib.src"
+
+script 229 Event_0229 {
+    const MESSAGE_0 = "Hey!! Where did you\r\nfind this!?\BRK";
+    const MESSAGE_1 = "Oh...I see...\r\nYou told Ann and the\r\nothers for me.\BRK\WAIT_CLICKThis photo shows my \r\nmother any my sister...\BRK";
+    const MESSAGE_2 = "You see...I...\BRK\WAIT_CLICKI didn't like where I lived,\r\nso I left my mother and \r\nsister to strike \BRK\r\non my own.\BRK\WAIT_CLICKWhen I came back, my mother\r\nhad died and my sister had\r\ngone somewhere...\BRK\WAIT_CLICKWhere, I just don't know...\BRK\WAIT_CLICKThis town reminds me of that\r\nother one, long ago...\BRK";
+    const MESSAGE_3 = "I'm sorry to bother you\r\nwith my story. I'm sure you\r\ndon't want to hear it...\BRK";
+    const MESSAGE_4 = "Cliff is sleeping well...\BRK";
+    const MESSAGE_5 = "Bed\BRK";
+    
+    if ((((Check_Flag(0x123) == 2) && (Check_Flag(0x124) == 1)) && (Search_Item_Gift_Address() == 0x52))) {
+        Drop_Held_Item();
+        SetEntityAnim(0x17, 0x297);
+        Make_Delay(0x3C);
+        TalkOpen();
+        Set_Portrait(0x1E);
+        Set_Name_Window(0x17);
+        TalkMessage(0);
+        Set_Portrait(0x17);
+        TalkMessage(1);
+        Set_Portrait(0x1A);
+        TalkMessage(2);
+        Set_Portrait(0x17);
+        TalkMessage(3);
+        TalkClose();
+        SetEntityAnim(0, 0x126);
+        Make_Delay(0x3C);
+        SetEntityAnim(0x17, 0x293);
+        Make_Delay(0x3C);
+        Give_Friendship_Points(0x17, 0x14);
+        Free_Event_Entity(0x17);
+    } else {
+        if ((Check_Flag(0x124) == 1)) {
+            TalkOpen();
+            Print_Message(4);
+            TalkClose();
+            goto LBL_0007;
+        }
+        TalkOpen();
+        Print_Message(5);
+        TalkClose();
+    }
+    exit;
+}

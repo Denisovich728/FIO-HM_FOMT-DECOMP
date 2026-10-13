@@ -1,0 +1,9 @@
+// Script 348
+#include "Fomt_Lib.src"
+
+script 348 Event_0348 {
+    Fade_Out(3, 1);
+    Proc09F();
+    Fade_In(3, 1);
+    exit;
+}

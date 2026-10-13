@@ -1,0 +1,16 @@
+// Script 895
+#include "Fomt_Lib.src"
+
+script 895 Event_0895 {
+    const MESSAGE_0 = "What happened to Mom?!\r\nI'm against it!\BRK";
+    
+    SetEntityFacing(2, GetOppositeFacing(GetEntityFacing(0)));
+    TalkOpen();
+    Set_Portrait(2);
+    Set_Name_Window(2);
+    TalkMessage(0);
+    TalkClose();
+    SetEntityFacing(2, "Left");
+    Free_Event_Entity(2);
+    exit;
+}

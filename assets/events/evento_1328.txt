@@ -1,0 +1,6 @@
+// Script 1328
+#include "Fomt_Lib.src"
+
+script 1328 Event_1328 {
+    exit;
+}

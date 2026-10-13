@@ -1,0 +1,11 @@
+// Script 553
+#include "Fomt_Lib.src"
+
+script 553 Event_0553 {
+    const MESSAGE_0 = "Clock\BRK";
+    
+    TalkOpen();
+    Print_Message(0);
+    TalkClose();
+    exit;
+}

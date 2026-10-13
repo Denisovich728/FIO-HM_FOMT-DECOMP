@@ -1,0 +1,195 @@
+// Script 731
+#include "Fomt_Lib.src"
+
+script 731 Event_0731 {
+    const MESSAGE_0 = "...and then what do you\r\nput in? \BRK";
+    const MESSAGE_1 = "You put in...\r\n...then you use the...\BRK";
+    const MESSAGE_2 = "I never would have\r\nthought of that!...\BRK";
+    const MESSAGE_3 = "Hi, \xFF!.\r\nCome on in. \BRK";
+    const MESSAGE_4 = "Hi there, \xFF!. \BRK";
+    const MESSAGE_5 = "What were we doing? \r\nAnna was just teaching me\r\nhow to make desserts. \BRK\WAIT_CLICKShe's famous for her \r\ndesserts, you know. \BRK";
+    const MESSAGE_6 = "Oh, stop flattering me, \r\nManna!...\BRK";
+    const MESSAGE_7 = "It's true! \r\nYou cook too, don't you, \r\n\xFF!?\BRK\WAIT_CLICKIn that case, you should \r\nlearn from Anna, too!\BRK";
+    const MESSAGE_8 = "Learn.";
+    const MESSAGE_9 = "Sorry, I'm too busy.";
+    const MESSAGE_10 = "Really? \r\nI'd be glad to teach you!\BRK";
+    const MESSAGE_11 = "In that case, both of you \r\nlisten to this simple and \r\neasy Cake recipe. \BRK\WAIT_CLICKIngredients are Eggs, Flour,\r\nand Butter. \BRK\WAIT_CLICKSeasoning is Sugar, of \r\ncourse. \r\nFirst, mix the Egg and \BRK\r\nButter with a Whisk, then\r\nadd Flour and put it all in\r\nthe Oven. \BRK\WAIT_CLICKNot too hard, is it?\r\nYou can also add all kinds\r\nof fruit to make it even \BRK\r\nbetter. Or, you can add \r\nChocolate to make it a \r\nChocolate Cake!\BRK";
+    const MESSAGE_12 = "Can you teach me \r\nanything else?\BRK";
+    const MESSAGE_13 = "How about this...\r\nCome back again at this same\r\ntime and I'll teach you a \BRK\r\nnew dish. \BRK\WAIT_CLICKIt'll be a miniature cooking\r\nschool!\BRK";
+    const MESSAGE_14 = "Really? That sounds great! \BRK";
+    const MESSAGE_15 = "Sure! I'd love to!\BRK";
+    const MESSAGE_16 = "You'll come too, won't \r\nyou \xFF!?\BRK";
+    const MESSAGE_17 = "Aww...You're no fun!\r\nDon't you know that women \r\nlove a man who knows\BRK\r\nhow to cook?\BRK";
+    const MESSAGE_18 = "I'm sure he's busy, Manna. \r\nIt's tough running a farm \r\nall by yourself, after all! \BRK\WAIT_CLICKI'll teach you, instead. \BRK";
+    const MESSAGE_19 = "How about a recipe for a\r\nCake, then? Duke loves \r\nCake...\BRK";
+    const MESSAGE_20 = "OK. First you...\BRK";
+    
+    var var_0;
+    
+    End_Cinematic_State();
+    Warp_Player(0x1A, 0x78, 0xD0);
+    SetEntityPosition(0, 0x78, 0xD0, "Up");
+    if ((Inventory_Check() == 1)) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    SetEntityPosition(0xB, 0x70, 0x60, "Down");
+    SetEntityAnim(0xB, 0x84B);
+    SetEntityPosition(9, 0x58, 0x78, "Right");
+    SetEntityAnim(9, 0x8D0);
+    Fade_In(2, 1);
+    Pan_Camera_To(0x78, 0x78, 2);
+    Wait_Camera_Stop();
+    TalkOpen();
+    Set_Portrait(0x89);
+    Set_Name_Window(9);
+    TalkMessage(0);
+    TalkClose();
+    TalkOpen();
+    Set_Portrait(0x6F);
+    Set_Name_Window(0xB);
+    TalkMessage(1);
+    TalkClose();
+    TalkOpen();
+    Set_Portrait(0x8A);
+    Set_Name_Window(9);
+    TalkMessage(2);
+    TalkClose();
+    if ((Inventory_Check() == 1)) {
+        SetEntityAnim(0, 0x1C6);
+    } else {
+        SetEntityAnim(0, 0x156);
+    }
+    Set_Vector_Y(0, 0x98, 1);
+    Execute_Movement(0);
+    if ((Inventory_Check() == 1)) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    Show_Emote(0xB, 2, 0);
+    Make_Delay(0x3C);
+    TalkOpen();
+    Set_Portrait(0x6E);
+    Set_Name_Window(0xB);
+    TalkMessage(3);
+    TalkClose();
+    SetEntityFacing(9, "Down");
+    TalkOpen();
+    Set_Portrait(0x89);
+    Set_Name_Window(9);
+    TalkMessage(4);
+    TalkClose();
+    TalkOpen();
+    Set_Portrait(0x89);
+    Set_Name_Window(9);
+    TalkMessage(5);
+    TalkClose();
+    TalkOpen();
+    Set_Portrait(0x6F);
+    Set_Name_Window(0xB);
+    TalkMessage(6);
+    TalkClose();
+    TalkOpen();
+    Set_Portrait(0x8A);
+    Set_Name_Window(9);
+    TalkMessage(7);
+    TalkClose();
+    TalkOpen();
+    var_0 = TalkChoice2(8, 9);
+    switch (var_0) {
+        case 1:
+            TalkOpen();
+            Set_Portrait(0x6F);
+            Set_Name_Window(0xB);
+            TalkMessage(10);
+            SetEntityFacing(9, "Right");
+            Set_Portrait(0x6E);
+            TalkMessage(11);
+            TalkClose();
+            SetEntityFacing(9, "Up");
+            TalkOpen();
+            Set_Portrait(0x89);
+            Set_Name_Window(9);
+            TalkMessage(12);
+            TalkClose();
+            SetEntityAnim(0, 0x1FE);
+            Make_Delay(0x1E);
+            if ((Inventory_Check() == 1)) {
+                SetEntityAnim(0, 0x192);
+                goto LBL_0010;
+            }
+            SetEntityAnim(0, 0x152);
+            TalkOpen();
+            Set_Portrait(0x6E);
+            Set_Name_Window(0xB);
+            TalkMessage(13);
+            TalkClose();
+            TalkOpen();
+            Set_Portrait(0x8A);
+            Set_Name_Window(9);
+            TalkMessage(14);
+            TalkClose();
+            TalkOpen();
+            Set_Portrait(0x6F);
+            Set_Name_Window(0xB);
+            TalkMessage(15);
+            TalkClose();
+            SetEntityFacing(9, "Down");
+            TalkOpen();
+            Set_Portrait(0x8A);
+            Set_Name_Window(9);
+            TalkMessage(16);
+            TalkClose();
+            SetEntityAnim(0, 0x1FE);
+            Make_Delay(0x1E);
+            if ((Inventory_Check() == 1)) {
+                SetEntityAnim(0, 0x192);
+                goto LBL_0014;
+            }
+            SetEntityAnim(0, 0x152);
+            Give_Friendship_Points(0xB, 0x14);
+            Give_Friendship_Points(9, 0x14);
+            Set_Flag(0x101, 1);
+            break;
+        case 2:
+            TalkOpen();
+            Set_Portrait(0x8B);
+            Set_Name_Window(9);
+            TalkMessage(17);
+            TalkClose();
+            TalkOpen();
+            Set_Portrait(0x6E);
+            Set_Name_Window(0xB);
+            TalkMessage(18);
+            TalkClose();
+            SetEntityFacing(9, "Up");
+            TalkOpen();
+            Set_Portrait(0x8A);
+            Set_Name_Window(9);
+            TalkMessage(19);
+            TalkClose();
+            TalkOpen();
+            Set_Portrait(0x6E);
+            Set_Name_Window(0xB);
+            TalkMessage(20);
+            TalkClose();
+            Give_Friendship_Points(0xB, -0xA);
+            Give_Friendship_Points(9, -0xA);
+            break;
+    }
+    Free_Event_Entity(0xB);
+    Free_Event_Entity(9);
+    Refresh_Map_Entities();
+    Set_Flag(0x100, 2);
+    Fade_Out(2, 1);
+    Warp_Player(5, 0xC8, 0xA8);
+    SetEntityPosition(0, 0xC8, 0xA8, "Down");
+    PlaySong(0, 0xCD);
+    Set_Time(0xD, 0);
+    Fade_In(2, 1);
+    Refresh_Map_Entities();
+    exit;
+    exit;
+}

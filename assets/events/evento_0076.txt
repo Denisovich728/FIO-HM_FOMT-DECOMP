@@ -1,0 +1,117 @@
+// Script 76
+#include "Fomt_Lib.src"
+
+script 76 Event_0076 {
+    const MESSAGE_0 = "Hi there, \xFF!. \BRK";
+    const MESSAGE_1 = "Are you surprised to see me \r\nat the Beach? \BRK\WAIT_CLICKWe used to come here often \r\nwhen my parents were alive. \BRK\WAIT_CLICKIt has lots of memories\r\nfor me...\BRK";
+    const MESSAGE_2 = "I come when I have\r\na lot on my mind. \BRK\WAIT_CLICKI feel like my parents can \r\nhear me here.\BRK";
+    const MESSAGE_3 = "Today I came about Stu...\BRK";
+    const MESSAGE_4 = "Stu always makes trouble, \r\nand doesn't mind me at all!\BRK\WAIT_CLICKI've tried to be like a \r\nmother to him, but I don't\r\nthink I've done a good job.\BRK";
+    const MESSAGE_5 = "You've spoiled him.";
+    const MESSAGE_6 = "You're doing a great job!";
+    const MESSAGE_7 = "I knew I should have been\r\nstricter with him...\BRK\WAIT_CLICKEveryone else in town \r\nprobably thinks so, too...\r\nAhh...I'm going home now.\BRK";
+    const MESSAGE_8 = "Thanks, \xFF!!\r\nIf you say so, then I can \r\nbe confident I'm doing\BRK\r\na good job. \BRK";
+    
+    var var_0;
+    
+    Warp_Player(1, 0x181, 0x90);
+    PlayBGM(1, 0x11);
+    SetEntityPosition(0, 0xE7, 0x90, "Right");
+    SetEntityAnim(0, 0x192);
+    SetEntityPosition(0x15, 0xDD, 0x7C, "Right");
+    SetEntityAnim(0x15, 0x884);
+    Fade_In(2, 1);
+    SetEntityAnim(0x15, 0x888);
+    Set_Vector_X(0x15, 0x181, 1);
+    Execute_Movement(0x15);
+    SetEntityAnim(0x15, 0x884);
+    Make_Delay(0x3C);
+    Show_Emote(0x15, 6, 0);
+    Make_Delay(0x5A);
+    SetEntityAnim(0, 0x1C6);
+    Set_Vector_X(0, 0x181, 1);
+    Execute_Movement(0);
+    SetEntityAnim(0, 0x192);
+    SetEntityFacing(0, "Up");
+    Make_Delay(0x3C);
+    SetEntityFacing(0x15, "Down");
+    TalkOpen();
+    Set_Portrait(0x79);
+    Set_Name_Window(0x15);
+    Set_Hearth_Anim(0x15);
+    TalkMessage(0);
+    TalkClose();
+    SetEntityAnim(0, 0x1FE);
+    Make_Delay(0x3C);
+    SetEntityAnim(0, 0x192);
+    TalkOpen();
+    Set_Portrait(0x79);
+    Set_Name_Window(0x15);
+    Set_Hearth_Anim(0x15);
+    TalkMessage(1);
+    TalkClose();
+    SetEntityAnim(0, 0x1FE);
+    Make_Delay(0x3C);
+    SetEntityAnim(0, 0x192);
+    TalkOpen();
+    Set_Portrait(0x7C);
+    Set_Name_Window(0x15);
+    Set_Hearth_Anim(0x15);
+    TalkMessage(2);
+    Set_Portrait(0x7D);
+    Set_Name_Window(0x15);
+    Set_Hearth_Anim(0x15);
+    TalkMessage(3);
+    TalkClose();
+    Show_Emote(0, 3, 0);
+    Make_Delay(0x3C);
+    TalkOpen();
+    Set_Portrait(0x7D);
+    Set_Name_Window(0x15);
+    Set_Hearth_Anim(0x15);
+    TalkMessage(4);
+    TalkClose();
+    TalkOpen();
+    var_0 = TalkChoice2(5, 6);
+    switch (var_0) {
+        case 1:
+            Give_Love_Points(0x15, -0x7D0);
+            TalkClose();
+            TalkOpen();
+            Set_Portrait(0x7C);
+            Set_Name_Window(0x15);
+            Set_Hearth_Anim(0x15);
+            TalkMessage(7);
+            TalkClose();
+            SetEntityFacing(0x15, "Left");
+            SetEntityAnim(0x15, 0x888);
+            SetEntityFacing(0, "Left");
+            Set_Vector_X(0x15, 0xE7, 1);
+            Execute_Movement(0x15);
+            SetEntityAnim(0x15, 0x884);
+            Hide_Entity(0x15);
+            Free_Event_Entity(0x15);
+            Set_Flag(0x6D, 2);
+            break;
+        case 2:
+            Give_Love_Points(0x15, 0xBB8);
+            TalkClose();
+            TalkOpen();
+            Set_Portrait(0x7E);
+            Set_Name_Window(0x15);
+            Set_Hearth_Anim(0x15);
+            TalkMessage(8);
+            TalkClose();
+            SetEntityFacing(0x15, "Left");
+            SetEntityAnim(0x15, 0x888);
+            SetEntityFacing(0, "Left");
+            Set_Vector_X(0x15, 0xE7, 1);
+            Execute_Movement(0x15);
+            SetEntityAnim(0x15, 0x884);
+            Hide_Entity(0x15);
+            Free_Event_Entity(0x15);
+            Set_Flag(0x6D, 2);
+            break;
+    }
+    exit;
+}

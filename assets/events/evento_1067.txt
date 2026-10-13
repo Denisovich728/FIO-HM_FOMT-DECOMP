@@ -1,0 +1,23 @@
+// Script 1067
+#include "Fomt_Lib.src"
+
+script 1067 Event_1067 {
+    const MESSAGE_0 = "It would be a shame to\r\nmiss this! It only happens \r\nonce a year, after all! \BRK";
+    
+    if ((Check_If_Single(0x1C) == 0)) {
+        Free_Event_Entity(0x1C);
+    }
+    SetEntityFacing(0x1C, GetOppositeFacing(GetEntityFacing(0)));
+    TalkOpen();
+    Set_Portrait(0x20);
+    Set_Name_Window(0x1C);
+    TalkMessage(0);
+    Talk_Mini_Close();
+    TalkClose();
+    if ((Has_Spoken_To_NPC_Today(0x1C) == 0)) {
+        Give_Friendship_Points(0x1C, 5);
+    }
+    Free_Event_Entity(0x1C);
+    SetEntityFacing(0x1C, "Left");
+    exit;
+}

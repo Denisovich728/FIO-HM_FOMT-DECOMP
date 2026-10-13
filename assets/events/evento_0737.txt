@@ -1,0 +1,188 @@
+// Script 737
+#include "Fomt_Lib.src"
+
+script 737 Event_0737 {
+    const MESSAGE_0 = "Good morning, \r\n\xFF!. \BRK\WAIT_CLICKI hear you're new to \r\nfarm life, so let me \r\nexplain some basics. \BRK\WAIT_CLICKUse the A Button to lift up \r\nItems in front of you, \r\nthrow Items, or talk to \BRK\r\npeople. \BRK\WAIT_CLICKYou can buy things if you \r\ntalk to people behind a \r\ncounter in a store. \BRK\WAIT_CLICKNo one will sell you any-\r\nthing if the store isn't \r\nopen, though, so \BRK\r\ndon't bother trying. \BRK\WAIT_CLICKUse the B Button to use an \r\nItem or Tool. \BRK\WAIT_CLICKYou can't use anything if\r\nyou're not holding it. \BRK";
+    const MESSAGE_1 = "Do you want to here \r\neven more instruction? \BRK";
+    const MESSAGE_2 = "Yes";
+    const MESSAGE_3 = "No";
+    const MESSAGE_4 = "OK, here goes. \BRK";
+    const MESSAGE_5 = "Crops";
+    const MESSAGE_6 = "Animals";
+    const MESSAGE_7 = "Useful tips";
+    const MESSAGE_8 = "Quit";
+    const MESSAGE_9 = "Are you sure? You don't \r\nhave to hold back on my \r\naccount. \BRK\WAIT_CLICKWell, if want to hear more \r\nlater, you can just press \r\nSTART at any time. Got it? \BRK";
+    const MESSAGE_10 = "It's your farm, and you can \r\ndo whatever you like. \BRK\WAIT_CLICKBut, your first goal should\r\nbe to make some money to\r\nlive on. \BRK\WAIT_CLICKFor example, you can \r\ngather various things on \r\nthe mountain to sell. \BRK";
+    const MESSAGE_11 = "After you get a hang of \r\nthe farm, try exploring \r\nthe town. \BRK\WAIT_CLICKJust turn right on the \r\nstreet outside your farm, \r\nand you'll see Yodel Farm\BRK\r\nand the Poultry Farm.\BRK\WAIT_CLICKTry asking there. \BRK";
+    const MESSAGE_12 = "Oh yes, I left you my old \r\nPedometer in the Tool Box \r\nat your farm. \BRK\WAIT_CLICKIt's always useful to know\r\nhow far you've walked, \r\ndon't you think? \BRK";
+    const MESSAGE_13 = "See you later!\BRK";
+    const MESSAGE_14 = "The name is Zack. I'm in \r\ncharge of shipping for \r\nMineral Town. \BRK\WAIT_CLICKLet me show you how you\r\nship things to be sold.\BRK";
+    const MESSAGE_15 = "This is your Shipment Box. \BRK\r\nPut things here you want to\r\nsell, and I'll come pick \r\nthem up by 5PM everyday. \BRK\WAIT_CLICKI'll pay you money when \r\nI do. \BRK";
+    const MESSAGE_16 = "I don't work on \r\nholidays, though! \BRK\WAIT_CLICKRemember, I need a break \r\nonce in a while, too!\BRK";
+    const MESSAGE_17 = "OK...\BRK";
+    const MESSAGE_18 = "You also have the Chicken\r\nCoop for your Chickens and\r\nBarn for Cows and Sheep. \BRK";
+    const MESSAGE_19 = "You can ship anything you \r\ngrow or find on the\r\nmountain. \BRK\WAIT_CLICKOr, of course, Eggs, Wool\r\nor Milk from livestock. \BRK";
+    const MESSAGE_20 = "Work hard, but not too hard!\BRK\WAIT_CLICKIf your face turns blue, \r\nthat means you're about to\r\ncollapse. \BRK\WAIT_CLICKIf that happens, you get \r\nsent to the Clinic, and \r\nyou'll be out of commission\BRK\r\nfor a while!\BRK";
+    const MESSAGE_21 = "Bye now. And remember:\r\n5PM everyday!\BRK";
+    
+    var var_0;
+    
+    if ((Inventory_Check() == 1)) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    SetEntityPosition(0xD, 0xE4, 0x91, "Up");
+    SetEntityAnim(0xD, 0x85F);
+    Fade_In(2, 1);
+    TalkOpen();
+    Set_Portrait(0x76);
+    Set_Name_Window(0xD);
+    TalkMessage(0);
+    Set_Portrait(0x75);
+    TalkMessage(1);
+    TalkClose();
+    TalkOpen();
+    var_0 = TalkChoice2(2, 3);
+    switch (var_0) {
+        case 1:
+            TalkClose();
+            TalkOpen();
+            Set_Portrait(0x76);
+            Set_Name_Window(0xD);
+            TalkMessage(4);
+            TalkClose();
+            do {
+                TalkOpen();
+                var_0 = TalkChoice4(5, 6, 7, 8);
+                TalkClose();
+                switch (var_0) {
+                    case 1:
+                        Fade_Out(3, 1);
+                        Proc0A9(0);
+                        Fade_In(3, 1);
+                        break;
+                    case 2:
+                        Fade_Out(3, 1);
+                        Proc0A9(1);
+                        Fade_In(3, 1);
+                        break;
+                    case 3:
+                        Fade_Out(3, 1);
+                        Show_Document_UI(0x88);
+                        Fade_In(3, 1);
+                        break;
+                }
+            } while ((var_0 != 4));
+            TalkOpen();
+            break;
+        case 2:
+            TalkClose();
+            TalkOpen();
+            Set_Portrait(0x78);
+            Set_Name_Window(0xD);
+            TalkMessage(9);
+            break;
+    }
+    Set_Portrait(0x75);
+    Set_Name_Window(0xD);
+    TalkMessage(10);
+    Set_Portrait(0x76);
+    TalkMessage(11);
+    Set_Portrait(0x75);
+    TalkMessage(12);
+    Set_Portrait(0x76);
+    TalkMessage(13);
+    TalkClose();
+    SetEntityFacing(0xD, "Right");
+    SetEntityFacing(0, "Right");
+    SetEntityAnim(0xD, 0x863);
+    Set_Vector_X(0xD, 0x13F, 1);
+    Execute_Movement(0xD);
+    SetEntityFacing(0xD, "Up");
+    Set_Vector_Y(0xD, 0, 1);
+    Execute_Movement(0xD);
+    Hide_Entity(0xD);
+    SetEntityPosition(0x1C, 0x13F, 0, "Down");
+    SetEntityAnim(0x1C, 0x318);
+    SetEntityAnim(0x1C, 0x31C);
+    Set_Vector_Y(0x1C, 0x91, 1);
+    Execute_Movement(0x1C);
+    SetEntityFacing(0x1C, "Left");
+    Set_Vector_X(0x1C, 0xE4, 1);
+    Execute_Movement(0x1C);
+    SetEntityFacing(0x1C, "Up");
+    SetEntityAnim(0x1C, 0x318);
+    SetEntityFacing(0, "Down");
+    Make_Delay(0x3C);
+    TalkOpen();
+    Set_Portrait(0x1F);
+    Set_Name_Window(0x1C);
+    TalkMessage(14);
+    TalkClose();
+    Pan_Camera_To(0xE4, 0xC9, 2);
+    SetEntityFacing(0x1C, "Down");
+    SetEntityAnim(0x1C, 0x31C);
+    Set_Vector_Y(0x1C, 0xAB, 1);
+    Execute_Movement(0x1C);
+    SetEntityFacing(0x1C, "Right");
+    Set_Vector_X(0x1C, 0x101, 1);
+    Execute_Movement(0x1C);
+    SetEntityFacing(0x1C, "Down");
+    SetEntityAnim(0x1C, 0x318);
+    if ((Inventory_Check() == 1)) {
+        SetEntityAnim(0, 0x1C6);
+    } else {
+        SetEntityAnim(0, 0x156);
+    }
+    Set_Vector_Y(0, 0xAB, 1);
+    Execute_Movement(0);
+    if ((Inventory_Check() == 1)) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    Wait_Camera_Stop();
+    Make_Delay(0x1E);
+    TalkOpen();
+    Set_Portrait(0x1F);
+    Set_Name_Window(0x1C);
+    TalkMessage(15);
+    TalkClose();
+    SetEntityFacing(0x1C, "Left");
+    SetEntityFacing(0, "Right");
+    TalkOpen();
+    Set_Portrait(0x20);
+    Set_Name_Window(0x1C);
+    TalkMessage(16);
+    Set_Portrait(0x1F);
+    TalkMessage(17);
+    Set_Portrait(0x20);
+    TalkMessage(18);
+    Set_Portrait(0x1F);
+    TalkMessage(19);
+    Set_Portrait(0x21);
+    TalkMessage(20);
+    Set_Portrait(0x1F);
+    TalkMessage(21);
+    TalkClose();
+    SetEntityFacing(0x1C, "Up");
+    SetEntityFacing(0, "Up");
+    SetEntityAnim(0x1C, 0x31C);
+    Set_Vector_Y(0x1C, 0x91, 1);
+    Execute_Movement(0x1C);
+    SetEntityFacing(0x1C, "Right");
+    Set_Vector_X(0x1C, 0x13F, 1);
+    Execute_Movement(0x1C);
+    SetEntityFacing(0x1C, "Up");
+    Set_Vector_Y(0x1C, 0, 1);
+    Execute_Movement(0x1C);
+    Hide_Entity(0x1C);
+    SetEntityFacing(0, "Down");
+    Pan_Camera_To(0xE4, 0xAB, 1);
+    Wait_Camera_Stop();
+    Free_Event_Entity(0xD);
+    Free_Event_Entity(0x1C);
+    Set_Flag(0x106, 2);
+    exit;
+}

@@ -1,0 +1,17 @@
+// Script 793
+#include "Fomt_Lib.src"
+
+script 793 Event_0793 {
+    const MESSAGE_0 = "I love my daughter so much! \r\nI don't mind working,\r\n'cause I know it's for her!\BRK";
+    
+    SetEntityFacing(0x18, GetOppositeFacing(GetEntityFacing(0)));
+    TalkOpen();
+    Set_Portrait(0x54);
+    Set_Name_Window(0x18);
+    TalkMessage(0);
+    TalkClose();
+    Free_Event_Entity(0x18);
+    SetEntityFacing(0x18, "Down");
+    exit;
+    exit;
+}

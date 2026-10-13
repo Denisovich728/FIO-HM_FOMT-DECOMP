@@ -1,0 +1,23 @@
+// Script 708
+#include "Fomt_Lib.src"
+
+script 708 Event_0708 {
+    const MESSAGE_0 = "It's so hard getting along\r\nwith Popuri!\BRK\WAIT_CLICKSay the slightest thing\r\nwrong and she breaks down!\BRK";
+    const MESSAGE_1 = "Still, Popuri does \r\nunderstand me better than\r\nanyone else.\BRK";
+    
+    SetEntityFacing(0x1A, GetOppositeFacing(GetEntityFacing(0)));
+    TalkOpen();
+    Set_Name_Window(0x1A);
+    if ((Has_NPC_Talked_Today(0x1A) == 0)) {
+        Set_Portrait(0x9C);
+        TalkMessage(0);
+    } else {
+        Set_Portrait(0x9A);
+        TalkMessage(1);
+    }
+    TalkClose();
+    Free_Event_Entity(0x1A);
+    SetEntityFacing(0x1A, "Up");
+    exit;
+    exit;
+}

@@ -1,0 +1,154 @@
+// Script 56
+#include "Fomt_Lib.src"
+
+script 56 Event_0056 {
+    const MESSAGE_0 = "I always imagined calling my\r\nhusband a cute nickname. \BRK\r\nWhat should I call you, \r\n\xFF!? \BRK";
+    const MESSAGE_1 = "Just my name";
+    const MESSAGE_2 = "Honey";
+    const MESSAGE_3 = "Darling";
+    const MESSAGE_4 = "Other";
+    const MESSAGE_5 = "\xFF!";
+    const MESSAGE_6 = "It's set, then.\r\n\xFF), it is!\BRK";
+    const MESSAGE_7 = "Can't you think of \r\nsomething really good?\r\nDon't disappoint me now!\BRK";
+    const MESSAGE_8 = "Good idea! From now on, \r\nI'll call you \r\n\xFF)!\BRK";
+    const MESSAGE_9 = "\xFF)...\r\nThere's something I want\r\nto ask you...\BRK\r\nAlthough we're married now,\r\nI'd still like to help my \r\ndad out at the Inn. \BRK\r\nIs that OK with you?\BRK";
+    const MESSAGE_10 = "Yes";
+    const MESSAGE_11 = "No";
+    const MESSAGE_12 = "Thanks, \xFF)!\BRK";
+    const MESSAGE_13 = "Tomorrow is the first day\r\nof our new life together!\BRK";
+    const MESSAGE_14 = "I understand. I'll \r\nconcentrate on the chores\r\naround here from tomorrow.\BRK";
+    
+    var var_0;
+    
+    Set_Flag(0x60, 1);
+    Warp_Player(0x1D, 0x12F, 0x94);
+    PlayBGM(1, 0x11);
+    SetEntityPosition(0, 0x12F, 0x94, "Right");
+    Lock_Player_Input();
+    SetEntityAnim(0, 0x192);
+    SetEntityPosition(0x19, 0x14B, 0x94, "Left");
+    SetEntityAnim(0x19, 0x7BE);
+    Fade_In(1, 1);
+    TalkOpen();
+    Set_Portrait(0x5C);
+    Set_Name_Window(0x19);
+    Set_Hearth_Anim(0x19);
+    TalkMessage(0);
+    TalkClose();
+    TalkOpen();
+    var_0 = TalkChoice4(1, 2, 3, 4);
+    switch (var_0) {
+        case 1:
+            TalkClose();
+            TalkOpen();
+            Set_Portrait(0x5C);
+            Set_Name_Window(0x19);
+            Set_Hearth_Anim(0x19);
+            OpcodeUnknw_125();
+            TalkMessage(6);
+            TalkClose();
+            SetEntityAnim(0, 0x1FE);
+            Make_Delay(0x3C);
+            SetEntityAnim(0, 0x192);
+            break;
+        case 2:
+            TalkClose();
+            TalkOpen();
+            Set_Portrait(0x5C);
+            Set_Name_Window(0x19);
+            Set_Hearth_Anim(0x19);
+            OpcodeUnknw_125();
+            TalkMessage(6);
+            TalkClose();
+            SetEntityAnim(0, 0x1FE);
+            Make_Delay(0x3C);
+            SetEntityAnim(0, 0x192);
+            break;
+        case 3:
+            TalkClose();
+            TalkOpen();
+            Set_Portrait(0x5C);
+            Set_Name_Window(0x19);
+            Set_Hearth_Anim(0x19);
+            OpcodeUnknw_125();
+            TalkMessage(6);
+            TalkClose();
+            SetEntityAnim(0, 0x1FE);
+            Make_Delay(0x3C);
+            SetEntityAnim(0, 0x192);
+            break;
+        case 4:
+            TalkClose();
+            TalkOpen();
+            Set_Portrait(0x57);
+            Set_Name_Window(0x19);
+            Set_Hearth_Anim(0x19);
+            TalkMessage(7);
+            TalkClose();
+            Fade_Out(3, 1);
+            Trigger_Naming_Sequence(0);
+            Lock_Player_Input();
+            Fade_In(3, 1);
+            TalkOpen();
+            Set_Portrait(0x5C);
+            Set_Name_Window(0x19);
+            Set_Hearth_Anim(0x19);
+            TalkMessage(8);
+            TalkClose();
+            SetEntityAnim(0, 0x1FE);
+            Make_Delay(0x3C);
+            SetEntityAnim(0, 0x192);
+            break;
+    }
+    TalkOpen();
+    Set_Portrait(0x57);
+    Set_Name_Window(0x19);
+    Set_Hearth_Anim(0x19);
+    TalkMessage(9);
+    TalkClose();
+    TalkOpen();
+    var_0 = TalkChoice2(0xA, 0xB);
+    switch (var_0) {
+        case 1:
+            Set_Flag(0x35, 1);
+            TalkClose();
+            TalkOpen();
+            Set_Portrait(0x58);
+            Set_Name_Window(0x19);
+            Set_Hearth_Anim(0x19);
+            TalkMessage(12);
+            TalkClose();
+            SetEntityAnim(0, 0x1FE);
+            Make_Delay(0x3C);
+            SetEntityAnim(0, 0x192);
+            Free_Event_Entity(0x19);
+            Set_Flag(0x60, 2);
+            Fade_Out(2, 1);
+            TalkOpen();
+            TalkMessage(13);
+            TalkClose();
+            Execute_Script(988);
+            break;
+        case 2:
+            Set_Flag(0x35, 0);
+            TalkClose();
+            TalkOpen();
+            Set_Portrait(0x57);
+            Set_Name_Window(0x19);
+            Set_Hearth_Anim(0x19);
+            TalkMessage(14);
+            TalkClose();
+            SetEntityAnim(0, 0x1FE);
+            Make_Delay(0x3C);
+            SetEntityAnim(0, 0x192);
+            Free_Event_Entity(0x19);
+            Set_Flag(0x60, 2);
+            Fade_Out(2, 1);
+            TalkOpen();
+            TalkMessage(13);
+            TalkClose();
+            Execute_Script(988);
+            break;
+    }
+    exit;
+}

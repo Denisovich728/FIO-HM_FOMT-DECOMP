@@ -1,0 +1,35 @@
+// Script 390
+#include "Fomt_Lib.src"
+
+script 390 Event_0390 {
+    const MESSAGE_0 = "I haven't cleaned upstairs\r\nyet, so please don't \r\ngo up there.\BRK";
+    
+    if ((GetEntityFacing(0) == 1)) {
+        if ((Check_Flag(0xFB) == 1)) {
+            TalkOpen();
+            Set_Portrait(0x89);
+            Set_Name_Window(9);
+            TalkMessage(0);
+            TalkClose();
+            SetEntityFacing(0, "Down");
+            if ((Inventory_Check() == 1)) {
+                SetEntityAnim(0, 0x1C6);
+            } else {
+                SetEntityAnim(0, 0x156);
+            }
+            Set_Vector_Y(0, 0x80, 1);
+            Execute_Movement(0);
+            if ((Inventory_Check() == 1)) {
+                SetEntityAnim(0, 0x192);
+            } else {
+                SetEntityAnim(0, 0x152);
+            }
+            exit;
+        }
+        Fade_Out(2, 1);
+        Warp_Player(0x20, 0xD8, 0x40);
+        SetEntityPosition(0, 0xD8, 0x40, "Up");
+        Fade_In(2, 1);
+    }
+    exit;
+}

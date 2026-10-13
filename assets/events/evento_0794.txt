@@ -1,0 +1,99 @@
+// Script 794
+#include "Fomt_Lib.src"
+
+script 794 Event_0794 {
+    const MESSAGE_0 = "Why can't you act more\r\nlike a girl?\BRK";
+    const MESSAGE_1 = "I am who I am!\BRK";
+    const MESSAGE_2 = "My sister was more \r\ngirl-like than you are...\BRK";
+    const MESSAGE_3 = "I'm not your sister! \r\nDon't you like me?...\BRK";
+    const MESSAGE_4 = "Of course I like you!\BRK";
+    const MESSAGE_5 = "If you really liked me, \r\nyou'd like me just\r\nhow I am! \BRK";
+    const MESSAGE_6 = "And you wouldn't compare me\r\nwith your sister, either!\r\nYou wouldn't want me \BRK\r\nto change!\BRK";
+    const MESSAGE_7 = "I'm sorry...\r\nYou're right, Ann. \BRK\WAIT_CLICKI didn't mean to hurt your\r\nfeelings. \BRK\WAIT_CLICKI really do like you just \r\nthe way you are!\BRK";
+    const MESSAGE_8 = "...I'm sorry too. \r\nI didn't mean to get \r\nso mad.\BRK";
+    const MESSAGE_9 = "And...I'll even try to act \r\na little more girl-like \r\nfor you. Once in a while...\BRK";
+    const MESSAGE_10 = "That\x81fs alright...\BRK";
+    
+    if ((Inventory_Check() == 1)) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    SetEntityPosition(0x19, 0x7C, 0xC0, "Left");
+    SetEntityAnim(0x19, 0x7BE);
+    SetEntityPosition(0x17, 0x68, 0xC0, "Right");
+    SetEntityAnim(0x17, 0x27B);
+    Fade_In(2, 1);
+    Pan_Camera_To(0x72, 0xC0, 2);
+    Wait_Camera_Stop();
+    TalkOpen();
+    Set_Portrait(0x1B);
+    Set_Name_Window(0x17);
+    TalkMessage(0);
+    TalkClose();
+    TalkOpen();
+    Set_Portrait(0x59);
+    Set_Name_Window(0x19);
+    TalkMessage(1);
+    TalkClose();
+    TalkOpen();
+    Set_Portrait(0x1B);
+    Set_Name_Window(0x17);
+    TalkMessage(2);
+    TalkClose();
+    Show_Emote(0x19, 0, 0);
+    Make_Delay(0x3C);
+    TalkOpen();
+    Set_Portrait(0x59);
+    Set_Name_Window(0x19);
+    TalkMessage(3);
+    TalkClose();
+    TalkOpen();
+    Set_Portrait(0x19);
+    Set_Name_Window(0x17);
+    TalkMessage(4);
+    TalkClose();
+    TalkOpen();
+    Set_Portrait(0x5A);
+    Set_Name_Window(0x19);
+    TalkMessage(5);
+    TalkClose();
+    Show_Emote(0x17, 6, 0);
+    Make_Delay(0x3C);
+    TalkOpen();
+    Set_Portrait(0x59);
+    Set_Name_Window(0x19);
+    TalkMessage(6);
+    TalkClose();
+    TalkOpen();
+    Set_Portrait(0x1A);
+    Set_Name_Window(0x17);
+    TalkMessage(7);
+    TalkClose();
+    TalkOpen();
+    Set_Portrait(0x5B);
+    Set_Name_Window(0x19);
+    TalkMessage(8);
+    Set_Portrait(0x57);
+    TalkMessage(9);
+    TalkClose();
+    TalkOpen();
+    Set_Portrait(0x17);
+    Set_Name_Window(0x17);
+    TalkMessage(10);
+    TalkClose();
+    SetEntityFacing(0x19, "Up");
+    SetEntityFacing(0x17, "Up");
+    SetEntityAnim(0x19, 0x7C2);
+    SetEntityAnim(0x17, 0x27F);
+    Set_Vector_Y(0x19, 0x48, 1);
+    Set_Vector_Y(0x17, 0x48, 1);
+    Execute_Movement(0x19);
+    Hide_Entity(0x19);
+    Hide_Entity(0x17);
+    Pan_Camera_To(0xB8, 0x140, 2);
+    Wait_Camera_Stop();
+    Set_Flag(0x12B, 2);
+    exit;
+    exit;
+}

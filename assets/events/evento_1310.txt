@@ -1,0 +1,23 @@
+// Script 1310
+#include "Fomt_Lib.src"
+
+script 1310 Event_1310 {
+    const MESSAGE_0 = "Buckwheat Noodles are really\r\ngood for you, you know. \BRK\WAIT_CLICKThat's why I'm going to \r\neat a lot!\BRK";
+    
+    if ((Check_If_Single(0x11) == 0)) {
+        Free_Event_Entity(0x11);
+    }
+    SetEntityFacing(0x11, GetOppositeFacing(GetEntityFacing(0)));
+    TalkOpen();
+    Set_Portrait(0x44);
+    Set_Name_Window(0x11);
+    TalkMessage(0);
+    Talk_Mini_Close();
+    TalkClose();
+    if ((Has_Spoken_To_NPC_Today(0x11) == 0)) {
+        Give_Friendship_Points(0x11, 5);
+    }
+    Free_Event_Entity(0x11);
+    SetEntityFacing(0x11, "Down");
+    exit;
+}

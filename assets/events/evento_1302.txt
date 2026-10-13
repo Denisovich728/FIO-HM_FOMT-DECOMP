@@ -1,0 +1,66 @@
+// Script 1302
+#include "Fomt_Lib.src"
+
+script 1302 Event_1302 {
+    const MESSAGE_0 = "Thanks for coming. \r\nWe were just starting \r\nthe party. \BRK";
+    const MESSAGE_1 = "You can come over any time,\r\nyou know. You should even \r\nthink about marrying Ann...\BRK";
+    const MESSAGE_2 = "Dad! If you keep talking \r\nlike that, he'll never \r\nwant to come again ever!\BRK";
+    const MESSAGE_3 = "Spending Starry Night \r\nFestival with Ann's family\r\nsure was fun.\BRK";
+    
+    Warp_Player(0x15, 0x8C, 0x110);
+    PlayBGM(1, 7);
+    Spawn_Item_On_Grid(0, 0x68, 0xF0, 1, Get_Item_Sprite_ID(0x73));
+    Spawn_Item_On_Grid(1, 0x78, 0xF0, 1, Get_Item_Sprite_ID(0x3E));
+    SetEntityPosition(0, 0xB8, 0x140, "Up");
+    SetEntityPosition(0x19, 0x60, 0x110, "Up");
+    SetEntityAnim(0x19, 0x7BE);
+    SetEntityPosition(0x18, 0x60, 0xE0, "Down");
+    SetEntityAnim(0x18, 0x7B2);
+    Fade_In(2, 1);
+    if ((Inventory_Check() == 1)) {
+        SetEntityAnim(0, 0x1C6);
+    } else {
+        SetEntityAnim(0, 0x156);
+    }
+    Set_Vector_Y(0, 0x110, 1);
+    Execute_Movement(0);
+    if ((Inventory_Check() == 1)) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    SetEntityFacing(0, "Left");
+    SetEntityFacing(0x19, "Right");
+    SetEntityFacing(0x18, "Right");
+    Make_Delay(0xA);
+    TalkOpen();
+    Set_Name_Window(0x19);
+    Set_Portrait(0x58);
+    Set_Hearth_Anim(0x19);
+    TalkMessage(0);
+    TalkClose();
+    TalkOpen();
+    Set_Name_Window(0x18);
+    Set_Portrait(0x54);
+    TalkMessage(1);
+    TalkClose();
+    TalkOpen();
+    Set_Name_Window(0x19);
+    Set_Portrait(0x5C);
+    Set_Hearth_Anim(0x19);
+    TalkMessage(2);
+    TalkClose();
+    Give_Love_Points(0x19, 0x7D0);
+    Give_Friendship_Points(0x19, 0x1E);
+    Give_Friendship_Points(0x18, 0x1E);
+    Fade_Out(2, 1);
+    TalkOpen();
+    TalkMessage(3);
+    TalkClose();
+    Despawn_Map_Item(0);
+    Despawn_Map_Item(1);
+    Set_Flag(0x1C9, 2);
+    Set_Flag(0x1C2, 0);
+    Execute_Script(988);
+    exit;
+}

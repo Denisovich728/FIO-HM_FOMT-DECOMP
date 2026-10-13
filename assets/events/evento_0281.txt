@@ -1,0 +1,11 @@
+// Script 281
+#include "Fomt_Lib.src"
+
+script 281 Event_0281 {
+    const MESSAGE_0 = "Chair\BRK";
+    
+    TalkOpen();
+    Print_Message(0);
+    TalkClose();
+    exit;
+}

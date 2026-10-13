@@ -1,0 +1,26 @@
+// Script 1320
+#include "Fomt_Lib.src"
+
+script 1320 Event_1320 {
+    const MESSAGE_0 = "So much happened to me\r\nthis past year. \BRK\WAIT_CLICKI feel like a new part\r\nof my life is beginning.\BRK";
+    
+    if ((Check_If_Single(0x17) == 0)) {
+        Free_Event_Entity(0x17);
+    }
+    SetEntityFacing(0x17, GetOppositeFacing(GetEntityFacing(0)));
+    TalkOpen();
+    Set_Portrait(0x17);
+    Set_Name_Window(0x17);
+    TalkMessage(0);
+    TalkClose();
+    if ((Has_NPC_Talked_Today(0x17) == 0)) {
+        Give_Friendship_Points(0x17, 5);
+    }
+    Free_Event_Entity(0x17);
+    if (((((((((Check_Flag(0xF4) == 0) || Has_NPC_Talked_Today(0x17)) && Has_NPC_Talked_Today(0x18)) && Has_NPC_Talked_Today(0xB)) && Has_NPC_Talked_Today(0xA)) && Has_NPC_Talked_Today(0xC)) && Has_NPC_Talked_Today(6)) && Has_NPC_Talked_Today(7))) {
+        Fade_Out(2, 1);
+        Execute_Script(1319);
+    }
+    SetEntityFacing(0x17, "Up");
+    exit;
+}

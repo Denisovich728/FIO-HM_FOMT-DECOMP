@@ -1,0 +1,38 @@
+// Script 1188
+#include "Fomt_Lib.src"
+
+script 1188 Event_1188 {
+    const MESSAGE_0 = "There are lots of good\r\nCows out this year. \BRK";
+    const MESSAGE_1 = "You gotta take good care\r\nof all your animals. \BRK";
+    const MESSAGE_2 = "Too bad...\BRK";
+    
+    if ((Check_If_Single(4) == 0)) {
+        Free_Event_Entity(4);
+    }
+    SetEntityFacing(4, GetOppositeFacing(GetEntityFacing(0)));
+    if ((Check_Flag(0x19B) == 0)) {
+        TalkOpen();
+        Set_Portrait(0xB4);
+        Set_Name_Window(4);
+        TalkMessage(0);
+    } else {
+        if ((Check_Flag(0x19D) == 1)) {
+            TalkOpen();
+            Set_Portrait(0xB4);
+            Set_Name_Window(4);
+            TalkMessage(1);
+            goto LBL_0006;
+        }
+        TalkOpen();
+        Set_Portrait(0xB4);
+        Set_Name_Window(4);
+        TalkMessage(2);
+    }
+    TalkClose();
+    if ((Has_Spoken_To_NPC_Today(4) == 0)) {
+        Give_Friendship_Points(4, 5);
+    }
+    Free_Event_Entity(4);
+    SetEntityFacing(4, "Down");
+    exit;
+}

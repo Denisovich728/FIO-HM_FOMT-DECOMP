@@ -1,0 +1,32 @@
+// Script 22
+#include "Fomt_Lib.src"
+
+script 22 Event_0022 {
+    const MESSAGE_0 = "I'm glad you chose me. \BRK";
+    const MESSAGE_1 = "Then again...I sort of asked\r\nyou to choose, didn't I?\BRK";
+    
+    if ((Check_Flag(0x47) == 1)) {
+    }
+    if ((Check_Flag(0x48) == 0)) {
+        SetEntityFacing(0x13, GetOppositeFacing(GetEntityFacing(0)));
+        TalkOpen();
+        Set_Portrait(0x49);
+        Set_Name_Window(0x13);
+        Set_Hearth_Anim(0x13);
+        TalkMessage(0);
+        TalkClose();
+        SetEntityFacing(0x13, "Right");
+        Free_Event_Entity(0x13);
+    } else {
+        SetEntityFacing(0x13, GetOppositeFacing(GetEntityFacing(0)));
+        TalkOpen();
+        Set_Portrait(0x4C);
+        Set_Name_Window(0x13);
+        Set_Hearth_Anim(0x13);
+        TalkMessage(1);
+        TalkClose();
+        SetEntityFacing(0x13, "Right");
+        Free_Event_Entity(0x13);
+    }
+    exit;
+}

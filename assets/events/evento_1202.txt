@@ -1,0 +1,27 @@
+// Script 1202
+#include "Fomt_Lib.src"
+
+script 1202 Event_1202 {
+    const MESSAGE_0 = "My grandfather said he made\r\na part of the fireworks.\BRK\WAIT_CLICKI hope they all work right!\BRK";
+    
+    if ((Check_If_Single(7) == 0)) {
+        Free_Event_Entity(7);
+    }
+    SetEntityFacing(7, GetOppositeFacing(GetEntityFacing(0)));
+    TalkOpen();
+    Set_Portrait(0xA0);
+    Set_Name_Window(7);
+    TalkMessage(0);
+    TalkClose();
+    if ((Has_NPC_Talked_Today(7) == 0)) {
+        Give_Friendship_Points(7, 5);
+    }
+    Free_Event_Entity(7);
+    if ((((((((((Has_NPC_Talked_Today(2) && Has_NPC_Talked_Today(7)) && Has_NPC_Talked_Today(0x14)) && ((Check_Flag(0xF4) == 0) || Has_NPC_Talked_Today(0x17))) && Has_NPC_Talked_Today(0x1A)) && Has_NPC_Talked_Today(0x13)) && Has_NPC_Talked_Today(0x15)) && Has_NPC_Talked_Today(0x19)) && Has_NPC_Talked_Today(3)) && Has_NPC_Talked_Today(0xC))) {
+        Set_Flag(0x19F, 0);
+        Fade_Out(2, 1);
+        Execute_Script(1192);
+    }
+    SetEntityFacing(7, "Right");
+    exit;
+}

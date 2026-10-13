@@ -1,0 +1,6 @@
+// Script 570
+#include "Fomt_Lib.src"
+
+script 570 Event_0570 {
+    exit;
+}

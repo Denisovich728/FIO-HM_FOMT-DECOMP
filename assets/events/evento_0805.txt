@@ -1,0 +1,21 @@
+// Script 805
+#include "Fomt_Lib.src"
+
+script 805 Event_0805 {
+    const MESSAGE_0 = "Zack seemed kind of sad\r\nto be leaving...\r\nI wonder why? \BRK";
+    const MESSAGE_1 = "Zack always seems kind of \r\nnervous around me. \r\nI wonder why...\BRK";
+    
+    SetEntityFacing(1, GetOppositeFacing(GetEntityFacing(0)));
+    TalkOpen();
+    Set_Name_Window(1);
+    Set_Portrait(0xE);
+    if ((Has_NPC_Talked_Today(1) == 0)) {
+        TalkMessage(0);
+    } else {
+        TalkMessage(1);
+    }
+    TalkClose();
+    SetEntityFacing(1, "Left");
+    exit;
+    exit;
+}

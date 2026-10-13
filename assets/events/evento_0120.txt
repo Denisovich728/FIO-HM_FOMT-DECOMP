@@ -1,0 +1,11 @@
+// Script 120
+#include "Fomt_Lib.src"
+
+script 120 Event_0120 {
+    const MESSAGE_0 = "Sofa\BRK";
+    
+    TalkOpen();
+    Print_Message(0);
+    TalkClose();
+    exit;
+}

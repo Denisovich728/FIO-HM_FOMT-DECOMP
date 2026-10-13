@@ -1,0 +1,340 @@
+// Script 404
+#include "Fomt_Lib.src"
+
+script 404 Event_0404 {
+    const MESSAGE_0 = "Are you ready to race, \r\nor do you want to place \r\na bet or exchange a medal\BRK\r\nfor a prize?\BRK";
+    const MESSAGE_1 = "Begin race.";
+    const MESSAGE_2 = "Place a bet.";
+    const MESSAGE_3 = "Exchange.";
+    const MESSAGE_4 = "Nothing.";
+    const MESSAGE_5 = "So you're ready to begin?\BRK";
+    const MESSAGE_6 = "Yes";
+    const MESSAGE_7 = "No";
+    const MESSAGE_8 = "Great! \r\nLet's start, then.\BRK";
+    const MESSAGE_9 = "So you're not ready\r\nafter all, eh?\BRK";
+    const MESSAGE_10 = "Alright. Press SELECT ON \r\nthe Betting Screen to see a\r\ndescription of how to \BRK\r\ndo it. \BRK";
+    const MESSAGE_11 = "So you're going to exchange\r\nyour medal, eh?\BRK";
+    const MESSAGE_12 = "You can't do it while\r\nholding something. \BRK";
+    const MESSAGE_13 = "You want to exchange your \r\nmedal for a prize?\BRK";
+    const MESSAGE_14 = "Exchange medal for prize.";
+    const MESSAGE_15 = "We want to begin judging the\r\nCows now. \r\nAre you ready?\BRK";
+    const MESSAGE_16 = "Let's start.";
+    const MESSAGE_17 = "Not yet.";
+    const MESSAGE_18 = "Great. Let's get started,\r\nthen!\BRK";
+    const MESSAGE_19 = "Let me know when \r\nyou're ready, then.\BRK";
+    const MESSAGE_20 = "Table\BRK";
+    
+    var var_0;
+    var var_1;
+    var var_2;
+    var var_3;
+    var var_4;
+    var var_5;
+    
+    var_1 = Check_Flag(3);
+    var_2 = Check_Flag(4);
+    if ((GetEntityFacing(0) == 1)) {
+        if (((Check_Flag(0x189) == 1) || (Check_Flag(0x1AC) == 1))) {
+            if (!((var_1 == 0x12) && (var_2 == 1))) {
+                Free_Event_Entity(0xD);
+                SetEntityFacing(0xD, "Down");
+                TalkOpen();
+                Set_Portrait(0x76);
+                Set_Name_Window(0xD);
+                TalkMessage(0);
+                TalkClose();
+                TalkOpen();
+                var_0 = TalkChoice4(1, 2, 3, 4);
+                switch (var_0) {
+                    case 1:
+                        TalkClose();
+                        TalkOpen();
+                        Set_Portrait(0x76);
+                        Set_Name_Window(0xD);
+                        TalkMessage(5);
+                        TalkClose();
+                        TalkOpen();
+                        var_0 = TalkChoice2(6, 7);
+                        switch (var_0) {
+                            case 1:
+                                TalkClose();
+                                TalkOpen();
+                                Set_Portrait(0x76);
+                                Set_Name_Window(0xD);
+                                TalkMessage(8);
+                                TalkClose();
+                                Fade_Out(3, 1);
+                                var_3 = Func0D7(1);
+                                switch (var_3) {
+                                    case 0x-1:
+                                        Fade_In(3, 1);
+                                        break;
+                                    case 0:
+                                        Fade_In(3, 1);
+                                        PlayBGM(1, 7);
+                                        break;
+                                    case 1:
+                                        if ((Check_Flag(0x189) == 1)) {
+                                            Set_Flag(0x18A, 1);
+                                            Execute_Script(1098);
+                                            goto LBL_0015;
+                                        }
+                                        Set_Flag(0x1AD, 1);
+                                        Execute_Script(1264);
+                                        break;
+                                    case 2:
+                                        if ((Check_Flag(0x189) == 1)) {
+                                            Set_Flag(0x18A, 0);
+                                            Execute_Script(1081);
+                                            goto LBL_001A;
+                                        }
+                                        Set_Flag(0x1AD, 0);
+                                        Execute_Script(1247);
+                                        break;
+                                }
+                                break;
+                            case 2:
+                                TalkClose();
+                                TalkOpen();
+                                Set_Portrait(0x75);
+                                Set_Name_Window(0xD);
+                                TalkMessage(9);
+                                TalkClose();
+                                break;
+                        }
+                        break;
+                    case 2:
+                        TalkClose();
+                        TalkOpen();
+                        Set_Portrait(0x76);
+                        Set_Name_Window(0xD);
+                        TalkMessage(10);
+                        TalkClose();
+                        Fade_Out(3, 1);
+                        var_3 = Func0D7(0);
+                        switch (var_3) {
+                            case 0x-1:
+                                Fade_In(3, 1);
+                                break;
+                            case 0:
+                                Fade_In(3, 1);
+                                PlayBGM(1, 7);
+                                break;
+                            case 1:
+                                if ((Check_Flag(0x189) == 1)) {
+                                    Set_Flag(0x18A, 1);
+                                    Execute_Script(1098);
+                                    goto LBL_0027;
+                                }
+                                Set_Flag(0x1AD, 1);
+                                Execute_Script(1264);
+                                break;
+                            case 2:
+                                if ((Check_Flag(0x189) == 1)) {
+                                    Set_Flag(0x18A, 0);
+                                    Execute_Script(1081);
+                                    goto LBL_002C;
+                                }
+                                Set_Flag(0x1AD, 0);
+                                Execute_Script(1247);
+                                break;
+                        }
+                        break;
+                    case 3:
+                        if ((Inventory_Check() == 1)) {
+                            TalkClose();
+                            TalkOpen();
+                            Set_Portrait(0x75);
+                            Set_Name_Window(0xD);
+                            TalkMessage(11);
+                            TalkClose();
+                            Fade_Out(3, 1);
+                            Open_Prize_Exchange_UI();
+                            Fade_In(3, 1);
+                            goto LBL_0033;
+                        }
+                        TalkClose();
+                        TalkOpen();
+                        Set_Portrait(0x75);
+                        Set_Name_Window(0xD);
+                        TalkMessage(12);
+                        TalkClose();
+                        break;
+                    case 4:
+                        TalkClose();
+                        TalkOpen();
+                        Set_Portrait(0x75);
+                        Set_Name_Window(0xD);
+                        TalkMessage(9);
+                        TalkClose();
+                        break;
+                }
+            } else {
+                Free_Event_Entity(0xD);
+                SetEntityFacing(0xD, "Down");
+                TalkOpen();
+                Set_Portrait(0x75);
+                Set_Name_Window(0xD);
+                TalkMessage(13);
+                TalkClose();
+                TalkOpen();
+                var_0 = TalkChoice2(0xE, 4);
+                switch (var_0) {
+                    case 1:
+                        if ((Inventory_Check() == 1)) {
+                            TalkClose();
+                            TalkOpen();
+                            Set_Portrait(0x75);
+                            Set_Name_Window(0xD);
+                            TalkMessage(11);
+                            TalkClose();
+                            Fade_Out(3, 1);
+                            Open_Prize_Exchange_UI();
+                            Fade_In(3, 1);
+                            goto LBL_003C;
+                        }
+                        TalkClose();
+                        TalkOpen();
+                        Set_Portrait(0x75);
+                        Set_Name_Window(0xD);
+                        TalkMessage(12);
+                        TalkClose();
+                        break;
+                    case 2:
+                        TalkClose();
+                        TalkOpen();
+                        Set_Portrait(0x75);
+                        Set_Name_Window(0xD);
+                        TalkMessage(9);
+                        TalkClose();
+                        break;
+                }
+            }
+        } else {
+            if ((Check_Flag(0x19C) == 1)) {
+                if (!((var_1 == 0x12) && (var_2 == 1))) {
+                    var_4 = Func11A(1);
+                    if ((Check_If_Single(4) == 0)) {
+                        Free_Event_Entity(4);
+                    }
+                    SetEntityFacing(4, GetOppositeFacing(GetEntityFacing(0)));
+                    TalkOpen();
+                    Set_Portrait(0xB4);
+                    Set_Name_Window(4);
+                    TalkMessage(15);
+                    TalkClose();
+                    TalkOpen();
+                    var_0 = TalkChoice2(0x10, 0x11);
+                    switch (var_0) {
+                        case 1:
+                            TalkClose();
+                            TalkOpen();
+                            Set_Portrait(0xB4);
+                            Set_Name_Window(4);
+                            TalkMessage(18);
+                            TalkClose();
+                            Fade_Out(2, 1);
+                            if ((Has_Spoken_To_NPC_Today(4) == 0)) {
+                                Give_Friendship_Points(4, 5);
+                            }
+                            Free_Event_Entity(4);
+                            SetEntityFacing(4, "Down");
+                            if ((Func10C(1, var_4) >= 0xC8)) {
+                                Set_Flag(0x19D, 1);
+                            }
+                            if ((Check_Flag(0x19D) == 1)) {
+                                Execute_Script(1190);
+                                goto LBL_0056;
+                            }
+                            Execute_Script(1177);
+                            break;
+                        case 2:
+                            TalkClose();
+                            TalkOpen();
+                            Set_Portrait(0xB4);
+                            Set_Name_Window(4);
+                            TalkMessage(19);
+                            TalkClose();
+                            if ((Has_Spoken_To_NPC_Today(4) == 0)) {
+                                Give_Friendship_Points(4, 5);
+                            }
+                            Free_Event_Entity(4);
+                            SetEntityFacing(4, "Down");
+                            break;
+                    }
+                } else {
+                    TalkOpen();
+                    TalkMessage(20);
+                    TalkClose();
+                }
+            } else {
+                if ((Check_Flag(0x1B0) == 1)) {
+                    if (!((var_1 == 0x12) && (var_2 == 1))) {
+                        var_5 = Func11A(2);
+                        if ((Check_If_Single(4) == 0)) {
+                            Free_Event_Entity(4);
+                        }
+                        SetEntityFacing(4, GetOppositeFacing(GetEntityFacing(0)));
+                        TalkOpen();
+                        Set_Portrait(0xB4);
+                        Set_Name_Window(4);
+                        TalkMessage(15);
+                        TalkClose();
+                        TalkOpen();
+                        var_0 = TalkChoice2(0x10, 0x11);
+                        switch (var_0) {
+                            case 1:
+                                TalkClose();
+                                TalkOpen();
+                                Set_Portrait(0xB4);
+                                Set_Name_Window(4);
+                                TalkMessage(18);
+                                TalkClose();
+                                Fade_Out(2, 1);
+                                if ((Has_Spoken_To_NPC_Today(4) == 0)) {
+                                    Give_Friendship_Points(4, 5);
+                                }
+                                Free_Event_Entity(4);
+                                SetEntityFacing(4, "Down");
+                                if ((Func10C(2, var_5) >= 0xC8)) {
+                                    Set_Flag(0x1B1, 1);
+                                }
+                                if ((Check_Flag(0x1B1) == 1)) {
+                                    Execute_Script(1289);
+                                    goto LBL_0074;
+                                }
+                                Execute_Script(1277);
+                                break;
+                            case 2:
+                                TalkClose();
+                                TalkOpen();
+                                Set_Portrait(0xB4);
+                                Set_Name_Window(4);
+                                TalkMessage(19);
+                                TalkClose();
+                                if ((Has_Spoken_To_NPC_Today(4) == 0)) {
+                                    Give_Friendship_Points(4, 5);
+                                }
+                                Free_Event_Entity(4);
+                                SetEntityFacing(4, "Down");
+                                break;
+                        }
+                    } else {
+                        TalkOpen();
+                        TalkMessage(20);
+                        TalkClose();
+                    }
+                } else {
+                    TalkOpen();
+                    TalkMessage(20);
+                    TalkClose();
+                }
+            }
+        }
+    } else {
+        TalkOpen();
+        TalkMessage(20);
+        TalkClose();
+    }
+    exit;
+}

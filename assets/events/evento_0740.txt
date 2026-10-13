@@ -1,0 +1,100 @@
+// Script 740
+#include "Fomt_Lib.src"
+
+script 740 Event_0740 {
+    const MESSAGE_0 = "Sorry to bother you \r\nso late, but can I ask \r\nyou something? \BRK";
+    const MESSAGE_1 = "Sure.";
+    const MESSAGE_2 = "Not now.";
+    const MESSAGE_3 = "You see...I have a secret \r\ncrush on Aja, Duke and \r\nManna's daughter who's \BRK\r\nliving in the city.\BRK";
+    const MESSAGE_4 = "I want to write her a \r\nletter, but I'm kind of\r\nstuck...\BRK";
+    const MESSAGE_5 = "I thought that you might\r\nbe a good person to ask \r\nadvice from. \BRK\WAIT_CLICKDo you have any idea \r\nwhat I should write to Aja?\BRK";
+    const MESSAGE_6 = "Tell her how you feel.";
+    const MESSAGE_7 = "Think for yourself.";
+    const MESSAGE_8 = "You're right! I'm \r\nthinking too much about it,\r\nI guess. Simple is best. \BRK";
+    const MESSAGE_9 = "Thanks to your advice, \r\nI've decided to take a \r\nchance and just tell \BRK\r\nAja how I feel. \BRK\WAIT_CLICKThanks a lot!\BRK";
+    const MESSAGE_10 = "OK...Sorry to\r\nbother you...\BRK";
+    const MESSAGE_11 = "OK...Sorry to bother you. \BRK\WAIT_CLICKDon't forget to lock you \r\ndoors at night. \BRK";
+    
+    var var_0;
+    
+    SetEntityPosition(0xE, 0xE4, 0x91, "Up");
+    SetEntityAnim(0xE, 0x8E4);
+    if ((Inventory_Check() == 1)) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    Fade_In(2, 1);
+    TalkOpen();
+    Set_Portrait(0x94);
+    Set_Name_Window(0xE);
+    TalkMessage(0);
+    TalkClose();
+    TalkOpen();
+    var_0 = TalkChoice2(1, 2);
+    switch (var_0) {
+        case 1:
+            TalkClose();
+            TalkOpen();
+            Set_Portrait(0x94);
+            Set_Name_Window(0xE);
+            TalkMessage(3);
+            TalkClose();
+            Show_Emote(0, 2, 0);
+            Make_Delay(0x3C);
+            TalkOpen();
+            Set_Portrait(0x94);
+            Set_Name_Window(0xE);
+            TalkMessage(4);
+            Set_Portrait(0x91);
+            TalkMessage(5);
+            TalkClose();
+            TalkOpen();
+            var_0 = TalkChoice2(6, 7);
+            switch (var_0) {
+                case 1:
+                    Set_Flag(0x10C, 0);
+                    Give_Friendship_Points(0xE, 0x14);
+                    TalkClose();
+                    TalkOpen();
+                    Set_Portrait(0x91);
+                    Set_Name_Window(0xE);
+                    TalkMessage(8);
+                    Set_Portrait(0x92);
+                    TalkMessage(9);
+                    TalkClose();
+                    break;
+                case 2:
+                    Give_Friendship_Points(0xE, -0x14);
+                    Set_Flag(0x10C, 1);
+                    TalkClose();
+                    TalkOpen();
+                    Set_Portrait(0x94);
+                    Set_Name_Window(0xE);
+                    TalkMessage(10);
+                    TalkClose();
+                    break;
+            }
+            break;
+        case 2:
+            Set_Flag(0x10C, 1);
+            TalkClose();
+            TalkOpen();
+            Set_Portrait(0x94);
+            Set_Name_Window(0xE);
+            TalkMessage(11);
+            TalkClose();
+            break;
+    }
+    SetEntityAnim(0xE, 0x8E8);
+    SetEntityFacing(0xE, "Right");
+    Set_Vector_X(0xE, 0x13F, 1);
+    Execute_Movement(0xE);
+    SetEntityFacing(0xE, "Up");
+    Set_Vector_Y(0xE, 0, 1);
+    Execute_Movement(0xE);
+    Hide_Entity(0xE);
+    Set_Flag(0x10B, 2);
+    Free_Event_Entity(0xE);
+    exit;
+}

@@ -1,0 +1,578 @@
+// Script 1128
+#include "Fomt_Lib.src"
+
+script 1128 Event_1128 {
+    const MESSAGE_0 = "We will now start the\r\ntasting! Please come up\r\nhere when I call you. \BRK\WAIT_CLICKHere we go......\BRK";
+    const MESSAGE_1 = "First is...Doug!\BRK";
+    const MESSAGE_2 = "You've done a good job of\r\ncombing many ingredients \r\ninto a unified whole. \BRK\WAIT_CLICKVery tasty!\BRK";
+    const MESSAGE_3 = "The texture on the tongue \r\nmixes with the caramel \r\nsauce in a mouth-watering\BRK\r\nharmony. \BRK\WAIT_CLICKVery tasty!\BRK";
+    const MESSAGE_4 = "The Bread combines with the\r\nspicy Curry to stimulate \r\nthe appetite. Good effort!\BRK";
+    const MESSAGE_5 = "These noodles are sheer\r\nperfection! Some of the \r\nbest I've ever tasted.\BRK";
+    const MESSAGE_6 = "Fried Rice seems like a \r\nsimple dish, but it's \r\nremarkably hard to master.\BRK\WAIT_CLICKThis is superb indeed!\BRK";
+    const MESSAGE_7 = "Next is Ann! \BRK";
+    const MESSAGE_8 = "Hmm...The milk pulls the \r\ndiverse tastes together...\BRK\WAIT_CLICKVery good job!\BRK";
+    const MESSAGE_9 = "This is just the right level\r\nof sweetness!\BRK\r\nNo child could resist this.\r\nVery good. \BRK";
+    const MESSAGE_10 = "The warm Bread melts \r\nthe Butter...Mouthwatering!\BRK\WAIT_CLICKSimple but very good!\BRK";
+    const MESSAGE_11 = "The Noodles and the Tempura\r\noffset each other \r\nperfectly! Good job. \BRK";
+    const MESSAGE_12 = "Very delicious...\r\nThe Eggs mix perfectly with\r\nthe Rice. \BRK";
+    const MESSAGE_13 = "Next is Lillia! \BRK";
+    const MESSAGE_14 = "The fruity flavor of this\r\ndish is absolutely\r\nwonderful! \BRK";
+    const MESSAGE_15 = "This Cake is fluffy but \r\nrich. irresistible indeed! \BRK";
+    const MESSAGE_16 = "The Bread and the Jam taste \r\nso good together...\BRK\r\nThis brings me back to my\r\nyouth! Very good indeed! \BRK";
+    const MESSAGE_17 = "The flavors of the Curry and\r\nthe Noodles are perfectly \r\nbalanced. Very good! \BRK";
+    const MESSAGE_18 = "This is spicy, but it also \r\nhas depth. Wonderful! \BRK";
+    const MESSAGE_19 = "Next is Manna!\BRK";
+    const MESSAGE_20 = "The idea of mixing Milk with\r\nVegetable Juice is \r\ningenious! Delicious! \BRK";
+    const MESSAGE_21 = "Just the right amount of \r\nsweetness, and the texture \r\nis divine too!\BRK";
+    const MESSAGE_22 = "The fresh Apple Jam brings\r\nout the warmth of the \r\nfresh Bread. Divine!\BRK";
+    const MESSAGE_23 = "It's simple, yet with depth. \r\nDelicious!\BRK";
+    const MESSAGE_24 = "The Mushrooms and the Rice\r\noffset each other in a \r\nsubtle way. Quite tasty!\BRK";
+    const MESSAGE_25 = "Last is Karen!\BRK";
+    const MESSAGE_26 = "Next is Karen!\BRK";
+    const MESSAGE_27 = "I think...I think I will\r\nreserve my comments on \r\nthis dish...\BRK";
+    const MESSAGE_28 = "Is this some kind of \r\na joke? \r\nNo comment!\BRK";
+    const MESSAGE_29 = "Hmmm...\r\nIt's indescribable...\BRK";
+    const MESSAGE_30 = "It doesn't have a good\r\ntexture. Not satisfying.\r\nThank you.\BRK";
+    const MESSAGE_31 = "Rice balls.\r\nVery good.\BRK";
+    const MESSAGE_32 = "Mr. Gourmet has tasted\r\neverything now.\BRK\WAIT_CLICKPlease wait for the result.\BRK";
+    const MESSAGE_33 = "Finally, \xFF!!\BRK";
+    const MESSAGE_34 = "Wow...this is...\BRK";
+    const MESSAGE_35 = "This is amazingly\r\nfabulous.\BRK\WAIT_CLICKYou can beat a professional\r\nchef with this food!\r\nI'm impressed.\BRK";
+    const MESSAGE_36 = "Delicious!\r\nYou could become a\r\nprofessional chef!\BRK\WAIT_CLICKStunning.\BRK";
+    const MESSAGE_37 = "This is truly homemade.\r\nVery good.\BRK";
+    const MESSAGE_38 = "Mmmm...\r\nSomething is missing.\r\nWhat could it be...?\BRK";
+    const MESSAGE_39 = "Ah... I have nothing\r\nto say...\r\n...ugh...\BRK";
+    const MESSAGE_40 = "This is a wrong theme!\r\nYou're disqualified!\BRK";
+    
+    var var_1;
+    
+    Warp_Player(6, 0xE7, 0x8E);
+    PlayBGM(1, 7);
+    SetEntityPosition(0xD, 0xB4, 0x66, "Down");
+    SetEntityAnim(0xD, 0x85F);
+    SetEntityPosition(0x1E, 0xE7, 0x82, "Down");
+    SetEntityAnim(0x1E, 0x679);
+    SetEntityPosition(0x13, 0x4C, 0xAE, "Right");
+    SetEntityAnim(0x13, 0x691);
+    SetEntityPosition(9, 0x4C, 0xAE, "Right");
+    SetEntityAnim(9, 0x8D0);
+    SetEntityPosition(1, 0x4C, 0xAE, "Right");
+    SetEntityAnim(1, 0x25F);
+    SetEntityPosition(0x18, 0x4C, 0xAE, "Right");
+    SetEntityAnim(0x18, 0x7B2);
+    SetEntityPosition(0x19, 0x4C, 0xAE, "Right");
+    SetEntityAnim(0x19, 0x7BE);
+    if ((Check_Flag(0x18F) == 1)) {
+        SetEntityPosition(0, 0x4C, 0xAE, "Right");
+        SetEntityAnim(0, 0x192);
+    } else {
+        Hide_Entity(0);
+    }
+    var_1 = Check_Flag(0x18D);
+    switch (var_1) {
+        case 0:
+            Spawn_Item_On_Grid(0, ((0x14 * 8) + 8), (((0x12 * 8) + 8) + 4), 2, Get_Item_Sprite_ID(0x56));
+            Spawn_Item_On_Grid(1, ((0x17 * 8) + 8), (((0x12 * 8) + 8) + 4), 2, Get_Item_Sprite_ID(0x59));
+            Spawn_Item_On_Grid(2, ((0x1A * 8) + 8), (((0x12 * 8) + 8) + 4), 2, Get_Item_Sprite_ID(0x54));
+            Spawn_Item_On_Grid(3, ((0x1D * 8) + 8), (((0x12 * 8) + 8) + 4), 2, Get_Item_Sprite_ID(0x58));
+            Spawn_Item_On_Grid(4, ((0x20 * 8) + 8), (((0x12 * 8) + 8) + 4), 2, Get_Item_Sprite_ID(0x9B));
+            if ((Check_Flag(0x18F) == 1)) {
+                Spawn_Item_On_Grid(5, ((0x23 * 8) + 8), (((0x12 * 8) + 8) + 4), 2, Get_Item_Sprite_ID(Check_Flag(0x191)));
+            }
+            break;
+        case 1:
+            Spawn_Item_On_Grid(0, ((0x14 * 8) + 8), ((0x12 * 8) + 8), 2, Get_Item_Sprite_ID(0x94));
+            Spawn_Item_On_Grid(1, ((0x17 * 8) + 8), ((0x12 * 8) + 8), 2, Get_Item_Sprite_ID(0x90));
+            Spawn_Item_On_Grid(2, ((0x1A * 8) + 8), (((0x12 * 8) + 8) + 1), 2, Get_Item_Sprite_ID(0x71));
+            Spawn_Item_On_Grid(3, ((0x1D * 8) + 8), ((0x12 * 8) + 8), 2, Get_Item_Sprite_ID(0x8E));
+            Spawn_Item_On_Grid(4, ((0x20 * 8) + 8), ((0x12 * 8) + 8), 2, Get_Item_Sprite_ID(0x9D));
+            if ((Check_Flag(0x18F) == 1)) {
+                Spawn_Item_On_Grid(5, ((0x23 * 8) + 8), ((0x12 * 8) + 8), 2, Get_Item_Sprite_ID(Check_Flag(0x191)));
+            }
+            break;
+        case 2:
+            Spawn_Item_On_Grid(0, ((0x14 * 8) + 8), (((0x12 * 8) + 8) - 2), 2, Get_Item_Sprite_ID(0x7E));
+            Spawn_Item_On_Grid(1, ((0x17 * 8) + 8), (((0x12 * 8) + 8) - 2), 2, Get_Item_Sprite_ID(0x7B));
+            Spawn_Item_On_Grid(2, ((0x1A * 8) + 8), ((0x12 * 8) + 8), 2, Get_Item_Sprite_ID(0x7A));
+            Spawn_Item_On_Grid(3, ((0x1D * 8) + 8), ((0x12 * 8) + 8), 2, Get_Item_Sprite_ID(0x7A));
+            Spawn_Item_On_Grid(4, ((0x20 * 8) + 8), ((0x12 * 8) + 8), 2, Get_Item_Sprite_ID(0x9E));
+            if ((Check_Flag(0x18F) == 1)) {
+                Spawn_Item_On_Grid(5, ((0x23 * 8) + 8), (((0x12 * 8) + 8) - 1), 2, Get_Item_Sprite_ID(Check_Flag(0x191)));
+            }
+            break;
+        case 3:
+            Spawn_Item_On_Grid(0, ((0x14 * 8) + 8), (((0x12 * 8) + 8) + 2), 2, Get_Item_Sprite_ID(0x86));
+            Spawn_Item_On_Grid(1, ((0x17 * 8) + 8), ((0x12 * 8) + 8), 2, Get_Item_Sprite_ID(0x85));
+            Spawn_Item_On_Grid(2, ((0x1A * 8) + 8), ((0x12 * 8) + 8), 2, Get_Item_Sprite_ID(0x84));
+            Spawn_Item_On_Grid(3, ((0x1D * 8) + 8), ((0x12 * 8) + 8), 2, Get_Item_Sprite_ID(0x83));
+            Spawn_Item_On_Grid(4, ((0x20 * 8) + 8), ((0x12 * 8) + 8), 2, Get_Item_Sprite_ID(0x9F));
+            if ((Check_Flag(0x18F) == 1)) {
+                Spawn_Item_On_Grid(5, ((0x23 * 8) + 8), ((0x12 * 8) + 8), 2, Get_Item_Sprite_ID(Check_Flag(0x191)));
+            }
+            break;
+        case 4:
+            Spawn_Item_On_Grid(0, ((0x14 * 8) + 8), ((0x12 * 8) + 8), 2, Get_Item_Sprite_ID(0x51));
+            Spawn_Item_On_Grid(1, ((0x17 * 8) + 8), ((0x12 * 8) + 8), 2, Get_Item_Sprite_ID(0x6D));
+            Spawn_Item_On_Grid(2, ((0x1A * 8) + 8), ((0x12 * 8) + 8), 2, Get_Item_Sprite_ID(0x4D));
+            Spawn_Item_On_Grid(3, ((0x1D * 8) + 8), (((0x12 * 8) + 8) + 4), 2, Get_Item_Sprite_ID(0x77));
+            Spawn_Item_On_Grid(4, ((0x20 * 8) + 8), (((0x12 * 8) + 8) + 1), 2, Get_Item_Sprite_ID(0x3F));
+            if ((Check_Flag(0x18F) == 1)) {
+                Spawn_Item_On_Grid(5, ((0x23 * 8) + 8), ((0x12 * 8) + 8), 2, Get_Item_Sprite_ID(Check_Flag(0x191)));
+            }
+            break;
+    }
+    Fade_In(2, 1);
+    TalkOpen();
+    Set_Portrait(0x75);
+    Set_Name_Window(0xD);
+    TalkMessage(0);
+    Set_Portrait(0x76);
+    Set_Name_Window(0xD);
+    TalkMessage(1);
+    TalkClose();
+    SetEntityAnim(0x18, 0x7B6);
+    Set_Vector_X(0x18, 0xA7, 1);
+    Execute_Movement(0x18);
+    SetEntityAnim(0x18, 0x7B2);
+    SetEntityFacing(0x18, "Up");
+    SetEntityFacing(0x1E, "Left");
+    SetEntityAnim(0x1E, 0x67D);
+    Set_Vector_X(0x1E, 0xA7, 1);
+    Execute_Movement(0x1E);
+    SetEntityAnim(0x1E, 0x679);
+    SetEntityFacing(0x1E, "Down");
+    Make_Delay(0x3C);
+    SetEntityAnim(0x1E, 0x681);
+    Make_Delay(0x3C);
+    Show_Emote(0x1E, 9, 0);
+    Make_Delay((0x3C * 4));
+    TalkOpen();
+    Set_Name_Window(0x1E);
+    switch (var_1) {
+        case 0:
+            Set_Portrait(0x3C);
+            TalkMessage(2);
+            break;
+        case 1:
+            Set_Portrait(0x3C);
+            TalkMessage(3);
+            break;
+        case 2:
+            Set_Portrait(0x3C);
+            TalkMessage(4);
+            break;
+        case 3:
+            Set_Portrait(0x3C);
+            TalkMessage(5);
+            break;
+        case 4:
+            Set_Portrait(0x3C);
+            TalkMessage(6);
+            break;
+    }
+    TalkClose();
+    SetEntityAnim(0x1E, 0x679);
+    SetEntityFacing(0x18, "Right");
+    SetEntityAnim(0x18, 0x7B6);
+    Set_Vector_X(0x18, 0x174, 1);
+    Execute_Movement(0x18);
+    SetEntityAnim(0x18, 0x7B2);
+    Hide_Entity(0x18);
+    SetEntityFacing(0x1E, "Right");
+    SetEntityAnim(0x1E, 0x67D);
+    Set_Vector_X(0x1E, 0xBF, 1);
+    Execute_Movement(0x1E);
+    SetEntityAnim(0x1E, 0x679);
+    SetEntityFacing(0x1E, "Down");
+    TalkOpen();
+    Set_Portrait(0x76);
+    Set_Name_Window(0xD);
+    TalkMessage(7);
+    TalkClose();
+    SetEntityAnim(0x19, 0x7C2);
+    Set_Vector_X(0x19, 0xBF, 1);
+    Execute_Movement(0x19);
+    SetEntityAnim(0x19, 0x7BE);
+    SetEntityFacing(0x19, "Up");
+    Make_Delay(0x3C);
+    SetEntityAnim(0x1E, 0x681);
+    Make_Delay(0x3C);
+    Show_Emote(0x1E, 9, 0);
+    Make_Delay((0x3C * 4));
+    TalkOpen();
+    Set_Name_Window(0x1E);
+    switch (var_1) {
+        case 0:
+            Set_Portrait(0x3C);
+            TalkMessage(8);
+            break;
+        case 1:
+            Set_Portrait(0x3C);
+            TalkMessage(9);
+            break;
+        case 2:
+            Set_Portrait(0x3C);
+            TalkMessage(10);
+            break;
+        case 3:
+            Set_Portrait(0x3C);
+            TalkMessage(11);
+            break;
+        case 4:
+            Set_Portrait(0x3C);
+            TalkMessage(12);
+            break;
+    }
+    TalkClose();
+    SetEntityAnim(0x1E, 0x679);
+    SetEntityFacing(0x19, "Right");
+    SetEntityAnim(0x19, 0x7C2);
+    Set_Vector_X(0x19, 0x174, 1);
+    Execute_Movement(0x19);
+    SetEntityAnim(0x19, 0x7BE);
+    Hide_Entity(0x19);
+    SetEntityFacing(0x1E, "Right");
+    SetEntityAnim(0x1E, 0x67D);
+    Set_Vector_X(0x1E, 0xD7, 1);
+    Execute_Movement(0x1E);
+    SetEntityAnim(0x1E, 0x679);
+    SetEntityFacing(0x1E, "Down");
+    TalkOpen();
+    Set_Portrait(0x76);
+    Set_Name_Window(0xD);
+    TalkMessage(13);
+    TalkClose();
+    SetEntityAnim(1, 0x263);
+    Set_Vector_X(1, 0xD7, 1);
+    Execute_Movement(1);
+    SetEntityAnim(1, 0x25F);
+    SetEntityFacing(1, "Up");
+    Make_Delay(0x3C);
+    SetEntityAnim(0x1E, 0x681);
+    Make_Delay(0x3C);
+    Show_Emote(0x1E, 9, 0);
+    Make_Delay((0x3C * 4));
+    TalkOpen();
+    Set_Name_Window(0x1E);
+    switch (var_1) {
+        case 0:
+            Set_Portrait(0x3C);
+            TalkMessage(14);
+            break;
+        case 1:
+            Set_Portrait(0x3C);
+            TalkMessage(15);
+            break;
+        case 2:
+            Set_Portrait(0x3C);
+            TalkMessage(16);
+            break;
+        case 3:
+            Set_Portrait(0x3C);
+            TalkMessage(17);
+            break;
+        case 4:
+            Set_Portrait(0x3C);
+            TalkMessage(18);
+            break;
+    }
+    TalkClose();
+    SetEntityAnim(0x1E, 0x679);
+    SetEntityFacing(1, "Right");
+    SetEntityAnim(1, 0x263);
+    Set_Vector_X(1, 0x174, 1);
+    Execute_Movement(1);
+    SetEntityAnim(1, 0x25F);
+    Hide_Entity(1);
+    SetEntityFacing(0x1E, "Right");
+    SetEntityAnim(0x1E, 0x67D);
+    Set_Vector_X(0x1E, 0xEF, 1);
+    Execute_Movement(0x1E);
+    SetEntityAnim(0x1E, 0x679);
+    SetEntityFacing(0x1E, "Down");
+    TalkOpen();
+    Set_Portrait(0x76);
+    Set_Name_Window(0xD);
+    TalkMessage(19);
+    TalkClose();
+    SetEntityAnim(9, 0x8D4);
+    Set_Vector_X(9, 0xEF, 1);
+    Execute_Movement(9);
+    SetEntityAnim(9, 0x8D0);
+    SetEntityFacing(9, "Up");
+    Make_Delay(0x3C);
+    SetEntityAnim(0x1E, 0x681);
+    Make_Delay(0x3C);
+    Show_Emote(0x1E, 9, 0);
+    Make_Delay((0x3C * 4));
+    TalkOpen();
+    Set_Name_Window(0x1E);
+    switch (var_1) {
+        case 0:
+            Set_Portrait(0x3C);
+            TalkMessage(20);
+            break;
+        case 1:
+            Set_Portrait(0x3C);
+            TalkMessage(21);
+            break;
+        case 2:
+            Set_Portrait(0x3C);
+            TalkMessage(22);
+            break;
+        case 3:
+            Set_Portrait(0x3C);
+            TalkMessage(23);
+            break;
+        case 4:
+            Set_Portrait(0x3C);
+            TalkMessage(24);
+            break;
+    }
+    TalkClose();
+    SetEntityAnim(0x1E, 0x679);
+    SetEntityFacing(9, "Right");
+    SetEntityAnim(9, 0x8D4);
+    Set_Vector_X(9, 0x174, 1);
+    Execute_Movement(9);
+    SetEntityAnim(9, 0x8D0);
+    Hide_Entity(9);
+    SetEntityFacing(0x1E, "Right");
+    SetEntityAnim(0x1E, 0x67D);
+    Set_Vector_X(0x1E, 0x107, 1);
+    Execute_Movement(0x1E);
+    SetEntityAnim(0x1E, 0x679);
+    SetEntityFacing(0x1E, "Down");
+    TalkOpen();
+    Set_Portrait(0x76);
+    Set_Name_Window(0xD);
+    if ((Check_Flag(0x18F) == 0)) {
+        TalkMessage(25);
+    } else {
+        TalkMessage(26);
+    }
+    TalkClose();
+    SetEntityAnim(0x13, 0x695);
+    Set_Vector_X(0x13, 0x107, 1);
+    Execute_Movement(0x13);
+    SetEntityAnim(0x13, 0x691);
+    SetEntityFacing(0x13, "Up");
+    Make_Delay(0x3C);
+    SetEntityAnim(0x1E, 0x681);
+    Make_Delay(0x3C);
+    switch (var_1) {
+        case 0:
+        case 1:
+        case 2:
+        case 3:
+            Show_Emote(0x1E, 0xA, 0);
+            Make_Delay((0x3C * 4));
+            break;
+        case 4:
+            Make_Delay((0x3C * 3));
+            break;
+    }
+    TalkOpen();
+    Set_Name_Window(0x1E);
+    switch (var_1) {
+        case 0:
+            Set_Portrait(0x3E);
+            TalkMessage(27);
+            break;
+        case 1:
+            Set_Portrait(0x3D);
+            TalkMessage(28);
+            break;
+        case 2:
+            Set_Portrait(0x3E);
+            TalkMessage(29);
+            break;
+        case 3:
+            Set_Portrait(0x3D);
+            TalkMessage(30);
+            break;
+        case 4:
+            Set_Portrait(0x3B);
+            TalkMessage(31);
+            break;
+    }
+    TalkClose();
+    SetEntityAnim(0x1E, 0x679);
+    SetEntityFacing(0x13, "Right");
+    SetEntityAnim(0x13, 0x695);
+    Set_Vector_X(0x13, 0x174, 1);
+    Execute_Movement(0x13);
+    SetEntityAnim(0x13, 0x691);
+    Hide_Entity(0x13);
+    if ((Check_Flag(0x18F) == 0)) {
+        TalkOpen();
+        Set_Portrait(0x75);
+        Set_Name_Window(0xD);
+        TalkMessage(32);
+        TalkClose();
+        Fade_Out(2, 1);
+        Despawn_Map_Item(0);
+        Despawn_Map_Item(1);
+        Despawn_Map_Item(2);
+        Despawn_Map_Item(3);
+        Despawn_Map_Item(4);
+        Set_Time(0x12, 0);
+        Execute_Script(1129);
+    } else {
+        SetEntityFacing(0x1E, "Right");
+        SetEntityAnim(0x1E, 0x67D);
+        Set_Vector_X(0x1E, 0x11F, 1);
+        Execute_Movement(0x1E);
+        SetEntityAnim(0x1E, 0x679);
+        SetEntityFacing(0x1E, "Down");
+        TalkOpen();
+        Set_Portrait(0x76);
+        Set_Name_Window(0xD);
+        TalkMessage(33);
+        TalkClose();
+        SetEntityAnim(0, 0x1C6);
+        Set_Vector_X(0, 0x11F, 1);
+        Execute_Movement(0);
+        SetEntityAnim(0, 0x192);
+        SetEntityFacing(0, "Up");
+        Make_Delay(0x3C);
+        SetEntityAnim(0x1E, 0x681);
+        Make_Delay(0x3C);
+        Show_Emote(0x1E, 6, 0);
+        Make_Delay(0x3C);
+        TalkOpen();
+        Set_Name_Window(0x1E);
+        Set_Portrait(0x3B);
+        TalkMessage(34);
+        TalkClose();
+        Fade_Out(1, 1);
+        switch (Check_Flag(0x190)) {
+            case 0:
+                Warp_Player(8, 0xEC, 0x46);
+                PlayBGM(1, 7);
+                SetEntityPosition(0x1E, 0xEC, 0x46, "Down");
+                SetEntityAnim(0x1E, 0x681);
+                Fade_In(1, 1);
+                Trigger_Screen_Flash();
+                Show_Emote(0x1E, 9, 0);
+                Make_Delay((0x3C * 4));
+                TalkOpen();
+                Set_Name_Window(0x1E);
+                Set_Portrait(0x3C);
+                TalkMessage(35);
+                TalkClose();
+                Wait_For_Animation(0x1E);
+                SetEntityAnim(0x1E, 0x679);
+                Fade_Out(1, 1);
+                break;
+            case 1:
+                Warp_Player(0x2D, 0xEC, 0x146);
+                PlayBGM(1, 7);
+                SetEntityPosition(0x1E, 0xEC, 0x146, "Down");
+                SetEntityAnim(0x1E, 0x681);
+                Fade_In(1, 1);
+                Show_Emote(0x1E, 9, 0);
+                Make_Delay((0x3C * 4));
+                TalkOpen();
+                Set_Name_Window(0x1E);
+                Set_Portrait(0x3C);
+                TalkMessage(36);
+                TalkClose();
+                Wait_For_Animation(0x1E);
+                SetEntityAnim(0x1E, 0x679);
+                Fade_Out(1, 1);
+                break;
+            case 2:
+                SetEntityAnim(0x1E, 0x681);
+                Make_Delay(0x3C);
+                Fade_In(1, 1);
+                TalkOpen();
+                Set_Name_Window(0x1E);
+                Set_Portrait(0x3B);
+                TalkMessage(37);
+                TalkClose();
+                SetEntityAnim(0x1E, 0x679);
+                Fade_Out(1, 1);
+                break;
+            case 3:
+                Warp_Player(0x2E, 0xEC, 0x146);
+                PlayBGM(1, 7);
+                SetEntityPosition(0x1E, 0xEC, 0x146, "Down");
+                SetEntityAnim(0x1E, 0x681);
+                Fade_In(1, 1);
+                Show_Emote(0x1E, 6, 1);
+                Make_Delay(0x3C);
+                TalkOpen();
+                Set_Name_Window(0x1E);
+                Set_Portrait(0x3B);
+                TalkMessage(38);
+                TalkClose();
+                Wait_For_Animation(0x1E);
+                SetEntityAnim(0x1E, 0x679);
+                Fade_Out(1, 1);
+                break;
+            case 4:
+                Warp_Player(0x2F, 0xEC, 0x146);
+                PlayBGM(1, 7);
+                SetEntityPosition(0x1E, 0xEC, 0x146, "Down");
+                SetEntityAnim(0x1E, 0x681);
+                Fade_In(1, 1);
+                Show_Emote(0x1E, 0xA, 0);
+                Make_Delay((0x3C * 4));
+                TalkOpen();
+                Set_Name_Window(0x1E);
+                Set_Portrait(0x3E);
+                TalkMessage(39);
+                TalkClose();
+                Wait_For_Animation(0x1E);
+                SetEntityAnim(0x1E, 0x679);
+                Fade_Out(1, 1);
+                break;
+            case 5:
+                SetEntityAnim(0x1E, 0x681);
+                Make_Delay(0x3C);
+                Fade_In(1, 1);
+                Show_Emote(0x1E, 0, 1);
+                Make_Delay(0x3C);
+                TalkOpen();
+                Set_Name_Window(0x1E);
+                Set_Portrait(0x3D);
+                TalkMessage(40);
+                TalkClose();
+                Wait_For_Animation(0x1E);
+                SetEntityAnim(0x1E, 0x679);
+                Fade_Out(1, 1);
+                break;
+        }
+        Warp_Player(6, 0xDC, 0x8E);
+        PlayBGM(1, 7);
+        SetEntityPosition(0xD, 0xB4, 0x66, "Down");
+        SetEntityAnim(0xD, 0x85F);
+        SetEntityPosition(0x1E, 0x11F, 0x82, "Down");
+        SetEntityAnim(0x1E, 0x679);
+        SetEntityPosition(0, 0x11F, 0xAE, "Up");
+        SetEntityAnim(0, 0x192);
+        Fade_In(1, 1);
+        Make_Delay(0x3C);
+        SetEntityFacing(0, "Right");
+        SetEntityAnim(0, 0x1C6);
+        Set_Vector_X(0, 0x174, 1);
+        Execute_Movement(0);
+        SetEntityAnim(0, 0x192);
+        TalkOpen();
+        Set_Portrait(0x75);
+        Set_Name_Window(0xD);
+        TalkMessage(32);
+        TalkClose();
+        Fade_Out(2, 1);
+        Despawn_Map_Item(0);
+        Despawn_Map_Item(1);
+        Despawn_Map_Item(2);
+        Despawn_Map_Item(3);
+        Despawn_Map_Item(4);
+        Despawn_Map_Item(5);
+        Set_Time(0x12, 0);
+        Execute_Script(1129);
+    }
+    exit;
+}

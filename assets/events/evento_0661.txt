@@ -1,0 +1,233 @@
+// Script 661
+#include "Fomt_Lib.src"
+
+script 661 Event_0661 {
+    const MESSAGE_0 = "I think it\x81fs about time!\BRK";
+    const MESSAGE_1 = "Ugh!...I give up!\BRK";
+    const MESSAGE_2 = "You can do it!\r\nJust a little more now!\BRK";
+    const MESSAGE_3 = "Don't worry. \r\nYou're doing great.\BRK";
+    const MESSAGE_4 = "It hurts...!!\BRK";
+    const MESSAGE_5 = "\xFF)!\BRK";
+    const MESSAGE_6 = "I wish Elli's mother could\r\nhave been here now...\BRK";
+    const MESSAGE_7 = "It's a healthy boy. \r\nYou should go be with \r\nElli now.\BRK";
+    const MESSAGE_8 = "I've witnessed so many \r\nbirths, but my own baby is \r\ndefinitely the cutest!\BRK\WAIT_CLICKHave you thought of a good\r\nname, \xFF)?\BRK";
+    const MESSAGE_9 = "\xFF*...\r\nI think it fits him well!\BRK";
+    const MESSAGE_10 = "Now I'm a father!\r\nI love you, \xFF*.\BRK";
+    
+    Warp_Player(0x1D, 0x75, 0x94);
+    PlayBGM(1, 0x11);
+    SetEntityPosition(0, 0x75, 0x94, "Up");
+    if (Inventory_Check()) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    SetEntityPosition(0xF, 0x75, 0x7C, "Down");
+    SetEntityAnim(0xF, 0x685);
+    Fade_In(2, 1);
+    Set_Flag(0xCA, 1);
+    SetEntityFacing(0, "Left");
+    if (Inventory_Check()) {
+        SetEntityAnim(0, 0x1C6);
+    } else {
+        SetEntityAnim(0, 0x156);
+    }
+    Set_Vector_X(0, 0x4B, 1);
+    Execute_Movement(0);
+    if (Inventory_Check()) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    Make_Delay(0x3C);
+    SetEntityFacing(0, "Right");
+    if (Inventory_Check()) {
+        SetEntityAnim(0, 0x1C6);
+    } else {
+        SetEntityAnim(0, 0x156);
+    }
+    Set_Vector_X(0, 0xA5, 1);
+    Execute_Movement(0);
+    if (Inventory_Check()) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    Make_Delay(0x3C);
+    SetEntityFacing(0, "Left");
+    if (Inventory_Check()) {
+        SetEntityAnim(0, 0x1C6);
+    } else {
+        SetEntityAnim(0, 0x156);
+    }
+    Set_Vector_X(0, 0x75, 1);
+    Execute_Movement(0);
+    if (Inventory_Check()) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    TalkOpen();
+    Set_Name_Window(0xF);
+    Set_Portrait(0x40);
+    TalkMessage(0);
+    TalkClose();
+    SetEntityFacing(0, "Up");
+    Make_Delay(0x3C);
+    TalkOpen();
+    Set_Name_Window(0x15);
+    TalkMessage(1);
+    Set_Name_Window(0x14);
+    TalkMessage(2);
+    TalkClose();
+    Show_Emote(0, 2, 0);
+    Make_Delay(0x3C);
+    SetEntityFacing(0, "Right");
+    TalkOpen();
+    Set_Name_Window(0xF);
+    Set_Portrait(0x40);
+    TalkMessage(3);
+    TalkClose();
+    SetEntityAnim(0, 0x1FE);
+    Make_Delay(0x3C);
+    if (Inventory_Check()) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    Make_Delay(0x3C);
+    SetEntityFacing(0, "Left");
+    if (Inventory_Check()) {
+        SetEntityAnim(0, 0x1C6);
+    } else {
+        SetEntityAnim(0, 0x156);
+    }
+    Set_Vector_X(0, 0x4B, 1);
+    Execute_Movement(0);
+    if (Inventory_Check()) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    Make_Delay(0x3C);
+    TalkOpen();
+    Set_Name_Window(0x15);
+    TalkMessage(4);
+    TalkClose();
+    SetEntityFacing(0, "Right");
+    if (Inventory_Check()) {
+        SetEntityAnim(0, 0x1C6);
+    } else {
+        SetEntityAnim(0, 0x156);
+    }
+    Set_Vector_X(0, 0xA5, 1);
+    Execute_Movement(0);
+    if (Inventory_Check()) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    Make_Delay(0x3C);
+    TalkOpen();
+    Set_Name_Window(0x15);
+    TalkMessage(5);
+    TalkClose();
+    SetEntityFacing(0, "Left");
+    if (Inventory_Check()) {
+        SetEntityAnim(0, 0x1C6);
+    } else {
+        SetEntityAnim(0, 0x156);
+    }
+    Set_Vector_X(0, 0x75, 1);
+    Execute_Movement(0);
+    if (Inventory_Check()) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    Make_Delay(0x3C);
+    PlaySong(0, 0xAC);
+    Make_Delay(0x3C);
+    PlaySong(0, 0xAC);
+    Make_Delay(0x3C);
+    Show_Emote(0, 2, 0);
+    Make_Delay((0x3C * 2));
+    Fade_Out(2, 1);
+    Warp_Player(0x1D, 0x1AE, 0x7C);
+    PlayBGM(1, 0x11);
+    SetEntityPosition(0, 0x1AE, 0x7C, "Up");
+    if (Inventory_Check()) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    SetEntityPosition(0x15, 0x1B8, -0x30, "Down");
+    SetEntityAnim(0x15, 0x89C);
+    Proc12D();
+    SetEntityPosition(0x23, 0x1A0, -0x30, "Down");
+    SetEntityAnim(0x23, 8);
+    SetEntityPosition(0xF, 0x198, 0x64, "Right");
+    SetEntityAnim(0xF, 0x685);
+    SetEntityPosition(0x14, 0x1C4, 0x7C, "Left");
+    SetEntityAnim(0x14, 0x320);
+    Fade_In(2, 1);
+    TalkOpen();
+    Set_Name_Window(0xF);
+    Set_Portrait(0x40);
+    TalkMessage(6);
+    TalkClose();
+    TalkOpen();
+    Set_Portrait(0x24);
+    Set_Name_Window(0x14);
+    TalkMessage(7);
+    TalkClose();
+    SetEntityAnim(0, 0x1FE);
+    Make_Delay(0x3C);
+    if (Inventory_Check()) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    Make_Delay(0x3C);
+    if (Inventory_Check()) {
+        SetEntityAnim(0, 0x1C6);
+    } else {
+        SetEntityAnim(0, 0x156);
+    }
+    Set_Vector_Y(0, 0x64, 1);
+    Execute_Movement(0);
+    if (Inventory_Check()) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    Make_Delay(0x3C);
+    TalkOpen();
+    Set_Name_Window(0x15);
+    Set_Portrait(0x7A);
+    Set_Hearth_Anim(0x15);
+    TalkMessage(8);
+    TalkClose();
+    Fade_Out(3, 1);
+    Trigger_Naming_Sequence(0);
+    Fade_In(3, 1);
+    TalkOpen();
+    Set_Name_Window(0x15);
+    Set_Portrait(0x7A);
+    Set_Hearth_Anim(0x15);
+    TalkMessage(9);
+    TalkClose();
+    Free_Event_Entity(0x15);
+    Free_Event_Entity(0xF);
+    Free_Event_Entity(0x14);
+    Give_Love_Points(0x15, 0xBB8);
+    Give_Friendship_Points(0xF, 0x14);
+    Give_Friendship_Points(0x14, 0x14);
+    Set_Flag(0xCA, 2);
+    Fade_Out(2, 1);
+    TalkOpen();
+    TalkMessage(10);
+    TalkClose();
+    Execute_Script(988);
+    exit;
+}

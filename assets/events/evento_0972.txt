@@ -1,0 +1,11 @@
+// Script 972
+#include "Fomt_Lib.src"
+
+script 972 Event_0972 {
+    const MESSAGE_0 = "Your Axe can't\r\ncut this stump unless it's\r\nLV2 or higher.\BRK";
+    
+    TalkOpen();
+    Print_Message(0);
+    TalkClose();
+    exit;
+}

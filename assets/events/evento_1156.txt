@@ -1,0 +1,38 @@
+// Script 1156
+#include "Fomt_Lib.src"
+
+script 1156 Event_1156 {
+    const MESSAGE_0 = "I knew who would win from\r\nthe start. \BRK";
+    const MESSAGE_1 = "I knew your Chicken was \r\nthe strongest from the \r\nEggs it lays! \BRK";
+    const MESSAGE_2 = "Is your Chicken having an \r\noff day? Is he really the \r\nstrongest on your farm? \BRK";
+    
+    if ((Check_If_Single(0x18) == 0)) {
+        Free_Event_Entity(0x18);
+    }
+    SetEntityFacing(0x18, GetOppositeFacing(GetEntityFacing(0)));
+    if ((Check_Flag(0x197) == 0)) {
+        TalkOpen();
+        Set_Portrait(0x53);
+        Set_Name_Window(0x18);
+        TalkMessage(0);
+    } else {
+        if ((Check_Flag(0x199) == 1)) {
+            TalkOpen();
+            Set_Portrait(0x54);
+            Set_Name_Window(0x18);
+            TalkMessage(1);
+            goto LBL_0006;
+        }
+        TalkOpen();
+        Set_Portrait(0x56);
+        Set_Name_Window(0x18);
+        TalkMessage(2);
+    }
+    TalkClose();
+    if ((Has_Spoken_To_NPC_Today(0x18) == 0)) {
+        Give_Friendship_Points(0x18, 5);
+    }
+    Free_Event_Entity(0x18);
+    SetEntityFacing(0x18, "Left");
+    exit;
+}

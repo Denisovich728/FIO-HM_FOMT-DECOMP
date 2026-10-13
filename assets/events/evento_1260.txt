@@ -1,0 +1,30 @@
+// Script 1260
+#include "Fomt_Lib.src"
+
+script 1260 Event_1260 {
+    const MESSAGE_0 = "I begged by grampa to \r\nlet me come today! \r\nNow who should I bet on...\BRK";
+    const MESSAGE_1 = "You're racing, \xFF!?\r\nGreat! I'll bet on you,\r\nthen! \BRK";
+    
+    if ((Check_If_Single(7) == 0)) {
+        Free_Event_Entity(7);
+    }
+    SetEntityFacing(7, GetOppositeFacing(GetEntityFacing(0)));
+    if ((Check_Flag(0x1AB) == 0)) {
+        TalkOpen();
+        Set_Portrait(0xA1);
+        Set_Name_Window(7);
+        TalkMessage(0);
+    } else {
+        TalkOpen();
+        Set_Portrait(0xA1);
+        Set_Name_Window(7);
+        TalkMessage(1);
+    }
+    TalkClose();
+    if ((Has_Spoken_To_NPC_Today(7) == 0)) {
+        Give_Friendship_Points(7, 5);
+    }
+    Free_Event_Entity(7);
+    SetEntityFacing(7, "Down");
+    exit;
+}

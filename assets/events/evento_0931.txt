@@ -1,0 +1,16 @@
+// Script 931
+#include "Fomt_Lib.src"
+
+script 931 Event_0931 {
+    const MESSAGE_0 = "Mary\x81fs novel... I can't\r\nwait to read it!\BRK";
+    
+    SetEntityFacing(7, GetOppositeFacing(GetEntityFacing(0)));
+    TalkOpen();
+    Set_Portrait(0xA1);
+    Set_Name_Window(7);
+    TalkMessage(0);
+    TalkClose();
+    SetEntityFacing(7, "Right");
+    Free_Event_Entity(7);
+    exit;
+}

@@ -1,0 +1,30 @@
+// Script 1263
+#include "Fomt_Lib.src"
+
+script 1263 Event_1263 {
+    const MESSAGE_0 = "I look forward to this \r\nday every year. \BRK";
+    const MESSAGE_1 = "You're racing? My advice\r\nis to just have fun. \BRK";
+    
+    if ((Check_If_Single(4) == 0)) {
+        Free_Event_Entity(4);
+    }
+    SetEntityFacing(4, GetOppositeFacing(GetEntityFacing(0)));
+    if ((Check_Flag(0x1AB) == 0)) {
+        TalkOpen();
+        Set_Portrait(0xB5);
+        Set_Name_Window(4);
+        TalkMessage(0);
+    } else {
+        TalkOpen();
+        Set_Portrait(0xB4);
+        Set_Name_Window(4);
+        TalkMessage(1);
+    }
+    TalkClose();
+    if ((Has_Spoken_To_NPC_Today(4) == 0)) {
+        Give_Friendship_Points(4, 5);
+    }
+    Free_Event_Entity(4);
+    SetEntityFacing(4, "Right");
+    exit;
+}

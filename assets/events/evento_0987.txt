@@ -1,0 +1,82 @@
+// Script 987
+#include "Fomt_Lib.src"
+
+script 987 Event_0987 {
+    const MESSAGE_0 = "I'll get today's shipment!\BRK";
+    const MESSAGE_1 = "You're shipping a lot today!\r\nKeep up the good work!\BRK";
+    const MESSAGE_2 = "What? You have nothing\r\nto ship today?\BRK";
+    const MESSAGE_3 = "Why don't you keep chickens?\r\nIf you feed them everyday,\r\nthey'll lay eggs.\BRK";
+    const MESSAGE_4 = "Why don't you keep cows?\r\nIf you take good care of\r\nthem, they'll grow up and\BRK\r\nproduce milk.\BRK";
+    const MESSAGE_5 = "Why don't you keep sheep?\r\nIf you take good care of\r\nthem, they'll grow and\BRK\r\ngive you wool.\BRK";
+    const MESSAGE_6 = "There are some ores from the\r\nmine that you can sell.\r\nWhy don't you go dig\BRK\r\nsome up?\BRK";
+    const MESSAGE_7 = "You can got to the lake mine\r\nin the winter. I heard\r\nthere are gems in that one.\BRK\r\nGo dig some up.\BRK";
+    const MESSAGE_8 = "You can sell some items from\r\nthe mountains and forests.\r\nGo look for them.\BRK";
+    const MESSAGE_9 = "Why don't you grow some\r\ncrops? Seeds are at the\r\nsupermarket.\BRK";
+    const MESSAGE_10 = "Do you fish? Selling fish\r\nwill make you money.\BRK";
+    
+    var var_0;
+    
+    if (((GetEntityLocation(0) == 2) && (GetEntityLocation(0x1C) == 2))) {
+        Set_Goddess_Appearance_Flash(1);
+        TalkOpen();
+        Set_Name_Window(0x1C);
+        var_0 = Func145();
+        if (var_0) {
+            if ((var_0 <= 0x4E20)) {
+                Set_Portrait(0x1F);
+                TalkMessage(0);
+            } else {
+                Set_Portrait(0x20);
+                TalkMessage(1);
+            }
+        } else {
+            Set_Portrait(0x21);
+            TalkMessage(2);
+            switch (Check_Flag(0x24D)) {
+                case 0:
+                    Set_Portrait(0x20);
+                    TalkMessage(3);
+                    Set_Flag(0x24D, (Check_Flag(0x24D) + 1));
+                    break;
+                case 1:
+                    Set_Portrait(0x1F);
+                    TalkMessage(4);
+                    Set_Flag(0x24D, (Check_Flag(0x24D) + 1));
+                    break;
+                case 2:
+                    Set_Portrait(0x1F);
+                    TalkMessage(5);
+                    Set_Flag(0x24D, (Check_Flag(0x24D) + 1));
+                    break;
+                case 3:
+                    Set_Portrait(0x22);
+                    TalkMessage(6);
+                    Set_Flag(0x24D, (Check_Flag(0x24D) + 1));
+                    break;
+                case 4:
+                    Set_Portrait(0x20);
+                    TalkMessage(7);
+                    Set_Flag(0x24D, (Check_Flag(0x24D) + 1));
+                    break;
+                case 5:
+                    Set_Portrait(0x1F);
+                    TalkMessage(8);
+                    Set_Flag(0x24D, (Check_Flag(0x24D) + 1));
+                    break;
+                case 6:
+                    Set_Portrait(0x1F);
+                    TalkMessage(9);
+                    Set_Flag(0x24D, (Check_Flag(0x24D) + 1));
+                    break;
+                case 7:
+                    Set_Portrait(0x1F);
+                    TalkMessage(10);
+                    Set_Flag(0x24D, 0);
+                    break;
+            }
+        }
+        TalkClose();
+        Set_Goddess_Appearance_Flash(0);
+    }
+    exit;
+}

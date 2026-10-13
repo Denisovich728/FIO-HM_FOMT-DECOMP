@@ -1,0 +1,38 @@
+// Script 1183
+#include "Fomt_Lib.src"
+
+script 1183 Event_1183 {
+    const MESSAGE_0 = "It's always good to see \r\nall the different Cows. \BRK";
+    const MESSAGE_1 = "Congratulations! \r\nTruly a magnificent \r\naccomplishment!\BRK";
+    const MESSAGE_2 = "I thought you should have \r\nwon, \xFF!. \r\nTry again next year. \BRK";
+    
+    if ((Check_If_Single(0xD) == 0)) {
+        Free_Event_Entity(0xD);
+    }
+    SetEntityFacing(0xD, GetOppositeFacing(GetEntityFacing(0)));
+    if ((Check_Flag(0x19B) == 0)) {
+        TalkOpen();
+        Set_Portrait(0x75);
+        Set_Name_Window(0xD);
+        TalkMessage(0);
+    } else {
+        if ((Check_Flag(0x19D) == 1)) {
+            TalkOpen();
+            Set_Portrait(0x76);
+            Set_Name_Window(0xD);
+            TalkMessage(1);
+            goto LBL_0006;
+        }
+        TalkOpen();
+        Set_Portrait(0x75);
+        Set_Name_Window(0xD);
+        TalkMessage(2);
+    }
+    TalkClose();
+    if ((Has_Spoken_To_NPC_Today(0xD) == 0)) {
+        Give_Friendship_Points(0xD, 5);
+    }
+    Free_Event_Entity(0xD);
+    SetEntityFacing(0xD, "Right");
+    exit;
+}

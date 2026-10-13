@@ -1,0 +1,11 @@
+// Script 494
+#include "Fomt_Lib.src"
+
+script 494 Event_0494 {
+    const MESSAGE_0 = "Woodcutter's \r\nOpen 11AM-4PM\r\nClosed Saturdays\BRK";
+    
+    TalkOpen();
+    Print_Message(0);
+    TalkClose();
+    exit;
+}

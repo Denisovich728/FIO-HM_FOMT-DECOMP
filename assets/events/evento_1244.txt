@@ -1,0 +1,256 @@
+// Script 1244
+#include "Fomt_Lib.src"
+
+script 1244 Event_1244 {
+    const MESSAGE_0 = "I heard that this was the \r\nbest spot for moon viewing.\r\nCan we sit together?\BRK";
+    const MESSAGE_1 = "Today is moon viewing, \r\nyou know. \r\nWant to go together? \BRK";
+    const MESSAGE_2 = "Imagine meeting here!\r\nShall we watch together?\BRK";
+    const MESSAGE_3 = "Today is moon viewing day,\r\nwhen the moon looks extra\r\nbeautiful. \BRK";
+    const MESSAGE_4 = "Tonight the moon will be \r\nfull. Do you want to go \r\nmoon viewing with me?\BRK";
+    const MESSAGE_5 = "Yes.";
+    const MESSAGE_6 = "No.";
+    const MESSAGE_7 = "Let's sit together,\r\nshall we?\BRK";
+    const MESSAGE_8 = "Let's sit together, \r\nshall we?\BRK";
+    const MESSAGE_9 = "OK, let's watch together. \BRK";
+    const MESSAGE_10 = "Alright,\r\nlet's watch together.\BRK";
+    const MESSAGE_11 = "Hee hee. You can\x81ft stay\r\nup late?\BRK";
+    const MESSAGE_12 = "Even though tonight's\r\nmoon will be so pretty...?\BRK";
+    const MESSAGE_13 = "You didn't come to watch\r\nthe moon? \BRK";
+    const MESSAGE_14 = "What a waste!\r\nIt's only once a year...\BRK";
+    const MESSAGE_15 = "That's too bad.\r\nAre you tired? \BRK";
+    const MESSAGE_16 = "I'm going to bed \r\nearly tonight. \BRK";
+    
+    var var_0;
+    var var_1;
+    var var_2;
+    var var_3;
+    var var_4;
+    var var_5;
+    var var_6;
+    var var_7;
+    var var_8;
+    var var_9;
+    
+    switch (Check_Flag(0x1A9)) {
+        case 0:
+            var_1 = 0x13;
+            break;
+        case 1:
+            var_1 = 0x19;
+            break;
+        case 2:
+            var_1 = 3;
+            break;
+        case 3:
+            var_1 = 0xC;
+            break;
+        case 4:
+            var_1 = 0x15;
+            break;
+    }
+    switch (var_1) {
+        case 0x13:
+            var_3 = 0x49;
+            var_4 = 0x4A;
+            var_5 = 0x4B;
+            var_6 = 0x4C;
+            var_7 = 0x4D;
+            var_8 = 0x4E;
+            var_9 = 0x48;
+            break;
+        case 3:
+            var_3 = 8;
+            var_4 = 9;
+            var_5 = 0xA;
+            var_6 = 0xB;
+            var_7 = 0xC;
+            var_8 = 0xD;
+            var_9 = 7;
+            break;
+        case 0xC:
+            var_3 = 0x68;
+            var_4 = 0x69;
+            var_5 = 0x6A;
+            var_6 = 0x6B;
+            var_7 = 0x6C;
+            var_8 = 0x6D;
+            var_9 = 0x67;
+            break;
+        case 0x19:
+            var_3 = 0x58;
+            var_4 = 0x59;
+            var_5 = 0x5A;
+            var_6 = 0x5B;
+            var_7 = 0x5C;
+            var_8 = 0x5D;
+            var_9 = 0x57;
+            break;
+        case 0x15:
+            var_3 = 0x7A;
+            var_4 = 0x7B;
+            var_5 = 0x7C;
+            var_6 = 0x7D;
+            var_7 = 0x7E;
+            var_8 = 0x7F;
+            var_9 = 0x79;
+            break;
+    }
+    switch (var_1) {
+        case 0x13:
+            var_2 = 0x691;
+            break;
+        case 3:
+            var_2 = 0x22F;
+            break;
+        case 0xC:
+            var_2 = 0x813;
+            break;
+        case 0x19:
+            var_2 = 0x7BE;
+            break;
+        case 0x15:
+            var_2 = 0x884;
+            break;
+    }
+    SetEntityFacing(var_1, GetOppositeFacing(GetEntityFacing(0)));
+    TalkOpen();
+    Set_Name_Window(var_1);
+    switch (var_1) {
+        case 0x13:
+            if (!((((((((Check_Flag(0x55) == 2) || (Check_Flag(0x5F) == 2)) || (Check_Flag(0x67) == 2)) || (Check_Flag(0x6F) == 2)) || (Check_Flag(0x173) == 2)) || (Check_Flag(0x75) == 2)) || (Check_Flag(0x76) == 2)) || (Check_Flag(0x77) == 2))) {
+                Set_Hearth_Anim(0x13);
+            }
+            Set_Portrait(0x48);
+            TalkMessage(0);
+            break;
+        case 3:
+            if (!(((((((Check_Flag(0x4C) == 2) || (Check_Flag(0x5F) == 2)) || (Check_Flag(0x67) == 2)) || (Check_Flag(0x6F) == 2)) || (Check_Flag(0x173) == 2)) || (Check_Flag(0x7E) == 2)) || (Check_Flag(0x7F) == 2))) {
+                Set_Hearth_Anim(3);
+            }
+            Set_Portrait(7);
+            TalkMessage(1);
+            break;
+        case 0x19:
+            if (!(((((((Check_Flag(0x4C) == 2) || (Check_Flag(0x55) == 2)) || (Check_Flag(0x67) == 2)) || (Check_Flag(0x6F) == 2)) || (Check_Flag(0x173) == 2)) || (Check_Flag(0x86) == 2)) || (Check_Flag(0x87) == 2))) {
+                Set_Hearth_Anim(0x19);
+            }
+            Set_Portrait(0x57);
+            TalkMessage(2);
+            break;
+        case 0xC:
+            if (!(((((((Check_Flag(0x4C) == 2) || (Check_Flag(0x55) == 2)) || (Check_Flag(0x5F) == 2)) || (Check_Flag(0x6F) == 2)) || (Check_Flag(0x173) == 2)) || (Check_Flag(0x8E) == 2)) || (Check_Flag(0x8F) == 2))) {
+                Set_Hearth_Anim(0xC);
+            }
+            Set_Portrait(0x67);
+            TalkMessage(3);
+            break;
+        case 0x15:
+            if (!(((((((Check_Flag(0x4C) == 2) || (Check_Flag(0x55) == 2)) || (Check_Flag(0x5F) == 2)) || (Check_Flag(0x67) == 2)) || (Check_Flag(0x173) == 2)) || (Check_Flag(0x96) == 2)) || (Check_Flag(0x97) == 2))) {
+                Set_Hearth_Anim(0x15);
+            }
+            Set_Portrait(0x7A);
+            TalkMessage(4);
+            break;
+    }
+    TalkClose();
+    TalkOpen();
+    var_0 = TalkChoice2(5, 6);
+    switch (var_0) {
+        case 1:
+            Give_Love_Points(var_1, 0x3E8);
+            TalkClose();
+            TalkOpen();
+            Set_Portrait(var_3);
+            Set_Name_Window(var_1);
+            switch (var_1) {
+                case 0x13:
+                    if (!((((((((Check_Flag(0x55) == 2) || (Check_Flag(0x5F) == 2)) || (Check_Flag(0x67) == 2)) || (Check_Flag(0x6F) == 2)) || (Check_Flag(0x173) == 2)) || (Check_Flag(0x75) == 2)) || (Check_Flag(0x76) == 2)) || (Check_Flag(0x77) == 2))) {
+                        Set_Hearth_Anim(0x13);
+                    }
+                    TalkMessage(7);
+                    break;
+                case 3:
+                    if (!(((((((Check_Flag(0x4C) == 2) || (Check_Flag(0x5F) == 2)) || (Check_Flag(0x67) == 2)) || (Check_Flag(0x6F) == 2)) || (Check_Flag(0x173) == 2)) || (Check_Flag(0x7E) == 2)) || (Check_Flag(0x7F) == 2))) {
+                        Set_Hearth_Anim(3);
+                    }
+                    TalkMessage(8);
+                    break;
+                case 0x19:
+                    if (!(((((((Check_Flag(0x4C) == 2) || (Check_Flag(0x55) == 2)) || (Check_Flag(0x67) == 2)) || (Check_Flag(0x6F) == 2)) || (Check_Flag(0x173) == 2)) || (Check_Flag(0x86) == 2)) || (Check_Flag(0x87) == 2))) {
+                        Set_Hearth_Anim(0x19);
+                    }
+                    TalkMessage(9);
+                    break;
+                case 0xC:
+                    if (!(((((((Check_Flag(0x4C) == 2) || (Check_Flag(0x55) == 2)) || (Check_Flag(0x5F) == 2)) || (Check_Flag(0x6F) == 2)) || (Check_Flag(0x173) == 2)) || (Check_Flag(0x8E) == 2)) || (Check_Flag(0x8F) == 2))) {
+                        Set_Hearth_Anim(0xC);
+                    }
+                    TalkMessage(9);
+                    break;
+                case 0x15:
+                    if (!(((((((Check_Flag(0x4C) == 2) || (Check_Flag(0x55) == 2)) || (Check_Flag(0x5F) == 2)) || (Check_Flag(0x67) == 2)) || (Check_Flag(0x173) == 2)) || (Check_Flag(0x96) == 2)) || (Check_Flag(0x97) == 2))) {
+                        Set_Hearth_Anim(0x15);
+                    }
+                    TalkMessage(10);
+                    break;
+            }
+            TalkClose();
+            Free_Event_Entity(var_1);
+            Fade_Out(2, 1);
+            Execute_Script(1243);
+            break;
+        case 2:
+            TalkClose();
+            TalkOpen();
+            Set_Name_Window(var_1);
+            switch (var_1) {
+                case 0x13:
+                    if (!((((((((Check_Flag(0x55) == 2) || (Check_Flag(0x5F) == 2)) || (Check_Flag(0x67) == 2)) || (Check_Flag(0x6F) == 2)) || (Check_Flag(0x173) == 2)) || (Check_Flag(0x75) == 2)) || (Check_Flag(0x76) == 2)) || (Check_Flag(0x77) == 2))) {
+                        Set_Hearth_Anim(0x13);
+                    }
+                    Set_Portrait(0x49);
+                    TalkMessage(11);
+                    break;
+                case 3:
+                    if (!(((((((Check_Flag(0x4C) == 2) || (Check_Flag(0x5F) == 2)) || (Check_Flag(0x67) == 2)) || (Check_Flag(0x6F) == 2)) || (Check_Flag(0x173) == 2)) || (Check_Flag(0x7E) == 2)) || (Check_Flag(0x7F) == 2))) {
+                        Set_Hearth_Anim(3);
+                    }
+                    Set_Portrait(9);
+                    TalkMessage(12);
+                    break;
+                case 0x19:
+                    if (!(((((((Check_Flag(0x4C) == 2) || (Check_Flag(0x55) == 2)) || (Check_Flag(0x67) == 2)) || (Check_Flag(0x6F) == 2)) || (Check_Flag(0x173) == 2)) || (Check_Flag(0x86) == 2)) || (Check_Flag(0x87) == 2))) {
+                        Set_Hearth_Anim(0x19);
+                    }
+                    Set_Portrait(0x5B);
+                    TalkMessage(13);
+                    break;
+                case 0xC:
+                    if (!(((((((Check_Flag(0x4C) == 2) || (Check_Flag(0x55) == 2)) || (Check_Flag(0x5F) == 2)) || (Check_Flag(0x6F) == 2)) || (Check_Flag(0x173) == 2)) || (Check_Flag(0x8E) == 2)) || (Check_Flag(0x8F) == 2))) {
+                        Set_Hearth_Anim(0xC);
+                    }
+                    Set_Portrait(0x6A);
+                    TalkMessage(14);
+                    break;
+                case 0x15:
+                    if (!(((((((Check_Flag(0x4C) == 2) || (Check_Flag(0x55) == 2)) || (Check_Flag(0x5F) == 2)) || (Check_Flag(0x67) == 2)) || (Check_Flag(0x173) == 2)) || (Check_Flag(0x96) == 2)) || (Check_Flag(0x97) == 2))) {
+                        Set_Hearth_Anim(0x15);
+                    }
+                    Set_Portrait(0x7D);
+                    TalkMessage(15);
+                    break;
+            }
+            TalkClose();
+            Fade_Out(2, 1);
+            TalkOpen();
+            TalkMessage(16);
+            TalkClose();
+            Refresh_Map_Entities();
+            Add_Festival_Friendship_Bonus(var_1);
+            Set_Flag(0x1A8, 2);
+            Free_Event_Entity(var_1);
+            Execute_Script(988);
+            break;
+    }
+    exit;
+}

@@ -1,0 +1,17 @@
+// Script 735
+#include "Fomt_Lib.src"
+
+script 735 Event_0735 {
+    const MESSAGE_0 = "My face is red...?\r\nIt's nothing, nothing...\BRK";
+    
+    SetEntityFacing(7, GetOppositeFacing(GetEntityFacing(0)));
+    TalkOpen();
+    Set_Name_Window(7);
+    Set_Portrait(0xA6);
+    TalkMessage(0);
+    TalkClose();
+    Free_Event_Entity(7);
+    SetEntityFacing(7, "Left");
+    exit;
+    exit;
+}

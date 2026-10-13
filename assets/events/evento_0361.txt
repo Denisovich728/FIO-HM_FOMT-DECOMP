@@ -1,0 +1,12 @@
+// Script 361
+#include "Fomt_Lib.src"
+
+script 361 Event_0361 {
+    if ((GetEntityFacing(0) == 0)) {
+        Fade_Out(2, 1);
+        Warp_Player(5, 0x50C, 0x18);
+        SetEntityPosition(0, 0x50C, 0x18, 0);
+        Fade_In(2, 1);
+    }
+    exit;
+}

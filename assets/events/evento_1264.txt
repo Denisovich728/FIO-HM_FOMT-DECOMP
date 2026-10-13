@@ -1,0 +1,58 @@
+// Script 1264
+#include "Fomt_Lib.src"
+
+script 1264 Event_1264 {
+    const MESSAGE_0 = "That was a great race, \r\n\xFF!. \r\nCongratulations!\BRK";
+    
+    Warp_Player(6, 0xDC, 0x5E);
+    StopBGM();
+    SetEntityPosition(0xD, 0xDC, 0x4C, "Down");
+    SetEntityAnim(0xD, 0x85F);
+    SetEntityPosition(0, 0xDC, 0x5E, "Up");
+    if ((Inventory_Check() == 1)) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    SetEntityPosition(0x46, 0xC8, 0x62, "Up");
+    Spawn_Event_Entity(0x46, 2);
+    SetEntityAnim(0x46, 0x77A);
+    if ((GetEntityLocation(0x2B) == 6)) {
+        SetEntityPosition(0x2B, 0x1A0, 0x85, "Down");
+    }
+    Fade_In(3, 1);
+    Make_Delay(0x3C);
+    PlaySong(0, 0xB0);
+    Make_Delay((0x3C * 4));
+    PlayBGM(1, 7);
+    TalkOpen();
+    Set_Portrait(0x76);
+    Set_Name_Window(0xD);
+    TalkMessage(0);
+    TalkClose();
+    if (((Inventory_Check() == 1) && (Check_Flag(0x24B) == 0))) {
+        Player_Eat_Power_Berry_Anim();
+        Set_Flag(0x24B, 1);
+    }
+    PlaySong(0, 0xB5);
+    Make_Delay((0x3C * 4));
+    Fade_Out(2, 1);
+    Give_Friendship_Points(0xD, 0x14);
+    Give_Friendship_Points(4, 0x14);
+    Give_Friendship_Points(6, 0x14);
+    Give_Friendship_Points(0x1C, 0x14);
+    Give_Friendship_Points(0x1B, 0x14);
+    Give_Friendship_Points(7, 0x14);
+    Give_Friendship_Points(0xC, 0x14);
+    Give_Friendship_Points(0x18, 0x14);
+    Give_Friendship_Points(0x15, 0x14);
+    Give_Friendship_Points(0x14, 0x14);
+    Give_Friendship_Points(0x16, 0x14);
+    Give_Friendship_Points(1, 0x14);
+    Give_Friendship_Points(2, 0x14);
+    Give_Friendship_Points(0xE, 0x14);
+    Give_Friendship_Points(8, 0x14);
+    Hide_Entity(0x46);
+    Execute_Script(1247);
+    exit;
+}

@@ -1,0 +1,11 @@
+// Script 497
+#include "Fomt_Lib.src"
+
+script 497 Event_0497 {
+    const MESSAGE_0 = "\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@\x81@Church\x81\xAA\r\n\x81\xA9North side of Mineral Town\r\n\x81@\x81@\x81@\x81@\x81@Rose Square\x81\xAB\BRK";
+    
+    TalkOpen();
+    Print_Message(0);
+    TalkClose();
+    exit;
+}

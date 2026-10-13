@@ -1,0 +1,19 @@
+// Script 914
+#include "Fomt_Lib.src"
+
+script 914 Event_0914 {
+    const MESSAGE_0 = "Cliff is going to live here \r\nstarting today.\BRK";
+    
+    SetEntityFacing(0x19, GetOppositeFacing(GetEntityFacing(0)));
+    TalkOpen();
+    Set_Portrait(0x58);
+    Set_Name_Window(0x19);
+    if (!(((((((Check_Flag(0x4C) == 2) || (Check_Flag(0x55) == 2)) || (Check_Flag(0x67) == 2)) || (Check_Flag(0x6F) == 2)) || (Check_Flag(0x173) == 2)) || (Check_Flag(0x86) == 2)) || (Check_Flag(0x87) == 2))) {
+        Set_Hearth_Anim(0x19);
+    }
+    TalkMessage(0);
+    TalkClose();
+    SetEntityFacing(0x19, "Down");
+    Free_Event_Entity(0x19);
+    exit;
+}

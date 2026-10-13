@@ -1,0 +1,64 @@
+// Script 820
+#include "Fomt_Lib.src"
+
+script 820 Event_0820 {
+    const MESSAGE_0 = "You have found the final \r\nJewel of Truth. \BRK\WAIT_CLICKPlease follow me.\BRK";
+    const MESSAGE_1 = "You can now exchange all of \r\nthe Jewels of Truth for \r\nthe Gem of Truth. \BRK";
+    const MESSAGE_2 = "...But, it seems you can't \r\nhold any more. \BRK\WAIT_CLICKCome back when your \r\nload is lighter. \BRK";
+    
+    SetEntityFacing(0xD, GetOppositeFacing(GetEntityFacing(0)));
+    if ((Inventory_Check() == 1)) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    Make_Delay(0xA);
+    if ((Check_Flag(0x153) != 2)) {
+        TalkOpen();
+        Set_Name_Window(0xD);
+        Set_Portrait(0x76);
+        TalkMessage(0);
+        TalkClose();
+        Pan_Camera_To(0x78, 0x58, 1);
+        SetEntityFacing(0, "Right");
+        SetEntityAnim(0, 0x156);
+        Set_Vector_X(0, 0x78, 1);
+        Execute_Movement(0);
+        SetEntityFacing(0, "Down");
+        Set_Vector_Y(0, 0x58, 1);
+        Execute_Movement(0);
+        SetEntityAnim(0, 0x152);
+    }
+    TalkOpen();
+    Set_Name_Window(0xD);
+    Set_Portrait(0x76);
+    TalkMessage(1);
+    if (((Check_Tool_TBox_Space() != -1) && (Func055() == -1))) {
+        Set_Portrait(0x78);
+        TalkMessage(2);
+        TalkClose();
+        Set_Flag(0x153, 2);
+    } else {
+        TalkClose();
+        if ((Inventory_Check() == 0)) {
+            if ((Compare_Gift() == 1)) {
+                if ((Search_Item_Gift_Address() == 0x27)) {
+                    Drop_Held_Item();
+                }
+            }
+        }
+        Consume_Items_From_Inventory(0x27);
+        if ((Inventory_Check() == 1)) {
+            PlaySong(0, 0xB6);
+            Animation_Tool_Give(0x50);
+            SetEntityAnim(0, 0x192);
+        }
+        if ((Check_Tool_TBox_Space() == -1)) {
+            Give_Tool_In_ToolBox(0x50, 1);
+        } else {
+            Give_Tool_In_Inventory(0x50, 1);
+        }
+        Set_Flag(0x155, 2);
+    }
+    exit;
+}

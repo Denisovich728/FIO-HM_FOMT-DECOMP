@@ -1,0 +1,64 @@
+// Script 1147
+#include "Fomt_Lib.src"
+
+script 1147 Event_1147 {
+    const MESSAGE_0 = "May we begin the \r\nChicken Festival now? \BRK";
+    const MESSAGE_1 = "Yes, let's start.";
+    const MESSAGE_2 = "Not yet.";
+    const MESSAGE_3 = "Let's start then! \BRK";
+    const MESSAGE_4 = "Let me know when you're \r\nready. \BRK";
+    
+    var var_1;
+    
+    if ((Check_If_Single(2) == 0)) {
+        Free_Event_Entity(2);
+    }
+    SetEntityFacing(2, GetOppositeFacing(GetEntityFacing(0)));
+    TalkOpen();
+    Set_Portrait(0);
+    Set_Name_Window(2);
+    TalkMessage(0);
+    TalkClose();
+    TalkOpen();
+    var_1 = TalkChoice2(1, 2);
+    switch (var_1) {
+        case 1:
+            TalkClose();
+            TalkOpen();
+            Set_Portrait(0);
+            Set_Name_Window(2);
+            TalkMessage(3);
+            TalkClose();
+            Fade_Out(3, 1);
+            if ((Has_Spoken_To_NPC_Today(3) == 0)) {
+                Give_Friendship_Points(2, 5);
+            }
+            Free_Event_Entity(2);
+            SetEntityFacing(2, "Left");
+            if ((Check_Flag(0x197) == 0)) {
+                Execute_Script(1162);
+                goto LBL_000A;
+            }
+            Set_Flag(0x199, Func0D6());
+            if ((Check_Flag(0x199) == 1)) {
+                Execute_Script(1163);
+                goto LBL_000E;
+            }
+            Execute_Script(1162);
+            break;
+        case 2:
+            TalkClose();
+            TalkOpen();
+            Set_Portrait(0);
+            Set_Name_Window(2);
+            TalkMessage(4);
+            TalkClose();
+            break;
+    }
+    if ((Has_Spoken_To_NPC_Today(3) == 0)) {
+        Give_Friendship_Points(2, 5);
+    }
+    Free_Event_Entity(2);
+    SetEntityFacing(2, "Left");
+    exit;
+}

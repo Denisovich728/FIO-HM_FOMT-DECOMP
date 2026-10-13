@@ -1,0 +1,16 @@
+// Script 910
+#include "Fomt_Lib.src"
+
+script 910 Event_0910 {
+    const MESSAGE_0 = "We can count on Ann.\BRK";
+    
+    SetEntityFacing(0x16, GetOppositeFacing(GetEntityFacing(0)));
+    TalkOpen();
+    Set_Portrait(0x95);
+    Set_Name_Window(0x16);
+    TalkMessage(0);
+    TalkClose();
+    SetEntityFacing(0x16, "Down");
+    Free_Event_Entity(0x16);
+    exit;
+}

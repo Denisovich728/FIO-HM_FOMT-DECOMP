@@ -1,0 +1,118 @@
+// Script 863
+#include "Fomt_Lib.src"
+
+script 863 Event_0863 {
+    const MESSAGE_0 = "I think I hear a voice...!\BRK";
+    const MESSAGE_1 = "!!!\BRK";
+    const MESSAGE_2 = "Our child has been born!\r\nWill you name it for me?\BRK";
+    const MESSAGE_3 = "\xFF*...\r\nThat's a good name. \BRK\WAIT_CLICKPlease look after him. \r\nI have to get back to being\r\nthe Harvest Goddess now.\BRK";
+    const MESSAGE_4 = "I'm a father now!\r\nJust you wait, \r\n\xFF*! \BRK\WAIT_CLICKWe're going to have \r\nlots of fun!\BRK";
+    
+    Proc12D();
+    Warp_Player(0x1D, 0x176, 0x55);
+    PlayBGM(1, 0x11);
+    SetEntityPosition(0, 0x176, 0x55, "Right");
+    if (Inventory_Check()) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    SetEntityPosition(0x23, 0x1A0, -0x30, "Down");
+    SetEntityAnim(0x23, 8);
+    Set_Flag(0x17A, 1);
+    TalkOpen();
+    TalkMessage(0);
+    TalkClose();
+    PlaySong(0, 0xAC);
+    Make_Delay(0x3C);
+    PlaySong(0, 0xAC);
+    Make_Delay(0x3C);
+    TalkOpen();
+    TalkMessage(1);
+    TalkClose();
+    Fade_In(2, 1);
+    Show_Emote(0, 2, 0);
+    Make_Delay(0x3C);
+    SetEntityFacing(0, "Down");
+    if (Inventory_Check()) {
+        SetEntityAnim(0, 0x1C6);
+    } else {
+        SetEntityAnim(0, 0x156);
+    }
+    Set_Vector_Y(0, 0x64, 1);
+    Execute_Movement(0);
+    if (Inventory_Check()) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    SetEntityFacing(0, "Right");
+    if (Inventory_Check()) {
+        SetEntityAnim(0, 0x1C6);
+    } else {
+        SetEntityAnim(0, 0x156);
+    }
+    Set_Vector_X(0, 0x1AE, 1);
+    Execute_Movement(0);
+    if (Inventory_Check()) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    SetEntityFacing(0, "Up");
+    Show_Emote(0, 3, 0);
+    Make_Delay(0x3C);
+    PlaySong(0, 0xBE);
+    SetEntityPosition(0x46, GetEntityX(0), (GetEntityY(0) + 0x18), "Down");
+    Spawn_Event_Entity(0x46, 3);
+    SetEntityAnim(0x46, 0x42C);
+    Tick_Overnight_Engine(1, 0);
+    Tick_Overnight_Engine(1, 0);
+    Fade_Out(1, 1);
+    Hide_Entity(0x46);
+    SetEntityPosition(0x1F, 0x1AE, 0x7C, "Up");
+    SetEntityAnim(0x1F, 0x669);
+    Fade_In(1, 1);
+    Show_Emote(0, 2, 0);
+    Make_Delay(0x3C);
+    SetEntityFacing(0, "Down");
+    Make_Delay(0x3C);
+    TalkOpen();
+    Set_Name_Window(0x1F);
+    Set_Portrait(0x39);
+    TalkMessage(2);
+    TalkClose();
+    Fade_Out(3, 1);
+    Trigger_Naming_Sequence(0);
+    Fade_In(3, 1);
+    TalkOpen();
+    Set_Name_Window(0x1F);
+    Set_Portrait(0x39);
+    TalkMessage(3);
+    TalkClose();
+    Make_Delay(0x3C);
+    PlaySong(0, 0xBE);
+    SetEntityPosition(0x46, GetEntityX(0x1F), (GetEntityY(0x1F) + 2), "Down");
+    Spawn_Event_Entity(0x46, 3);
+    SetEntityAnim(0x46, 0x42C);
+    Tick_Overnight_Engine(1, 0);
+    Tick_Overnight_Engine(1, 0);
+    Fade_Out(1, 1);
+    Hide_Entity(0x46);
+    Hide_Entity(0x1F);
+    Make_Delay(0x1E);
+    Fade_In(1, 1);
+    Make_Delay(0x3C);
+    Show_Emote(0, 6, 0);
+    Make_Delay(0x3C);
+    Free_Event_Entity(0x1F);
+    Give_Love_Points(0x1F, 0xBB8);
+    Set_Flag(0x17A, 2);
+    Make_Delay(0x3C);
+    Fade_Out(2, 1);
+    TalkOpen();
+    TalkMessage(4);
+    TalkClose();
+    Execute_Script(988);
+    exit;
+}

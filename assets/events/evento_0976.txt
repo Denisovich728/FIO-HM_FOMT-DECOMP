@@ -1,0 +1,170 @@
+// Script 976
+#include "Fomt_Lib.src"
+
+script 976 Event_0976 {
+    const MESSAGE_0 = "You fished a \xFF%.\BRK";
+    const MESSAGE_1 = "You fished a \xFF%.\r\nIt's \xFF&cm big.\BRK";
+    const MESSAGE_2 = "You fished a \xFF%.\r\nIt's \xFF&m big.\BRK";
+    const MESSAGE_3 = "You fished a \xFF%.\r\nIt's \xFF&m\xFF'cm big.\BRK";
+    const MESSAGE_4 = "It's a River King!\BRK";
+    const MESSAGE_5 = "It's the maximum size\r\nfor a \xFF%.\BRK";
+    const MESSAGE_6 = "Congratulations!\BRK\WAIT_CLICKYou have now fished\r\n10,000 fish!\BRK\WAIT_CLICKThat's all. You don't get \r\na prize, or anything\r\nlike that. Bye now.\BRK";
+    const MESSAGE_7 = "Congratulations!\BRK\WAIT_CLICKYou have now fished\r\n100,000 fish!\BRK\WAIT_CLICKThat's all. You don't get \r\na prize, or anything\r\nlike that. Bye now.\BRK";
+    const MESSAGE_8 = "Congratulations!\BRK\WAIT_CLICKYou have now fished\r\n1,000,000 fish!\BRK\WAIT_CLICKThat's all. You don't get \r\na prize, or anything\r\nlike that. Bye now.\BRK";
+    const MESSAGE_9 = "Congratulations!\BRK\WAIT_CLICKYou have now fished\r\n10,000,000 fish!\BRK\WAIT_CLICKThat's all. You don't get \r\na prize, or anything\r\nlike that. Bye now.\BRK";
+    const MESSAGE_10 = "Congratulations!\BRK\WAIT_CLICKYou have now fished\r\n100,000,000 fish!\BRK\WAIT_CLICKThat's all. You don't get \r\na prize, or anything\r\nlike that. Bye now.\BRK";
+    const MESSAGE_11 = "Congratulations!\BRK\WAIT_CLICKYou have now fished\r\n1,000,000,000 fish!\BRK\WAIT_CLICKThat's all. You don't get \r\na prize, or anything\r\nlike that. Bye now.\BRK";
+    const MESSAGE_12 = "Congratulations!\BRK\WAIT_CLICKYou have now fished\r\nevery single species!\BRK\WAIT_CLICKThat's all. You don't get \r\na prize, or anything\r\nlike that. Bye now.\BRK";
+    
+    var var_0;
+    var var_1;
+    var var_2;
+    
+    var_0 = Func11C();
+    var_1 = (var_0 / 0x64);
+    var_2 = (var_0 % 0x64);
+    Proc11B(0);
+    TalkOpen();
+    if ((var_0 == 0)) {
+        Print_Message(0);
+    } else {
+        if ((var_1 == 0)) {
+            Set_Text_Buffer_Int(1, var_2);
+            Print_Message(1);
+            goto LBL_0003;
+        }
+        if ((var_2 == 0)) {
+            Set_Text_Buffer_Int(1, var_1);
+            Print_Message(2);
+            goto LBL_0003;
+        }
+        Set_Text_Buffer_Int(1, var_1);
+        Set_Text_Buffer_Int(2, var_2);
+        Print_Message(3);
+    }
+    if (Func11E()) {
+        PlaySong(0, 0xB0);
+        Print_Message(4);
+    } else {
+        if (Func11D()) {
+            Print_Message(5);
+        }
+    }
+    TalkClose();
+    if (Func11E()) {
+        Drop_Held_Item();
+    }
+    if ((((Check_Flag(0x166) == 0) && (Func0E9() >= 0x2710)) && (var_0 != 0))) {
+        Set_Flag(0x166, 1);
+        Tick_Overnight_Engine(1, 0);
+        Tick_Overnight_Engine(1, 0);
+        Fade_Out(1, 1);
+        PlaySong(0, 0xBE);
+        TalkOpen();
+        Set_Name_Window(0x1F);
+        Set_Portrait(0x39);
+        TalkMessage(6);
+        TalkClose();
+        Free_Event_Entity(0x1F);
+        Give_Love_Points(0x1F, 0xBB8);
+        Set_Flag(0x166, 2);
+        Fade_In(1, 1);
+    }
+    if ((((Check_Flag(0x167) == 0) && (Func0E9() >= 0x186A0)) && (var_0 != 0))) {
+        Set_Flag(0x167, 1);
+        Tick_Overnight_Engine(1, 0);
+        Tick_Overnight_Engine(1, 0);
+        Fade_Out(1, 1);
+        PlaySong(0, 0xBE);
+        TalkOpen();
+        Set_Name_Window(0x1F);
+        Set_Portrait(0x39);
+        TalkMessage(7);
+        TalkClose();
+        Free_Event_Entity(0x1F);
+        Give_Love_Points(0x1F, 0xBB8);
+        Set_Flag(0x167, 2);
+        Fade_In(1, 1);
+    }
+    if ((((Check_Flag(0x168) == 0) && (Func0E9() >= 0xF4240)) && (var_0 != 0))) {
+        Set_Flag(0x168, 1);
+        Tick_Overnight_Engine(1, 0);
+        Tick_Overnight_Engine(1, 0);
+        Fade_Out(1, 1);
+        PlaySong(0, 0xBE);
+        TalkOpen();
+        Set_Name_Window(0x1F);
+        Set_Portrait(0x39);
+        TalkMessage(8);
+        TalkClose();
+        Free_Event_Entity(0x1F);
+        Give_Love_Points(0x1F, 0xBB8);
+        Set_Flag(0x168, 2);
+        Fade_In(1, 1);
+    }
+    if ((((Check_Flag(0x169) == 0) && (Func0E9() >= 0x989680)) && (var_0 != 0))) {
+        Set_Flag(0x169, 1);
+        Tick_Overnight_Engine(1, 0);
+        Tick_Overnight_Engine(1, 0);
+        Fade_Out(1, 1);
+        PlaySong(0, 0xBE);
+        TalkOpen();
+        Set_Name_Window(0x1F);
+        Set_Portrait(0x39);
+        TalkMessage(9);
+        TalkClose();
+        Free_Event_Entity(0x1F);
+        Give_Love_Points(0x1F, 0xBB8);
+        Set_Flag(0x169, 2);
+        Fade_In(1, 1);
+    }
+    if ((((Check_Flag(0x16A) == 0) && (Func0E9() >= 0x5F5E100)) && (var_0 != 0))) {
+        Set_Flag(0x16A, 1);
+        Tick_Overnight_Engine(1, 0);
+        Tick_Overnight_Engine(1, 0);
+        Fade_Out(1, 1);
+        PlaySong(0, 0xBE);
+        TalkOpen();
+        Set_Name_Window(0x1F);
+        Set_Portrait(0x39);
+        TalkMessage(10);
+        TalkClose();
+        Free_Event_Entity(0x1F);
+        Give_Love_Points(0x1F, 0xBB8);
+        Set_Flag(0x16A, 2);
+        Fade_In(1, 1);
+    }
+    if ((((Check_Flag(0x16B) == 0) && (Func0E9() >= 0x3B9ACA00)) && (var_0 != 0))) {
+        Set_Flag(0x16B, 1);
+        Tick_Overnight_Engine(1, 0);
+        Tick_Overnight_Engine(1, 0);
+        Fade_Out(1, 1);
+        PlaySong(0, 0xBE);
+        TalkOpen();
+        Set_Name_Window(0x1F);
+        Set_Portrait(0x39);
+        TalkMessage(11);
+        TalkClose();
+        Free_Event_Entity(0x1F);
+        Give_Love_Points(0x1F, 0xBB8);
+        Set_Flag(0x16B, 2);
+        Fade_In(1, 1);
+    }
+    if (((Check_Flag(0x16C) == 0) && Func0E8())) {
+        Set_Flag(0x16C, 1);
+        Tick_Overnight_Engine(1, 0);
+        Tick_Overnight_Engine(1, 0);
+        Fade_Out(1, 1);
+        PlaySong(0, 0xBE);
+        TalkOpen();
+        Set_Name_Window(0x1F);
+        Set_Portrait(0x39);
+        TalkMessage(12);
+        TalkClose();
+        Free_Event_Entity(0x1F);
+        Give_Love_Points(0x1F, 0xBB8);
+        Set_Flag(0x16C, 2);
+        Fade_In(1, 1);
+    }
+    exit;
+}

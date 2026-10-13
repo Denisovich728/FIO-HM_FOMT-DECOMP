@@ -1,0 +1,11 @@
+// Script 3
+#include "Fomt_Lib.src"
+
+script 3 Event_0003 {
+    const MESSAGE_0 = "Nothing happened.\BRK";
+    
+    TalkOpen();
+    TalkMessage(0);
+    TalkClose();
+    exit;
+}

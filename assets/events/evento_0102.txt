@@ -1,0 +1,20 @@
+// Script 102
+#include "Fomt_Lib.src"
+
+script 102 Event_0102 {
+    const MESSAGE_0 = "Plants\BRK";
+    const MESSAGE_1 = "Snowman\BRK";
+    
+    TalkOpen();
+    if ((Check_Flag(1) == 3)) {
+        if (((Check_Flag(2) == 1) && (Check_Flag(3) < 6))) {
+            Print_Message(0);
+        } else {
+            Print_Message(1);
+        }
+    } else {
+        Print_Message(0);
+    }
+    TalkClose();
+    exit;
+}

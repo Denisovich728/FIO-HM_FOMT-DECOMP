@@ -1,0 +1,52 @@
+// Script 441
+#include "Fomt_Lib.src"
+
+script 441 Event_0441 {
+    const MESSAGE_0 = "Cheese Maker\r\nPlace Milk here to \r\nmake Cheese\BRK";
+    
+    var var_0;
+    var var_1;
+    
+    var_0 = 0;
+    if (((!Inventory_Check() && (Compare_Gift() == 0)) && !Is_Item_Wrapped())) {
+        var_1 = Search_Food_Gift_Address();
+        switch (var_1) {
+            case 0x1C:
+            case 0x1D:
+            case 0x1E:
+            case 0x1F:
+            case 0x20:
+            case 0x21:
+                var_0 = 1;
+                break;
+        }
+    }
+    if (var_0) {
+        Drop_Held_Item();
+        switch (var_1) {
+            case 0x1C:
+                Give_Food(0x22);
+                break;
+            case 0x1D:
+                Give_Food(0x23);
+                break;
+            case 0x1E:
+                Give_Food(0x24);
+                break;
+            case 0x1F:
+                Give_Food(0x25);
+                break;
+            case 0x20:
+                Give_Food(0x26);
+                break;
+            case 0x21:
+                Give_Food(0x27);
+                break;
+        }
+    } else {
+        TalkOpen();
+        Print_Message(0);
+        TalkClose();
+    }
+    exit;
+}

@@ -1,0 +1,16 @@
+// Script 1300
+#include "Fomt_Lib.src"
+
+script 1300 Event_1300 {
+    Warp_Player(0xF, 0x91, 0x113);
+    PlayBGM(1, 0x11);
+    SetEntityPosition(0, 0x91, 0x112, 1);
+    SetEntityAnim(0, 0x192);
+    SetEntityPosition(0x13, 0x91, 0xE3, 0);
+    SetEntityAnim(0x13, 0x691);
+    SetEntityPosition(0x12, 0xAF, 0x73, 0);
+    SetEntityAnim(0x12, 0x6C5);
+    SetEntityPosition(0x11, 0xE2, 0x73, 0);
+    SetEntityAnim(0x11, 0x689);
+    exit;
+}

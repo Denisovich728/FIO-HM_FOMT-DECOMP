@@ -1,0 +1,27 @@
+// Script 1195
+#include "Fomt_Lib.src"
+
+script 1195 Event_1195 {
+    const MESSAGE_0 = "They used to have summer\r\nfireworks where I used to \r\nlive. It makes me a little\BRK\r\nhomesick...\BRK";
+    
+    if ((Check_If_Single(0x17) == 0)) {
+        Free_Event_Entity(0x17);
+    }
+    SetEntityFacing(0x17, GetOppositeFacing(GetEntityFacing(0)));
+    TalkOpen();
+    Set_Portrait(0x17);
+    Set_Name_Window(0x17);
+    TalkMessage(0);
+    TalkClose();
+    if ((Has_NPC_Talked_Today(0x17) == 0)) {
+        Give_Friendship_Points(0x17, 5);
+    }
+    Free_Event_Entity(0x17);
+    if ((((((((((Has_NPC_Talked_Today(2) && Has_NPC_Talked_Today(7)) && Has_NPC_Talked_Today(0x14)) && ((Check_Flag(0xF4) == 0) || Has_NPC_Talked_Today(0x17))) && Has_NPC_Talked_Today(0x1A)) && Has_NPC_Talked_Today(0x13)) && Has_NPC_Talked_Today(0x15)) && Has_NPC_Talked_Today(0x19)) && Has_NPC_Talked_Today(3)) && Has_NPC_Talked_Today(0xC))) {
+        Set_Flag(0x19F, 0);
+        Fade_Out(2, 1);
+        Execute_Script(1192);
+    }
+    SetEntityFacing(0x17, "Right");
+    exit;
+}

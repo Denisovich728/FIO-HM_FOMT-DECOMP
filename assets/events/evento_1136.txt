@@ -1,0 +1,29 @@
+// Script 1136
+#include "Fomt_Lib.src"
+
+script 1136 Event_1136 {
+    const MESSAGE_0 = "I was wondering what all the\r\nfuss was about!\r\nI forgot today was the \BRK\r\nFrisbee Tournament. \BRK";
+    const MESSAGE_1 = "You're competing too? \r\nI'll be watching you and \r\n\xFF#. \BRK";
+    
+    if ((Check_If_Single(0x1A) == 0)) {
+        Free_Event_Entity(0x1A);
+    }
+    SetEntityFacing(0x1A, GetOppositeFacing(GetEntityFacing(0)));
+    TalkOpen();
+    if ((Check_Flag(0x193) == 0)) {
+        Set_Portrait(0x99);
+        Set_Name_Window(0x1A);
+        TalkMessage(0);
+    } else {
+        Set_Portrait(0x99);
+        Set_Name_Window(0x1A);
+        TalkMessage(1);
+    }
+    TalkClose();
+    if ((Has_Spoken_To_NPC_Today(0x1A) == 0)) {
+        Give_Friendship_Points(0x1A, 5);
+    }
+    Free_Event_Entity(0x1A);
+    SetEntityFacing(0x1A, "Right");
+    exit;
+}

@@ -1,0 +1,10 @@
+{
+    "name": "Player_Ruckstar_Deposit_Left",
+    "anim_id": "0x13b",
+    "anim_id_dec": 315,
+    "graphic_id": 2,
+    "script_addr": "0x8663a3c",
+    "script_rom_offset": "0x663a3c",
+    "frame_count": 0,
+    "frames": []
+}

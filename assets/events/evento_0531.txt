@@ -1,0 +1,72 @@
+// Script 531
+#include "Fomt_Lib.src"
+
+script 531 Event_0531 {
+    const MESSAGE_0 = "It's hot!...\BRK";
+    const MESSAGE_1 = "Fireplace\BRK";
+    
+    var var_0;
+    var var_1;
+    var var_2;
+    
+    var_1 = Check_Flag(1);
+    var_2 = GetEntityLocation(0);
+    var_0 = 0;
+    if (!Inventory_Check()) {
+        if (Func0B4(var_2)) {
+            if ((Compare_Gift() == 1)) {
+                if (Func04B()) {
+                    var_0 = 1;
+                }
+            } else {
+                if ((Compare_Gift() == 0)) {
+                    var_0 = 1;
+                }
+            }
+        } else {
+            if ((Compare_Gift() == 1)) {
+                if (((Search_Item_Gift_Address() == 0x59) || (Search_Item_Gift_Address() == 0x32))) {
+                    if ((Is_Item_Wrapped() == 1)) {
+                        var_0 = 0;
+                    } else {
+                        var_0 = 1;
+                    }
+                }
+            }
+        }
+    }
+    if (var_0) {
+        Drop_Held_Item();
+        if (Func0B4(var_2)) {
+            if ((var_1 == 3)) {
+                Set_Global_RNG_Modifier(0, -2);
+            } else {
+                if ((var_1 == 1)) {
+                    Set_Global_RNG_Modifier(0, 5);
+                }
+            }
+            PlaySong(0, 0x7C);
+        } else {
+            if ((var_1 == 3)) {
+                Set_Global_RNG_Modifier(0, -5);
+            } else {
+                if ((var_1 == 1)) {
+                    Set_Global_RNG_Modifier(0, 5);
+                }
+            }
+            PlaySong(0, 0x79);
+        }
+        Proc0B3(var_2);
+        if ((RNG_Generator(0, 0xFF) == 0)) {
+            Make_Delay(0x1E);
+            TalkOpen();
+            TalkMessage(0);
+            TalkClose();
+        }
+    } else {
+        TalkOpen();
+        TalkMessage(1);
+        TalkClose();
+    }
+    exit;
+}

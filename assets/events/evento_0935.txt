@@ -1,0 +1,16 @@
+// Script 935
+#include "Fomt_Lib.src"
+
+script 935 Event_0935 {
+    const MESSAGE_0 = "I just have to pass \r\nthat test! \BRK";
+    
+    SetEntityFacing(7, GetOppositeFacing(GetEntityFacing(0)));
+    TalkOpen();
+    Set_Portrait(0xA0);
+    Set_Name_Window(7);
+    TalkMessage(0);
+    TalkClose();
+    SetEntityFacing(7, "Right");
+    Free_Event_Entity(7);
+    exit;
+}

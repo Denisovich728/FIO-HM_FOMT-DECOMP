@@ -1,0 +1,11 @@
+// Script 196
+#include "Fomt_Lib.src"
+
+script 196 Event_0196 {
+    const MESSAGE_0 = "Lamp\BRK";
+    
+    TalkOpen();
+    Print_Message(0);
+    TalkClose();
+    exit;
+}

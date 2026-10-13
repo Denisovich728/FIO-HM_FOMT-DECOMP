@@ -1,0 +1,26 @@
+// Script 1325
+#include "Fomt_Lib.src"
+
+script 1325 Event_1325 {
+    const MESSAGE_0 = ".....I'm so tired...\BRK";
+    
+    if ((Check_If_Single(7) == 0)) {
+        Free_Event_Entity(7);
+    }
+    SetEntityFacing(7, GetOppositeFacing(GetEntityFacing(0)));
+    TalkOpen();
+    Set_Portrait(0xA3);
+    Set_Name_Window(7);
+    TalkMessage(0);
+    TalkClose();
+    if ((Has_NPC_Talked_Today(7) == 0)) {
+        Give_Friendship_Points(7, 5);
+    }
+    Free_Event_Entity(7);
+    if (((((((((Check_Flag(0xF4) == 0) || Has_NPC_Talked_Today(0x17)) && Has_NPC_Talked_Today(0x18)) && Has_NPC_Talked_Today(0xB)) && Has_NPC_Talked_Today(0xA)) && Has_NPC_Talked_Today(0xC)) && Has_NPC_Talked_Today(6)) && Has_NPC_Talked_Today(7))) {
+        Fade_Out(2, 1);
+        Execute_Script(1319);
+    }
+    SetEntityFacing(7, "Up");
+    exit;
+}

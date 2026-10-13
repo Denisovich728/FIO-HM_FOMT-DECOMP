@@ -1,0 +1,101 @@
+// Script 406
+#include "Fomt_Lib.src"
+
+script 406 Event_0406 {
+    const MESSAGE_0 = "Well, should we start the\r\nNew Year Festival now?\BRK";
+    const MESSAGE_1 = "...But, you can't \r\nparticipate while your hands\r\nare full!\BRK";
+    const MESSAGE_2 = "Start";
+    const MESSAGE_3 = "Wait a minute";
+    const MESSAGE_4 = "Alright, let's get started.\r\n\r\n\BRK";
+    const MESSAGE_5 = "Well, let me know when\r\nyou're ready.\r\n\BRK";
+    const MESSAGE_6 = "Shall we get started on\r\nthe new year celebration?\BRK";
+    const MESSAGE_7 = "...But, you can't eat while\r\nyour hands are full, \r\ncan you?\BRK";
+    const MESSAGE_8 = "Start.";
+    const MESSAGE_9 = "Hold on a second.";
+    const MESSAGE_10 = "Let's eat, then!\r\n\r\n\BRK";
+    const MESSAGE_11 = "Just let me know when you're\r\nready to eat.\r\n\BRK";
+    const MESSAGE_12 = "Long table\BRK";
+    
+    var var_0;
+    
+    if ((GetEntityFacing(0) == 1)) {
+        if ((Check_Flag(0x180) == 1)) {
+            SetEntityFacing(0xD, GetOppositeFacing(GetEntityFacing(0)));
+            TalkOpen();
+            Set_Portrait(0x75);
+            Set_Name_Window(0xD);
+            TalkMessage(0);
+            if ((Inventory_Check() == 0)) {
+                TalkMessage(1);
+            }
+            TalkClose();
+            TalkOpen();
+            var_0 = TalkChoice2(2, 3);
+            switch (var_0) {
+                case 1:
+                    TalkClose();
+                    TalkOpen();
+                    Set_Portrait(0x76);
+                    Set_Name_Window(0xD);
+                    TalkMessage(4);
+                    TalkClose();
+                    Free_Event_Entity(0xD);
+                    Fade_Out(2, 1);
+                    Execute_Script(1066);
+                    break;
+                case 2:
+                    TalkClose();
+                    TalkOpen();
+                    Set_Portrait(0x75);
+                    Set_Name_Window(0xD);
+                    TalkMessage(5);
+                    TalkClose();
+                    Free_Event_Entity(0xD);
+                    SetEntityFacing(0xD, "Down");
+                    break;
+            }
+        } else {
+            if ((Check_Flag(0x1D0) == 1)) {
+                SetEntityFacing(0xD, GetOppositeFacing(GetEntityFacing(0)));
+                TalkOpen();
+                Set_Portrait(0x75);
+                Set_Name_Window(0xD);
+                TalkMessage(6);
+                if ((Inventory_Check() == 0)) {
+                    TalkMessage(7);
+                }
+                TalkClose();
+                TalkOpen();
+                var_0 = TalkChoice2(8, 9);
+                switch (var_0) {
+                    case 1:
+                        TalkClose();
+                        TalkOpen();
+                        Set_Portrait(0x76);
+                        Set_Name_Window(0xD);
+                        TalkMessage(10);
+                        TalkClose();
+                        Free_Event_Entity(0xD);
+                        Fade_Out(2, 1);
+                        Execute_Script(1309);
+                        break;
+                    case 2:
+                        TalkClose();
+                        TalkOpen();
+                        Set_Portrait(0x75);
+                        Set_Name_Window(0xD);
+                        TalkMessage(11);
+                        TalkClose();
+                        Free_Event_Entity(0xD);
+                        SetEntityFacing(0xD, "Down");
+                        break;
+                }
+            }
+        }
+    } else {
+        TalkOpen();
+        Print_Message(12);
+        TalkClose();
+    }
+    exit;
+}

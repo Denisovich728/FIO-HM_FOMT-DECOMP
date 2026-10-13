@@ -1,0 +1,11 @@
+// Script 197
+#include "Fomt_Lib.src"
+
+script 197 Event_0197 {
+    const MESSAGE_0 = "Painting of Kappa\BRK";
+    
+    TalkOpen();
+    Print_Message(0);
+    TalkClose();
+    exit;
+}

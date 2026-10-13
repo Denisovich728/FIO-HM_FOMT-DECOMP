@@ -1,0 +1,49 @@
+// Script 679
+#include "Fomt_Lib.src"
+
+script 679 Event_0679 {
+    const MESSAGE_0 = "I can't believe I collapsed\r\nlike that! Guess I was \r\nworking too hard, huh?\BRK";
+    const MESSAGE_1 = "I'm sleepy, so I think I'll \r\ntry to sleep this off now.\BRK";
+    
+    Warp_Player(0x1D, 0x1C0, 0x64);
+    PlayBGM(1, 0x11);
+    SetEntityPosition(0, 0x1C0, 0x64, "Up");
+    if (Inventory_Check()) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    SetEntityPosition(3, 0x1B8, -0x30, "Down");
+    SetEntityAnim(3, 0x23F);
+    Fade_In(2, 1);
+    Make_Delay(0x3C);
+    SetEntityAnim(3, 0x243);
+    Make_Delay(0x3C);
+    TalkOpen();
+    Set_Name_Window(3);
+    Set_Portrait(0xB);
+    Set_Hearth_Anim(3);
+    TalkMessage(0);
+    TalkClose();
+    SetEntityAnim(0, 0x126);
+    Make_Delay(0x3C);
+    if (Inventory_Check()) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    Make_Delay(0x3C);
+    TalkOpen();
+    Set_Name_Window(3);
+    Set_Portrait(0xB);
+    Set_Hearth_Anim(3);
+    TalkMessage(1);
+    TalkClose();
+    SetEntityAnim(3, 0x25B);
+    Make_Delay(0x3C);
+    Free_Event_Entity(3);
+    Give_Love_Points(3, -0x7D0);
+    Set_Flag(0xD2, 1);
+    Finalize_Event();
+    exit;
+}

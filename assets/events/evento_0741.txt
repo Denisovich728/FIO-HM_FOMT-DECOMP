@@ -1,0 +1,51 @@
+// Script 741
+#include "Fomt_Lib.src"
+
+script 741 Event_0741 {
+    const MESSAGE_0 = "Sorry to bother you\r\nso late. \BRK";
+    const MESSAGE_1 = "I don't look so well?\r\nWell, there's a reason.\BRK\WAIT_CLICKAfter talking to you, I \r\nwrote to Aja and told her\r\neverything how I feel \BRK\r\nabout her. \BRK\WAIT_CLICKHer response came today.\BRK";
+    const MESSAGE_2 = "Aja says that she already \r\nhas a boyfriend \r\nin the city!\BRK\WAIT_CLICKNo luck for me, I guess.\BRK";
+    const MESSAGE_3 = "No, don't blame yourself. \r\nYou see, I'm actually very \r\nthankful to you. \BRK\WAIT_CLICKIf I hadn't written that \r\nletter, I never would have \r\nknown Aja was in love\BRK\r\nwith someone else.\BRK\WAIT_CLICKBut, now I know\r\nto give up on her. Thanks \r\nagain, \xFF!. \BRK\r\nDon't forget to lock you \r\ndoors at night. \BRK";
+    
+    SetEntityPosition(0xE, 0xE4, 0x91, "Up");
+    SetEntityAnim(0xE, 0x8E4);
+    if ((Inventory_Check() == 1)) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    Fade_In(2, 1);
+    TalkOpen();
+    Set_Portrait(0x94);
+    Set_Name_Window(0xE);
+    TalkMessage(0);
+    TalkClose();
+    Show_Emote(0, 3, 0);
+    Make_Delay(0x3C);
+    TalkOpen();
+    Set_Portrait(0x94);
+    Set_Name_Window(0xE);
+    TalkMessage(1);
+    Set_Portrait(0x92);
+    TalkMessage(2);
+    TalkClose();
+    Show_Emote(0, 6, 0);
+    Make_Delay(0x3C);
+    TalkOpen();
+    Set_Portrait(0x91);
+    Set_Name_Window(0xE);
+    TalkMessage(3);
+    TalkClose();
+    Give_Friendship_Points(0xE, 0x14);
+    SetEntityAnim(0xE, 0x8E8);
+    SetEntityFacing(0xE, "Right");
+    Set_Vector_X(0xE, 0x13F, 1);
+    Execute_Movement(0xE);
+    SetEntityFacing(0xE, "Up");
+    Set_Vector_Y(0xE, 0, 1);
+    Execute_Movement(0xE);
+    Hide_Entity(0xE);
+    Set_Flag(0x10E, 2);
+    Free_Event_Entity(0xE);
+    exit;
+}

@@ -1,0 +1,18 @@
+// Script 715
+#include "Fomt_Lib.src"
+
+script 715 Event_0715 {
+    const MESSAGE_0 = "I talk with Gray a lot at \r\nthe Inn, \BRK\r\nbut this is the first time\r\nhe has come to my place. \BRK";
+    
+    if ((Check_Flag(0xF1) == 1)) {
+        SetEntityFacing(0x1A, GetOppositeFacing(GetEntityFacing(0)));
+        TalkOpen();
+        Set_Portrait(0x99);
+        Set_Name_Window(0x1A);
+        TalkMessage(0);
+        TalkClose();
+        Free_Event_Entity(0x1A);
+        SetEntityFacing(0x1A, "Down");
+    }
+    exit;
+}

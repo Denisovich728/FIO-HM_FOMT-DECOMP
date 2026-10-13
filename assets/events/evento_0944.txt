@@ -1,0 +1,95 @@
+// Script 944
+#include "Fomt_Lib.src"
+
+script 944 Event_0944 {
+    const MESSAGE_0 = "Whew...\BRK";
+    const MESSAGE_1 = "Tired? \BRK";
+    const MESSAGE_2 = "No, I'm fine. \BRK";
+    const MESSAGE_3 = "Don't push yourself too \r\nmuch, now. \BRK";
+    const MESSAGE_4 = "Doctor...I'm touched you're \r\nworried about me! \BRK";
+    const MESSAGE_5 = "Well, I couldn't run the \r\nClinic without you! \BRK";
+    const MESSAGE_6 = "Is that all...?\BRK";
+    const MESSAGE_7 = "What's wrong now? \BRK";
+    const MESSAGE_8 = "No-nothing. \BRK";
+    const MESSAGE_9 = "OK, if you say so...\BRK";
+    
+    Warp_Player(0x13, 0xF7, 0x80);
+    PlayBGM(1, 0x10);
+    SetEntityPosition(0, 0xB8, 0x140, "Up");
+    if (Inventory_Check()) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    SetEntityPosition(0x15, 0xE8, 0x80, "Right");
+    SetEntityAnim(0x15, 0x884);
+    SetEntityPosition(0x14, 0x108, 0x80, "Left");
+    SetEntityAnim(0x14, 0x320);
+    Fade_In(2, 1);
+    TalkOpen();
+    Set_Portrait(0x7C);
+    Set_Name_Window(0x15);
+    TalkMessage(0);
+    TalkClose();
+    TalkOpen();
+    Set_Portrait(0x23);
+    Set_Name_Window(0x14);
+    TalkMessage(1);
+    TalkClose();
+    TalkOpen();
+    Set_Portrait(0x79);
+    Set_Name_Window(0x15);
+    TalkMessage(2);
+    TalkClose();
+    Show_Emote(0x14, 6, 0);
+    Make_Delay(0x3C);
+    TalkOpen();
+    Set_Portrait(0x26);
+    Set_Name_Window(0x14);
+    TalkMessage(3);
+    TalkClose();
+    Show_Emote(0x15, 5, 0);
+    Make_Delay(0x3C);
+    TalkOpen();
+    Set_Portrait(0x7E);
+    Set_Name_Window(0x15);
+    TalkMessage(4);
+    TalkClose();
+    TalkOpen();
+    Set_Portrait(0x23);
+    Set_Name_Window(0x14);
+    TalkMessage(5);
+    TalkClose();
+    TalkOpen();
+    Set_Portrait(0x7C);
+    Set_Name_Window(0x15);
+    TalkMessage(6);
+    TalkClose();
+    Show_Emote(0x15, 6, 0);
+    Make_Delay(0x3C);
+    Show_Emote(0x14, 3, 0);
+    Make_Delay(0x3C);
+    TalkOpen();
+    Set_Portrait(0x23);
+    Set_Name_Window(0x14);
+    TalkMessage(7);
+    TalkClose();
+    TalkOpen();
+    Set_Portrait(0x7C);
+    Set_Name_Window(0x15);
+    TalkMessage(8);
+    TalkClose();
+    TalkOpen();
+    Set_Portrait(0x23);
+    Set_Name_Window(0x14);
+    TalkMessage(9);
+    TalkClose();
+    Pan_Camera_To(0xB8, 0x140, 2);
+    Wait_Camera_Stop();
+    End_Cinematic_State();
+    Routine_State_Override(0x14, 0x3B1);
+    Routine_State_Override(0x15, 0x3B2);
+    Set_Flag(0x92, 1);
+    exit;
+    exit;
+}

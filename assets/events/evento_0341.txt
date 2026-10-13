@@ -1,0 +1,200 @@
+// Script 341
+#include "Fomt_Lib.src"
+
+script 341 Event_0341 {
+    const MESSAGE_0 = "\xFF),\r\nwhere are you going\BRK?";
+    const MESSAGE_1 = "\xFF!,\r\nwhere are you going\BRK?";
+    const MESSAGE_2 = "You can't take your eye's \r\noff of\xFF*.\BRK";
+    const MESSAGE_3 = "Take a bath?";
+    const MESSAGE_4 = "Yes";
+    const MESSAGE_5 = "No";
+    
+    var var_0;
+    
+    if ((Check_Flag(0xAA) == 1)) {
+        TalkOpen();
+        Set_Portrait(7);
+        Set_Name_Window(3);
+        Set_Hearth_Anim(3);
+        TalkMessage(0);
+        TalkClose();
+        exit;
+    } else {
+        if ((Check_Flag(0xAC) == 1)) {
+            TalkOpen();
+            Set_Portrait(0x57);
+            Set_Name_Window(0x19);
+            Set_Hearth_Anim(0x19);
+            TalkMessage(0);
+            TalkClose();
+            exit;
+            goto LBL_0003;
+        }
+        if ((Check_Flag(0xAE) == 1)) {
+            TalkOpen();
+            Set_Portrait(0x79);
+            Set_Name_Window(0x15);
+            Set_Hearth_Anim(0x15);
+            TalkMessage(0);
+            TalkClose();
+            exit;
+            goto LBL_0003;
+        }
+        if ((Check_Flag(0xB0) == 1)) {
+            TalkOpen();
+            Set_Portrait(0x48);
+            Set_Name_Window(0x13);
+            Set_Hearth_Anim(0x13);
+            TalkMessage(0);
+            TalkClose();
+            exit;
+            goto LBL_0003;
+        }
+        if ((Check_Flag(0xB2) == 1)) {
+            TalkOpen();
+            Set_Portrait(0x67);
+            Set_Name_Window(0xC);
+            Set_Hearth_Anim(0xC);
+            TalkMessage(0);
+            TalkClose();
+            exit;
+            goto LBL_0003;
+        }
+        if ((Check_Flag(0x174) == 1)) {
+            TalkOpen();
+            Set_Portrait(0x38);
+            Set_Name_Window(0x1F);
+            TalkMessage(1);
+            TalkClose();
+            exit;
+            goto LBL_0003;
+        }
+        if (((((Check_Flag(0xB4) == 1) || (Check_Flag(0xB9) == 1)) || (Check_Flag(0xBE) == 1)) || (Check_Flag(0xCD) == 1))) {
+            TalkOpen();
+            Set_Portrait(7);
+            Set_Name_Window(3);
+            Set_Hearth_Anim(3);
+            TalkMessage(1);
+            TalkClose();
+            exit;
+            goto LBL_0003;
+        }
+        if (((((Check_Flag(0xB5) == 1) || (Check_Flag(0xBA) == 1)) || (Check_Flag(0xBF) == 1)) || (Check_Flag(0xCE) == 1))) {
+            TalkOpen();
+            Set_Portrait(0x57);
+            Set_Name_Window(0x19);
+            Set_Hearth_Anim(0x19);
+            TalkMessage(1);
+            TalkClose();
+            exit;
+            goto LBL_0003;
+        }
+        if (((((Check_Flag(0xB6) == 1) || (Check_Flag(0xBB) == 1)) || (Check_Flag(0xC0) == 1)) || (Check_Flag(0xCF) == 1))) {
+            TalkOpen();
+            Set_Portrait(0x79);
+            Set_Name_Window(0x15);
+            Set_Hearth_Anim(0x15);
+            TalkMessage(1);
+            TalkClose();
+            exit;
+            goto LBL_0003;
+        }
+        if (((((Check_Flag(0xB7) == 1) || (Check_Flag(0xBC) == 1)) || (Check_Flag(0xC1) == 1)) || (Check_Flag(0xD0) == 1))) {
+            TalkOpen();
+            Set_Portrait(0x48);
+            Set_Name_Window(0x13);
+            Set_Hearth_Anim(0x13);
+            TalkMessage(1);
+            TalkClose();
+            exit;
+            goto LBL_0003;
+        }
+        if (((((Check_Flag(0xB8) == 1) || (Check_Flag(0xBD) == 1)) || (Check_Flag(0xC2) == 1)) || (Check_Flag(0xD1) == 1))) {
+            TalkOpen();
+            Set_Portrait(0x67);
+            Set_Name_Window(0xC);
+            Set_Hearth_Anim(0xC);
+            TalkMessage(1);
+            TalkClose();
+            exit;
+            goto LBL_0003;
+        }
+        if ((((Check_Flag(0x176) == 1) || (Check_Flag(0x177) == 1)) || (Check_Flag(0x178) == 1))) {
+            TalkOpen();
+            Set_Portrait(0x38);
+            Set_Name_Window(0x1F);
+            TalkMessage(1);
+            TalkClose();
+            exit;
+            goto LBL_0003;
+        }
+        if ((Check_Flag(0x17B) == 1)) {
+            TalkOpen();
+            TalkMessage(2);
+            TalkClose();
+            exit;
+        }
+    }
+    TalkOpen();
+    var_0 = Show_Tre_Option_Menu(3, 4, 5);
+    TalkClose();
+    if ((var_0 == 2)) {
+        exit;
+    }
+    PlaySong(0, 0x9C);
+    Anim_Door_Close(0xC);
+    if ((Inventory_Check() == 1)) {
+        SetEntityAnim(0, 0x1C6);
+    } else {
+        SetEntityAnim(0, 0x156);
+    }
+    Set_Vector_X(0, 0x14, 1);
+    Execute_Movement(0);
+    Set_Vector_Y(0, 0x34, 1);
+    Execute_Movement(0);
+    if ((Inventory_Check() == 1)) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    Fade_Out(2, 1);
+    PlaySong(0, 0xCD);
+    Set_Global_RNG_Modifier(0x14, -0x14);
+    PlaySong(0, 0x8B);
+    Make_Delay(0xA);
+    PlaySong(0, 0x8B);
+    Make_Delay(0xA);
+    PlaySong(0, 0x8B);
+    Make_Delay(0x78);
+    PlaySong(0, 0x6D);
+    Make_Delay(0x3C);
+    if (((Check_Flag(3) == 5) && (Check_Flag(4) >= 0x1E))) {
+        Anim_Door_Exit(0xC);
+        Set_Time(6, 0);
+        Proc067();
+        Set_Global_RNG_Modifier(0, 0xA);
+        Execute_Script(980);
+    } else {
+        if ((Check_Flag(4) >= 0x1E)) {
+            if ((Check_Flag(3) == 0x17)) {
+                Set_Time(0, (Check_Flag(4) - 0x1E));
+            } else {
+                Set_Time((Check_Flag(3) + 1), (Check_Flag(4) - 0x1E));
+            }
+            goto LBL_0065;
+        }
+        Set_Time(Check_Flag(3), (Check_Flag(4) + 0x1E));
+    }
+    SetEntityPosition(0, 0x14, 0x34, "Down");
+    PlaySong(0, 0x9C);
+    Fade_In(2, 1);
+    if ((Inventory_Check() == 1)) {
+        SetEntityAnim(0, 0x1C6);
+    } else {
+        SetEntityAnim(0, 0x156);
+    }
+    Set_Vector_Y(0, 0x40, 1);
+    Execute_Movement(0);
+    Anim_Door_Exit(0xC);
+    exit;
+}

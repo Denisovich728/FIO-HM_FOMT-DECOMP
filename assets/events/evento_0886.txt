@@ -1,0 +1,85 @@
+// Script 886
+#include "Fomt_Lib.src"
+
+script 886 Event_0886 {
+    const MESSAGE_0 = "That was great!\BRK\WAIT_CLICKYou sure have a lot of food\r\nI've never seen before. \BRK";
+    const MESSAGE_1 = "Why do you know so much \r\nabout other towns?\BRK";
+    const MESSAGE_2 = "I really hate the cold, so I\r\nalways spend winters in \r\nthe south. \BRK\WAIT_CLICKSo, I've eaten foods from \r\nall over the world! \BRK";
+    const MESSAGE_3 = "Really...\BRK";
+    const MESSAGE_4 = "I wonder if my mom would get\r\nbetter if she ate your \r\ncooking...?\BRK";
+    const MESSAGE_5 = "Should I go make some \r\nfor her?\BRK";
+    const MESSAGE_6 = "Would you really?\BRK";
+    const MESSAGE_7 = "Just leave it to me!\BRK";
+    const MESSAGE_8 = "Thank you, Kai!\BRK";
+    
+    Warp_Player(1, 0xA0, 0x78);
+    PlayBGM(1, 0x10);
+    SetEntityPosition(0, 0x18, 0x118, "Right");
+    if (Inventory_Check()) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    SetEntityPosition(3, 0x98, 0x78, "Right");
+    SetEntityAnim(3, 0x22F);
+    SetEntityPosition(0x1A, 0xA8, 0x78, "Left");
+    SetEntityAnim(0x1A, 0x902);
+    Fade_In(2, 1);
+    Show_Emote(3, 5, 0);
+    Make_Delay(0x3C);
+    TalkOpen();
+    Set_Portrait(8);
+    Set_Name_Window(3);
+    TalkMessage(0);
+    Set_Portrait(7);
+    Set_Name_Window(3);
+    TalkMessage(1);
+    TalkClose();
+    Show_Emote(3, 3, 0);
+    Make_Delay(0x3C);
+    TalkOpen();
+    Set_Portrait(0x99);
+    Set_Name_Window(0x1A);
+    TalkMessage(2);
+    TalkClose();
+    TalkOpen();
+    Set_Portrait(8);
+    Set_Name_Window(3);
+    TalkMessage(3);
+    Set_Portrait(7);
+    Set_Name_Window(3);
+    TalkMessage(4);
+    TalkClose();
+    Show_Emote(0x1A, 6, 0);
+    Make_Delay(0x3C);
+    TalkOpen();
+    Set_Portrait(0x99);
+    Set_Name_Window(0x1A);
+    TalkMessage(5);
+    TalkClose();
+    Show_Emote(3, 2, 0);
+    Make_Delay(0x3C);
+    TalkOpen();
+    Set_Portrait(8);
+    Set_Name_Window(3);
+    TalkMessage(6);
+    TalkClose();
+    TalkOpen();
+    Set_Portrait(0x9A);
+    Set_Name_Window(0x1A);
+    TalkMessage(7);
+    TalkClose();
+    TalkOpen();
+    Set_Portrait(8);
+    Set_Name_Window(3);
+    TalkMessage(8);
+    TalkClose();
+    Pan_Camera_To(0x18, 0x118, 2);
+    Wait_Camera_Stop();
+    End_Cinematic_State();
+    Routine_State_Override(3, 0x377);
+    Routine_State_Override(0x1A, 0x378);
+    Set_Flag(0x7A, 1);
+    exit;
+    exit;
+}

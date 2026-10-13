@@ -1,0 +1,158 @@
+// Script 356
+#include "Fomt_Lib.src"
+
+script 356 Event_0356 {
+    const MESSAGE_0 = "................but..........\r\n............................\r\n............................\BRK";
+    const MESSAGE_1 = "............................\r\n............................\r\n............................\r\n............................\r\n............................\r\n............................\r\n............................\r\n............................\r\n..-ness.....................\r\n............................\r\n............................\r\n............................\BRK";
+    const MESSAGE_2 = "............................\r\n................cow.........\r\n............................\BRK";
+    const MESSAGE_3 = ".......goodness.............\r\n............................\r\n............................\BRK";
+    const MESSAGE_4 = "-----------such-------------\r\n----------------------------\r\n----------------------------\BRK";
+    const MESSAGE_5 = "----------------------------\r\n----------------------------\r\n----------------------------\r\n----------------------------\r\n----------------------------\r\n----------------------------\r\n-----------now--------------\r\n----------------------------\r\n----------------------------\r\n----------------------------\r\n----------------------------\r\n---------------for----------\BRK";
+    const MESSAGE_6 = "----------------------------\r\n----------------------------\r\n----------------------------\BRK";
+    
+    var var_0;
+    var var_1;
+    
+    TalkOpen();
+    if ((((Check_Flag(3) == 4) || (Check_Flag(3) == 0x10)) && (Check_Flag(4) == 0x2C))) {
+        Set_TV_Screen_Graphic(0x10);
+    } else {
+        if (((Check_Flag(6) == 3) || (Check_Flag(6) == 4))) {
+            Set_TV_Screen_Graphic(0x10);
+            if (Init_Notice_Board_UI()) {
+                var_1 = Print_TV_Message(0);
+            } else {
+                var_0 = RNG_Generator(0, 0xA);
+                switch (var_0) {
+                    case 0:
+                        var_1 = Print_TV_Message(1);
+                        break;
+                    case 1:
+                    case 2:
+                    case 3:
+                    case 4:
+                    case 5:
+                        var_1 = Print_TV_Message(2);
+                        break;
+                    case 6:
+                    case 7:
+                    case 8:
+                    case 9:
+                    case 0xA:
+                        var_1 = Print_TV_Message(3);
+                        break;
+                }
+            }
+            goto LBL_0007;
+        }
+        if ((Check_Flag(3) < 6)) {
+            Set_TV_Screen_Graphic(1);
+            if (Init_Notice_Board_UI()) {
+                var_1 = Print_TV_Message(4);
+            } else {
+                var_0 = RNG_Generator(0, 0xA);
+                switch (var_0) {
+                    case 0:
+                        var_1 = Print_TV_Message(5);
+                        break;
+                    case 1:
+                    case 2:
+                    case 3:
+                    case 4:
+                    case 5:
+                        var_1 = Print_TV_Message(6);
+                        break;
+                    case 6:
+                    case 7:
+                    case 8:
+                    case 9:
+                    case 0xA:
+                        var_1 = Print_TV_Message(6);
+                        break;
+                }
+            }
+            goto LBL_0007;
+        }
+        switch (Check_Flag(0x244)) {
+            case 0:
+                Execute_Script(1057);
+                break;
+            case 3:
+                Set_TV_Screen_Graphic(0xE);
+                Execute_Script(1049);
+                break;
+            case 1:
+                if ((Check_Flag(3) < 0xC)) {
+                    Set_TV_Screen_Graphic(8);
+                    Execute_Script(1043);
+                    goto LBL_0026;
+                }
+                Set_TV_Screen_Graphic(9);
+                Execute_Script(1044);
+                break;
+            case 2:
+                if (((Check_Flag(1) == 0) && (((((Check_Flag(2) == 1) || (Check_Flag(2) == 2)) || (Check_Flag(2) == 3)) || (Check_Flag(2) == 4)) || (Check_Flag(2) == 5)))) {
+                    var_0 = RNG_Generator(0, 1);
+                    switch (var_0) {
+                        case 0:
+                            Execute_Script(1052);
+                            break;
+                        case 1:
+                            Set_TV_Screen_Graphic(7);
+                            Execute_Script(1041);
+                            break;
+                    }
+                    goto LBL_0039;
+                }
+                if (((Check_Flag(1) == 3) && ((Check_Flag(2) == 0x1D) || (Check_Flag(2) == 0x1E)))) {
+                    Execute_Script(1052);
+                    goto LBL_0041;
+                }
+                switch (Check_Flag(5)) {
+                    case 0:
+                        Set_TV_Screen_Graphic(2);
+                        Execute_Script(1034);
+                        break;
+                    case 1:
+                        Set_TV_Screen_Graphic(5);
+                        Execute_Script(1038);
+                        break;
+                    case 2:
+                        Set_TV_Screen_Graphic(3);
+                        Execute_Script(1035);
+                        break;
+                    case 3:
+                        Set_TV_Screen_Graphic(0xA);
+                        Execute_Script(1045);
+                        break;
+                    case 4:
+                        Set_TV_Screen_Graphic(0x11);
+                        Execute_Script(1054);
+                        break;
+                    case 5:
+                        Set_TV_Screen_Graphic(0xB);
+                        Execute_Script(1046);
+                        break;
+                    case 6:
+                        Execute_Script(1051);
+                        break;
+                }
+                break;
+        }
+    }
+    Close_TV_Interface();
+    TalkClose();
+    switch (var_1) {
+        case 0:
+        case 1:
+        case 2:
+        case 3:
+            Set_Flag(0x244, var_1);
+            Execute_Script(540);
+            break;
+        case 4:
+        case 5:
+            break;
+    }
+    exit;
+}

@@ -1,0 +1,84 @@
+// Script 986
+#include "Fomt_Lib.src"
+
+script 986 Event_0986 {
+    const MESSAGE_0 = "You overslept...\BRK";
+    const MESSAGE_1 = "The curse has been lifted\r\nfrom the Hammer!\BRK";
+    const MESSAGE_2 = "The Sickle's curse\r\nhas been removed!\BRK";
+    
+    var var_0;
+    var var_1;
+    
+    if ((Last_Sleep_Location_Check() != 0x234)) {
+        var_1 = Check_Flag(0xC);
+        if ((var_1 < 0x32)) {
+            var_0 = 0;
+        } else {
+            var_0 = 1;
+            if ((var_1 < 0x46)) {
+                Set_Time(8, 0);
+                Set_Global_RNG_Modifier(0xE, -4);
+            } else {
+                if ((var_1 < 0x50)) {
+                    Set_Time(0xA, 0);
+                    Set_Global_RNG_Modifier(0x1C, -6);
+                } else {
+                    Set_Time(0xC, 0);
+                    Set_Global_RNG_Modifier(0x2A, -0xC);
+                }
+            }
+        }
+    }
+    switch (Last_Sleep_Location_Check()) {
+        case 0x27:
+            Warp_Player(0x27, 0x67, 0x53);
+            SetEntityPosition(0, 0x67, 0x53, "Down");
+            break;
+        case 0x12:
+            Warp_Player(0x12, 0x8F, 0x70);
+            SetEntityPosition(0, 0x8F, 0x70, "Left");
+            break;
+        case 0x23:
+            Warp_Player(0x23, 0x8F, 0x70);
+            SetEntityPosition(0, 0x8F, 0x70, "Left");
+            break;
+        default:
+            Reset_Player_After_Festival_Activity();
+            break;
+    }
+    PlaySong(0, 0xAF);
+    Lock_Player_Input();
+    Fade_In(2, 1);
+    if (var_0) {
+        TalkOpen();
+        TalkMessage(0);
+        TalkClose();
+    }
+    if ((Func136(0x1D) && (Check_Equped_Tool() == 0x1D))) {
+        if ((1 == Func137(0x1D))) {
+            Remove_Equipped_Item();
+            Give_Tool_In_ToolBox(0x1E, 1);
+            Animation_Tool_Give(0x1E);
+            PlaySong(0, 0xB6);
+            Make_Delay(0x32);
+            TalkOpen();
+            TalkMessage(1);
+            TalkClose();
+        }
+    }
+    if ((Func136(5) && (Check_Equped_Tool() == 5))) {
+        if ((1 == Func137(5))) {
+            Remove_Equipped_Item();
+            Give_Tool_In_ToolBox(6, 1);
+            Animation_Tool_Give(6);
+            PlaySong(0, 0xB6);
+            Make_Delay(0x32);
+            TalkOpen();
+            TalkMessage(2);
+            TalkClose();
+        }
+    }
+    Unlock_Player_Input();
+    Resume_Tick_Engine();
+    exit;
+}

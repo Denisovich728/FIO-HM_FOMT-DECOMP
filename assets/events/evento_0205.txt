@@ -1,0 +1,44 @@
+// Script 205
+#include "Fomt_Lib.src"
+
+script 205 Event_0205 {
+    const MESSAGE_0 = "It's locked...\BRK";
+    
+    var var_0;
+    
+    if ((GetEntityFacing(0) == 1)) {
+        var_0 = 0;
+        if (((((((Check_Flag(0x46) == 1) || (Check_Flag(0x47) == 1)) || (Check_Flag(0x49) == 1)) || (Check_Flag(0x4A) == 1)) || (Check_Flag(0xFC) == 1)) || (Check_Flag(0x117) == 1))) {
+            var_0 = 0;
+        } else {
+            if ((Check_Flag(0x4C) == 2)) {
+                if ((GetEntityLocation(0x12) == 0x10)) {
+                    var_0 = 1;
+                }
+            } else {
+                if ((GetEntityLocation(0x12) == 0x10)) {
+                    if ((Chek_Friendship_Points(0x12) <= 0x64)) {
+                        var_0 = 0;
+                    } else {
+                        if ((Chek_Friendship_Points(0x12) > 0x64)) {
+                            var_0 = 1;
+                        }
+                    }
+                }
+            }
+        }
+        if ((var_0 == 1)) {
+            PlaySong(0, 0x9C);
+            Anim_Door_Close(9);
+            Fade_Out(2, 1);
+            Warp_Player(0x10, 0x5C, 0x140);
+            SetEntityPosition(0, 0x5C, 0x140, "Up");
+            Fade_In(2, 1);
+        } else {
+            TalkOpen();
+            TalkMessage(0);
+            TalkClose();
+        }
+    }
+    exit;
+}

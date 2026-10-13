@@ -1,0 +1,31 @@
+// Script 368
+#include "Fomt_Lib.src"
+
+script 368 Event_0368 {
+    const MESSAGE_0 = "Street lamp\BRK";
+    const MESSAGE_1 = "A Jewel of Truth is fallen\r\nbeneath the street lamp.\BRK";
+    const MESSAGE_2 = "Found a Jewel of Truth \r\nbeneath the street lamp.\BRK\r\n...But my hands are\r\nalready full, so I \r\ncan't hold it.\BRK";
+    
+    if ((Check_Flag(0x215) == 1)) {
+        TalkOpen();
+        Print_Message(0);
+    } else {
+        if ((Check_Flag(0x16) == 1)) {
+            if ((Inventory_Check() == 1)) {
+                Give_Item(0x27);
+                TalkOpen();
+                TalkMessage(1);
+                Set_Flag(0x215, 1);
+                Set_Flag(0x154, (Check_Flag(0x154) + 1));
+            } else {
+                TalkOpen();
+                TalkMessage(2);
+            }
+            goto LBL_0003;
+        }
+        TalkOpen();
+        Print_Message(0);
+    }
+    TalkClose();
+    exit;
+}

@@ -1,0 +1,16 @@
+// Script 702
+#include "Fomt_Lib.src"
+
+script 702 Event_0702 {
+    const MESSAGE_0 = "Tee-hee....\r\nI'm so happy!...\BRK";
+    
+    SetEntityFacing(1, GetOppositeFacing(GetEntityFacing(0)));
+    TalkOpen();
+    Set_Name_Window(1);
+    Set_Portrait(0xF);
+    TalkMessage(0);
+    TalkClose();
+    SetEntityFacing(1, "Down");
+    exit;
+    exit;
+}

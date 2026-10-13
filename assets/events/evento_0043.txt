@@ -1,0 +1,58 @@
+// Script 43
+#include "Fomt_Lib.src"
+
+script 43 Event_0043 {
+    const MESSAGE_0 = "I don't think anybody will\r\ninterrupt us here. \BRK";
+    const MESSAGE_1 = "You really mean it?!\r\nI'm so happy! I've always \r\nwanted to wear a wedding \BRK\r\ndress!\BRK";
+    const MESSAGE_2 = "I have to go tell my mom!\r\nI just hope Rick doesn't\r\nget upset...\BRK";
+    
+    Warp_Player(0x1D, 0x14B, 0x94);
+    PlayBGM(1, 0x11);
+    SetEntityPosition(0, 0x14B, 0x94, "Left");
+    SetEntityAnim(0, 0x192);
+    SetEntityPosition(3, 0x12F, 0x94, "Right");
+    SetEntityAnim(3, 0x22F);
+    Fade_In(2, 1);
+    TalkOpen();
+    Set_Portrait(0xC);
+    Set_Name_Window(3);
+    Set_Hearth_Anim(3);
+    TalkMessage(0);
+    TalkClose();
+    SetEntityAnim(0, 0x1FE);
+    Make_Delay(0x3C);
+    SetEntityAnim(0, 0x192);
+    Make_Delay(0x28);
+    SetEntityAnim(0, 0x42);
+    Animation_Tool_Give(0x4B);
+    Make_Delay(0x3C);
+    SetEntityAnim(0, 0x192);
+    Show_Emote(3, 1, 0);
+    Make_Delay(0x3C);
+    TalkOpen();
+    Set_Portrait(0xC);
+    Set_Name_Window(3);
+    Set_Hearth_Anim(3);
+    TalkMessage(1);
+    TalkClose();
+    Show_Emote(0, 1, 0);
+    Make_Delay(0x3C);
+    TalkOpen();
+    Set_Portrait(7);
+    Set_Name_Window(3);
+    Set_Hearth_Anim(3);
+    TalkMessage(2);
+    TalkClose();
+    Remove_Equipped_Item();
+    SetEntityFacing(3, "Down");
+    SetEntityAnim(3, 0x233);
+    SetEntityFacing(0, "Down");
+    Set_Vector_Y(3, 0xFA, 1);
+    Execute_Movement(3);
+    SetEntityAnim(3, 0x22F);
+    Hide_Entity(3);
+    Free_Event_Entity(3);
+    Set_Flag(0x54, 2);
+    exit;
+    exit;
+}

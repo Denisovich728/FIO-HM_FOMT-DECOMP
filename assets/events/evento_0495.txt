@@ -1,0 +1,11 @@
+// Script 495
+#include "Fomt_Lib.src"
+
+script 495 Event_0495 {
+    const MESSAGE_0 = "\x81uChurch\x81v\r\n\BRK";
+    
+    TalkOpen();
+    Print_Message(0);
+    TalkClose();
+    exit;
+}

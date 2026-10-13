@@ -1,0 +1,22 @@
+// Script 1104
+#include "Fomt_Lib.src"
+
+script 1104 Event_1104 {
+    const MESSAGE_0 = "I came because I heard \r\nLillia was going to compete.\BRK\WAIT_CLICKI should be near her in \r\ncase she gets sick. \BRK";
+    
+    if ((Check_If_Single(0x14) == 0)) {
+        Free_Event_Entity(0x14);
+    }
+    SetEntityFacing(0x14, GetOppositeFacing(GetEntityFacing(0)));
+    TalkOpen();
+    Set_Portrait(0x23);
+    Set_Name_Window(0x14);
+    TalkMessage(0);
+    TalkClose();
+    if ((Has_Spoken_To_NPC_Today(0x14) == 0)) {
+        Give_Friendship_Points(0x14, 5);
+    }
+    SetEntityFacing(0x14, "Up");
+    Free_Event_Entity(0x14);
+    exit;
+}

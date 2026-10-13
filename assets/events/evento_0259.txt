@@ -1,0 +1,35 @@
+// Script 259
+#include "Fomt_Lib.src"
+
+script 259 Event_0259 {
+    const MESSAGE_0 = "It's locked...\BRK";
+    
+    var var_0;
+    
+    if ((GetEntityFacing(0) == 1)) {
+        var_0 = 0;
+        if ((Check_Flag(0x5F) == 2)) {
+            var_0 = 1;
+        } else {
+            if ((Chek_Friendship_Points(0x18) <= 0x64)) {
+                var_0 = 0;
+            } else {
+                if ((Chek_Friendship_Points(0x18) > 0x64)) {
+                    var_0 = 0;
+                    if ((Chek_Friendship_Points(0x18) > 0xC8)) {
+                        var_0 = 1;
+                    }
+                }
+            }
+        }
+        if ((var_0 == 1)) {
+            PlaySong(0, 0x9C);
+            Anim_Door_Close(2);
+        } else {
+            TalkOpen();
+            TalkMessage(0);
+            TalkClose();
+        }
+    }
+    exit;
+}

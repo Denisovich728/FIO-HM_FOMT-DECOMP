@@ -1,0 +1,11 @@
+// Script 544
+#include "Fomt_Lib.src"
+
+script 544 Event_0544 {
+    const MESSAGE_0 = "Ground\BRK";
+    
+    TalkOpen();
+    Print_Message(0);
+    TalkClose();
+    exit;
+}

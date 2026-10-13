@@ -1,0 +1,31 @@
+// Script 901
+#include "Fomt_Lib.src"
+
+script 901 Event_0901 {
+    const MESSAGE_0 = "This is the happiest \r\nday of my life! \BRK";
+    const MESSAGE_1 = "Everybody I love is here to\r\ncelebrate my marriage\r\nwith Kai. \BRK";
+    
+    if ((Check_If_Single(3) == 0)) {
+        Free_Event_Entity(3);
+    }
+    if ((Has_NPC_Talked_Today(3) == 0)) {
+        SetEntityFacing(3, GetOppositeFacing(GetEntityFacing(0)));
+        TalkOpen();
+        Set_Portrait(0xD);
+        Set_Name_Window(3);
+        TalkMessage(0);
+        TalkClose();
+        SetEntityFacing(3, "Down");
+        Free_Event_Entity(3);
+    } else {
+        SetEntityFacing(3, GetOppositeFacing(GetEntityFacing(0)));
+        TalkOpen();
+        Set_Portrait(0xD);
+        Set_Name_Window(3);
+        TalkMessage(1);
+        TalkClose();
+        SetEntityFacing(3, "Down");
+        Free_Event_Entity(3);
+    }
+    exit;
+}

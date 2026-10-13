@@ -1,0 +1,33 @@
+// Script 1219
+#include "Fomt_Lib.src"
+
+script 1219 Event_1219 {
+    const MESSAGE_0 = "It wasn't me! \r\nI decided not to put \r\nin the Jam!\BRK";
+    const MESSAGE_1 = "I accidentally dropped the \r\nwhole jar of Jam in!\BRK\WAIT_CLICKI took it out later \r\nsecretly, though. \BRK";
+    
+    if ((Check_If_Single(0x13) == 0)) {
+        Free_Event_Entity(0x13);
+    }
+    SetEntityFacing(0x13, GetOppositeFacing(GetEntityFacing(0)));
+    if ((Has_Spoken_To_NPC_Today(0x13) == 0)) {
+        Give_Friendship_Points(0x13, 5);
+    }
+    TalkOpen();
+    if (!((((((((Check_Flag(0x55) == 2) || (Check_Flag(0x5F) == 2)) || (Check_Flag(0x67) == 2)) || (Check_Flag(0x6F) == 2)) || (Check_Flag(0x173) == 2)) || (Check_Flag(0x75) == 2)) || (Check_Flag(0x76) == 2)) || (Check_Flag(0x77) == 2))) {
+        Set_Hearth_Anim(0x13);
+    }
+    Set_Name_Window(0x13);
+    if ((Check_Flag(0x1A5) == 1)) {
+        Set_Portrait(0x48);
+        TalkMessage(0);
+        TalkClose();
+        Free_Event_Entity(0x13);
+    } else {
+        Set_Portrait(0x48);
+        TalkMessage(1);
+        TalkClose();
+        Free_Event_Entity(0x13);
+    }
+    SetEntityFacing(0x13, "Right");
+    exit;
+}

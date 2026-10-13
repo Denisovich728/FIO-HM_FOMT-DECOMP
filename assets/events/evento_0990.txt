@@ -1,0 +1,25 @@
+// Script 990
+#include "Fomt_Lib.src"
+
+script 990 Event_0990 {
+    const MESSAGE_0 = "The curse has been\r\nlifted from the Axe!\BRK";
+    const MESSAGE_1 = "The curse has been lifted\r\nfrom the Fishing Rod!\BRK";
+    
+    var var_0;
+    
+    var_0 = Check_Equped_Tool();
+    Animation_Tool_Give(var_0);
+    PlaySong(0, 0xB6);
+    TalkOpen();
+    switch (var_0) {
+        case 0x16:
+            TalkMessage(0);
+            break;
+        case 0x2E:
+            TalkMessage(1);
+            break;
+    }
+    TalkClose();
+    SetEntityAnim(0, 0x192);
+    exit;
+}

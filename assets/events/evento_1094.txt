@@ -1,0 +1,30 @@
+// Script 1094
+#include "Fomt_Lib.src"
+
+script 1094 Event_1094 {
+    const MESSAGE_0 = "Me, I just like \r\nlooking at everybody's \r\nHorses. \BRK";
+    const MESSAGE_1 = "Looks like it's about\r\nto start. Good luck! \BRK";
+    
+    if ((Check_If_Single(0xE) == 0)) {
+        Free_Event_Entity(0xE);
+    }
+    SetEntityFacing(0xE, GetOppositeFacing(GetEntityFacing(0)));
+    if ((Check_Flag(0x188) == 0)) {
+        TalkOpen();
+        Set_Portrait(0x91);
+        Set_Name_Window(0xE);
+        TalkMessage(0);
+    } else {
+        TalkOpen();
+        Set_Portrait(0x92);
+        Set_Name_Window(0xE);
+        TalkMessage(1);
+    }
+    TalkClose();
+    if ((Has_Spoken_To_NPC_Today(0xE) == 0)) {
+        Give_Friendship_Points(0xE, 5);
+    }
+    Free_Event_Entity(0xE);
+    SetEntityFacing(0xE, "Down");
+    exit;
+}

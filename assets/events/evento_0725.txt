@@ -1,0 +1,23 @@
+// Script 725
+#include "Fomt_Lib.src"
+
+script 725 Event_0725 {
+    const MESSAGE_0 = "Thanks for helping me be \r\nconfident in myself. Now I \r\nhave to write the letter.\BRK";
+    const MESSAGE_1 = "I think I need to be\r\nalone now. \r\n\BRK\WAIT_CLICK\BRK";
+    
+    SetEntityFacing(0xA, GetOppositeFacing(GetEntityFacing(0)));
+    TalkOpen();
+    Set_Name_Window(0xA);
+    if ((Check_Flag(0xFE) == 1)) {
+        Set_Portrait(0x63);
+        TalkMessage(0);
+    } else {
+        Set_Portrait(0x66);
+        TalkMessage(1);
+    }
+    Free_Event_Entity(0xA);
+    TalkClose();
+    SetEntityFacing(0xA, "Up");
+    exit;
+    exit;
+}

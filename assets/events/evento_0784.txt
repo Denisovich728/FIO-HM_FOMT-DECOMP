@@ -1,0 +1,40 @@
+// Script 784
+#include "Fomt_Lib.src"
+
+script 784 Event_0784 {
+    const MESSAGE_0 = "This is the anniversary \r\nof Ann's mother's death.\BRK\WAIT_CLICKAnn lets me take the day \r\noff every year, bless her. \BRK";
+    
+    Warp_Player(8, 0xE6, 0x118);
+    SetEntityPosition(0, 0xE6, 0x1A4, "Up");
+    if ((Inventory_Check() == 1)) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    SetEntityPosition(0x18, 0xC8, 0x118, "Up");
+    SetEntityAnim(0x18, 0x7B2);
+    Fade_In(2, 1);
+    if ((Inventory_Check() == 1)) {
+        SetEntityAnim(0, 0x1C6);
+    } else {
+        SetEntityAnim(0, 0x156);
+    }
+    Set_Vector_Y(0, 0x118, 1);
+    Execute_Movement(0);
+    if ((Inventory_Check() == 1)) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    Make_Delay(0x1E);
+    TalkOpen();
+    Set_Portrait(0x56);
+    Set_Name_Window(0x18);
+    TalkMessage(0);
+    TalkClose();
+    Free_Event_Entity(0x18);
+    End_Cinematic_State();
+    Set_Flag(0x127, 1);
+    Routine_State_Override(0x18, 0x311);
+    exit;
+}

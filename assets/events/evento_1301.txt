@@ -1,0 +1,73 @@
+// Script 1301
+#include "Fomt_Lib.src"
+
+script 1301 Event_1301 {
+    const MESSAGE_0 = "Thanks for coming. \BRK";
+    const MESSAGE_1 = "Good evening. \r\nPlease come in.\BRK";
+    const MESSAGE_2 = "So Popuri invited you?\r\nYou live alone, right?\BRK\WAIT_CLICKIt's always good to be with\r\nfriends for the Starry \r\nNight Festival, you know!\BRK";
+    const MESSAGE_3 = "Well then, let's start\r\nthe party...!\BRK";
+    const MESSAGE_4 = "Spending the Starry Night \r\nFestival with Popuri's \r\nfamily was lots of fun!\BRK";
+    
+    Warp_Player(0xA, 0x78, 0xA8);
+    PlayBGM(1, 7);
+    Spawn_Item_On_Grid(0, 0x78, 0x68, 1, Get_Item_Sprite_ID(0x8F));
+    Spawn_Item_On_Grid(1, 0x88, 0x68, 1, Get_Item_Sprite_ID(0x54));
+    SetEntityPosition(0, 0x78, 0xD2, "Up");
+    SetEntityPosition(3, 0xA8, 0x8E, "Left");
+    SetEntityAnim(3, 0x22F);
+    SetEntityPosition(2, 0x80, 0x58, "Down");
+    SetEntityAnim(2, 0x213);
+    SetEntityPosition(1, 0x60, 0x78, "Right");
+    SetEntityAnim(1, 0x25F);
+    Fade_In(2, 1);
+    if ((Inventory_Check() == 1)) {
+        SetEntityAnim(0, 0x1C6);
+    } else {
+        SetEntityAnim(0, 0x156);
+    }
+    Set_Vector_Y(0, 0xA8, 1);
+    Execute_Movement(0);
+    if ((Inventory_Check() == 1)) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    SetEntityFacing(3, "Down");
+    SetEntityFacing(1, "Down");
+    Make_Delay(0xA);
+    TalkOpen();
+    Set_Name_Window(3);
+    Set_Portrait(8);
+    Set_Hearth_Anim(3);
+    TalkMessage(0);
+    TalkClose();
+    TalkOpen();
+    Set_Name_Window(1);
+    Set_Portrait(0xF);
+    TalkMessage(1);
+    TalkClose();
+    TalkOpen();
+    Set_Name_Window(2);
+    Set_Portrait(1);
+    TalkMessage(2);
+    TalkClose();
+    TalkOpen();
+    Set_Name_Window(1);
+    Set_Portrait(0xF);
+    TalkMessage(3);
+    TalkClose();
+    Give_Love_Points(3, 0x7D0);
+    Give_Friendship_Points(3, 0x1E);
+    Give_Friendship_Points(2, 0x1E);
+    Give_Friendship_Points(1, 0x1E);
+    Fade_Out(2, 1);
+    TalkOpen();
+    TalkMessage(4);
+    TalkClose();
+    Despawn_Map_Item(0);
+    Despawn_Map_Item(1);
+    Set_Flag(0x1C8, 2);
+    Set_Flag(0x1C2, 0);
+    Execute_Script(988);
+    exit;
+}

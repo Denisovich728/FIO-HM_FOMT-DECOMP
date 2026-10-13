@@ -1,0 +1,22 @@
+// Script 1206
+#include "Fomt_Lib.src"
+
+script 1206 Event_1206 {
+    const MESSAGE_0 = "Listening to music \r\nrelaxes me so much. \BRK";
+    
+    if ((Check_If_Single(0x11) == 0)) {
+        Free_Event_Entity(0x11);
+    }
+    SetEntityFacing(0x11, GetOppositeFacing(GetEntityFacing(0)));
+    TalkOpen();
+    Set_Portrait(0x44);
+    Set_Name_Window(0x11);
+    TalkMessage(0);
+    TalkClose();
+    if ((Has_Spoken_To_NPC_Today(0x11) == 0)) {
+        Give_Friendship_Points(0x11, 5);
+    }
+    SetEntityFacing(0x11, "Up");
+    Free_Event_Entity(0x11);
+    exit;
+}

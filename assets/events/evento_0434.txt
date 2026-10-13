@@ -1,0 +1,11 @@
+// Script 434
+#include "Fomt_Lib.src"
+
+script 434 Event_0434 {
+    const MESSAGE_0 = "Menu\BRK";
+    
+    TalkOpen();
+    Print_Message(0);
+    TalkClose();
+    exit;
+}

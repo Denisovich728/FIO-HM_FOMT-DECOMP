@@ -1,0 +1,28 @@
+// Script 757
+#include "Fomt_Lib.src"
+
+script 757 Event_0757 {
+    const MESSAGE_0 = "Aja left home because of \r\nan argument with Duke. \BRK";
+    const MESSAGE_1 = "Let's call Aja now. \BRK";
+    
+    if ((Check_If_Single(0x12) == 0)) {
+        Free_Event_Entity(0x12);
+    }
+    if ((Check_Flag(0x118) == 1)) {
+        SetEntityFacing(0x12, GetOppositeFacing(GetEntityFacing(0)));
+        TalkOpen();
+        if ((Has_NPC_Talked_Today(0x12) == 0)) {
+            Set_Portrait(0x4F);
+            Set_Name_Window(0x12);
+            TalkMessage(0);
+        } else {
+            Set_Portrait(0x4F);
+            Set_Name_Window(0x12);
+            TalkMessage(1);
+        }
+        TalkClose();
+        Free_Event_Entity(0x12);
+        SetEntityFacing(0x12, "Down");
+    }
+    exit;
+}

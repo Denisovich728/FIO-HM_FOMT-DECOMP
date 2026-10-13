@@ -1,0 +1,22 @@
+// Script 1113
+#include "Fomt_Lib.src"
+
+script 1113 Event_1113 {
+    const MESSAGE_0 = "I always get so excited \r\nabout the Cooking Festival!\BRK";
+    
+    if ((Check_If_Single(0x1B) == 0)) {
+        Free_Event_Entity(0x1B);
+    }
+    SetEntityFacing(0x1B, GetOppositeFacing(GetEntityFacing(0)));
+    TalkOpen();
+    Set_Portrait(0xAD);
+    Set_Name_Window(0x1B);
+    TalkMessage(0);
+    TalkClose();
+    if ((Has_Spoken_To_NPC_Today(0x1B) == 0)) {
+        Give_Friendship_Points(0x1B, 5);
+    }
+    SetEntityFacing(0x1B, "Up");
+    Free_Event_Entity(0x1B);
+    exit;
+}

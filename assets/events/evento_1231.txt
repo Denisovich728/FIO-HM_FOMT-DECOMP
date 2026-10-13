@@ -1,0 +1,22 @@
+// Script 1231
+#include "Fomt_Lib.src"
+
+script 1231 Event_1231 {
+    const MESSAGE_0 = "We have to be careful \r\nand watch Karen. \BRK\WAIT_CLICKLast year she put \r\nChocolate in! \BRK";
+    
+    if ((Check_If_Single(0x12) == 0)) {
+        Free_Event_Entity(0x12);
+    }
+    SetEntityFacing(0x12, GetOppositeFacing(GetEntityFacing(0)));
+    TalkOpen();
+    Set_Portrait(0x51);
+    Set_Name_Window(0x12);
+    TalkMessage(0);
+    TalkClose();
+    if ((Has_Spoken_To_NPC_Today(0x12) == 0)) {
+        Give_Friendship_Points(0x12, 5);
+    }
+    SetEntityFacing(0x12, "Left");
+    Free_Event_Entity(0x12);
+    exit;
+}

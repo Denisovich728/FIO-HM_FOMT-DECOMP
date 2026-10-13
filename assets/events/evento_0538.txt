@@ -1,0 +1,11 @@
+// Script 538
+#include "Fomt_Lib.src"
+
+script 538 Event_0538 {
+    const MESSAGE_0 = "Mirror\BRK";
+    
+    TalkOpen();
+    TalkMessage(0);
+    TalkClose();
+    exit;
+}

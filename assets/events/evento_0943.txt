@@ -1,0 +1,31 @@
+// Script 943
+#include "Fomt_Lib.src"
+
+script 943 Event_0943 {
+    const MESSAGE_0 = "In my day, it was \r\nunthinkable for a boy to get\r\nmarried before he could \BRK\r\nsupport a family on his own!\BRK";
+    const MESSAGE_1 = "Mary's a good girl. \r\nI won't have to worry about \r\nGray if she's with him! \BRK";
+    
+    if ((Check_If_Single(6) == 0)) {
+        Free_Event_Entity(6);
+    }
+    if ((Has_NPC_Talked_Today(6) == 0)) {
+        SetEntityFacing(6, GetOppositeFacing(GetEntityFacing(0)));
+        TalkOpen();
+        Set_Portrait(0xA8);
+        Set_Name_Window(6);
+        TalkMessage(0);
+        TalkClose();
+        SetEntityFacing(6, "Right");
+        Free_Event_Entity(6);
+    } else {
+        SetEntityFacing(6, GetOppositeFacing(GetEntityFacing(0)));
+        TalkOpen();
+        Set_Portrait(0xA9);
+        Set_Name_Window(6);
+        TalkMessage(1);
+        TalkClose();
+        SetEntityFacing(6, "Right");
+        Free_Event_Entity(6);
+    }
+    exit;
+}

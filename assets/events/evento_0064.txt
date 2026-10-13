@@ -1,0 +1,134 @@
+// Script 64
+#include "Fomt_Lib.src"
+
+script 64 Event_0064 {
+    const MESSAGE_0 = "You may now kiss the bride. \BRK";
+    const MESSAGE_1 = "Let\x81fs make a happy family.\BRK";
+    const MESSAGE_2 = "May you always be\r\nhappy together. \BRK";
+    
+    Warp_Player(0xC, 0xB8, 0xA0);
+    SetEntityPosition(0, 0xA8, 0x98, "Down");
+    Lock_Player_Input();
+    SetEntityAnim(0, 0x82);
+    SetEntityPosition(0xC, 0xC8, 0x98, "Down");
+    SetEntityAnim(0xC, 0x837);
+    SetEntityPosition(0x16, 0xB8, 0x78, "Down");
+    SetEntityAnim(0x16, 0x8EC);
+    SetEntityPosition(0xD, 0x68, 0x9B, "Right");
+    SetEntityAnim(0xD, 0x85F);
+    SetEntityPosition(5, 0x108, 0xC3, "Left");
+    SetEntityAnim(5, 0x9E7);
+    SetEntityPosition(0x10, 0x68, 0xC3, "Right");
+    SetEntityAnim(0x10, 0x8B8);
+    SetEntityPosition(0xB, 0x108, 0x9B, "Left");
+    SetEntityAnim(0xB, 0x84B);
+    SetEntityPosition(0xA, 0x128, 0x9B, "Left");
+    SetEntityAnim(0xA, 0x80B);
+    if ((GetEntityLocation(0x17) == 0xC)) {
+        Hide_Entity(0x17);
+    }
+    if ((GetEntityLocation(0x11) == 0xC)) {
+        Hide_Entity(0x11);
+    }
+    if ((GetEntityLocation(0x14) == 0xC)) {
+        Hide_Entity(0x14);
+    }
+    if ((GetEntityLocation(8) == 0xC)) {
+        Hide_Entity(8);
+    }
+    if ((GetEntityLocation(9) == 0xC)) {
+        Hide_Entity(9);
+    }
+    if ((GetEntityLocation(3) == 0xC)) {
+        Hide_Entity(3);
+    }
+    StopAllSongs();
+    Fade_In(2, 1);
+    PlaySong(0, 0xB3);
+    Make_Delay((0x3C * 3));
+    PlaySong(0, 0xB3);
+    Make_Delay((0x3C * 3));
+    PlayBGM(1, 6);
+    TalkOpen();
+    Set_Portrait(0x95);
+    Set_Name_Window(0x16);
+    TalkMessage(0);
+    TalkClose();
+    SetEntityFacing(0, "Right");
+    SetEntityFacing(0xC, "Left");
+    Show_Emote(0xC, 1, 0);
+    Make_Delay(0x3C);
+    TalkOpen();
+    Set_Portrait(0x6D);
+    Set_Name_Window(0xC);
+    Set_Hearth_Anim(0xC);
+    TalkMessage(1);
+    TalkClose();
+    SetEntityAnim(0, 0x86);
+    Set_Vector_X(0, 0xB8, 1);
+    Execute_Movement(0);
+    SetEntityAnim(0, 0x82);
+    SetEntityAnim(0, 0x7E);
+    SetEntityAnim(0xC, 0x83F);
+    Make_Delay(0x5A);
+    SetEntityAnim(0, 0x82);
+    SetEntityAnim(0xC, 0x837);
+    SetEntityAnim(0, 0x86);
+    Set_Vector_X(0, 0xA8, 1);
+    Execute_Movement(0);
+    SetEntityAnim(0, 0x82);
+    Make_Delay(0x3C);
+    SetEntityFacing(0, "Down");
+    SetEntityFacing(0xC, "Down");
+    TalkOpen();
+    Set_Portrait(0x76);
+    Set_Name_Window(0xD);
+    TalkMessage(2);
+    TalkClose();
+    SetEntityAnim(0, 0x86);
+    SetEntityAnim(0xC, 0x83B);
+    Set_Vector_Y(0, 0xB3, 1);
+    Set_Vector_Y(0xC, 0xB3, 1);
+    Execute_Movement(0);
+    Execute_Movement(0xC);
+    SetEntityFacing(0xD, "Down");
+    SetEntityFacing(0xA, "Down");
+    SetEntityFacing(0xB, "Down");
+    Set_Vector_Y(0, 0x118, 1);
+    Set_Vector_Y(0xC, 0x118, 1);
+    SetEntityAnim(0x10, 0x8BC);
+    SetEntityAnim(5, 0x9EB);
+    Set_Vector_X(0x10, 0xA8, 1);
+    Set_Vector_X(5, 0xC8, 1);
+    Execute_Movement(0x10);
+    Execute_Movement(5);
+    SetEntityAnim(0x10, 0x8B8);
+    SetEntityAnim(5, 0x9E7);
+    SetEntityFacing(0x10, "Down");
+    SetEntityFacing(5, "Down");
+    SetEntityAnim(0x10, 0x8BC);
+    SetEntityAnim(5, 0x9EB);
+    Set_Vector_Y(0x10, 0x118, 1);
+    Set_Vector_Y(5, 0x118, 1);
+    Execute_Movement(0x10);
+    Execute_Movement(5);
+    Make_Delay((0x3C * 2));
+    Give_Friendship_Points(0x16, 0x14);
+    Give_Friendship_Points(0xD, 0x14);
+    Give_Friendship_Points(5, 0x14);
+    Give_Friendship_Points(0x10, 0x14);
+    Give_Friendship_Points(0xA, 0xFF);
+    Give_Friendship_Points(0xB, 0xFF);
+    Free_Event_Entity(0xC);
+    Free_Event_Entity(0x16);
+    Free_Event_Entity(0xD);
+    Free_Event_Entity(5);
+    Free_Event_Entity(0x10);
+    Free_Event_Entity(0xA);
+    Free_Event_Entity(0xB);
+    Set_Flag(0x67, 2);
+    Fade_Out(1, 1);
+    Finish_Wedding_Sequence();
+    Execute_Script(65);
+    exit;
+}

@@ -1,0 +1,35 @@
+// Script 405
+#include "Fomt_Lib.src"
+
+script 405 Event_0405 {
+    const MESSAGE_0 = "The Square's Garbage Can\r\nThrow away garbage here.\BRK";
+    
+    if ((Inventory_Check() == 1)) {
+        TalkOpen();
+        Print_Message(0);
+        TalkClose();
+    } else {
+        if (((Compare_Gift() == 4) || (Compare_Gift() == 2))) {
+            TalkOpen();
+            Print_Message(0);
+            TalkClose();
+            goto LBL_0003;
+        }
+        if ((Compare_Gift() == 1)) {
+            if (!Func04B()) {
+                TalkOpen();
+                Print_Message(0);
+                TalkClose();
+            } else {
+                PlaySong(0, 0x6C);
+                Drop_Held_Item();
+                PlaySong(0, 0x6E);
+            }
+            goto LBL_0003;
+        }
+        PlaySong(0, 0x6C);
+        Drop_Held_Item();
+        PlaySong(0, 0x6E);
+    }
+    exit;
+}

@@ -1,0 +1,87 @@
+// Script 676
+#include "Fomt_Lib.src"
+
+script 676 Event_0676 {
+    const MESSAGE_0 = "This morning when I woke up\r\nI saw something amazing!\BRK";
+    const MESSAGE_1 = "Show daddy, \r\n\xFF*.\BRK";
+    const MESSAGE_2 = "Goo-goo.\BRK";
+    const MESSAGE_3 = "Can you believe it?\BRK";
+    const MESSAGE_4 = "Being a parent really shows \r\nyou the joy of life,\r\ndon't you think?\BRK";
+    const MESSAGE_5 = "I can hardly wait to see\r\nwhat he does next!\BRK";
+    
+    Warp_Player(0x1D, 0x14C, 0x7C);
+    PlayBGM(1, 0x11);
+    SetEntityPosition(0, 0x14C, 0x7C, "Right");
+    if (Inventory_Check()) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    SetEntityPosition(0xC, 0x168, 0x7C, "Left");
+    SetEntityAnim(0xC, 0x813);
+    SetEntityPosition(0x23, 0xB4, 0x7C, "Right");
+    SetEntityAnim(0x23, 0x267);
+    Fade_In(2, 1);
+    TalkOpen();
+    Set_Name_Window(0xC);
+    Set_Portrait(0x67);
+    Set_Hearth_Anim(0xC);
+    TalkMessage(0);
+    TalkClose();
+    Show_Emote(0, 3, 0);
+    Make_Delay(0x3C);
+    TalkOpen();
+    Set_Name_Window(0xC);
+    Set_Portrait(0x68);
+    TalkMessage(1);
+    TalkClose();
+    TalkOpen();
+    Set_Name_Window(0x23);
+    Set_Portrait(0x13);
+    TalkMessage(2);
+    TalkClose();
+    SetEntityFacing(0, "Left");
+    Make_Delay(0x3C);
+    Show_Emote(0, 2, 0);
+    Make_Delay(0x3C);
+    SetEntityAnim(0x23, 0x26F);
+    Set_Vector_X(0x23, 0xF5, 1);
+    Execute_Movement(0x23);
+    SetEntityAnim(0x23, 0x267);
+    Make_Delay(0x3C);
+    SetEntityFacing(0, "Right");
+    TalkOpen();
+    Set_Name_Window(0xC);
+    Set_Portrait(0x67);
+    Set_Hearth_Anim(0xC);
+    TalkMessage(3);
+    TalkClose();
+    SetEntityAnim(0, 0x1FE);
+    Make_Delay(0x3C);
+    if (Inventory_Check()) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    Make_Delay(0x3C);
+    TalkOpen();
+    Set_Name_Window(0xC);
+    Set_Portrait(0x67);
+    Set_Hearth_Anim(0xC);
+    TalkMessage(4);
+    Set_Name_Window(0xC);
+    Set_Portrait(0x68);
+    Set_Hearth_Anim(0xC);
+    TalkMessage(5);
+    TalkClose();
+    Free_Event_Entity(0xC);
+    Free_Event_Entity(0x23);
+    Give_Love_Points(0xC, 0xBB8);
+    Give_Friendship_Points(0x23, 0x14);
+    Set_Flag(0x2F, 1);
+    End_Cinematic_State();
+    Routine_State_Override(0xC, 0x2A6);
+    Routine_State_Override(0x23, 0x2A5);
+    Set_Flag(0xD1, 1);
+    exit;
+}

@@ -1,0 +1,18 @@
+// Script 27
+#include "Fomt_Lib.src"
+
+script 27 Event_0027 {
+    const MESSAGE_0 = "I had no idea Karen would \r\nbe so happy!\BRK";
+    
+    if ((Check_Flag(0x49) == 1)) {
+    }
+    SetEntityFacing(0x12, GetOppositeFacing(GetEntityFacing(0)));
+    TalkOpen();
+    Set_Portrait(0x50);
+    Set_Name_Window(0x12);
+    TalkMessage(0);
+    TalkClose();
+    SetEntityFacing(0x12, "Right");
+    Free_Event_Entity(0x12);
+    exit;
+}

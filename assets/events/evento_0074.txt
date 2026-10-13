@@ -1,0 +1,32 @@
+// Script 74
+#include "Fomt_Lib.src"
+
+script 74 Event_0074 {
+    const MESSAGE_0 = "I have to get better at \r\ncooking for Stu's sake!\BRK";
+    const MESSAGE_1 = "I'm going to try \r\nagain tonight. \BRK";
+    
+    if ((Check_Flag(0x6B) == 1)) {
+    }
+    if ((Check_Flag(0x6C) == 0)) {
+        SetEntityFacing(0x15, GetOppositeFacing(GetEntityFacing(0)));
+        TalkOpen();
+        Set_Portrait(0x79);
+        Set_Hearth_Anim(0x15);
+        Set_Name_Window(0x15);
+        TalkMessage(0);
+        TalkClose();
+        SetEntityFacing(0x15, "Down");
+        Free_Event_Entity(0x15);
+    } else {
+        SetEntityFacing(0x15, GetOppositeFacing(GetEntityFacing(0)));
+        TalkOpen();
+        Set_Portrait(0x7A);
+        Set_Name_Window(0x15);
+        Set_Hearth_Anim(0x15);
+        TalkMessage(1);
+        TalkClose();
+        SetEntityFacing(0x15, "Down");
+        Free_Event_Entity(0x15);
+    }
+    exit;
+}

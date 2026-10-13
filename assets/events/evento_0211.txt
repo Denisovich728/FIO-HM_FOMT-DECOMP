@@ -1,0 +1,22 @@
+// Script 211
+#include "Fomt_Lib.src"
+
+script 211 Event_0211 {
+    const MESSAGE_0 = "Feed Box\BRK";
+    
+    var var_0;
+    
+    var_0 = 0;
+    if ((((!Inventory_Check() && (Compare_Gift() == 1)) && !Is_Item_Wrapped()) && (Search_Item_Gift_Address() == 0x5C))) {
+        var_0 = 1;
+    }
+    if ((var_0 && !Func0B7(2))) {
+        Drop_Held_Item();
+        Put_Flower_In_Vase(2);
+    } else {
+        TalkOpen();
+        Print_Message(0);
+        TalkClose();
+    }
+    exit;
+}

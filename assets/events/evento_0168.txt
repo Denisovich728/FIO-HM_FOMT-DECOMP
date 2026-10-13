@@ -1,0 +1,222 @@
+// Script 168
+#include "Fomt_Lib.src"
+
+script 168 Event_0168 {
+    const MESSAGE_0 = "You can't go inside\r\nwhile riding a horse!\BRK";
+    
+    var var_0;
+    var var_1;
+    var var_2;
+    
+    if ((GetEntityFacing(0) == 1)) {
+        if ((Func063() == 1)) {
+            TalkOpen();
+            Print_Message(0);
+            TalkClose();
+            exit;
+        }
+        if (Func0B4(0x1D)) {
+            switch (Check_Flag(1)) {
+                case 0:
+                    Set_Global_RNG_Modifier(0, 1);
+                    break;
+                case 1:
+                    Set_Global_RNG_Modifier(0, 2);
+                    break;
+                case 2:
+                    Set_Global_RNG_Modifier(0, 1);
+                    break;
+                case 3:
+                    Set_Global_RNG_Modifier(0, -1);
+                    break;
+            }
+        }
+        Set_Flag(0x242, 1);
+        PlaySong(0, 0x9C);
+        Fade_Out(2, 1);
+        Warp_Player(0x1D, 0x130, 0xD0);
+        SetEntityPosition(0, 0x130, 0xD0, "Up");
+        var_0 = Check_Flag(1);
+        var_1 = Check_Flag(2);
+        var_2 = Check_Flag(3);
+        if ((((Check_Flag(0x1B5) == 0) && (var_0 == 2)) && (var_1 == 0x1E))) {
+            if ((((((Check_Flag(0x4C) == 2) || (Check_Flag(0x55) == 2)) || (Check_Flag(0x5F) == 2)) || (Check_Flag(0x67) == 2)) || (Check_Flag(0x6F) == 2))) {
+                if (((var_2 >= 0xC) && (var_2 < 0x12))) {
+                    Set_Flag(0x1B5, 1);
+                    Execute_Script(1293);
+                }
+            }
+        } else {
+            if ((((Check_Flag(0x1CD) == 0) && (var_0 == 3)) && (var_1 == 0x18))) {
+                if (((((((Check_Flag(0x4C) == 2) || (Check_Flag(0x55) == 2)) || (Check_Flag(0x5F) == 2)) || (Check_Flag(0x67) == 2)) || (Check_Flag(0x6F) == 2)) || (Check_Flag(0x173) == 2))) {
+                    if (((var_2 >= 0xC) && (var_2 < 0x12))) {
+                        Set_Flag(0x1CD, 1);
+                        Execute_Script(1306);
+                    }
+                }
+            } else {
+                if ((Check_Flag(0x55) == 2)) {
+                    if (((((Check_Flag(0x30) == var_0) && (Check_Flag(0x31) == var_1)) && ((Check_Flag(0xB4) == 0) || (Check_Flag(0xB4) == 2))) && ((var_2 >= 0x12) && (var_2 <= 0x17)))) {
+                        Set_Flag(0xB4, 1);
+                        Execute_Script(609);
+                    } else {
+                        if ((((Is_NPC_Birthday(3) == 1) && ((Check_Flag(0xB9) == 0) || (Check_Flag(0xB9) == 2))) && ((var_2 >= 0x12) && (var_2 <= 0x17)))) {
+                            Set_Flag(0xB9, 1);
+                            Execute_Script(624);
+                        } else {
+                            if (((((Check_Flag(8) == var_0) && (Check_Flag(9) == var_1)) && ((Check_Flag(0xBE) == 0) || (Check_Flag(0xBE) == 2))) && ((var_2 >= 0x12) && (var_2 <= 0x17)))) {
+                                Set_Flag(0xBE, 1);
+                                Execute_Script(639);
+                            } else {
+                                if (((var_2 >= 0) && (var_2 < 6))) {
+                                    Despawn_Map_Item(0);
+                                    Despawn_Map_Item(1);
+                                    Add_Festival_Friendship_Bonus(3);
+                                    Add_Festival_Friendship_Bonus(0x23);
+                                    Set_Flag(0xB9, 2);
+                                    Set_Flag(0xBE, 2);
+                                    Set_Flag(0xB4, 2);
+                                }
+                            }
+                        }
+                    }
+                } else {
+                    if ((Check_Flag(0x5F) == 2)) {
+                        if (((((Check_Flag(0x30) == var_0) && (Check_Flag(0x31) == var_1)) && ((Check_Flag(0xB5) == 0) || (Check_Flag(0xB5) == 2))) && ((var_2 >= 0x12) && (var_2 <= 0x17)))) {
+                            Set_Flag(0xB5, 1);
+                            Execute_Script(612);
+                        } else {
+                            if ((((Is_NPC_Birthday(0x19) == 1) && ((Check_Flag(0xBA) == 0) || (Check_Flag(0xBA) == 2))) && ((var_2 >= 0x12) && (var_2 <= 0x17)))) {
+                                Set_Flag(0xBA, 1);
+                                Execute_Script(627);
+                            } else {
+                                if (((((Check_Flag(8) == var_0) && (Check_Flag(9) == var_1)) && ((Check_Flag(0xBF) == 0) || (Check_Flag(0xBF) == 2))) && ((var_2 >= 0x12) && (var_2 <= 0x17)))) {
+                                    Set_Flag(0xBF, 1);
+                                    Execute_Script(642);
+                                } else {
+                                    if (((var_2 >= 0) && (var_2 < 6))) {
+                                        Despawn_Map_Item(0);
+                                        Despawn_Map_Item(1);
+                                        Add_Festival_Friendship_Bonus(0x19);
+                                        Add_Festival_Friendship_Bonus(0x23);
+                                        Set_Flag(0xB5, 2);
+                                        Set_Flag(0xBA, 2);
+                                        Set_Flag(0xBF, 2);
+                                    }
+                                }
+                            }
+                        }
+                    } else {
+                        if ((Check_Flag(0x6F) == 2)) {
+                            if (((((Check_Flag(0x30) == var_0) && (Check_Flag(0x31) == var_1)) && ((Check_Flag(0xB6) == 0) || (Check_Flag(0xB6) == 2))) && ((var_2 >= 0x12) && (var_2 <= 0x17)))) {
+                                Set_Flag(0xB6, 1);
+                                Execute_Script(615);
+                            } else {
+                                if ((((Is_NPC_Birthday(0x15) == 1) && ((Check_Flag(0xBB) == 0) || (Check_Flag(0xBB) == 2))) && ((var_2 >= 0x12) && (var_2 <= 0x17)))) {
+                                    Set_Flag(0xBB, 1);
+                                    Execute_Script(630);
+                                } else {
+                                    if (((((Check_Flag(8) == var_0) && (Check_Flag(9) == var_1)) && ((Check_Flag(0xC0) == 0) || (Check_Flag(0xC0) == 2))) && ((var_2 >= 0x12) && (var_2 <= 0x17)))) {
+                                        Set_Flag(0xC0, 1);
+                                        Execute_Script(645);
+                                    } else {
+                                        if (((var_2 >= 0) && (var_2 < 6))) {
+                                            Despawn_Map_Item(0);
+                                            Despawn_Map_Item(1);
+                                            Add_Festival_Friendship_Bonus(0x15);
+                                            Add_Festival_Friendship_Bonus(0x23);
+                                            Set_Flag(0xB6, 2);
+                                            Set_Flag(0xBB, 2);
+                                            Set_Flag(0xC0, 2);
+                                        }
+                                    }
+                                }
+                            }
+                        } else {
+                            if ((Check_Flag(0x4C) == 2)) {
+                                if (((((Check_Flag(0x30) == var_0) && (Check_Flag(0x31) == var_1)) && ((Check_Flag(0xB7) == 0) || (Check_Flag(0xB7) == 2))) && ((var_2 >= 0x12) && (var_2 <= 0x17)))) {
+                                    Set_Flag(0xB7, 1);
+                                    Execute_Script(618);
+                                } else {
+                                    if ((((Is_NPC_Birthday(0x13) == 1) && ((Check_Flag(0xBC) == 0) || (Check_Flag(0xBC) == 2))) && ((var_2 >= 0x12) && (var_2 <= 0x17)))) {
+                                        Set_Flag(0xBC, 1);
+                                        Execute_Script(633);
+                                    } else {
+                                        if (((((Check_Flag(8) == var_0) && (Check_Flag(9) == var_1)) && ((Check_Flag(0xC1) == 0) || (Check_Flag(0xC1) == 2))) && ((var_2 >= 0x12) && (var_2 <= 0x17)))) {
+                                            Set_Flag(0xC1, 1);
+                                            Execute_Script(648);
+                                        } else {
+                                            if (((var_2 >= 0) && (var_2 < 6))) {
+                                                Despawn_Map_Item(0);
+                                                Despawn_Map_Item(1);
+                                                Add_Festival_Friendship_Bonus(0x13);
+                                                Add_Festival_Friendship_Bonus(0x23);
+                                                Set_Flag(0xB7, 2);
+                                                Set_Flag(0xBC, 2);
+                                                Set_Flag(0xC1, 2);
+                                            }
+                                        }
+                                    }
+                                }
+                            } else {
+                                if ((Check_Flag(0x67) == 2)) {
+                                    if (((((Check_Flag(0x30) == var_0) && (Check_Flag(0x31) == var_1)) && ((Check_Flag(0xB8) == 0) || (Check_Flag(0xB8) == 2))) && ((var_2 >= 0x12) && (var_2 <= 0x17)))) {
+                                        Set_Flag(0xB8, 1);
+                                        Execute_Script(621);
+                                    } else {
+                                        if ((((Is_NPC_Birthday(0xC) == 1) && ((Check_Flag(0xBD) == 0) || (Check_Flag(0xBD) == 2))) && ((var_2 >= 0x12) && (var_2 <= 0x17)))) {
+                                            Set_Flag(0xBD, 1);
+                                            Execute_Script(636);
+                                        }
+                                    }
+                                    if (((((Check_Flag(8) == var_0) && (Check_Flag(9) == var_1)) && ((Check_Flag(0xC2) == 0) || (Check_Flag(0xC2) == 2))) && ((var_2 >= 0x12) && (var_2 <= 0x17)))) {
+                                        Set_Flag(0xC2, 1);
+                                        Execute_Script(651);
+                                    } else {
+                                        if (((var_2 >= 0) && (var_2 < 6))) {
+                                            Despawn_Map_Item(0);
+                                            Despawn_Map_Item(1);
+                                            Add_Festival_Friendship_Bonus(0xC);
+                                            Add_Festival_Friendship_Bonus(0x23);
+                                            Set_Flag(0xB8, 2);
+                                            Set_Flag(0xBD, 2);
+                                            Set_Flag(0xC2, 2);
+                                        }
+                                    }
+                                } else {
+                                    if ((Check_Flag(0x173) == 2)) {
+                                        if (((((Check_Flag(0x30) == var_0) && (Check_Flag(0x31) == var_1)) && ((Check_Flag(0x176) == 0) || (Check_Flag(0x176) == 2))) && ((var_2 >= 0x12) && (var_2 <= 0x17)))) {
+                                            Set_Flag(0x176, 1);
+                                            Execute_Script(853);
+                                        } else {
+                                            if ((((Is_NPC_Birthday(0x1F) == 1) && ((Check_Flag(0x177) == 0) || (Check_Flag(0x177) == 2))) && ((var_2 >= 0x12) && (var_2 <= 0x17)))) {
+                                                Set_Flag(0x177, 1);
+                                                Execute_Script(856);
+                                            }
+                                        }
+                                        if (((((Check_Flag(8) == var_0) && (Check_Flag(9) == var_1)) && ((Check_Flag(0x178) == 0) || (Check_Flag(0x178) == 2))) && ((var_2 >= 0x12) && (var_2 <= 0x17)))) {
+                                            Set_Flag(0x178, 1);
+                                            Execute_Script(859);
+                                        } else {
+                                            if (((var_2 >= 0) && (var_2 < 6))) {
+                                                Despawn_Map_Item(0);
+                                                Despawn_Map_Item(1);
+                                                Add_Festival_Friendship_Bonus(0x1F);
+                                                Add_Festival_Friendship_Bonus(0x23);
+                                                Set_Flag(0x176, 2);
+                                                Set_Flag(0x177, 2);
+                                                Set_Flag(0x178, 2);
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        Fade_In(2, 1);
+    }
+    exit;
+}

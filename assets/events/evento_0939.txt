@@ -1,0 +1,31 @@
+// Script 939
+#include "Fomt_Lib.src"
+
+script 939 Event_0939 {
+    const MESSAGE_0 = "I'd never met anybody like \r\nGray before. He's so blunt \r\nand honest, but in a good\BRK\r\nway... \BRK";
+    const MESSAGE_1 = "Inside he's so gentle, \r\nthough. \BRK\WAIT_CLICKI was so glad when he \r\nproposed to me! \BRK";
+    
+    if ((Check_If_Single(0xC) == 0)) {
+        Free_Event_Entity(0xC);
+    }
+    if ((Has_NPC_Talked_Today(0xC) == 0)) {
+        SetEntityFacing(0xC, GetOppositeFacing(GetEntityFacing(0)));
+        TalkOpen();
+        Set_Portrait(0x6D);
+        Set_Name_Window(0xC);
+        TalkMessage(0);
+        TalkClose();
+        SetEntityFacing(0xC, "Down");
+        Free_Event_Entity(0xC);
+    } else {
+        SetEntityFacing(0xC, GetOppositeFacing(GetEntityFacing(0)));
+        TalkOpen();
+        Set_Portrait(0x6D);
+        Set_Name_Window(0xC);
+        TalkMessage(1);
+        TalkClose();
+        SetEntityFacing(0xC, "Down");
+        Free_Event_Entity(0xC);
+    }
+    exit;
+}

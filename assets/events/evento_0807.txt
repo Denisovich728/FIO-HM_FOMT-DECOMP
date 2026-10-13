@@ -1,0 +1,21 @@
+// Script 807
+#include "Fomt_Lib.src"
+
+script 807 Event_0807 {
+    const MESSAGE_0 = "You'll be able to catch lots\r\nof fish with that!\BRK";
+    
+    if ((Check_If_Single(0x1C) == 0)) {
+        Free_Event_Entity(0x1C);
+    }
+    if ((Check_Flag(0x135) == 1)) {
+        SetEntityFacing(0x1C, GetOppositeFacing(GetEntityFacing(0)));
+        TalkOpen();
+        Set_Portrait(0x20);
+        Set_Name_Window(0x1C);
+        TalkMessage(0);
+        TalkClose();
+        SetEntityFacing(0x1C, "Left");
+        Free_Event_Entity(0x1C);
+    }
+    exit;
+}

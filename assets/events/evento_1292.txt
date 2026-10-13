@@ -1,0 +1,107 @@
+// Script 1292
+#include "Fomt_Lib.src"
+
+script 1292 Event_1292 {
+    const MESSAGE_0 = "I think it's unfair that \r\nonly kids get candy on the\r\nPumpkin Festival.\BRK\WAIT_CLICKSo, I came for some, too!\BRK";
+    const MESSAGE_1 = "Can I have some, please?\BRK";
+    const MESSAGE_2 = "Thanks a lot, \r\n\xFF!. \BRK";
+    const MESSAGE_3 = "Are you trying to trick me?\BRK";
+    
+    var var_0;
+    var var_1;
+    
+    Set_Flag(0x1B4, 1);
+    switch (Compare_Gift()) {
+        case 0:
+            switch (Search_Food_Gift_Address()) {
+                case 0x45:
+                case 0x65:
+                case 0x68:
+                case 0x69:
+                case 0x71:
+                case 0x73:
+                case 0x75:
+                case 0x8B:
+                case 0x8C:
+                case 0x8E:
+                case 0x8F:
+                case 0x90:
+                case 0x94:
+                case 0x96:
+                case 0x97:
+                case 0x98:
+                case 0xA7:
+                case 0xA9:
+                    var_0 = 0x10;
+                    break;
+            }
+            break;
+    }
+    var_1 = GetEntityFacing(3);
+    SetEntityFacing(3, GetOppositeFacing(GetEntityFacing(0)));
+    if ((Check_If_Single(3) == 0)) {
+        Free_Event_Entity(3);
+    }
+    if ((Has_NPC_Talked_Today(3) == 0)) {
+        TalkOpen();
+        Set_Name_Window(3);
+        Set_Portrait(8);
+        if (!(((((((Check_Flag(0x4C) == 2) || (Check_Flag(0x5F) == 2)) || (Check_Flag(0x67) == 2)) || (Check_Flag(0x6F) == 2)) || (Check_Flag(0x173) == 2)) || (Check_Flag(0x7E) == 2)) || (Check_Flag(0x7F) == 2))) {
+            Set_Hearth_Anim(3);
+        }
+        TalkMessage(0);
+        TalkClose();
+        Set_Flag(0x1B4, 0);
+    } else {
+        TalkOpen();
+        if (Inventory_Check()) {
+            Set_Name_Window(3);
+            Set_Portrait(7);
+            if (!(((((((Check_Flag(0x4C) == 2) || (Check_Flag(0x5F) == 2)) || (Check_Flag(0x67) == 2)) || (Check_Flag(0x6F) == 2)) || (Check_Flag(0x173) == 2)) || (Check_Flag(0x7E) == 2)) || (Check_Flag(0x7F) == 2))) {
+                Set_Hearth_Anim(3);
+            }
+            TalkMessage(1);
+            TalkClose();
+            Set_Flag(0x1B4, 0);
+            goto LBL_001B;
+        }
+        if ((var_0 == 0x10)) {
+            Give_Love_Points(3, 0x3E8);
+            Set_Name_Window(3);
+            Set_Portrait(8);
+            if (!(((((((Check_Flag(0x4C) == 2) || (Check_Flag(0x5F) == 2)) || (Check_Flag(0x67) == 2)) || (Check_Flag(0x6F) == 2)) || (Check_Flag(0x173) == 2)) || (Check_Flag(0x7E) == 2)) || (Check_Flag(0x7F) == 2))) {
+                Set_Hearth_Anim(3);
+            }
+            TalkMessage(2);
+            TalkClose();
+            Drop_Held_Item();
+            if ((GetEntityX(3) != 0x154)) {
+                SetEntityFacing(3, "Right");
+                SetEntityAnim(3, 0x233);
+                Set_Vector_X(3, 0x154, 1);
+                Execute_Movement(3);
+                SetEntityAnim(3, 0x22F);
+            }
+            SetEntityFacing(3, "Up");
+            SetEntityAnim(3, 0x233);
+            Set_Vector_Y(3, 0, 1);
+            Execute_Movement(3);
+            SetEntityAnim(3, 0x22F);
+            Hide_Entity(3);
+            Set_Flag(0x1B4, 2);
+            Finalize_Event();
+            goto LBL_001B;
+        }
+        Set_Name_Window(3);
+        Set_Portrait(9);
+        if (!(((((((Check_Flag(0x4C) == 2) || (Check_Flag(0x5F) == 2)) || (Check_Flag(0x67) == 2)) || (Check_Flag(0x6F) == 2)) || (Check_Flag(0x173) == 2)) || (Check_Flag(0x7E) == 2)) || (Check_Flag(0x7F) == 2))) {
+            Set_Hearth_Anim(3);
+        }
+        TalkMessage(3);
+        TalkClose();
+        Set_Flag(0x1B4, 0);
+    }
+    SetEntityFacing(3, var_1);
+    Free_Event_Entity(3);
+    exit;
+}

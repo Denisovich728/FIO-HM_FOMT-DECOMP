@@ -1,0 +1,84 @@
+// Script 1215
+#include "Fomt_Lib.src"
+
+script 1215 Event_1215 {
+    const MESSAGE_0 = "That was fun! \r\nI'll sleep well tonight. \BRK";
+    
+    Warp_Player(0xC, 0xB8, 0x50);
+    PlayBGM(1, 8);
+    SetEntityPosition(5, 0x108, 0xC3, "Up");
+    SetEntityAnim(5, 0x9E7);
+    SetEntityPosition(0xC, 0x108, -0x3E, "Up");
+    SetEntityAnim(0xC, 0x847);
+    SetEntityPosition(0x10, 0x128, 0xC3, "Up");
+    SetEntityAnim(0x10, 0x8B8);
+    SetEntityPosition(0x11, 0x68, 0xC3, "Up");
+    SetEntityAnim(0x11, 0x689);
+    SetEntityPosition(0x12, 0x48, 0xC3, "Up");
+    SetEntityAnim(0x12, 0x6C5);
+    SetEntityPosition(0x13, 0xB8, 0x8C, "Down");
+    SetEntityAnim(0x13, 0x691);
+    SetEntityPosition(0x15, 0xA6, 0x43, "Down");
+    SetEntityAnim(0x15, 0x884);
+    SetEntityPosition(0x16, 0x54, 0x64, "Right");
+    SetEntityAnim(0x16, 0x8EC);
+    SetEntityPosition(0x19, 0xC6, 0x43, "Down");
+    SetEntityAnim(0x19, 0x7BE);
+    if ((Check_Flag(0x1A1) == 1)) {
+        SetEntityPosition(0, 0x108, 0x78, "Down");
+        SetEntityAnim(0, 0x192);
+        Give_Friendship_Points(0x15, 0xA);
+        Give_Friendship_Points(0x16, 0xA);
+        Give_Friendship_Points(5, 0xA);
+        Give_Friendship_Points(0x19, 0xA);
+        Give_Friendship_Points(0x13, 0xA);
+        Give_Friendship_Points(0xC, 0xA);
+        Give_Friendship_Points(0x11, 0xA);
+        Give_Friendship_Points(0x12, 0xA);
+        Give_Friendship_Points(0x10, 0xA);
+    } else {
+        SetEntityPosition(0, 0x6C, 0x96, "Up");
+        Lock_Player_Input();
+        SetEntityAnim(0, 0x192);
+    }
+    Fade_In(2, 1);
+    StopAllSongs();
+    Make_Delay((0x3C * 4));
+    PlayBGM(1, 0xF);
+    if ((Check_Flag(0x1A1) == 1)) {
+        SetEntityAnim(0, 0x12E);
+    } else {
+        SetEntityAnim(0, 0x192);
+    }
+    SetEntityAnim(0xC, 0x823);
+    SetEntityAnim(0x15, 0x8A4);
+    SetEntityAnim(0x19, 0x7DE);
+    Make_Delay((0x3C * 0xC));
+    SetEntityAnim(0x13, 0x6A9);
+    Make_Delay((0x3C * 0x22));
+    SetEntityAnim(0xC, 0x847);
+    SetEntityAnim(0x15, 0x884);
+    SetEntityAnim(0x19, 0x7BE);
+    SetEntityAnim(0x13, 0x691);
+    SetEntityAnim(0, 0x192);
+    Make_Delay((0x3C * 4));
+    StopAllSongs();
+    PlaySong(0, 0xC1);
+    Fade_Out(2, 1);
+    TalkOpen();
+    TalkMessage(0);
+    TalkClose();
+    Refresh_Map_Entities();
+    Add_Festival_Friendship_Bonus(0x15);
+    Add_Festival_Friendship_Bonus(0x16);
+    Add_Festival_Friendship_Bonus(5);
+    Add_Festival_Friendship_Bonus(0x19);
+    Add_Festival_Friendship_Bonus(0x13);
+    Add_Festival_Friendship_Bonus(0xC);
+    Add_Festival_Friendship_Bonus(0x11);
+    Add_Festival_Friendship_Bonus(0x12);
+    Add_Festival_Friendship_Bonus(0x10);
+    Set_Flag(0x1A2, 2);
+    Execute_Script(988);
+    exit;
+}

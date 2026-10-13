@@ -1,0 +1,30 @@
+// Script 42
+#include "Fomt_Lib.src"
+
+script 42 Event_0042 {
+    const MESSAGE_0 = "Thanks for stopping the\r\nfight, \xFF!. \BRK";
+    const MESSAGE_1 = "I just hope they don't\r\nstart again...\BRK";
+    
+    if ((Check_Flag(0x52) == 1)) {
+        if (((Check_Flag(0x53) == 0) || (Check_Flag(0x53) == 2))) {
+            SetEntityFacing(1, GetOppositeFacing(GetEntityFacing(0)));
+            TalkOpen();
+            Set_Portrait(0xF);
+            Set_Name_Window(1);
+            TalkMessage(0);
+            TalkClose();
+            SetEntityFacing(1, "Down");
+            Free_Event_Entity(1);
+        } else {
+            SetEntityFacing(1, GetOppositeFacing(GetEntityFacing(0)));
+            TalkOpen();
+            Set_Portrait(0x11);
+            Set_Name_Window(1);
+            TalkMessage(1);
+            TalkClose();
+            SetEntityFacing(1, "Down");
+            Free_Event_Entity(1);
+        }
+    }
+    exit;
+}

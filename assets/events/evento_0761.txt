@@ -1,0 +1,25 @@
+// Script 761
+#include "Fomt_Lib.src"
+
+script 761 Event_0761 {
+    const MESSAGE_0 = "It's nice to have your\r\nhusband by your side all \r\nthe time, isn't it? \BRK";
+    const MESSAGE_1 = "You two really do make\r\na cute couple. \BRK";
+    
+    if ((Check_Flag(0x119) == 1)) {
+        SetEntityFacing(1, GetOppositeFacing(GetEntityFacing(0)));
+        TalkOpen();
+        if ((Has_NPC_Talked_Today(1) == 0)) {
+            Set_Portrait(0xE);
+            Set_Name_Window(1);
+            TalkMessage(0);
+        } else {
+            Set_Portrait(0xF);
+            Set_Name_Window(1);
+            TalkMessage(1);
+        }
+        TalkClose();
+        Free_Event_Entity(1);
+        SetEntityFacing(1, "Left");
+    }
+    exit;
+}

@@ -1,0 +1,32 @@
+// Script 50
+#include "Fomt_Lib.src"
+
+script 50 Event_0050 {
+    const MESSAGE_0 = "Just a few more chores...\BRK";
+    const MESSAGE_1 = "Are you doing all your\r\nchores like you should, \r\n\xFF!?\BRK";
+    
+    if ((Check_Flag(0x58) == 1)) {
+    }
+    if ((Check_Flag(0x59) == 0)) {
+        SetEntityFacing(0x19, GetOppositeFacing(GetEntityFacing(0)));
+        TalkOpen();
+        Set_Portrait(0x57);
+        Set_Name_Window(0x19);
+        Set_Hearth_Anim(0x19);
+        TalkMessage(0);
+        TalkClose();
+        SetEntityFacing(0x19, "Right");
+        Free_Event_Entity(0x19);
+    } else {
+        SetEntityFacing(0x19, GetOppositeFacing(GetEntityFacing(0)));
+        TalkOpen();
+        Set_Portrait(0x57);
+        Set_Name_Window(0x19);
+        Set_Hearth_Anim(0x19);
+        TalkMessage(1);
+        TalkClose();
+        SetEntityFacing(0x19, "Right");
+        Free_Event_Entity(0x19);
+    }
+    exit;
+}

@@ -1,0 +1,11 @@
+// Script 413
+#include "Fomt_Lib.src"
+
+script 413 Event_0413 {
+    const MESSAGE_0 = "Wine Bottles\BRK";
+    
+    TalkOpen();
+    Print_Message(0);
+    TalkClose();
+    exit;
+}

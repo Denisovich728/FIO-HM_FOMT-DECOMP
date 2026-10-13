@@ -1,0 +1,201 @@
+// Script 1050
+#include "Fomt_Lib.src"
+
+script 1050 Event_1050 {
+    const MESSAGE_0 = "If you can answer all \r\nthese problems, you might \r\njust receive a present. \BRK";
+    const MESSAGE_1 = "Remember that pushing a \r\nbutton other than to advance\r\na page or select a solution\BRK\r\nwill skip the problem, \r\nso be careful! \BRK\WAIT_CLICK";
+    const MESSAGE_2 = "Problem 1 \BRK\r\n";
+    const MESSAGE_3 = "Problem 2 \BRK\r\n";
+    const MESSAGE_4 = "Problem 3 \BRK\r\n";
+    const MESSAGE_5 = "Problem 4 \BRK\r\n";
+    const MESSAGE_6 = "Problem 5 \BRK\r\n";
+    const MESSAGE_7 = "Problem 6 \BRK\r\n";
+    const MESSAGE_8 = "Problem 7 \BRK\r\n";
+    const MESSAGE_9 = "Problem 8 \BRK\r\n";
+    const MESSAGE_10 = "Problem 9 \BRK\r\n";
+    const MESSAGE_11 = "Problem 10 \BRK\r\n";
+    const MESSAGE_12 = "1+1x1+1+1+1+1=\r\n\r\n                     \WAIT_CLICK";
+    const MESSAGE_13 = "1";
+    const MESSAGE_14 = "2";
+    const MESSAGE_15 = "3";
+    const MESSAGE_16 = "4";
+    const MESSAGE_17 = "5";
+    const MESSAGE_18 = "6";
+    const MESSAGE_19 = "1-1x1-1+1x1+1=\r\n              \r\n              \WAIT_CLICK";
+    const MESSAGE_20 = "1x1-1x1+1x1+1=\r\n              \r\n              \WAIT_CLICK";
+    const MESSAGE_21 = "1x1+1x1+1-1+1=\r\n              \r\n              \WAIT_CLICK";
+    const MESSAGE_22 = "1x1x1+1+1x1+1=\r\n              \r\n              \WAIT_CLICK";
+    const MESSAGE_23 = "1+1+1+1+1-1+1=\r\n              \r\n              \WAIT_CLICK";
+    const MESSAGE_24 = "Congratulations!\r\nYou answered all the \r\n problems correctly!\BRK";
+    const MESSAGE_25 = "I've already given you \r\na Jewel of Truth, though. \r\nSo, no prize this time. \BRK";
+    const MESSAGE_26 = "Your prize is a \r\nJewel of Truth. \BRK";
+    const MESSAGE_27 = "I was going to give you \r\na Jewel of Truth as a prize,\r\nbut your hands are full,\BRK\r\nso too bad. \BRK";
+    const MESSAGE_28 = "You missed them all!\r\nShouldn't you be studying,\r\ninstead?\BRK";
+    
+    var var_0;
+    var var_1;
+    var var_2;
+    var var_3;
+    var var_4;
+    
+    var_2 = 0;
+    var_3 = 0;
+    TalkOpen();
+    var_4 = Print_TV_Message(0);
+    TalkClose();
+    switch (var_4) {
+        case 0:
+        case 1:
+        case 2:
+        case 3:
+            Set_Flag(0x244, var_4);
+            Execute_Script(540);
+            break;
+        case 5:
+            break;
+    }
+    TalkOpen();
+    Print_Message(1);
+    do {
+        switch (var_3) {
+            case 0:
+                Print_Message(2);
+                break;
+            case 1:
+                Print_Message(3);
+                break;
+            case 2:
+                Print_Message(4);
+                break;
+            case 3:
+                Print_Message(5);
+                break;
+            case 4:
+                Print_Message(6);
+                break;
+            case 5:
+                Print_Message(7);
+                break;
+            case 6:
+                Print_Message(8);
+                break;
+            case 7:
+                Print_Message(9);
+                break;
+            case 8:
+                Print_Message(10);
+                break;
+            case 9:
+                Print_Message(11);
+                break;
+        }
+        var_1 = RNG_Generator(0, 5);
+        switch (var_1) {
+            case 0:
+                TalkMessageSlow(12);
+                var_0 = TalkChoice6(0xD, 0xE, 0xF, 0x10, 0x11, 0x12);
+                switch (var_0) {
+                    case 1:
+                    case 2:
+                    case 3:
+                    case 4:
+                    case 5:
+                        break;
+                    case 6:
+                        break;
+                }
+                break;
+            case 1:
+                TalkMessageSlow(19);
+                var_0 = TalkChoice6(0xD, 0xE, 0xF, 0x10, 0x11, 0x12);
+                switch (var_0) {
+                    case 2:
+                    case 3:
+                    case 4:
+                    case 5:
+                    case 6:
+                        break;
+                    case 1:
+                        break;
+                }
+                break;
+            case 2:
+                TalkMessageSlow(20);
+                var_0 = TalkChoice6(0xD, 0xE, 0xF, 0x10, 0x11, 0x12);
+                switch (var_0) {
+                    case 1:
+                    case 3:
+                    case 4:
+                    case 5:
+                    case 6:
+                        break;
+                    case 2:
+                        break;
+                }
+                break;
+            case 3:
+                TalkMessageSlow(21);
+                var_0 = TalkChoice6(0xD, 0xE, 0xF, 0x10, 0x11, 0x12);
+                switch (var_0) {
+                    case 1:
+                    case 2:
+                    case 4:
+                    case 5:
+                    case 6:
+                        break;
+                    case 3:
+                        break;
+                }
+                break;
+            case 4:
+                TalkMessageSlow(22);
+                var_0 = TalkChoice6(0xD, 0xE, 0xF, 0x10, 0x11, 0x12);
+                switch (var_0) {
+                    case 1:
+                    case 2:
+                    case 3:
+                    case 5:
+                    case 6:
+                        break;
+                    case 4:
+                        break;
+                }
+                break;
+            case 5:
+                TalkMessageSlow(23);
+                var_0 = TalkChoice6(0xD, 0xE, 0xF, 0x10, 0x11, 0x12);
+                switch (var_0) {
+                    case 1:
+                    case 2:
+                    case 3:
+                    case 4:
+                    case 6:
+                        break;
+                    case 5:
+                        break;
+                }
+                break;
+        }
+    } while ((var_3 < 0xA));
+    if ((var_2 == 0xA)) {
+        TalkMessageSlow(24);
+        if ((Check_Flag(0x213) == 1)) {
+            TalkMessageSlow(25);
+        } else {
+            if ((Inventory_Check() == 1)) {
+                TalkMessageSlow(26);
+                Set_Flag(0x213, 1);
+                TalkClose();
+                Give_Item(0x27);
+                Set_Flag(0x154, (Check_Flag(0x154) + 1));
+            } else {
+                TalkMessageSlow(27);
+            }
+        }
+    } else {
+        TalkMessageSlow(28);
+    }
+    Close_TV_Interface();
+    TalkClose();
+    exit;
+}

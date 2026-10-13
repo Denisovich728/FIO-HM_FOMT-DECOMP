@@ -1,0 +1,11 @@
+// Script 95
+#include "Fomt_Lib.src"
+
+script 95 Event_0095 {
+    const MESSAGE_0 = "Straw\BRK";
+    
+    TalkOpen();
+    Print_Message(0);
+    TalkClose();
+    exit;
+}

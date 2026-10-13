@@ -1,0 +1,101 @@
+// Script 950
+#include "Fomt_Lib.src"
+
+script 950 Event_0950 {
+    const MESSAGE_0 = "Cough...cough...\BRK";
+    const MESSAGE_1 = "Doctor, are you alright?\BRK";
+    const MESSAGE_2 = "I'm fine...\BRK";
+    const MESSAGE_3 = "Why don't you take \r\nthe day off? \BRK";
+    const MESSAGE_4 = "I could never let down \r\nthe people who need me! \BRK";
+    const MESSAGE_5 = "But...\BRK";
+    const MESSAGE_6 = "Don't worry about me. \r\nI know how to take care \r\nof myself. \BRK\WAIT_CLICKBesides, I have you with me.\BRK";
+    const MESSAGE_7 = "If you say so, Doctor.\r\nJust don't overdo it! \BRK";
+    const MESSAGE_8 = "If you do, I'll get mad \r\nat you! \BRK";
+    const MESSAGE_9 = "Ha ha!\r\nYou sound like my mother,\r\nyou know. \BRK";
+    const MESSAGE_10 = "You'll be a good wife to \r\nsomebody, Elli. \BRK";
+    const MESSAGE_11 = "Are you teasing me...? \BRK";
+    
+    Warp_Player(0x13, 0xF7, 0x80);
+    PlayBGM(1, 0x10);
+    SetEntityPosition(0, 0xB8, 0x140, "Up");
+    if (Inventory_Check()) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    SetEntityPosition(0x15, 0xE8, 0x80, "Right");
+    SetEntityAnim(0x15, 0x884);
+    SetEntityPosition(0x14, 0x108, 0x80, "Left");
+    SetEntityAnim(0x14, 0x320);
+    Fade_In(2, 1);
+    TalkOpen();
+    Set_Portrait(0x26);
+    Set_Name_Window(0x14);
+    TalkMessage(0);
+    TalkClose();
+    TalkOpen();
+    Set_Portrait(0x7D);
+    Set_Name_Window(0x15);
+    TalkMessage(1);
+    TalkClose();
+    TalkOpen();
+    Set_Portrait(0x23);
+    Set_Name_Window(0x14);
+    TalkMessage(2);
+    TalkClose();
+    Show_Emote(0x15, 6, 0);
+    Make_Delay(0x3C);
+    TalkOpen();
+    Set_Portrait(0x7C);
+    Set_Name_Window(0x15);
+    TalkMessage(3);
+    TalkClose();
+    TalkOpen();
+    Set_Portrait(0x26);
+    Set_Name_Window(0x14);
+    TalkMessage(4);
+    TalkClose();
+    TalkOpen();
+    Set_Portrait(0x7C);
+    Set_Name_Window(0x15);
+    TalkMessage(5);
+    TalkClose();
+    TalkOpen();
+    Set_Portrait(0x23);
+    Set_Name_Window(0x14);
+    TalkMessage(6);
+    TalkClose();
+    Show_Emote(0x15, 6, 0);
+    Make_Delay(0x3C);
+    TalkOpen();
+    Set_Portrait(0x79);
+    Set_Name_Window(0x15);
+    TalkMessage(7);
+    Set_Portrait(0x7B);
+    Set_Name_Window(0x15);
+    TalkMessage(8);
+    TalkClose();
+    TalkOpen();
+    Set_Portrait(0x24);
+    Set_Name_Window(0x14);
+    TalkMessage(9);
+    Set_Portrait(0x23);
+    Set_Name_Window(0x14);
+    TalkMessage(10);
+    TalkClose();
+    Show_Emote(0x15, 2, 0);
+    Make_Delay(0x3C);
+    TalkOpen();
+    Set_Portrait(0x7E);
+    Set_Name_Window(0x15);
+    TalkMessage(11);
+    TalkClose();
+    Pan_Camera_To(0xB8, 0x140, 2);
+    Wait_Camera_Stop();
+    End_Cinematic_State();
+    Routine_State_Override(0x14, 0x3B7);
+    Routine_State_Override(0x15, 0x3B8);
+    Set_Flag(0x94, 1);
+    exit;
+    exit;
+}

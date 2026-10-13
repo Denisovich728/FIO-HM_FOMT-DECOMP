@@ -1,0 +1,25 @@
+// Script 1234
+#include "Fomt_Lib.src"
+
+script 1234 Event_1234 {
+    const MESSAGE_0 = "Is it just me, or is the \r\nwhole thing out of control? \BRK";
+    
+    if ((Check_If_Single(0xC) == 0)) {
+        Free_Event_Entity(0xC);
+    }
+    SetEntityFacing(0xC, GetOppositeFacing(GetEntityFacing(0)));
+    TalkOpen();
+    Set_Portrait(0x69);
+    Set_Name_Window(0xC);
+    if (!(((((((Check_Flag(0x4C) == 2) || (Check_Flag(0x55) == 2)) || (Check_Flag(0x5F) == 2)) || (Check_Flag(0x6F) == 2)) || (Check_Flag(0x173) == 2)) || (Check_Flag(0x8E) == 2)) || (Check_Flag(0x8F) == 2))) {
+        Set_Hearth_Anim(0xC);
+    }
+    TalkMessage(0);
+    TalkClose();
+    if ((Has_Spoken_To_NPC_Today(0xC) == 0)) {
+        Give_Friendship_Points(0xC, 5);
+    }
+    SetEntityFacing(0xC, "Up");
+    Free_Event_Entity(0xC);
+    exit;
+}

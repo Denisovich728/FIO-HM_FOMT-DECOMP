@@ -1,0 +1,46 @@
+// Script 798
+#include "Fomt_Lib.src"
+
+script 798 Event_0798 {
+    const MESSAGE_0 = "Summer's over, so Popuri and \r\nI are leaving for the city.\BRK\WAIT_CLICKI just wanted to say \r\ngoodbye. \BRK";
+    const MESSAGE_1 = "Summer's over, so \r\nI'm leaving for the city.\BRK\WAIT_CLICKI just wanted to say \r\ngoodbye. \BRK";
+    const MESSAGE_2 = "See you next year!\BRK";
+    
+    if ((Inventory_Check() == 1)) {
+        SetEntityAnim(0, 0x192);
+    } else {
+        SetEntityAnim(0, 0x152);
+    }
+    SetEntityPosition(0x1A, 0xE4, 0x91, "Up");
+    SetEntityAnim(0x1A, 0x902);
+    Fade_In(2, 1);
+    TalkOpen();
+    Set_Portrait(0x99);
+    Set_Name_Window(0x1A);
+    if (((Check_Flag(0x7E) == 2) || (Check_Flag(0x7F) == 2))) {
+        TalkMessage(0);
+    } else {
+        TalkMessage(1);
+    }
+    TalkClose();
+    SetEntityFacing(0x1A, "Right");
+    SetEntityAnim(0x1A, 0x906);
+    Set_Vector_X(0x1A, 0x13F, 1);
+    Execute_Movement(0x1A);
+    SetEntityAnim(0x1A, 0x902);
+    SetEntityFacing(0x1A, "Left");
+    TalkOpen();
+    Set_Portrait(0x99);
+    Set_Name_Window(0x1A);
+    TalkMessage(2);
+    TalkClose();
+    SetEntityFacing(0x1A, "Up");
+    SetEntityAnim(0x1A, 0x906);
+    Set_Vector_Y(0x1A, 0, 1);
+    Execute_Movement(0x1A);
+    Hide_Entity(0x1A);
+    Free_Event_Entity(0x1A);
+    Set_Flag(0x12F, 2);
+    exit;
+    exit;
+}

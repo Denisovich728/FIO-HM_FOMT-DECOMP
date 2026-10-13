@@ -1,0 +1,53 @@
+// Script 533
+#include "Fomt_Lib.src"
+
+script 533 Event_0533 {
+    const MESSAGE_0 = "Turn in for the day?";
+    const MESSAGE_1 = "Yes";
+    const MESSAGE_2 = "No";
+    const MESSAGE_3 = "Bed\r\nInvestigate from the \r\nleft side to sleep.\BRK";
+    
+    var var_0;
+    
+    if ((GetEntityFacing(0) == 3)) {
+        TalkOpen();
+        var_0 = Show_Tre_Option_Menu(0, 1, 2);
+        TalkClose();
+        switch (var_0) {
+            case 1:
+                Lock_Player_Input();
+                if ((GetEntityY(0) != 0x4C)) {
+                    SetEntityAnim(0, 0x1C6);
+                    SetEntityFacing(0, "Up");
+                    Set_Vector_Y(0, 0x4C, 1);
+                    Execute_Movement(0);
+                    SetEntityAnim(0, 0x192);
+                    SetEntityFacing(0, "Right");
+                }
+                if ((GetEntityX(0) != 0xC1)) {
+                    SetEntityAnim(0, 0x1C6);
+                    Set_Vector_X(0, 0xC1, 1);
+                    Execute_Movement(0);
+                    SetEntityAnim(0, 0x192);
+                }
+                SetEntityAnim(0, 0x10E);
+                Make_Delay(0xC);
+                Set_Camera_Position(0, (GetEntityX(0) + 0x10), 0x8000);
+                Make_Delay(0x20);
+                SetEntityPosition(0, 0xC8, -0x2E, "Down");
+                SetEntityAnim(0, 0x18E);
+                Make_Delay(0x1E);
+                Fade_Out(2, 1);
+                Set_Global_RNG_Modifier(0x32, -5);
+                Execute_Script(988);
+                break;
+            case 2:
+                break;
+        }
+    } else {
+        TalkOpen();
+        TalkMessage(3);
+        TalkClose();
+    }
+    exit;
+}

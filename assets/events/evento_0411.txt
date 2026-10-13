@@ -1,0 +1,338 @@
+// Script 411
+#include "Fomt_Lib.src"
+
+script 411 Event_0411 {
+    const MESSAGE_0 = "\xFF!, \r\nwhere are you going?\BRK\WAIT_CLICKThe competition hasn't \r\nstarted yet!\BRK";
+    const MESSAGE_1 = "Hmm...What should I make?\BRK";
+    const MESSAGE_2 = "The judging hasn't\r\neven begun yet.\BRK";
+    const MESSAGE_3 = "That was fun!\r\nNow back to work...\BRK";
+    const MESSAGE_4 = "Where are you going?\r\nThe New Year Festival \r\nhasn't even started yet!\BRK";
+    const MESSAGE_5 = "What are you doing?\r\nWe haven't eaten the \r\nyear end noodles yet!\BRK";
+    const MESSAGE_6 = "There are still races left.\BRK";
+    const MESSAGE_7 = "Where are you going?\r\nIt hasn't started yet!\BRK";
+    const MESSAGE_8 = "Where are you going?\BRK";
+    const MESSAGE_9 = "\xFF!,\r\nThe Sheep Festival hasn't \r\nended yet.\BRK";
+    
+    var var_0;
+    var var_1;
+    var var_2;
+    var var_3;
+    var var_7;
+    
+    var_7 = 1;
+    var_0 = Check_Flag(1);
+    var_1 = Check_Flag(2);
+    var_2 = Check_Flag(3);
+    var_3 = Check_Flag(4);
+    if ((GetEntityFacing(0) == 0)) {
+        if ((Check_Flag(0x18C) == 1)) {
+            if ((Has_Spoken_To_NPC_Today(0x1E) == 0)) {
+                TalkOpen();
+                Set_Portrait(0x75);
+                Set_Name_Window(0xD);
+                TalkMessage(0);
+                TalkClose();
+                var_7 = 0;
+            } else {
+                Fade_Out(2, 1);
+                Set_Flag(0x18C, 2);
+                Add_Festival_Friendship_Bonus(0xD);
+                Add_Festival_Friendship_Bonus(0x14);
+                Add_Festival_Friendship_Bonus(0x16);
+                Add_Festival_Friendship_Bonus(0x1E);
+                Add_Festival_Friendship_Bonus(0x1C);
+                Add_Festival_Friendship_Bonus(0x19);
+                Add_Festival_Friendship_Bonus(0x1B);
+                Add_Festival_Friendship_Bonus(0x13);
+                Add_Festival_Friendship_Bonus(0x18);
+                Add_Festival_Friendship_Bonus(0x12);
+                Add_Festival_Friendship_Bonus(9);
+                Add_Festival_Friendship_Bonus(2);
+                Add_Festival_Friendship_Bonus(1);
+                Refresh_Map_Entities();
+                TalkOpen();
+                TalkMessage(1);
+                TalkClose();
+                Reset_Player_After_Festival_Activity();
+                Set_Time(0xC, 0);
+                Fade_In(2, 1);
+                exit;
+            }
+        } else {
+            if ((Check_Flag(0x18E) == 1)) {
+                TalkOpen();
+                Set_Portrait(0x78);
+                Set_Name_Window(0xD);
+                TalkMessage(2);
+                TalkClose();
+                var_7 = 0;
+            } else {
+                if ((Check_Flag(0x1A4) == 1)) {
+                    if ((Check_Flag(0x1A6) == 1)) {
+                        Fade_Out(2, 1);
+                        Set_Flag(0x1A4, 2);
+                        Add_Festival_Friendship_Bonus(0xD);
+                        Add_Festival_Friendship_Bonus(0x15);
+                        Add_Festival_Friendship_Bonus(0x16);
+                        Add_Festival_Friendship_Bonus(0x19);
+                        Add_Festival_Friendship_Bonus(0x1B);
+                        Add_Festival_Friendship_Bonus(0x13);
+                        Add_Festival_Friendship_Bonus(0x18);
+                        Add_Festival_Friendship_Bonus(0xC);
+                        Add_Festival_Friendship_Bonus(0x12);
+                        Add_Festival_Friendship_Bonus(0xB);
+                        Add_Festival_Friendship_Bonus(9);
+                        Refresh_Map_Entities();
+                        TalkOpen();
+                        TalkMessage(3);
+                        TalkClose();
+                        Reset_Player_After_Festival_Activity();
+                        Fade_In(2, 1);
+                        exit;
+                    } else {
+                        Set_Flag(0x1A4, 0);
+                        Add_Festival_Friendship_Bonus(0xD);
+                        Add_Festival_Friendship_Bonus(0x15);
+                        Add_Festival_Friendship_Bonus(0x16);
+                        Add_Festival_Friendship_Bonus(0x19);
+                        Add_Festival_Friendship_Bonus(0x1B);
+                        Add_Festival_Friendship_Bonus(0x13);
+                        Add_Festival_Friendship_Bonus(0x18);
+                        Add_Festival_Friendship_Bonus(0xC);
+                        Add_Festival_Friendship_Bonus(0x12);
+                        Add_Festival_Friendship_Bonus(0xB);
+                        Add_Festival_Friendship_Bonus(9);
+                        Refresh_Map_Entities();
+                    }
+                } else {
+                    if ((Check_Flag(0x180) == 1)) {
+                        TalkOpen();
+                        Set_Portrait(0x78);
+                        Set_Name_Window(0xD);
+                        TalkMessage(4);
+                        TalkClose();
+                        var_7 = 0;
+                    } else {
+                        if ((Check_Flag(0x1D0) == 1)) {
+                            TalkOpen();
+                            Set_Portrait(0x78);
+                            Set_Name_Window(0xD);
+                            TalkMessage(5);
+                            TalkClose();
+                            var_7 = 0;
+                        } else {
+                            if ((Check_Flag(0x189) == 1)) {
+                                if (!((var_2 == 0x12) && (var_3 == 1))) {
+                                    TalkOpen();
+                                    Set_Portrait(0x78);
+                                    Set_Name_Window(0xD);
+                                    TalkMessage(6);
+                                    TalkClose();
+                                    var_7 = 0;
+                                } else {
+                                    Fade_Out(2, 1);
+                                    TalkOpen();
+                                    TalkMessage(3);
+                                    TalkClose();
+                                    Refresh_Map_Entities();
+                                    Set_Flag(0x189, 2);
+                                    Recalculate_Global_Schedules(0);
+                                    Set_Flag(0x188, 0);
+                                    Add_Festival_Friendship_Bonus(2);
+                                    Add_Festival_Friendship_Bonus(3);
+                                    Add_Festival_Friendship_Bonus(4);
+                                    Add_Festival_Friendship_Bonus(5);
+                                    Add_Festival_Friendship_Bonus(6);
+                                    Add_Festival_Friendship_Bonus(8);
+                                    Add_Festival_Friendship_Bonus(9);
+                                    Add_Festival_Friendship_Bonus(0xD);
+                                    Add_Festival_Friendship_Bonus(0xE);
+                                    Add_Festival_Friendship_Bonus(0x11);
+                                    Add_Festival_Friendship_Bonus(0x12);
+                                    Add_Festival_Friendship_Bonus(0x13);
+                                    Add_Festival_Friendship_Bonus(0x18);
+                                    Add_Festival_Friendship_Bonus(0x19);
+                                    Add_Festival_Friendship_Bonus(0x1C);
+                                    Reset_Player_After_Festival_Activity();
+                                    SetEntityAnim(0, 0x192);
+                                    Fade_In(2, 1);
+                                    exit;
+                                }
+                            } else {
+                                if ((Check_Flag(0x198) == 1)) {
+                                    if (!((var_2 == 0x12) && (var_3 == 1))) {
+                                        TalkOpen();
+                                        Set_Portrait(2);
+                                        Set_Name_Window(2);
+                                        TalkMessage(7);
+                                        TalkClose();
+                                        var_7 = 0;
+                                    } else {
+                                        Fade_Out(2, 1);
+                                        TalkOpen();
+                                        TalkMessage(3);
+                                        TalkClose();
+                                        Refresh_Map_Entities();
+                                        Set_Flag(0x198, 2);
+                                        Recalculate_Global_Schedules(3);
+                                        Set_Flag(0x197, 0);
+                                        Add_Festival_Friendship_Bonus(2);
+                                        Add_Festival_Friendship_Bonus(4);
+                                        Add_Festival_Friendship_Bonus(6);
+                                        Add_Festival_Friendship_Bonus(8);
+                                        Add_Festival_Friendship_Bonus(0xD);
+                                        Add_Festival_Friendship_Bonus(3);
+                                        Add_Festival_Friendship_Bonus(0x18);
+                                        Reset_Player_After_Festival_Activity();
+                                        SetEntityAnim(0, 0x192);
+                                        Fade_In(2, 1);
+                                        exit;
+                                    }
+                                } else {
+                                    if ((Check_Flag(0x19C) == 1)) {
+                                        if (!((var_2 == 0x12) && (var_3 == 1))) {
+                                            TalkOpen();
+                                            Set_Portrait(0xB7);
+                                            Set_Name_Window(4);
+                                            TalkMessage(8);
+                                            TalkClose();
+                                            var_7 = 0;
+                                        } else {
+                                            Fade_Out(2, 1);
+                                            TalkOpen();
+                                            TalkMessage(3);
+                                            TalkClose();
+                                            Refresh_Map_Entities();
+                                            Set_Flag(0x19C, 2);
+                                            Recalculate_Global_Schedules(1);
+                                            Set_Flag(0x19B, 0);
+                                            Add_Festival_Friendship_Bonus(2);
+                                            Add_Festival_Friendship_Bonus(3);
+                                            Add_Festival_Friendship_Bonus(4);
+                                            Add_Festival_Friendship_Bonus(5);
+                                            Add_Festival_Friendship_Bonus(0xA);
+                                            Add_Festival_Friendship_Bonus(0xC);
+                                            Add_Festival_Friendship_Bonus(0xD);
+                                            Add_Festival_Friendship_Bonus(0x10);
+                                            Add_Festival_Friendship_Bonus(0x14);
+                                            Add_Festival_Friendship_Bonus(0x15);
+                                            Add_Festival_Friendship_Bonus(0x16);
+                                            Hide_Entity(0x47);
+                                            Hide_Entity(0x48);
+                                            Hide_Entity(0x49);
+                                            Add_Festival_Friendship_Bonus(0x47);
+                                            Add_Festival_Friendship_Bonus(0x48);
+                                            Add_Festival_Friendship_Bonus(0x49);
+                                            Reset_Player_After_Festival_Activity();
+                                            SetEntityAnim(0, 0x192);
+                                            Fade_In(2, 1);
+                                            exit;
+                                        }
+                                    } else {
+                                        if ((Check_Flag(0x1AC) == 1)) {
+                                            if (!((var_2 == 0x12) && (var_3 == 1))) {
+                                                TalkOpen();
+                                                Set_Portrait(0x78);
+                                                Set_Name_Window(0xD);
+                                                TalkMessage(6);
+                                                TalkClose();
+                                                var_7 = 0;
+                                            } else {
+                                                Fade_Out(2, 1);
+                                                TalkOpen();
+                                                TalkMessage(3);
+                                                TalkClose();
+                                                Refresh_Map_Entities();
+                                                Set_Flag(0x1AC, 2);
+                                                Recalculate_Global_Schedules(0);
+                                                Set_Flag(0x1AB, 0);
+                                                Add_Festival_Friendship_Bonus(0xD);
+                                                Add_Festival_Friendship_Bonus(4);
+                                                Add_Festival_Friendship_Bonus(6);
+                                                Add_Festival_Friendship_Bonus(0x1C);
+                                                Add_Festival_Friendship_Bonus(0x1B);
+                                                Add_Festival_Friendship_Bonus(7);
+                                                Add_Festival_Friendship_Bonus(0xC);
+                                                Add_Festival_Friendship_Bonus(0x18);
+                                                Add_Festival_Friendship_Bonus(0x15);
+                                                Add_Festival_Friendship_Bonus(0x14);
+                                                Add_Festival_Friendship_Bonus(0x16);
+                                                Add_Festival_Friendship_Bonus(1);
+                                                Add_Festival_Friendship_Bonus(2);
+                                                Add_Festival_Friendship_Bonus(0xE);
+                                                Add_Festival_Friendship_Bonus(8);
+                                                Reset_Player_After_Festival_Activity();
+                                                SetEntityAnim(0, 0x192);
+                                                Fade_In(2, 1);
+                                                exit;
+                                            }
+                                        } else {
+                                            if ((Check_Flag(0x1B0) == 1)) {
+                                                if (!((var_2 == 0x12) && (var_3 == 1))) {
+                                                    TalkOpen();
+                                                    Set_Portrait(0xB4);
+                                                    Set_Name_Window(4);
+                                                    TalkMessage(9);
+                                                    TalkClose();
+                                                    var_7 = 0;
+                                                } else {
+                                                    Fade_Out(2, 1);
+                                                    TalkOpen();
+                                                    TalkMessage(3);
+                                                    TalkClose();
+                                                    Refresh_Map_Entities();
+                                                    Set_Flag(0x1B0, 2);
+                                                    Recalculate_Global_Schedules(2);
+                                                    Set_Flag(0x1AF, 0);
+                                                    Add_Festival_Friendship_Bonus(2);
+                                                    Add_Festival_Friendship_Bonus(0x13);
+                                                    Add_Festival_Friendship_Bonus(4);
+                                                    Add_Festival_Friendship_Bonus(5);
+                                                    Add_Festival_Friendship_Bonus(0xE);
+                                                    Add_Festival_Friendship_Bonus(0xB);
+                                                    Add_Festival_Friendship_Bonus(0xD);
+                                                    Add_Festival_Friendship_Bonus(0x1B);
+                                                    Add_Festival_Friendship_Bonus(7);
+                                                    Add_Festival_Friendship_Bonus(0x11);
+                                                    Hide_Entity(0x47);
+                                                    Hide_Entity(0x48);
+                                                    Hide_Entity(0x49);
+                                                    Add_Festival_Friendship_Bonus(0x47);
+                                                    Add_Festival_Friendship_Bonus(0x48);
+                                                    Add_Festival_Friendship_Bonus(0x49);
+                                                    Reset_Player_After_Festival_Activity();
+                                                    SetEntityAnim(0, 0x192);
+                                                    Fade_In(2, 1);
+                                                    exit;
+                                                }
+                                            } else {
+                                                if ((Check_Flag(0x118) == 1)) {
+                                                    Set_Flag(0x118, 2);
+                                                    Add_Festival_Friendship_Bonus(0x12);
+                                                    Add_Festival_Friendship_Bonus(0xB);
+                                                    Add_Festival_Friendship_Bonus(9);
+                                                    Refresh_Map_Entities();
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        if (var_7) {
+            Fade_Out(2, 1);
+            Warp_Player(7, 0x4F8, 0x18);
+            SetEntityPosition(0, 0x4F8, 0x18, "Down");
+            Fade_In(2, 1);
+        } else {
+            SetEntityFacing(0, "Up");
+            Set_Vector_Y(0, 0x18C, 1);
+            Execute_Movement(0);
+        }
+    }
+    exit;
+}

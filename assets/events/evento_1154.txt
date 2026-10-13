@@ -1,0 +1,42 @@
+// Script 1154
+#include "Fomt_Lib.src"
+
+script 1154 Event_1154 {
+    const MESSAGE_0 = "This year's competition was \r\ngreat, don't you think?\BRK";
+    const MESSAGE_1 = "Yeah, \xFF% \r\nwas particularly strong. \BRK";
+    const MESSAGE_2 = "Sorry you didn't win. \r\nAll the other Chickens were\r\nvery strong, though. \BRK";
+    
+    var var_0;
+    
+    var_0 = Func11A(3);
+    GetAnimalName(0, 3, var_0);
+    if ((Check_If_Single(2) == 0)) {
+        Free_Event_Entity(2);
+    }
+    SetEntityFacing(2, GetOppositeFacing(GetEntityFacing(0)));
+    if ((Check_Flag(0x197) == 0)) {
+        TalkOpen();
+        Set_Portrait(0);
+        Set_Name_Window(2);
+        TalkMessage(0);
+    } else {
+        if ((Check_Flag(0x199) == 1)) {
+            TalkOpen();
+            Set_Portrait(1);
+            Set_Name_Window(2);
+            TalkMessage(1);
+            goto LBL_0006;
+        }
+        TalkOpen();
+        Set_Portrait(0);
+        Set_Name_Window(2);
+        TalkMessage(2);
+    }
+    TalkClose();
+    if ((Has_Spoken_To_NPC_Today(2) == 0)) {
+        Give_Friendship_Points(2, 5);
+    }
+    Free_Event_Entity(2);
+    SetEntityFacing(2, "Left");
+    exit;
+}

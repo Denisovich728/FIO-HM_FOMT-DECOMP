@@ -1,0 +1,37 @@
+// Script 237
+#include "Fomt_Lib.src"
+
+script 237 Event_0237 {
+    const MESSAGE_0 = "You can't go upstairs.\BRK";
+    
+    var var_0;
+    
+    if ((GetEntityFacing(0) == 1)) {
+        var_0 = 0;
+        if ((Chek_Friendship_Points(0x14) <= 0x64)) {
+            var_0 = 0;
+        } else {
+            if (((((((Check_Flag(0x92) == 1) || (Check_Flag(0x94) == 1)) || (Check_Flag(0x69) == 1)) || (Check_Flag(0x6A) == 1)) || (Check_Flag(0x11E) == 1)) || (Check_Flag(0x11D) == 1))) {
+                var_0 = 0;
+            } else {
+                var_0 = 1;
+            }
+        }
+        if ((var_0 == 1)) {
+            Fade_Out(2, 1);
+            Warp_Player(0x14, 0x18, 0x40);
+            SetEntityPosition(0, 0x18, 0x40, "Up");
+            Fade_In(2, 1);
+        } else {
+            TalkOpen();
+            Set_Portrait(0x27);
+            Set_Name_Window(0x14);
+            TalkMessage(0);
+            TalkClose();
+            Set_Vector_Y(0, (GetEntityY(0) + 2), 1);
+            Pan_Camera_To(GetEntityX(0), (GetEntityY(0) + 2), 1);
+            Execute_Movement(0);
+        }
+    }
+    exit;
+}

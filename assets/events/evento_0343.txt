@@ -1,0 +1,501 @@
+// Script 343
+#include "Fomt_Lib.src"
+
+script 343 Event_0343 {
+    const MESSAGE_0 = "Sorry. I don't\r\nfeel like talking today.\BRK";
+    const MESSAGE_1 = "Please leave me alone!\BRK";
+    const MESSAGE_2 = "Good night!\BRK";
+    const MESSAGE_3 = "I always want to go play\r\nat night...\BRK";
+    const MESSAGE_4 = "Good night.\BRK";
+    const MESSAGE_5 = "If you don't go to\r\nsleep now, you'll regret it\r\nin the morning!\BRK";
+    const MESSAGE_6 = "Good night.\r\nGood work today!\BRK";
+    const MESSAGE_7 = "Tomorrow's another day!\BRK";
+    const MESSAGE_8 = "\xFF), \r\ngood night.\BRK";
+    const MESSAGE_9 = "I can't wait until morning!\r\nSleeping is sooo boring...!\BRK";
+    const MESSAGE_10 = "............................\BRK";
+    const MESSAGE_11 = "I can't stand this any more!\r\nI want to go back home!\BRK";
+    const MESSAGE_12 = "I stayed up late\r\nwaiting for you, you know.\BRK";
+    const MESSAGE_13 = "I'm going to bed now, \r\nthough. I'm tired!\BRK";
+    const MESSAGE_14 = "I get tired so easily, \r\nyou know. \BRK";
+    const MESSAGE_15 = "Look, my hands are already \r\nwarm!\BRK";
+    const MESSAGE_16 = "You look beat!\r\nHard day on the farm, \r\n\xFF)?\BRK";
+    const MESSAGE_17 = "The best thing for a hard\r\nday's work is a good \r\nnight's sleep!\BRK";
+    const MESSAGE_18 = "Aren\x81ft you tired?\r\nI\x81fm going to bed soon.\r\nYou should too.\BRK";
+    const MESSAGE_19 = "Hah...\r\nI feel so depressed.\BRK";
+    const MESSAGE_20 = "Fine! Do whatever you want!\BRK";
+    const MESSAGE_21 = "(Yawn)...\r\nI'm so tired today...\BRK";
+    const MESSAGE_22 = "You should get to sleep now,\r\nso you're not tired in the\r\nmorning. \BRK";
+    const MESSAGE_23 = "Better get to sleep now\r\nso you don't sleep in \r\ntomorrow!\BRK";
+    const MESSAGE_24 = "Good night. You've got a\r\nfull day waiting for you \r\ntomorrow, remember.\BRK";
+    const MESSAGE_25 = "I hope tomorrow will be \r\nas good as today!\BRK";
+    const MESSAGE_26 = "......\BRK";
+    const MESSAGE_27 = "Boy, the days sure go\r\nquickly when you're working\r\nhard and enjoying it! Night!\BRK";
+    const MESSAGE_28 = "Don't you think you're \r\na little cold to me lately?\BRK";
+    const MESSAGE_29 = "I know you need to work, but\r\nput aside some time for\r\nme, too!\BRK";
+    const MESSAGE_30 = "Good night. \BRK";
+    const MESSAGE_31 = "I'll go to bed later. I'm\r\nnot tired now. \BRK";
+    const MESSAGE_32 = "Don't worry! I won't go\r\nanywhere while you're \r\nsleeping!\BRK";
+    const MESSAGE_33 = "You sure look tired!\r\nGo to sleep, now. \BRK";
+    const MESSAGE_34 = "Let me know if you \r\ndream about me!\BRK";
+    const MESSAGE_35 = "I like staying up late at \r\nnight, especially reading. \r\nSometimes I wake up with my\BRK\r\nface in a book!\BRK";
+    const MESSAGE_36 = "I wish we could wake up\r\ntogether, but I know how \r\nhard you have to work.\BRK";
+    const MESSAGE_37 = "Sorry, but I'm tired and \r\ndon't feel like talking. \BRK";
+    const MESSAGE_38 = ".........\BRK";
+    const MESSAGE_39 = "I'm so tired!...\BRK";
+    const MESSAGE_40 = "I'm so sleepy...\BRK";
+    const MESSAGE_41 = "Don't stay up late. \r\nGo to bed, already!\BRK";
+    const MESSAGE_42 = "Go to bed early, \r\nso you're refreshed \r\ntomorrow. \BRK";
+    const MESSAGE_43 = "Hurry up and go to \r\nsleep, already!\BRK";
+    const MESSAGE_44 = "Good night, \xFF). \BRK";
+    const MESSAGE_45 = "I'll stay up, so you go to \r\nsleep first, OK?\BRK";
+    const MESSAGE_46 = "Big Bed\BRK";
+    
+    var var_0;
+    var var_1;
+    var var_2;
+    var var_3;
+    var var_4;
+    
+    var_0 = 0;
+    var_1 = Check_Flag(1);
+    var_2 = Check_Flag(2);
+    var_4 = Check_Flag(3);
+    var_3 = Check_Flag(5);
+    if ((Check_Flag(0x4C) == 2)) {
+        if ((Check_Flag(0xD5) == 1)) {
+            var_0 = 0;
+        } else {
+            if ((var_4 >= 0x14)) {
+                if ((((var_1 == 0) && (var_2 == 0x16)) || ((var_1 == 2) && (var_2 == 0xD)))) {
+                    var_0 = 0;
+                } else {
+                    var_0 = 1;
+                }
+            } else {
+                var_0 = 0;
+            }
+        }
+    } else {
+        if ((Check_Flag(0x55) == 2)) {
+            if ((Check_Flag(0xD2) == 1)) {
+                var_0 = 0;
+            } else {
+                if ((var_4 >= 0x14)) {
+                    if (((var_1 == 2) && (var_2 == 0xD))) {
+                        var_0 = 0;
+                    } else {
+                        var_0 = 1;
+                    }
+                } else {
+                    var_0 = 0;
+                }
+            }
+            goto LBL_0015;
+        }
+        if ((Check_Flag(0x5F) == 2)) {
+            if ((Check_Flag(0xD3) == 1)) {
+                var_0 = 0;
+            } else {
+                if ((var_4 >= 0x14)) {
+                    if ((((var_1 == 0) && (var_2 == 0x16)) || ((var_1 == 2) && (var_2 == 0xD)))) {
+                        var_0 = 0;
+                    } else {
+                        var_0 = 1;
+                    }
+                } else {
+                    var_0 = 0;
+                }
+            }
+            goto LBL_0015;
+        }
+        if ((Check_Flag(0x67) == 2)) {
+            if ((Check_Flag(0xD6) == 1)) {
+                var_0 = 0;
+            } else {
+                if ((var_4 >= 0x14)) {
+                    if (((var_1 == 2) && (var_2 == 0xD))) {
+                        var_0 = 0;
+                    } else {
+                        var_0 = 1;
+                    }
+                } else {
+                    var_0 = 0;
+                }
+            }
+            goto LBL_0015;
+        }
+        if ((Check_Flag(0x6F) == 2)) {
+            if ((Check_Flag(0xD4) == 1)) {
+                var_0 = 0;
+            } else {
+                if ((var_4 >= 0x14)) {
+                    if (((var_1 == 2) && (var_2 == 0xD))) {
+                        var_0 = 0;
+                    } else {
+                        var_0 = 1;
+                    }
+                } else {
+                    var_0 = 0;
+                }
+            }
+            goto LBL_0015;
+        }
+        var_0 = 0;
+    }
+    if ((var_0 == 1)) {
+        if ((Check_Flag(0x4C) == 2)) {
+            SetEntityAnim(0x13, 0x6A5);
+            Make_Delay(0xF);
+            TalkOpen();
+            Set_Name_Window(0x13);
+            if ((Chek_Love_Points(0x13) < 0x7530)) {
+                if ((Has_NPC_Talked_Today(0x13) == 0)) {
+                    Set_Portrait(0x4C);
+                    Set_Hearth_Anim(0x13);
+                    TalkMessage(0);
+                } else {
+                    Set_Portrait(0x4A);
+                    Set_Hearth_Anim(0x13);
+                    TalkMessage(1);
+                }
+            } else {
+                if (((Chek_Love_Points(0x13) >= 0x7530) && (Chek_Love_Points(0x13) < 0x9C40))) {
+                    if ((Has_NPC_Talked_Today(0x13) == 0)) {
+                        Set_Portrait(0x48);
+                        Set_Hearth_Anim(0x13);
+                        TalkMessage(2);
+                    } else {
+                        Set_Portrait(0x4C);
+                        Set_Hearth_Anim(0x13);
+                        TalkMessage(3);
+                    }
+                } else {
+                    if (((Chek_Love_Points(0x13) >= 0x9C40) && (Chek_Love_Points(0x13) < 0xC350))) {
+                        if ((Has_NPC_Talked_Today(0x13) == 0)) {
+                            Set_Portrait(0x48);
+                            Set_Hearth_Anim(0x13);
+                            TalkMessage(4);
+                        } else {
+                            Set_Portrait(0x49);
+                            Set_Hearth_Anim(0x13);
+                            TalkMessage(5);
+                        }
+                    } else {
+                        if (((Chek_Love_Points(0x13) >= 0xC350) && (Chek_Love_Points(0x13) < 0xEA60))) {
+                            if ((Has_NPC_Talked_Today(0x13) == 0)) {
+                                Set_Portrait(0x4D);
+                                Set_Hearth_Anim(0x13);
+                                TalkMessage(6);
+                            } else {
+                                Set_Portrait(0x4D);
+                                Set_Hearth_Anim(0x13);
+                                TalkMessage(7);
+                            }
+                        } else {
+                            if ((Chek_Love_Points(0x13) >= 0xEA60)) {
+                                if ((Has_NPC_Talked_Today(0x13) == 0)) {
+                                    Set_Portrait(0x4D);
+                                    Set_Hearth_Anim(0x13);
+                                    TalkMessage(8);
+                                } else {
+                                    Set_Portrait(0x4D);
+                                    Set_Hearth_Anim(0x13);
+                                    TalkMessage(9);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            TalkClose();
+            Free_Event_Entity(0x13);
+            SetEntityAnim(0x13, 0x6C1);
+            Make_Delay(0xF);
+        } else {
+            if ((Check_Flag(0x55) == 2)) {
+                SetEntityAnim(3, 0x243);
+                Make_Delay(0xF);
+                TalkOpen();
+                Set_Name_Window(3);
+                if ((Chek_Love_Points(3) < 0x7530)) {
+                    if ((Has_NPC_Talked_Today(3) == 0)) {
+                        Set_Portrait(9);
+                        Set_Hearth_Anim(3);
+                        TalkMessage(10);
+                    } else {
+                        Set_Portrait(9);
+                        Set_Hearth_Anim(3);
+                        TalkMessage(11);
+                    }
+                } else {
+                    if (((Chek_Love_Points(3) >= 0x7530) && (Chek_Love_Points(3) < 0x9C40))) {
+                        if ((Has_NPC_Talked_Today(3) == 0)) {
+                            Set_Portrait(0xB);
+                            Set_Hearth_Anim(3);
+                            TalkMessage(12);
+                        } else {
+                            Set_Portrait(9);
+                            Set_Hearth_Anim(3);
+                            TalkMessage(13);
+                        }
+                    } else {
+                        if (((Chek_Love_Points(3) >= 0x9C40) && (Chek_Love_Points(3) < 0xC350))) {
+                            if ((Has_NPC_Talked_Today(3) == 0)) {
+                                Set_Portrait(0xA);
+                                Set_Hearth_Anim(3);
+                                TalkMessage(14);
+                            } else {
+                                Set_Portrait(0xC);
+                                Set_Hearth_Anim(3);
+                                TalkMessage(15);
+                            }
+                        } else {
+                            if (((Chek_Love_Points(3) >= 0xC350) && (Chek_Love_Points(3) < 0xEA60))) {
+                                if ((Has_NPC_Talked_Today(3) == 0)) {
+                                    Set_Portrait(8);
+                                    Set_Hearth_Anim(3);
+                                    TalkMessage(16);
+                                } else {
+                                    Set_Portrait(8);
+                                    Set_Hearth_Anim(3);
+                                    TalkMessage(17);
+                                }
+                            } else {
+                                if ((Chek_Love_Points(3) >= 0xEA60)) {
+                                    if ((Has_NPC_Talked_Today(3) == 0)) {
+                                        Set_Portrait(0xC);
+                                        Set_Hearth_Anim(3);
+                                        TalkMessage(2);
+                                    } else {
+                                        Set_Portrait(8);
+                                        Set_Hearth_Anim(3);
+                                        TalkMessage(18);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                TalkClose();
+                Free_Event_Entity(3);
+                SetEntityAnim(3, 0x25B);
+                Make_Delay(0xF);
+            } else {
+                if ((Check_Flag(0x5F) == 2)) {
+                    SetEntityAnim(0x19, 0x7D6);
+                    Make_Delay(0xF);
+                    TalkOpen();
+                    Set_Name_Window(0x19);
+                    if ((Chek_Love_Points(0x19) < 0x7530)) {
+                        if ((Has_NPC_Talked_Today(0x19) == 0)) {
+                            Set_Portrait(0x5A);
+                            Set_Hearth_Anim(0x19);
+                            TalkMessage(19);
+                        } else {
+                            Set_Portrait(0x5A);
+                            Set_Hearth_Anim(0x19);
+                            TalkMessage(20);
+                        }
+                    } else {
+                        if (((Chek_Love_Points(0x19) >= 0x7530) && (Chek_Love_Points(0x19) < 0x9C40))) {
+                            if ((Has_NPC_Talked_Today(0x19) == 0)) {
+                                Set_Portrait(0x59);
+                                Set_Hearth_Anim(0x19);
+                                TalkMessage(21);
+                            } else {
+                                Set_Portrait(0x5B);
+                                Set_Hearth_Anim(0x19);
+                                TalkMessage(22);
+                            }
+                        } else {
+                            if (((Chek_Love_Points(0x19) >= 0x9C40) && (Chek_Love_Points(0x19) < 0xC350))) {
+                                if ((Has_NPC_Talked_Today(0x19) == 0)) {
+                                    Set_Portrait(0x57);
+                                    Set_Hearth_Anim(0x19);
+                                    TalkMessage(2);
+                                } else {
+                                    Set_Portrait(0x58);
+                                    Set_Hearth_Anim(0x19);
+                                    TalkMessage(23);
+                                }
+                            } else {
+                                if (((Chek_Love_Points(0x19) >= 0xC350) && (Chek_Love_Points(0x19) < 0xEA60))) {
+                                    if ((Has_NPC_Talked_Today(0x19) == 0)) {
+                                        Set_Portrait(0x58);
+                                        Set_Hearth_Anim(0x19);
+                                        TalkMessage(24);
+                                    } else {
+                                        Set_Portrait(0x58);
+                                        Set_Hearth_Anim(0x19);
+                                        TalkMessage(25);
+                                    }
+                                } else {
+                                    if ((Chek_Love_Points(0x19) >= 0xEA60)) {
+                                        if ((Has_NPC_Talked_Today(0x19) == 0)) {
+                                            Set_Portrait(0x5C);
+                                            Set_Hearth_Anim(0x19);
+                                            TalkMessage(26);
+                                        } else {
+                                            Set_Portrait(0x5B);
+                                            Set_Hearth_Anim(0x19);
+                                            TalkMessage(27);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    TalkClose();
+                    Free_Event_Entity(0x19);
+                    SetEntityAnim(0x19, 0x7EE);
+                    Make_Delay(0xF);
+                } else {
+                    if ((Check_Flag(0x67) == 2)) {
+                        SetEntityAnim(0xC, 0x82B);
+                        Make_Delay(0xF);
+                        TalkOpen();
+                        Set_Name_Window(0xC);
+                        if ((Chek_Love_Points(0xC) < 0x7530)) {
+                            if ((Has_NPC_Talked_Today(0xC) == 0)) {
+                                Set_Portrait(0x6B);
+                                Set_Hearth_Anim(0xC);
+                                TalkMessage(28);
+                            } else {
+                                Set_Portrait(0x69);
+                                Set_Hearth_Anim(0xC);
+                                TalkMessage(29);
+                            }
+                        } else {
+                            if (((Chek_Love_Points(0xC) >= 0x7530) && (Chek_Love_Points(0xC) < 0x9C40))) {
+                                if ((Has_NPC_Talked_Today(0xC) == 0)) {
+                                    Set_Portrait(0x6B);
+                                    Set_Hearth_Anim(0xC);
+                                    TalkMessage(30);
+                                } else {
+                                    Set_Portrait(0x6B);
+                                    Set_Hearth_Anim(0xC);
+                                    TalkMessage(31);
+                                }
+                            } else {
+                                if (((Chek_Love_Points(0xC) >= 0x9C40) && (Chek_Love_Points(0xC) < 0xC350))) {
+                                    if ((Has_NPC_Talked_Today(0xC) == 0)) {
+                                        Set_Portrait(0x67);
+                                        Set_Hearth_Anim(0xC);
+                                        TalkMessage(30);
+                                    } else {
+                                        Set_Portrait(0x68);
+                                        Set_Hearth_Anim(0xC);
+                                        TalkMessage(32);
+                                    }
+                                } else {
+                                    if (((Chek_Love_Points(0xC) >= 0xC350) && (Chek_Love_Points(0xC) < 0xEA60))) {
+                                        if ((Has_NPC_Talked_Today(0xC) == 0)) {
+                                            Set_Portrait(0x68);
+                                            Set_Hearth_Anim(0xC);
+                                            TalkMessage(33);
+                                        } else {
+                                            Set_Portrait(0x6C);
+                                            Set_Hearth_Anim(0xC);
+                                            TalkMessage(34);
+                                        }
+                                    } else {
+                                        if ((Chek_Love_Points(0xC) >= 0xEA60)) {
+                                            if ((Has_NPC_Talked_Today(0xC) == 0)) {
+                                                Set_Portrait(0x68);
+                                                Set_Hearth_Anim(0xC);
+                                                TalkMessage(35);
+                                            } else {
+                                                Set_Portrait(0x68);
+                                                Set_Hearth_Anim(0xC);
+                                                TalkMessage(36);
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        TalkClose();
+                        Free_Event_Entity(0xC);
+                        SetEntityAnim(0xC, 0x843);
+                        Make_Delay(0xF);
+                    } else {
+                        if ((Check_Flag(0x6F) == 2)) {
+                            SetEntityAnim(0x15, 0x8A0);
+                            Make_Delay(0xF);
+                            TalkOpen();
+                            Set_Name_Window(0x15);
+                            if ((Chek_Love_Points(0x15) < 0x7530)) {
+                                if ((Has_NPC_Talked_Today(0x15) == 0)) {
+                                    Set_Portrait(0x7B);
+                                    Set_Hearth_Anim(0x15);
+                                    TalkMessage(37);
+                                } else {
+                                    Set_Portrait(0x7D);
+                                    Set_Hearth_Anim(0x15);
+                                    TalkMessage(38);
+                                }
+                            } else {
+                                if (((Chek_Love_Points(0x15) >= 0x7530) && (Chek_Love_Points(0x15) < 0x9C40))) {
+                                    if ((Has_NPC_Talked_Today(0x15) == 0)) {
+                                        Set_Portrait(0x7B);
+                                        Set_Hearth_Anim(0x15);
+                                        TalkMessage(39);
+                                    } else {
+                                        Set_Portrait(0x7D);
+                                        Set_Hearth_Anim(0x15);
+                                        TalkMessage(40);
+                                    }
+                                } else {
+                                    if (((Chek_Love_Points(0x15) >= 0x9C40) && (Chek_Love_Points(0x15) < 0xC350))) {
+                                        if ((Has_NPC_Talked_Today(0x15) == 0)) {
+                                            Set_Portrait(0x79);
+                                            Set_Hearth_Anim(0x15);
+                                            TalkMessage(4);
+                                        } else {
+                                            Set_Portrait(0x7B);
+                                            Set_Hearth_Anim(0x15);
+                                            TalkMessage(41);
+                                        }
+                                    } else {
+                                        if (((Chek_Love_Points(0x15) >= 0xC350) && (Chek_Love_Points(0x15) < 0xEA60))) {
+                                            if ((Has_NPC_Talked_Today(0x15) == 0)) {
+                                                Set_Portrait(0x7A);
+                                                Set_Hearth_Anim(0x15);
+                                                TalkMessage(42);
+                                            } else {
+                                                Set_Portrait(0x7B);
+                                                Set_Hearth_Anim(0x15);
+                                                TalkMessage(43);
+                                            }
+                                        } else {
+                                            if ((Chek_Love_Points(0x15) >= 0xEA60)) {
+                                                if ((Has_NPC_Talked_Today(0x15) == 0)) {
+                                                    Set_Portrait(0x7E);
+                                                    Set_Hearth_Anim(0x15);
+                                                    TalkMessage(44);
+                                                } else {
+                                                    Set_Portrait(0x7E);
+                                                    Set_Hearth_Anim(0x15);
+                                                    TalkMessage(45);
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            TalkClose();
+                            Free_Event_Entity(0x15);
+                            SetEntityAnim(0x15, 0x8B4);
+                            Make_Delay(0xF);
+                        }
+                    }
+                }
+            }
+        }
+    } else {
+        TalkOpen();
+        TalkMessage(46);
+        TalkClose();
+    }
+    exit;
+}

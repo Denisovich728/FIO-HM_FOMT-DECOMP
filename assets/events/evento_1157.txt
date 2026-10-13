@@ -1,0 +1,42 @@
+// Script 1157
+#include "Fomt_Lib.src"
+
+script 1157 Event_1157 {
+    const MESSAGE_0 = "That was fun! \r\nYou should have joined in,\r\n\xFF!. \BRK";
+    const MESSAGE_1 = "That was a great match!\r\nBring \xFF% back \r\nnext year! \BRK";
+    const MESSAGE_2 = "That was a great bout!\BRK";
+    
+    var var_0;
+    
+    var_0 = Func11A(3);
+    GetAnimalName(0, 3, var_0);
+    if ((Check_If_Single(0xD) == 0)) {
+        Free_Event_Entity(0xD);
+    }
+    SetEntityFacing(0xD, GetOppositeFacing(GetEntityFacing(0)));
+    if ((Check_Flag(0x197) == 0)) {
+        TalkOpen();
+        Set_Portrait(0x75);
+        Set_Name_Window(0xD);
+        TalkMessage(0);
+    } else {
+        if ((Check_Flag(0x199) == 1)) {
+            TalkOpen();
+            Set_Portrait(0x76);
+            Set_Name_Window(0xD);
+            TalkMessage(1);
+            goto LBL_0006;
+        }
+        TalkOpen();
+        Set_Portrait(0x75);
+        Set_Name_Window(0xD);
+        TalkMessage(2);
+    }
+    TalkClose();
+    if ((Has_Spoken_To_NPC_Today(0xD) == 0)) {
+        Give_Friendship_Points(0xD, 5);
+    }
+    Free_Event_Entity(0xD);
+    SetEntityFacing(0xD, "Down");
+    exit;
+}

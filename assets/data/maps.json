@@ -1,0 +1,1058 @@
+[
+    {
+        "map_id": 0,
+        "hex_id": "0x00",
+        "width": 128,
+        "height": 88,
+        "pointers": {
+            "gfx": "0x0869B730",
+            "pal1": "0x0869F2E0",
+            "pal2": "0x086A0098",
+            "bg1": "0x0869F3D4",
+            "bg2": "0x0869FB80",
+            "collision": "0x086A0008",
+            "obj1": "0x0811EE68",
+            "obj2": "0x0811EEB0"
+        }
+    },
+    {
+        "map_id": 1,
+        "hex_id": "0x01",
+        "width": 128,
+        "height": 88,
+        "pointers": {
+            "gfx": "0x086A018C",
+            "pal1": "0x086A3F48",
+            "pal2": "0x086A4E98",
+            "bg1": "0x086A402C",
+            "bg2": "0x086A4950",
+            "collision": "0x086A4E04",
+            "obj1": "0x0811EE68",
+            "obj2": "0x0811EEB0"
+        }
+    },
+    {
+        "map_id": 2,
+        "hex_id": "0x02",
+        "width": 60,
+        "height": 56,
+        "pointers": {
+            "gfx": "0x086FB004",
+            "pal1": "0x086FD19C",
+            "pal2": "0x086FDA8C",
+            "bg1": "0x086FD240",
+            "bg2": "0x086FD7D0",
+            "collision": "0x086FD9F4",
+            "obj1": "0x08131AD4",
+            "obj2": "0x08131AFC"
+        }
+    },
+    {
+        "map_id": 3,
+        "hex_id": "0x03",
+        "width": 60,
+        "height": 56,
+        "pointers": {
+            "gfx": "0x086FDB2C",
+            "pal1": "0x086FFA84",
+            "pal2": "0x08700374",
+            "bg1": "0x086FFB24",
+            "bg2": "0x087000B0",
+            "collision": "0x087002CC",
+            "obj1": "0x08131AD4",
+            "obj2": "0x08131AFC"
+        }
+    },
+    {
+        "map_id": 4,
+        "hex_id": "0x04",
+        "width": 176,
+        "height": 88,
+        "pointers": {
+            "gfx": "0x086C6920",
+            "pal1": "0x086CB62C",
+            "pal2": "0x086CDEB8",
+            "bg1": "0x086CB760",
+            "bg2": "0x086CC7E0",
+            "collision": "0x086CD878",
+            "obj1": "0x0812B5A0",
+            "obj2": "0x0812B624"
+        }
+    },
+    {
+        "map_id": 5,
+        "hex_id": "0x05",
+        "width": 176,
+        "height": 88,
+        "pointers": {
+            "gfx": "0x086CDFEC",
+            "pal1": "0x086D2E98",
+            "pal2": "0x086D5428",
+            "bg1": "0x086D2F94",
+            "bg2": "0x086D3EBC",
+            "collision": "0x086D4ED4",
+            "obj1": "0x0812B5A0",
+            "obj2": "0x0812B624"
+        }
+    },
+    {
+        "map_id": 6,
+        "hex_id": "0x06",
+        "width": 173,
+        "height": 64,
+        "pointers": {
+            "gfx": "0x08704D30",
+            "pal1": "0x08709BA8",
+            "pal2": "0x0870B6A8",
+            "bg1": "0x08709D34",
+            "bg2": "0x0870A8A8",
+            "collision": "0x0870B220",
+            "obj1": "0x08134FB0",
+            "obj2": "0x08134FFC"
+        }
+    },
+    {
+        "map_id": 7,
+        "hex_id": "0x07",
+        "width": 173,
+        "height": 64,
+        "pointers": {
+            "gfx": "0x0870B81C",
+            "pal1": "0x087104B4",
+            "pal2": "0x08711C90",
+            "bg1": "0x087105DC",
+            "bg2": "0x08710EB0",
+            "collision": "0x08711818",
+            "obj1": "0x08134FB0",
+            "obj2": "0x08134FFC"
+        }
+    },
+    {
+        "map_id": 8,
+        "hex_id": "0x08",
+        "width": 64,
+        "height": 80,
+        "pointers": {
+            "gfx": "0x0868A63C",
+            "pal1": "0x0868D70C",
+            "pal2": "0x0868E1E4",
+            "bg1": "0x0868D7EC",
+            "bg2": "0x0868DF08",
+            "collision": "0x0868E168",
+            "obj1": "0x0811C1B4",
+            "obj2": "0x0811C1E8"
+        }
+    },
+    {
+        "map_id": 9,
+        "hex_id": "0x09",
+        "width": 64,
+        "height": 80,
+        "pointers": {
+            "gfx": "0x0868E2C8",
+            "pal1": "0x0869089C",
+            "pal2": "0x08691308",
+            "bg1": "0x08690974",
+            "bg2": "0x08691078",
+            "collision": "0x0869129C",
+            "obj1": "0x0811C1B4",
+            "obj2": "0x0811C1E8"
+        }
+    },
+    {
+        "map_id": 10,
+        "hex_id": "0x0A",
+        "width": 64,
+        "height": 48,
+        "pointers": {
+            "gfx": "0x086A4F6C",
+            "pal1": "0x086A88E8",
+            "pal2": "0x086AA074",
+            "bg1": "0x086C57C0",
+            "bg2": "0x086C5C80",
+            "collision": "0x086C5EB4",
+            "obj1": "0x0812A98C",
+            "obj2": "0x0812A9A0"
+        }
+    },
+    {
+        "map_id": 11,
+        "hex_id": "0x0B",
+        "width": 64,
+        "height": 48,
+        "pointers": {
+            "gfx": "0x086AA130",
+            "pal1": "0x086ADA88",
+            "pal2": "0x086AF274",
+            "bg1": "0x086C608C",
+            "bg2": "0x086C6540",
+            "collision": "0x086C6760",
+            "obj1": "0x0812A98C",
+            "obj2": "0x0812A9A0"
+        }
+    },
+    {
+        "map_id": 12,
+        "hex_id": "0x0C",
+        "width": 128,
+        "height": 64,
+        "pointers": {
+            "gfx": "0x086A4F6C",
+            "pal1": "0x086A88E8",
+            "pal2": "0x086AA074",
+            "bg1": "0x086A89B4",
+            "bg2": "0x086A9434",
+            "collision": "0x086A9B2C",
+            "obj1": "0x08121F38",
+            "obj2": "0x08121F5C"
+        }
+    },
+    {
+        "map_id": 13,
+        "hex_id": "0x0D",
+        "width": 128,
+        "height": 64,
+        "pointers": {
+            "gfx": "0x086AA130",
+            "pal1": "0x086ADA88",
+            "pal2": "0x086AF274",
+            "bg1": "0x086ADB50",
+            "bg2": "0x086AE6DC",
+            "collision": "0x086AED3C",
+            "obj1": "0x08121F38",
+            "obj2": "0x08121F5C"
+        }
+    },
+    {
+        "map_id": 14,
+        "hex_id": "0x0E",
+        "width": 150,
+        "height": 100,
+        "pointers": {
+            "gfx": "0x0867A0E8",
+            "pal1": "0x0867EC24",
+            "pal2": "0x08681E54",
+            "bg1": "0x0867ED1C",
+            "bg2": "0x08680A10",
+            "collision": "0x0868167C",
+            "obj1": "0x08117CE0",
+            "obj2": "0x08117D10"
+        }
+    },
+    {
+        "map_id": 15,
+        "hex_id": "0x0F",
+        "width": 150,
+        "height": 100,
+        "pointers": {
+            "gfx": "0x08681F2C",
+            "pal1": "0x08686F2C",
+            "pal2": "0x0868A17C",
+            "bg1": "0x08687024",
+            "bg2": "0x08688DA4",
+            "collision": "0x08689A0C",
+            "obj1": "0x08117CE0",
+            "obj2": "0x08117D10"
+        }
+    },
+    {
+        "map_id": 16,
+        "hex_id": "0x10",
+        "width": 60,
+        "height": 60,
+        "pointers": {
+            "gfx": "0x08711DA0",
+            "pal1": "0x08714580",
+            "pal2": "0x08714AD0",
+            "bg1": "0x08714610",
+            "bg2": "0x087147D0",
+            "collision": "0x08714980",
+            "obj1": "0x08137C2C",
+            "obj2": "0x08137C3C"
+        }
+    },
+    {
+        "map_id": 17,
+        "hex_id": "0x11",
+        "width": 60,
+        "height": 60,
+        "pointers": {
+            "gfx": "0x08714C84",
+            "pal1": "0x08716B38",
+            "pal2": "0x08717018",
+            "bg1": "0x08716BC0",
+            "bg2": "0x08716D24",
+            "collision": "0x08716ECC",
+            "obj1": "0x08137C2C",
+            "obj2": "0x08137C3C"
+        }
+    },
+    {
+        "map_id": 18,
+        "hex_id": "0x12",
+        "width": 30,
+        "height": 28,
+        "pointers": {
+            "gfx": "0x086D7D88",
+            "pal1": "0x086DAEA8",
+            "pal2": "0x086DAEA8",
+            "bg1": "0x086D7558",
+            "bg2": "0x086D7734",
+            "collision": "0x086D78A0",
+            "obj1": "0x0812F2A4",
+            "obj2": "0x0812F2D8"
+        }
+    },
+    {
+        "map_id": 19,
+        "hex_id": "0x13",
+        "width": 30,
+        "height": 28,
+        "pointers": {
+            "gfx": "0x086D7D88",
+            "pal1": "0x086DAEA8",
+            "pal2": "0x086DAEA8",
+            "bg1": "0x086D7988",
+            "bg2": "0x086D7B60",
+            "collision": "0x086D7C8C",
+            "obj1": "0x0812F634",
+            "obj2": "0x0812F65C"
+        }
+    },
+    {
+        "map_id": 20,
+        "hex_id": "0x14",
+        "width": 30,
+        "height": 28,
+        "pointers": {
+            "gfx": "0x086D7D88",
+            "pal1": "0x086DAEA8",
+            "pal2": "0x086DAEA8",
+            "bg1": "0x08700408",
+            "bg2": "0x087005E0",
+            "collision": "0x087006E4",
+            "obj1": "0x08132C78",
+            "obj2": "0x08132C98"
+        }
+    },
+    {
+        "map_id": 21,
+        "hex_id": "0x15",
+        "width": 30,
+        "height": 28,
+        "pointers": {
+            "gfx": "0x086D7D88",
+            "pal1": "0x086DAEA8",
+            "pal2": "0x086DAEA8",
+            "bg1": "0x087007B4",
+            "bg2": "0x087009B4",
+            "collision": "0x08700A6C",
+            "obj1": "0x08132FE0",
+            "obj2": "0x08132FFC"
+        }
+    },
+    {
+        "map_id": 22,
+        "hex_id": "0x16",
+        "width": 46,
+        "height": 42,
+        "pointers": {
+            "gfx": "0x086B7E7C",
+            "pal1": "0x086BB440",
+            "pal2": "0x086BB440",
+            "bg1": "0x086B6AF4",
+            "bg2": "0x086B6DF4",
+            "collision": "0x086B6FF4",
+            "obj1": "0x08126B84",
+            "obj2": "0x08126BB4"
+        }
+    },
+    {
+        "map_id": 23,
+        "hex_id": "0x17",
+        "width": 46,
+        "height": 42,
+        "pointers": {
+            "gfx": "0x086B7E7C",
+            "pal1": "0x086BB440",
+            "pal2": "0x086BB440",
+            "bg1": "0x086B7120",
+            "bg2": "0x086B7428",
+            "collision": "0x086B772C",
+            "obj1": "0x08127368",
+            "obj2": "0x081273A4"
+        }
+    },
+    {
+        "map_id": 24,
+        "hex_id": "0x18",
+        "width": 46,
+        "height": 42,
+        "pointers": {
+            "gfx": "0x086B7E7C",
+            "pal1": "0x086BB440",
+            "pal2": "0x086BB440",
+            "bg1": "0x086B7858",
+            "bg2": "0x086B7B54",
+            "collision": "0x086B7D88",
+            "obj1": "0x08127B68",
+            "obj2": "0x08127B94"
+        }
+    },
+    {
+        "map_id": 25,
+        "hex_id": "0x19",
+        "width": 36,
+        "height": 42,
+        "pointers": {
+            "gfx": "0x086AFC08",
+            "pal1": "0x086B1314",
+            "pal2": "0x086B1314",
+            "bg1": "0x086B14CC",
+            "bg2": "0x086B1734",
+            "collision": "0x086B1914",
+            "obj1": "0x0812491C",
+            "obj2": "0x08124964"
+        }
+    },
+    {
+        "map_id": 26,
+        "hex_id": "0x1A",
+        "width": 36,
+        "height": 42,
+        "pointers": {
+            "gfx": "0x08700E10",
+            "pal1": "0x087038D4",
+            "pal2": "0x087038D4",
+            "bg1": "0x086AF7A8",
+            "bg2": "0x086AF974",
+            "collision": "0x086AFB34",
+            "obj1": "0x081242D4",
+            "obj2": "0x08124314"
+        }
+    },
+    {
+        "map_id": 27,
+        "hex_id": "0x1B",
+        "width": 30,
+        "height": 28,
+        "pointers": {
+            "gfx": "0x08700E10",
+            "pal1": "0x087038D4",
+            "pal2": "0x087038D4",
+            "bg1": "0x08703A14",
+            "bg2": "0x08703B60",
+            "collision": "0x08703C70",
+            "obj1": "0x081336B4",
+            "obj2": "0x081336E4"
+        }
+    },
+    {
+        "map_id": 28,
+        "hex_id": "0x1C",
+        "width": 30,
+        "height": 28,
+        "pointers": {
+            "gfx": "0x08700E10",
+            "pal1": "0x087038D4",
+            "pal2": "0x087038D4",
+            "bg1": "0x0869B3B8",
+            "bg2": "0x0869B50C",
+            "collision": "0x0869B65C",
+            "obj1": "0x0811E968",
+            "obj2": "0x0811E998"
+        }
+    },
+    {
+        "map_id": 29,
+        "hex_id": "0x1D",
+        "width": 46,
+        "height": 42,
+        "pointers": {
+            "gfx": "0x086B3180",
+            "pal1": "0x086B697C",
+            "pal2": "0x086B697C",
+            "bg1": "0x086B24F0",
+            "bg2": "0x086B2840",
+            "collision": "0x086B2A24",
+            "obj1": "0x08125BC8",
+            "obj2": "0x08125C00"
+        }
+    },
+    {
+        "map_id": 30,
+        "hex_id": "0x1E",
+        "width": 46,
+        "height": 42,
+        "pointers": {
+            "gfx": "0x086B3180",
+            "pal1": "0x086B697C",
+            "pal2": "0x086B697C",
+            "bg1": "0x086B2B9C",
+            "bg2": "0x086B2DE8",
+            "collision": "0x086B3034",
+            "obj1": "0x081263B4",
+            "obj2": "0x081263E4"
+        }
+    },
+    {
+        "map_id": 31,
+        "hex_id": "0x1F",
+        "width": 46,
+        "height": 42,
+        "pointers": {
+            "gfx": "0x086B3180",
+            "pal1": "0x086B697C",
+            "pal2": "0x086B697C",
+            "bg1": "0x08695CB0",
+            "bg2": "0x08695FD0",
+            "collision": "0x086960D4",
+            "obj1": "0x0811E1B4",
+            "obj2": "0x0811E1DC"
+        }
+    },
+    {
+        "map_id": 32,
+        "hex_id": "0x20",
+        "width": 30,
+        "height": 28,
+        "pointers": {
+            "gfx": "0x086BDE04",
+            "pal1": "0x086C0ADC",
+            "pal2": "0x086C0ADC",
+            "bg1": "0x086BD840",
+            "bg2": "0x086BD9BC",
+            "collision": "0x086BDAAC",
+            "obj1": "0x08128A00",
+            "obj2": "0x08128A34"
+        }
+    },
+    {
+        "map_id": 33,
+        "hex_id": "0x21",
+        "width": 30,
+        "height": 28,
+        "pointers": {
+            "gfx": "0x086BDE04",
+            "pal1": "0x086C0ADC",
+            "pal2": "0x086C0ADC",
+            "bg1": "0x086BDB8C",
+            "bg2": "0x086BDC80",
+            "collision": "0x086BDD80",
+            "obj1": "0x08128D7C",
+            "obj2": "0x08128DB8"
+        }
+    },
+    {
+        "map_id": 34,
+        "hex_id": "0x22",
+        "width": 30,
+        "height": 28,
+        "pointers": {
+            "gfx": "0x086BDE04",
+            "pal1": "0x086C0ADC",
+            "pal2": "0x086C0ADC",
+            "bg1": "0x086BD110",
+            "bg2": "0x086BD2C8",
+            "collision": "0x086BD3C8",
+            "obj1": "0x08128320",
+            "obj2": "0x08128348"
+        }
+    },
+    {
+        "map_id": 35,
+        "hex_id": "0x23",
+        "width": 30,
+        "height": 28,
+        "pointers": {
+            "gfx": "0x086BDE04",
+            "pal1": "0x086C0ADC",
+            "pal2": "0x086C0ADC",
+            "bg1": "0x086BD4E8",
+            "bg2": "0x086BD680",
+            "collision": "0x086BD798",
+            "obj1": "0x08128690",
+            "obj2": "0x081286B8"
+        }
+    },
+    {
+        "map_id": 36,
+        "hex_id": "0x24",
+        "width": 30,
+        "height": 28,
+        "pointers": {
+            "gfx": "0x086913D4",
+            "pal1": "0x08692C8C",
+            "pal2": "0x08692C8C",
+            "bg1": "0x086B1E64",
+            "bg2": "0x086B20D8",
+            "collision": "0x086B2168",
+            "obj1": "0x081254E8",
+            "obj2": "0x08125514"
+        }
+    },
+    {
+        "map_id": 37,
+        "hex_id": "0x25",
+        "width": 42,
+        "height": 28,
+        "pointers": {
+            "gfx": "0x086913D4",
+            "pal1": "0x08692C8C",
+            "pal2": "0x08692C8C",
+            "bg1": "0x086B1A28",
+            "bg2": "0x086B1D10",
+            "collision": "0x086B1DC4",
+            "obj1": "0x0812500C",
+            "obj2": "0x08125050"
+        }
+    },
+    {
+        "map_id": 38,
+        "hex_id": "0x26",
+        "width": 46,
+        "height": 36,
+        "pointers": {
+            "gfx": "0x086913D4",
+            "pal1": "0x08692C8C",
+            "pal2": "0x08692C8C",
+            "bg1": "0x08704424",
+            "bg2": "0x087047BC",
+            "collision": "0x08704898",
+            "obj1": "0x08134558",
+            "obj2": "0x08134594"
+        }
+    },
+    {
+        "map_id": 39,
+        "hex_id": "0x27",
+        "width": 76,
+        "height": 36,
+        "pointers": {
+            "gfx": "0x086913D4",
+            "pal1": "0x08692C8C",
+            "pal2": "0x08692C8C",
+            "bg1": "0x08703D48",
+            "bg2": "0x0870420C",
+            "collision": "0x08704328",
+            "obj1": "0x08133A44",
+            "obj2": "0x08133AA8"
+        }
+    },
+    {
+        "map_id": 40,
+        "hex_id": "0x28",
+        "width": 30,
+        "height": 28,
+        "pointers": {
+            "gfx": "0x086913D4",
+            "pal1": "0x08692C8C",
+            "pal2": "0x08692C8C",
+            "bg1": "0x0868A250",
+            "bg2": "0x0868A45C",
+            "collision": "0x0868A5B4",
+            "obj1": "0x0811BE4C",
+            "obj2": "0x0811BE6C"
+        }
+    },
+    {
+        "map_id": 41,
+        "hex_id": "0x29",
+        "width": 30,
+        "height": 28,
+        "pointers": {
+            "gfx": "0x086C2630",
+            "pal1": "0x086C4D68",
+            "pal2": "0x086C4D68",
+            "bg1": "0x086C54E4",
+            "bg2": "0x086C5630",
+            "collision": "0x086C5718",
+            "obj1": "0x0812A5C8",
+            "obj2": "0x0812A5F8"
+        }
+    },
+    {
+        "map_id": 42,
+        "hex_id": "0x2A",
+        "width": 45,
+        "height": 28,
+        "pointers": {
+            "gfx": "0x086C2630",
+            "pal1": "0x086C4D68",
+            "pal2": "0x086C4D68",
+            "bg1": "0x086C51C4",
+            "bg2": "0x086C5324",
+            "collision": "0x086C5424",
+            "obj1": "0x08129FAC",
+            "obj2": "0x08129FE0"
+        }
+    },
+    {
+        "map_id": 43,
+        "hex_id": "0x2B",
+        "width": 59,
+        "height": 28,
+        "pointers": {
+            "gfx": "0x086C2630",
+            "pal1": "0x086C4D68",
+            "pal2": "0x086C4D68",
+            "bg1": "0x086C4E70",
+            "bg2": "0x086C4FF4",
+            "collision": "0x086C50F8",
+            "obj1": "0x081298F4",
+            "obj2": "0x08129928"
+        }
+    },
+    {
+        "map_id": 44,
+        "hex_id": "0x2C",
+        "width": 30,
+        "height": 28,
+        "pointers": {
+            "gfx": "0x08693630",
+            "pal1": "0x08695BA8",
+            "pal2": "0x08695BA8",
+            "bg1": "0x08692DB0",
+            "bg2": "0x08693004",
+            "collision": "0x08693138",
+            "obj1": "0x0811DA98",
+            "obj2": "0x0811DACC"
+        }
+    },
+    {
+        "map_id": 45,
+        "hex_id": "0x2D",
+        "width": 30,
+        "height": 28,
+        "pointers": {
+            "gfx": "0x08693630",
+            "pal1": "0x08695BA8",
+            "pal2": "0x08695BA8",
+            "bg1": "0x0869320C",
+            "bg2": "0x0869342C",
+            "collision": "0x086935A0",
+            "obj1": "0x0811DE14",
+            "obj2": "0x0811DE44"
+        }
+    },
+    {
+        "map_id": 46,
+        "hex_id": "0x2E",
+        "width": 30,
+        "height": 28,
+        "pointers": {
+            "gfx": "0x0871B474",
+            "pal1": "0x0871D3F4",
+            "pal2": "0x0871D3F4",
+            "bg1": "0x0871ABC8",
+            "bg2": "0x0871AE2C",
+            "collision": "0x0871AF84",
+            "obj1": "0x0813939C",
+            "obj2": "0x081393D4"
+        }
+    },
+    {
+        "map_id": 47,
+        "hex_id": "0x2F",
+        "width": 30,
+        "height": 28,
+        "pointers": {
+            "gfx": "0x0871B474",
+            "pal1": "0x0871D3F4",
+            "pal2": "0x0871D3F4",
+            "bg1": "0x0871B088",
+            "bg2": "0x0871B2AC",
+            "collision": "0x0871B3D4",
+            "obj1": "0x0813971C",
+            "obj2": "0x08139740"
+        }
+    },
+    {
+        "map_id": 48,
+        "hex_id": "0x30",
+        "width": 30,
+        "height": 28,
+        "pointers": {
+            "gfx": "0x087180E0",
+            "pal1": "0x0871AAD8",
+            "pal2": "0x0871AAD8",
+            "bg1": "0x08704978",
+            "bg2": "0x08704B6C",
+            "collision": "0x08704C54",
+            "obj1": "0x08134C38",
+            "obj2": "0x08134C68"
+        }
+    },
+    {
+        "map_id": 49,
+        "hex_id": "0x31",
+        "width": 30,
+        "height": 28,
+        "pointers": {
+            "gfx": "0x087180E0",
+            "pal1": "0x0871AAD8",
+            "pal2": "0x0871AAD8",
+            "bg1": "0x08717CF0",
+            "bg2": "0x08717E64",
+            "collision": "0x08718008",
+            "obj1": "0x08139024",
+            "obj2": "0x08139054"
+        }
+    },
+    {
+        "map_id": 50,
+        "hex_id": "0x32",
+        "width": 30,
+        "height": 28,
+        "pointers": {
+            "gfx": "0x086BB59C",
+            "pal1": "0x086BCFFC",
+            "pal2": "0x086BCFFC",
+            "bg1": "0x086C2250",
+            "bg2": "0x086C2414",
+            "collision": "0x086C2578",
+            "obj1": "0x08129470",
+            "obj2": "0x0812949C"
+        }
+    },
+    {
+        "map_id": 51,
+        "hex_id": "0x33",
+        "width": 30,
+        "height": 28,
+        "pointers": {
+            "gfx": "0x086BB59C",
+            "pal1": "0x086BCFFC",
+            "pal2": "0x086BCFFC",
+            "bg1": "0x086AF32C",
+            "bg2": "0x086AF520",
+            "collision": "0x086AF6DC",
+            "obj1": "0x08123F5C",
+            "obj2": "0x08123F8C"
+        }
+    },
+    {
+        "map_id": 52,
+        "hex_id": "0x34",
+        "width": 30,
+        "height": 28,
+        "pointers": {
+            "gfx": "0x086C0C48",
+            "pal1": "0x086C1D44",
+            "pal2": "0x086C1D44",
+            "bg1": "0x086C1E48",
+            "bg2": "0x086C1FF0",
+            "collision": "0x086C2158",
+            "obj1": "0x08129100",
+            "obj2": "0x08129128"
+        }
+    },
+    {
+        "map_id": 53,
+        "hex_id": "0x35",
+        "width": 30,
+        "height": 28,
+        "pointers": {
+            "gfx": "0x086961C0",
+            "pal1": "0x086977C8",
+            "pal2": "0x086977C8",
+            "bg1": "0x086B21FC",
+            "bg2": "0x086B2380",
+            "collision": "0x086B246C",
+            "obj1": "0x0812585C",
+            "obj2": "0x08125880"
+        }
+    },
+    {
+        "map_id": 54,
+        "hex_id": "0x36",
+        "width": 30,
+        "height": 28,
+        "pointers": {
+            "gfx": "0x086961C0",
+            "pal1": "0x086977C8",
+            "pal2": "0x086977C8",
+            "bg1": "0x08700AE0",
+            "bg2": "0x08700C6C",
+            "collision": "0x08700D84",
+            "obj1": "0x08133344",
+            "obj2": "0x0813336C"
+        }
+    },
+    {
+        "map_id": 55,
+        "hex_id": "0x37",
+        "width": 30,
+        "height": 28,
+        "pointers": {
+            "gfx": "0x086961C0",
+            "pal1": "0x086977C8",
+            "pal2": "0x086977C8",
+            "bg1": "0x0871714C",
+            "bg2": "0x08717304",
+            "collision": "0x08717434",
+            "obj1": "0x08138A4C",
+            "obj2": "0x08138A7C"
+        }
+    },
+    {
+        "map_id": 56,
+        "hex_id": "0x38",
+        "width": 30,
+        "height": 26,
+        "pointers": {
+            "gfx": "0x086DAFCC",
+            "pal1": "0x086DBD84",
+            "pal2": "0x086DBD84",
+            "bg1": "0x086DBE24",
+            "bg2": "0x086DBEBC",
+            "collision": "0x086DBEC8",
+            "obj1": "0x0812F9A4",
+            "obj2": "0x0812F9B0"
+        }
+    },
+    {
+        "map_id": 57,
+        "hex_id": "0x39",
+        "width": 60,
+        "height": 70,
+        "pointers": {
+            "gfx": "0x086DAFCC",
+            "pal1": "0x086DBD84",
+            "pal2": "0x086DBD84",
+            "bg1": "0x086DBF74",
+            "bg2": "0x086DBFF0",
+            "collision": "0x086DBFFC",
+            "obj1": "0x0812FCBC",
+            "obj2": "0x0812FCC4"
+        }
+    },
+    {
+        "map_id": 58,
+        "hex_id": "0x3A",
+        "width": 30,
+        "height": 42,
+        "pointers": {
+            "gfx": "0x086DAFCC",
+            "pal1": "0x086DBD84",
+            "pal2": "0x086DBD84",
+            "bg1": "0x086DC058",
+            "bg2": "0x086DC0E4",
+            "collision": "0x086DC0F0",
+            "obj1": "0x08130D2C",
+            "obj2": "0x08130D34"
+        }
+    },
+    {
+        "map_id": 59,
+        "hex_id": "0x3B",
+        "width": 30,
+        "height": 26,
+        "pointers": {
+            "gfx": "0x086DAFCC",
+            "pal1": "0x086DBD84",
+            "pal2": "0x086DBD84",
+            "bg1": "0x086DC150",
+            "bg2": "0x086DC1D0",
+            "collision": "0x086DC1DC",
+            "obj1": "0x08131220",
+            "obj2": "0x08131228"
+        }
+    },
+    {
+        "map_id": 60,
+        "hex_id": "0x3C",
+        "width": 30,
+        "height": 20,
+        "pointers": {
+            "gfx": "0x086DAFCC",
+            "pal1": "0x086DBD84",
+            "pal2": "0x086DBD84",
+            "bg1": "0x086DC238",
+            "bg2": "0x086DC2EC",
+            "collision": "0x086DC318",
+            "obj1": "0x08131534",
+            "obj2": "0x08131544"
+        }
+    },
+    {
+        "map_id": 61,
+        "hex_id": "0x3D",
+        "width": 30,
+        "height": 26,
+        "pointers": {
+            "gfx": "0x086DAFCC",
+            "pal1": "0x086DBD84",
+            "pal2": "0x086DBD84",
+            "bg1": "0x086DC400",
+            "bg2": "0x086DC4C4",
+            "collision": "0x086DC4D0",
+            "obj1": "0x0813179C",
+            "obj2": "0x081317A8"
+        }
+    },
+    {
+        "map_id": 62,
+        "hex_id": "0x3E",
+        "width": 30,
+        "height": 20,
+        "pointers": {
+            "gfx": "0x0869B730",
+            "pal1": "0x0869F2E0",
+            "pal2": "0x0869F2E0",
+            "bg1": "0x087174D4",
+            "bg2": "0x08717568",
+            "collision": "0x00000000",
+            "obj1": "0x08138DC4",
+            "obj2": "0x08138DCC"
+        }
+    },
+    {
+        "map_id": 63,
+        "hex_id": "0x3F",
+        "width": 30,
+        "height": 20,
+        "pointers": {
+            "gfx": "0x0869B730",
+            "pal1": "0x0869F2E0",
+            "pal2": "0x0869F2E0",
+            "bg1": "0x087175B0",
+            "bg2": "0x087176BC",
+            "collision": "0x00000000",
+            "obj1": "0x00000000",
+            "obj2": "0x00000000"
+        }
+    },
+    {
+        "map_id": 64,
+        "hex_id": "0x40",
+        "width": 30,
+        "height": 20,
+        "pointers": {
+            "gfx": "0x086913D4",
+            "pal1": "0x08692C8C",
+            "pal2": "0x08692C8C",
+            "bg1": "0x08717730",
+            "bg2": "0x08717954",
+            "collision": "0x00000000",
+            "obj1": "0x00000000",
+            "obj2": "0x00000000"
+        }
+    },
+    {
+        "map_id": 65,
+        "hex_id": "0x41",
+        "width": 30,
+        "height": 20,
+        "pointers": {
+            "gfx": "0x086913D4",
+            "pal1": "0x08692C8C",
+            "pal2": "0x08692C8C",
+            "bg1": "0x08717A40",
+            "bg2": "0x08717C24",
+            "collision": "0x00000000",
+            "obj1": "0x00000000",
+            "obj2": "0x00000000"
+        }
+    }
+]

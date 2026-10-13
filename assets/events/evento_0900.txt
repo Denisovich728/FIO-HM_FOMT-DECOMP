@@ -1,0 +1,31 @@
+// Script 900
+#include "Fomt_Lib.src"
+
+script 900 Event_0900 {
+    const MESSAGE_0 = "As her older brother, I'm not\r\nsure what to think of this.\BRK";
+    const MESSAGE_1 = "But...just as long as \r\nPopuri is happy, I guess...\BRK";
+    
+    if ((Check_If_Single(2) == 0)) {
+        Free_Event_Entity(2);
+    }
+    if ((Has_NPC_Talked_Today(2) == 0)) {
+        SetEntityFacing(2, GetOppositeFacing(GetEntityFacing(0)));
+        TalkOpen();
+        Set_Portrait(3);
+        Set_Name_Window(2);
+        TalkMessage(0);
+        TalkClose();
+        SetEntityFacing(2, "Left");
+        Free_Event_Entity(2);
+    } else {
+        SetEntityFacing(2, GetOppositeFacing(GetEntityFacing(0)));
+        TalkOpen();
+        Set_Portrait(3);
+        Set_Name_Window(2);
+        TalkMessage(1);
+        TalkClose();
+        SetEntityFacing(2, "Left");
+        Free_Event_Entity(2);
+    }
+    exit;
+}

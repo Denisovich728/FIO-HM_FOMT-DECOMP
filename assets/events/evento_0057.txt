@@ -1,0 +1,142 @@
+// Script 57
+#include "Fomt_Lib.src"
+
+script 57 Event_0057 {
+    const MESSAGE_0 = "I wonder what I should do \r\nwith this?...No...Hmm....\BRK";
+    const MESSAGE_1 = "Oh! \r\nI'm sorry I didn't see\r\nyou there. \BRK";
+    const MESSAGE_2 = "I've never seen you \r\nbefore...Are you a \r\ntourist or something? \BRK";
+    const MESSAGE_3 = "Oh, you're the new fellow\r\nup at the farm...!\BRK\r\n\xFF!, right? \r\nI'm Mary. Nice to meet you.\BRK";
+    const MESSAGE_4 = "Hi, \xFF!. \r\nWelcome to the Library. \BRK";
+    const MESSAGE_5 = "Not many people come to the\r\nLibrary, I'm glad you came!\BRK";
+    const MESSAGE_6 = "Sorry about that before...\r\nWhen I get lost in thought,\r\nI don't notice anything. \BRK";
+    const MESSAGE_7 = "Can I help?";
+    const MESSAGE_8 = "Be careful.";
+    const MESSAGE_9 = "I'm writing a novel, \r\nyou see. I was just having\r\na case of writer's block,\BRK\r\nthat's all.\BRK";
+    const MESSAGE_10 = "Just let me know if you \r\nwant to read anything.\BRK\WAIT_CLICKI bet I have lots of books\r\nyou'd like!\BRK";
+    const MESSAGE_11 = "I'll try to be more\r\ncareful from now on. \BRK";
+    
+    var var_0;
+    
+    Warp_Player(0x18, 0x78, 0x90);
+    PlayBGM(1, 0x11);
+    SetEntityPosition(0, 0x78, 0xD0, "Up");
+    SetEntityAnim(0, 0x192);
+    SetEntityPosition(0xC, 0xD8, 0xA8, "Left");
+    SetEntityAnim(0xC, 0x813);
+    Fade_In(2, 1);
+    SetEntityAnim(0, 0x1C6);
+    Set_Vector_Y(0, 0xA8, 1);
+    Execute_Movement(0);
+    SetEntityAnim(0, 0x192);
+    SetEntityFacing(0, "Right");
+    TalkOpen();
+    Set_Portrait(0x6B);
+    Set_Name_Window(0xC);
+    TalkMessage(0);
+    TalkClose();
+    SetEntityAnim(0xC, 0x817);
+    Set_Vector_X(0xC, 0x88, 1);
+    Execute_Movement(0xC);
+    SetEntityAnim(0xC, 0x813);
+    Show_Emote(0xC, 2, 0);
+    Make_Delay(0x3C);
+    TalkOpen();
+    Set_Portrait(0x6A);
+    Set_Name_Window(0xC);
+    Set_Hearth_Anim(0xC);
+    TalkMessage(1);
+    TalkClose();
+    SetEntityAnim(0, 0x126);
+    Make_Delay(0x3C);
+    SetEntityAnim(0, 0x192);
+    Show_Emote(0xC, 2, 0);
+    Make_Delay(0x3C);
+    if ((Check_If_Single(0xC) == 0)) {
+        TalkOpen();
+        Set_Portrait(0x67);
+        Set_Name_Window(0xC);
+        Set_Hearth_Anim(0xC);
+        TalkMessage(2);
+        TalkClose();
+        SetEntityAnim(0, 0x126);
+        Make_Delay(0x3C);
+        SetEntityAnim(0, 0x192);
+        TalkOpen();
+        Set_Portrait(0x67);
+        Set_Name_Window(0xC);
+        Set_Hearth_Anim(0xC);
+        TalkMessage(3);
+        TalkClose();
+        SetEntityAnim(0, 0x1FE);
+        Make_Delay(0x3C);
+        SetEntityAnim(0, 0x192);
+    } else {
+        TalkOpen();
+        Set_Portrait(0x68);
+        Set_Name_Window(0xC);
+        Set_Hearth_Anim(0xC);
+        TalkMessage(4);
+        TalkClose();
+        SetEntityAnim(0, 0x1FE);
+        Make_Delay(0x3C);
+        SetEntityAnim(0, 0x192);
+        TalkOpen();
+        Set_Portrait(0x68);
+        Set_Name_Window(0xC);
+        Set_Hearth_Anim(0xC);
+        TalkMessage(5);
+        TalkClose();
+        SetEntityAnim(0, 0x1FE);
+        Make_Delay(0x3C);
+        SetEntityAnim(0, 0x192);
+    }
+    TalkOpen();
+    Set_Portrait(0x67);
+    Set_Name_Window(0xC);
+    Set_Hearth_Anim(0xC);
+    TalkMessage(6);
+    TalkClose();
+    TalkOpen();
+    var_0 = TalkChoice2(7, 8);
+    switch (var_0) {
+        case 1:
+            Give_Love_Points(0xC, 0xBB8);
+            TalkClose();
+            TalkOpen();
+            Set_Portrait(0x68);
+            Set_Name_Window(0xC);
+            Set_Hearth_Anim(0xC);
+            TalkMessage(9);
+            TalkClose();
+            TalkOpen();
+            Set_Portrait(0x67);
+            Set_Name_Window(0xC);
+            Set_Hearth_Anim(0xC);
+            TalkMessage(10);
+            TalkClose();
+            SetEntityAnim(0, 0x1FE);
+            Make_Delay(0x3C);
+            SetEntityAnim(0, 0x192);
+            Free_Event_Entity(0xC);
+            Routine_State_Override(0xC, 0x3A);
+            Set_Flag(0x61, 1);
+            break;
+        case 2:
+            TalkClose();
+            TalkOpen();
+            Set_Portrait(0x6A);
+            Set_Name_Window(0xC);
+            Set_Hearth_Anim(0xC);
+            TalkMessage(11);
+            TalkClose();
+            SetEntityAnim(0, 0x1FE);
+            Make_Delay(0x3C);
+            SetEntityAnim(0, 0x192);
+            Free_Event_Entity(0xC);
+            Routine_State_Override(0xC, 0x3A);
+            Set_Flag(0x61, 1);
+            break;
+    }
+    End_Cinematic_State();
+    exit;
+}

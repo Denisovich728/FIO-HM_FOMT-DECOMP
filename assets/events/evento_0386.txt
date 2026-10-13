@@ -1,0 +1,11 @@
+// Script 386
+#include "Fomt_Lib.src"
+
+script 386 Event_0386 {
+    const MESSAGE_0 = "Refrigerator\BRK";
+    
+    TalkOpen();
+    Print_Message(0);
+    TalkClose();
+    exit;
+}

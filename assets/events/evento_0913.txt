@@ -1,0 +1,16 @@
+// Script 913
+#include "Fomt_Lib.src"
+
+script 913 Event_0913 {
+    const MESSAGE_0 = "Hello, \xFF!.\r\nCliff'll be living here \r\nfull time from now on. \BRK";
+    
+    SetEntityFacing(0x18, GetOppositeFacing(GetEntityFacing(0)));
+    TalkOpen();
+    Set_Portrait(0x53);
+    Set_Name_Window(0x18);
+    TalkMessage(0);
+    TalkClose();
+    SetEntityFacing(0x18, "Down");
+    Free_Event_Entity(0x18);
+    exit;
+}

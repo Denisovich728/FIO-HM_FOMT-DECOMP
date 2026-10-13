@@ -1,0 +1,30 @@
+// Script 1228
+#include "Fomt_Lib.src"
+
+script 1228 Event_1228 {
+    const MESSAGE_0 = "This kind of thing is what \r\nmakes this Festival so fun!\r\nHa ha ha...!!\BRK";
+    const MESSAGE_1 = "It's fun when you eat with\r\nall your friends like this!\BRK";
+    
+    if ((Check_If_Single(0x16) == 0)) {
+        Free_Event_Entity(0x16);
+    }
+    SetEntityFacing(0x16, GetOppositeFacing(GetEntityFacing(0)));
+    if ((Has_Spoken_To_NPC_Today(0x16) == 0)) {
+        Give_Friendship_Points(0x16, 5);
+    }
+    TalkOpen();
+    Set_Name_Window(0x16);
+    if ((Check_Flag(0x1A5) == 1)) {
+        Set_Portrait(0x96);
+        TalkMessage(0);
+        TalkClose();
+        Free_Event_Entity(0x16);
+    } else {
+        Set_Portrait(0x95);
+        TalkMessage(1);
+        TalkClose();
+        Free_Event_Entity(0x16);
+    }
+    SetEntityFacing(0x16, "Down");
+    exit;
+}

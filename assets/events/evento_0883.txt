@@ -1,0 +1,31 @@
+// Script 883
+#include "Fomt_Lib.src"
+
+script 883 Event_0883 {
+    const MESSAGE_0 = "You just can't leave \r\nRick alone, ya know?\BRK";
+    const MESSAGE_1 = "He's the only man in the\r\nhouse, with Popuri and his \r\ngrandmother. I think that's\BRK\r\nhard on him sometimes.\BRK\WAIT_CLICKHe relaxes more when he's\r\nwith me, I think. \BRK";
+    
+    if ((Check_If_Single(0x13) == 0)) {
+        Free_Event_Entity(0x13);
+    }
+    if ((Has_NPC_Talked_Today(0x13) == 0)) {
+        SetEntityFacing(0x13, GetOppositeFacing(GetEntityFacing(0)));
+        TalkOpen();
+        Set_Portrait(0x4E);
+        Set_Name_Window(0x13);
+        TalkMessage(0);
+        TalkClose();
+        SetEntityFacing(0x13, "Down");
+        Free_Event_Entity(0x13);
+    } else {
+        SetEntityFacing(0x13, GetOppositeFacing(GetEntityFacing(0)));
+        TalkOpen();
+        Set_Portrait(0x4E);
+        Set_Name_Window(0x13);
+        TalkMessage(1);
+        TalkClose();
+        SetEntityFacing(0x13, "Down");
+        Free_Event_Entity(0x13);
+    }
+    exit;
+}
